@@ -1,0 +1,814 @@
+# Copyright (C) YEAR 2009-2013 Nicolas SURRIBAS
+# This file is distributed under the same license as the Wapiti package.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Wapiti SVN\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-25 17:33+0200\n"
+"PO-Revision-Date: 2013-09-17 23:16+0200\n"
+"Last-Translator: David del Pozo Gonzalez <daviddelpozog@gmail.com>\n"
+"Language-Team: David del Pozo Gonzalez <daviddelpozog@gmail.com>\n Alberto Pastor Nieto <alberto.es@gmail.com>"
+"Language: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../vulnerability.py:23
+msgid "  Evil url: {0}"
+msgstr "  URL maliciosa: {0}"
+
+#: ../vulnerability.py:24
+msgid "{0} in {1} via injection in the parameter {2}"
+msgstr "{0} en {1} mediante inyección en el parámetro {2}"
+
+#: ../vulnerability.py:25
+msgid "  coming from {0}"
+msgstr "  viniendo de {0}"
+
+#: ../vulnerability.py:26
+msgid "{0} in {1} via injection in the query string"
+msgstr "{0} en {1} mediante inyección en la query de la URL"
+
+#: ../vulnerability.py:27
+msgid "{0} in {1} via injection in the resource path"
+msgstr "{0} en {1} mediante inyección en la ruta al recurso"
+
+#: ../vulnerability.py:28
+msgid "Involved parameter: {0}"
+msgstr "Parámetro involucrado: {0}"
+
+#: ../vulnerability.py:29
+msgid "Evil request:"
+msgstr "Petición maliciosa:"
+
+#: ../vulnerability.py:67
+msgid "SQL Injection"
+msgstr "Inyección SQL"
+
+#: ../vulnerability.py:68
+msgid "Blind SQL Injection"
+msgstr "Inyección SQL a ciegas"
+
+#: ../vulnerability.py:69
+msgid "File Handling"
+msgstr "Manejo de fichero"
+
+#: ../vulnerability.py:70
+msgid "Cross Site Scripting"
+msgstr "Cross Site Scripting"
+
+#: ../vulnerability.py:71
+msgid "CRLF"
+msgstr "CRLF"
+
+#: ../vulnerability.py:72
+msgid "Commands execution"
+msgstr "Ejecución de comandos"
+
+#: ../vulnerability.py:73
+msgid "Htaccess Bypass"
+msgstr "Bypass de Htaccess"
+
+#: ../vulnerability.py:74
+msgid "Backup file"
+msgstr "Fichero de backup"
+
+#: ../vulnerability.py:75
+msgid "Potentially dangerous file"
+msgstr "Fichero potencialmente peligroso"
+
+#: ../vulnerability.py:80
+msgid "Internal Server Error"
+msgstr "Error interno del servidor"
+
+#: ../vulnerability.py:81
+msgid "Resource consumption"
+msgstr "Consumo de recursos"
+
+#: ../vulnerability.py:83
+msgid "Received a HTTP 500 error in {0}"
+msgstr "Recibido un error HTTP 500 en {0}"
+
+#: ../vulnerability.py:84
+msgid "Timeout occured in {0}"
+msgstr "Timeout ocurrido en {0}"
+
+#: ../vulnerability.py:86
+msgid "The request timed out while attempting to inject a payload in the query string"
+msgstr "Timeout en la petición cuando se intentaba realizar inyectar una cadena maliciosa en la query de la URL"
+
+#: ../vulnerability.py:87
+msgid "The request timed out while attempting to inject a payload in the resource path"
+msgstr "Timeout en la petición cuando se intentaba realizar inyectar una cadena maliciosa en la ruta al recurso"
+
+#: ../vulnerability.py:88
+msgid "The request timed out while attempting to inject a payload in the parameter {0}"
+msgstr "Timeout en la petición cuando se intentaba realizar inyectar una cadena maliciosa en el parámetro {0}"
+
+#: ../vulnerability.py:90
+msgid "The server responded with a 500 HTTP error code while attempting to inject a payload in the query string"
+msgstr "El servidor devolvió un error HTTP 500 cuando se intentaba inyectar una cadena maliciosa en la query de la URL"
+
+#: ../vulnerability.py:92
+msgid "The server responded with a 500 HTTP error code while attempting to inject a payload in the resource path"
+msgstr "El servidor devolvió un error HTTP 500 cuando se intentaba inyectar una cadena maliciosa en el resource path"
+
+#: ../vulnerability.py:94
+msgid "The server responded with a 500 HTTP error code while attempting to inject a payload in the parameter {0}"
+msgstr "El servidor devolvió un error HTTP 500 cuando se intentaba inyectar una cadena maliciosa en el parámetro {0}"
+
+#: ../wapiti.py:69
+msgid "Invalid argument for option {0} : {1}"
+msgstr "Argumento inválido para la opción {0} : {1}"
+
+#: ../wapiti.py:226
+msgid "[*] Loading modules:"
+msgstr "[*] Cargando modulos:"
+
+#: ../wapiti.py:297
+msgid "No links or forms found in this page !"
+msgstr "No se han encontrado enlaces ni formularios en esta página"
+
+#: ../wapiti.py:298
+msgid "Make sure the url is correct."
+msgstr "Compruebe que la URL es correcta."
+
+#: ../wapiti.py:310
+msgid "[!] Missing dependecies for module {0}:"
+msgstr "[!] Dependencias no encontradas para el módulo {0}:"
+
+#: ../wapiti.py:316
+msgid "[+] Launching module {0}"
+msgstr "[+] Lanzando módulo {0}"
+
+#: ../wapiti.py:321
+msgid "Upload scripts found:"
+msgstr "Scripts de subida encontrados:"
+
+#: ../wapiti.py:335
+msgid "Report"
+msgstr "Informe"
+
+#: ../wapiti.py:337
+msgid "A report has been generated in the file {0}"
+msgstr "Se ha generado un informe en el fichero {0}"
+
+#: ../wapiti.py:339
+msgid "Open {0}/index.html with a browser to see this report."
+msgstr "Abrir {0}/index.html con el navegador para ver el informe"
+
+#: ../wapiti.py:410
+msgid "wapitiDoc"
+msgstr ""
+"Wapiti-2.3.0 - Web application vulnerability scanner \n"
+" \n"
+" Uso: python wapiti.py http://server.com/base/url/ [options] \n"
+" \n"
+" Las opciones soportadas son: \n"
+" -s <url> \n"
+" --start <url> \n"
+" \tPara indicar una URL con la que comenzar el escaneo. Esta opción puede ser usada varias veces.\n"
+" \tWapiti escaneará esos enlaces para encontrar más URLs incluso si el enlace especificado no está en el ámbito.\n"
+" \n"
+" -x <url> \n"
+" --exclude <url> \n"
+" \tPara excluir una URL del escaneo (por ejemplo URLs de logout). Esta opción puede ser llamada varias veces para especificar varias URLs.\n"
+" \tLos comodines (*) se pueden usar en las URL como si fuesen expresiones regulares simples.\n"
+" \tEjemplo : -x http://server/base/?page=*&module=test\n"
+" \to -x http://server/base/admin/* para excluir un directorio.\n"
+" \n"
+" -p <url_proxy> \n"
+" --proxy <url_proxy> \n"
+" \tPara especificar un proxy. Actualmente los proxies soportados son HTTP y HTTPS.\n"
+" \tEsta opción puede ser llamada dos veces para especificar el proxy HTTP y HTTPS.\n"
+" \tEjemplo: -p http://proxy:port/\n"
+" \n"
+" -c <cookie_file> \n"
+" --cookie <cookie_file> \n"
+" \tPara importar cookies que se usarán en el escaneo. La cookie debe ser un fichero en formato JSON.\n"
+" \tLas cookies pueden ser generadas usando los programas cookie.py y getcookie.py (directorio \"net\").\n"
+" \n"
+" -t <timeout> \n"
+" --timeout <timeout> \n"
+" \tPara establecer un timeout (tiempo máximo en segundo a esperar a la respuesta del servidor).\n"
+" \n"
+" -a <login%password> \n"
+" --auth <login%password> \n"
+" \tEstablece las credenciales para la autentificación HTTP.\n"
+" \n"
+" --auth-method <method>\n"
+" \tSi el servidor requiere autenticación, establece el método a usar en la autenticación.\n"
+" \tActualmente los métodos soportados son (algunos requieren instalar módulos adicionales):\n"
+" \t\t+ basic\n"
+" \t\t+ digest\n"
+" \t\t+ kerberos\n"
+" \t\t+ ntlm\n"
+" \n"
+" -r <parameter_name> \n"
+" --remove <parameter_name> \n"
+" \tBorra un parámetro (nombre y valor) de las URLs.\n"
+" \n"
+" -n <limit> \n"
+" --nice <limit> \n"
+" \tDefine un límite de URLs a escanear con el mismo patrón (por ejemplo, el número máximo de valores únicos para el mismo parámetro).\n"
+" \tUsa esta opción para prevenir bucles infinitos durante el escaneo. El límite debe ser mayor que 0.\n"
+" \n"
+" -m <module_options>\n"
+" --module <module_options>\n"
+" \tEstablece los módulos (y métodos HTTP para cada módulo) para usar en los ataques.\n"
+" \tPrefix a module name with a dash to deactivate the related module.\n"
+" \tTo only browse the target (without sending any payloads), deactivate every module with -m \"-all\".\n"
+" \tIf you don't specify the HTTP methods, GET and POST will be used.\n"
+" \tExample: -m \"-all,xss:get,exec:post\"\n"
+" \n"
+" -u \n"
+" --color \n"
+" \tUsa colores para resaltar las vulnerabilidades y anomalias en la salida. \n"
+" \n"
+" -v <level> \n"
+" --verbose <level> \n"
+" \tEstablece el nivel de logs por pantalla. \n"
+" \t0: bajo (por defecto), 1: pinta cada URL, 2: pinta cada ataque. \n"
+" \n"
+" -b <scope>\n"
+" --scope <scope>\n"
+" \tEstablece el ámbito del escaneo:\n"
+" \t\t+ page: analiza solo la página pasada a Wapiti como URL raíz.\n"
+" \t\t+ folder: analiza todas las URL bajo la misma URL raíz pasado a Wapiti (por defecto).\n"
+" \t\t+ domain: analiza todos los enlaces a páginas que están en el mismo dominio que la URL pasada a Wapiti.\n"
+" \n"
+" -f <type_file> \n"
+" --format <type_file> \n"
+" \tEstablece el formato del informe. \n"
+" \tjson: Formato JSON format \n"
+" \thtml: Formato HTML format (default)\n"
+" \topenvas: Formato OpenVAS XML \n"
+" \ttxt: Informe en texto plano (UTF-8) \n"
+" \tvulneranet: Informe en formato VulneraNET (basado en XML)\n"
+" \txml: Formato XML\n"
+" \n"
+" -o <output> \n"
+" --output <output_file> \n"
+" \tEstablece el nombre del fichero con el informe. \n"
+" \tSi se selecciona HTML como formato del informe, este parámetro será el nombre del directorio donde se guarda el informe.\n"
+" \n"
+" -i <file>\n"
+" --continue <file>\n"
+" \tEste parámetro indica a Wapiti reanudar el escaneo previo guardado en el fichero XML especificado\n"
+" \tEl nombre del fichero es opcional, si no se especifica Wapiti toma el fichero por defecto de la carpeta \"scans\".\n"
+" \n"
+" -k <file>\n"
+" --attack <file>\n"
+" \tEste parámetro indica a Wapiti reanudar los ataques sin escanear de nuevo el website, cargando el escaneo del fichero especificado.\n"
+" \tEl nombre del fichero es opcional, si no se especifica Wapiti toma el fichero por defecto de la carpeta \"scans\".\n"
+" \n"
+" --verify-ssl <0|1>\n"
+" \tEste parámetro indica si Wapiti debe comprobar certificados SSL.\n"
+" \tPor defecto se verifican los certificados\n"
+" \n"
+" -h \n"
+" --help \n"
+" \tPara imprimir este mensaje de uso de la aplicación\n"
+" "
+
+#: ../wapiti.py:418
+msgid "Wapiti-2.3.0 (wapiti.sourceforge.net)"
+msgstr "Wapiti-2.3.0 (wapiti.sourceforge.net)"
+
+#: ../wapiti.py:549
+msgid "File {0} loaded. Wapiti will use it to perform the attack"
+msgstr "Archivo {0} cargado. Wapiti lo usará para realizar el ataque"
+
+#: ../attack/attack.py:166
+msgid "+ attackGET {0}"
+msgstr "+ attackGET {0}"
+
+#: ../attack/attack.py:171 ../attack/attack.py:185
+#: ../attack/mod_permanentxss.py:87 ../attack/mod_permanentxss.py:89
+#: ../attack/mod_permanentxss.py:147 ../attack/mod_permanentxss.py:272
+msgid "error: {0} while attacking {1}"
+msgstr "error: {0} mientras se realizaba el ataque {1}"
+
+#: ../attack/attack.py:173 ../attack/attack.py:187
+msgid "error: timeout while attacking {0}"
+msgstr "error: timeout mientras se atacaba {0}"
+
+#: ../attack/attack.py:180
+msgid "+ attackPOST {0} from {1}"
+msgstr "+ attackPOST {0} de {1}"
+
+#: ../attack/mod_backup.py:89
+msgid "Found backup file !"
+msgstr "¡Encontrado fichero de backup!"
+
+#: ../attack/mod_backup.py:94
+msgid "Backup file {0} found for {1}"
+msgstr "Fichero de backup {0} encontrado para {1}"
+
+#: ../attack/mod_blindsql.py:40
+msgid "Blind SQL vulnerability"
+msgstr "Inyección SQL ciega"
+
+#: ../attack/mod_blindsql.py:93 ../attack/mod_file.py:146
+#: ../attack/mod_sql.py:131
+msgid "{0} via injection in the query string"
+msgstr "{0} mediante inyección en la query de la URL"
+
+#: ../attack/mod_blindsql.py:141 ../attack/mod_blindsql.py:222
+#: ../attack/mod_exec.py:195 ../attack/mod_exec.py:292
+#: ../attack/mod_file.py:211 ../attack/mod_file.py:301
+#: ../attack/mod_sql.py:258
+msgid "{0} via injection in the parameter {1}"
+msgstr "{0} mediante inyección en el parámetro {1}"
+
+#: ../attack/mod_crlf.py:31
+msgid "CRLF injection"
+msgstr "Inyección CRLF"
+
+#: ../attack/mod_crlf.py:70 ../attack/mod_crlf.py:77
+msgid "(QUERY_STRING)"
+msgstr "(QUERY_STRING)"
+
+#: ../attack/mod_crlf.py:121
+msgid "Error: The server did not understand this request"
+msgstr "Error: El servidor no entendió esta petición"
+
+#: ../attack/mod_exec.py:45
+msgid "Command execution"
+msgstr "Ejecución de comando"
+
+#: ../attack/mod_exec.py:48
+msgid "PHP evaluation"
+msgstr "Evaluación PHP"
+
+#: ../attack/mod_exec.py:51 ../attack/mod_exec.py:54
+msgid "Warning exec"
+msgstr "Warning exec"
+
+#: ../attack/mod_exec.py:57 ../attack/mod_exec.py:63
+msgid "preg_replace injection"
+msgstr "Inyección preg_replace"
+
+#: ../attack/mod_exec.py:60
+msgid "Warning usort()"
+msgstr "Warning usort()"
+
+#: ../attack/mod_exec.py:66
+msgid "Warning assert"
+msgstr "Warning assert"
+
+#: ../attack/mod_exec.py:69
+msgid "Evalutation warning"
+msgstr "Evalutation warning"
+
+#: ../attack/mod_file.py:40
+msgid "Remote inclusion vulnerability"
+msgstr "Vulnerabilidad de inclusión remota"
+
+#: ../attack/mod_file.py:41
+msgid "Linux local file disclosure vulnerability"
+msgstr "Vulnerabilidad 'Local file disclosure' en Linux"
+
+#: ../attack/mod_file.py:42
+msgid "BSD local file disclosure vulnerability"
+msgstr "Vulnerabilidad de 'Local file disclosure' en BSD"
+
+#: ../attack/mod_file.py:43
+msgid "Windows local file disclosure vulnerability"
+msgstr "Vulnerabilidad de 'Local file disclosure' en Windows"
+
+#: ../attack/mod_file.py:44 ../attack/mod_file.py:45
+msgid "File disclosure vulnerability in include_path"
+msgstr "Vulnerabilidad de 'Local file disclosure' en include_path"
+
+#: ../attack/mod_file.py:46
+msgid "highlight_file() vulnerability in basedir"
+msgstr "Vulnerabilidad highlight_file() en basedir"
+
+#: ../attack/mod_file.py:47
+msgid "include() of file in include_path"
+msgstr "include() de fichero en include_path"
+
+#: ../attack/mod_file.py:84
+msgid "Possible {0} vulnerability"
+msgstr "Posible vulnerabilidad {0}"
+
+#: ../attack/mod_htaccess.py:75
+msgid "HtAccess protection found: {0}"
+msgstr "Protección HtAccess encontrada: {0}"
+
+#: ../attack/mod_htaccess.py:85
+msgid "|HTTP Code: {0} : {1}"
+msgstr "|HTTP Code: {0} : {1}"
+
+#: ../attack/mod_htaccess.py:88 ../attack/mod_htaccess.py:102
+msgid "Source code:"
+msgstr "Código fuente:"
+
+#: ../attack/mod_htaccess.py:94
+msgid "{0} HtAccess"
+msgstr "HtAccess {0}"
+
+#: ../attack/mod_htaccess.py:95
+msgid "  .htaccess bypass vulnerability: {0}"
+msgstr "  Vulnerabilidad de bypass de .htaccess: {0}"
+
+#: ../attack/mod_htaccess.py:99
+msgid "|HTTP Code: {0}"
+msgstr "|Código HTTP: {0}"
+
+#: ../attack/mod_nikto.py:75
+msgid "Problem with local nikto database."
+msgstr "Problema con la base de datos local Nikto"
+
+#: ../attack/mod_nikto.py:76
+msgid "Downloading from the web..."
+msgstr "Descargando de la web..."
+
+#: ../attack/mod_nikto.py:90
+msgid "Error downloading Nikto database"
+msgstr "Error descargando la base de datos Nikto"
+
+#: ../attack/mod_nikto.py:235 ../attack/mod_nikto.py:237
+msgid "References:"
+msgstr "Referencias:"
+
+#: ../attack/mod_permanentxss.py:57
+msgid "Stored XSS vulnerability"
+msgstr "Guardada vulnerabilidad XSS"
+
+#: ../attack/mod_permanentxss.py:115 ../attack/mod_permanentxss.py:161
+msgid "Found permanent XSS in {0} with {1}"
+msgstr "Encontrada XSS permanente en {0} con {1}"
+
+#: ../attack/mod_permanentxss.py:213 ../attack/mod_permanentxss.py:280
+msgid "Found permanent XSS attacked by {0} with fields {1}"
+msgstr "Encontrado XSS permanente atacando {0} con campos {1}"
+
+#: ../attack/mod_sql.py:39 ../attack/mod_sql.py:41
+msgid "MySQL Injection"
+msgstr "Inyección MySQL"
+
+#: ../attack/mod_sql.py:43
+msgid "Access-Based SQL Injection"
+msgstr "Inyección SQL en sistema Access"
+
+#: ../attack/mod_sql.py:45 ../attack/mod_sql.py:47 ../attack/mod_sql.py:49
+#: ../attack/mod_sql.py:70
+msgid "MSSQL-Based Injection"
+msgstr "Inyección MSSQL"
+
+#: ../attack/mod_sql.py:52
+msgid "Java.SQL Injection"
+msgstr "Inyección Java.SQL"
+
+#: ../attack/mod_sql.py:54
+msgid "PostgreSQL Injection"
+msgstr "Inyección PostgreSQL"
+
+#: ../attack/mod_sql.py:56 ../attack/mod_sql.py:58
+msgid "XPath Injection"
+msgstr "Inyección XPath"
+
+#: ../attack/mod_sql.py:60
+msgid "LDAP Injection"
+msgstr "Inyección LDAP"
+
+#: ../attack/mod_sql.py:62
+msgid "DB2 Injection"
+msgstr "Inyección DB2"
+
+#: ../attack/mod_sql.py:64
+msgid "Interbase Injection"
+msgstr "Inyección Interbase"
+
+#: ../attack/mod_sql.py:66
+msgid "Sybase Injection"
+msgstr "Inyección Sybase"
+
+#: ../attack/mod_sql.py:68
+msgid ".NET SQL Injection"
+msgstr "Inyección .NET SQL"
+
+#: ../attack/mod_sql.py:72
+msgid "Acess-Based SQL Injection"
+msgstr "Inyección Acess-Based SQL"
+
+#: ../attack/mod_sql.py:76
+msgid "Oracle Injection"
+msgstr "Inyección Oracle"
+
+#: ../attack/mod_xss.py:59
+msgid "XSS vulnerability"
+msgstr "Vulnerabilidad XSS"
+
+#: ../attack/mod_xss.py:126 ../attack/mod_xss.py:337
+msgid "XSS vulnerability found via injection in the resource path"
+msgstr "Vulnerabilidad XSS encontrada mediante inyección en la ruta al recurso"
+
+#: ../attack/mod_xss.py:196
+msgid "XSS vulnerability found via injection in the query string"
+msgstr "Vulnerabilidad XSS encontrada mediante inyección en la query de la URL"
+
+#: ../attack/mod_xss.py:270 ../attack/mod_xss.py:437
+msgid "XSS vulnerability found via injection in the parameter {0}"
+msgstr "Vulnerabilidad XSS encontrada mediante inyección en el parámetro {0}"
+
+#: ../net/getcookie.py:97
+msgid "No forms found in this page !"
+msgstr "No se han encontrado formularios en esta página"
+
+#: ../net/getcookie.py:104
+msgid "Choose the form you want to use :"
+msgstr "Elige el formulario que deseas usar:"
+
+#: ../net/getcookie.py:113
+msgid "Enter a number : "
+msgstr "Elige un número:"
+
+#: ../net/getcookie.py:120
+msgid "Please enter values for the following form: "
+msgstr "Por favor, introduce valores para este formulario: "
+
+#: ../net/getcookie.py:121
+msgid "url = {0}"
+msgstr "url = {0}"
+
+#: ../net/cookie.py:75
+msgid "Error getting url {0}"
+msgstr "Error recuperando la URL {0}"
+
+#: ../net/lswww.py:164
+msgid "First argument must be the root url !"
+msgstr "El primer argumento debe ser la URL raíz"
+
+#: ../net/lswww.py:169
+msgid "Invalid protocol: {0}"
+msgstr "Protocolo inválido: {0}"
+
+#: ../net/lswww.py:208
+msgid "Invalid link argument: {0}"
+msgstr "En argumento no es un enlace válido: {0}"
+
+#: ../net/lswww.py:266
+msgid "Connection refused!"
+msgstr "Conexión rechazada!"
+
+#: ../net/lswww.py:270
+msgid "Exception in lswww.browse: {0}"
+msgstr "Excepción en lswww.browse: {0}"
+
+#: ../net/lswww.py:665
+msgid "File {0} loaded, the scan continues:"
+msgstr "Archivo {0} cargado, el escaneo continua:"
+
+#: ../net/lswww.py:667
+msgid " * URLs to browse"
+msgstr " * URLs a escanear"
+
+#: ../net/lswww.py:670
+msgid " * URLs browsed"
+msgstr " * URL escaneadas"
+
+#: ../net/lswww.py:674
+msgid "File {0} not found, Wapiti will scan again the web site"
+msgstr "Fichero {0} no encontrado, Wapiti escaneará el website de nuevo"
+
+#: ../net/lswww.py:707 ../net/lswww.py:715
+msgid " Notice"
+msgstr " Aviso"
+
+#: ../net/lswww.py:709
+msgid "This scan has been saved in the file {0}/{1}.xml"
+msgstr "Este escaneo se ha guardado en el archivo {0}/{1}.xml"
+
+#: ../net/lswww.py:711
+msgid "You can use it to perform attacks without scanning again the web site with the \"-k\" parameter"
+msgstr "Puedes usarlo para realizar ataques sin escanear de nuevo el website mediante el parámetro \"-k\""
+
+#: ../net/lswww.py:717
+msgid "Scan stopped, the data has been savedin the file {0}/{1}.xml"
+msgstr "Escaneo detenido, la información se ha salvado en el archivo {0}/{1}.xml"
+
+#: ../net/lswww.py:719
+msgid "To continue this scan, you should launch Wapiti with the \"-i\" parameter"
+msgstr "Para continuar con este escaneo, debes lanzar Wapiti con el parámetro \"-i\""
+
+#: ../net/lswww.py:729
+msgid "URLs"
+msgstr "URLs"
+
+#: ../net/lswww.py:736
+msgid "Forms Info"
+msgstr "Información de los formularios"
+
+#: ../net/lswww.py:738
+msgid "From: {0}"
+msgstr "De: {0}"
+
+#: ../net/lswww.py:739
+msgid "To: {0}"
+msgstr "A: {0}"
+
+#: ../net/lswww.py:747
+msgid "Upload Scripts"
+msgstr "Subida de scripts"
+
+#: ../net/lswww.py:1008
+msgid "Forms"
+msgstr "Formularios"
+
+#: ../net/lswww.py:1011
+msgid "Form {0}"
+msgstr "Formulario {0}"
+
+#: ../net/lswww.py:1015
+msgid " * Method:  {0}"
+msgstr " * Método:  {0}"
+
+#: ../net/lswww.py:1016
+msgid " * Intputs:"
+msgstr " * Inputs:"
+
+#: ../net/lswww.py:1021
+msgid " * Selects:"
+msgstr " * Selects:"
+
+#: ../net/lswww.py:1026
+msgid " * TextAreas:"
+msgstr " * TextAreas:"
+
+#: ../net/lswww.py:1032
+msgid "URLS"
+msgstr "URLs"
+
+#: ../report/txtreportgenerator.py:69
+msgid "Report for {0}\n"
+msgstr "Informe para {0}\n"
+
+#: ../report/txtreportgenerator.py:70
+msgid "Date of the scan : {0}\n"
+msgstr "Fecha del escaneo: {0}\n"
+
+#: ../report/txtreportgenerator.py:72
+msgid "Scope of the scan : {0}\n"
+msgstr "Ámbito del escaneo: {0}\n"
+
+#: ../report/txtreportgenerator.py:75
+msgid "Summary of vulnerabilities :"
+msgstr "Resumen de vulnerabilidades"
+
+#: ../report/txtreportgenerator.py:78
+msgid "{0} : {1:>3}\n"
+msgstr "{0} : {1:>3}\n"
+
+#: ../report/txtreportgenerator.py:88 ../report/txtreportgenerator.py:105
+msgid "Evil request:\n"
+msgstr "Petición maliciosa:\n"
+
+#: ../report/txtreportgenerator.py:91
+msgid "cURL command PoC : \"{0}\""
+msgstr "cURL command PoC : \"{0}\""
+
+#: ../report/txtreportgenerator.py:97
+msgid "Anomalies found:"
+msgstr "Anomalias encontradas"
+
+#: ../wapiti.py:560 ../wapiti.py:559
+msgid "Attack process interrupted. To perform again the attack, lauch Wapiti with \"-i\" or \"-k\" parameter."
+msgstr "Proceso de ataque interrumpido. Para realizar el ataque de nuevo lance Wapiti con los parámetros \"-i\" o \"-k\"."
+
+#: ../wapiti.py:551
+msgid "File {0} not found. Wapiti will scan the web site again"
+msgstr "Archivo {0} no encontrado. Wapiti escaneará el website de nuevo"
+
+msgid "[!] Unable to find a module named {0}"
+msgstr "[!] Imposible encontrar el módulo llamado {0}"
+
+msgid "Backup file description"
+msgstr ""
+"Es posible que se encuentren archivos de backup de los comandos "
+"ejecutados en el servidor que el administrador dejó para guardar una "
+"versión anterior o archivos de copia de seguridad que se generan "
+"automáticamente por editores de texto (como por ejemplo, Emacs). "
+"Estas copias pueden revelar código fuente o contraseñas."
+
+msgid "Backup file solution"
+msgstr ""
+"El administrador necesita borrar la copia de seguridad o moverla fuera de los "
+"directorios de la aplicación web. También debe desactivar las copias de seguridad "
+"automáticas en la configuración del editor de texto."
+
+msgid "Blind SQL Injection description"
+msgstr ""
+"La inyección SQL a ciegas es una técnica que se aprovecha de una vulnerabilidad "
+"en la base de datos de la aplicación. Este tipo de vulnerabilidad es más "
+"difícil de detectar que una inyección SQL clásica ya que no muestra ningún "
+"mensaje en la web."
+
+msgid "Blind SQL Injection solution"
+msgstr ""
+"Para proteger una aplicación de una inyección SQL, el usuario no debe utilizar "
+"consultas SQL directamente en el código. Los parámetros suministrados por el "
+"usuario deben ser escapados y filtrados. Las consultas deben estar parametrizadas."
+
+msgid "Commands execution description"
+msgstr ""
+"Este ataque consiste en ejecutar comandos del sistema en el servidor. El "
+"atacante trata de inyectar comandos en los parámetros de la petición."
+
+msgid "Commands execution solution"
+msgstr ""
+"Se debe evitar utilizar parámetros suministrados por el usuario en las "
+"llamadas al sistema de ficheros."
+
+msgid "CRLF description"
+msgstr ""
+"El término CRLF se refiere a 'Carriage Return (ASCII 13, \\r) Line Feed "
+"(ASCII 10, \\n)' (en inglés). Esos caracteres se utilizan para indicar el "
+"final de una línea, sin embargo no todos los sistemas operativos los interpretan "
+"de la misma forma. Por ejemplo, en Windows, ambos, CR y LF son necesarios para "
+"marcar el final de la línea, mientras que en Linux/UNIX sólo LF es necesario. La "
+"combinación de CR y LF es usada por ejemplo cuando se presiona 'Enter'. "
+"Dependiendo de la aplicación, presionar 'Enter' crea una nueva línea o "
+"ejecuta un comando."
+
+msgid "CRLF solution"
+msgstr ""
+"Comprobar los parámetros suministrados por el usuario y filtrar CR y LF."
+
+msgid "Cross Site Scripting description"
+msgstr ""
+"Cross-site scripting (XSS) es un tipo de vulnerabilidad que normalmente se "
+"encuentra en aplicaciones web que permiten la inyección de código malicioso "
+"en páginas que son vistas por otros usuarios. Un ejemplo es la inyección de "
+"código HTML y javascript."
+
+msgid "Cross Site Scripting solution"
+msgstr ""
+"La mejor forma de proteger una aplicación web de ataques XXS es asegurarse "
+"de que la aplicación valida todas las cabeceras, las cookies y todos los "
+"campos de los formularios (visibles y ocultos) que son enviados al servidor. "
+"También se debe validar toda la información que se manda al usuario desde el servidor "
+"para evitar que scripts inyectados puedan ejecutarse en los navegadores de otros usuarios. "
+"Una buena forma de proteger aplicaciones web de este tipo de ataques es convertir "
+"los siguientes caracteres en su equivalente en HTML: &lt;, &gt;, &amp;, &quot;, "
+"', (, ), #, %, ; , +, -."
+
+msgid "File Handling description"
+msgstr ""
+"Este ataque también se conoce como 'Path Transversal'  o 'Directory Transversal'. "
+"Su objetivo es acceder a ficheros y directorios que se encuentran fuera del "
+"directorio de la aplicación web. El atacante es capaz de acceder a los directorios "
+"del servidor utilizando distintas técnicas como por ejemplo la manipulación de "
+"variables que referencian a ficheros con secuencias de '../' para moverse por los "
+"directorios del servidor."
+
+msgid "File Handling solution"
+msgstr ""
+"Evite trabajar con información suministrada por el usuario cuando haga llamadas "
+"al sistema de ficheros. Use índices en vez de nombres o partes del nombre de los "
+"ficheros. Por ejemplo, utilice idioma=5 para acceder a la página en sueco en "
+"vez de utilizar idioma=sueco. Valide todos los parámetros suministrados por el "
+"usuario chequeando una lista de valores posibles. Utilice 'chrooted jails' y "
+"restrinja el acceso de los ficheros adecuadamente."
+
+msgid "Htaccess bypass description"
+msgstr ""
+"Los ficheros htaccess se usan para restringir el acceso de algunos ficheros o "
+"métodos HTTP. En algunos casos, es posible saltarse esta protección y acceder "
+"a los ficheros."
+
+msgid "Htaccess bypass solution"
+msgstr "Asegúrese de que todas las llamadas HTTP se prohiben en el caso en el que las credenciales sean incorrectas."
+
+msgid "Internal server error description"
+msgstr "Un error en el servidor que evita que se procese la petición puede ser una señal de que existe una vulnerabilidad."
+
+msgid "Internal server error solution"
+msgstr "Investigue los logs del servidor en busca de información más detallada sobre el error."
+
+msgid "Potentially dangerous file description"
+msgstr "Un fichero con vulnerabilidades se ha encontrado en el sitio web."
+
+msgid "Potentially dangerous file solution"
+msgstr "Asegúrese de que el script se encuentra actualizado y de que sus permisos son lo más restrictivos posible."
+
+msgid "Resource consumption description"
+msgstr "Al servidor le llevó más tiempo de lo normal el responder a una consulta. Un atacante puede utilizar esta debilidad como un arma para sobrecargar al sistema."
+
+msgid "Resource consumption solution"
+msgstr "El script en cuestión puede que esté utilizando los recursos (CPU, memoria, acceso de ficheros, base de datos…) de una manera ineficiente."
+
+msgid "SQL Injection description"
+msgstr ""
+"Las vulnerabilidades SQL permiten al atacante alterar las queries que son ejecutadas en la base de datos."
+"El atacante puede extraer o modificar la información de la base de datos o incluso obtener más privilegios en el sistema."
+
+msgid "SQL Injection solution"
+msgstr ""
+"Para protegerse de inyecciones SQL, los parámetros de usuario no se deben "
+"utilizar directamente para la crear la sentencia SQL. Esos parámetros se deben "
+"escapar o filtrar. Las consultas deben estar parametrizadas."

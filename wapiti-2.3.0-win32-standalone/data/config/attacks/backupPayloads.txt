@@ -1,0 +1,7 @@
+[FILE_NAME]~
+[FILE_NAME].backup
+[FILE_NAME].bck
+[FILE_NAME].old
+[FILE_NAME].save
+[FILE_NAME].bak
+.[FILE_NAME].swp

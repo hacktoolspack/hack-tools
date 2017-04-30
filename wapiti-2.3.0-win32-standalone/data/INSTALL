@@ -1,0 +1,41 @@
+Wapiti installation
+===================
+
+You do not have to "install" the software on your system to make it work.
+If you have all the requirements on your system, just extract the tarball and launch the "wapiti" command line in
+the "bin" folder :
+./bin/wapiti (when you are in the extracted tarball)
+or
+python bin/wapiti (if your system can't execute the script directly)
+
+
+Installation on Unix-like systems
+=================================
+
+If you really want to install Wapiti on your system, launch the setup.py script with the following command :
+python setup.py install
+It will copy the wapiti libraries (wapitiCore) in your Python installation and place the executables in a "bin" system
+directory (eg: /usr/local/bin).
+
+
+Using Wapiti on Windows systems
+===============================
+
+If you don't want to install all the requirements to use Wapiti on Windows you should look for a standalone package
+made with py2exe (see the available downloads on SourceForge).
+Then, just download and extract the zip archive and launch wapiti.exe from the Windows command line.
+
+
+Installing Wapiti requirements on Windows
+=========================================
+
+You can't install Wapiti on a Windows system but if (for some reasons) you really want to install all the
+requirements then :
+
+* Download a Python 2.7.5 (or more recent) installer for your platform from http://python.org/download/
+* Install it and change the PATH environment variable to append the Python path
+* Download a requests archive from http://docs.python-requests.org/en/latest/user/install/
+* Extract the archive and call the setup.py script from the archive with "python setup.py install"
+* Download BeautifulSoup 3 from http://www.crummy.com/software/BeautifulSoup/
+* Extract the archive and call the setup.py script from the archive with "python setup.py install"
+

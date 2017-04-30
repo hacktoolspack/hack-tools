@@ -1,0 +1,9 @@
+- Improve and add reports generators
+- Improve the javascript interpreter (lamejs) and make it DOM aware.
+- Add some tools to convert cookies from Opera/Firefox/Chrome to Wapiti json format
+- Add some tools to convert PCAP files to Wapiti XML scan format
+- Improve the SWF parser (write a little ABC interpreter ?)
+- Add a boolean-based blind SQL attack module (current module is time-based)
+- Make a GUI
+- More work on the "domain" scope
+- lswww as a module ?

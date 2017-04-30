@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wapiti scan report</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="css/kube.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/master.css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        if (!String.prototype.format) {                                                                            
+            String.prototype.format = function() {                                                                 
+                var args = arguments;                                                                            
+                return this.replace(/{(\d+)}/g, function(match, number) {                                        
+                    return typeof args[number] != 'undefined' ? args[number] : match ;                         
+                });                                                                                              
+            };                                                                                                     
+        }
+
+        function htmlspecialchars(string)
+        {
+            return $('<span>').text(string).html();
+        }
+
+        function fillReport()
+        {
+          var report_data = __JSON_DATA__ ;
+          var report_title = document.getElementById('title');
+          var details = document.getElementById('details');
+          var infos = document.getElementById('target_infos');
+          var summary = document.getElementById('summary');
+
+          // Fill the title with info about the target
+          report_title.innerHTML += report_data['infos']['target'];
+          infos.innerHTML = infos.innerHTML.replace('__DATETIME__', report_data['infos']['date']);
+          infos.innerHTML += report_data['infos']['scope'];
+
+          // Set the Wapiti version in the footer
+          document.getElementById('wapiti_link').innerHTML = report_data['infos']['version'];
+
+          var vuln_count = 0;
+          var flawTypes = ['vulnerabilities', 'anomalies'];
+          var flawFound = {'vulnerabilities': 'Vulnerability found in {0}', 'anomalies': 'Anomaly found in {0}'};
+          for(var flaw_idx=0; flaw_idx < flawTypes.length; flaw_idx++)
+          {
+            var flaw_name = flawTypes[flaw_idx];
+            for(var vuln_name in report_data['classifications'])
+            {
+              if(!report_data[flaw_name].hasOwnProperty(vuln_name)) continue;
+              var nb_vulns = report_data[flaw_name][vuln_name].length;
+              var tr = document.createElement('tr');
+              var td1 = document.createElement('td');
+              td1.setAttribute('class', 'small');
+              var td2 = document.createElement('td');
+              td2.setAttribute('class', 'small .text-centered');
+              if(nb_vulns == 0)
+              {
+                  td1.innerHTML = vuln_name;
+              }
+              else
+              {
+                  var section_link = document.createElement('a');
+                  section_link.innerHTML = vuln_name;
+                  section_link.setAttribute('href', '#vuln_type_' + vuln_count);
+                  td1.appendChild(section_link);
+              }
+              td2.innerHTML = nb_vulns;
+              tr.appendChild(td1);
+              tr.appendChild(td2);
+              summary.appendChild(tr);
+
+              if(nb_vulns == 0) continue;
+              var vuln_infos = report_data['classifications'][vuln_name];
+              var vuln_desc = vuln_infos['desc'];
+              var vuln_solution = vuln_infos['sol'];
+              var vuln_refs = vuln_infos['ref'];
+
+              // Add vuln type header
+              var h2 = document.createElement('h2');
+              h2.setAttribute('id', 'vuln_type_' + vuln_count);
+              h2.innerHTML = vuln_name;
+              details.appendChild(h2);
+
+              // Add vuln type definition
+              var dl = document.createElement('dl');
+              var dt = document.createElement('dt');
+              dt.innerHTML = "Description";
+              var dd = document.createElement('dd');
+              dd.innerHTML = vuln_desc;
+              dl.appendChild(dt);
+              dl.appendChild(dd);
+              details.appendChild(dl);
+
+              // Add vulnerabilities of this type
+              for(var i=0; i<nb_vulns; i++)
+              {
+                var vuln_obj = report_data[flaw_name][vuln_name][i];
+                var h3 = document.createElement("h3");
+                h3.innerHTML = flawFound[flaw_name].format(vuln_obj.path);
+                details.appendChild(h3);
+
+                var nav = document.createElement("nav");
+                nav.setAttribute("class", "nav-tabs");
+                nav.setAttribute("data-toggle", "tabs");
+                nav.setAttribute("data-height", "equal");
+
+                var tab_ul = document.createElement('ul');
+                var tab_li1 = document.createElement('li');
+                var tab_link1 =document.createElement('a');
+                tab_link1.innerHTML = "Description";
+                tab_link1.setAttribute("class", "active");
+                tab_link1.setAttribute("href", "#tab" + vuln_count + "-1");
+                tab_li1.appendChild(tab_link1);
+
+                var tab_li2 = document.createElement('li');
+                var tab_link2 =document.createElement('a');
+                tab_link2.innerHTML = "HTTP Request";
+                tab_link2.setAttribute("href", "#tab" + vuln_count + "-2");
+                tab_li2.appendChild(tab_link2);
+
+                var tab_li3 = document.createElement('li');
+                var tab_link3 =document.createElement('a');
+                tab_link3.innerHTML = "cURL command line";
+                tab_link3.setAttribute("href", "#tab" + vuln_count + "-3");
+                tab_li3.appendChild(tab_link3);
+
+                tab_ul.appendChild(tab_li1);
+                tab_ul.appendChild(tab_li2);
+                tab_ul.appendChild(tab_li3);
+
+                nav.appendChild(tab_ul);
+                details.appendChild(nav);
+
+                // Description div
+                var div1 = document.createElement("div");
+                div1.setAttribute("id", "tab" + vuln_count + "-1");
+                var desc_pre = document.createElement('pre');
+                desc_pre.innerHTML = vuln_obj.info;
+                div1.appendChild(desc_pre);
+
+                // HTTP Request div
+                var div2 = document.createElement("div");
+                div2.setAttribute("id", "tab" + vuln_count + "-2");
+                var http_pre = document.createElement('pre');
+                http_pre.innerHTML = htmlspecialchars(vuln_obj.http_request);
+                div2.appendChild(http_pre);
+
+                // cURL cmd div
+                var div3 = document.createElement("div");
+                div3.setAttribute("id", "tab" + vuln_count + "-3");
+                var curl_pre = document.createElement('pre');
+                curl_pre.innerHTML = htmlspecialchars(vuln_obj.curl_command);
+                div3.appendChild(curl_pre);
+
+                details.appendChild(div1);
+                details.appendChild(div2);
+                details.appendChild(div3);
+                vuln_count++;
+              }
+
+              // Add vuln type solution
+              var dl_solution = document.createElement('dl');
+              var dt_solution = document.createElement('dt');
+              dt_solution.innerHTML = "Solutions";
+              var dd_solution = document.createElement('dd');
+              dd_solution.innerHTML = vuln_solution;
+              dl_solution.appendChild(dt_solution);
+              dl_solution.appendChild(dd_solution);
+              details.appendChild(dl_solution);
+
+
+              // Add vuln type references
+              var h5 = document.createElement('h5');
+              h5.innerHTML = "References";
+              details.appendChild(h5);
+              var ul = document.createElement('ul');
+              for(var ref_desc in vuln_refs)
+              {
+                var li = document.createElement('li');
+                var ref_link = document.createElement("a");
+                ref_link.innerHTML = ref_desc;
+                ref_link.setAttribute("href", vuln_refs[ref_desc]);
+                li.appendChild(ref_link);
+                details.appendChild(li);
+              }
+              details.appendChild(document.createElement('br'));
+              details.appendChild(document.createElement('hr'));
+
+            }
+          }
+
+          kube_tabs_js = document.createElement('script');
+          kube_tabs_js.setAttribute("type", "text/javascript");
+          kube_tabs_js.setAttribute("src", "js/kube.tabs.js");
+          document.getElementsByTagName('head')[0].appendChild(kube_tabs_js);
+        }
+    </script>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body onload="fillReport()">
+    <div id="page">
+        <header id="header">
+          <h1 id="title">Wapiti vulnerability report for </h1>
+          <h1 id="target_infos" class="subheader">Date of the scan: __DATETIME__. Scope of the web scanner : </h1>
+        </header>
+        <hr />
+        <h2>Summary</h3>
+        <table class="width-100 hovered" style="background: url('logo_clear.png') no-repeat center;">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Number of vulnerabilities found</th>
+                </tr>
+            </thead>
+            <tbody id="summary">
+            </tbody>
+        </table>
+        <hr />
+        <div id="details">
+        </div>
+        <footer class="small" id="footer"><a href="http://wapiti.sf.net/" id="wapiti_link">Wapiti</a> &copy; Nicolas SURRIBAS 2006-2013</footer>
+	</div>
+</body>
+</html>
