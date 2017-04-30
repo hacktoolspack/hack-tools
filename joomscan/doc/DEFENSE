@@ -1,0 +1,16 @@
+
+HOW TO DEFENSE
+===============
+
+In case if you,guys, want to protect from OWASP Joomla! Vulnerability Scanner
+being used by malicious attackers, you may want to deploy the following free defensive solutions:
+
+1. Use the .htaccess located in the same directory
+   http://yehg.net/lab/pr0js/misc/modrewrite-securityrule.php
+    
+2. Use PHP Attack Detection Engine
+   http://yehg.net/lab/pr0js/files.php/php_brute_force_detect.zip
+
+But they are not guaranteed solutions for advanced attackers.   
+
+~Sorry for marketing voice.    

@@ -1,0 +1,86 @@
+
+OWASP Joomla! Vulnerability Scanner CHANGELOG 
+=============================================
+
+Changes in v0.0.4
+
+- Added database contribution by web-center.si
+  Total update entries are now 611.
+  Thank you, web-center, for updating!
+  
+  
+Changes in v0.0.3
+
+- updated fingerprinting signatures up to current Joomla! version 1.5.14
+- updated vulnerability information up to August 18, 2009
+
+- Implemented 200 defense bypass
+
+  This is bypass web servers which respond with 200 for every 404,  which makes the scanner,
+  produce very noisy reports about false positives. 200 defense can render today's most scanners useless.
+
+- Added more Joomla!-based firewall detection
+- Added anti-caching mechanism in update check
+- Refined HTML reporting with extremely-easy-to-deploy excellent cross-browser graphing functionality (Thanks, jscharts.com)
+- Add a beep sound after finishing the scanning. It acts like an alarm - "Scanning's over. Look the result!"
+  This is my personal preference. Running hacking tools takes long sometimes depending on
+  various situations and we can't know how long it will take and when it finishes.  
+  
+
+Changes in v0.0.2
+
+- Changed report location.
+  This version will save report under report/ directory.
+- Removed "Poke Version" -pv command option
+  Version fingerprinting is run by default now till the future versions
+  But you can skip it using -nv (No version check) option
+  
+  - improved fingerprinting engine to find more exact version and to provide most approximate version range
+  without making you calculate it anymore. Please see the sample output below:
+
+[Fingerprint in 0.0.1]
+	~Generic version family ....... [1.5.x]
+	~1.5.x htaccess.txt revealed [1.5.4 - 1.5.11]
+	~1.5.x configuration.php-dist revealed [1.5.1 - 1.5.8]
+	~1.5.x en-GB.xml revealed [1.5.2 - 1.5.6]
+	~1.5.x en-GB.ini revealed [1.5.4 - 1.5.7]
+[/Fingerprint in 0.0.1]
+For the above output, you will have to think the most approximate range again.
+
+[Fingerprint in 0.0.2]
+	~Generic version family ....... [1.5.x]
+
+	~1.5.x htaccess.txt revealed [1.5.4 - 1.5.11]
+	~1.5.x configuration.php-dist revealed [1.5.1 - 1.5.8]
+	~1.5.x en-GB.xml revealed [1.5.2 - 1.5.6]
+	~1.5.x en-GB.ini revealed [1.5.4 - 1.5.7]
+	~1.5.x admin en-GB.com_config.ini revealed [1.5.4 - 1.5.6]
+	~1.5.x admin en-GB.ini revealed [1.5.5 - 1.5.7]
+	~1.5.x adminlists.html revealed [1.5.0(stable) - 1.5.6]
+
+	* Deduced version range is : [1.5.5 - 1.5.6]
+[/Fingerprint in 0.0.1]
+You need to look at only deduced version range, which has been calculated for most approximate range.
+
+- updated fingerprinting signature up to current Joomla! version 1.5.12
+- updated vulnerability information up to July 12, 2009
+- made vulnerability information neat by labelling as Generic, Core, Component, Plugin.
+- fixed parsing bug in listing components [THANKS: Matt]
+- added components detectability in re-routed URL (/component/option,com_xxxx)
+- modified for finer report format: HTML
+- added Joomla! related firewall/defense detection
+
+
+Changes in v0.0.1
+
+- New and Improved Fingerprinting Engine ( which can almost detect exact version of Joomla 1.0.x and Joomla 1.5.x)
+- Updated database till 1.5.9
+- In database, removed substring(@@version,1,1) and employed simple blind detection approach 1=1, 1=2 to bypass IDS which prevents MySQL-sensitive words from request
+
+*Donated to OWASP in May 2009
+  - marked as OWASP brand
+  - release as version 0.0.1 beta
+
+*Initial Releases Started in December 2008*
+ - there went 1.0,1.1,1.2 
+

@@ -1,0 +1,9 @@
+
+Contributors
+===============
+
++ in version 0.0.3, Brandon Enright <bmenrigh @ ucsd.edu> helped
+    /in source code review to avoid warning messages in some circumstances:
+        - affected variables: $proxy
+        - affected functions: array_max, array_min, emacs compatible split() at htime()
+    /to add additional administrator directory probing    

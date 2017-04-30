@@ -1,0 +1,88 @@
+
+Q. Do I need Internet Connection to run the scanner?
+
+   Probably Yes or No depending on your wish.
+   
+   Yes if you want:
+   1. To update the scanner/its database (via SVN checkout/the scanner)
+   2. To test for Remote File Inclusion
+   
+Q. What's the purpose of the scanner? 
+   
+   To detect and report all possible vulnerabilities of Joomla! CMS in a pentesting approach.
+
+Q. Does it support HTTPS?
+   
+   Yes, if you have Perl LWP with HTTPS support. If you don't have, you'll get
+   error like 501 Protocol scheme 'https' is not supported
+
+Q. Why did you donate it the OWASP?
+
+   Being an OWASP asset, the project is certain to reach wide range of people as
+   OWASP chapter meetings are being held worldwide yearly. As the scanner is
+   written in a way mainly to assist pentesters, this will be useful if I
+   donate it to the OWASP. What's more, you'll achieve trust by developer communities.
+   If anyone sees this reason, they all probably want to join.
+   
+Q. How do you version your scanner? 0.0 ?
+
+   I feel the scanner needs a lot of versions passes
+   to be a full-blown Joomla! scanner. That's why I started it from 0.0.1.
+
+Q. How do you define the quality of your vulnerability scanner?
+
+   First of all, it should address a well-known existing security problems of a product.
+   As long as that product or its users exist, the tool should be updated frequently
+   after new security holes are released. Dead vulnerability scanners quickly get out of date
+   and we cannot get true benefit from it. Results from an outdated scanner are never reliable.
+   Therefore, a vulnerability scanner must be up to date along with the target product.
+  
+Q. Are there any reasons or forces that made you start the project?
+  
+   Yeah, I started 'coz I feel it's a need.
+
+   I used to use Joomla scanner from darkc0de.com but it got outdated quickly.
+   The author left update tasks to us. In addition, it focus mostly on
+   SQL injection, LFI/RFI, ..., a type of 0wnage hacking. 
+   
+   There is a need to find every published vulnerabilities about the target 
+   CMS - not only serious ones but also low/medium.
+   We need to automate it - the finding process. We need the tool that does 
+   like this. Today's web vulnerability scanners I have used use KB + fuzzing. 
+   Their KB is not complete. We can't feel easy even if we see no vulnerability 
+   reports from the scanner.
+   
+   Generic fuzzing tools can find vulnerabilities, yet it doesn't know
+   the hidden parts of a specific application. Thus, it will miss 
+   critical vulnerabilities.
+   
+   There are dozens of POC Joomla component exploits but I find it takes pain
+   to run each to confirm vulnerability.
+   
+   The hacking methodology is always the same in every surface
+   :: Recon - Enum - Exploit - Own ::
+   You defeat the enemy when you know best/most about him.
+   Unless you can collect better enough information about the target,
+   then you're blindly kicking his door. Your success is at stake.
+   When you get everything of your target at your finger tips, 
+   you can easily work out which way is
+   the best to attack it and which is more likely to be successful.
+   
+   One reason why I started the project is Joomla! is popular in top CMS applications.	
+   Creating Joomla! component is easy. Easiness leads to the plethora of components:
+   both commercial and free ones.
+   Security holes are out (nearly) each month than any other CMS. 
+   With that ever happening, Joomla! sites shown up in top google search results are 
+   getting hacked daily. There is a responsibility for the Whitehats to stop this mess!  
+
+Q. Which areas can be exploitable in Joomla!?
+	
+   First is Core, which is the Joomla! main application framework.
+   Second is Extensions (of both Joomla! core team and third-party developers), 
+    They comprise of the following:
+	  * Components
+	  * Modules
+	  * Templates
+	  * Plugins
+  No doubt, there are hundreds of extensions currently available on the web waiting for
+  exploitation. Some are free; some commercial.

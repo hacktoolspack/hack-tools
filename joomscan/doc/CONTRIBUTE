@@ -1,0 +1,31 @@
+
+How you can contribute
+----------------------------
+
+1. Send unidentified/unknown exploits 
+
+   In joomscandb.txt, search for components of whose exploits are not available 
+   Research possible exploitation points for those components.
+   Give me your findings.
+   
+   This is what I want most from you.
+   
+2. Source Code Review & Extensive Testing 
+
+   Review the source code for the best programming practices
+   to avoid unforeseen exceptions or warning messages.
+     
+   This is what you make the scanner better and better.
+   
+
+3. Donation
+
+   Developing this project has been costing a lot of days, effort 
+   and research.
+   
+   If the scanner is constantly helping you in your projects, 
+   or if your firm is deploying Joomla!-based web applications to 
+   your hundreds of clients and you are daily using the scanner, 
+   please consider donating your desired amount to the project via the PayPal to paypal at yehg.net.   
+   
+   

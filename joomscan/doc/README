@@ -1,0 +1,77 @@
+﻿
+OWASP Joomla Vulnerability Scanner README 
+http://www.owasp.org/index.php/Category:OWASP_Joomla_Vulnerability_Scanner_Project
+
+(c) 2008-2009 Aung Khant, aungkhant at yehg.net, http://yehg.net/lab
+YGN Ethical Hacker Group, Myanmar
+
+================================================================
+
+Description
+===========
+
+Joomla! is probably the most widely-used CMS out there due to its flexibility, user-friendlinesss, extensibility to name a few.So, watching its vulnerabilities and adding such vulnerabilities as KB to Joomla scanner takes ongoing activity.It will help web developers and web masters to help identify possible security weaknesses on their deployed Joomla! sites. No web security scanner is ever dedicated only one CMS. 
+
+
+DOWNLOAD LINKS
+================
+Primary
+http://yehg.net/lab/pr0js/files.php/joomscan-latest.zip
+
+Mirror
+http://sf.net/projects/joomscan
+
+
+HOW TO UPDATE
+===============
+SVN checkout is always recommended more than checking from the scanner which is
+good for new database updates and slight changes in the scanner itself.
+
+svn co https://joomscan.svn.sourceforge.net/svnroot/joomscan/trunk joomscan
+
+OR 
+joomscan.pl update
+joomscan.pl check
+
+
+WEB INTERFACE
+==============
+You can get the web interface at
+http://hackertarget.com/joomla-security-scan/.
+
+I don't have any affiliates with hackertarget.com.
+I'm not responsible for any damages you get from using hackertarget.com's.
+
+GENERAL NOTE
+============
+Result files are saved as TARGET-joexploit.htm or TARGET-joexploit.txt 
+under report/ directory of joomscan.pl .
+
+You're recommended to check updates once a month at least.
+This scanner is supposed to have abilitiy to check for both Joomla! and Mambo CMS.
+It's not perfect. You're requested to post any bugs to joomscan[4t]yehg.net.
+
+I included my accidently-found vulnerabilities in two components.
+I'm sure there are thousands unpublished out there. 
+So when you're free, play with Joomla! components and let me know your nice finds.
+
+Finally, full disclosure is the only way to stop the hole or worsen the world.
+
+
+DISCLAIMER
+============
+This scanner is intended only for testing your own Joomla web sites.
+The author nor the yehg.net is not responsible for any damages you use this tool.
+Results found using this tool are not guaranteed for accuracies or correctness.
+Use this tool at your own risk.
+ 
+ 
+PRIVACY POLICY
+===============
+The following urls are used for Joomscan update purpose:
+- http://yehg.net/lab/pr0js/tools/joomscan.pl.php
+- http://yehg.net/lab/pr0js/tools/joomscandb.php
+- http://yehg.net/lab/pr0js/tools/joomscandb-info.php
+Why do I use .php extension ? This is to prevent cache in proxy servers.
+No kind of scanning results to sent to the author. 
+

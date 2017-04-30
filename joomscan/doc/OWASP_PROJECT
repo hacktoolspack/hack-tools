@@ -1,0 +1,35 @@
+
+Project Name 
+==============
+ 	OWASP Joomla! Vulnerability Scanner
+
+OWASP Project Page 
+===================
+	http://www.owasp.org/index.php/Category:OWASP_Joomla_Vulnerability_Scanner_Project	
+
+Mailing List
+=============
+Subscribe: https://lists.owasp.org/mailman/listinfo/owasp-joomla-vulnerability-scanner
+Use: owasp-joomla-vulnerability-scanner@lists.owasp.org
+	
+Short Description
+==================
+	Joomla! is probably the most widely-used CMS out there due to its flexibility, user-friendlinesss, extensibility to name a few.So, watching its vulnerabilities and adding such vulnerabilities as KB to Joomla scanner takes ongoing activity.It will help web developers and web masters to help identify possible security weaknesses on their deployed Joomla! sites. No web security scanner is dedicated only one CMS. 
+	
+Project Lead and contact information 
+=====================================
+	Aung Khant<aungkhant[at]yehg[.]net>
+
+Project Reviewers 
+==================
+	1st Reviewer - Brad Causey 	 
+	2nd Reviewer - Matt Tesauro
+	Board Reviewer -  Tom Brenna
+	
+License
+========
+	GNU Public License version 3
+	
+Project Sponsor
+================
+	YGN Ethical Hacker Group, Myanmar

@@ -1,0 +1,27 @@
+
+OWASP Joomla Security Scanner CREDITS: 
+======================================
+
+Joomla Vulnerability information
+--------------------------------
+
+Extracted from:
+
+1. milw0rm.com 
+2. secunia.com
+3. joomlascan.com 
+4  hackturkiye.com [RFI Resource]
+5. httpscript.com [RFI Resource]
+6. darkc0de Crew darkcode.com [RFI/SQLi Resource, SQLi Matching REGEXP by rsauron]
+7. packetstormsecurity.com
+8. securitydot.net
+9. antichat.ru	
+10. my unpublished findings
+
+
+HTML Reporting
+---------------
+
++ JavaScript Graphing library from (http://jscharts.com)
+
+
