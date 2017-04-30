@@ -1,0 +1,23 @@
+OK!
+
+So BASICALLY
+
+HOIC is pretty useless
+UNLESS it is used incombination with "BOOSTERS", AKA "SCRIPTS"/BOOST PACKS / BOOM BOOM POWER
+These boosters come in the form of .HOIC scripts.
+
+
+hoic scripts are very simple and follow VB6 mixed with vb.net syntax although slightly altered
+here are the functions and globals that relate the HOIC:
+
+booster -> This is a global variable that contains the contents of the current script (string)
+Headers -> This is a global variable that is an array of strings, and will be used to form headers in requests sent to the target URL.  To add a header, simply do something like this:
+Headers.Append("User-Agent: ") or Headers.Append("User-Agent:  x" + CStr(powerFactor)
+
+lbIndex -> Index into list box (cant really be used outside of the program, useless to developers)
+PostBuffer -> String buffer containig post paramets, ie PostBuffer = "lol=2&lolxd=5"
+powerFactor -> Integer from 0-2, 0 being low, 1 being medium , 2 being high
+totalbytessent -> a count of the number of bytes sent to the target already (presistent across each attack)
+URL -> url to attack
+UsePost -> boolean, true = uses post, otherwise itll use get
+

@@ -1,0 +1,24 @@
+ThePoutred
+
+---------------
+Comment Utilisé Oppscrasher ?
+
+Avant toute chose, Désactivé votre Antivirus car il va prendre OppsCrasher comme si c'étais un virus.
+
+-1) Lancer OppsCrasher
+
+-2) Entré L'ip Victime
+
+-3) Entré le Port 80 (En général, c'est un port toujours ouvert)
+
+-4) Mettez un nombre d'attaques (Par éxemple 999999)
+
+-5) Cliquer sur entré
+
+---------------
+
+A la fin, le logiciel se ferme automatiquement ou si vous ne voulez pas attendre, quitter la fenêtre normalement
+
+Noté qu'utilisé un VPN avant de lancer OppsCrasher est plus sécurisé.
+
+C'étais ThePoutred !

