@@ -1,0 +1,3 @@
+If you are following security trends then you've probably heard about the DoS attack against major number of Apache versions by usage of specially crafted Range header (CVE-2011-3192). Based on the original PoC (killapache.pl) I've made a Python version out of it which is more user friendly and has few program workflow enhancements (automatic usage of maximum (system) allowed thread number, setting custom HTTP method (GET/HEAD/...), custom target page for retrieval, proxy support, etc.)
+
+p.s. Python v2.5.x-v2.7.x is recommended for running this tool

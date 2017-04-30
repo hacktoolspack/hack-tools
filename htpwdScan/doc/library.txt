@@ -1,0 +1,15 @@
+﻿lib目录中的文件:
+
+1. cmdline.py    解析命令行参数，校验完整性
+
+2. console_width.py    计算终端宽度，输出自适应
+
+3. encodings.py    平台相关的编码和解码，常见Windows下GBK，而Linux下UTF-8
+
+4. proxy.py    导入HTTP代理
+
+5. queue.py    生成字典队列，不会一次性导入所有数据，而是使用迭代器，在需要的时候才会有数据入列，这样就可以保证无论多大的字典，内存中也只有 线程数*2 个数据
+
+6. request_file.py    从text文件中解析并导入HTTP请求
+
+7. request.py    真正发起HTTP请求，分析HTTP响应的判断逻辑
