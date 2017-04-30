@@ -1,0 +1,948 @@
+
+URL 4:
+GET http://www.brokerslink.com/press.php?all
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 5:
+GET http://pacificcrest.com/press.php?article=2013_10_08_dlmodule.tpl
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 6:
+GET http://www.designlink.com.hk/press.php?id=12
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 7:
+GET http://www.pietrangeli.it/societa-press.php?lang=en
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 8:
+GET https://www.upwork.com/job/Word-Press-PHP-Classic-ASP-Script-need-homepage-w
+ebsite-programmed_~01f11713c64ef396ce/
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 9:
+GET http://www.uplandnyc.com/press.php?page=9
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 10:
+GET http://pacificcrest.com/press.php?article=2014_08_11_xdlrover2.tpl
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 11:
+GET http://pacificcrest.com/press.php?article=2010_05_04_ADLSentry.tpl
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 12:
+GET http://rocofilms.com/downloads/press.php?id=RO*CO Press Releases - News [ROC
+O]
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 13:
+GET https://scanurl.net/u/justabumpintheroad-com-press-php-w-61--5SB6-jMMEZjvcM2
+UsnCG
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 14:
+GET http://www.handsomeproperties.com/press.php?source=Spoleto
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 15:
+GET https://www.interstuhl.com/I/uk-en/press.php?anz=all
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 16:
+GET https://www.interstuhl.com/I/us-en/press.php?anz=50
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 17:
+GET https://www.interstuhl.com/I/us-en/press.php?anz=25
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 18:
+GET http://www.carnegiegreenaway.org.uk/press.php?release=pres_2017_nominations_
+announced.html
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 19:
+GET http://www.pacificcrest.com/press.php?article=2009_09_22_vantage.tpl
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 20:
+GET http://www.ffunsaveyouth.org/press/press.php?eid=11
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 21:
+GET http://pacificcrest.com/press.php?article=2009_07_15_link_radios.tpl
+URL 1:
+GET http://epitools.ausvet.com.au/content.php?page=FreeCalc2
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 2:
+GET http://epitools.ausvet.com.au/content.php?page=SampleSize
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 3:
+GET http://epitools.ausvet.com.au/content.php?page=z-test-2
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 4:
+GET http://epitools.ausvet.com.au/content.php?page=1Proportion
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 5:
+GET http://epitools.ausvet.com.au/content.php?page=CIProportion
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 6:
+GET http://epitools.ausvet.com.au/content.php?page=HerdSens4
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 7:
+GET http://epitools.ausvet.com.au/content.php?page=PrevalenceSS
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 8:
+GET http://epitools.ausvet.com.au/content.php?page=OneTest
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 9:
+GET http://epitools.ausvet.com.au/content.php?page=SurveyToolbox
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 10:
+GET https://www.ourdocuments.gov/content.php?page=search
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 11:
+GET http://epitools.ausvet.com.au/content.php?page=TruePrevalence
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 12:
+GET http://epitools.ausvet.com.au/content.php?page=FreeCalc1
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 13:
+GET http://epitools.ausvet.com.au/content.php?page=2Proportions
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 14:
+GET https://www.ourdocuments.gov/content.php?page=milestone
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 15:
+GET https://www.ourdocuments.gov/content.php?page=resources
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 16:
+GET http://www.ccsinfo.com/content.php?page=compilers
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 17:
+GET http://www.birdsofparadiseproject.org/content.php?page=98
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 18:
+GET http://www.westmountainradio.com/content.php?page=wmr-downloads
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 19:
+GET http://neahu.org/content.php?page=Omaha_Chapter
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 20:
+GET http://ocasla.com/content.php?page=LA_CES___Landscape_Architecture_Continuin
+g_Education_System
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 21:
+GET https://themegrill.com/support-forum/topic/single-page-uses-content-php-not-
+content-single-php/
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 22:
+GET http://www.gracelin.com/content.php?page=presskit
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 23:
+GET http://www.gracelin.com/content.php?page=wherethemountainmeetsthemoon
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 24:
+GET https://www.ourdocuments.gov/content.php?page=about
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 25:
+GET https://www.ourdocuments.gov/content.php?page=privacy
+URL 26:
+GET https://www.ourdocuments.gov/content.php?page=why_these_100
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 27:
+GET http://epitools.ausvet.com.au/content.php?page=TestsHome
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 28:
+GET http://www.birdsofparadiseproject.org/content.php?page=120
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 29:
+GET http://mspe.org/content.php?page=st._louis_chapter
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 30:
+GET http://www.birdsofparadiseproject.org/content.php?page=61
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 31:
+GET http://www.rajar.co.uk/content.php?page=listen_market_trends
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 32:
+GET http://www.phectnepal.org/content.php?page=kmh
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 33:
+GET http://aapipara.starchapter.com/content.php?page=Certification_Program
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 34:
+GET https://www.fortmyerstech.edu/content.php?page=17
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 35:
+GET http://ghost.vplay.in.th/content.php?page=downloadgame.html
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 36:
+GET http://www.foosball.com/content.php?page=3
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 37:
+GET https://www.vbulletin.com/forum/forum/vbulletin-4/vbulletin-4-questions-prob
+lems-and-troubleshooting/349097-content-php-page-is-blank
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 38:
+GET http://womensfictionwriters.starchapter.com/content.php?page=Workshops
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 39:
+GET http://dmm.vplay.in.th/content.php?page=download_game.html
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 40:
+GET http://www.rajar.co.uk/content.php?page=about_key_facts_how
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 41:
+GET http://p.feedblitz.com/t3.asp?/424823/0/0_/jewishlibraries.org/content.php?p
+age=Upcoming_Conference
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 42:
+GET http://triangleadfed.com/content.php?page=American_Advertising_Awards
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 43:
+GET https://oscarliang.com/six-ways-retrieving-webpage-content-php/
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 44:
+GET http://nishrm.starchapter.com/content.php?page=Awards___Scholarships
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 45:
+GET http://stackoverflow.com/questions/11363022/get-url-content-php
+URL 46:
+GET http://cantoncommunity.starchapter.com/content.php?page=Dypski_Park
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 47:
+GET https://www.ourdocuments.gov/content.php?page=vote_comments
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 48:
+GET http://www.westmountainradio.com/content.php?page=links
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 49:
+GET http://www.ccsinfo.com/content.php?page=mplab_support
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 50:
+GET http://epitools.ausvet.com.au/content.php?page=chi_sq
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 51:
+GET http://gmwgroup.harvard.edu/content.php?page=contact
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 52:
+GET http://jewishlibraries.org/content.php?page=AJL_News___AJL_Review_Archive
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 53:
+GET http://www.birdsofparadiseproject.org/content.php?page=111
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 54:
+GET http://cfe-arizona.org/content.php?page=Scholarships___Grants
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 55:
+GET https://www.vbulletin.com/forum/forum/vbulletin-4/vbulletin-4-questions-prob
+lems-and-troubleshooting/342579-problems-with-renaming-the-content-php-page
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 56:
+GET http://alsfindingacure.org/content.php?page=videos
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 57:
+GET http://www.foosball.com/content.php?page=107
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 58:
+GET http://www.foosball.com/content.php?page=106
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 59:
+GET http://www.foosball.com/content.php?page=119
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 60:
+GET http://clinical-anatomy.org/content.php?page=Anatomical_Services_Commitee
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 61:
+GET http://clinicalanatomymeetings.org/content.php?page=Associate_Member_Awards
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 62:
+GET http://www.ccsinfo.com/content.php?page=compexamples
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 63:
+GET http://www.chro2017.com/content.php?PAGE=3
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 64:
+GET http://wordpress.stackexchange.com/questions/102425/what-is-content-php-file
+-that-is-needed-for-jetpack-infinite-scroll-plugin
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 65:
+GET http://gmwgroup.harvard.edu/content.php?page=gwhitesideshttp://gmwgroup.harv
+ard.edu/content.php?page=gwhitesides
+URL 1:
+GET http://www.techrepublic.com/forums/discussions/repair-names-nsf-file-from-lo
+tus-notes/
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 2:
+GET https://www.sencha.com/forum/showthread.php?83264-Session-js-run-as-web-suse
+r-names-nsf
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 3:
+GET http://viskogen.pool.se/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 4:
+GET http://mail2.rcgit.com/names.nsf?Login
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 5:
+GET http://140.116.19.73/library/editor/components/com_artlinks/modules/vwar/adm
+in/bb_usage_stats/include/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 6:
+GET http://intranet.generagroup.com.mx/names.nsf?OpenDataBase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 7:
+GET http://tm-catcher-01.pao.pch.net/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 8:
+GET http://text.dgplug.org/iisadmpwd/administrator/components/com_cropimage/incl
+ude/components/com_performs/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 9:
+GET http://66.228.42.186/view/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 10:
+GET http://37.235.52.29/gs/.br/wps/portal/\"ftp://includes/log/names.nsf?opendat
+abase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 11:
+GET http://192.121.47.111/cricket/sources/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 12:
+GET http://185.14.187.113/bb_lib/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 13:
+GET http://103.224.193.175/.br/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 14:
+GET http://216.27.43.20/php-myadmin/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 15:
+GET http://185.135.158.29/es/textpattern/fcgi-bin/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 16:
+GET http://oldiebutanewd.com/cgi-bin/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 17:
+GET http://andav16.kohensistemas.com.br/eprise/classes/adodbt/suse/perl/names.ns
+f?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 18:
+GET http://andav16.kohensistemas.com.br/iisadmpwd/exchweb/bin/auth/includes/name
+s.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 19:
+GET http://dev.owlcraft.ru/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 20:
+GET http://kareem-saleh.com/tag/scrum/textpattern/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 21:
+GET http://zeppa.in/myPHPCalendar/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 22:
+GET http://151.236.26.208/cgi-bin/enc/zentrack/support/mailling/maillist/inc/com
+ponents/com_simpleboard/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 23:
+GET http://134.208.12.127/admin/administrator/components/com_mgm/interna/tiny_mc
+e/plugins/ibrowser/docushare/dsweb/gs/includes/cgi-bin/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 24:
+GET http://134.208.12.127/mobile/exchweb/bin/auth/lib/docushare/dsweb/coppercop/
+names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 25:
+GET http://sff.colensoproximity.co.nz/msadc/Samples/SELECTOR/default.asp/names.n
+sf?opendatabase
+URL 26:
+GET http://103.224.193.145/docs/perl/administrator/components/com_linkdirectory/
+components/com_galleria/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 27:
+GET http://103.224.192.167/administrator/db/vsadmin/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 28:
+GET http://www2.eppusoocer.org/administrator/components/com_uhp/names.nsf?openda
+tabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 29:
+GET http://65.129.98.73/mysql-admin/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 30:
+GET http://104.199.175.255/NSearch/includes/components/com_mtree/Savant2/names.n
+sf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 31:
+GET http://54.207.26.9/system/z_editor/modules/AllMyGuests/support/mailling/mail
+list/inc/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 32:
+GET http://54.207.26.9/mobile/\"/axs/cgi-bin/interna/tiny_mce/plugins/ibrowser/1
+220/.br/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 33:
+GET http://it.toyvpn.com/eprise/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 34:
+GET http://203.145.203.13/sql/sql/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 35:
+GET http://smartgrid-telemetry.com/shoutbox/administrator/components/com_peopleb
+ook/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 36:
+GET http://151.236.18.211/include/administrator/components/com_webring/modules/c
+oppermine/themes/coppercop/inc/header.php/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 37:
+GET http://216.27.43.20/ConnectComputer/impex/perl/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 38:
+GET http://www2.eppusoocer.org/vsadmin/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 39:
+GET http://www.iloveabba.info/login_out/perl/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 40:
+GET http://196.6.220.15/NSearch/sQuery/lib/modules/vwar/admin/administrator/comp
+onents/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 41:
+GET http://196.6.220.15/cgi-bin/components/com_artlinks/support/mailling/maillis
+t/inc/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 42:
+GET http://193.95.106.249/loginflat/perl/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 43:
+GET http://zeppa.in/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 44:
+GET http://hackthewallet.com/includes/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 45:
+GET http://zeppa.io/_layouts/names.nsf?opendatabase
+URL 46:
+GET http://minecraft.majidev.com/interna/tiny_mce/plugins/ibrowser/enc/names.nsf
+?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 47:
+GET http://196.6.220.15/view/components/com_simpleboard/\"/axs/interna/tiny_mce/
+plugins/ibrowser/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 48:
+GET http://sff.colensoproximity.co.nz/phpSysInfo/interna/tiny_mce/plugins/ibrows
+er/cgi-bin/administrator/components/com_linkdirectory/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 49:
+GET http://sff.colensoproximity.co.nz/components/com_simpleboard/names.nsf?opend
+atabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 50:
+GET http://sff.colensoproximity.co.nz/utilities/8003/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 51:
+GET http://153.122.76.220/db/websql/vsadmin/inc/axis-cgi/1220/inc/cmses/names.ns
+f?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 52:
+GET http://153.122.76.220/db/websql/vsadmin/inc/axis-cgi/1220/inc/cmses/newslett
+er/admin/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 53:
+GET http://www.bot4.me/scripts/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 54:
+GET http://globen.pool.se/cgi-bin/inc/components/com_forum/names.nsf?opendatabas
+e
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 55:
+GET http://www.iloveabba.info/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 56:
+GET http://www2.eppusoocer.org/becommunity/community/components/com_extended_reg
+istration/hp/device/bb_usage_stats/include/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 57:
+GET http://smartgrid-telemetry.com/manage/fckeditor/editor/lib/names.nsf?opendat
+abase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 58:
+GET http://smartgrid-telemetry.com/wps/portal/Activex/pls/admin_/names.nsf?opend
+atabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 59:
+GET http://smartgrid-telemetry.com/Citrix/MetaFrame/default/includes/editor/name
+s.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 60:
+GET http://www.chriskxu.me/"bookmark.htm/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 61:
+GET http://151.236.26.208/phpwcms/include/inc_ext/spaw/dialogs/administrator/com
+ponents/com_mgm/m2f/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 62:
+GET http://151.236.26.208/forum/components/com_cpg/fcgi-bin/names.nsf?opendataba
+se
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 63:
+GET http://151.236.26.208/etc/tmp/pivot/modules/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 64:
+GET http://151.236.26.208/cgi-bin/enc/zentrack/phpwcms/include/inc_ext/spaw/dial
+ogs/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 65:
+GET http://www.hippapros.com/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 66:
+GET http://hippapros.com/category/hippa-blog/classes/adodbt/names.nsf?opendataba
+se
+URL 67:
+GET http://smartgrid-telemetry.com/cgi-bin/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 68:
+GET http://140.116.19.73/kcfinder/m2f/search/\"/*/_vti_pvt/names.nsf?opendatabas
+e
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 69:
+GET http://119.9.89.24/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 70:
+GET http://36018.com_www.12269.com/live-support/inc/wps/portal/names.nsf?opendat
+abase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 71:
+GET http://153.122.76.220/modules/newbb_plus/class/Citrix/MetaFrame/default/inc/
+suse/administrator/components/com_remository/axis-cgi/phpSysInfo/comments/Connec
+tComputer/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 72:
+GET http://p3.tulou.io/components/com_mtree/Savant2/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 73:
+GET http://140.116.19.73/zentrack/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 74:
+GET http://140.116.19.73/forum/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 75:
+GET http://140.116.19.73/tools/admin/perl/aol*/_do/components/com_mtree/Savant2/
+include/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 76:
+GET http://centauro.ii.uam.es/cgi-bin/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 77:
+GET http://sff.colensoproximity.co.nz/cgi-bin/phpwcms/include/inc_ext/spaw/dialo
+gs/includes/modules/vwar/admin/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 78:
+GET http://37.235.52.29/recipes/components/com_extcalendar/vsadmin/\"newsletter/
+admin/wps/portal/newsletter/admin/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 79:
+GET http://www.chriskxu.me/admin/ovcgi/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 80:
+GET http://blog.improbablecomics.com/galeria/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 81:
+GET http://blog.improbablecomics.com/galeria/wwwroot/utilities/ConnectComputer/b
+b_usage_stats/include/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 82:
+GET http://blog.improbablecomics.com/cgi-bin/gs/inc/header.php/impex/names.nsf?o
+pendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 83:
+GET http://140.118.43.18/session/phpwcms/include/inc_ext/spaw/dialogs/hp/device/
+aol*/_do/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 84:
+GET http://140.118.43.18/includes/vsadmin/administrator/components/com_cropimage
+/exchweb/bin/auth/components/com_rsgallery/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 85:
+GET http://140.118.43.18/bin/classes/adodbt/components/com_forum/ConnectComputer
+/\"plog/includes/docushare/dsweb/names.nsf?opendatabase
+do you want to test this URL? [Y/n/q]
+> n
+
+URL 86:
+GET http://internet-download-manager.majidev.com/cgi-bin/Citrix/MetaFrame/defaul
+t/names.nsf?opendatabase
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
