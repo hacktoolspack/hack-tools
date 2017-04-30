@@ -1,0 +1,145 @@
+{
+    "lan":
+	[
+        {
+            "name": "gitlab",
+            "body": "GitLab Community Edition|navbar-gitlab|gon.default_issues_tracker|gon.api_version"
+        },
+        {
+            "name": "hadoop",
+            "body": "hadoop-st.png|dr.who|About Apache Hadoop"
+        },
+        {
+            "name": "confluence",
+            "body": "Atlassian Confluence|confluence-context-path"
+        },
+        {
+            "name": "solr",
+            "body": "Apache SOLR"
+        },
+        {
+            "name": "spark",
+            "body": "Spark Master|spark://"
+        },
+        {
+            "name": "splunk",
+            "body": "Splunk.util.normalizeBoolean"
+        },
+        {
+            "name": "resin",
+        },
+        {
+            "name": "reviewBoard",
+            "header":
+            [
+                {
+                    "set-cookie": "Resin"
+                }
+            ]
+        },
+        {
+            "name": "phpmyadmin",
+            "body": "phpmyadmin.css.php|alt=\"phpMyAdmin\""
+        },
+        {
+            "name": "zabbix",
+            "header":
+            [
+                {
+                    "set-cookie": "zbx_sessionid"
+                }
+            ]
+        },
+        {
+            "name": "visualsvn",
+            "body": "VisualSVN Server"
+        },
+        {
+            "name": "vmware",
+            "body": "ID_EESX_Welcome|ID_ESX_VCServerDesc|ID_ESX_VIClientDesc|VMware ESXi provides a highly"
+        },
+        {
+            "name": "jenkins",
+            "body": "Jenkins|asynchPeople|Jenkins ver|projectRelationship",
+            "header": [
+
+            ]
+        }
+    ],
+    "language":
+	[
+        {
+            "name": "jsp",
+            "header":
+            [
+                {
+                    "set-cookie": "JSESSIONID|JServSessionId"
+                }
+            ]
+        },
+        {
+            "name": "asp",
+            "header":
+            [
+                {
+                    "set-cookie": "ASPSESSIONID"
+                }
+            ]
+        },
+        {
+            "name": "aspx",
+            "header":
+            [
+                {
+                    "set-cookie": "ASP.NET_SessionId"
+                }
+            ]
+        },
+        {
+            "name": "php",
+            "header":
+            [
+                {
+                    "set-cookie": "PHPSESSION|PHPSESSID|.php"
+                }
+            ]
+        },
+        {
+            "name": "python",
+            "header":
+            [
+                {
+                    "set-cookie": "pysid"
+                }
+            ]
+        }
+    ],
+    "framework":
+	[
+        {
+            "name": "struts2",
+            "header":
+            [
+                {
+                    "body": "Jenkins|asynchPeople|Jenkins ver|projectRelationship"
+                }
+            ]
+        }
+    ],
+    "webserver":
+	[
+        {
+            "name": "apache",
+            "header":
+            [
+                {
+                    "set-cookie": "Apache"
+                }
+            ]
+        },
+        {
+            "name": "WebSphere",
+            "body": "Ltpatoken|Ltpatoken2|LtpatokenExpiry|LtpatokenUsername|DomAuthSessID"
+        }
+    ]
+}

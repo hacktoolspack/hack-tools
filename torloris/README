@@ -1,0 +1,6 @@
+This is an implmentation of Robert "RSnake" Hansen's
+SlowLoris attack tool (http://ha.ckers.org/slowloris/) using
+multiple tor proxies locally to obfuscate the attacker.
+
+Please don't actually use this. It was created as a learning exercise 
+and I'm leaving the source up here for posterity. 

