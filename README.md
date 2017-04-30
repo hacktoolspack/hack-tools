@@ -12,5 +12,5 @@ install perl modules: cpan install
 
 PENTESTBOX DOWNLOAD: 
 https://sourceforge.net/projects/pentestbox/files/PentestBox-v2.2.exe/download
-PENTESTBOX METASPLOIT DOWNLOAD:
+PENTESTBOX METASPLOIT PENTESTBOX DOWNLOAD:
 https://sourceforge.net/projects/pentestbox/files/PentestBox-with-Metasploit-v2.2.exe/download
