@@ -7,10 +7,4 @@ run to cmd,pentestbox...
 
 run python cmd: py file.py
 run perl: perl file.pl
-install perl modules: cpan install 
-
-
-PENTESTBOX DOWNLOAD: 
-https://sourceforge.net/projects/pentestbox/files/PentestBox-v2.2.exe/download
-PENTESTBOX METASPLOIT PENTESTBOX DOWNLOAD:
-https://sourceforge.net/projects/pentestbox/files/PentestBox-with-Metasploit-v2.2.exe/download
+install perl modules: cpan install
