@@ -1,0 +1,63 @@
+Version 0.3
+===========
+
+	+ Added support for cookie injections.
+	+ Added support for injections that return binary data. 
+	+ Changed the output mechanism.
+	+ Enhanced exception handling mechanism.
+	+ Changed filtering mechanism.
+	+ Added several query filters.
+	+ Added uri_changer request filter.
+	+ Added some response filters.
+	+ Improved encoding detection algorithm.
+	+ Added DBMS user credentials listing.
+	+ Enhanced CLI parser.
+	+ Done major refactoring to the code.
+	
+
+Version 0.2.6
+=============
+
+    + Fixed bug when falling back to blind mode.
+    + Fixed bug when URL given had no parameters.
+    + Fixed bugs in prefix, suffix and cookie commands.
+    + Fixed bug when parsing empy parameters and had &.
+
+
+Version 0.2.5
+=============
+
+    + Major fix to make the mole work in Windows.
+    + Added support for exploiting SQL Injections through POST.
+    + Added incoming data filtering mechanism.
+    + Added query filtering/mangling mechanism.
+    + Added support for SSL.
+    + Added support to add/modify/delete HTTP headers in the requests.
+    + Added support for recursive structure dumping.
+    + Added support to limit the number of rows to be retrieved.
+    + Added support to skip the first N registers using 'offset' in the
+        query.
+    + Shows percentage of query already retrieved.
+    + Added support to use the * operator for queries.
+    + Fixed XML Importation/Exporation.
+    + The mole falls back to blind mode if union mode can't be exploited.
+    + Added better exception handling system.
+    + Added support for HTTP Basic Access Authentication.
+    + Refactored code.
+
+Version 0.2
+===========
+
+    + Added integer union sql injection exploitation support.
+    + Added early DBMS Detection.
+    + Added import command (only XML format supported).
+    + Added export command (only XML format supported).
+    + Added find_tables command.
+    + Added find_tables_like command.
+    + Added find_users_table command.
+    + Added readfile command (only supported in MySQL).
+    + Added xml import and export support.
+    + Fixed gathering of schemas, tables and columns in SQL Server.
+    + Fixed dumping bugs in Postgres.
+    + Fixed other minor bugs.
+
