@@ -1,0 +1,62 @@
+Changelog:
+Date 08/01/2015
+[FUNC] Remote Desktop has been recoded and is now using Direct2D. A hardware accelerating technology. Provide high peformance!
+[FUNC] Clipboard logger has been added.
+[FUNC] Client System Information has been added.
+[FUNC] Anti VM has been added.
+
+Date 07/02/2015
+[FUNC] System -> Power - Shut down, restart, sleep, log off and hibernate has been added.
+[FIX ] Password Recovery has been recoded.
+[FIX ] Icon changer now works properly.
+
+Date 05/26/2015
+[FUNC] Remote Shell has been added.
+[FUNC] Hosts Editor has been added.
+[FIX ] A minor issue which caused the entire babylon to crash has been fixed.
+
+Date 05/12/2015
+[FIX ] Installer has been fixed.
+[GUI ] A status bar has been added to the Password Recovery.
+[GUI ] Added tooltips to the builder instead of text, "unnecessary clutter". Just hover over a particular feature and it will tell what it does.
+
+Date 05/11/2015
+[FUNC] Password recovery is remade, supports now Chrome, Firefox, IE, Opera and Safari.
+[FIX ] Remote Desktop has been optimized.
+[GUI ] Start and stop button has been merged together in the Live Keylogger.
+
+Date 04/15/2015
+[FUNC] Idle status added.
+[FUNC] Uptime status added.
+[FIX ] On some PC's it kept spamming "A Babylon RAT client has been accepted and decrypted", this has now been fixed.
+
+Date 04/12/2015
+[FIX ] Password Recovery now fully automated - do not support "Send to All".
+[FIX ] Taking screenshots is now fixed.
+[FIX ] Remote Desktop should no longer cause random crashes.
+[FUNC] Keylog option now added to the builder.
+
+Date 04/08/2015
+[FIX ] Save option in the builder is now working properly.
+
+Date 04/07/2015
+[FIX ] Fixed parts of the remote desktop, still not complete as I still experience some issues but its rarely.
+[FIX ] Fixed Update function for mass sending.
+[FIX ] Optimized remote file explorer, still gonna make some further adjustments.
+[FUNC] Added password recovery for chrome and mozilla firefox.
+[FUNC] Added new password recovery tab, gather all recovered passwords with the ability to copy, clear and save all into a txt file.
+[GUI ] Adjusted the GUI for the builder, settings->networking & settings->Misc.Had a scaling issue on my laptop.
+[FUNC] Added offline/online keylogger, enable/disable, check logs or delete current logs. Logs are stored on client side.
+
+Date 02/24/2015
+[FUNC] Monitor your clients keystrokes (UNICODE) from an inbuilt user interface. Start, Stop monitoring or save the current session in a .txt file and with the ability to monitor multiple clients at once.
+[FIX ] Minor fix in the Uninstallation feature.
+[GUI ] Minor GUI adjustment for the Chat box.
+
+Date 01/29/2015
+[FIX ] The option Installation when building a client is now working properly (used for auto startup).
+
+Date 01/22/2015
+[FUNC] Added FPS to the remote desktop. You're now able to see the FPS while streaming.
+[FIX ] Minor bug for the creation of reverse proxies (Enable Authorization will now allow the textfield for username and password to accept inputs).
+[DEL ] Miner has been removed but will be re-added on a later moment with an update.
