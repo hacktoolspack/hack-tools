@@ -1,0 +1,5 @@
+This tool was created to test the recently released information regarding POST attacks on HTTP servers (for more info read: http://xpnsbraindump.blogspot.com/2010/11/http-gets-new-form-of-attack.html).
+
+This is a quick and dirty way of doing this by spawning multiple threads and holding POST sessions opened. I have successfully tested this tool on a test HTTP server on my network.
+
+Please do not use this tool for malicious purposes. There is no redirection present, the User-Agent is easily recognisable and you WILL (and should) get caught.

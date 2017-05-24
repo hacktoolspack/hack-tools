@@ -1,0 +1,30 @@
+#!/usr/bin/python2.7
+#-*- encoding: utf-8 -*-
+
+import sys
+import os
+import random
+import string
+
+__author__ = "Damian Kęska"
+__license__ = "LGPLv3"
+__maintainer__ = "Damian Kęska"
+__copyright__ = "Copyleft by Panthera Team"
+
+# get current working directory to include local files (debugging mode)
+t = sys.argv[0].replace(os.path.basename(sys.argv[0]), "") + "lib/"
+
+if os.path.isdir(t):
+    sys.path.append(t)
+    
+import pantheradesktop.kernel
+from udos.main import udosApp
+from udos.args import udosArgsParsing
+
+# initialize app based on Panthera Desktop Framework
+kernel = udosApp()
+kernel.coreClasses['argsparsing'] = udosArgsParsing
+kernel.coreClasses['gui'] = None # disable gui
+kernel.coreClasses['db'] = None # disable gui
+kernel.initialize(quiet=True)
+kernel.main(kernel.udosMain)

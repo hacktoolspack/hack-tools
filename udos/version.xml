@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<informations>
+	<platforms>
+		<platform>Linux</platform>
+		<platform>BSD</platform>
+		<platform>MacOS</platform>
+		<platform>Windows</platform>
+	</platforms>
+
+	<version>2.0</version>
+	<mirrors>
+		<mirror>git://github.com/webnull/udos.git</mirror>
+	</mirrors>
+
+	<developers>
+		<developer>WebNuLL</developer>
+	</developers>
+
+	<contact>
+		<contact_im type="mail">webnull.www@gmail.com</contact_im>
+		<contact_im type="jabber">webnull@ubuntu.pl</contact_im>
+		<contact_im type="website">http://webnull.kablownia.org</contact_im>
+	</contact> 
+</informations>
