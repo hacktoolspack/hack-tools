@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Virus Hunter.exe" version="1.0.0.0" publicKeyToken="5f413d45924f347b" language="fr-FR" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Virus Hunter" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="Virus Hunter.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- Options du manifeste de contrôle de compte d'utilisateur
+             Si vous souhaitez modifier le niveau du contrôle de compte d'utilisateur Windows, remplacez le nœud 
+
+             requestedExecutionLevel par l'une des propositions suivantes.
+        <requestedExecutionLevel  level="asInvoker"  uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator"  uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable"  uiAccess="false" />
+
+            La spécification du nœud requestedExecutionLevel désactivera la virtualisation de fichiers et du Registre.
+            Si vous souhaitez utiliser la virtualisation de fichiers et du Registre pour la compatibilité 
+            descendante, supprimez le noeud requestedExecutionLevel.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Virus Hunter.exe" size="22528">
+      <assemblyIdentity name="Virus Hunter" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>nmk1NBjRJ9UQ7jsSiGtGPpSaApQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- Une liste de toutes les versions de Windows avec laquelle cette application peut fonctionner. Windows sélectionnera automatiquement l'environnement le plus compatible.-->
+      <!-- Si votre application est conçue pour fonctionner avec Windows 7, supprimez les commentaires du nœud supportedOS suivant-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=NONO-PC\liloo" issuerKeyHash="801b8f86f5ca1ecf5f682395003370ac71a9c700" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>KqupASz8VCWtZA0n7R73xlOBKUo=</DigestValue></Reference></SignedInfo><SignatureValue>e6kVPLxYuO6iZkYsM19d5AAZyXEfHiw+73pQKVjaC3WCmWDsNXX5TE2QNTUHIk0rEokiym28XVJgfF+ws4dMl/iX/tJQu1ES/4GrOCXhpiBKS0PGOVXjmeJH+mIA96Sgq57XCHkYG37ntyJHoU7x5d4q3EPTAEYen25EaMak9TQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>pF7CsxycMebyEBq25xBlnLUkUok4GOIroYzP7aK8fO8RN+HU7PacZMH4tBEPSsdSkJVbEXtxJsmU+rKjcfAkjw7BRlWHnvfwzSlVpQBjwgnrRWy82fcsPbBniRW+SQ7NJqAg+P4H5QrOOIfu+6cT2qS4AcfjytCJ961J/amCrF8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="4a298153c6f71eed270d64ad2554fc2c01a9ab2a" Description="" Url=""><as:assemblyIdentity name="Virus Hunter.exe" version="1.0.0.0" publicKeyToken="5f413d45924f347b" language="fr-FR" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=NONO-PC\liloo</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>/d34nrwp5+wG6Ez6pEBwwGJXWtQ=</DigestValue></Reference></SignedInfo><SignatureValue>RrNiayr99VUUIHUmUmFxrZp0p8h1BOXeWnhDADn/CDcZQ5jgSSeyb68G5S2VREgyQveRBf5rSD547C56028AslLz0k9FHcJQbGAxquS3EfY4ihzeCck4FmNaIpJR81jzBbELv8Ziot7Y9jjl4cLoEh8/EHYX1wQzWOXDOIC/rek=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>pF7CsxycMebyEBq25xBlnLUkUok4GOIroYzP7aK8fO8RN+HU7PacZMH4tBEPSsdSkJVbEXtxJsmU+rKjcfAkjw7BRlWHnvfwzSlVpQBjwgnrRWy82fcsPbBniRW+SQ7NJqAg+P4H5QrOOIfu+6cT2qS4AcfjytCJ961J/amCrF8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBzTCCATagAwIBAgIQZbjPwM4oCYZJhjoEkX10EzANBgkqhkiG9w0BAQUFADAlMSMwIQYDVQQDHhoATgBPAE4ATwAtAFAAQwBcAGwAaQBsAG8AbzAeFw0xNzA1MjkyMTMzNDBaFw0xODA1MzAwMzMzNDBaMCUxIzAhBgNVBAMeGgBOAE8ATgBPAC0AUABDAFwAbABpAGwAbwBvMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCkXsKzHJwx5vIQGrbnEGWctSRSiTgY4iuhjM/torx87xE34dTs9pxkwfi0EQ9Kx1KQlVsRe3EmyZT6sqNx8CSPDsFGVYee9/DNKVWlAGPCCetFbLzZ9yw9sGeJFb5JDs0moCD4/gflCs44h+77pxPapLgBx+PK0In3rUn9qYKsXwIDAQABMA0GCSqGSIb3DQEBBQUAA4GBAInjfeLx9RdTXf9uCosq3/dKr2gmzDJjRQUehXC+PgpAM/lN7FY3YBIi/J03WwE51Z2x2JhgtFtTUsOY023U56a+7vlYuHuENB4oASbX87GTrfPdVxqgMgZSaOUVVwLRbM94Z6uipP7l33DXOMWqiersSz+PqMIc+UkLZTK107bZ</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Basic Express 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Virus Hunter", "Virus Hunter\Virus Hunter.vbproj", "{D552C0A3-BD70-4CAD-8E1A-0DB5D7C5F3E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D552C0A3-BD70-4CAD-8E1A-0DB5D7C5F3E1}.Debug|x86.ActiveCfg = Debug|x86
+		{D552C0A3-BD70-4CAD-8E1A-0DB5D7C5F3E1}.Debug|x86.Build.0 = Debug|x86
+		{D552C0A3-BD70-4CAD-8E1A-0DB5D7C5F3E1}.Release|x86.ActiveCfg = Release|x86
+		{D552C0A3-BD70-4CAD-8E1A-0DB5D7C5F3E1}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
