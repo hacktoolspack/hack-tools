@@ -12,6 +12,4 @@ install perl modules: cpan install
 download malware remover: http://www.mediafire.com/file/7zohclaa9jj8e93/malware+remover.exe
 Download Pentestbox metasploit:link comming soon
 
-Size of hack tools: 55,3 mb
-
 
