@@ -1,0 +1,63 @@
+
+Version 2.1 released on 2004-10-01. Changes from version 2.0.2:
+
+        * added 11g and WPA detection support in airodump
+
+        * aircrack automatically avoids using WPA IVs
+
+        * aircrack can break 256-bit and 512-bit WEP keys
+
+        * win32 - fixed yet again the "missed IVs" bug
+
+        * win32 - ported the 802ether WEP decryptor program
+
+Version 2.0.2 released on 2004-09-24. Changes from version 2.0.1:
+
+        * win32 - added the WZCOOK key recovery program
+
+        * fixed a bug in the BSSID iteration code in airodump
+
+        * completely rewrote the documentation, moved to /docs
+
+Version 2.0.1 released on 2004-09-21. Changes from version 2.0:
+
+        * win32 - fixed the channel reset bug
+
+        * win32 - fixed the "missed IVs"  bug
+
+        * win32 - rewrote drivers.txt
+
+Version 2.0 released on 2004-09-03. Changes from version 1.4:
+
+        * native win32 port of airodump and aircrack
+
+        * aireplay better spots potential arp-requests
+
+Version 1.4 released on 2004-08-26. Changes from version 1.3:
+
+        * fixed check_wepkey, works with exotic LLC headers
+
+        * airodump prints lots of information, Kismet-style
+
+Version 1.3 released on 2004-08-19. Changes from version 1.2:
+
+        * bugfixed and improved KoreK's code
+
+	* renamed airunwep to 802ether
+
+Version 1.2 released on 2004-08-17. Changes from version 1.1:
+
+        * implemented KoreK's advanced WEP attacks
+
+        * completely rewrote the SMP engine
+
+Version 1.1 released on 2004-08-11. Changes from version 1.0:
+
+        * implemented WEP arp-requests replay attack
+
+        * improved the fudge calculation algorithm
+
+        * added multi-processor support
+
+Version 1.0 released on 2004-07-29
+

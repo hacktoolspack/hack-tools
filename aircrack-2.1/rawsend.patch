@@ -1,0 +1,12 @@
+diff -r -u ../hostap-driver-0.2.4~/driver/modules/hostap_80211_tx.c ./driver/modules/hostap_80211_tx.c
+--- ../hostap-driver-0.2.4~/driver/modules/hostap_80211_tx.c	Tue Jul  6 01:45:01 2004
++++ ./driver/modules/hostap_80211_tx.c	Thu Aug  5 17:06:44 2004
+@@ -466,7 +466,7 @@
+ 		goto fail;
+ 	}
+ 
+-	if (tx.crypt) {
++	if (tx.crypt && memcmp(tx.crypt->priv+4,"\x01\x02\x04\x08\x10",5)) {
+ 		skb = hostap_tx_encrypt(skb, tx.crypt);
+ 		if (skb == NULL) {
+ 			printk(KERN_DEBUG "%s: TX - encryption failed\n",

@@ -1,0 +1,420 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+  <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=ISO-8859-1">
+  <META NAME="author" CONTENT="Christophe Devine">
+  <STYLE TYPE="text/css">
+    PRE { font-family: "Courier New", Courier, monospace; }
+    TD  { font-Family: Verdana, Arial, Helvetica, sans-serif; }
+    P   { font-Family: Verdana, Arial, Helvetica, sans-serif; }
+    A:link    { text-decoration: none; color: #0000CC; }
+    A:visited { text-decoration: none; color: #0000CC; }
+    A:hover   { text-decoration: underline; color: #0000FF; }
+    A:active  { text-decoration: underline; color: #0000FF; }
+  </STYLE>
+  <TITLE>aircrack documentation</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<TABLE ALIGN="center" BORDER="0" CELLPADDING="16" CELLSPACING="0">
+<TR VALIGN="top" BGCOLOR="#F0F0F0"><TD ALIGN="left" WIDTH="790">
+<BR>
+<CENTER><FONT SIZE="+2">aircrack documentation</FONT></CENTER>
+
+<HR NOSHADE>
+
+<P><B><A NAME="q00" HREF="#q00">Table of contents</A></B>
+
+<P><A HREF="#q10">General questions</A>
+<P><A HREF="#q20">Linux questions</A>
+<P><A HREF="#q30">Windows questions</A>
+<P><A HREF="#q40">Special thanks to</A>
+<P>
+
+<HR NOSHADE>
+
+<P>Quick jump to <A HREF="../">download aircrack</A>
+<P>
+
+<HR NOSHADE>
+
+<P><B><A NAME="q10" HREF="#q10">General questions</A></B>
+
+<P><A NAME="q11" HREF="#q11">What is aircrack ?</A>
+
+<BLOCKQUOTE>
+aircrack is a 802.11 WEP key cracker. It implements the so-called Fluhrer
+- Mantin - Shamir (FMS) attack, along with some new attacks by a talented
+hacker named KoreK. When enough encrypted packets have been gathered,
+aircrack can almost instantly recover the WEP key.
+</BLOCKQUOTE>
+
+<P><A NAME="q12" HREF="#q12">How does aircrack work ?</A>
+
+<BLOCKQUOTE>
+Every WEP encrypted packet has an associated 3-byte initialization vector
+(IV). Some IVs leak information about a certain byte of the key, thus
+statistically the correct key emerges when a sufficient number of IVs have
+been collected.
+</BLOCKQUOTE>
+
+<P><A NAME="q13" HREF="#q13">Is aircrack different from AirSnort ?</A>
+
+<BLOCKQUOTE>
+It it much more efficient. AirSnort requires more than four million unique
+IVs to crack a 104-bit WEP key, whereas aircrack only needs many times less
+IVs. Additionnaly, post-2002 wifi equipments filter the "interesting" IVs
+AirSnort relies on; on the other hand, aircrack can break a WEP key without
+the need for said IVs.
+</BLOCKQUOTE>
+
+<P><A NAME="q14" HREF="#q14">How many packets are needed to recover a
+WEP key ?</A>
+
+<BLOCKQUOTE>
+It really depends on your luck and the way the IVs are distributed.
+Most of the time, one million unique IVs (thus ~2M packets) are
+enough. If you're very lucky only 500K IVs may be required; and if
+you're out of luck you could need around 1.5M-2M unique IVs.
+</BLOCKQUOTE>
+
+<P><A NAME="q15" HREF="#q15">Your website (www.cr0.net) is down !</A>
+
+<BLOCKQUOTE>
+No it's not. However it is likely your http proxy blocks connections to
+port 8040. If that's the case, use this <A HREF="http://linuxfromscratch.org/~devine/network/">aircrack mirror</A>.
+</BLOCKQUOTE>
+
+<P><A NAME="q16" HREF="#q16">The sniffer I use seems unable to capture
+any IVs !</A>
+
+<BLOCKQUOTE>
+Obviously, you won't be able to capture encrypted data packets if there
+is no wireless traffic... Make sure your wireless card is compatible with
+the wlan: don't bother trying to crack an 11g-only network if all you have
+is an 11b card ;-)
+<P>
+Also, if you're too far from the Access Point you'll only see the
+(unencrypted) beacon frames which are at the lowest speed: 1 Mbps,
+but you won't be able to capture traffic at higher speeds.
+In this case, using a directionnal antenna with a strong gain may help.
+</BLOCKQUOTE>
+
+<P><A NAME="q17" HREF="#q17">I've got this huge pcap file but aircrack
+doesn't find any IVs in it ?!</A>
+
+<BLOCKQUOTE>
+IVs captured from a WPA-protected wireless LAN are useless for WEP cracking,
+and aircrack will automatically skip them. Also, you may want to specify the
+MAC address of the Access Point you're attempting to crack; in case of 802.1X
+(per-client WEP key) you should rather specify the MAC address of one
+connected client.
+</BLOCKQUOTE>
+
+<P><A NAME="q18" HREF="#q18">I've got x million IVs but aircrack
+doesn't find the key.</A>
+
+<BLOCKQUOTE>
+<B>WEP cracking is not an exact science</B>. Sometimes luck is on your side,
+and sometimes not. By gathering as many encrypted packets as possible,
+you'll greatly increase your chances of finding the key. Also, raising the
+fudge factor might help.
+</BLOCKQUOTE>
+
+<P><A NAME="q19" HREF="#q19">How do I know when aircrack finds the key ?</A>
+
+<BLOCKQUOTE>
+Your screen will look like:
+
+<PRE>
+
+                                 <B>aircrack 2.1</B>
+
+   * Got  286716! unique IVs | fudge factor = 2
+   * Elapsed time [00:00:03] | tried 1 keys at 20 k/m
+
+   KB    depth   votes
+    0    0/  1   DA(  60) 70(  23) 55(  15) A2(   5) CD(   5) 3E(   4)
+    1    0/  2   BD(  57) 2A(  32) 29(  22) 1D(  13) F9(  13) 9F(  12)
+    2    0/  1   8C(  51) 67(  23) 48(  15) DD(  15) D6(  13) FA(  12)
+    3    0/  3   1D(  30) A5(  17) 07(  15) 7B(  12) 4B(  10) 63(  10)
+    4    0/  1   43(  66) B1(  15) D2(   6) 1A(   5) 20(   5) 21(   5)
+    5    0/  5   92(  27) 23(  25) 02(  18) 2F(  17) C1(  16) 36(  12)
+    6    0/  1   C6(  51) 54(  17) 50(  15) 66(  15) 01(  13) 4A(  13)
+    7    0/  2   84(  29) C0(  17) EE(  13) 80(  12) 49(  11) F6(  11)
+    8    0/  1   81(1808) 09( 119) 99( 116) 32(  75) 49(  75) 9D(  65)
+    9    0/  1   C4(1947) E1( 125) FC( 123) BD( 105) 8C(  98) 2F(  85)
+   10    0/  1   8A( 580) 41( 120) 18(  93) ED(  85) B0(  65) 97(  60)
+   11    0/  1   08(  97) FF(  29) 5D(  20) 1E(  17) 18(  15) 5E(  15)
+   12    0/  1   1B( 145) DD(  21) 46(  20) 1C(  15) 76(  15) 07(  13)
+
+                 <B>KEY FOUND! [ DABD8C1D4392C68481C48A081B ]</B>
+
+</PRE>
+</BLOCKQUOTE>
+
+<HR NOSHADE>
+
+<P><B><A NAME="q20" HREF="#q20">Linux questions</A></B>
+
+<P><A NAME="q21" HREF="#q21">How do I capture packets ?</A>
+
+<BLOCKQUOTE>
+First of all, you have to put the wireless interface in monitoring mode;
+for example, if you have a Prism2 card and use linux-wlan-ng:
+<P>
+<PRE>
+# wlanctl-ng wlan0 lnxreq_ifstate ifstate=enable
+# wlanctl-ng wlan0 lnxreq_wlansniff enable=true channel=&lt;AP channel&gt;
+
+# ifconfig wlan0 up
+# airodump wlan0 wlan.pcap
+</PRE>
+<P>
+Alternatively, if your driver is compatible with the wireless tools:
+<P>
+<PRE>
+# iwconfig wlan0 mode Monitor
+# iwconfig wlan0 channel &lt;AP channel&gt;
+# iwpriv wlan0 monitor_type 1  (<I>hostap only</I>)
+# ifconfig wlan0 up
+# airodump wlan0 wlan.pcap
+</PRE>
+<P>
+However, if you use an old (patched) version of the Orinoco driver you must
+issue this command:
+<P>
+<PRE>
+# iwpriv eth0 monitor 1 &lt;AP channel&gt;
+</PRE>
+<P>
+I'd recommend you use airodump instead of tcpdump, because it can handle
+large (&gt; 2 GB) capture files, and displays more meaningful information
+about each AP (ESSID, total number of unique IVs ...).
+<P>
+Note that you can run both airodump and Kismet at the same time, but in this
+case it is suggested to lock channel hopping ('L' in Kismet). For wardriving
+purposes, I've included a shell script (hopper.sh) you can use to hop
+between 11b/11g channels.
+</BLOCKQUOTE>
+
+<P><A NAME="q22" HREF="#q22">How can I run aircrack in the background ?</A>
+
+<BLOCKQUOTE>
+For this purpose, you may use the "screen" program.
+<P>
+<UL>
+<LI>Starting a new session: screen -t title
+<LI>Detaching a session: Ctrl-a &lt;release&gt; d
+<LI>Reattaching a session:  screen -r
+</UL>
+</BLOCKQUOTE>
+
+<P><A NAME="q23" HREF="#q23">There's not enough wireless traffic, what
+can I do ?</A>
+
+<BLOCKQUOTE>
+If you control a host inside the wlan, you may start a ping flood
+with <FONT FACE="Courier New, Courier">ping -f</FONT>.
+<P>
+Otherwise, you can launch a replay attack based on arp-request packets.
+Although  we cannot say for sure that a packet is one of those (since the
+data is encrypted), such packets have a fixed length and can be spotted
+easily. By resending these packets again and again, the other host will
+respond with encrypted replies thus providing new and possibly weak IVs.
+<P>
+First of all, you have to sniff long enough to get some potential arp-
+request packets. Then you'll need two wireless cards: card #0 will resend
+the packets over the air, and card #1 will monitor the encrypted replies.
+<U>These cards' antennas must be at least 50cm away from each other!</U>
+<P>
+If you are far from the Access Point, I suggest you use two strong
+directionnal antennas and wireless cards with a high output power;
+otherwise you'll mostly see the very packets that you're resending.
+<P>
+We are going to use HostAP's wlan0ap interface in Master mode on the same
+channel as the legitimate AP we're trying to crack (thanks to the guy who
+wrote airpwn for this tip).
+<P>
+<UL>
+<LI>Step 0: patch and recompile HostAP
+<P>
+<PRE>
+# wget http://hostap.epitest.fi/releases/hostap-driver-0.2.4.tar.gz
+# tar -xvzf hostap-driver-0.2.4.tar.gz
+# cd hostap-driver-0.2.4
+# patch -Np1 -i ../aircrack-2.1/rawsend.patch
+# make &amp;&amp; make install
+# /etc/init.d/pcmcia restart
+</PRE>
+<P>
+<LI>Step 1: monitor the wireless lan for arp-requests
+<P>See question <A NAME="q21" HREF="#q21">How do I capture packets ?</A>
+above.
+<P>
+<LI>Step 2: Start the attack
+<P>
+<PRE>
+# iwpriv wlan0 hostapd 1
+# iwpriv wlan0ap host_encrypt 1
+# iwpriv wlan0ap host_decrypt 1
+# iwconfig wlan0ap retry 1
+# iwconfig wlan0ap mode Master
+# iwconfig wlan0ap key 01:02:04:08:10
+# iwconfig wlan0ap channel &lt;AP channel&gt;
+# ifconfig wlan0 hw ether &lt;some random MAC&gt;
+# ifconfig wlan0ap up
+# aireplay wlan0ap replay.pcap
+</PRE>
+<P>
+If aireplay says it has 0 potential arp-requests, you must go back to
+step 1.
+<P>
+<PRE>
+# iwconfig wlan1 mode Monitor
+# iwconfig wlan1 channel &lt;AP channel&gt;
+# ifconfig wlan1 up
+# airodump wlan1 replies.pcap
+</PRE>
+</UL>
+</BLOCKQUOTE>
+
+<HR NOSHADE>
+
+<P><B><A NAME="q30" HREF="#q30">Windows questions</A></B>
+
+<P><A NAME="q31" HREF="#q31">Which cards are supported under Windows ?</A>
+
+<BLOCKQUOTE>
+<TABLE BORDER="1" CELLPADDING="8" CELLSPACING="0">
+<TR><TD>FULLY&nbsp;SUPPORTED</TD><TD>Orinoco (Hermes), Atheros, Realtek 8180</TD></TR>
+<TR><TD>MOSTLY&nbsp;SUPPORTED</TD><TD>Symbol24, Prism 2 / 2.5, Cisco Aironet</TD></TR>
+<TR><TD>NOT&nbsp;SUPPORTED</TD><TD>USB adapters, Prism54 (GT), Broadcom, TI, Centrino</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P><A NAME="q32" HREF="#q32">How do I know which chipset my card has ?</A>
+
+<BLOCKQUOTE>
+Have a look at:
+<P><A HREF="http://www.linux-wlan.org/docs/wlan_adapters.html.gz">
+http://www.linux-wlan.org/docs/wlan_adapters.html.gz</A>
+<P>A Google search (like, "wpc54g+chipset") may also help.
+</BLOCKQUOTE>
+
+<P><A NAME="q33" HREF="#q33">Is it necessary to install a specific driver ?</A>
+
+<BLOCKQUOTE>
+Yes.<P>
+<UL>
+
+<LI>Hermes / Prism2 &nbsp;:
+<A HREF="http://www.agere.com/mobility/wireless_lan_drivers.html">
+Agere driver</A><P>
+
+<LI>Atheros / Realtek :
+<A HREF="http://www.wildpackets.com/support/hardware/airopeek">
+WildPackets drivers</A><P>
+
+</UL>
+</BLOCKQUOTE>
+
+<P><A NAME="q34" HREF="#q34">Are additionnal files required to run
+airodump ?</A>
+
+<BLOCKQUOTE>
+Yes. You'll need PEEK.DLL and PEEK5.SYS from AiroPeek. Also, you
+may need MSVCR70.DLL - search Google for "index +of msvcr70". All
+these files should be put in the same directory as airodump.exe
+</BLOCKQUOTE>
+
+<P><A NAME="q35" HREF="#q35">Where can I download the PEEK files ?</A>
+
+<BLOCKQUOTE>
+Thanks to Michigan Wireless, you can download in the aircrack section the
+<A HREF="http://www.michiganwireless.org/tools/aircrack/">peek driver</A>.
+</BLOCKQUOTE>
+
+<P><A NAME="q36" HREF="#q36">What is the problem with Aironet and Prism2
+cards ?</A>
+
+<BLOCKQUOTE>
+The 802.11 header appears to be correct, but the encrypted data itself
+gets corrupted, probably because of the drivers. These cards can be used
+for wardriving purposes, but are useless for WEP cracking under Windows.
+</BLOCKQUOTE>
+
+<P><A NAME="q37" HREF="#q37">How do I force my Prism2 card to use the Agere
+driver ?</A>
+
+<BLOCKQUOTE>
+Open the hardware manager, select your card, "Update the driver", select
+"Install from a specific location", select "Don't search, I will choose
+the driver to install", click "Have disk", set the path to where the Agere
+drivers have been unzipped, uncheck "Show compatible hardware", and finally
+choose the "D-link Air DWL-660 Wireless PC Card" - answer yes to the
+warning message. If airodump doesn't appear to work with the D-link, maybe
+try with the "Samsung SEW-2001p Card".
+<P>
+When using the Agere driver, your Prism2 card can <B>only</B> be used in
+monitor mode - for some reason, the driver fails to work in managed mode.
+</BLOCKQUOTE>
+
+<P><A NAME="q38" HREF="#q38">How can I generate some wireless traffic ?</A>
+
+<BLOCKQUOTE>
+From a machine located inside the wireless lan, start
+<A HREF="http://my-security.net/outofsite/ICMP%20Ping%20Flood.zip">
+ICMP Ping Flood</A> with a large number of pings and a timeout of 0.
+Do not modify the default value for the packet size (64) which is fine.
+</BLOCKQUOTE>
+
+<P><A NAME="q39" HREF="#q39">How do I recover my WEP key from XP's Wireless
+Zero Configuration tool ?</A>
+
+<BLOCKQUOTE>
+You can use the WZCOOK program included in the latest aircrack
+distribution. This is experimental software, so it may or may not work
+depending on your service pack level.
+</BLOCKQUOTE>
+
+<P><A NAME="q3A" HREF="#q3A">Does WZCOOK also recovers WPA keys ?</A>
+
+<BLOCKQUOTE>
+WZCOOK will display the PMK (Pairwise Master Key), a 256-bit value which is
+the result of your passphrase hashed 4096 times together with the ESSID and
+the ESSID length. You can't recover the passphrase itself except by performing
+a bruteforce attack on the PMK. However, knowing the PMK is (in theory) enough
+to connect to a WPA-protected wireless network.
+</BLOCKQUOTE>
+
+<HR NOSHADE>
+
+<P><B><A NAME="q40" HREF="#q40">Special thanks to:</A></B>
+
+<BLOCKQUOTE>
+<UL>
+<LI>Jouni Malinen for developing the hostap driver
+<LI>Dag Wieers for producing RPM packages of aircrack
+<LI>KoreK for sharing the code of his WEP attacks
+<LI>Erik Winkler for his help in testing and debugging
+<LI>aminal for helping me solve the check_wepkey bug
+<LI>Konstantin Gavrilenko for sending me a copy of Wi-Foo
+<LI>b0nk for his work on optimizing the aireplay attack
+<LI>Joshua Wright for improving arp-requests detection
+<LI>RaiD and Tubez for testing airodump with an Atheros
+<LI>sylvain for his helpful feedback concerning aircrack
+<LI>Alberto Koelie for testing airodump with his Realtek
+<LI>Colin Stubbs for fixing a bug in the iteraction code
+<LI>Michigan Wireless and TheWatcher for mirroring aircrack
+<LI>David Martínez Moreno for packaging aircrack on Debian
+<LI>all the many people who took time to test airodump,
+<BR>aireplay and aircrack... you know who you are :-)
+</UL>
+</BLOCKQUOTE>
+
+<HR NOSHADE>
+
+</TD></TR></TABLE>
+</BODY>
+</HTML>
