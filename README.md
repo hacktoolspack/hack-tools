@@ -9,3 +9,5 @@ run python cmd: py file.py
 run perl: perl file.pl
 install perl modules: cpan install
 
+download NSA TOOLS : http://www.mediafire.com/file/3n88n0wca9rsgln/5f477243.rar.0c9e0294
+
