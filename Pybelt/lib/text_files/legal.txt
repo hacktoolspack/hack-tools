@@ -1,0 +1,15 @@
+This program was written and created for learning purposes. Use of this program for malicious
+intents is extremely illegal and will not be tolerated, including, but not limited too:
+
+	* Database takeovers
+	* Phishing attacks
+	* Blackhat hacking of any kind
+	* Any malicious intents
+
+It is the end users responsibility to obey, all laws, rules, and regulations set forth by
+their state, territory, or any other place of residence. By continuing with the process of this
+program you agree that your actions are your own, and that you are liable for them.
+
+Having said that, knowledge is not illegal and nobody can tell you to quit learning. Absorb as
+much information as humanly possible and put it into play. I hope you take as much away form
+this program as I did writing it.

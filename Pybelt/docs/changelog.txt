@@ -1,0 +1,194 @@
+Version 1.0.12.27
+  - Created a version check, must have python 2.7.x to run the application
+  - Bumped version number
+
+Version 1.0.12.26
+  - Added a github issue template (last push)
+  - Added some more ports to the port scanner
+  - Bumped version number
+
+Version 1.0.11.24
+  - Hot fix for issue #6 https://github.com/Ekultek/Pybelt/issues/6
+  - Bumped version number
+
+Version 1.0.10.23
+  - Edited the paths to match for Linux
+  - Bumped version number
+
+Version 1.0.9.22
+  - Updated the dork scanner to be able to run through a file list
+  - Updated dork scanner to be able to configure a proxy
+  - Updated pointers to reflect new changes
+  - Added dork-list flag
+  - Updated pybelt_shell for new flag options
+  - Updated TOOL_LIST for new flag
+  - Bumped version number
+
+Version 1.0.8.21
+  - Updated the port scanner to not display "None" if there are no
+    ports available it will display, No ports available or open
+  - Created a function that will auto format a URL to it's basic format
+    for port scanning, for example: http://google.com -> www.google.com
+  - Updated the IP regex to not provide false positive
+  - Updated integrity_check so that if it fails it will warn you that
+    you are running a non-verified version and ask you to continue
+  - Bumped version number
+
+Version 1.0.7.20
+  - Created a flag for verifying a hash list
+  - Updated SQLi and XSS list scans
+  - Updated TOOL_LIST to verify new tool
+  - Added timeout to SQLi scan,it won't just sit there anymore
+  - Updated pointers.py to provide scan file for hash verification
+  - SQLi list flag changed to -sl
+  - XSS list flag changed to -xl
+  - Bumped version number
+
+Version 1.0.6.19
+  - Created a SQLi file scanning flag, pass a full file path to run through
+    a file list and scan for SQL injection vulnerabilities
+  - Created a XSS file scanning flag, pass a full file path to run through
+    the list and check for XSS vulns
+  - Updated the pointers.py to reflect the file scanning
+  - Edited the settings TOOL_LIST to have an option for both the new flags
+    with secondary option as well
+  - Updated the shell to include the new options
+  - Bumped version number
+
+Version 1.0.15.18
+  - Minor updates in pointers.py
+  - Minor updates in pybelt.py
+  - Minor updates to sql_scan.py
+  - You are no longer forced to update the program to continue
+  - Bumped version number
+
+Version 1.0.14.17
+  - Created an integrity check to make sure that the program is up to date
+  - Created an updater so you can update the program from the program itself
+  - Created an update flag that will update the program
+  - Added updater to the shell
+  - Edited checksum to reflect new data
+  - Bumped version number
+
+Version 1.0.13.16
+  - Added more checks to SQLi scans
+  - Updated SQLi scan to include the backend database type
+  - Updated the SQL_ERROR_REGEX constant to include DB types
+  - Bumped the version number
+
+Version 1.0.12.15
+  - Added a banner flag, you can now hide the banner
+  - Created a hide_banner function
+  - Bumped version number
+
+Version 1.0.11.14
+  - Updated the shell a bit, now has secondary and primary commands
+  - Edited the TOOL_LIST constant in settings in order to have primary and secondary
+    commands
+  - Shell now has a do command that is the same as the run command
+  - Bumped version number
+
+Version 1.0.10.13
+  - Added support for two new hash types, blowfish and wordpress v4.x\3.x
+  - Edited the shell to accept none as input and default to None
+  - Edited the do_quit shell function
+  - Minor styling tweak to the proxy finder
+  - Bumped the version number
+
+Version 1.0.9.12
+  - Fixed a minor flaw in XSS pointer that would not display your proxy correctly
+  - Fixed minor bug in port scanner that would display the open ports as a list
+  - Edited the flags for the pybelt console
+  - Proxy finder will now find 60 possible proxies instead of 30
+  - Edited the console to work correctly, will run the correct flags and works
+  - Edited the information log when you are redirected to the console
+  - Edited the prompt to be <your username>@pybelt >
+  - Created a tool_list dict in settings
+  - Created an IP:PORT regex, don't worry about that right now
+  - Minor edit tot he readme file
+  - Bumped the version number
+
+Version 1.0.8.11
+  - Created pointers to the overall functions of the program saved in
+    lib/pointers.py
+  - Created a shell console, when you fail to provide a flag it will default to
+    the shell console and can be run from there
+  - Minor edit to the settings
+  - Edited the overall pybelt.py file to replicate the pointers and create the console
+    call if there is no flag given
+  - Bumped the version number
+
+Version 1.0.7.10
+  - Created proxy flag
+  - Created random user agent flag
+  - Configured XSS scan to be able to scan through a proxy and
+    use a random user agent
+  - Working on SQLi scan for proxy and user agent (not done)
+  - Edited some comments in SQLi scan
+  - Added a list of random user agents in lib/text_files
+  - Created a constant for random user agents
+  - Minor port scanner edit, just throws an error as log instead
+    of print
+  - Bumped version number
+
+Version 1.0.6.9
+  - Merged pull request to increase the speed of the port scanner
+    (it's fucking magical now)
+  - Moved hash_checker to be inside of hash_cracking
+  - Created a XSS vulnerability scanner, sits inside of sqli scan folder
+  - Created a function to create directories if they do not exist
+  - Proxies will now be saved to a file instead of just displayed
+    on the screen, you'll have a list of good proxies to use
+  - Removed __init__ from text files
+  - Bumped version number because that's how you do it when you're as
+    beastly as I am
+
+Version 1.0.5.8
+  - Patched dork checker
+  - Bumped version numnber
+
+Version 1.4.7
+  - Added a new tool for finding proxies
+  - Minor tweak in hash checking system
+  - Minor settings tweak
+  - Bumped version number
+
+Version 1.3.6
+  - Added a space between most likely and least likely hash types
+  - Added some comments in pybelt.py file
+  - Fixed some errors to make them look pretty
+  - Bumped version number
+
+Version 1.3.5
+ - Updated hash checker to provide all possible hashes
+ - Updated to show most and least likely hashes
+ - Bumped version number
+
+Version 1.3.4
+ - Created a hash checking system only support basic hash types as of now (md5, sha, etc..)
+ - Created regex's for verifying hash types (still working on it)
+ - Bumped the version number
+
+Version 1.2.3
+ - Edited the port scanner, it will tell you what ports are open now instead of just going through them all
+ - Port scanner tells you what ports are what (tcp, https, etc..)
+ - Port scanner is now able to scan URL's as well by resolving to their host IP
+ - Edited settings to reflect the port descriptions
+ - Bumped version number
+
+Version 1.1.2
+  - Added a hash cracking system, check out the README for further information
+  - Created a new flag for downloading random wordlists
+  - Edited the SQLi scanner, it was failing and I didn't know, my bad
+  - Moved text_files directory to /lib
+  - Edited the README
+  - Changed the banner
+  - Edited a lot of the settings.py file
+  - Bumped the version number
+
+Version 1.0.1
+  - Added a version flag
+  - Edited some of the flags so that you have to input something that's useful. IE 127.0.0.1 for port scan
+  - Made a IP regex (simple yet effective)
+  - Edited requirements.txt
+  - Bumped the version number
