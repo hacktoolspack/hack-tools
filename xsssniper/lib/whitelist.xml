@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+
+<whitelist>
+
+<javascript>
+    <hash>82bd29952e7156e0c854d57b1b394a55</hash>
+    <description>jQuery Tools 1.2.5</description>
+    <reference></reference>
+</javascript>
+
+</whitelist>

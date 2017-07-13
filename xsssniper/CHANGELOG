@@ -1,0 +1,35 @@
+0.9.1:
+- Fixed Issue 4 and removed hgapi dependency
+
+0.9:
+- Improved the command line interface
+
+0.8:
+- Added basic dom xss detection with --dom
+
+0.7:
+- Added support for cookies with --cookie
+- Improved GET forms handling
+- Improved results printing
+- Improved stored xss checks 
+
+0.6:
+- Added support for custom user agent with --user-agent
+- Added support for random user agents with --random-agents
+
+0.5:
+- Added SIGINT support in multithread enviroment
+- Improved links parsing in crawling
+- Added a progress notification bar while scanning
+
+0.4:
+- Refactored the scanning engine, now faster with fewer request and lower FP rates
+- Removed the payloads architecture (-p and -c)
+
+0.3:
+- Added support for POST requests with --post and --data
+- Added form crawling with --crawl
+
+0.2:
+- Added url crawling with --crawl
+- Added multi-threading url scanning with --threads

@@ -1,0 +1,2 @@
+colored==1.3.5
+success==1.0.0
