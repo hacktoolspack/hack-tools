@@ -1,0 +1,3 @@
+class AttackException(Exception):
+    
+    pass
