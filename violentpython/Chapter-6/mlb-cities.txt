@@ -1,0 +1,28 @@
+baltimore
+boston
+chicago
+cleveland
+detroit
+kansas city
+los angeles
+minnesota
+new york
+oakland
+seattle
+tampa
+arlington
+toronto
+phoenix
+atlanta
+chicao
+cincinnati
+denver
+houston
+miami
+milwaukee
+philadelphia
+pittsburg
+san diego
+san francisco
+st louis
+washington

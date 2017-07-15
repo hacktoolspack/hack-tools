@@ -1,0 +1,6 @@
+pygeoip==0.3.2
+dpkt==1.9.1
+IPy==0.83
+IPTEST==0.1.1
+datetime==4.2
+choice==0.1
