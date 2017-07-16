@@ -1,0 +1,54 @@
+***  Installation Started 07/16/2017 11:49  ***
+Title: Cain & Abel v4.9.56 Installation
+Source: C:\Users\liloo\Downloads\ca_setup.exe | 07-16-2017 | 11:40:06 | 8244106
+Made Dir: C:\Program Files (x86)\Cain
+File Copy: C:\Program Files (x86)\Cain\UNWISE.EXE | 06-25-1999 | 11:55:30 | | 149504 | 30fdd633
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Cain & Abel 4.9.56
+RegDB Val: Cain & Abel 4.9.56
+RegDB Name: DisplayName
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Cain & Abel 4.9.56
+RegDB Val: C:\PROGRA~2\Cain\UNWISE.EXE C:\PROGRA~2\Cain\INSTALL.LOG
+RegDB Name: UninstallString
+RegDB Root: 2
+File Copy: C:\Program Files (x86)\Cain\Cain.exe | 04-07-2014 | 09:43:26 | 4.9.5.6 | 1374720 | 8ec7ed89
+File Copy: C:\Program Files (x86)\Cain\Cain.exe.sig | 04-07-2014 | 09:51:40 | | 72 | c02aa5
+File Copy: C:\Program Files (x86)\Cain\Whatsnew.txt | 04-07-2014 | 09:29:52 | | 74821 | 140cb23d
+File Copy: C:\Program Files (x86)\Cain\charset.txt | 12-07-2008 | 23:34:52 | | 5455 | d2504820
+File Copy: C:\Program Files (x86)\Cain\oui.txt | 12-03-2013 | 12:04:24 | | 875220 | 949f18e5
+Made Dir: C:\PROGRA~2\Cain\Wordlists
+File Copy: C:\Program Files (x86)\Cain\Wordlists\Wordlist.txt | 10-28-2005 | 20:47:36 | | 3456292 | 6f1706a9
+File Copy: C:\Program Files (x86)\Cain\CA_UserManual.chm | 01-21-2011 | 23:31:38 | | 3796686 | ab433bd0
+File Copy: C:\Program Files (x86)\Cain\lame_enc.dll | 05-27-2010 | 16:25:04 | | 399872 | db065bee
+File Copy: C:\Program Files (x86)\Cain\Abel.dll | 04-07-2014 | 09:45:46 | | 37888 | ab9425a6
+File Copy: C:\Program Files (x86)\Cain\Abel.dll.sig | 04-07-2014 | 09:51:40 | | 72 | fbccbdb0
+File Copy: C:\Program Files (x86)\Cain\Abel.exe | 04-07-2014 | 09:47:22 | 4.9.5.6 | 29696 | 8e682a78
+File Copy: C:\Program Files (x86)\Cain\Abel.exe.sig | 04-07-2014 | 09:51:40 | | 72 | 7b2b7219
+File Copy: C:\Program Files (x86)\Cain\Abel64.dll | 04-07-2014 | 09:44:10 | | 272384 | 37b72113
+File Copy: C:\Program Files (x86)\Cain\Abel64.dll.sig | 04-07-2014 | 09:51:40 | | 72 | 69defc09
+File Copy: C:\Program Files (x86)\Cain\Abel64.exe | 04-07-2014 | 09:44:12 | 4.9.5.6 | 257024 | 7480c39e
+File Copy: C:\Program Files (x86)\Cain\Abel64.exe.sig | 04-07-2014 | 09:51:40 | | 72 | 3a724b6c
+Made Dir: C:\PROGRA~2\Cain\Winrtgen
+File Copy: C:\Program Files (x86)\Cain\Winrtgen\charset.txt | 12-07-2008 | 23:34:52 | | 5455 | d2504820
+File Copy: C:\Program Files (x86)\Cain\Winrtgen\Winrtgen.exe | 12-03-2013 | 13:55:32 | 2.9.0.4 | 394240 | 258decf5
+File Copy: C:\Program Files (x86)\Cain\Winrtgen\Winrtgen.exe.sig | 12-03-2013 | 14:16:36 | | 72 | 7472e7b2
+Made Dir: C:\PROGRA~2\Cain\Driver
+File Copy: C:\Program Files (x86)\Cain\Driver\WinPcap_4_1_3.exe | 04-30-2013 | 20:25:48 | 4.1.0.2980 | 915128 | be46bda8
+Made Dir: C:\Users\liloo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Cain
+Shell Link: C:\Users\liloo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Cain\Winrtgen.lnk
+Link Info: C:\Program Files (x86)\Cain\Winrtgen\Winrtgen.exe | C:\PROGRA~2\Cain\Winrtgen | C:\PROGRA~2\Cain\Winrtgen\Winrtgen.exe | 0 | 1 | 0 | 
+Shell Link: C:\Users\liloo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Cain\CA_UserManual.lnk
+Link Info: C:\Program Files (x86)\Cain\CA_UserManual.chm | C:\PROGRA~2\Cain |  | 0 | 1 | 0 | 
+Shell Link: C:\Users\liloo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Cain\Cain.lnk
+Link Info: C:\Program Files (x86)\Cain\Cain.exe | C:\PROGRA~2\Cain | C:\PROGRA~2\Cain\Cain.exe | 0 | 1 | 0 | 
+Shell Link: C:\Users\liloo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Cain\Whatsnew.lnk
+Link Info: C:\Program Files (x86)\Cain\Whatsnew.txt | C:\PROGRA~2\Cain | C:\PROGRA~2\Cain\Whatsnew.txt | 0 | 1 | 0 | 
+Shell Link: C:\Users\liloo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Cain\Uninstall Cain.lnk
+Link Info: C:\Program Files (x86)\Cain\UNWISE.EXE | C:\PROGRA~2\Cain | C:\PROGRA~2\Cain\Unwise.exe | 0 | 1 | 0 | 
+Shell Link: C:\Users\liloo\Desktop\Cain.lnk
+Link Info: C:\Program Files (x86)\Cain\Cain.exe | C:\PROGRA~2\Cain | C:\PROGRA~2\Cain\Cain.exe | 0 | 1 | 0 | 
+RegDB Key: Software\Cain\Settings
+RegDB Val: C:\PROGRA~2\Cain
+RegDB Name: WorkDir
+RegDB Root: 1
+User Rights: Admin

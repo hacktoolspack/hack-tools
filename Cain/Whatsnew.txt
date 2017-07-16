@@ -1,0 +1,1818 @@
+====================================
+Version 4.9.56 (07-04-2014)
+====================================
+[+] Added Root Certificate Generator in Certificate Spoofing configuration page.
+[+] Added experimental Certificate Injection feature to inject custom certificates into HTTPS/ProxyHTTPS responses directed to victim APR's clients.
+[!] Fixed several memory leaks in all APR-SSL sniffer filters.
+
+
+====================================
+Version 4.9.55 (03-03-2014)
+====================================
+[+] Added TLS SNI (Server Name Indication) parameter in APR-HTTPS and APR-ProxyHTTPS lists.
+[!] Fixed a bug in Certificate Collector and fake Self-Signed certificates generation.
+
+
+====================================
+Version 4.9.54 (21-02-2014)
+====================================
+[!] Fixed a bug in HTTP sniffer filter and FORM/COOKIE based authentications.
+
+
+====================================
+Version 4.9.53 (20-02-2014)
+====================================
+[+] Added progress bar in Hostnames resolution function.
+[+] Added callback functions for thread-safe operations by OpenSSL.
+[!] OpenSSL library upgrade to version 1.0.1f.
+
+
+====================================
+Version 4.9.52 (15-01-2014)
+====================================
+[!] Fixed a bug in Cain's APR configuration dialog regarding to Spoofed IP address selection.
+
+
+====================================
+Version 4.9.51 (08-01-2014)
+====================================
+[+] Speed improvement in APR engine.
+[+] Speed improvement all APR-SSL sniffer filters.
+[!] Fixed a bug in Cain's Traceroute WHOIS resolver.
+[!] ICMP and UDP Traceroute now uses Winpcap to send probe network packets.
+
+
+====================================
+Version 4.9.50 (10-12-2013)
+====================================
+[+] Anticompress option for APR-IMAPS (touch "COMPRESS=DEFLATE" field in capabilities from server). 
+[!] Paste operation now allowed in SQL Query tool.
+[!] Fixed a bug Microsoft SQL Server Password Extractor via ODBC.
+[!] Fixed some memory leaks in APR-SSL sniffer filters.
+
+
+====================================
+Version 4.9.49 (06-12-2013)
+====================================
+[+] Anticache option for APR-HTTPS/APR-ProxyHTTPS (touch "If-Modified-Since" and "If-None-Match" fields in HTTP headers from client). 
+[+] Anticompress option for APR-HTTPS/APR-ProxyHTTPS (touch "Accept-Encoding" field in HTTP headers from client). 
+[+] Speed improvement in Certificate Collector. 
+[+] Automatic extraction of Subject Common Name (CN) from server certificates to be used as hostname in APR-SSL lists. 
+[+] Preservation of Subject Alternative Name extension in fake certificates.
+[+] New Base64 Password Decoder dialog.
+
+
+====================================
+Version 4.9.48 (03-12-2013)
+====================================
+[!] Fixed a bug in HTTPS and ProxyHTTPS sniffer filters causing crashes.
+[!] Fixed a bug in DCE/RPC Sniffer filtercausing application crashes.
+[!] OUI List updated.
+
+
+====================================
+Version 4.9.47 (25-11-2013)
+====================================
+[+] Added support for aes256-cts-hmac-sha1-96 hashes in Kerberos5 PreAuth Sniffer filter.
+[!] Fixed a bug in LDAP Sniffer causing application crashes.
+[!] Fixed some bugs in VoIP Sniffer causing application crashes.
+[!] Fixed a bug in Passive Wireless Scanner related to clients identification.
+[!] Fixed a bug WPA-PSK Authentications sniffer.
+[!] Performance improvement in all sniffer filters.
+
+
+====================================
+Version 4.9.46 (27-05-2013)
+====================================
+[+] Added Windows Vault Password Decoder.
+
+
+====================================
+Version 4.9.45 (14-05-2013)
+====================================
+[+] Added support for Windows 8 RDP Client in APR-RDP sniffer filter.
+[!] Fixed a bug in HTTPS and ProxyHTTPS sniffer filters causing crashes.
+[!] Fixed a bug in Credential Manager Password Decoder.
+
+
+====================================
+Version 4.9.44 (03-05-2013)
+====================================
+[+] Added Windows 8 support in LSA Secret Dumper.
+[+] Added Windows 8 support in Credential Manager Password Decoder.
+[+] Added Windows 8 support in EditBox Revealer.
+[+] Added ability to keep original extensions in fake certificates.
+[!] Winpcap library upgrade to version 4.1.3 (Windows8 supported).
+[!] OUI List updated.
+
+
+====================================
+Version 4.9.43 (03-12-2011)
+====================================
+[+] Added SAP R/3 sniffer filter for SAP GUI authentications and SAP DIAG protocol decompression.
+[+] Added progress bar in Groups enumeration function.
+[!] Fixed a bug connecting to Abel Remote Console if running on the same computer.
+
+
+====================================
+Version 4.9.42 (08-08-2011)
+====================================
+[+] Added support for Licensing Mode Terminal Server connections to Windows 2008 R2 servers in APR-RDP sniffer filter.
+[!] Fixed a bug (crash) in Certificate Collector with Proxy settings enabled.  
+
+
+====================================
+Version 4.9.41 (03-08-2011)
+====================================
+[+] Added support for MSCACHEv2 Hashes (used by Vista/Seven/2008) in Dictionary and Brute-Force Attacks.
+[+] Added MSCACHEv2 Hashes Cryptanalysis via Sorted Rainbow Tables.
+[+] Added MSCACHEv2 RainbowTables to WinRTGen v2.6.3. 
+[+] MS-CACHE Hashes Dumper now supports MSCACHEv2 hashes extraction from Windows Vista/Seven/2008 machines and offline registry files.
+[!] Fixed a memory allocation bug in Cryptanalysis Attacks to support very small RainbowTables.  
+[!] Added UAC compatibility in WinRTGen v2.6.3.
+
+
+====================================
+Version 4.9.40 (07-04-2011)
+====================================
+[+] Added progress bar indicator in the off-line capture file function.
+[!] Bug fixed in ProxyHTTPS Man-in-the-Middle Sniffer parsing "Connection Established" string.
+[!] Bug fixed in VoIP Sniffer creating MP3 Mono files.
+[!] Bug fixed in RTP Sniffer processing off-line capture files.
+[!] WinRTGen recompiled with OpenSSL library version 0.9.8q.
+
+
+====================================
+Version 4.9.39 (02-03-2011)
+====================================
+[+] Added Proxy support for Cain's Certificate Collector. 
+[+] Added the ability to specify custom proxy authentication credentials for Certificate Collector.
+[+] Added ProxyHTTPS Man-in-the-Middle Sniffer (TCP port 8080).
+[!] HTTP, APR-HTTPS and APR-ProxyHTTPS sniffer filters are now separated.
+[!] OpenSSL library upgrade to version 0.9.8q.
+[!] Winpcap library upgrade to version 4.1.2.
+
+
+====================================
+Version 4.9.38 (01-02-2011)
+====================================
+[!] Fixed a Cain's runtime error when SIP/RTP sniffer filter is disabled.
+[!] SIP, MGCP and RTP sniffer filters are now separated.
+[!] Fixed RTP sniffer filter to avoid processing Link-local Multicast Name Resolution (LLMNR) traffic on UDP port 5355.
+[!] Fixed RTP sniffer filter to avoid processing SSDP traffic on UDP port 1900.
+[!] Fixed RTP sniffer filter to avoid processing Multicast DNS (MDNS) traffic on UDP port 5353.
+[!] Improved RTP protocol validation function.
+
+
+====================================
+Version 4.9.37 (21-01-2011)
+====================================
+[+] Added TCP/UDP Large Send Offloading status detection on Windows Vista/Seven.
+[!] Better handling of APR-SSL MitM threads.
+[!] Fixed a problem with APR in Windows7 causing attacker's machine to be isolated from poisoned hosts.
+[!] Speed improvement in Credential Manager Password Decoder for x64 operating systems.
+
+
+====================================
+Version 4.9.36 (19-06-2010)
+====================================
+[+] Added MP3 audio file generation in VoIP sniffer. 
+[!] Fixed Abel DLL crashes on 64-bit operating systems.
+[!] Modified Export function to Users, Groups, Services and Shares lists with TAB separators.
+[!] Fixed a bug in Wireless Password Decoder concerning Microsoft Virtual WiFi Miniport Adapter.
+[!] Fixed a bug in NTLMv2 Cracker within the "Test Password" function.
+[!] Removed "WindowsFirewallInitialize failed" startup error message if Windows Firewall service is stopped. 
+
+
+====================================
+Version 4.9.35 (25-10-2009)
+====================================
+[!] Added Windows Firewall status detection on startup.
+[!] Added UAC compatibility in Windows Vista/Seven.
+[!] Winpcap library upgrade to version 4.1.1.
+
+
+====================================
+Version 4.9.34 (16-10-2009)
+====================================
+[!] Fixed a bug in Cain's configuration dialog.
+
+
+====================================
+Version 4.9.33 (16-10-2009)
+====================================
+[+] Added support for Windows 2008 Terminal Server in APR-RDP sniffer filter.
+[!] Fixed a bug in all APR-SSL based sniffer filters to avoid 100% CPU utilization while forwarding data.
+
+
+====================================
+Version 4.9.32 (25-09-2009)
+====================================
+[+] Added Abel64.exe and Abel64.dll to support hashes extraction on x64 operating systems.
+[+] Added x64 operating systems support in NTLM hashes Dumper, MS-CACHE hashes Dumper, LSA Secrets Dumper, Wireless Password Decoder, 
+Credential Manager Password Decoder, DialUp Password Decoder.
+[+] Added Windows Live Mail (Windows 7) Password Decoder for POP3, IMAP, NNTP, SMTP and LDAP accounts.
+[!] Fixed a bug of RSA SecurID Calculator within XML import function.
+[!] Executables rebuilt with Visual Studio 2008.
+
+
+====================================
+Version 4.9.31 (27-05-2009)
+====================================
+[+] SIPS Man-in-the-Middle Sniffer (TCP port 5061; successfully tested with Microsoft Office Communicator with chained certificates).
+[+] Added support for RTP G726-64WB codec (Wengo speex replacement ) in VoIP sniffer.
+[!] X509 certificate's extensions are now preserved in chained fake certificates generated by Certificate Collector.
+[!] Extended ASCII characters support for SSID in Passive Wireless Scanner.
+[!] Some bugs in Cain's Traceroute fixed.
+
+
+====================================
+Version 4.9.30 (21-04-2009)
+====================================
+[+] Added support for the following codecs in VoIP sniffer: G722, Speex-16Khz, Speex-32Khz, AMR-NB, AMR-WB.
+[!] Transmission rate fixed to 6Mbps in enumeration function of airpcap TX channels.
+
+
+====================================
+Version 4.9.29 (04-03-2009)
+====================================
+[+] Added Certificate Collector ability to generate self-signed or chained fake certificates.
+[+] Added certificate format conversion function (from PKCS#12 to PEM).
+[+] Added "_history_X" trailer to usernames extracted by History Hashes Dumper.
+[!] Removed "Ctrl-S" and "Ctrl-N" hotkeys causing strange application behavior.
+
+
+====================================
+Version 4.9.28 (25-02-2009)
+====================================
+[!] Fixed a bug in all APR-SSL based sniffer filters to avoid 100% CPU utilization while forwarding data.
+[!] Fixed a bug in Certificate Collector and automatic fake certificate generation (issuers with CN field instead of OU are now handled). 
+[!] Fixed a bug in PPPoE sniffer about CHAP-MD5 hashes incorrectly recognized as MS-CHAP hashes.
+[!] OpenSSL library upgrade to version 0.9.8j.
+[!] OUI List updated.
+
+
+====================================
+Version 4.9.27 (20-02-2009)
+====================================
+[+] Added channel hopping capability on A, BG and ABG channels in Passive Wireless Sniffer.
+[+] Added support for A channels in Passive Wireless Sniffer.
+[+] Added automatic detection of RX/TX ABG channels for AirPcap NX adapters.
+[!] WEP ARP Injection thread now avoid sending packets to disassociated stations.
+[!] Fixed a bug in visualization list of wireless clients (thanks: spino).
+[!] Fixed a bug (program's crash) when starting the sniffer on wireless adapters (es Intel PRO/Wireless 3945ABG) using with Winpcap 4.x.
+[!] Fixed a bug in WinRTgen about tables size visualization.
+[!] AirPcap library upgrade to version 4.0.0 (to support the new AirPcap NX adapters from CACE Technologies).
+[!] Winpcap library upgrade to version 4.1 beta 5.
+
+
+====================================
+Version 4.9.26 (05-01-2009)
+====================================
+[+] Added support for Licensing Mode Terminal Server connections in APR-RDP sniffer filter.
+[!] Fixed RTP sniffer filter to avoid processing XBOX Live traffic on UDP port 3074.
+[!] Fixed a possible buffer overflow condition in Cisco IOS-MD5 Cracker import function.
+[!] Corrected some charsets in charset.txt file.
+
+
+====================================
+Version 4.9.25 (01-12-2008)
+====================================
+[!] Fixed a buffer overflow condition in Remote Desktop Password Decoder.
+Advisory:
+- http://secunia.com/advisories/32794/
+- http://www.frsirt.com/english/advisories/2008/3286/products
+PoC: 
+- http://www.milw0rm.com/exploits/7297 
+
+
+====================================
+Version 4.9.24 (28-11-2008)
+====================================
+[+] Oracle 11g (case sensitive) Password Extractor via ODBC.
+[+] Added Oracle 11g Password Cracker (Dictionary and Brute-Force Attacks).
+[+] Added support for Oracle TNS 11g (AES-192) in Oracle TNS Hashes Password Cracker.
+[+] Added support for Oracle TNS 11g (AES-192) in Oracle TNS sniffer filter.
+[+] Experimental SQL Query tool via ODBC.
+
+
+====================================
+Version 4.9.23 (03-10-2008)
+====================================
+[+] Added LRWB-16Khz codec support in VoIP sniffer.
+[+] Added MGCP/RTP sniffer filter. Cain can now extract SDP-RTP parameters from MGCP protocol. 
+[!] Fixed some bugs in SIP/RTP sniffer filter causing crashes while sniffing.
+
+
+====================================
+Version 4.9.22 (15-08-2008)
+====================================
+[!] All Dumper's DLL Injection functions have been rewritten to directly use undocumented ZwCreateThread 
+API instead of CreateRemoteThread. On XP/2003, Cain now supports passwords/hashes/secrets extraction even 
+if executed in Terminal Server sessions.
+[!] Fixed a bug in dictionary attack "Double" option.
+
+
+====================================
+Version 4.9.21 (25-08-2008)
+====================================
+[+] Added dictionary attack variant "Double" to check for repeated passwords (Pass -> PassPass).
+[+] Added dictionary attack variant "Numbers substitution permutations" with the following substitution rules: 
+o or O -> 0; i or I -> 1; z or Z -> 2; e or E -> 3; a or A -> 4; s or S -> 5;
+[!] Modified the dictionary attack to support dictionary words with <space> character.
+[!] Fixed some uppercase-only bugs in Dictionary Password Crackers.
+[!] Fixed error lookup function to avoid "Failed to retrive error description !" message.
+
+
+====================================
+Version 4.9.20 (20-08-2008)
+====================================
+[+] Added PPPoE sniffer filter for PAP, CHAP, MS-CHAPv1 and MS-CHAPv2 authentications.
+[+] Added GRE/PPP sniffer filter for MS-CHAPv2 authentications.
+[+] Added automatic translation of MS-CHAPv2 to NT-challanges in "Send to Cracker" function. 
+[!] Modified the BPF filter to support processing of PPPoE packets.
+[!] Increased the max password length for words in dictionary file to 64 characters.
+[+] Added ability to change the initial position of dictionary files.
+[!] Modified the dictionary attack dialog to show the current password tested during case permutations.
+[!] Fixed a bug parsing RainbowTables filenames in subdirectories with "_" character.
+[!] Fixed few lines in charset.txt file.
+[!] OUI List updated.
+
+
+====================================
+Version 4.9.19 (17-07-2008)
+====================================
+[!] Added UserField and PassField columns in HTTP sniffer list.
+[!] Added support for Remote Desktop client v6 in APR-RDP sniffer.
+
+
+====================================
+Version 4.9.18 (10-07-2008)
+====================================
+[!] Fixed a bug in offline NTLM hashes dumper when LM hash is not present.
+[!] Charset file updated to support German an Danish special characters in rainbowtables (for Cain and Winrtgen).
+
+
+====================================
+Version 4.9.17 (07-07-2008)
+====================================
+[!] Fixed a bug in Oracle TNS sniffer filter for Oracle 8i authentications.
+[!] Fixed a bug in Oracle TNS sniffer filter for Oracle 10g authentications.
+[!] Fixed a bug in RTP sniffer: incorrect handling of multiple SSRC parameters within the same RTP session.
+
+
+====================================
+Version 4.9.16 (02-07-2008)
+====================================
+[+] Added support for Oracle TNS 10g (AES-128) in Oracle TNS Hashes Password Cracker.
+[+] Added support for Oracle TNS 10g (AES-128) in Oracle TNS sniffer filter.
+[+] Added a "Note" column in all Cracker's lists.
+[!] Fixed a bug in offline NTLM hashes dumper when BootKey parameter is not specified.
+
+
+====================================
+Version 4.9.15 (20-06-2008)
+====================================
+[+] Oracle TNS Hashes Password Cracker (Dictionary and Brute-Force Attacks).
+[+] Added Oracle TNS sniffer filter for DES and 3DES authentications.
+[!] Fixed a bug in VNC sniffer filter for new RFB protocol versions.
+[!] Fixed a bug with TCP/UDP/ICMP traceroute and Windows raw socket error code 10022.
+[!] Fixed a bug in RSA SecurID Calculator for tokens with serial numbers of more than 8 digits.
+[!] Fixed a bug in Dictionary Attack crackers regarding Mixed Hybrid and Case Permutations variants for each word. 
+[!] Fixed a bug in challenge spoofing and NTLM downgrading when one of the victim hosts is a gateway. 
+[!] OpenSSL library upgrade to version 0.9.8h.
+
+
+====================================
+Version 4.9.14 (06-03-2008)
+====================================
+[+] Added sniffer analysis on GRE/PPP incapsulated traffic; MPPC compression not supported yet. 
+[!] Fixed a bug reading packets from from external capture files: Ethernet FCS numbers strip-off.
+
+
+====================================
+Version 4.9.13 (04-03-2008)
+====================================
+[+] Added GRE/PPP sniffer filter for PAP, CHAP and MS-CHAPv1 (LM & NTLM) authentications.
+[+] CHAP-MD5 (Dictionary and Brute-Force Attacks).
+
+
+====================================
+Version 4.9.12 (28-02-2008)
+====================================
+[+] Added Windows Vista compatibility in all APR-SSL sniffers.
+
+
+====================================
+Version 4.9.11 (26-02-2008)
+====================================
+[+] Added support for new Aircrack-ng's IVs file format in WEP IVs sniffer and cracker.
+[+] Added ability to hash bytes in Hashes Calculator.
+[!] Fixed Cain logo half-visualization in Windows Vista with Desktop Composition enabled.
+[!] Fixed a bug in RSA SecurID XML single token add function.
+[!] Modified separator character in cracker's and sniffer's LST files from ";" to "TAB".
+
+
+====================================
+Version 4.9.10 (11-12-2007)
+====================================
+[+] Added Remote Registry Editor.
+[!] Fixed a bug in RSA SecurID XML import function.
+[!] AirPcap library upgrade to version 3.2.
+[!] Winpcap library upgrade to version 4.0.2.
+
+
+====================================
+Version 4.9.9 (28-11-2007)
+====================================
+[+] Added SIREN codec support in VoIP sniffer.
+
+
+====================================
+Version 4.9.8 (26-10-2007)
+====================================
+[+] Added support for new AES-128bit Keyfobs in RSA SecurID Token Calculator.
+[-] Removed support for old 64bit Keyfobs in RSA SecurID Token Calculator.
+
+
+====================================
+Version 4.9.7 (09-10-2007)
+====================================
+[+] Microsoft SQL Server 2005 Password Extractor via ODBC.
+[!] Fixed a bug in Internet Explorer 7 AutoComplete password decoder.
+[!] Default HTTP users and passwords fields updated.
+[!] Automatic recognition of AirPcap TX capability based on channels.
+
+
+====================================
+Version 4.9.6 (29-07-2007)
+====================================
+[+] Added Windows Vista support in LSA Secrets Dumper for external registry files (Policy revision > 9, AES-SHA256).
+[!] Fixed a bug in LSA Secrets Dumper causing application crashes.
+[!] Fixed a bug in NT Hashes dumper for hive files when only NT hashes are present.
+[!] Winpcap library upgrade to version 4.0.1.
+
+
+====================================
+Version 4.9.5 (17-07-2007)
+====================================
+[+] Added Windows Vista support for Active Wireless Scanner.
+[+] Off-line capture file processing now compatible with 802.1Q Vlan encapsulation.
+[+] Sniffer filter for LDAP passwords.
+[+] Automatic Certificate Collector for LDAPS protocol.
+[+] LDAPS Man-in-the-Middle Sniffer and password collector (TCP port 636).
+
+
+====================================
+Version 4.9.4 (19-06-2007)
+====================================
+[+] Automatic Certificate Collector for FTPS (implicit), IMAPS and POP3S protocols.
+[+] FTPS Man-in-the-Middle Sniffer and password collector (Implicit FTPS on TCP port 990).
+[+] POP3S Man-in-the-Middle Sniffer and password collector (TCP port 995).
+[+] IMAPS Man-in-the-Middle Sniffer and password collector (TCP port 993).
+
+
+====================================
+Version 4.9.3 (30-05-2007)
+====================================
+[+] Added Windows Mail (Vista) Password Decoder for POP3, IMAP, NNTP, SMTP and LDAP accounts.
+[!] Wireless Password Decoder incorrectly sends decoded WPAPSK passwords to the cracker.
+
+
+====================================
+Version 4.9.2 (23-05-2007)
+====================================
+[+] Added PTW WEP cracking attack.
+[+] Added Windows Vista support in Wireless Password Decoder.
+[!] Wireless Password Decoder now uses DLL injection under XP.
+
+
+====================================
+Version 4.9.1 (03-05-2007)
+====================================
+[+] Added Windows Vista support in NT Hashes Dumper.
+[+] Added Windows Vista support in LSA Secrets Dumper.
+[+] Added Windows Vista support in Credential Manager Password Decoder.
+[+] Added Windows Vista support in DialUp Password Decoder.
+[+] Added Windows Vista support in all DLL Injection functions.
+[+] Added support for Internet Explorer 7 AutoComplete passwords.
+[+] Added support for Outlook Express Deleted Accounts in Protected Storage Password Manager. 
+[!] Added a control function to avoid IP/MAC spoofing when promiscuous mode is disabled.
+
+
+====================================
+Version 4.9 (13-04-2007)
+====================================
+[!] Added Vista compatibility in the enumeration of network adapter's IP parameters.
+[!] Added capability to find a remote writable share installing Abel service.
+
+
+====================================
+Version 4.8 (03-04-2007)
+====================================
+[+] WPA-PSK Hashes Cryptanalysis via Sorted Rainbow Tables. 
+[+] WPA-PSK RainbowTables have been added to Winrtgen v2.5. 
+
+
+====================================
+Version 4.7 (26-03-2007)
+====================================
+[+] WPA-PSK Authentications sniffer.
+[!] Fixed a bug sending WPA-PSK hashes to the cracker.
+[!] OpenSSL library upgrade to version 0.9.8e.
+
+
+====================================
+Version 4.6 (16-03-2007)
+====================================
+[+] WPA-PSK (Dictionary and Brute-Force Attacks).
+[+] WPA-PSK Auth (Dictionary and Brute-Force Attacks).
+[+] Added IE7 passwords support in Credential Manager Password Decoder.
+[!] Fixed high CPU usage into wireless ARP Injection thread when no ARP request packets are available.
+
+
+====================================
+Version 4.5 (25-02-2007)
+====================================
+[+] Added Windows Vista compatibility in NTLM Hashes Dumper, LSA Hashes Dumper and Syskey Dumper for hive files.
+[!] Fixed a bug in Wireless AP and Stations lists.
+[!] Fixed a bug in NTLM Hashes Dumper for hive files.
+
+
+====================================
+Version 4.4 (21-02-2007)
+====================================
+[+] WEP cracking speed up via wireless ARP requests injection (AirPcap USB adapter is needed).
+This feature actually works with Airpcap drivers v2.0 beta TX; the release version v2.0 of those drivers 
+still have problems sending wireless frames.
+[+] Ability to deauthenticate client stations from Access Points.
+
+
+====================================
+Version 4.3 Release (29-01-2007)
+====================================
+[+] Ability to dump LSA Secrets directly from SYSTEM and SECURITY registry hive files.
+[+] Added HALFLMCHALL hashes submission to rainbowcrack-online client.
+[+] Winrtgen v2.4 added to installation package. 
+[!] Added a function to Auto-Clear the WAN list every 30 minutes.
+[!] Fixed a list bug when cracking LM+challange hashes with cryptanalysis and brute-force attacks.
+[!] Winpcap library upgrade to version 4.0 final.
+
+
+====================================
+Version 4.2 Release (30-11-2006)
+====================================
+[+] Added "Challenge Spoofing" configuration dialog.
+[+] Added "Challenge Spoofing Reset" button to limit spoofed challenges in the first NTLM authentication only.
+[!] Separated "Challenge Spoofing" and "NTLM Downgrading" functions.
+[!] Removed Winrtgen fixed challenge limitation for "lmchall", "ntlmchall" and "halflmchall" tables.
+[!] Added Cain support for RinbowTables with a custom spoofed challenge.
+[!] SID Scanner modified for custom starting RID.
+
+
+====================================
+Version 4.1 Release (23-11-2006)
+====================================
+[+] HALFLM + spoofed challenge Hashes Cryptanalysis via Sorted Rainbow Tables. 
+[+] New types of RainbowTables have been added to Winrtgen v2.2. 
+"halflmchall" tables can be used against the first 8 bytes LM response hashes for spoofed challenges (0x1122334455667788)
+to recover the first 7 characters of the original password.
+
+
+====================================
+Version 4.0 Release (22-11-2006)
+====================================
+[+] Cain's MitM NTLM Challenge Spoofing. (Requires APR to be active and a MitM condition between victim hosts)
+You can now spoof server challenges in NTLM authentications; this feature enables the use of RainbowTables for cracking network hashes.
+WARNING !!! Enabling Challenge Spoofing cause users to fail authentications so please use it carefully.
+[+] NTLM Session Security authentications downgrade to LM&NTLMv1.
+The following protocols are supported: SMB, DCE/RPC, TDS, HTTP, POP3, IMAP, SMTP.
+[+] LM + spoofed challenge Hashes Cryptanalysis via Sorted Rainbow Tables. 
+[+] NTLM + spoofed challenge Hashes Cryptanalysis via Sorted Rainbow Tables.
+[+] New types of RainbowTables have been added to Winrtgen v2.1. 
+"lmchall" and "ntlmchall" tables can be used against LM and NTLM response hashes for spoofed challenges (0x1122334455667788).
+
+
+====================================
+Version 3.9 Release (17-11-2006)
+====================================
+[+] Ability to dump MS-CACHE hashes directly from SYSTEM and SECURITY registry hive files.
+
+
+====================================
+Version 3.8 Release (12-11-2006)
+====================================
+[!] Fixed a bug during OphCrack's RainbowTables attack againts big number of hashes.
+
+
+====================================
+Version 3.7 Release (12-11-2006)
+====================================
+[+] AirPcap library upgrade to version 2.0 beta2.
+[!] Fixed problems during OphCrack's RainbowTables recognition.
+
+
+====================================
+Version 3.6 Release (10-11-2006)
+====================================
+[+] Added Ophcrack's RainbowTables support for NTLM Hashes Cryptanalysis attack.
+[!] Winpcap library upgrade to version 4.0 beta2.
+
+
+====================================
+Version 3.5 Release (09-11-2006)
+====================================
+[+] ORACLE Hashes Cryptanalysis via Sorted Rainbow Tables. 
+[+] A new type of RainbowTables has been added to Winrtgen v2.0. "oracle" tables can be used against ORACLE hashes for
+specific usernames that can be set in the configuration dialog.
+
+
+====================================
+Version 3.4 Release (07-11-2006)
+====================================
+[+] MSCACHE Hashes Cryptanalysis via Sorted Rainbow Tables. 
+[+] A new type of RainbowTables has been added to Winrtgen v1.9. "mscache" tables can be used against MSCACHE hashes for
+specific usernames that can be set in the configuration dialog.
+[!] Fixed a bug in TDS sniffer filter for NTLM authentications.
+[!] DCE/RPC sniffer filter now follows dynamic TCP ports.
+[!] Fixed startup problem using WinPcap driver 3.1.
+[!] Fixed a problem within syskey dumper (now looking for the correct ControlSet LSA key).
+[!] Fixed a memory allocation error in cryptanalysis attack via Ophcrack's RainbowTables on systems with 2Gb of RAM or more.
+
+
+====================================
+Version 3.3 Release (27-10-2006)
+====================================
+[!] Fixed a problem in G722.1 codec initialization causing Cain crashes while sniffing or processing capture files.
+
+
+====================================
+Version 3.2 Release (27-10-2006)
+====================================
+[+] Added an option to disable the promiscuous mode of the network card (NDIS_PACKET_TYPE_ALL_LOCAL will be used instead).
+[!] Fixed a problem within dictionary attack dialog.
+[!] Fixed a problem with bugus lengths in UDP header.
+
+
+====================================
+Version 3.1 Release (26-10-2006)
+====================================
+[+] Sniffer filter for DCE/RPC authentications (Outlook connectiing to Exchange server).
+[!] Fixed a problem in MS-CACHE hashes dumper.
+[!] Fixed a memory allocation error in cryptanalysis attack via RainbowTables on systems with 2Gb of RAM or more.
+[!] Second half of LM passwords, if valid, are immediately processes by cryptanalysis attack via RainbowTables to save time.
+
+
+====================================
+Version 3.0 Release (18-10-2006)
+====================================
+[+] Support for AirPcap USB 2.0 adapter in Wireless Scanner.
+[+] Passive Wireless Scanner with channel hopping support.
+[+] AirpCap.DLL dynamically linked.
+[+] WEP IVs sniffer. (Capture files are compatible with Aircrack's .ivs files)
+[+] 802.11 capture files analyzer compatible with PCAP and Aircrack's .ivs file formats. 
+[+] 802.11 capture files decoder (support WEP and WPA-PSK encryption. 
+[+] WPA-PSK pre-shared key calculator.
+[+] WEP Keys Cracker using Korek Attack (64-bit and 128-bit key length supported).
+[!] Off-line capture file processing now compatible with Wireless extensions.
+[+] Added G722.1 codec support in the VoIP sniffer.
+[+] Added support fo Winpcap library version 4.0 and higher.
+[!] Voip sniffer decoding problem when the communication is made by different codecs.
+[!] WSNMPAPI.DLL dynamically linked to let Cain start on systems where that DLL is not present.
+[!] OpenSSL library upgrade to version 0.9.8d.
+[!] Winpcap library upgrade to version 4.0 beta1.
+[!] OUI List updated.
+
+
+====================================
+Version 2.9 Release (22-05-2006)
+====================================
+[+] Added Ophcrack's RainbowTables support for LM Hashes Cryptanalysis attack.
+[!] Fixed support fo Winpcap library version 3.2 in Wireless Scanner.
+
+
+====================================
+Version 2.8.9 Release (19-04-2006)
+====================================
+[!] RASAPI32.DLL dynamically linked to let Cain start on Windows NT systems where that DLL is not present.
+[!] Added support fo Winpcap library version 3.2.
+[!] Fixed problems for some German's characters in Dictionary Cracker. Thanks to bd66 for the bug report.
+[!] OUI List (UPDATED).
+
+
+====================================
+Version 2.8.8 Release (16-03-2006)
+====================================
+[!] RAPI.DLL dynamically linked to let Cain start if ActiveSync is not installed.
+
+
+====================================
+Version 2.8.7 Release (16-03-2006)
+====================================
+[+] Added hashes syncronization functions (Export/Import) to/from Cain for PocketPC via ActiveSync.
+
+
+====================================
+Version 2.8.6 Release (16-02-2006)
+====================================
+[+] Added VoIP sniffer support for the following codecs: G723.1, G726-16, G726-24, G726-32, G726-40, LPC-10.
+
+
+==========================================
+Version 2.8.5 Private Release (25-01-2006)
+==========================================
+[!] Bug fixed in HTTP sniffer. Thanks to bd66 for the bug report.
+
+
+====================================
+Version 2.8.4 Release (10-01-2006)
+====================================
+[!] Manual updated.
+[!] Little bug fixed in Rainbowcrack-online client.
+
+
+====================================
+Version 2.8.3 Release (26-12-2005)
+====================================
+[!] Installation package rewritten using NullSoft Install system.
+[!] Bug fixed in Rainbowcrack-Online client when there are no hashes in list.
+[!] Bug fixed in Syskey dumper.
+
+
+====================================
+Version 2.8.2 Release (14-12-2005)
+====================================
+[+] Rainbowcrack-Online client.
+Cain can now submit and retrieve hashes/passwords to/from the online cracking 
+service at www.rainbowcrack-online.com. Of course you need a valid account to 
+use this feature. The communication from Cain and the web site is SSL enabled.
+
+
+====================================
+Version 2.8.1 Release (09-11-2005)
+====================================
+[+] Oracle Password Cracker (Dictionary and Brute-Force Attacks).
+[+] Oracle Password Extractor via ODBC.
+[+] MySQL Password Extractor via ODBC.
+[!] Bug fixed in MySQL password sniffer (incorrect challenge length).
+[!] UDP port 1812 added by default to RADIUS sniffer filter.
+
+
+====================================
+Version 2.8 Release (17-10-2005)
+====================================
+[+] Cisco VPN Client Password Decoder.
+[!] OpenSSL library upgrade to version 0.9.8a.
+
+
+====================================
+Version 2.7.9 Release (16-10-2005)
+====================================
+[+] Added "Export" and "Refresh" functions to Wireles Scanner list. 
+[!] Fixed a serious bug in Cain's internals.
+[-] Removed some low-used icons from the toolbar.
+
+
+====================================
+Version 2.7.8 Release (09-10-2005)
+====================================
+[!] Fixed a bug in tooltip visulization.
+
+
+====================================
+Version 2.7.7 Release (07-10-2005)
+====================================
+[+] Wireless Zero Configuration Password Dumper.
+
+
+====================================
+Version 2.7.6 Release (21-09-2005)
+====================================
+[!] Fixed a problem in the LSA Secrets Dumper causing system crashes. Thanks to Nicolas RUFF for
+the bug report.
+
+
+====================================
+Version 2.7.5 Release (07-09-2005)
+====================================
+[!] Fixed a problem with extended ASCII characters in the Cryptanalysis Attack. Thanks to Ramius 
+from http://www.rainbowtables.net/ for the bug report.
+
+
+====================================
+Version 2.7.4 Release (07-09-2005)
+====================================
+[+] Syskey Decoder. Cain can now extract the Boot Key, generated with the Syskey utility, from the local system
+or external registry files (Eg: C:\<windir>\system32\config\system). 
+[+] NT Hashes Dumper can now extract password hashes from external SAM files encrypted with the Syskey utility.
+[!] OpenSSL library upgrade to version 0.9.8.
+[!] Winpcap library updated to version 3.1.
+
+
+====================================
+Version 2.7.3 Release (10-06-2005)
+====================================
+[!] Fixed another little bug in fastlm RainbowTable's algorithm.
+[+] Winrtgen v1.7 added to the installation package.
+
+
+====================================
+Version 2.7.2 Release (09-06-2005)
+====================================
+[!] Fixed another little bug in RainbowTable's verification function.
+[+] Winrtgen v1.6 added to the installation package.
+
+
+====================================
+Version 2.71 Release (31-05-2005)
+====================================
+[!] Fixed a little bug in RainbowTable's verification function.
+
+
+====================================
+Version 2.7 Release (28-05-2005)
+====================================
+[+] RDPv4 session sniffer for APR (experimental). 
+Cain can now perform man-in-the-middle attacks against the heavy encrypted Remote Desktop Protocol (RDP),
+the one used to connect to the Terminal Server service of a remote Windows computer. The entire session 
+from/to the client/server is decrypted and saved to a text file. Client-side key strokes are also decoded 
+to provide some kind of password interception. The attack can be completely invisible because of the use 
+of APR (Arp Poison Routing) and other protocol weakness.
+[!] Winrtgen v1.4 added to the installation package.
+
+
+====================================
+Version 2.69 Release (07-05-2005)
+====================================
+[+] A new type of Rainbow Tables has been added to Winrtgen v1.3. "FastLM" tables can be used against
+LM Hashes and provide both faster generation and cryptanalysis. FastLM tables are not compatible with 
+standard tables for LM Hashes generated by RainbowCrack, renaming the filenames is useless.
+[+] LM Hashes Cryptanalysis via FastLM Sorted Rainbow Tables.
+[+] Winrtgen v1.3 added to installation package.
+[!] Benchmark added to Cain's cryptanalysis dialog.
+[!] Fixed a bug in Kerberos5 sniffer filter.
+[!] Fixed a bug in SNMP community sniffer filter.
+
+
+====================================
+Version 2.68 Release (22-04-2005)
+====================================
+[+] Off-line capture file processing compatible with winpcap, tcpdump, ethereal format.
+[+] Sniffer filter for SIP-MD5 authentications.
+[+] Brute-Force and Dictionary Attacks for SIP-MD5 Hashes.
+[+] Cain's MSCACHE Hashes Dumper.
+[+] Brute-Force and Dictionary Attacks for MSCACHE Hashes.
+[+] VNC Hash added to the Hash Calculator.
+[!] Fixed "unknown" type in IKE-PSK hashes list.
+[!] Sniffer's lists code cleanup.
+[!] OpenSSL library upgrade to version 0.9.7g.
+
+
+====================================
+Version 2.67 Release (20-03-2005)
+====================================
+[!] Fixed several HEAP overflow conditions in POP3, IMAP, SMTP, NNTP and TDS sniffer filters.
+
+
+====================================
+Version 2.66 Release (16-03-2005)
+====================================
+[!] Fixed a buffer overflow condition in IKE-PSK sniffer handling long ID strings.
+[!] Fixed a buffer overflow condition in HTTP sniffer handling long usernames or passwords.
+
+
+====================================
+Version 2.65 Release (26-02-2005)
+====================================
+[!] SIP/RTP sniffer filter redesigned.
+[!] VoIP sniffer general code cleanup.
+[!] Bug fixed in the "Test password" function in LM & NTLM Hashes list; thanks to Pawel Goleñ for the bug report.
+
+
+====================================
+Version 2.64 Release (26-02-2005)
+====================================
+[+] Added Export function to Users, Groups, Services and Shares lists.
+
+
+====================================
+Version 2.63 Release (25-02-2005)
+====================================
+[!] Fixed a bug in VoIP sniffer. Thanks to Peter Sommer for the bug report and beta testing.
+
+
+====================================
+Version 2.62 Release (24-02-2005)
+====================================
+[!] Fixed a bug in APR and DNS protocol; thanks to Patrick Geschwindner for reporting this bug.
+
+
+====================================
+Version 2.61 Release (24-02-2005)
+====================================
+[!] Fixed a bug in VoIP sniffer when the ACK packet of the SIP handshake is seen after RTP stream packets.
+
+
+====================================
+Version 2.6 Release (21-02-2005)
+====================================
+[+] Experimental VoIP Sniffer 
+The sniffer can now extract audio conversations based on SIP/RTP protocols and save them into WAV files.
+The following codecs are supported: G711 uLaw, G711 aLaw, GSM, MS-GSM, ADPMC, DVI, LPC, L16, G729, Speex, iLBC.
+[!] RC4 Key for encrypted pipes changed to "Cain & Abel".
+
+
+====================================
+Version 2.5 Release (15-12-2004)
+====================================
+[+] Winrtgen v1.2 added to installation package.
+[+] Cain & Abel v2.5 User Manual added to installation package.
+[!] HTTPS acceptor sockets is now active only when APR is enabled.
+[!] Problem with PWL Dictionary Cracker.
+[!] OUI List (UPDATED).
+[!] Bug fixing in cryptanalysis charsets.
+[!] Bug fixing in HTTPS to HTTP sniffer using custom ports.
+[!] Bug fixing in Protected Storage Password Manager.
+[!] ParseURL function in Certificate Collector (you can now use server:port syntax).
+[!] Resolve best gateway in APR (Cain's APR follows the local route table when it does not know where to re-route packets).
+
+
+====================================
+Version 2.5 beta65 (01-12-2004)
+====================================
+[+] Brute-Force and Dictionary Attacks for SHA-2(256), SHA-2(384), SHA-2(512)Hashes.
+[+] SHA-2(256), SHA-2(384), SHA-2(512)Hashes Cryptanalysis via Sorted Rainbow Tables.
+[!] TCP Traceroute now uses Winpcap to bypass Windows XP SP2 restrictions on raw sockets.
+[!] Problem adding multiple Rainbow Tables to the list.
+ 
+
+====================================
+Version 2.5 beta64 (20-11-2004)
+====================================
+[+] Added Hashes of type SHA-2(256), SHA-2(384), SHA-2(512) in Hash Calculator.
+[+] Export function in Dialup Password Decoder.
+[!] HTTP Sniffer collects only few passwords in POST methods packets.
+[!] Sniffer filters still enabled if their checkbox is cleared in configuration dialog.
+[!] Problems with username's length > 32 characters in Brute-Force and Dictionary Crackers.
+
+
+====================================
+Version 2.5 beta63 (10-11-2004)
+====================================
+[+] Password decoders for MSN Explorer Sign In, MSN Explorer Autocomplete, 
+Outlook Express Identity Manager, Outlook Express (HTTP Mail) and Outlook (IMAP,POP3,...) 
+in Protected Storage Password Manager.
+[+] Support for Outlook Express multiple identity in Protected Storage Password Manager.
+[+] Hash Calculator support for SHA-2 (256,384,512) hashes.
+
+
+====================================
+Version 2.5 beta62 (06-11-2004)
+====================================
+[+] Ability to insert/modify sniffer's TCP/UDP protocol ports.
+[+] Ability to insert/modify Username and Password Fields used by HTTP Sniffer Filter.
+[+] Ability to select active DNS names to spoof in APR-DNS.
+[!] Winpcap library updated to version 3.1 beta4.
+[!] Minor bugs fixed.
+
+
+====================================
+Version 2.5 beta61 (28-10-2004)
+====================================
+[+] SNMP Community Sniffer
+[+] Support for Extended ASCII passwords (eg: mäö) in LM Hashes crackers (Dictionary and Brute-Force).
+[!] NTLM Brute-Force Attack does not work with Extended ASCII passwords (eg: màò).  
+[!] Dictionary attack hangs in Case permutation of Extended ASCII passwords.
+[!] Added hash type column in LM & NTLM Cracker for fast recognition of hashes.
+[!] OpenSSL library upgrade to version 0.9.7e.
+
+
+====================================
+Version 2.5 beta60 (14-10-2004)
+====================================
+[+] Credential Manager Password Decoder for Windows XP/2003.
+[!] OUI List (UPDATED).
+
+
+====================================
+Version 2.5 beta59 (26-09-2004)
+====================================
+[+] Added Abel-side Password History Hashes Dumper.
+[+] Speed improvement in MD4, MD5, LM, LM+challenge and NTLM Brute-Force Password Crackers.
+
+
+====================================
+Version 2.5 beta58 (09-09-2004)
+====================================
+[+] Added Password History Hashes in the Hash Dumper.
+[!] Some bugs fixed and code cleanup in Hash Dumper.
+
+
+====================================
+Version 2.5 beta57 (06-09-2004)
+====================================
+[+] Speed improvement in LM Brute-Force Password Cracker.
+[!] Bug fixed in LSA Secrets Dumper. No more crashes with WindowsXP SP2.
+
+
+====================================
+Version 2.5 beta56 (16-06-2004)
+====================================
+[!] Fixed sniffer activation/deactivation interaction with Wireless Scanner.
+
+
+====================================
+Version 2.5 beta55 (11-06-2004)
+====================================
+[!] Crashes opening configuration dialog.
+
+
+====================================
+Version 2.5 beta54 (11-06-2004)
+====================================
+[!] Bug fixed in Wireless Scanner (NDIS_WLAN_BSSID enumeration).
+
+
+====================================
+Version 2.5 beta53 (09-06-2004)
+====================================
+[!] Bug fixed in Wireless Scanner.
+[!] Bug in Cisco-PIX-MD5 Dictionary Attack cracker fixed.
+
+
+====================================
+Version 2.5 beta52 (28-05-2004)
+====================================
+[+] Wireless Scanner (experimental).
+The scanner uses the Winpcap protocol driver so it should
+work on Windows 2000 and WindowsXP. It has been successfully 
+testes with a Compaq WL110 card, however I really don't know 
+how many cards are supported.
+The scanner does not put the wireless card into "monitor mode"
+so it cannot receive 802.11 frames -> no WEP cracking for now.
+Suggestions on how to do that on Windows are really appreciated !  
+[!] Winpcap library updated to version 3.1 beta3.
+
+
+====================================
+Version 2.5 beta51 (14-05-2004)
+====================================
+[!] Long words Dictionary Attack problem fixed.
+[!] Squid port 3128 added to HTTP password sniffer.
+[!] "Timeout expired stopping HTTPS main thread" problem on exit fixed.
+[!] Winpcap library updated to version 3.1 beta2.
+
+
+====================================
+Version 2.5 beta50 (01-05-2004)
+====================================
+[!] Quick fix on poison packets.
+[!] Quick fix on cryptanalysis statistics.
+[!] Cisco PIX Password calculator moved to Hash Calculator.
+
+
+====================================
+Version 2.5 beta49 (30-04-2004)
+====================================
+[+] Cisco PIX Hashes Cryptanalysis via Sorted Rainbow Tables.
+
+
+====================================
+Version 2.5 beta48 (29-04-2004)
+====================================
+[+] MySQL Hashes Cryptanalysis via Sorted Rainbow Tables.
+[+] MySQL Password Cracker (works with both v3.23 and SHA1 Hashes).
+[+] Sniffer filter for MySQL authentications (v3.23 and SHA1).
+[+] Brute-Force and Dictionary attacks rewritten for all crackers.
+[+] "Map Network Drive" function in Shares ListView.
+[+] "Get Certificate" function in Certificates ListView.
+[+] Users enumeration and SID scanner independent threads.
+[+] Sniffer filter for Microsoft Kerberos5 Pre-Authentication over TCP.
+[!] EditBox's 64Kb limit fixed.
+[!] Server name not showing in SQL Server 2000 Password Extractor.
+[!] Protected Storage not automatically dumped on startup.
+[!] OpenSSL library updated to version 0.9.7d.
+[!] Winpcap library updated to version 3.1 beta.
+[!] OUI List updated.
+[-] MSN Messenger Password Sniffer/Cracker (MSNP7 protocol no more supported on servers).
+
+
+==================
+Version 2.5 beta47
+==================
+NEW FEATURES:
+- NTLM Hashes Cryptanalysis via Sorted Rainbow Tables (ADDED).
+VARIANT AND FIXES:
+- Minor BUG fixing.
+
+
+==================
+Version 2.5 beta46
+==================
+NEW FEATURES:
+- MD2 Hashes Cryptanalysis via Sorted Rainbow Tables (ADDED).
+- MD4 Hashes Cryptanalysis via Sorted Rainbow Tables (ADDED).
+- RIPEMD160 Hashes Cryptanalysis via Sorted Rainbow Tables (ADDED).
+VARIANT AND FIXES:
+- OUI List (UPDATED)
+- "." bug in Dialup Password Decoder (FIXED).
+- MD2 Hashes Cracker does not auto-save resume informations (FIXED).
+
+
+==================
+Version 2.5 beta45
+==================
+NEW FEATURES:
+- MD5 Hashes Cryptanalysis via Sorted Rainbow Tables (ADDED)
+- SHA-1 Hashes Cryptanalysis via Sorted Rainbow Tables (ADDED)
+- Compatibility with RainbowCrack v1.2 (ADDED)
+- Dialup Password Decoder (ADDED)
+VARIANT AND FIXES:
+- Lists are not sorted correctly by Timestamps (FIXED)
+- The "Test Password" function reports passwords in uppercase when used against NTLM Session Security Hashes (FIXED)
+
+
+==================
+Version 2.5 beta44
+==================
+NEW FEATURES:
+- Protected Storage Password Manager support for MS-Outlook 2002 POP3,IMAP,HTTP and SMTP passwords
+VARIANT AND FIXES:
+- All crackers now auto-save resume informations every 3 minutes
+- Infinite loop bug in TDS Sniffer filter (FIXED) 
+- Bug in Microsoft SQL Server 2000 Password Extractor (FIXED)
+- Reloading Cain LM&NTLM Hashes cracker loose resume informations (FIXED)
+
+
+==================
+Version 2.5 beta43
+==================
+NEW FEATURES:
+- Microsoft SQL Server 2000 Password Cracker (ADDED)
+- Microsoft SQL Server 2000 Password Extractor via ODBC (ADDED)
+VARIANT AND FIXES:
+- Bug in RIP Analisys when switching from authentications (FIXED)
+- Sniffer crashes when Routing Protocols Analisys is enabled (FIXED)
+- Custom charset support Rainbow Tables (ADDED)
+- Sortable Computers List
+- Sortable Browsers List
+- Sortable Users List
+- Sortable Services List
+- Sortable Groups List
+- Sortable Shares List
+- Sortable Abel Hashes List
+- Sortable Protected Storage List
+
+
+==================
+Version 2.5 beta42
+==================
+NEW FEATURES:
+- Process identification in Cain's TCP/UDP Table Viewer (ADDED)
+- Process identification in Abel's TCP/UDP Table Viewer (ADDED)
+(These functions work only on XP or later)
+- Enterprise Manager Password Decoder (ADDED)
+(Decode Enterprise Manager's passwords of SQL Server 7.0 and SQL Server 2000) 
+- Remote Desktop Password Decoder (ADDED)
+VARIANT AND FIXES:
+- Ability to choose the location of RainbowTable files (ADDED)
+- Ability to stop the cryptanalysis thread (ADDED)
+- Bug in VNC sniffer filter (FIXED) 
+- Numbers in the Crackers Tree (ADDED)
+
+
+==================
+Version 2.5 beta41
+==================
+NEW FEATURES:
+- LM Hashes Cryptanalysis via Sorted Rainbow Tables (ADDED)
+Cain can now perform cryptanalysis attacks on LM Hashes using RainbowCracks's 
+sorted tables. This kind of attack is pretty fast but works only on LM Hashes 
+not encrypted with a challenge. For informations on Rainbow Tables generation
+and sorting please read the RainbowCrack's Tutorial 
+(http://www.antsight.com/zsl/rainbowcrack/rcracktutorial.htm) 
+VARIANT AND FIXES:
+- Some bugs in the LM&NTLM Cracker (FIXED)
+
+
+==================
+Version 2.5 beta40
+==================
+VARIANT AND FIXES:
+- Crashes parsing truncated HTTP packets (FIXED) 
+
+
+==================
+Version 2.5 beta39
+==================
+NEW FEATURES:
+- Network enumeration of Terminal Services Servers (ADDED)
+VARIANT AND FIXES:
+- Some bugs in the LM&NTLM Cracker(FIXED)
+- Bug fixed in Cain's HTTP parser  (FIXED)
+- OpenSSL library upgrade to version 0.9.7c
+
+
+==================
+Version 2.5 beta38
+==================
+- Cisco Config Uploader (ADDED)
+Cain can now upload configuration files to Cisco routers and switches that 
+supports the OLD-CISCO-SYSTEM-MIB. The device configuration request is made 
+via SNMPv1 using the Read/Write community string (the Read-Only one is not enough). 
+The device will download its configuration from Cain using TFTP protocol. 
+This feature will not work if there are network restrictions like ACLs or firewall 
+rules on those protocols. The transfer is initiated by the device itself so dynamic 
+NAT between you and the device is a problem too.
+
+
+==================
+Version 2.5 beta37
+==================
+VARIANT AND FIXES:
+- OUI List (UPDATED)
+- Duplicate entries in the APR list (FIXED)
+- Winpcap library updated to version 3.0.1a (ADDED)
+- Check for local Administrator's rights (ADDED)
+- Better Error handling in network functions (ADDED)
+
+
+==================
+Version 2.5 beta36
+==================
+NEW FEATURES:
+- NTLM Session Security Password Cracker
+
+The long awaited cracker for NTLM Session Security authentications is 
+finally available in this version. Now, all kind of LM, NTLM and NTLMv2 
+Hashes with or without NTLMSSP encapsulation are supported and can be 
+"Sent to the Cracker" for Dictionary and Brute-Force attacks.
+
+
+==================
+Version 2.5 beta35
+==================
+NEW FEATURES:
+- IKE Aggressive Mode Pre-Shared Keys Cracker (ADDED) 
+The cracker works with both MD5 and SHA1 Hashes.
+
+- Sniffer filter for IKE Aggressive Mode Pre-Shared Keys authentications (ADDED)
+The sniffer collects all the parameters needed to crack a Pre-Shared Key used in 
+IKE Aggressive Mode authentications (see RFC-2409 for details).
+
+The sniffer/cracker has been successfully tested using a Cisco VPN Client v4.0 
+and a Cisco PIX Firewall Version 6.3(1). Please let me know your results.
+
+
+
+==================
+Version 2.5 beta34
+==================
+NEW FEATURES:
+- Cisco Config Downloader (ADDED)
+This feature lets you download the configuration file from Cisco routers
+and switches that supports the OLD-CISCO-SYSTEM-MIB or the new CISCO-CONFIG-COPY-MIB.
+(It seems that the Cisco PIX Firewall does not support this feature)
+The device configuration request is made via SNMPv1 or SNMPv2 using the Read/Write 
+community string (the read-only is not enough). The device will upload its configuration 
+to Cain using TFTP protocol. This feature will not work if there are network restrictions
+like ACLs or firewall rules on those protocols. The transfer is initiated by the device 
+itself so dynamic NAT between you and the device is a problem too.
+VARIANT AND FIXES:
+- "Cannot open the session file" problem in Telnet List (FIXED)
+
+
+==================
+Version 2.5 beta33
+==================
+VARIANT AND FIXES:
+- Cisco Type 7 Password Decoder fails to decode long passwords (FIXED)
+- Crashes in Users Enumerations function (FIXED)
+- Some problems in HTTP and NNTP sniffer filter (FIXED)
+- Sortable Lists in Sniffer->Passwords TAB
+- OpenSSL library upgrade to version 0.9.7b
+
+
+==================
+Version 2.5 beta32
+==================
+NEW FEATURES:
+- Sniffer filter for HTTP authentications (LM&NTLMv1 (NTLMSSP), NTLMv1 only (NTLMSSP), NTLMv2 (NTLMSSP)) (ADDED)
+- Sniffer filter for PROXY-HTTP authentications (LM&NTLMv1 (NTLMSSP), NTLMv1 only (NTLMSSP), NTLMv2 (NTLMSSP)) (ADDED)
+VARIANT AND FIXES:
+- Some crashes due to the Base64 decoding function (FIXED)
+
+
+==================
+Version 2.5 beta31
+==================
+VARIANT AND FIXES:
+- Bug in the OSPF-MD5 Cracker (FIXED)
+- Some problems in POP3 sniffer filter (FIXED)
+- Winpcap library upgrade to version 3.0
+
+
+==================
+Version 2.5 beta30
+==================
+NEW FEATURES:
+- Abel's LSA Secrets Dumper (ADDED)
+- Sniffer filter for "NTLMv1 only (NTLMSSP)" authentications (ADDED)
+VARIANT AND FIXES:
+- Fake local ARP cache entries needed for HTTPS sniffer are now "Dynamic".
+- SMB sniffer incorrectly reports "NTLMv1 only" authentications as "Cleartext" (FIXED)
+- Some problems in SMB sniffer filter (FIXED)
+- Some problems in POP3 sniffer filter (FIXED)
+- Some problems in HTTP sniffer filter and Cookie parser (FIXED)
+- OpenSSL library upgrade to version 0.9.7a
+
+
+==================
+Version 2.5 beta29
+==================
+NEW FEATURES:
+
+- Automatic HTTPS Certificate Collector (ADDED)
+The collector automatically grabs certificates from HTTPS servers and creates
+a fake copy of them locally. All fake certificate's parameters except for public 
+keys are the same as in originals.
+
+- HTTPS Man-in-the-Middle Sniffer and password collector (ADDED)
+Cain's HTTPS sniffer works in in FULL-DUPLEX-MODE processing both Client and 
+Server HTTPS traffic. It makes use of APR (Arp Poison Routing) so the attacker's 
+IP and MAC addresses can be totally spoofed client-side. The sniffer cannot 
+decrypt HTTPS traffic if directed to/from the attacker's workstation.
+
+- Sniffer filter for ICQ authentications (ADDED)
+
+VARIANT AND FIXES:
+- ICMP Traceroute always ask "Please enter a positive integer" (FIXED)
+- Some problems in HTTP sniffer filters (FIXED)
+
+
+==================
+Version 2.5 beta28
+==================
+VARIANT AND FIXES:
+- Cain crashes parsing DNS packets with extended labels (RFC 2673) (FIXED)
+
+
+==================
+Version 2.5 beta27
+==================
+NEW FEATURES:
+- LSA Secrets Dumper (ADDED)
+Cain can now dump LSA Secrets indirectly from the registry. The dumper uses  
+LSASS code injection technique so you need Administrator privileges.
+VARIANT AND FIXES:
+- Some problems IMAP and FTP sniffer filters (FIXED)
+- Cain crashes at random intervals while sniffing (passwords filters disabled) (FIXED)
+- Some code clean-up
+
+
+==================
+Version 2.5 beta26
+==================
+VARIANT AND FIXES:
+- Some problems in POP3,IMAP,SMTP,NNTP sniffer filters (FIXED)
+- Another minor BUG loading the OUI list (FIXED)
+
+
+==================
+Version 2.5 beta25
+==================
+VARIANT AND FIXES:
+- Important BUG fixed in APR to avoid remote cache pollution
+- Minor BUG fixed in the OUI list
+
+
+==================
+Version 2.5 beta24
+==================
+NEW FEATURES:
+- MSN Password Cracker (ADDED)
+- RADIUS Shared Keys Cracker (ADDED)
+A RADIUS Key is a shared secret between the RADIUS server and 
+a NAS(Network Access Server) used to encrypt RADIUS User's passwords. 
+The cracker extracts Authenticators fields from Access-Request and 
+Access-Accept packets and use them to recover these keys. 
+Once the right key is found all User's passwords can be recovered instantly.
+- RADIUS User's Passwords Sniffer/Decoder (ADDED)
+Capture and decrypt RADIUS user's passwords once the NAS Shared Key is found.
+- Sniffer filter for MSN authentications (ADDED)
+- Sniffer filter for RADIUS authentications (ADDED)
+VARIANT AND FIXES:
+- Minor BUG fixed in POP3 (APOP-MD5) sniffer
+
+
+==================
+Version 2.5 beta23
+==================
+VARIANT AND FIXES:
+- Minor error in POP3 and Kerberos sniffer filter (FIXED)
+
+
+==================
+Version 2.5 beta22
+==================
+NEW FEATURES:
+- Pre-Poison function using ARP Request Packets to force entries in remote
+ARP caches (ADDED)
+VARIANTS AND FIXES:
+- Selectable sniffer filters
+- ARP healing function modified to use ARP Request Packets
+- Option to Poison using ARP Request or ARP Reply Packets (more network traffic)
+- BUG in TDS password sniffer (FIXED)
+- BUG in VNC passwords sniffer (FIXED)
+- BUG in HTTP password sniffer (FIXED)
+- BUG in POP3 password sniffer (FIXED)
+- BUG in APOP passwords sniffer (FIXED)
+- Sniffer's memory allocation problems (FIXED)
+
+
+==================
+Version 2.5 beta21
+==================
+NEW FEATURES:
+
+- SSH-1 Sniffer for APR (ADDED). 
+Cain's SSH-1 sniffer works in in FULL-DUPLEX-MODE processing both Client and 
+Server SSH-1 traffic. It makes use of APR (Arp Poison Routing) so the attacker's 
+IP and MAC addresses can be totally spoofed and never exposed on the network. 
+APR (ARP Poison Routing) and a Man-in-the-Middle situation is also required 
+because of the RSA asymmetric encryption used in SSH-1 negotiation's phase. 
+The sniffer supports 3 symmetric encryption algorithms: DES, 3DES and Blowfish. 
+Zlib compression is not supported in this version. The sniffer cannot decrypt 
+SSH-1 traffic if directed to/from the attacker's workstation.
+
+- RSA SecurID Token Calculator (ADDED). 
+The calculator produces valid tokens given the serial number and the activation 
+key of an RSA SecurID device. These parameters are found in Token's activation 
+files typically named "something.ASC".
+
+- Promiscuous-Mode Scanner (ADDED). 
+The scanner has been included in the main "Hosts List". It tries various tests 
+based on non-standard ARP packets and it uses the same Spoofing configuration 
+of APR. 
+
+VARIANTS AND FIXES:
+- New Cain's Traceroute GUI
+- Minor bug-fixing
+- Only one instance of Cain forced to run at a time
+- "Couldn't create session file" error in Telnet Sniffer (FIXED)
+- Export function in Host List (ADDED)
+- Export function in PWL Cached resources Viewer (ADDED)
+- Export function in Protected Storage Passwords Viewer (ADDED)
+
+
+==================
+Version 2.5 beta20
+==================
+NEW FEATURES:
+- Sniffer filter for HTTP Cookies authentications (ADDED) 
+- Smart Poison on ARP requests for host contained in the APR table (ADDED)
+VARIANTS AND FIXES:
+- Problems in Hot-Key and the main Menu (FIXED)
+- Some problems in HTTP and POP3 Password Sniffers (FIXED)
+- MD5 Brute-Force Password Cracker cannot crack some passwords (FIXED)
+- TDS v7.0 Sniffer report wrong usernames if the password is blank (FIXED)
+
+
+==================
+Version 2.5 beta19
+==================
+NEW FEATURES:
+- Microsoft Kerberos5 Pre-Authentication Cracker (ADDED)
+- Sniffer filter for Microsoft Kerberos5 Pre-Authentication (ADDED) 
+- Sniffer filter for POP3 authentications (LM&NTLMv1 (NTLMSSP), NTLMv2 (NTLMSSP)) (ADDED)
+- Sniffer filter for IMAP authentications (LOGIN, LM&NTLMv1 (NTLMSSP), NTLMv2 (NTLMSSP)) (ADDED)
+- Sniffer filter for NNTP authentications (PLAIN, LM&NTLMv1 (NTLMSSP), NTLMv2 (NTLMSSP)) (ADDED)
+- Sniffer filter for SMTP authentications (PLAIN, LOGIN, CRAM-MD5, LM&NTLMv1 (NTLMSSP), NTLMv2 (NTLMSSP)) (ADDED)
+- Sniffer filter for TDS (Sybase, Microsoft SQL) authentications (v4.x, v5.0, v7.0, LM&NTLMv1 (NTLMSSP), NTLMv2 (NTLMSSP))(ADDED)
+VARIANTS AND FIXES:
+- The Sniffer's Password Tree now shows the # of captured passwords
+- Wrong "Next-Hop" in Internal EIGRP Routes Extractor (FIXED)
+
+
+==================
+Version 2.5 beta18
+==================
+NEW FEATURES:
+- Protected Storage Password Manager (ADDED)
+VARIANTS AND FIXES:
+
+
+==================
+Version 2.5 beta16
+==================
+NEW FEATURES:
+- Start Sniffing and Poisoning at startup (ADDED)
+VARIANTS AND FIXES:
+- Problems with Winpcap 3.0 symbolic links (FIXED)
+- Dictionary Attacks errors in MD2,MD5,SHA-1,RIPEMD-160 Crackers 
+when Hybrid-Brute is selected (FIXED)
+
+
+==================
+Version 2.5 beta15
+==================
+NEW FEATURES:
+- Access Database Password Decoder support for Access 2000/XP (ADDED)
+VARIANTS AND FIXES:
+- Hosts are not sorted correctly for IP addresses (FIXED)
+- Access Database Password Manager -> Access Database Password Decoder
+
+
+==================
+Version 2.5 beta14
+==================
+NEW FEATURES:
+- VRRP Monitor (ADDED)
+- Hash Calculator (ADDED)
+- MD4 Password Cracker (ADDED)
+- MD5 Password Cracker (ADDED)	
+- SHA-1 Password Cracker (ADDED)	
+- RIPEMD-160 Password Cracker (ADDED)
+- DNS Spoofer for APR (ADDED)
+- VNC Password Decoder (ADDED)
+- VNC Password Cracker (ADDED)
+- VRRP-HMAC-96 Password Cracker (ADDED)
+- Sniffer filter for VNC authentications (ADDED)
+- Sniffer filter for VRRP authentications (ClearText and IP Auth Header based)(ADDED)
+VARIANTS AND FIXES:
+- Sortable Hosts List 
+- Speed improvement in Sniffer's filters
+- Speed improvement in Arp Poison Routing (APR)
+- Little speed improvement in all MD5 based password crackers
+- "\Device\Packet_NdisWanIp" eliminated from the adapters list
+- "Send to Cracker" and "Send All to Cracker" functions modified
+- Various "Memory Leak" problems in Sniffer's filters (FIXED)
+- Buffer overflow in DNS Spoofer (crash parsing compressed names) (FIXED)
+- OUI Fingerprint stops working when all hosts are removed from the Hosts list (FIXED)
+
+
+==================
+Version 2.5 beta13
+==================
+NEW FEATURES:
+- Cisco PIX Firewall Password Calculator (ADDED)
+- Cisco PIX Firewall Password Cracker (for "enable" and "passwd" commands) (ADDED)
+FIXES:
+- Some fixes and speed improvement in LM & NT Hashes password crackers
+
+
+==================
+Version 2.5 beta12
+==================
+NEW FEATURES:
+- Sniffer filter for OSPF-MD5 authentication (ADDED)
+- Sniffer filter for RIPv2-MD5 authentication (ADDED)
+- OSPF-MD5 Password Cracker (ADDED)
+- RIPv2-MD5 Password Cracker (ADDED)
+FIXES:
+- IP packets routed by APR are processed twice -> Double passwords entry in lists (FIXED)
+- Incorrect "Origin AS" in EIGRP External Route analysis (FIXED)
+
+
+==================
+Version 2.5 beta11
+==================
+NEW FEATURES:
+- Sniffer filter for NTLMv2 authentication (ADDED)
+- Sniffer filter for NTLMSSP (LM & NTLMv1, NTLMv1 only, NTLMv2) authentications (ADDED)
+- NTLMv2 Password Cracker (ADDED)
+
+****************************************************************************************
+************************************ WARNING!!!! ***************************************
+****************************************************************************************
+In NTLMv2 authentication the Domain/Hostname name is also used; for this
+reason the following commands: 
+	"net use \\SERVER\C$ /user:administrator password"
+	"net use \\SERVER\C$ /user:DOMAIN\administrator password"
+produce different NTLMv2 encrypted passwords. With the first command Windows encrypts 
+the NTLMv2 password using Domain = NULL. With the second command Windows encrypts 
+the NTLMv2 password using Domain = "DOMAIN".
+
+To avoid checking the password twice, the cracker always use the Domain/Hostname
+in the "Domain" column of the list. This name is extracted from the authentication 
+packet sniffed on the network.
+
+If you already known the password and the NTLMv2 cracker does not retrieve 
+it correctly try as follows: 
+0) Quit Cain
+1) modify the line in the file NTLMv2.LST in the programs directory deleting the 
+Domain/Hostname:
+EXAMPLE: Contents of NTLMv2.LST
+original -> Administrator;DOMAIN;;C0A9FBDBD59A919E3E6812AF92CB338F;...........
+modified -> Administrator;;;C0A9FBDBD59A919E3E6812AF92CB338F;.................
+2) Restart Cain and test the password again
+
+However, if you send to the cracker NTLMv2 hashes captured from a "good" session 
+(a session with the "Successful" string in the LogonResult column) the cracker 
+should work correctly.
+***************************************************************************************
+***************************************************************************************
+
+- Automatic scroll in Password's ListViews (ADDED)
+- Winpcap v2.3 support and compatibility (ADDED)
+FIXES:
+- APR remains in Half-Routing state while poisoning certain firewalls (FIXED)
+- Cannot switch to Cain because the tray icon is not present (FIXED)
+- Some problems with the GUI (FIXED)
+
+
+==================
+Version 2.5 beta10
+==================
+NEW FEATURES:
+- RIP Monitor (ADDED)
+- Sniffer filter for IMAP authentications (Basic and CRAM-MD5) (ADDED)
+- Sniffer filter for POP3 CRAM-MD5 authentications (ADDED)
+- Sniffer filter for APOP-MD5 authentications (ADDED)
+- APOP-MD5 Password Cracker (ADDED)
+- CRAM-MD5 Password Cracker (ADDED)
+- Box Revealer for passwords hidden by asterisks (ADDED)
+FIXES:
+- Packets sent are 1 Byte longer than the right size (FIXED)
+- Main window XP display problems (FIXED)
+
+
+=================
+Version 2.5 beta9
+=================
+NEW FEATURES:
+- OSPF Monitor
+- Multiple HSRP Group support in HSRP Monitor (ADDED)
+- Multiple AS support in EIGRP Monitor (ADDED)
+- Hop's Netmask discovery using ICMP packets in Traceroute (ADDED)
+FIXES:
+- ICMP Traceroute does not stop correctly when used against misconfigured PAT devices (FIXED)
+- TCP Traceroute does not change source port at every probe (FIXED)
+- UDP Traceroute does not stop correctly at destination when the specified remote UDP 
+port is in use at the target (FIXED)
+- IP swapping in HSRP ListView when more than one HSRP group is present (FIXED)
+- EIGRP Monitor does not return EIGRP routes from routers with AS != 1 (FIXED)
+- EIGRP Monitor does not return EIGRP routes from routers with certain IOS versions (FIXED) 
+- EIGRP Routes ListView does not report the correct "NextHop" address for Internal routes (FIXED)
+
+
+=================
+Version 2.5 beta8
+Winpcap 2.3beta is needed for XP support
+=================
+NEW FEATURES:
+- Base64 Password Decoder (ADDED)
+- Access 97 Password Decoder Dialog (ADDED)
+- Access 97 Password Decoder ListView (REMOVED)
+- OUI Fingerprint (ADDED) 
+(The updated public OUI list is available at http://standards.ieee.org/regauth/oui/oui.txt)
+- HSRP and VRRP virtual address identification (ADDED)
+- HSRP Monitor (ADDED)
+- EIGRP Monitor (ADDED)
+- Sniffer filter for HTTP Form Authentication (ADDED)
+- BPF Kernel filter to accept only ARP and IP traffic (ADDED)
+- ARP Responder for the spoofed address (ADDED)
+- Adapter statistics on status bar (ADDED)
+- TCP/UDP/ICMP Traceroute + DNS Resolver + WHOIS resolver (ADDED)
+(The WHOIS client extracts "inetnum" and "route" informations from RIPE's Database)
+FIXES:
+- Cain crashes on startup when "HASHES.LST" contains more than 256 lines (FIXED)
+- Deleting all APR WAN entries causes packets retransmission (ACK Storm) until TTL reaches 0 (FIXED)
+- Problems enumerating network domains in Windows XP (FIXED)
+- EIGRP Monitor does not work correctly when spoofed IP and MAC addresses are used (FIXED)
+- Computers enumeration does not recognize Windows XP platforms (FIXED)
+
+
+=================
+Version 2.5 beta7
+...still waiting for Winpcap 2.3 Release for XP support
+=================
+NEW FEATURES:
+- Speed improvement in PWL Password Cracker (ADDED)
+- RC4-MMX routines as been optimized in Assembler for Pentium-Pro or later processors (ADDED)
+- RC4 routines parallelized using MMX technology (ADDED)
+- Automatic check for MMX support in PWL Cracker (ADDED)
+- Processor Informations Dialog (ADDED)
+- RC4 and MD5 routines as been optimized in Assembler for Pentium or later processors (ADDED)
+- Local NT Hash Dumper (ADDED) (no need to install Abel locally anymore)
+FIXES:
+- The path to Abel.dll is not injected properly in LSASS process (FIXED) 
+- Crashes in PWL Password Cracker when started using non-existent dictionary file  (FIXED)
+- Crashes in NT-Hashes Password Cracker when started using non-existent dictionary file (FIXED)
+- Crashes in Cisco Type-5 Password Cracker when started using non-existent dictionary file (FIXED)
+
+
+=================
+Version 2.5 beta6 
+...still waiting for Winpcap 2.3 Release for XP support
+=================
+NEW FEATURES:
+- Quick List in network tree (ADDED)
+FIXES:
+- PWL Cached-Resources dialog shows only the username for Novell resources (FIXED)
+- Cain crashes reading non-existent PWL files in list (FIXED)
+- IPC connections don't return network errors (FIXED)
+
+
+=================
+Version 2.5 beta5 
+...waiting for Winpcap 2.3 Release for XP support
+=================
+NEW FEATURES:
+- Cisco Type-5 (MD5 Based) Password Cracker (ADDED)
+- Speed improvement in PWL Password Cracker (ADDED)
+- Dictionary and Brute-Force Attack Threads separated (ADDED)
+- Dictionary and Brute-Force Configuration pages separated (ADDED)
+- Keyrate (Password/sec) in all crackers (ADDED)
+FIXES:
+- Code cleanup in MD5 hashing functions	(FIXED)
+- NT Cracker doesn't test the username as password (FIXED)
+- PWL Cracker doesn't test the username as password (FIXED)
+- Several minus bugs in crackers (FIXED)
+
+
+=================
+Version 2.5 beta4
+=================
+NEW FEATURES:
+- Winpcap v2.2 support and compatibility (ADDED)
+- Export Hashes to L0phtCrack v2.x (.lc) compatible file (ADDED)
+- Cisco Type-7 Password Decoder (ADDED)
+FIXES:
+- Out of Subnet Addresses in Host-List View (FIXED)
+- "PacketReceivePacket failed" error when stopping the sniffer (FIXED)
+- Incorrect IP parameters in configuration dialog (FIXED)
+- Cain crashes opening the configuration dialog (FIXED)
+- Application crashes using Winpcap v2.2 (FIXED)
+- Multiple entries in Telnet Session ListView (FIXED)
+- Incorrect FTP passwords collected (FIXED)
+- Incorrect POP3 passwords collected (FIXED)
+
+
+=================
+Version 2.5 beta3
+=================
+NEW FEATURES:
+- Cain TCP Table Viewer (ADDED)
+- Cain UDP Table Viewer (ADDED)
+- Cain Route Table Manager (ADDED)
+- SID Scanner on request (ADDED)
+- Refresh on all ListView (ADDED)
+- SMB Sniffer clear-text password support (ADDED)
+- NULL password check on PWL and NT password cracker (ADDED)
+- Abel Service (ADDED)
+- Abel Service Installation Progress (ADDED)
+- Abel TCP Table Viewer (ADDED)
+- Abel UDP Table Viewer (ADDED)
+- Abel Route Table Manager (ADDED)
+- Abel Remote Console (ADDED)
+- Console History (ADDED)
+- Encryption on Abel Hash-Dumper (ADDED)
+- Encryption on Abel Route Table Manager (ADDED)
+- Encryption on Abel TCP Table Viewer (ADDED)
+- Encryption on Abel UDP Table Viewer (ADDED)
+- Abel Hash-Dumper (DLL Injection into LSASS) works with Syskey enabled (ADDED)
+FIXES:
+- Some SMB Sniffer problems (FIXED)
+- Problem in SID Scanner on a machine inserted into a Domain (FIXED)
+- "Hashes.txt" not deleted after Hash Dump (FIXED)
+- Console Problem on "\n" only strings (FIXED)
+- Console Threads Buffer Overflow Problems (FIXED)
+- Console Echo Problem (FIXED)
+- PacketGetNetInfo not working with DHCP (FIXED)
+- Problem with disabled adapters (FIXED)
+- Set Modified Flag Reset Problem (FIXED)
+- Right Click on Tree Control Problem (FIXED)
+
+
+=================
+Version 2.5 beta2
+=================
+NEW FEATURES:
+- Disconnection Dialog (ADDED)
+- Range dialog in MAC scanner (ADDED)
+- Progress dialog in MAC scanner (ADDED)
+- Progress dialog in SIDs scanner (ADDED)
+FIXES:
+- Some SMB sniffer problems (FIXED)
+- SIDs scanner doesn't extract all users (FIXED)
+- "Cannot open the Adapter" loop in configuration Dialog (FIXED)
+- IP address 0.0.0.0 on DHCP enabled adapters (FIXED)
+
+
+=================
+Version 2.5 beta1 
+=================
+(First Public Release)
+NEW FEATURES:
+- APR (ARP Poison Routing) enables sniffing on switched networks (ADDED)
+- Spoofed IP and MAC support on APR (ADDED)
+- Sniffer filters for HTTP, FTP, POP3, SMB passwords (ADDED)
+- Full Telnet Session Recorder (ADDED)
+- MAC Scanner (ADDED)
+- Access Database Password Recover (ADDED)
+- PWL Password Recover (ADDED)
+- SID Scanner (ADDED)
+- Service Manager (ADDED)
+- Users, Groups and Service Enumeration (ADDED)
+ 
