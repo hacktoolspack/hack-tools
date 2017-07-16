@@ -1,0 +1,10 @@
+UsePost = true
+Headers.Append("User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2.12) Gecko/20101027 Firefox/3.6.12")
+Headers.Append("Keep-Alive: 115"
+Headers.Append("Proxy-Connection: keep-alive"
+Headers.Append("Referer: http://visa.via.infonow.net/locator/global/AdvancedSearchAction.do")
+Headers.Append("Cookie: JSESSIONID=5D2E604F487FB5AC9DBF9A1FDEA7D86A.fta-web3")
+
+URL = "http://visa.via.infonow.net/locator/global/AdvancedSearchAction.do"
+
+PostBuffer = "newSearch=true&airport=&pageid=adv&filteredNameSubmit=false&LOC=en_US&country=CHE&street1=2353464756867867876886786777777777777777777777777777786&building=&city=aaaaaaaaaaaaaaa&initialSearchName=&mapAndList=mapAndList&x=27&y=9"
