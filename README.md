@@ -9,6 +9,4 @@ run python cmd: py file.py
 run perl: perl file.pl
 install perl modules: cpan install
 
-download NSA TOOLS : http://www.mediafire.com/file/3n88n0wca9rsgln/5f477243.rar.0c9e0294
-
-websites vulnerables : https://github.com/hacktoolspack/websites-vulnerables
+download sqlmap2 : https://github.com/hacktoolspack/sqlmap2/archive/master.zip
