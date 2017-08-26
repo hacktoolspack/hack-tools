@@ -31,6 +31,5 @@ wget.download('http://download1590.mediafireuserdownload.com/mzn4itn27rxg/vxom7u
 wget.download('https://github.com/hacktoolspack/websites-vulnerables/archive/master.zip')
 wget.download('https://dreamsupport.us/downloads/windows-pc/-ANTIMALWARE/ASKRemover.zip')
 wget.download('https://dreamsupport.us/downloads/windows-pc/Youtube%20Downloader.zip')
-wget.download('
 print '                                                                                 '
 print 'thank you'
