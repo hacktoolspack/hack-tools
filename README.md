@@ -1,9 +1,6 @@
 # hack-tools-python-perl-javascript-2017
 
-[![AUR](https://img.shields.io/aur/license/yaourt.svg?maxAge=2592000)](http://www.fsf.org/licensing/)
- [![ToolsWatch 2016 Arsenal](https://www.toolswatch.org/badges/arsenal/2016.svg)](https://www.blackhat.com/eu-16/arsenal.html)
-+[![ToolsWatch 2017 Arsenal](https://rawgithub.com/toolswatch/badges/master/arsenal/2017.svg)](https://www.blackhat.com/us-17/arsenal/schedule/index.html#yasuo-7909)
- [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&maxAge=2592000)](https://twitter.com/0xsauby)
+[![ToolsWatch 2017 Arsenal](https://rawgithub.com/toolswatch/badges/master/arsenal/2017.svg)](https://www.blackhat.com/us-17/arsenal/schedule/index.html#yasuo-7909)
  
  ## Description
 
