@@ -26,6 +26,7 @@ run ruby : ruby file.rb
 
 ruby install : gem install (modules) and open Gemfile for view requirements
 
+run php : C:\php\php.exe file.php
 
 download Mcafee antivirus bêta.exe (script python compiled) : http://download1474.mediafire.com/7v9qb778apqg/geatwts7ba2hlbt/mcafee+antivirus+b%C3%AAta.rar
 
