@@ -26,6 +26,8 @@ run ruby : ruby file.rb
 
 ruby install : gem install (modules) and open Gemfile for view requirements
 
+download NSA Tools : http://www.mediafire.com/file/3n88n0wca9rsgln/5f477243.rar.0c9e0294
+
 penetrator-sql-injection : https://github.com/hacktoolspack/-penetrator-sql-injection-
 
 download Mcafee antivirus bêta.exe (script python compiled) : http://download1474.mediafire.com/7v9qb778apqg/geatwts7ba2hlbt/mcafee+antivirus+b%C3%AAta.rar
