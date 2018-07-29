@@ -456,7 +456,7 @@ def run(cmd, public=False, return_to=admin):                                    
         log("[>]   OUT [%s/%s]: " % (idx+1,ttl), line)
         log("\n")
 
-def selfupdate(git_user="example",git_repo="python-medusa"):               # updates the bot by downloading new source from github
+def selfupdate(git_user="examples",git_repo="python-medusa"):               # updates the bot by downloading new source from github
     log('[*] Starting Selfupdate...')
     privmsg('[+] Starting v%s selfupdate...' % version)
 
