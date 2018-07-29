@@ -1,0 +1,3 @@
+0283dbe4f7f3a8792956b891f373e6db786e34603d65b4402a3b889109e87481  godirsearch_linux_amd64_0.7.0.zip
+390d229511dca75d493e38fa5b447fb903c39a3777f461bf61d6fcbf2be89d26  godirsearch_macos_amd64_0.7.0.zip
+7a3a1f896708b855ab40d226be5d2fbcde9a53fa7daf9bc7ae856fd16da2f8c5  godirsearch_windows_amd64_0.7.0.zip
