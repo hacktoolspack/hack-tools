@@ -28,6 +28,8 @@ ruby install : gem install (modules) and open Gemfile for view requirements
 
 build go script : go build
 
+download exploit installer framework : https://github.com/hacktoolspack/Exploit-installer
+
 download fsociety (modified): https://github.com/hacktoolspack/fsociety-ultra-sql-scanner- (obsolete)
 
 download NSA Tools : http://www.mediafire.com/file/3n88n0wca9rsgln/5f477243.rar.0c9e0294
