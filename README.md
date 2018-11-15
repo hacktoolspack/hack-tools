@@ -28,7 +28,7 @@ ruby install : gem install (modules) and open Gemfile for view requirements
 
 build go script : go build
 
-download fsociety (modified): https://github.com/hacktoolspack/fsociety-ultra-sql-scanner- (obsolete)
+website who contains software cracked : https://lucid-hawking-66f691.netlify.com
 
 download NSA Tools : http://www.mediafire.com/file/3n88n0wca9rsgln/5f477243.rar.0c9e0294
 
