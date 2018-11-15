@@ -31,9 +31,7 @@ build go script : go build
 
 website who contains software cracked : https://lucid-hawking-66f691.netlify.com
 
-download NSA Tools : http://www.mediafire.com/file/3n88n0wca9rsgln/5f477243.rar.0c9e0294
-
-download Mcafee antivirus bêta.exe (script python compiled) : http://download1474.mediafire.com/7v9qb778apqg/geatwts7ba2hlbt/mcafee+antivirus+b%C3%AAta.rar
+download NSA Tools : https://lucid-hawking-66f691.netlify.com
 
 
 execute javascript : java -jar file.jar
