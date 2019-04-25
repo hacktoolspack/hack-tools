@@ -1,0 +1,1 @@
+This is preset 3, you can set the preset in \presets\searchfunctions\preset3.txt

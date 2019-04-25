@@ -1,0 +1,5 @@
+.com
+.net
+.org
+.co
+.us
