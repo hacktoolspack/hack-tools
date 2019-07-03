@@ -2,9 +2,8 @@
 
 [![Anonymousgif](https://i.giphy.com/media/2Y0ecuTsnAvZK/200.gif)
 [![Anonymous](https://img.hebus.com/hebus_2013/02/13/preview/1360720696_97766.jpg) 
-[![ToolsWatch 2017 Arsenal](https://rawgithub.com/toolswatch/badges/master/arsenal/2017.svg)](https://www.blackhat.com/us-17/arsenal/schedule/index.html#yasuo-7909)
- [![Build Status](https://api.travis-ci.org/sqlmapproject/sqlmap.svg?branch=master)](https://api.travis-ci.org/sqlmapproject/sqlmap)
- [![Python 2.6|2.7](https://img.shields.io/badge/python-2.6|2.7-yellow.svg)](https://www.python.org/)
+ [![Build Status](https://img.shields.io/badge/build-passing%20%2F%20moderate-yellow.svg)
+ [![Python 2.6|2.7](https://img.shields.io/badge/python-2.7%20%7C%203.7-success.svg)
  [![website](https://img.shields.io/badge/website-https%3A%2F%2Fb653d2d4955a1d1903a89569eeda5968.netlify.com-red.svg)
  
  ## Description
