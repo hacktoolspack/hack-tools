@@ -5,7 +5,7 @@
 [![ToolsWatch 2017 Arsenal](https://rawgithub.com/toolswatch/badges/master/arsenal/2017.svg)](https://www.blackhat.com/us-17/arsenal/schedule/index.html#yasuo-7909)
  [![Build Status](https://api.travis-ci.org/sqlmapproject/sqlmap.svg?branch=master)](https://api.travis-ci.org/sqlmapproject/sqlmap)
  [![Python 2.6|2.7](https://img.shields.io/badge/python-2.6|2.7-yellow.svg)](https://www.python.org/)
- [![website](https://img.shields.io/badge/website-https%3A%2F%2Flucid--hawking--66f691.netlify.com%2F-green.svg)
+ [![website](https://img.shields.io/badge/website-https%3A%2F%2Fb653d2d4955a1d1903a89569eeda5968.netlify.com-red.svg)
  
  ## Description
 
