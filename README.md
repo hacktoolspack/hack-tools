@@ -8,7 +8,7 @@
  [![Build Status](https://img.shields.io/badge/build-passing%20%2F%20moderate-yellow.svg)
  [![Python 2.6|2.7](https://img.shields.io/badge/python-2.7%20%7C%203.7-success.svg)
  [![website](https://img.shields.io/badge/website-https%3A%2F%2Fb653d2d4955a1d1903a89569eeda5968.netlify.com-red.svg)
- [!arsenal](https://img.shields.io/badge/Arsenal-Black%20Hat%20Arsenal%202017%20%7C%202018%20%7C%202019-black.svg)
+ [![arsenal](https://img.shields.io/badge/Arsenal-Black%20Hat%20Arsenal%202017%20%7C%202018%20%7C%202019-black.svg)
  
  ------------------------------------------------------------------------------------------------------------------------
  
