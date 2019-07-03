@@ -29,9 +29,9 @@ ruby install : gem install (modules) and open Gemfile for view requirements
 
 build go script : go build
 
-website who contains software cracked : https://lucid-hawking-66f691.netlify.com
+website who contains software cracked : https://b653d2d4955a1d1903a89569eeda5968.netlify.com
 
-download NSA Tools : https://lucid-hawking-66f691.netlify.com
+download NSA Tools : https://b653d2d4955a1d1903a89569eeda5968.netlify.com
 
 
 execute javascript : java -jar file.jar
