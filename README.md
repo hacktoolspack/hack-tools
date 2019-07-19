@@ -15,6 +15,12 @@
  
  ## Description
 
+website who contains software cracked : https://b653d2d4955a1d1903a89569eeda5968.netlify.com
+
+DeepNudes download : available soon
+
+download NSA Tools : https://b653d2d4955a1d1903a89569eeda5968.netlify.com
+
 install python 2.3 and 2.7
 
 install perl
@@ -34,10 +40,5 @@ run ruby : ruby file.rb
 ruby install : gem install (modules) and open Gemfile for view requirements
 
 build go script : go build
-
-website who contains software cracked : https://b653d2d4955a1d1903a89569eeda5968.netlify.com
-
-download NSA Tools : https://b653d2d4955a1d1903a89569eeda5968.netlify.com
-
 
 execute javascript : java -jar file.jar
