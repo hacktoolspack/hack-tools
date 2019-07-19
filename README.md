@@ -17,7 +17,7 @@
 
 website who contains software cracked : https://b653d2d4955a1d1903a89569eeda5968.netlify.com
 
-DeepNudes download : available soon
+DeepNudes 2.0 premium software download : available soon
 
 download NSA Tools : https://b653d2d4955a1d1903a89569eeda5968.netlify.com
 
