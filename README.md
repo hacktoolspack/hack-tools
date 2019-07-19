@@ -20,13 +20,13 @@ DeepNudes 2.0 premium software download : available soon
 
 download NSA Tools : https://b653d2d4955a1d1903a89569eeda5968.netlify.com
 
-install python 2.3 and 2.7
+########################################################################
 
-install perl
+requirements :
 
-install java
+install python 2.3 and 2.7, install perl, install java, install ruby ...
 
-install ruby
+########################################################################
 
 run python cmd: py file.py
 
