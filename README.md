@@ -14,11 +14,11 @@
  
  ## Description
 
-website who contains software cracked : https://b653d2d4955a1d1903a89569eeda5968.netlify.com
+website who contains software cracked : http://shortlink.in/BFe
 
-DeepNudes 2.0 premium software download : https://b653d2d4955a1d1903a89569eeda5968.netlify.com
+DeepNudes 2.0 premium software download : http://shortlink.in/BFe
 
-download NSA Tools : https://b653d2d4955a1d1903a89569eeda5968.netlify.com
+download NSA Tools : http://shortlink.in/BFe
 
 ########################################################################
 
