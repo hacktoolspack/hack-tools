@@ -7,8 +7,6 @@
 
  [![Build Status](https://img.shields.io/badge/build-passing%20%2F%20moderate-yellow.svg)
  [![Python 2.6|2.7](https://img.shields.io/badge/python-2.7%20%7C%203.7-success.svg)
- [![website](https://img.shields.io/badge/website%20%3A-http%3A%2F%2Fshortlink.in%2FBFe-red)
- [![website](https://img.shields.io/badge/website%20build-moderate-orange.svg)
  
  ------------------------------------------------------------------------------------------------------------------------
  
