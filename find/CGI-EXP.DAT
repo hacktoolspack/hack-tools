@@ -1,0 +1,205 @@
+; last update: 05.10.99 by b@$t sh()t //UnlG (from ucgi1565.c by su1d sh3ll)
+; U caN addeD aNy Ur ExpLoiTS in file cgi-exp.dat 
+; ;- comment
+; [name] - name
+; GET /[filename] HTTP/1.0 - test message
+; 
+[UnlG - backd00r]
+GET /cgi-bin/unlg1.1 HTTP/1.0
+[UnlG - backd00r]
+GET /cgi-bin/unlg1.2 HTTP/1.0
+[THC - backd00r]
+GET /cgi-bin/rwwwshell.pl HTTP/1.0
+[gH.cgi - backd00r]
+GET /cgi-bin/gH.cgi HTTP/1.0
+[phf..classic :)]
+GET /cgi-bin/phf HTTP/1.0
+[Count]
+GET /cgi-bin/Count.cgi HTTP/1.0
+[test-cgi]
+GET /cgi-bin/test-cgi HTTP/1.0
+[nph-test-cgi]
+GET /cgi-bin/nph-test-cgi HTTP/1.0
+[nph-publish]
+GET /cgi-bin/nph-publish HTTP/1.0
+[php.cgi]
+GET /cgi-bin/php.cgi HTTP/1.0
+[php]
+GET /cgi-bin/php HTTP/1.0
+[handler]
+GET /cgi-bin/handler HTTP/1.0
+[webgais]
+GET /cgi-bin/webgais HTTP/1.0
+[websendmail]
+GET /cgi-bin/websendmail HTTP/1.0
+[webdist.cgi]
+GET /cgi-bin/webdist.cgi HTTP/1.0
+[faxsurvey]
+GET /cgi-bin/faxsurvey HTTP/1.0
+[htmlscript]
+GET /cgi-bin/htmlscript HTTP/1.0
+[pfdispaly.cgi]
+GET /cgi-bin/pfdispaly.cgi HTTP/1.0
+[perl.exe]
+GET /cgi-bin/perl.exe HTTP/1.0
+[wwwboard.cgi]
+GET /cgi-bin/wwwboard.cgi HTTP/1.0
+[wwwboard.pl]
+GET /cgi-bin/wwwboard.pl HTTP/1.0
+[www-sql]
+GET /cgi-bin/www-sql HTTP/1.0
+[view-source]
+GET /cgi-bin/view-source HTTP/1.0
+[campas HTTP]
+GET /cgi-bin/campas HTTP/1.0
+[aglimpse]
+GET /cgi-bin/aglimpse HTTP/1.0
+[glimpse]
+GET /cgi-bin/glimpse HTTP/1.0
+[man.sh]
+GET /cgi-bin/man.sh HTTP/1.0
+[AT-admin.cgi]
+GET /cgi-bin/AT-admin.cgi HTTP/1.0
+[filemail.pl]
+GET /cgi-bin/filemail.pl HTTP/1.0
+[maillist.pl]
+GET /cgi-bin/maillist.pl HTTP/1.0
+[jj]
+GET /cgi-bin/jj HTTP/1.0
+[info2www]
+GET /cgi-bin/info2www HTTP/1.0
+[files.pl]
+GET /cgi-bin/files.pl HTTP/1.0 
+[finger]
+GET /cgi-bin/finger HTTP/1.0
+[bnbform.cgi]
+GET /cgi-bin/bnbform.cgi HTTP/1.0
+[survey.cgi]
+GET /cgi-bin/survey.cgi HTTP/1.0
+[AnyForm2]
+GET /cgi-bin/AnyForm2 HTTP/1.0
+[textcounter.pl]
+GET /cgi-bin/textcounter.pl HTTP/1.0
+[classifieds.cgi]
+GET /cgi-bin/classifieds.cgi HTTP/1.0
+[environ.cgi]
+GET /cgi-bin/environ.cgi HTTP/1.0
+[wrap]
+GET /cgi-bin/wrap HTTP/1.0
+[cgiwrap]
+GET /cgi-bin/cgiwrap HTTP/1.0
+[guestbook.cgi]
+GET /cgi-bin/edit.pl HTTP/1.0
+[perlshop.cgi]
+GET /cgi-bin/perlshop.cgi HTTP/1.0
+[webbbs.cgi]
+GET /cgi-bin/webbbs.cgi HTTP/1.0
+[whois_raw.cgi]
+GET /cgi-bin/whois_raw.cgi HTTP/1.0
+[anyboard.cgi]
+GET /cgi-bin/AnyBoard.cgi HTTP/1.0
+[_vti_inf.html]
+GET /_vti_inf.html HTTP/1.0
+[/_vti_pvt/users.pwd]
+GET /_vti_pvt/users.pwd HTTP/1.0
+[/_vti_pvt/service.pwd]
+GET /_vti_pvt/service.pwd HTTP/1.0
+[/_vti_pvt/authors.pwd]
+GET /_vti_pvt/authors.pwd HTTP/1.0
+[/_vti_pvt/administrators.pwd]
+GET /_vti_pvt/administrators.pwd HTTP/1.0
+[/_vti_pvt/shtml.dll]
+GET /_vti_pvt/shtml.dll HTTP/1.0
+[/_vti_pvt/shtml.exe]
+GET /_vti_pvt/shtml.exe HTTP/1.0
+[/cgi-dos/args.bat]
+GET /cgi-dos/args.bat HTTP/1.0
+[/cgi-win/uploader.exe]
+GET /cgi-win/uploader.exe HTTP/1.0
+[/cgi-bin/wguest.exe]
+GET /cgi-bin/wguest.exe HTTP/1.0
+[/cgi-bin/rguest.exe]
+GET /cgi-bin/rguest.exe HTTP/1.0
+[/scripts/issadmin/bdir.htr]
+GET /scripts/issadmin/bdir.htr HTTP/1.0
+[/scripts/CGImail.exe]
+GET /scripts/CGImail.exe HTTP/1.0
+[/scripts/tools/newdsn.exe]
+GET /scripts/tools/newdsn.exe HTTP/1.0
+[/scripts/fpcount.exe]
+GET /scripts/fpcount.exe HTTP/1.0
+;Mnemonix <mnemonix@GLOBALNET.CO.UK> added
+[/scripts/counter.exe DoS]
+GET /scripts/counter.exe HTTP/1.0
+[visadmin.exe]
+GET /scripts/visadmin.exe HTTP/1.0
+[/cfdocs/expelval/openfile.cfm]
+GET /cfdocs/expelval/openfile.cfm HTTP/1.0
+[/cfdocs/expelval/exprcalc.cfm]
+GET /cfdocs/expelval/exprcalc.cfm HTTP/1.0
+[/cfdocs/expelval/displayopenedfile.cfm]
+GET /cfdocs/expelval/displayopenedfile.cfm HTTP/1.0
+[/cfdocs/expelval/sendmail.cfm]
+GET /cfdocs/expelval/sendmail.cfm HTTP/1.0
+[search97.vts]
+GET /search97.vts HTTP/1.0
+[carbo.dll]
+GET /carbo.dll HTTP/1.0
+[/?PageServices]
+GET /?PageServices HTTP/1.0
+[/scripts/pfieffer.bat]
+GET /scripts/pfieffer.bat HTTP/1.0
+[/scripts/pfieffer.cmd]
+GET /scripts/pfieffer.cmd HTTP/1.0
+[/msadc/Samples/SELECTOR/showcode.asp]
+GET /msadc/Samples/SELECTOR/showcode.asp HTTP/1.0
+[/domcfg.nsf/?open]
+GET /domcfg.nsf/?open HTTP/1.0
+; some void cgis :-)
+[/......../autoexec.bat]
+GET /......../autoexec.bat HTTP/1.0
+[/scripts/pfieffer.bat]
+GET /scripts/pfieffer.bat HTTP/1.0
+[/scripts/pfieffer.cmd]
+GET /scripts/pfieffer.cmd HTTP/1.0
+[/iisadmpwd/achg.htr]
+GET /iisadmpwd/achg.htr HTTP/1.0
+[/iisadmpwd/aexp.htr]
+GET /iisadmpwd/aexp.htr HTTP/1.0
+[/iisadmpwd/aexp2.htr]
+GET /iisadmpwd/aexp2.htr HTTP/1.0
+[/iisadmpwd/aexp2b.htr]
+GET /iisadmpwd/aexp2b.htr HTTP/1.0
+[/iisadmpwd/aexp3.htr]
+GET /iisadmpwd/aexp3.htr HTTP/1.0
+[/iisadmpwd/aexp4.htr]
+GET /iisadmpwd/aexp4.htr HTTP/1.0
+[/iisadmpwd/aexp4b.htr]
+GET /iisadmpwd/aexp4b.htr HTTP/1.0
+[/iisadmpwd/anot.htr]
+GET /iisadmpwd/anot.htr HTTP/1.0
+[/iisadmpwd/anot3.htr]
+GET /iisadmpwd/anot3.htr HTTP/1.0
+[/cgi-bin/day5datacopier.cgi]
+GET /cgi-bin/day5datacopier.cgi HTTP/1.0
+[/cgi-bin/day5datanotifier.cgi]
+GET /cgi-bin/day5datanotifier.cgi HTTP/1.0
+[/_AuthChangeUrl]
+GET /_AuthChangeUrl HTTP/1.0
+[passwd]
+GET /cgi-bin/passwd  HTTP/1.0
+[passwd.txt]
+GET /cgi-bin/passwd.txt  HTTP/1.0
+[password]
+GET /cgi-bin/password  HTTP/1.0
+[password.txt]
+GET /cgi-bin/password.txt  HTTP/1.0
+[/session/adminlogin]
+GET /session/adminlogin HTTP/1.0
+[AXS script (ax.cgi)]
+GET /cgi-bin/ax.cgi HTTP/1.0
+[AXS Admin script (ax-admin.cgi)]
+GET /cgi-bin/ax-admin.cgi HTTP/1.0
+;[]
+;GET / HTTP/1.0
+;have a nice hack!!! ;)
