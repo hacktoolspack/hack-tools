@@ -1,0 +1,1 @@
+@vbaupdx.exe http://www.anti-virus.by/update/
