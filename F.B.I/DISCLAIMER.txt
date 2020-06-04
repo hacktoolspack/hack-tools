@@ -1,0 +1,11 @@
+DISCLAIMER:
+By your use of this software, you are 
+agreeing to the following the terms:
+
+1.The author bears no responsibility for your use of this program, and any damage, financial or otherwise, it may cause. This program is not intended for any illegal purposes.
+
+2.The software comes with no warranty, implied or otherwise. Any bugs, etc, can be reported to the author, however, it is the authors discretion as to whether or not they are repaired.
+
+3.The author bears no responsibility for your inability to use the software, and will not be held accountable for any data loss that may occur due to such inabilities.
+
+4.Ultimately, it is the users responsibilty for however they may use the software. By running this software you agree that the author has no responsibility for your actions.
