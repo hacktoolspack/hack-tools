@@ -18,11 +18,11 @@ install python 2.3 and 2.7, install perl, install java, install ruby ...
 
 ########################################################################
 
-run python cmd : py file.py
+- run python cmd : py file.py
 
-install requirements python : pip install -r filewithmodules.txt
+- install requirements python : pip install -r filewithmodules.txt
 
-fix error in python "Microsoft Visual C++ 14.0 is required" : 
+- fix error in python "Microsoft Visual C++ 14.0 is required" : 
 
 1. install buils tools (https://visualstudio.microsoft.com/fr/downloads/) 
 2. download and execute
@@ -34,17 +34,17 @@ fix error in python "Microsoft Visual C++ 14.0 is required" :
 8. once installation is complete execute in cmd : pip install cmake
 9. end
 
-run perl : perl file.pl
+- run perl file : perl file.pl
 
-install perl modules : cpan install (modules)
+- install perl modules : cpan install (modules)
 
-run ruby : ruby file.rb
+- run ruby file : ruby file.rb
 
-ruby install : gem install (modules) and open Gemfile for view requirements
+- install ruby modules : gem install (modules) and open Gemfile for view requirements
 
-build go script : go build
+- build go script : go build (file.go)
 
-execute java : java -jar file.jar
+- execute java file : java -jar file.jar
 
 ##########################################################################
 
