@@ -12,13 +12,13 @@
  
 ########################################################################
 
-requirements :
+- requirements :
 
-install python 2.3 and 2.7, install perl, install java, install ruby ...
+python 2, python 3, perl, java, ruby ...
 
 ########################################################################
 
-- run python cmd : py file.py
+- run python file : py;python;python3 file.py
 
 - install requirements python : pip install -r filewithmodules.txt
 
@@ -48,4 +48,4 @@ install python 2.3 and 2.7, install perl, install java, install ruby ...
 
 ##########################################################################
 
-password for files : a
+- password for files (.exe .7z) : a
