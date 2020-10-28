@@ -18,9 +18,9 @@ install python 2.3 and 2.7, install perl, install java, install ruby ...
 
 ########################################################################
 
-run python cmd: py file.py
+run python cmd : py file.py
 
-run perl: perl file.pl
+run perl : perl file.pl
 
 install perl modules: cpan install
 
