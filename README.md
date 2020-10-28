@@ -22,7 +22,7 @@ run python cmd : py file.py
 
 run perl : perl file.pl
 
-install perl modules: cpan install
+install perl modules : cpan install
 
 run ruby : ruby file.rb
 
@@ -30,7 +30,7 @@ ruby install : gem install (modules) and open Gemfile for view requirements
 
 build go script : go build
 
-execute java: java -jar file.jar
+execute java : java -jar file.jar
 
 ##########################################################################
 
