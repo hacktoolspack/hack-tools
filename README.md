@@ -20,9 +20,23 @@ install python 2.3 and 2.7, install perl, install java, install ruby ...
 
 run python cmd : py file.py
 
+install requirements python : pip install -r filewithmodules.txt
+
+fix error in python "Microsoft Visual C++ 14.0 is required" : 
+
+1. install buils tools (https://visualstudio.microsoft.com/fr/downloads/) 
+2. download and execute
+3. select "c++ for desktop environment"
+4. leave the selection by default
+5. in "individual components" select windows 10 sdk
+6. select the latest version of all components mark has "build tools"
+7. select "c++ clang compiler for windows"
+8. once installation is complete execute in cmd : pip install cmake
+9. end
+
 run perl : perl file.pl
 
-install perl modules : cpan install
+install perl modules : cpan install (modules)
 
 run ruby : ruby file.rb
 
