@@ -1,4 +1,4 @@
-# hack-tools-python-perl-javascript-2017-2020
+# hack-tools-2017-2020
 
 [![Anonymousgif](https://i.giphy.com/media/2Y0ecuTsnAvZK/200.gif)
 [![Anonymous](https://img.hebus.com/hebus_2013/02/13/preview/1360720696_97766.jpg) 
