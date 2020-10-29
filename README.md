@@ -33,7 +33,7 @@
 11. execute : pip install wheel
 12. go to your repository with the cmd where the requirements.txt file is located
 13. execute : pip install -r requirements.txt
-9. end
+14. end
 
 - run perl file : perl file.pl
 
