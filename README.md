@@ -25,7 +25,7 @@
 2. download and execute
 3. select "c++ for desktop environment"
 4. leave the selection by default
-5. in "individual components" select windows 10 sdk
+5. in "individual components" select windows 10 sdk if not selected
 6. select the latest version of all components mark has "build tools"
 7. select "c++ clang compiler for windows"
 8. once installation is complete search "x86_x64 Cross Tools Command Prompt" and execute 
