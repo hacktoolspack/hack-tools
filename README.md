@@ -26,14 +26,13 @@
 3. select "c++ for desktop environment"
 4. leave the selection by default
 5. in "individual components" select windows 10 sdk if not selected
-6. select the latest version of all components mark has "build tools"
-7. select "c++ clang compiler for windows"
-8. once installation is complete search "x86_x64 Cross Tools Command Prompt" and execute 
-10. in this command prompt execute : pip install cmake
-11. execute : pip install wheel
-12. go to your repository with the cmd where the requirements.txt file is located
-13. execute : pip install -r requirements.txt
-14. end
+6. select "c++ clang compiler for windows"
+7. once installation is complete search "x86_x64 Cross Tools Command Prompt" and execute 
+8. in this command prompt execute : pip install cmake
+9. execute : pip install wheel
+10. go to your repository with the cmd where the requirements.txt file is located
+11. execute : pip install -r requirements.txt
+12. end
 
 - run perl file : perl file.pl
 
