@@ -1,0 +1,23 @@
+https://www.virustotal.com/#/file/26c54eb376183d508ee129531728f9e01d30f0df29d7621f390e8f0ea6a1c79c/detection
+
+6 engines (out of 67) detected this file
+SHA-256	26c54eb376183d508ee129531728f9e01d30f0df29d7621f390e8f0ea6a1c79c
+File name	Protection_ID.eXe
+File size	1.16 MB
+Last analysis	2017-12-24 20:07:09 UT
+
+Cylance				Unsafe
+
+Endgame				malicious (high confidence)
+
+Ikarus				Trojan.Win32.Pepatch
+
+Kaspersky			HEUR:Trojan.Win32.Generic
+
+SUPERAntiSpyware	Trojan.Agent/Generic
+
+ZoneAlarm			HEUR:Trojan.Win32.Generic
+
+ALL of the above are false positives, strangely microsoft didnt detect this time which is interesting (to me anyway), if your anti virus blacklists ProtectionID the only real option is to contact them and / or whitelist (exclude) the folder ProtectionID is in.
+
+Also, please  make sure your file sha hash matches the one above, and that you downloaded it from pid.gamecopyworld.com

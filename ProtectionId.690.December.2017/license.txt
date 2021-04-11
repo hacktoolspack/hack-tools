@@ -1,0 +1,20 @@
+If you are a personal user, educational user or no profit organisation you can use
+protection id for free. 
+
+If you are a corporate or a company (with 20 or more people), then you are expected to 
+contact us for licensing terms and are not permitted to use protection id until we come 
+to some agreement. (VirusTotal, Antivirus companies and Microsoft are obviously exempt from this).
+
+The software is supplied AS IS, with no warranty (implied or otherwise).. 
+while we strive to make it bug free, you run it entirely at your own
+risk, we are not liable for any damages arising from its use.
+
+Support and updates are entirely on an on demand basis, while we try and ensure that we are 
+up to date, and offer support to those who email us, we do not guarantee a reply.
+
+If you intend to package ProtectionID in some release, like a dvd of 'cracker tools', 
+or similar, you must 
+
+(1) NOT alter the zip file in any way, shape or form,
+(2) NOT charge for it, 
+(3) NOT alter any of the binaries (if you are including it unzipped).
