@@ -23,8 +23,8 @@ This repository contains software like DOS tool, information gathering, ... for 
 
 REQUIREMENTS
 
-Operating system : Windows, Linux
-languages of programming : python2, python3, ruby, java
+- Operating system : Windows, Linux
+- Programming languages : python2, python3, ruby, java
 
 
 ########################################################################
