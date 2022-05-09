@@ -10,20 +10,20 @@ Welcome to the "hack-tools" repository !
 <p align="center">
 - This repository contains software like DOS tool, information gathering, ... for "script kiddies", professionnals, compagny, ... all softwares is free and the author is not responsible for any damage caused by this softwares.
 
-
+<p align="center">
 ########################################################################
-
+<p align="center">
 REQUIREMENTS
-
+<p align="center">
 - Operating system : Windows, Linux
 - Programming languages : python2, python3, ruby, java
 
-
+<p align="center">
 ########################################################################
 
-
+<p align="center">
 NOTES
-
+<p align="center">
 - In this repository many softwares has in alpha, beta phase and not all softwares are tested. 
 - The repository contains some projects of others developers and some of this "projects" are not up to date.
 - This repository "hack-tools" are updated rarely and in a random way. 
