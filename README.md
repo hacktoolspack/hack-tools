@@ -13,7 +13,7 @@ DESCRIPTION
 <p align="center">
 Welcome to the "hack-tools" repository !
 <p align="center">
-- This repository contains software like DOS tool, information gathering, malwares creator, virus creator, ransomware, remote administration tool, ... for "script kiddies", professionnals, compagny, ... all softwares is free and the author is not responsible for any damage caused by this softwares.
+- This repository contains software like DOS tool, information gathering, malwares creator, virus creator, ransomware, remote administration tool,... for "script kiddies", professionnals, compagny, ... all softwares is free and the author is not responsible for any damage caused by this softwares.
 
 <p align="center">
 ########################################################################
