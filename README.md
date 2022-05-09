@@ -3,14 +3,13 @@
 
 <p align="center">
 ########################################################################
-</p>
 <p align="center">
 DESCRIPTION
-
+<p align="center">
 Welcome to the "hack-tools" repository !
-
+<p align="center">
 - This repository contains software like DOS tool, information gathering, ... for "script kiddies", professionnals, compagny, ... all softwares is free and the author is not responsible for any damage caused by this softwares.
-</p>
+
 
 ########################################################################
 
