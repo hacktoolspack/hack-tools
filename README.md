@@ -5,47 +5,33 @@
 
 ------------------------------------------------------------------------------------------------------------------------
 
- [![Build Status](https://img.shields.io/badge/build-passing%20%2F%20moderate-yellow.svg)
+[![Build Status](https://img.shields.io/badge/build-passing%20%2F%20moderate-yellow.svg)
  
  ------------------------------------------------------------------------------------------------------------------------
  
 ########################################################################
+REQUIREMENTS
 
-- requirements : python 2, python 3, perl, java, ruby ...
+Operating system : Windows, Linux
+languages of programming : python2, python3, ruby, java
 
 ########################################################################
 
-- run python file : py;python;python3 file.py
+Notes : 
+- In this repository many softwares has in alpha, beta phase and not all softwares are tested. 
+- The repository contains some projects of others developers and some of this "projects" are not up to date.
+- This repository "hack-tools" are updated rarely and in a random way. 
+- Please if you have an issue, try to make him insteresting like this "Hello, can you remove my email that I found in the project named "name of project/s", Thanks." Is a example others issues like improvements, ... are accepted as long as they are interesting.
 
-- install requirements python : pip install -r filewithmodules.txt
 
-- fix error in python "Microsoft Visual C++ 14.0 is required" : 
 
-1. install buils tools (https://visualstudio.microsoft.com/fr/downloads/) 
-2. download and execute
-3. select "c++ for desktop environment"
-4. leave the selection by default
-5. in "individual components" select windows 10 sdk if not selected
-6. select "c++ clang compiler for windows"
-7. once installation is complete search "x86_x64 Cross Tools Command Prompt" and execute 
-8. in this command prompt execute : pip install cmake
-9. execute : pip install wheel
-10. go to your repository with the cmd where the requirements.txt file is located
-11. execute : pip install -r requirements.txt
-12. end
+########################################################################
+DESCRIPTION
 
-- run perl file : perl file.pl
+Welcome to the "hack-tools" repository !
 
-- install perl modules : cpan install (modules)
-
-- run ruby file : ruby file.rb
-
-- install ruby modules : gem install (modules) and open Gemfile for view requirements
-
-- build go script : go build (file.go)
-
-- execute java file : java -jar file.jar
+This repository contains software like DOS tool, information gathering, ... for "script kiddies", professionnals, compagny, ... all softwares is free and the author is not responsible for any damage caused by this softwares.
 
 ##########################################################################
 
-- password for files (.exe .7z .zip) : a
+Password for files (.exe .7z .zip) : a
