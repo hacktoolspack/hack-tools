@@ -16,7 +16,7 @@ DESCRIPTION
 
 Welcome to the "hack-tools" repository !
 
-This repository contains software like DOS tool, information gathering, ... for "script kiddies", professionnals, compagny, ... all softwares is free and the author is not responsible for any damage caused by this softwares.
+- This repository contains software like DOS tool, information gathering, ... for "script kiddies", professionnals, compagny, ... all softwares is free and the author is not responsible for any damage caused by this softwares.
 
 
 ########################################################################
