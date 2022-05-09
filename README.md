@@ -34,3 +34,5 @@ NOTES
 - This repository "hack-tools" are updated rarely and in a random way. 
 - Please if you have an issue, try to make him insteresting like this "Hello, can you remove my email that I found in the project named "name of project/s", Thanks." Is a example, others issues like improvements, ... are accepted as long as they are interesting.
 - Password for files (.exe .7z .zip) : a
+- For more compatibility on Windows with the "hacking tool" softwares,  please install Pentestbox : 
+https://sourceforge.net/projects/pentestbox/files/PentestBox-v2.2.exe/download
