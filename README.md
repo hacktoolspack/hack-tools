@@ -1,8 +1,7 @@
 <p align="center">
 [![Anonymousgif](https://i.giphy.com/media/2Y0ecuTsnAvZK/200.gif)
-<p align="center">
 [![Anonymous](https://img.hebus.com/hebus_2013/02/13/preview/1360720696_97766.jpg) 
-
+</p>
 <p align="center">
 ########################################################################
 <p align="center">
