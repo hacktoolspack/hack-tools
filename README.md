@@ -21,7 +21,7 @@ Welcome to the "hack-tools" repository !
 REQUIREMENTS
 
 - Operating system : Windows, Linux
-- Programming languages : python2, python3, ruby, java
+- Programming languages : python2, python3, ruby, java ...
 
 <p align="center">
 ########################################################################
