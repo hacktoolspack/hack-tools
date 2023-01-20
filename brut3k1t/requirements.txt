@@ -1,4 +1,4 @@
-mechanize==0.4.3 
+mechanize==0.4.6 
 paramiko==2.6.0
 requests==2.22.0
 xmpppy==0.5.0rc1
