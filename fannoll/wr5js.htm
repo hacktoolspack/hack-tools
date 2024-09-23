@@ -1,0 +1,568 @@
+/*******************************************
+
+	webreg5 functions
+	wr5js.adp
+	last revision: 03.18.03
+
+*******************************************/
+
+mButton = "/static/id55/1/button_processing.gif";
+promo=359397;
+template_id="default";
+page_set_id="wr5_cntrl";
+getPopUp = 1;
+
+
+//globals
+var agt=navigator.userAgent.toLowerCase();
+ua = agt;
+IE = document.all;
+var redo = false;
+NextButtonDown = new Image();
+NextButtonDown.src = "/static/id55/1/button_processing.gif";
+
+function GoAim() {
+getPopUp=0;
+document.forms[0].goaim.value = true;
+document.forms[0].submit();
+}
+
+function Back() {
+getPopUp=0;
+	if(document.referrer.indexOf('why_do_weneed')>-1) {
+	history.go(-2);
+	} else {
+	history.back();
+	return;
+	}
+}
+
+function wr5_bookClubSwapImage() {
+	if(promo == 450558 || promo == 451945) {
+		document.getElementById("feature").src = "/static/bookclub/feature_DD.gif";
+		document.getElementById("feature").oSrc = "/static/bookclub/feature_DD.gif";
+		document.getElementById("bookspan").innerHTML = "Doubleday Book Club";
+	} else if (promo == 450559 || promo == 451944) {
+		document.getElementById("feature").src = "/static/bookclub/feature_LG.gif";
+		document.getElementById("feature").oSrc = "/static/bookclub/feature_LG.gif";
+		document.getElementById("bookspan").innerHTML = "The Literary Guild";
+	} else if (promo == 450560 || promo == 451946) {
+		document.getElementById("feature").src = "/static/bookclub/feature_CBOMC.gif";
+		document.getElementById("feature").oSrc = "/static/bookclub/feature_CBOMC.gif";
+		document.getElementById("bookspan").innerHTML = "Childrens Book of the Month Club";
+	}
+}
+
+function wr4_Cancel() {
+getPopUp=0;
+document.forms[0].cancel.value="true";
+document.forms[0].submit();
+}
+
+function wr4_Exit() {
+document.forms[0].error.value="true";
+document.forms[0].submit();
+}
+
+function wr4_ErrorContinue() {
+getPopUp=0;
+window.location.href = 'http://free.aol.com/tryaolfree/cdt.adp?342776';
+}
+
+function wr4_newWindow(wdth,hght,tp,lft,url) {
+	open(url,'mPop','top=' + tp + ',left=' + lft + ',width=' + wdth + ',height=' + hght + ',nostatus,resizable=no');
+}
+
+// serves appropriate onunload popups for template_id 8 pages pending promo and page
+function wr4_showPopUp() {
+	// make sure we have the right promo
+	if(promo != document.forms[0].promo.value) promo = document.forms[0].promo.value; 
+	if(getPopUp) { 
+	// most of this stuff you guys can scrap - this just conditionalizes the popups the user gets based on where they are
+		thisLoc = location.href;
+		path = "/signup/cancel_popups/"
+		if(promo == "1" || promo == "1") {
+			// popup test promos
+			if(thisLoc.indexOf('index.adp')>-1) {
+				if(promo == "1") url = path + "mem_info_v1.adp?promo=3169";
+				if(promo == "1") url = path + "mem_info_v2.adp?promo=3930";
+			} else if (thisLoc.indexOf('wr4_mem_check.adp')>-1) {
+				if(promo == "31635") url = path + "sn_v1.adp?promo=31931";
+			 	if(promo == "31636") url = path + "sn_v2.adp?promo=31692";
+			} else if(thisLoc.indexOf('wr4_offer_check.adp')>-1) {
+				if(promo == "3165") url = path + "cc_info_v1.adp?promo=31631";
+				if(promo == "31636") url = path + "cc_info_v2.adp?promo=332";
+			} else {
+				if(promo == "3135") url = path + "general_v1.adp?promo=31697";
+				if(promo == "31696") url = path + "general_v2.adp?promo=328";
+			}
+		} else {
+			// for now, every page is getting the same exit popup.
+
+			if (page_set_id == "wr5_spanish") {
+                                url = path + "general_2month_spanish.adp?promo=350163";	
+			} else if (template_id == "35" && promo == "359415") {
+			 	url = path + "general_2month_subp.adp?promo=359405";
+			} else if (template_id == "25") {	
+				url = path + "general_2month_subp.adp?promo=350022";
+                        } else if (template_id == "5" || template_id == "12") {
+                                url = path + "general_2month_novel.adp?promo=370550";  
+			} else {
+				url = path + "exit.html";
+			}
+		}
+		 open(url,"windowName",'nostatus,resizable=no,width=400,height=400,top=10,left=10'); 
+
+	}
+
+}
+
+// this function is called from the href on the popup. redirects parent window to free.aol, or creates a window to free.aol if parent is closed.
+function wr4_onExitHandler(rPromo) {
+	if (!window.opener.closed) {
+		window.opener.location.href='http://free.aol.com/tryaolfree/index.adp?' + rPromo;
+	} else {
+		open('http://free.aol.com/tryaolfree/index.adp?' + rPromo,'nWin','top=0,left=0,height=' + screen.height + ',width=' + screen.width);
+	}
+	setTimeout("window.close()",1000);
+}
+
+// webhelp popup
+function WinOpenReactive(){
+	window.open("http://aolnarrowband.webhelp.com/aolnarrowband/index.jsp?queueCriteriaValue=default&referringURL="+document.location+"&NBpromocode=359397","WINDOW_ONE","width=402,height=440,toolbar=0,location=0,status=0,menubar=0,scrollbars=no,resizable=no,screenX=0,screenY=0");
+}
+
+// handles opening the real popup and setting the "wrcp" (web reg correct path) cookies that determins that the user came from the end of webreg.
+function wr4_openRealPopUp() {
+	//window.open("http://www.real.com"...);
+	document.cookie = "wrcp=1;domain=.aol.com;path=/;expires=Sun, 02-Nov-2003 00:00:00 GMT";
+}
+
+function wr4_general_initPage(doButton) {
+	if(document.forms.length) document.forms[0].elements[0].focus();
+	if(doButton)wr4_initButton();
+}
+
+function wr4_LoadTos() {
+args = arguments[0];
+getPopUp=0;
+var agt=navigator.userAgent.toLowerCase();
+var scroll;
+attrs = "status=no,width=330,height=330,resizable=no,top=0,screenY=0,left=0,screenX=0" + scroll;
+page_set_id = document.forms[0].page_set_id.value;
+template_id = document.forms[0].template_id.value;
+web_reg_form_data = document.forms[0].web_reg_form_data.value;
+session_id = document.forms[0].session_id.value;
+tosPage = "aol_tos_popup.adp";
+form_data = "session_id=" + session_id + "&web_reg_form_data=" + web_reg_form_data + "&template_id=" + template_id + "&promo=" + promo + "&page_set_id=" + page_set_id;
+tosPage = "/tryaolfree/" + page_set_id + "/" + tosPage + "?" + form_data;
+window.open(tosPage,'tos',attrs);
+}
+
+function wr4_LoadTos_Default() {
+getPopUp=0;
+var agt=navigator.userAgent.toLowerCase();
+var scroll;
+	if ((navigator.appName == "Netscape") || (agt.indexOf("mac")!=-1) || wr4_getMacOSVersion() == "OSX") {
+	scroll = ",scrollbars=yes";
+	}
+attrs = "status=no,width=330,height=330,resizable=no,top=0,screenY=0,left=0,screenX=0" + scroll;
+page_set_id = document.forms[0].page_set_id.value;
+web_reg_form_data = document.forms[0].web_reg_form_data.value;
+	if ((navigator.appName == "Netscape") || (agt.indexOf("mac")!=-1) || wr4_getMacOSVersion() == "OSX") {
+	tosPage = "aol_tos_popup_ns.adp";
+	} else {
+	tosPage = "aol_tos_popup.adp";
+	}
+form_data = "web_reg_form_data=" + web_reg_form_data + "&template_id=default&promo=" + promo + "&page_set_id=" + page_set_id;
+tosPage = "/tryaolfree/" + page_set_id + "/" + tosPage + "?" + form_data;
+window.open(tosPage,'tos',attrs);
+}
+
+function wr4_loadTos(tosURL,wdth,hght,tp,lft) {
+	tosWin = window.open(tosURL,"tw","height=" + hght + ",width=" + wdth + ",top=" + tp + ",left=" + lft + "scrolling=1");
+} 
+
+function wr4_seePage(thePage) {
+	window.opener.location.href = thePage;
+	window.close();
+}
+
+function wr4_closema() {
+	document.cookie = "uatama=YES; path=/tryaolfree;";
+	window.close();
+}
+
+function wr4_initButton() {
+	NextButtonUp = new Image();
+	NextButtonDown = new Image();
+	NextButtonUp.src = "/static/id55/1/button_continue.gif";
+	NextButtonDown.src = mButton;
+}
+
+function wr4_ccmeminfo_initPage() {
+setup_fields(document.forms[0]);
+form = document.forms[0];
+form.usechecking.value="false";
+document.forms[0].fname.focus();
+	with(form) {
+	card_number.onkeypress = wr4_hitReturn;
+	}
+}
+
+function wr4_ccinfo_initPage() {
+form = document.forms[0];
+form.usechecking.value="false";
+	with (form) {
+		if (typeof(fname) == "object") {
+		fname.onkeypress = wr4_hitReturn;
+		lname.onkeypress = wr4_hitReturn;
+		card_number.onkeypress = wr4_hitReturn;
+		document.forms[0].elements[0].focus();
+		} else {
+		document.forms[0].card_number.focus();
+		}
+	}
+}
+
+function wr4_hitReturn(evt) {
+who = document.forms[0].name;
+	IE?keycode = window.event.keyCode:keycode = evt.which;
+	if (keycode == 13) wr4_checkForm(who);
+	//return;
+}
+
+function wr4_checkTopOption() {
+	var list = document.forms.ccinfo.card_type;
+	if (list.selectedIndex != 0) list.selectedIndex = 0;
+	//return;
+}
+
+function wr4_closePopUp() {
+	if (navigator.appName != "Microsoft Internet Explorer" || parseInt(navigator.appVersion)>=4) {
+		if(win2 != null) {
+			if(!win2.closed) win2.close();
+		}
+	}
+}
+
+function wr4_checkSelect() {
+card_type = document.forms.ccinfo.card_type.options[document.forms.ccinfo.card_type.selectedIndex].value;
+	if (card_type == 'checking') {
+	getPopUp=0;
+	document.forms[0].cancel.value="false";
+	document.forms[0].usechecking.value="true";
+	if(promo!="350055" && template_id != '6' && template_id != '7')document.forms[0].submit();
+	} else {
+	document.forms[0].card_number.focus();
+	}
+return;
+}
+
+function wr4_getSN() {
+	return "";
+}
+
+/*************************
+
+FORM VALIDATIONS
+
+*************************/
+
+function wr4_offerpage_validate_form() {
+	if(document.forms[0].iagree.checked) {
+	return true;
+	} else {
+	alert("Please check the 'I Agree' box before continuing.");
+	return false;
+	}
+}
+
+function wr4_checkForm(who) {
+	if (eval('wr4_' + who + '_validate_form()')) {
+		redo = true;
+		getPopUp=0;
+		setTimeout("wr4_submitForm('" + who + "')",300);
+	}
+}
+
+function wr4_price_choice_validate_form() {
+	for(i=0;i<document.forms[0].planPromoRadio.length;i++) { 
+		if(document.forms[0].planPromoRadio[i].checked) { 
+		break;
+		}
+	}
+	if (!(document.forms[0].planPromoRadio[0].checked || document.forms[0].planPromoRadio[1].checked)) {
+	alert("Please select an option.");
+	return false;
+	}
+document.forms[0].cancel.value=false;
+return true;
+}
+
+function wr4_offer_validate_form() {
+document.cookie='uauatama=YES; path=/tryaolfree;'
+document.forms[0].cancel.value=false;
+return true;
+}
+
+function wr4_eft_validate_form() {
+var eftAgree = document.forms[0].eftAgree.value.toLowerCase();
+var page_set_id=document.forms[0].page_set_id.value;
+	if(page_set_id == "wr5_spanish"){
+	msg = "Por favor escriba acepto en la casilla y haga clic para continuar";
+	} else {
+	msg = 'Please enter "Agree" into the box and click continue';
+	}
+	
+	if(eftAgree == "agree" || eftAgree == "acepto" && page_set_id =="wr5_spanish"){
+	document.forms[0].other_options.value=false;
+	return true;
+	} else {
+	alert(msg);
+	return false;
+	}
+return false;
+}
+
+function wr4_meminfo_validate_form() {
+	var elm, i;
+	form = document.forms[0];
+	for (i = 0; i < form.elements.length; i++) {
+		elm = form.elements[i];
+		if (elm.type == "hidden") continue;
+		if (typeof(elm.xvalidate) == "function" && !elm.xvalidate()) return false;
+	}
+return true;
+}
+
+function wr4_phone_bday_validate_form() {
+document.forms[0].page.value = "phone_bday";
+var dd, mm, yy;
+msg = "";
+dd = document.forms[0].day.value;
+mm = document.forms[0].month.value;
+yy = document.forms[0].year.value.replace(/\D/g, "");
+
+	if (yy == "") {
+	msg = "Please Enter Your Birth Year."
+	}
+	if (yy.length < 4) {
+	msg = "Please Enter a 4 Digit Birth Year."
+	}
+	if (msg != "") {
+	alert(msg);
+	document.forms[0].year.focus();
+	return false;
+	}
+	if ((wr4_returnAge(dd,mm,yy)) <= 17) {
+	document.forms[0].page.value = "not_old_enough";
+	}
+return true;
+}
+ 
+function wr4_sninfo_validate_form() {
+	var elm, i;
+	form = document.forms[0];
+	for (i = 0; i < form.elements.length; i++) {
+		elm = form.elements[i];
+			if (elm.type == "hidden") continue;
+			if (typeof(elm.xvalidate) == "function" && !elm.xvalidate()) return false;
+	}
+return true;
+}
+
+function wr4_phone_validate_form() {
+	var elm, i;
+	form = document.forms[0];
+	for (i = 0; i < form.elements.length; i++) {
+	elm = form.elements[i];
+		if (elm.type == "hidden") continue;
+		if (typeof(elm.xvalidate) == "function" && !elm.xvalidate()) return false;
+	}
+return true;
+}
+
+function wr4_general_validate_form() {
+return true;
+}
+
+function wr4_ccmeminfo_validate_form() {
+getPopUp=0;
+form = document.forms[0];
+var elm, i;
+
+	for (i = 0; i < form.elements.length; i++) {
+	elm = form.elements[i];
+		if (elm.type == "hidden") continue;
+		if (typeof(elm.xvalidate) == "function" && !elm.xvalidate()) return false;
+	}
+
+card_type = document.forms[0].card_type.value;
+	if (card_type == "") {
+	card_type = document.forms[0].card_type.options[document.forms[0].card_type.selectedIndex].value;
+	}
+
+	if (card_type == "phone") {
+	// do nothing for phone bill
+	} else if (card_type == "checking") {
+	// do nothing just submit form
+	document.forms[0].usechecking.value="true";
+	} else if (card_type == "target") {
+		if(!isValidTargetNumber(document.forms.ccinfo.card_number.value)) {
+		document.forms[0].card_number.focus();
+		return false;
+		}
+	} else {
+		if (!isValidNumber()) {
+		alert("Please make sure you have entered a valid credit card number.");
+		document.forms[0].card_number.focus();
+		return false;
+		}
+		if((card_type != "sears") && (card_type != "target")) {
+			if (!isMonth()) {
+			document.forms[0].expire_mm.focus();
+			return false;
+			}
+			if (!isYear()) {
+			document.forms[0].expire_yy.focus();
+			return false;
+			}
+		}
+	document.forms[0].usechecking.value="false";
+	}
+document.forms[0].cancel.value="false";
+redo = true;
+return true;
+}
+
+function wr4_ccinfo_validate_form() {
+form = document.forms[0];
+document.forms[0].cancel.value="false";
+	with (form) {
+		if (typeof(fname) == "object") {
+			if (!wr4_isString('fname')) {
+			document.forms[0].fname.focus();
+			return false;
+			}
+			if (!wr4_isString('lname')) {
+			document.forms[0].lname.focus();
+			return false;
+			}
+		}
+	}
+
+card_type = document.forms[0].card_type.value;
+        if (card_type == "") {
+        card_type = document.forms[0].card_type.options[document.forms[0].card_type.selectedIndex].value;
+        }
+
+	if (card_type == "phone") {
+		// do nothing for phone bill
+	} else if (card_type == "checking") {
+		if (!isDigit('trans_no')) {
+			document.forms[0].transit_no.focus();
+			return false;
+		}
+		if (!isDigit('chk_no')) {
+			document.forms[0].chk_accnt_no.focus();
+			return false;
+		}
+	} else if (card_type == "target") {
+		if(!isValidTargetNumber(document.forms.ccinfo.card_number.value)) {
+			document.forms[0].card_number.focus();
+			return false;
+		}
+	} else {
+		if (!isValidNumber()) {
+			alert("Please make sure you have entered a valid credit card number.");
+			document.forms[0].card_number.focus();
+			return false;
+		}
+		if((card_type != "sears") && (card_type != "target")) {
+			if (!isMonth()) {
+				document.forms[0].expire_mm.focus();
+				return false;
+			}
+			if (!isYear()) {
+				document.forms[0].expire_yy.focus();
+				return false;
+			}
+		}
+	}
+return true;
+}
+
+function wr4_submitForm(formName) {
+	document.forms[formName].submit();
+}
+
+function wr4_setFocus() {
+	if (window.focus) self.focus();
+}
+
+
+function wr4_isString(field) {
+min = 2;
+max = 15;
+	if (field == "fname") {
+	val = document.forms[0].fname.value;
+	msg = "Please make sure your First Name is between 1 and 15 characters.";
+	} else {
+	val = document.forms[0].lname.value;
+	msg = "Please make sure your Last Name is between 1 and 15 characters.";
+	}
+	if (val == "") {
+	return(alert(msg));
+	}
+	if (val.length < min) {
+	return(alert(msg));
+	}
+	if (val.length > max) {
+	return(alert(msg));
+	}
+return true;
+}
+
+// returns users age
+function wr4_returnAge(dd,mm,yy) {
+	months = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+	birthday = new Date(mm + "" +  dd + "," + yy);
+	today = new Date();
+	diff = today-birthday;
+	birthdayJulian = wr4_getJulianDay(dd,mm);
+	todayJulian = wr4_getJulianDay(today.getDate(),months[today.getMonth()]);
+	todayJulian<birthdayJulian?addDays = 365+(birthdayJulian - todayJulian):addDays=365;
+	diff = diff/1000/60/60/24/addDays;
+	return Math.floor(diff);
+}
+
+// used by wr4_returnAge
+function wr4_getJulianDay(dd,mm) {
+	mDate = new Date();
+	mYear = mDate.getYear();
+	mStart = new Date("January 1, " + mYear);
+	mEnd = new Date(mm + " " + dd + "," + mYear);
+	mSpan = mEnd - mStart;
+	mSpan = mSpan/1000/60/60/24;
+	return mSpan;
+
+}
+
+function wr4_getMacOSVersion() {
+ua = navigator.userAgent.toLowerCase();
+	if(navigator.plugins["Default Plugin Carbon.cfm"] || ua.indexOf("omniweb") != -1 || ua.indexOf('os x') != -1) {
+	return "OSX"
+	} else {
+	return "other"
+	}
+}
+
+// used to return verisign info
+function verisignPopup(url) {
+sealWin=window.open(url,"win",'toolbar=0,location=0,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=500,height=450');
+self.name = "mainWin";
+}
+
+
+

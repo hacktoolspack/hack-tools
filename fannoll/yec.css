@@ -1,0 +1,78 @@
+.ygcp {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif
+}
+.ygcp A {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif
+}
+.ygma {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif
+}
+.ygma A {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif
+}
+HR {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; COLOR: #ccc; BORDER-BOTTOM: 0px
+}
+.yecpb {
+	BACKGROUND: #eee
+}
+.yecmtb {
+	BACKGROUND: #9e9e9e
+}
+.yecstb {
+	BACKGROUND: #bfbfbf
+}
+.yeclb {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BACKGROUND: #eee; BORDER-LEFT: #ccc 1px solid; BORDER-BOTTOM: #ccc 1px solid
+}
+.yecltb {
+	BACKGROUND: #9e9e9e
+}
+.yecml {
+	BACKGROUND: #7eaf6e
+}
+.yecmb {
+	BACKGROUND: #fff
+}
+.yecil {
+	BACKGROUND: #ccc
+}
+.yecib {
+	BACKGROUND: #eee
+}
+.yecwi {
+	BORDER-RIGHT: #9ec398 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #9ec398 1px solid; PADDING-LEFT: 10px; BACKGROUND: #eee; MARGIN-BOTTOM: 1em; PADDING-BOTTOM: 10px; BORDER-LEFT: #9ec398 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #9ec398 1px solid
+}
+.yecco {
+	BACKGROUND: #fbffe3; COLOR: #7f7f7f
+}
+.yeccob {
+	BACKGROUND: #d1d9ab
+}
+.yeccoh {
+	BACKGROUND: #fbffe3; COLOR: #000000
+}
+.yecl {
+	COLOR: #666
+}
+.yecbl {
+	BACKGROUND: #ccc
+}
+.yecbb {
+	BACKGROUND: #eee
+}
+#yecmsg {
+	LEFT: 0px; VISIBILITY: hidden; WIDTH: 100%; POSITION: absolute; TOP: 0px; HEIGHT: 100%
+}
+#yecpgerr {
+	BORDER-RIGHT: #ccc889 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #ccc889 1px solid; DISPLAY: none; PADDING-LEFT: 10px; MARGIN-BOTTOM: 1em; PADDING-BOTTOM: 10px; BORDER-LEFT: #ccc889 1px solid; COLOR: #616161; PADDING-TOP: 10px; BORDER-BOTTOM: #ccc889 1px solid
+}
+.yecerrbg {
+	BACKGROUND: #fffbb8; COLOR: #616161
+}
+.yecerrbr {
+	BACKGROUND: #ccc889
+}
+.yecerrh {
+	BACKGROUND: #d4cd6e
+}

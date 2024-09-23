@@ -1,0 +1,150 @@
+/* ---------------------------------------------
+   content.css
+	Content detail template specific styles
+   --------------------------------------------- */
+
+
+/*    Content Template Columns
+-------------------------------------------------------------------- */
+div#body div#leftCol {width:138px;float:left;}
+div#body div#rightCol {width:144px;float:right;margin-left:8px;}
+
+div#body.content div#content {float:left;width:446px;margin-left:14px}
+div#body.content2colRt div#content {float:left;width:590px;padding-left:10px;}
+	
+div#body.content2colLt div#content {float:left;width:594px;padding-left:17px;}
+div#body.content1col div#content {float:left;width:738px;padding-left:17px}
+
+div#body.content div#content div#contentColLeft {float:left;width:210px;}
+div#body.content div#content div#contentColRight {float:left;width:210px;margin-left:8px;}
+
+div#body.extRightCol {width:152px;margin-top:23px;margin-bottom:20px}
+
+
+/*   Inline Content Styles 
+-------------------------------------------------------------------- */
+div#content p {padding:0;margin:0 0 12px 0;}
+div#content a {color:#0C2DA3;}
+div#content a:hover {color:#000}
+div#content a.gray {color:#666666;}
+
+	/* Headers */
+	div#content h1 {font-size:24px; margin:0 0 16px 0;padding:0;color:#666;font-weight:normal;}
+	div#content h2 {font-size:18px;margin:-10px 0 16px 0;}
+	div#content h2, div#content h3 {color:#666;}
+	div#content h3.tagLine {font-weight:normal;font-size:12px;color:#666;font-weight:bold;margin:0 0 0px 0;}
+	div#content h3 {font-size:12px;font-weight:bold;color:#0023A0;margin:50px 0 0 0;}
+	div#content h4 a {color:#0023A0;text-decoration:none;padding-right:6px;background-repeat:no-repeat;background-image:url(/img/other/arrow_link.gif);background-position:right}
+	div#content h4 a:hover {color:#3366CC}
+	div#content h4 {font-size:12px;font-weight:normal;color:#0023A0;margin:28px 0 0px 0;}
+	div#content h5 {font-size:11px;font-weight:bold;padding:0;margin:0}
+	div#content h4.listTitle {font-size:11px;color:#666;font-weight:bold;margin:0;padding:0;}
+
+
+	/* Lists */
+	div#content ul {margin:0 0 12px 0px;padding:0;list-style-type:none}
+	div#content ul li {padding-left:10px;background-image: url(/img/other/icon_bullet.gif);background-position:0px 5px;background-repeat: no-repeat;margin-bottom:2px}
+	div#content ul li ul {margin-top:6px}
+	
+	div#content ul.arrow {margin:0;padding:0;list-style-type:none}
+	div#content ul.arrow li {text-indent:-8px;padding-left:18px;background-image: url(/img/aro_grey_rght.gif);background-position:0px 4px;background-repeat: no-repeat;margin-bottom:2px}
+	div#content ul.arrow a {color:#666}
+	
+	div#content ul.noindent {margin:0;padding:0}
+	div#content li.nobullet {list-style-type:none;background-image:none}
+	
+	div#content div.listFeatured {border-top:1px solid #DCDCDC;border-bottom:1px solid #DCDCDC;margin:12px 0 12px 0;padding:10px;}
+	div#content div.listFeatured h3 {font-size:12px;font-weight:bold;color:#666;margin:0 0 0 0;}
+
+	
+	/*  cross link  */
+	div#content a.crossLink {color:#0023A1;}
+	
+	/*  tables  */
+	table.bordered {border-left:1px solid #DCDCDC;border-bottom:1px solid #DCDCDC;}
+	table.bordered td {border-top:1px solid #DCDCDC;border-right:1px solid #DCDCDC;}
+	table.bordered td.novert {border-top:1px solid #DCDCDC;border-right:0;}
+		
+		/* generic data table  */	
+		div.dataTable table {background-color:#CACACA;}
+		div.dataTable table caption {display:none}
+		div.dataTable table tr {}
+		div.dataTable table th {font-size:11px;background-color:#7F91CF;text-align:left;font-weight:normal;padding:2px 4px 2px 4px;color:white;font-weight:strong}
+		div.dataTable table td {background-color:#FFF;color:#666;padding:2px 4px 2px 4px;}
+		div.dataTable table td.right {width:120px;}
+		div.dataTable table td.left {width:50px;}
+		div.dataTable table tr.odd td {background-color:#F2F4FA;color:#666}
+
+	/* Definition, Quick Tip, etc. Box */
+		div.definition:first-line {font-weight:bold; line-height:20px;}
+		div.definition {padding:5px 10px 10px 10px; background-color:#E5E9F5;}		
+		
+	/* misc */
+	
+	.accentgray10 {margin:0;background-color:#e6e6e6;} 
+	.equitygold10 {margin:0;background-color:#fffbf2;} 
+	.equityblue10 {background-color:#F2F4FA;} 
+	.equityblue25 {background-color:#BFC8E7;}
+
+		
+/*   Page components
+-------------------------------------------------------------------- */
+
+	/* content/card listings component (content_listing.tpl and card_listing.tpl and image.tpl) */
+	div.cListing {}
+	div.cListing div.cardImage {margin-bottom:3px}
+	div.cListing div.cardInfo {}
+	div.cListing p {margin:0;margin-bottom:5px;padding:0;}
+	div.cListing h3 {padding:0;margin:0;display:inline}
+	div#content div.cListing h3 a {color:#0023A0;text-decoration:none;background-image:none;padding:0}
+	div.cListing div.cListing2Col {float:left;width:220px;}
+	div.cListing div.cListing2Col div.cardInfo {width:180px}
+	div.cListing div.contentListing div.cardImage {float:left;margin-right:8px}
+
+	/*  Card with More Info Link   */	
+	div.cardWithMoreInfo{margin-bottom:20px;}
+	div.cardWithMoreInfo div.cardImage{float:left;margin-right:5px}
+	div.cardWithMoreInfo div.moreInfo {}
+	
+	/* dropdown - component (benefits_dropdown.tpl) */
+	div.dropBenefits {clear:both;width:100%;}
+	div#content div.dropBenefits h3 {margin:0;padding:0;}
+	div.dropBenefits ul {list-style-type:none;height:34px;}
+	div.dropBenefits ul li {float:left;font-size:10px;margin-left:0; } 
+	div.dropBenefits ul li.last {float:right;margin-right:0;margin-top:7px;}
+	div.dropBenefits select {width:325px;background-color:#F4F4F4;font-size:10px; } 
+
+	/*  Jump Links  */
+	div#content div.jumpLinks {border:1px solid #DCDCDC;margin-bottom:15px;margin-top:25px}	
+	div#content div.jumpLinks h3 {color:#666;padding-left:5px;padding-top:2px;padding-bottom:2px;font-size:11px;font-weight:bold;margin:0}	
+	div#content div.jumpLinks ul {margin:0;padding:0}
+	div#content div.jumpLinks ul li {background-image:none;padding:0;border-top: 1px solid #D9D9D9;list-style-type:none;padding-top: 2px; padding-bottom: 2px;margin:0}
+	div#content div.jumpLinks ul li a {background-image: url(../img/nav/right_arrow.gif); background-position: 5px 5px; background-repeat: no-repeat;}
+	div#content div.jumpLinks ul li h3 {padding:0 0 0 5px;margin:0;font-size:11px;}
+	div#content div.jumpLinks ul li.super {background-color:#F2F4FA}
+	div#content div.jumpLinks ul li h3 a {background-image:none;padding:0;margin:0;}
+	div#content div.jumpLinks a {color:#666; display:block;text-decoration: none; padding-left: 14px; margin: 0; }
+	div#content div.jumpLinks a:hover {color:#000}
+	
+	/* Back to Top */	
+	div#content div.back2top {text-align:right;margin-top:-6px; margin-bottom:6px;}
+	div#content div.back2top a {color:#666;background-image:url(../img/aro_grey_up.gif);background-repeat: no-repeat;background-position:0px 4px;padding-left:12px}
+
+	/* Previous Page */
+	div#content div.prevPage {text-align:right;margin-bottom:4px;clear:both}
+	
+	
+
+/*  Right Column  
+-------------------------------------------------------------------- */
+div.photoBrand {margin:0 0 8px 0;}
+
+	/* Right Column Components */
+	
+		/* card listing for right column component (cards_with_benefit.tpl) */
+		div.cListingRC {border:1px solid #D1D1D1;margin:0 0 10px 0;padding:10px;padding-bottom:0;clear:both}
+		div.cListingRC h3 {margin:0;font-weight:bold;font-size:11px;margin-bottom:5px;}
+		div.cListingRC h4 {margin:0;font-weight:bold;font-size:10px;}
+		div.cListingRC ul {margin:0 0 12px 0;padding:0 0 0 0;list-style-type:none;}
+		div.cListingRC ul li {margin:0;padding-left:8px;font-size:10px;background: transparent url("/img/aro_grey_rght_rc.gif") no-repeat;background-position:0px 1px}
+		div.cListingRC a:hover {color:#000}

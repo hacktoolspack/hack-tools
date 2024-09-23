@@ -1,0 +1,18 @@
+/* ---------------------------------------------
+   personal.css
+	Personal/About Visa section overrides (applied to all
+	/personal/ and /about_visa/ pages)
+   --------------------------------------------- */
+	
+
+/* Feature Module Segment Specific Colors
+---------------------------------------------------- */
+div.featureModule h3 {color:white}
+
+div#body div#featurePrimary.featureModule {background-color:#FFC95C}
+div#body div#featureSecondary.featureModule {background-color:#7F91CF}
+
+div#body.category div#featurePrimary.featureModule {background-color:#7F91CF}
+div#body.category div#featureSecondary.featureModule {background-color:#FFC95C}
+
+div.featureModule ul li a {text-decoration:none;color:white}

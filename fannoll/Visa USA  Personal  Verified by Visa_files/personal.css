@@ -1,0 +1,18 @@
+DIV.featureModule H3 {
+	COLOR: white
+}
+DIV#body DIV.featureModule#featurePrimary {
+	BACKGROUND-COLOR: #ffc95c
+}
+DIV#body DIV.featureModule#featureSecondary {
+	BACKGROUND-COLOR: #7f91cf
+}
+DIV.category#body DIV.featureModule#featurePrimary {
+	BACKGROUND-COLOR: #7f91cf
+}
+DIV.category#body DIV.featureModule#featureSecondary {
+	BACKGROUND-COLOR: #ffc95c
+}
+DIV.featureModule UL LI A {
+	COLOR: white; TEXT-DECORATION: none
+}
