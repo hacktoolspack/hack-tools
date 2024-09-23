@@ -53,10 +53,3 @@ These tools are intended for use by a wide range of individuals, from script kid
    Constructive issues related to improvements are welcome, as long as they are relevant and interesting.
 
 5. **File Passwords**: For executable files (.exe), archives (.7z, .zip), use the password: `a`
-
-6. **Windows Compatibility**: For enhanced compatibility with hacking tools on Windows, it is recommended to install PentestBox. You can download it from:
-   [PentestBox v2.2 Download](https://sourceforge.net/projects/pentestbox/files/PentestBox-v2.2.exe/download)
-
-### Conclusion
-
-This repository serves as a comprehensive collection of cybersecurity tools for various purposes. Users are encouraged to use these tools responsibly and ethically, always adhering to legal and professional standards in the field of information security.
