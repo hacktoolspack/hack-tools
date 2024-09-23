@@ -1,0 +1,1804 @@
+<!doctype html>
+<!--
+Clickjacking Tool
+Copyright (C) 2010 Paul Stone
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+-->
+<html>
+<head>
+<title>Clickjacking Tool</title>
+<link rel="stylesheet" href="cjtool.css">
+<script src="sjs-loader.js"></script>
+<script src="jquery-1.4.2.min.js"></script>
+<script src="jquery.dataset.js"></script>
+<script src="jquery-ui-1.8.custom.min.js"></script>
+<script>
+var ie = window.attachEvent ? true : false;
+var canvas;
+
+var defaultSteps = {"cj_export_version":"1.0","title":"","steps":[{"loadurl":{"url":"welcome.html","size.width":"","size.height":"","fragment":"","clickload":false}}]};
+
+function extractDocumentFragmentIds(doc) {
+    var nodes = $('*[id], a[name]', doc);
+    var ids = [];
+    for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        ids.push(n.nodeName == 'A' && n.name ? n.name : n.id);
+    }
+    return ids;
+}
+$(document).ready(function() {
+    var frame = document.getElementById('f');
+    canvas = new CjCanvas(frame, 'about:blank');
+    populateToolStrip();
+    $('#steps').sortable({ 
+        axis: 'y', 
+        containment: 'parent', 
+        tolerance: 'pointer',
+        distance: 10,
+        stop: function() { StepList.resort() }
+    });                                 
+    $('[data-action=go]').click(loadURL);
+    $('dd[data-fieldset=fragments] [data-action=start]').click(function() { getFragmentIds() });
+    
+    $('#savesteps').click(function() { 
+        doPrompt('Save Clickjacking Steps', StepList.serialize());
+    });
+    
+    $('#loadsteps').click(function() {
+        doLoad();
+    });
+   
+    $('[data-widget=marker]').draggable({
+        iframeFix: true, 
+        revert: 'invalid',
+        revertDuration: 250,
+        containment: 'window',
+        cursor: 'default',
+        cursorAt: {left: 7, top: 7},
+        start: function() { StepList.selectFieldset(this) }
+    }).draggable('disable');
+    //$('[data-field=fragment]').autocomplete({source: ['rock','paper','scissors']});
+    $(canvas.outerFrame).droppable({
+        drop: canvasMarkerDropped
+    });
+    
+    $('#replay').click(function() {
+        replaySteps(StepList.steps, canvas);
+    });
+    
+    $('#invisible').click(function() {
+        replayInvisible(StepList.steps, canvas);
+    });
+    
+    $('#replay_from_current').click(function() {
+        replaySteps(StepList.steps, canvas, objIndexOf(StepList.steps, StepList.currentStep));
+    });
+    
+    $('#togglepane').click(function() {
+        if (canvas.paneVisible) {
+            canvas.hidePane();
+            $(this).text('Show Overlay');
+        } else {
+            canvas.showPane();
+            $(this).text('Hide Overlay');
+        }          
+    });
+    
+    $('#htmlview button.viewcontent').click(function() {
+          $('#htmlview iframe').show();
+          $('#htmlview div.source').hide();       
+    });
+    $('#htmlview button.viewsrc').click(function() {
+          $('#htmlview iframe').hide();
+          $('#htmlview div.source').show();       
+    });    
+    $('#htmlview button.close').click(function() {
+          $('#htmlview').hide();     
+    });    
+    StepList.loadSteps(defaultSteps);
+});
+
+String.prototype.startsWith = function(t) { 
+    return (t == this.substring(0, t.length)); 
+}
+
+String.prototype.removePrefix = function(t) { 
+    if (this.startsWith(t))
+        return this.substring(t.length);
+    else
+        return this + '';
+}
+
+String.prototype.endsWith = function(t, i) { 
+    return (t == this.substring(this.length - t.length)); 
+} 
+
+function showHTML(html) {
+    $('#htmlview div.source').text(html);
+    var d = $('#htmlview iframe')[0].contentWindow.document;
+    d.open();d.close();
+    d.body.innerHTML = html;
+    $('#htmlview').show();
+}
+
+function objIndexOf(obj, val) {
+    for (var key in obj) {
+        if (obj[key] == val)
+            return key;
+    }
+    return null;
+}
+
+function ellip(str, len) {
+    if (str.length > len)
+        return str.substr(0,len-3) + '...';
+    return str;
+}
+
+function addPos(posA, posB) {
+    if (!posB)
+        return posA;
+    return {
+        x: parseInt(posA.x, 10) + parseInt(posB.x, 10),
+        y: parseInt(posA.y, 10) + parseInt(posB.y, 10)
+    }
+}
+
+function subPos(posA, posB) {
+    if (!posB)
+        return posA;
+    return {
+        x: parseInt(posA.x, 10) - parseInt(posB.x, 10),
+        y: parseInt(posA.y, 10) - parseInt(posB.y, 10)
+    }
+}
+
+function populateToolStrip() {
+    $('#tools > div[data-tool-id]').each(function(n, el) {
+        var toolid = $(el).dataset('tool-id');
+        var title = $('h3', el).text();
+        
+        $('<button>')
+            .text(title)
+            .click(function() { StepList.addStep(toolid) })
+            .appendTo('#toolstrip');
+            
+        $('[data-field]', el)
+            .bind('change', toolFieldsUpdated)
+            .bind('focus', function() {
+                StepList.selectFieldset(this); 
+            });
+        
+        var markers = {};
+        $('[data-widget=marker]', el).each(function(n, el) {
+            el.setAttribute('unselectable', 'on');
+            var fieldset = $(el).closest('[data-fieldset]').dataset('fieldset');
+            markers[fieldset] = el;
+        });
+        var tool = {
+            id: toolid,
+            element: el,
+            fields: getToolFields(el),
+            markerWidgets: markers
+        };
+
+        tools[toolid] = tool;
+    });
+}
+
+var tools = {};
+var currentTool;
+
+function loadURL() {
+    StepList.currentStep.doLoad(true);
+}
+
+
+
+StepList = {
+    currentStep: null,
+    currentFieldset: null,
+    steps: [],
+    
+    addStep: function(toolid, data) {
+        var step = CjStep.factory(toolid, data);
+        this.steps.push(step);
+        this.selectStep(step);
+    },
+    
+    stepIndex: function(step) {
+        return parseInt(objIndexOf(this.steps, step), 10);
+    },
+    
+    selectStep: function(step, fieldset) {
+        if (step !== this.currentStep) {    
+            if (this.currentStep) {
+                this.currentStep.element.removeClass('selected');
+                this.currentStep.updateFromTool();
+            }
+            this.currentStep = step;
+            this.currentStep.element.addClass('selected');
+            loadTool(step);
+        }
+
+        if (fieldset) 
+            this.selectFieldset(fieldset);
+    },
+    
+    selectFieldset: function(el) {   
+        var fs;
+        
+        if (typeof el == 'string') 
+            fs = $('[data-fieldset=' + el + ']', StepList.currentStep.tool.element);
+        else
+            fs = $(el).closest('[data-fieldset]'); 
+        
+        if (this.currentFieldset)
+            this.currentFieldset.removeClass('selected');
+        
+        fs.addClass('selected');
+        this.currentFieldset = fs;
+    },
+    
+    serialize: function() {
+        var steps = [];
+        for (var i = 0; i < this.steps.length; i++) {
+            var o = {};
+            o[this.steps[i].tool.id] = this.steps[i].data;
+            steps.push(o);   
+        }
+        var data = {cj_export_version:'1.0', title: '', steps:steps};
+        var datastr = JSON.stringify(data);
+        //console.log(datastr);
+        return datastr;
+    },
+    
+    resort: function() {
+        var newsteps = [];
+        $('#steps > div').each(function(n, el) { 
+            newsteps.push(el.step); 
+        });
+        this.steps = newsteps;
+    },
+    
+    deleteStep: function(step) {
+        if (!step)
+            step = this.currentStep;
+        step.destroy();
+        var newsteps = [];
+        var deletedStep = 0;
+        for (var i = 0; i < this.steps.length; i++) {
+            if (this.steps[i] != step)
+                newsteps.push(this.steps[i]);
+            else
+                deletedStep = i;
+        }     
+        this.steps = newsteps;
+        if (this.steps.length == 0) { // all steps deleted
+            this.addStep('loadurl');
+        } else {
+            if (deletedStep >= this.steps.length)
+                deletedStep--;
+            this.selectStep(this.steps[deletedStep]);
+        }
+    },
+    
+
+    loadSteps: function(data) {
+        for (var i = 0; i < this.steps.length; i++)
+            this.steps[i].destroy();
+        this.steps = [];
+        if (typeof data == 'string')
+            data = JSON.parse(data);
+        
+        for (var i = 0; i < data.steps.length; i++) {
+            for (var stepid in data.steps[i]) {
+                var stepdata = data.steps[i][stepid];
+                this.addStep(stepid, stepdata);
+            }
+            
+        }
+        this.selectStep(this.steps[0]);
+        if (this.steps[0].tool.id == 'loadurl')
+            this.steps[0].doLoad();
+    }
+    
+
+}
+
+function CjStep(toolid, data) {
+    this.tool = tools[toolid];
+    
+    this.data = {};
+    for (var i in this.tool.fields)
+        this.data[i] = '';
+    
+    this.canvasMarkers = {};
+    this.fragmentPositions = {};
+}
+
+CjStep.factory = function(toolid, data) {
+    var step = new CjStep(toolid);
+    var fns = CjStep.subclasses[toolid];
+    for (var f in fns) 
+        step[f] = fns[f];
+    if (data) {
+        step.data = data;
+        for (var name in step.tool.markerWidgets)
+            step.createMarker(name, step.extractFieldset(name));
+    }
+    step.init();
+    return step;
+}
+
+
+CjStep.prototype.init = function() {
+    this.element = this.createElement();
+    
+}
+
+CjStep.prototype.getUrlStep = function() {
+    var i = StepList.stepIndex(this);
+    while (i >= 0) {
+        if (StepList.steps[i].tool.id == 'loadurl')
+            return StepList.steps[i];
+        i--;
+    }
+    return false;
+}
+
+CjStep.prototype.updateFromTool = function() {
+    var fields = {}
+    for (var i in this.tool.fields) {
+        var field = this.tool.fields[i];
+        if ($(field).attr('type') == 'checkbox')
+            this.data[i] = field.checked ? true : false;
+        else
+            this.data[i] = $(field).val();
+    }
+    this.updateStepElement();
+    for (var name in this.canvasMarkers)
+        this.updateMarkerDisplay(name);
+}
+
+CjStep.prototype.updateStepElement = function() {
+    $('.content', this.element).empty().append(this.template());
+}
+
+CjStep.prototype.createElement = function() {
+    var el = $('#templates .step').clone();
+    $('.content', el).append(this.template());
+    var me = this;
+    $(el).click(function() { StepList.selectStep(me) });
+    $('button.del', el).click(function() { StepList.deleteStep(me) });
+    
+    $('#steps').append(el);
+    el[0].step = this;
+    return el;
+}
+
+CjStep.prototype.stepID = function() {
+    for (var id in StepList.steps) {
+        if (StepList.steps[id] === this)
+            return id;
+    }
+}
+
+CjStep.prototype.getPosStr = function(data, fieldset) {
+    if (fieldset)
+        data = this.extractFieldset(fieldset);
+    var str = '';
+    if (data.fragment)
+        str += ' #' + data.fragment;
+    if (!isNaN(parseInt(data.x, 10)) && !isNaN(parseInt(data.y, 10)))
+        str += ' (' + data.x + ', ' + data.y + ')';
+    return str;
+}
+
+CjStep.prototype.destroy = function() {
+    $(this.element).remove();
+    for (var i in this.canvasMarkers) 
+        $(this.canvasMarkers[i]).remove();
+    
+    if (this.fragmentContainer)
+        $(this.fragmentContainer).remove();    
+}
+
+CjStep.prototype.extractFieldset = function(fs) {
+    var o = {};
+    fs += '.';
+    for (var f in this.data) {
+        if (f.startsWith(fs))
+            o[f.removePrefix(fs)] = this.data[f];
+    }
+    return o;
+}
+
+CjStep.prototype.updateDisplay = function() {
+    this.updateStepElement();
+    updateToolFields(this);
+}
+
+CjStep.prototype.createMarker = function(name, pos) { 
+    this.canvasMarkers[name] = this.createMarkerElement(name, pos);
+    this.updateMarkerData(name, pos);
+    this.updateMarkerDisplay(name);
+}
+
+CjStep.prototype.resolveMarkerPositions = function() {
+    var childSteps = this.getChildSteps();
+    for (var i = 0; i < childSteps.length; i++) {
+        var step = childSteps[i];    
+        for (var name in step.canvasMarkers) {
+            var pos = step.extractFieldset(name);
+            if (pos.fragment && !(name in step.fragmentPositions)) {
+                step.fragmentPositions[name] = canvas.getFragmentPosition(pos.fragment);
+                step.updateMarkerDisplay(name);
+            }
+        }
+    }
+}
+
+CjStep.prototype.updateMarkerData = function(name, pos) {
+    var pos = subPos(pos, this.fragmentPositions[name]);
+    this.data[name + '.x'] = pos.x;
+    this.data[name + '.y'] = pos.y;
+    //this.updateDisplay();
+}
+
+CjStep.prototype.updateMarkerDisplay = function(name) {
+    
+    var x = parseInt(this.data[name + '.x'], 10) + canvas.margin - 7;
+    var y = parseInt(this.data[name + '.y'], 10) + canvas.margin - 7;
+    if (this.fragmentPositions[name]) {
+        x += this.fragmentPositions[name].x;
+        y += this.fragmentPositions[name].y;
+    }
+    this.canvasMarkers[name].css({
+        left: x + 'px',
+        top: y + 'px'
+    });
+}
+
+CjStep.prototype.createMarkerElement = function(name, pos) {
+    var me = this;
+    var w = canvas.outerFrame.contentWindow;
+    return w.$('<div>', canvas.doc)
+        .addClass('marker')
+        .appendTo(canvas.pane)
+        .draggable({
+            stop: function(event, ui) { 
+                var pos = canvas.getEventPosition(event);
+                me.updateMarkerData(name, pos);
+                me.updateDisplay();
+            },
+            cursorAt: {left: 7, top: 7}
+        })
+        .mousedown(function() { StepList.selectStep(me, name) });
+}
+
+CjStep.prototype.fragmentSelected = function(fragID, position) {
+    if (!StepList.currentFieldset)
+        return;
+    
+    var fs = StepList.currentFieldset.dataset('fieldset');
+    if (!fs)
+        return;
+   
+    if (fs == 'check') {
+        // nothing to do
+    } else {
+        this.fragmentPositions[fs] = position;
+        if (!this.canvasMarkers[fs]) 
+            this.createMarker(fs, position);
+        
+        var newPos = addPos(this.extractFieldset(fs), this.fragmentPositions[fs]);
+        this.updateMarkerDisplay(fs);  
+    }
+    this.data[fs + '.fragment'] = fragID;
+    this.updateDisplay();
+}
+
+
+CjStep.subclasses = {
+    loadurl: {
+        template: function() {
+            var text = 'Load URL: ';
+            if (this.data.url)
+                text += ellip(this.data.url, 30);
+            if (this.data.nojs)
+                text += " (No JS)";
+            return $('<span>').text(text); 
+        },
+        
+        setFragments: function(ids, positions) {
+            this.fragmentIDs = ids;
+            this.createFragmentMarkers(positions);
+            $('dd[data-fieldset=fragments] .status').text(ids.length + ' fragment IDs');
+        },
+        
+        createFragmentMarkers: function(positions) {
+            if (this.fragmentContainer)
+                $(this.fragmentContainer).remove();
+            var w = canvas.outerFrame.contentWindow;
+            var container = w.$('<div>', canvas.doc).addClass('fragments');
+            var me = this;
+            $.each(positions, function(frag, pos) {
+                w.$('<div>', canvas.doc)
+                    .addClass('fragment')
+                    .appendTo(container)
+                    .text(frag)
+                    .css({ 
+                        left: (pos.x + canvas.margin) + 'px',
+                        top: (pos.y + canvas.margin - 13) + 'px'
+                    })
+                    .click(function() {
+                        StepList.currentStep.fragmentSelected(frag, pos);      
+                    });
+            });
+            $(canvas.pane).append(container);
+            this.fragmentContainer = container;
+        },
+
+        setFragmentAutoComplete: function() {
+            if (this.fragmentIDs)
+                $('[data-field=fragment]').autocomplete('option', 'source', this.fragmentIDs);
+        },
+        
+        doLoad: function(refocus) {
+            var w = parseInt(this.data['size.width'], 10);
+            var h = parseInt(this.data['size.height'], 10);
+            if (!w) w = 1024;
+            if (!h) h = 3000;
+            canvas.setFrameSize(w, h);
+            var me = this;
+            canvas.loadURL(this.data.url, refocus, function() { 
+                me.resolveMarkerPositions() });
+        },
+        
+        getChildSteps: function() {
+            var i = StepList.stepIndex(this) + 1;
+            var steps = [];
+            while (i < StepList.steps.length) {
+                if (StepList.steps[i].tool.id == 'loadurl')
+                    break;
+                steps.push(StepList.steps[i]);
+                i++;
+            }
+            return steps;
+        }
+    },
+    
+    click: {
+        template: function() {
+            var text = "Click: " + this.getPosStr(this.data, 'pos');
+            
+            return $('<span>').text(text);
+        }
+    },
+    
+    text: {
+        template: function() {
+            var text = "Text:";
+            if (this.data.text)
+                text += " '" + this.data.text + "'";
+            text += this.getPosStr(this.data, 'pos');
+            return $('<span>').text(text);
+        }
+    },
+    
+    drag: {
+        template: function() {
+            var text = "Drag: from " + 
+                this.getPosStr(this.data, 'from') + ' to: ' +
+                this.getPosStr(this.data, 'to');
+            return $('<span>').text(text);
+        }
+    },
+    
+    extract: {
+        template: function() {
+            var text = "Extract: " + this.getPosStr(this.data, 'pos');
+            return $('<span>').text(text);
+        }
+    }
+}
+
+
+
+
+function loadTool(step) {
+    currentTool = step.tool;
+    $('.current-tool').removeClass('current-tool');
+    var el = $(currentTool.element).addClass('current-tool');
+    updateToolFields(step);
+}
+
+function updateToolFields(step) {
+    if (step.data) { 
+        for (var i in currentTool.fields) {
+            var field = currentTool.fields[i];
+            if ($(field).attr('type') == 'checkbox')
+                field.checked = step.data[i] ? true : false;
+            else
+                $(field).val(step.data[i]); 
+        }
+    }
+    for (var m in currentTool.markerWidgets) {
+        var marker = currentTool.markerWidgets[m];
+        var action = step.canvasMarkers[m] ? 'disable' : 'enable';
+        $(marker).draggable(action);
+    }
+}
+
+function toolFieldsUpdated() {
+    if (StepList.currentStep) 
+        StepList.currentStep.updateFromTool();    
+}
+
+function getToolFields(el, o, path) {
+    if (!o)
+        o = {};
+    if (!path)
+        path = '';
+    
+    $(el).children().each(function(n, e) {
+        if ($(e).dataset('field')) 
+            o[path + $(e).dataset('field')] = e;
+        else if ($(e).dataset('fieldset')) {
+            getToolFields(e, o, path + $(e).dataset('fieldset') + '.');
+        } else
+            getToolFields(e, o, path);
+    });
+    return o;
+}
+
+function canvasMarkerDropped(event, ui) {
+    var pos = canvas.getEventPosition(event);
+    var widgetName = objIndexOf(currentTool.markerWidgets, ui.draggable[0]);
+    StepList.currentStep.createMarker(widgetName, pos);
+    StepList.currentStep.updateDisplay();
+    ui.draggable.css({left:0, top:0}); // reset position
+}
+
+function refocusWindow(win)
+{
+    if (!win)
+        win = window;
+    
+    if ($.browser.msie) {
+        win.focus();
+        return;
+    }
+    // work around Firefox 3.6 'bug' that prevents focus stealing
+    var t = win.document.createElement('input');
+    t.style.opacity = 0;
+    t.style.width = '0px';
+    t.style.position = 'absolute';
+    t.style.left = (win.scrollX + win.innerWidth / 2) + 'px';
+    t.style.top = (win.scrollY + win.innerHeight / 2) + 'px';
+    win.document.body.appendChild(t);
+    setTimeout(function() {
+        t.focus();
+        win.document.body.removeChild(t);
+    }, 100);
+}
+
+CjConsole = {
+    write: function(text, flash) {
+        var p = $('<p>').text(text).appendTo('#cjconsole');
+        if (flash)
+            p.effect('highlight', 'slow');
+        CjConsole.scrollToBottom();
+    },
+    addBlob: function(title, content) {
+        var p = $('<p>')
+            .text(title + ' (' + content.length + ')')
+            .addClass('blob')
+            .effect('highlight', 'slow')
+            .click(function() {
+                showHTML(content);
+            }).
+            appendTo('#cjconsole');
+        CjConsole.scrollToBottom();
+    },
+    scrollToBottom: function() {
+        var c = $('#cjconsole')[0];
+        c.scrollTop = c.scrollHeight;
+    }
+}
+CjCanvas = function (outer, url, nojs) {
+    this.margin = 1000; // 1px border on iframe
+    this.events = {};
+    
+    // this is required by mozilla to initialise the document correctly
+    if (!$.browser.msie)
+        outer.contentWindow.document.open();outer.contentWindow.document.close();
+    
+    if (nojs)
+        outer.contentWindow.document.designMode = 'on';
+    
+    this.outerFrame = outer;
+    this.doc = outer.contentWindow.document;
+    this.win = outer.contentWindow;
+    
+    this._addStyleSheet('cjcanvas.css');
+    this._addScript('jquery-1.4.2.min.js');
+    this._addScript('jquery-ui-1.8.custom.min.js');
+    var inner = outer.contentWindow.document.createElement('iframe');
+    inner.setAttribute('frameborder', '0');
+    //inner.setAttribute('unselectable', 'on');
+    inner.setAttribute('scrolling', 'no');
+    inner.setAttribute('class', 'innerFrame');
+    
+    inner.style.margin = (this.margin - 1) + 'px'; // account for 1px border
+    inner.style.width = '1024px';
+    inner.style.height = '10000px';
+    
+    outer.contentWindow.document.body.appendChild(inner);
+    
+    outer.innerFrame = inner;
+    //var me = this;
+    //$(inner).bind('load', $.proxy(this, '_frameLoaded'));
+    
+    this.innerFrame = inner;
+
+    this.loadURL(url, true);
+    this._setupPane();
+    this._setupPinhole();
+    this.javadnd = loadDnDApplet();
+    
+    this.dropTarget = initDropTarget(20, 20, this.doc);
+}
+
+CjCanvas.prototype._addStyleSheet = function(href) {
+    var head = this.doc.getElementsByTagName('head')[0];
+    var s = this.doc.createElement('link');
+    s.setAttribute('rel', 'stylesheet');
+    s.setAttribute('href', href + '?' + Math.random());
+    head.appendChild(s);
+}
+
+CjCanvas.prototype._addScript = function(src) {
+    var s = this.doc.createElement('script');
+    s.setAttribute('src', src);
+    this.doc.body.appendChild(s);
+}
+
+CjCanvas.prototype.makeInvisible = function() {
+    $('div.pinhole', this.doc).addClass('invisible'); 
+    $('body').addClass('invisible');
+    this.innerFrame.style.opacity = 0;
+    this.innerFrame.style.filter = 'alpha(opacity=0)';
+}
+
+CjCanvas.prototype.makeVisible = function() {
+    $('div.pinhole', this.doc).removeClass('invisible'); 
+    $('body').removeClass('invisible');
+    this.innerFrame.style.opacity = 1;
+    this.innerFrame.style.filter = 'alpha(opacity=100)';
+}
+
+CjCanvas.prototype._setupPinhole = function() {
+    if (this.pinhole)
+        return;
+    
+    var pinhole = {
+        tl: $('<div>', this.doc)
+                .addClass('pinhole')
+                .css({
+                    left: 0,
+                    top: 0,
+                }).
+                appendTo(this.doc.body),
+        
+        tr: $('<div>', this.doc)
+                .addClass('pinhole')
+                .css({
+                    top: 0,
+                    width: '1000',
+                }).
+                appendTo(this.doc.body),
+        br: $('<div>', this.doc)
+                .addClass('pinhole')
+                .css({
+                    width: '1000',
+                    height: '1000'
+                }).
+                appendTo(this.doc.body),
+        bl: $('<div>', this.doc)
+                .addClass('pinhole')
+                .css({
+                    left: 0,
+                    height: '1000'
+                }).
+                appendTo(this.doc.body)
+    }
+    this.pinhole = pinhole;
+    this.hidePinhole();
+}
+
+CjCanvas.prototype.hidePinhole = function() {
+    for (i in this.pinhole)
+        this.pinhole[i].hide();
+}
+CjCanvas.prototype.showPinhole = function() {
+    for (i in this.pinhole)
+        this.pinhole[i].show();
+}
+CjCanvas.prototype.positionPinhole = function(pos, size, follow) {
+    var pinhole = this.pinhole;
+    pos.x = parseInt(pos.x, 10);
+    pos.y = parseInt(pos.y, 10);
+    var pixelpos = this.setPosition(pos.x, pos.y, this.lastX, this.lastY, pos.fragment);
+    
+    //var origPos = {x:pos.x, y:pos.y};
+    var x = pixelpos.x;
+    var y = pixelpos.y;
+    
+    x += this.margin;
+    y += this.margin;
+    //console.log('x:' + pos.x + ' y:' + pos.y);
+    pinhole.tl.css({
+        width: x + size,
+        height: y - size 
+    });
+    
+    pinhole.tr.css({
+        left: x + size,
+        height: y + size
+    });
+    
+    pinhole.br.css({
+        left: x - size,
+        top: y + size
+    });    
+    pinhole.bl.css({
+        top: y - size,
+        width: x - size
+    });
+    this.pinholePos = pixelpos;
+    //if (follow)  
+}
+
+CjCanvas.prototype._setupPane = function() {
+    var pane = $('<div>', this.doc)
+        .addClass('pane')
+        .appendTo(this.doc.body);
+    
+        //.attr('draggable', 'false');
+    $('<div>', this.doc).addClass('shade').appendTo(pane);
+    
+    pane = pane[0];
+    pane.setAttribute('unselectable', 'on');
+    pane.setAttribute('draggable', 'false'); // doesn't work using jquery's attr
+    this.pane = pane;
+    this._fitPane();
+    this.paneVisible = true;
+   
+    $(pane)
+        .bind('mousedown', $.proxy(this, 'paneMdown'))
+        .bind('mouseup', $.proxy(this, 'paneMup'))
+        .bind('mouseout', $.proxy(this, 'paneMout'))
+        .bind('mousemove', $.proxy(this, 'paneMmove'));
+
+    $(this.doc)
+        .bind('keydown', $.proxy(this, 'panelKeyDown'))
+        .bind('keyup', $.proxy(this, 'panelKeyUp'));
+}
+
+
+CjCanvas.prototype._fitPane = function() {
+    $(this.pane).css({
+       width: (this.innerFrame.offsetWidth + this.margin * 2) + 'px',
+       height: (this.innerFrame.offsetHeight + this.margin * 2) + 'px'
+    });
+}
+
+CjCanvas.prototype.setFrameSize = function(w, h) {
+    this.innerFrame.style.width = w + 'px';
+    this.innerFrame.style.height = h + 'px';
+    this._fitPane(); 
+}
+
+CjCanvas.prototype.panelKeyDown = function(e) {
+    if (e.ctrlKey && this.paneVisible)
+        this.hidePane();
+}
+
+CjCanvas.prototype.panelKeyUp = function(e) {
+    if (!this.paneVisible)
+        this.showPane();
+}
+
+CjCanvas.prototype.hidePane = function() {
+    this.pane.style.visibility = 'hidden';
+    this.paneVisible = false;
+}
+
+CjCanvas.prototype.showPane = function() {
+    this.pane.style.visibility = 'visible';
+    this.paneVisible = true;
+}
+
+CjCanvas.prototype.paneMdown = function(e) { 
+    if ($(e.target).hasClass('marker'))
+        return;
+    
+    this.paneDown = true;
+    this.pane.className = 'pane dragging';
+    if (this.pane.setCapture)
+        this.pane.setCapture();
+    this.lastX = e.clientX;
+    this.lastY = e.clientY;
+}
+
+CjCanvas.prototype.cancelPaneDrag = function() {
+    this.paneDown = false;
+    this.lastX = null;
+    this.lastY = null;
+    this.pane.className = 'pane';
+    if (this.pane.releaseCapture)
+        this.pane.releaseCapture();
+    
+    this.clearSelection();
+}
+
+CjCanvas.prototype.clearSelection = function() {
+    if (this.doc.selection) 
+        this.doc.selection.empty();
+    else
+        this.outerFrame.contentWindow.getSelection().collapse(this.doc.body, 0);
+}
+
+CjCanvas.prototype.paneMup = function(e) { 
+    this.cancelPaneDrag();
+}
+
+CjCanvas.prototype.paneMout = function(e) { 
+    if (!this.pane.setCapture)
+        this.cancelPaneDrag();
+}
+
+CjCanvas.prototype.paneMmove = function(e) {
+    if (!this.paneDown) {
+        this.lastX = e.clientX;
+        this.lastY = e.clientY;
+        return;
+    }
+    
+    if (this.doc.selection) 
+        this.doc.selection.empty()
+
+    this.outerFrame.contentWindow.scrollBy(this.lastX - e.clientX, this.lastY - e.clientY);
+    
+    this.lastX = e.clientX;
+    this.lastY = e.clientY;
+}
+
+CjCanvas.prototype._frameLoaded = function(refocus) {
+   var me = this;
+   this.loaded = true;
+   if (refocus) {
+       this.setPosition(0,0,1,1);
+       refocusWindow();
+   }
+   setTimeout(function() {
+       $(window).unbind('beforeunload', me._framebustWarning);
+   }, 1000);
+}
+
+CjCanvas.prototype._framebustWarning = function() {
+    return 'A page may be trying to framebust. This may prevent you from performing a clickjacking attack against it. Click cancel to prevent this for now';
+}
+
+CjCanvas.prototype.loadURL = function(url, refocus, callback) {
+    var me = this;
+    this.loaded = false;
+    $(window).bind('beforeunload', me._framebustWarning);
+
+    $(this.innerFrame).one('load', function() { 
+        me._frameLoaded(refocus);       
+        if (callback)
+            callback();
+    });
+    
+    // TODO strip #frag off url if it's there
+    this.innerFrame.contentWindow.location = url;
+    this.currentURL = url;
+}
+
+/**
+ * Set up the canvas to perform clickjacking steps
+ */
+CjCanvas.prototype.beginCJ = function() {
+    this.hidePane();
+    this.showPinhole();
+    this._beginMouseTracking();
+}
+
+CjCanvas.prototype._beginMouseTracking = function() {
+    var iframe = this.innerFrame;
+    var $j = this.outerFrame.contentWindow.$;
+    this.mocheck = function(e) { checkMouseOverIFrame(e, iframe)};
+    $j(this.doc).bind('mouseover mouseout', this.mocheck);
+    $j(this.doc.body).bind('mousemove', $.proxy(this, '_place'));
+}
+
+CjCanvas.prototype._stopMouseTracking = function() {
+    var $j = this.outerFrame.contentWindow.$;
+    $j(this.doc).unbind('mouseover mouseout', this.mocheck);
+    $j(this.doc.body).unbind('mousemove', $.proxy(this, '_place'));
+}
+
+/**
+ * Place the pinhole underneath the current mouse position
+ */
+CjCanvas.prototype._place = function(e) {
+    if (e.button == 1)
+        return;
+    this.lastX = e.clientX;
+    this.lastY = e.clientY;
+    this.setPosition(this.pinholePos.x, this.pinholePos.y, e.clientX, e.clientY);
+};
+    
+CjCanvas.prototype.endCJ = function() {
+    this._stopMouseTracking();
+    this.hidePinhole();
+    this.showPane();
+}
+
+CjCanvas.prototype.setSize = function(w, h) {  
+    this.outerFrame.style.width = w + 'px';
+    this.outerFrame.style.height = h + 'px';
+}
+
+CjCanvas.prototype.restoreSize = function() {
+    this.outerFrame.style.width = '100%';
+    this.outerFrame.style.height = '100%';
+}
+
+/**
+ * Scroll a particular point (x,y) of the framed document to a position in the 
+ * viewport (centreX, centreY)
+ */
+CjCanvas.prototype.setPosition = function(x, y, centreX, centreY, frag) {   
+    if (centreX == null) {
+        centreX = this.outerFrame.offsetWidth / 2;
+        centreY = this.outerFrame.offsetHeight / 2;
+    }
+    
+    var pixelpos = {x:x, y:y};
+    
+    x = x - centreX;
+    y = y - centreY;
+    
+    if (frag) {
+        this.outerFrame.contentWindow.scrollTo(0,0);
+        this.setSize(5, 5);
+        var v = document.body.offsetHeight; // force reflow in webkit
+        this.innerFrame.contentWindow.location = this.currentURL + '#' + frag;
+        this.outerFrame.contentWindow.scrollBy(x, y);
+        pixelpos.x = $(this.doc).scrollLeft() - this.margin + centreX;
+        pixelpos.y = $(this.doc).scrollTop() - this.margin + centreY;
+        this.restoreSize();
+    } else {
+        this.outerFrame.contentWindow.scrollTo(x + this.margin, y + this.margin); 
+    }
+    return pixelpos;
+}
+
+// return mouse event position, relative to inner document
+CjCanvas.prototype.getEventPosition = function(event) {
+    var el = event.target;
+
+    if (el.ownerDocument == this.outerFrame.ownerDocument) { // event originates from outside iframe
+        var canvasPos = this.getPosition();
+        var offset = $(el).offset(); // position of outerIframe in document
+        var pos = { 
+            x: event.pageX - offset.left + canvasPos.x, 
+            y: event.pageY - offset.top + canvasPos.y
+        }
+        
+    } else {
+        var pos = {
+            x: event.pageX - this.margin,
+            y: event.pageY - this.margin
+        }
+    }
+    return pos;
+}
+
+CjCanvas.prototype.setDropText = function(text) {
+    this.javadnd.setText(text);    
+}
+
+CjCanvas.prototype.doTextDrop = function() {
+    this.javadnd.doDrop();    
+}
+
+CjCanvas.prototype.getPosition = function() {
+    var d = $(this.doc);
+    return {
+        x: d.scrollLeft() - this.margin, 
+        y: d.scrollTop() - this.margin};
+}
+
+CjCanvas.prototype.getFragmentPositions = function(ids) {
+    var originalPos = this.getPosition();
+    this.setSize(5, 5);
+    var v = document.body.offsetHeight; // force reflow in webkit
+    
+    var d = $(this.doc);
+    var positions = {};
+    
+    for (var i = 0; i < ids.length; i++) {
+        frag = ids[i];
+        this.outerFrame.contentWindow.scrollTo(1,1);
+        this.innerFrame.contentWindow.location = this.currentURL + '#' + frag;
+        positions[frag] = {
+            x: d.scrollLeft() - this.margin, 
+            y: d.scrollTop() - this.margin
+        };
+    }    
+    canvas.restoreSize();
+    this.setPosition(originalPos.x, originalPos.y, 0, 0);
+    return positions;
+}
+
+CjCanvas.prototype.getFragmentPosition = function(id) {
+    var pos = this.getFragmentPositions([id]);
+    return pos[id];
+}
+
+    
+function positionIFrame(e, iframe)
+{
+    // IE detects a mousemove event on the parent doc, even when dragging a selection in the iframe
+    // we don't want to move the iframe in this case since it disrupts dragging the selection
+    //if (e.button == 1) 
+    //    return;
+    
+    var marginx = iframe.offsetWidth / 2;
+    var marginy = iframe.offsetHeight / 2;
+    
+    var doc = iframe.ownerDocument;
+    
+    var x = clamp(e.clientX, marginx, doc.body.clientWidth - marginx);
+    var y = clamp(e.clientY, marginy, doc.body.clientHeight - marginy);
+
+    
+    var sx = $(doc).scrollLeft();
+    var sy = $(doc).scrollTop();
+    iframe.style.left = (sx + x - iframe.offsetWidth / 2) + 'px';
+    iframe.style.top = (sy + y - iframe.offsetHeight / 2) + 'px';  
+}
+
+function clamp(val, min, max)
+{
+    if (val < min) val = min;
+    if (val > max) val = max;
+    return val;    
+}
+
+function checkMouseOverIFrame(e, iframe) {
+    var relTarget = e.relatedTarget;
+    var target = e.currentTarget;
+    
+    if (!relTarget && e.type == 'mouseover') 
+         mouseIsOverFrame = true; 
+     
+    //if mouseover doucment from outside window, refocus window
+    if (!$.browser.msie && e.type == 'mouseover' && !relTarget) {
+        refocusWindow(iframe.ownerDocument.defaultView);       
+        //console.log('refocus');
+    }
+    
+    if (relTarget != iframe)
+        return;
+   
+    if (e.type == 'mouseout') {
+        //console.log('over');
+        mouseIsOverFrame = true;
+    }
+    
+    if (e.type == 'mouseover') {
+        //console.log('out');
+        mouseIsOverFrame = false;
+    }
+}
+
+function makeEditable(iframe) {
+    var doc = iframe.contentWindow.document;
+    doc.designMode = 'on';
+    clearEditable(iframe);
+    evtTarget = $.browser.msie ? doc.body : doc;
+    if ($.browser.webkit) 
+        evtTarget = iframe;
+   
+    return evtTarget;
+}
+
+function clearEditable(iframe) { 
+    var doc = iframe.contentWindow.document;
+    doc.open();doc.close();
+    doc.body.innerHTML ='<br>';
+    doc.body.style.margin = 0;
+    doc.body.style.padding = 0;
+}
+
+
+function initDropTarget(w, h, doc)
+{
+    if ($.browser.msie)
+        return initDivDropTarget(w, h, doc);
+    else
+        return initIFrameDropTarget(w, h, doc);
+}
+
+function initDivDropTarget(w, h, doc)
+{
+    var div = document.createElement('div');
+    if (!doc) 
+        doc = document;
+    
+    doc.body.appendChild(div);
+    div.style.position = 'absolute';
+    div.style.backgroundColor = 'red';
+    div.style.opacity = 0;
+    //div.style.filter = 'alpha(opacity=0)';
+    div.style.overflow = 'hidden';
+    div.style.width = w + 'px';
+    div.style.height = h + 'px';
+    div.style.left = 10 +'px';
+    div.style.top = 0;
+    div.style.visibility = 'hidden';
+    
+    div.contentEditable = true;
+    div.innerHTML = '<br>';
+    
+    var o = {
+        element: div,
+        evtTarget: div,
+        getHTML: function() { return div.innerHTML },
+        clearHTML: function() { div.innerHTML = '' },
+        hide: function() { div.style.visibility = 'hidden' },
+        show: function() { div.style.visibility = 'visible' } 
+    }
+    return o;
+}
+
+
+function initIFrameDropTarget(w, h, pdoc) {
+
+    if (!pdoc)
+        pdoc = document;
+
+    var iframe = pdoc.createElement('iframe');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('scrolling', 'no');
+    pdoc.body.appendChild(iframe);
+    
+    iframe.style.position = 'absolute';
+    //iframe.style.opacity = 0;
+    //iframe.style.filter = 'alpha(opacity=0)';
+    iframe.width = w;
+    iframe.height = h;
+    iframe.style.left = 0;
+    iframe.style.top = 0;
+    iframe.style.visibility = 'hidden';
+   
+    var doc = iframe.contentWindow.document;
+    var evtTarget;
+    
+    if ($.browser.msie) {
+        doc.body.contentEditable=true;
+        evtTarget = doc.body;
+    } else {
+        doc.designMode = 'on';
+        evtTarget = doc;
+    }   
+
+    var o = {
+        element: iframe,
+        evtTarget: evtTarget,
+        getHTML: function() { return doc.body.innerHTML },
+        dragEvt: function(e) { 
+            var fakeevt = { 
+                clientX: e.clientX + iframe.offsetLeft - $(pdoc).scrollLeft(),
+                clientY: e.clientY + iframe.offsetTop - $(pdoc).scrollTop()
+            }
+            positionIFrame(fakeevt, iframe); 
+        },
+        clearHTML: function() { 
+            doc.open();doc.close();
+            doc.body.innerHTML ='<br>';
+            doc.body.style.margin = 0;
+            doc.body.style.padding = 0;
+            doc.body.style.backgroundColor = 'red'; 
+        },
+        hide: function() { iframe.style.visibility = 'hidden' },
+        show: function() { iframe.style.visibility = 'visible' } 
+    };
+    
+    o.clearHTML();
+    $(o.evtTarget).bind('dragover', o.dragEvt);
+    return o;
+}
+
+
+function dragStarted()
+{
+  
+}
+
+
+function appletStarted() 
+{
+    //console.log('applet started');
+    canvas.javadndEnabled = true;
+}
+
+function loadDnDApplet()
+{
+    return $('<applet>').attr({
+        'archive': 'TextDropper.jar',
+        'code': 'TextDropper.class',
+        'mayscript': 'mayscript',
+        'class': 'hiddenApplet'
+    }).appendTo(document.body)[0];
+}
+
+
+
+
+
+</script>
+
+<script type="text/sjs">
+
+
+
+function waitForIframeClick(iframe) {
+    var win = iframe.ownerDocument.defaultView;
+    refocusWindow(win);
+    var gotClick = false;
+    do {
+        if ($.browser.msie)
+            Ajax.DOM.waitForEvent('focus', iframe);
+        else
+            Ajax.DOM.waitForEvent('blur', iframe.ownerDocument);
+        if (mouseIsOverFrame) {
+            gotClick = true;
+            //refocusWindow(win);  
+        }
+    } while (gotClick == false);
+    return;
+}
+
+function waitForEventCheck(event, elem, check) {
+    suspend {
+      var rv;
+      var listener_func = function(e) {
+        rv = e;
+        if (check(e))
+            resume();
+      };
+      $(elem).bind(event, listener_func);
+    }
+    finally {
+      $(elem).unbind(event, listener_func);
+    }
+    return rv;
+}
+
+
+function waitForDrop() {
+    suspend {
+        canvas.doTextDrop();
+        function dragEnded() {
+            resume();    
+        }
+    } 
+    return;
+}
+
+function replayInvisible(steps, canvas) {
+    canvas.makeInvisible();
+    replaySteps(steps, canvas);
+    canvas.makeVisible();
+}
+
+function replaySteps(steps, canvas, startfrom) {
+    //var origText = $('#replay').text();
+    $('#replay').text('Cancel Replay');
+    canvas.beginCJ();
+    doSteps(steps, canvas, startfrom) @ Ajax.DOM.waitForEvent('click', $('#replay')[0]);
+    canvas.endCJ();
+    $('#replay').text('Replay Steps');
+    
+}
+
+function doSteps(steps, canvas, startfrom) {
+    var laststep;
+    if (!startfrom)
+        startfrom = 0;
+    
+    startfrom = parseInt(startfrom, 10);
+    mouseIsOverFrame = false;
+    
+    for (var i = startfrom; i < steps.length; i++) {
+        var step = steps[i];
+        StepList.selectStep(step);
+        
+        if (step.tool.id == 'loadurl') {
+           var result = doLoadUrl(step);
+           if (!result)
+               return;
+        } if (step.tool.id == 'click') {
+            CjConsole.write('Click', true);
+            canvas.loaded = false;
+            doClick(step.extractFieldset('pos'), canvas);
+        } else if (step.tool.id == 'drag') {
+            CjConsole.write('Drag', true);
+            doSel(step.extractFieldset('from'), step.extractFieldset('to'), canvas);
+        } else if (step.tool.id == 'extract') {
+            CjConsole.write('Drag', true);
+            var content = doExtract(step.extractFieldset('pos'), canvas);
+            //console.log(content);
+            if (content == false) {
+                CjConsole.write('Extract failed', true);
+                if (laststep == 'drag') {
+                    CjConsole.write('Restarting drag', true);
+                    i -=2;
+                }
+            } else {
+                CjConsole.addBlob('Got HTML', content);  
+            }
+                
+        } else if (step.tool.id == 'text') {
+            CjConsole.write('Click', true);
+            doText(step.data.text, step.extractFieldset('pos'), !step.data.onmouseover, canvas);
+        }
+        laststep = step.tool.id;
+    }   
+    canvas.clearSelection();
+}
+
+
+function doLoadUrl(step) {
+    if (!step.data.clickload)
+        step.doLoad(false);
+    if (!canvas.loaded) {
+        Ajax.DOM.waitForEvent('load', canvas.innerFrame);
+        CjConsole.write('Waiting for page to load', true);
+    }
+    var fragcheck = step.data.fragment;
+    if (fragcheck) {
+        var negative = false;
+        if (fragcheck[0] == '!') {
+            //console.log('doing negative check');
+            fragcheck = fragcheck.substr(1);
+            negative = true;
+        }
+        var pos = canvas.getFragmentPosition(fragcheck);
+        //console.log(pos);
+        if (negative && pos.x >= 0 && pos.y >= 0) {
+            CjConsole.write('Frgament ' + fragcheck + ' was found on page. Aborting steps');
+            return false;
+        }
+        if (!negative && pos.x < 0 && pos.y < 0) {
+            CjConsole.write('Fragment ' + fragcheck + ' not found. Aborting steps');
+            return false;
+        }  
+    }
+    return true;
+}
+function doText(text, pos, waitforclick, canvas) {
+    canvas.positionPinhole(pos, 0, true);
+
+    canvas.setDropText(text);
+    if (waitforclick)
+        Ajax.DOM.waitForEvent('mousedown', canvas.doc);
+    else {
+        hold(100);
+    }
+    canvas.positionPinhole(pos, 10);
+    waitForDrop();
+    //
+}
+
+function doClick(pos, canvas) {
+    canvas.positionPinhole(pos, 10, true);
+    waitForIframeClick(canvas.innerFrame);
+    hold(300);
+}
+
+function doSel(from, to, canvas) {
+    canvas.positionPinhole(from, 10, true);
+    waitForIframeClick(canvas.innerFrame);
+    canvas.positionPinhole(to, 10, true);
+    waitForEventCheck('mousemove', canvas.doc, function(e) { return e.button != 1 });
+    //console.log('drag');
+}
+
+function failCheck(canvas) {
+    if ($.browser.msie)
+        hold(300);
+    return Ajax.DOM.waitForEvent('mousemove', canvas.doc.body);
+}
+
+function dragCheck(canvas) {
+    return Ajax.DOM.waitForEvent('dragover', canvas.doc.body);
+}
+
+function positionDropTarget(event) { 
+    positionIFrame(event, canvas.dropTarget.element); 
+    return false; 
+} 
+
+function doExtract(pos, canvas) {
+    
+    var content = false; 
+    
+    canvas.positionPinhole(pos, 10, true);
+    waitForIframeClick(canvas.innerFrame);
+    if ($.browser.firefox)
+        canvas.setPosition(0, 1000, 0, 0);
+    
+    var ev = failCheck(canvas) @ dragCheck(canvas);
+    
+    if (ev.type == 'dragover') { 
+        canvas.dropTarget.show();
+        positionIFrame(ev, canvas.dropTarget.element);
+        $(canvas.doc.body).bind('dragover', positionDropTarget);
+        Ajax.DOM.waitForEvent('drop', canvas.dropTarget.evtTarget) @ hold(5000);
+        $(canvas.doc.body).unbind('dragover', positionDropTarget);
+        hold(300);
+        content = canvas.dropTarget.getHTML();
+        canvas.dropTarget.clearHTML();
+    }
+    canvas.dropTarget.hide();
+    return content;
+}
+
+function getFragmentIds() {
+    var fieldset = $('dd[data-fieldset=fragments]');
+    var startbutton = $('[data-action=start]', fieldset)[0];
+    var cancelbutton = $('[data-action=cancel]', fieldset)[0];
+    var iframe = $('.drop-target', fieldset)[0];
+    var status = $('.status', fieldset)[0];
+    
+    $(iframe).show();
+    $(startbutton).hide();
+    $(cancelbutton).show();
+    $(status).text('<-- Drag page content here');
+    canvas.hidePane();
+    
+    var dropTarget = makeEditable(iframe);
+
+    var getIDs = function(dropTarget) {
+        Ajax.DOM.waitForEvent('drop', dropTarget);
+        hold(300);
+        var ids = extractDocumentFragmentIds(iframe.contentWindow.document);
+        var positions = canvas.getFragmentPositions(ids);
+        StepList.currentStep.setFragments(ids, positions);
+        clearEditable(iframe);
+    };
+    
+    var getCancel = function() {
+        Ajax.DOM.waitForEvent('click', cancelbutton);
+    };
+    
+    getIDs(dropTarget) @ getCancel();
+  
+    refocusWindow();
+    canvas.showPane();
+    $(cancelbutton).hide();
+    $(startbutton).show();
+    $(status).text('');
+    $(iframe).hide();
+}
+
+
+function doPrompt(title, val) {
+    $('#inputbox .caption').text(title);
+    $('#inputbox').show();
+    if (!val) val = '';
+    $('#inputbox textarea').val(val).focus();
+    var ev = Ajax.DOM.waitForEvent('click', $('#inputbox .go')[0]) @ 
+             Ajax.DOM.waitForEvent('click', $('#inputbox .cancel')[0]);
+                     
+    $('#inputbox').hide();
+    var data = $('#inputbox textarea').val()
+    $('#inputbox textarea').val('');
+    if ($(ev.target).hasClass('cancel'))
+       return false;
+    
+    return data;
+}
+function doLoad() {
+    var data = doPrompt('Load Clickjacking Steps');
+    if (!data)
+        return false;
+    StepList.loadSteps(data);
+}
+
+</script>
+</head>
+
+<body>
+
+<div id="header">
+    <div id="title">
+        <h1>Clickjacking Tool</h1>
+        <small>Version 0.8</small>
+    </div>
+
+    
+    <div id="logo">
+    <a href="http://www.contextis.co.uk"><img src="logo.gif"></a>
+    </div>
+</div>
+
+<div id="leftpane">
+    
+  
+  
+    
+    <h2>Steps</h2>
+    <div id="steps"></div>
+    
+      <em>Add Step:</em><br>
+    <div id="toolstrip"></div>
+    
+    <div id="tools">
+    
+        <div data-tool-id="loadurl">
+            <h3>Load URL</h3>
+            <dl>
+                <dt>URL</dt> 
+                <dd>
+                    <input class="url" data-field="url">
+                    <button data-action="go">Go</button>
+                </dd>
+                <dt>Frame Size</dt>
+                <dd data-fieldset="size">
+                    Width: <input size="4" data-field="width"> 
+                    Height: <input size="4" data-field="height"> 
+                </dd>
+                <dt>Fragment Check</dt>
+                <dd data-fieldset="check">
+                    <input data-field="fragment" class="fragid">
+                </dd>
+                
+                <!--<dt>Disable JS (Firefox only)</dt>
+                <dd><input type="checkbox" data-field="nojs"><dd>-->
+                
+                <dt>Loaded from User Click</dt>
+                <dd><input type="checkbox" data-field="clickload"></dd>
+
+                <dt>Drop IDs</dt>
+                <dd data-fieldset="fragments">
+                    <button data-action="start">Get Fragments</button>
+                    <button data-action="cancel">Cancel</button>
+                    <iframe class="drop-target" scrolling="no" frameborder="0"></iframe>
+                    <span class="status"></span>
+                </dd>
+                
+            </dl>
+        </div>
+        
+        <div data-tool-id="click">
+            <h3>Click</h3>
+            <dl>
+                <dt>Position</dt> 
+                <dd data-fieldset="pos">
+                    x:<input class="coord" data-field="x"> 
+                    y:<input class="coord" data-field="y">
+                    near:<input data-field="fragment" class="fragid">
+                    <div class="marker" data-widget="marker"></div>
+                </dd>
+            </dl>
+        </div>
+
+        <div data-tool-id="text">
+            <h3>Enter Text</h3>
+            <dl>
+                <dt>Text</dt><dd><input data-field="text"></dd>
+                <dt>Position</dt> 
+                <dd data-fieldset="pos">
+                    x:<input class="coord" data-field="x"> 
+                    y:<input class="coord" data-field="y">
+                    near:<input data-field="fragment" class="fragid">
+                    <div class="marker" data-widget="marker"></div>
+                </dd>
+                <!--=<dt>On Mouseover</dt>
+                <dd><input type="checkbox" data-field="onmouseover"></dd>-->
+            </dl>
+        </div>
+        
+        <div data-tool-id="drag">
+            <h3>Drag</h3>  
+            <dl>
+                <dt>From</dt>
+                <dd data-fieldset="from">
+                    x:<input class="coord" data-field="x"> 
+                    y:<input class="coord" data-field="y">
+                    near:<input data-field="fragment" class="fragid">
+                    <div class="marker" data-widget="marker"></div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>To</dt>
+                <dd data-fieldset="to">
+                    x:<input class="coord" data-field="x">
+                    y:<input class="coord" data-field="y">
+                    near:<input data-field="fragment" class="fragid">
+                    <div class="marker" data-widget="marker"></div>
+                </dd>
+            </dl>
+        </div>
+        
+        <div data-tool-id="extract">
+            <h3>Extract</h3>
+            <dl>
+                <dt>Position</dt>
+                <dd data-fieldset="pos" class="highlighted">
+                    x:<input class="coord" data-field="x"> 
+                    y:<input class="coord" data-field="y">
+                    near:<input data-field="fragment" class="fragid">
+                    <div class="marker" data-widget="marker"></div>
+                </dd>
+            </dl>
+        </div>
+        
+    </div>
+    
+    <div id="cjconsole"></div>
+</div>
+
+<div id="canvastoolbar">
+<div style="float:right"><button id="loadsteps">Load</button>
+<button id="savesteps">Save</button></div>
+<button id="replay">Replay All Steps</button>
+<button id="replay_from_current">Replay from Current Step</button>
+<button id="invisible">Invisible Replay</button>
+<button id="togglepane">Hide Overlay</button>
+
+        
+</div>
+<div id="editarea"><iframe id="f" scrolling="no" frameborder="0" class="iframecanvas"></iframe></div>
+
+<div id="templates">
+    <div class="step">
+        <button class="del" title="Delete Step">X</button>
+        <div class="content"></div>
+    </div>
+</div>
+
+<div id="inputbox" class="dialog">
+<h1 class="caption">Caption</h1>
+<textarea class="input"></textarea>
+<div class="buttons"><button class="cancel">Cancel</button> <button class="go">OK</button></div>
+</div>
+
+<div id="htmlview" class="dialog">
+<h1>Extracted HTML</h1>
+<div class="source" style="display:none"></div>
+<iframe class="view" frameborder="0"></iframe>
+<div class="buttons1"><button class="viewcontent">View Content</button> <button class="viewsrc">View Source</button></div>
+<div class="buttons2"><button class="close">Close</button></div>
+</div>
+</body>
+</html>

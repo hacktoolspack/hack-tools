@@ -1,0 +1,47 @@
+Colasoft Packet Builder End-User License Agreement 
+
+Copyright (c) Colasoft LLC. All rights reserved.
+
+This License Agreement is a legal contract between you (either as an individual or as an entity) and Colasoft LLC ("COLASOFT") for the product Colasoft Packet Builder ("SOFTWARE PRODUCT").
+
+Please carefully read the following terms and conditions before using the Software Product. Installation or use of the SOFTWARE PRODUCT indicates your acceptance of this License Agreement. If you do not agree with the following, do not use the SOFTWARE PRODUCT and remove it from your storage systems.
+
+Copyright
+
+The SOFTWARE PRODUCT and Documentation are copyrighted by COLASOFT and are protected by international copyright laws. The SOFTWARE PRODUCT contains copyrighted software of COLASOFT. All rights reserved. You agree not to remove any trademarks or copyright notices from the SOFTWARE PRODUCT and Documentation.
+
+Free License
+You may use the free version of the SOFTWARE PRODUCT free for personal use but NOT for commercial use. For commercial use, you need to buy a "Commercial License".
+
+However, media costs associated with the distribution of the SOFTWARE PRODUCT may be recovered. You shall use your best efforts to promptly notify COLASOFT upon learning of any violation of commercial restrictions.
+
+You are allowed to distribute the free version of this SOFTWARE PRODUCT complete of all files to others. You are not allowed to add, remove or change any of these files. This SOFTWARE PRODUCT and the attached documentation cannot be distributed together with commercial software. For this you need to purchase a "Commercial License" from COLASOFT.
+
+By using the free version of this SOFTWARE PRODUCT you may not claim any product support by the manufacturer. The manufacturer may make an effort to answer support requests, but assumes no responsibility for support for users of the free version of the SOFTWARE PRODUCT. Product support will be provided via e-mail. Before transmitting your support request please read our hints. You will probably be able to find a solution to your problem and have no need to contact us. It is very important that you indicate the correct version of the software and the used programming language.
+
+Commercial License
+If you are not a personal user, you should purchase a commercial license from COLASOFT.
+
+With a commercial license, COLASOFT grants you a non-exclusive, non-transferable permit to use one copy of SOFTWARE PRODUCT subject to the terms and conditions of this License Agreement. The SOFTWARE PRODUCT is licensed, not sold.
+
+COLASOFT may terminate this License Agreement if Licensee breaches any of the terms and conditions. In the event of such termination and upon expiry of the license granted herein, Licensee will delete the SOFTWARE PRODUCT from any files and data storage. All provisions of this License Agreement relating to disclaimer of warranties, limitations of liability, remedies, or damages, and COLASOFT's proprietary rights shall survive termination.
+
+Save to the extent expressly permitted by this License Agreement or mandatory provisions of law, Licensee shall not modify, translate, reverse engineer, decompile or disassemble the SOFTWARE PRODUCT or any part thereof.
+
+In no case shall the License distribute any components or files provided with the SOFTWARE PRODUCT package. In no case may the license key file be distributed. The licensee is to store the license keys and files supplied by COLASOFT in a safe place. COLASOFT is not responsible for lost license keys or files and cannot issue new keys or files to replace lost keys or files.
+
+The licensee is required to hold the license keys and files secure. The licensee will be held responsible for any unauthorized use of the license keys or files.
+
+The licensee agrees not to attempt to bypass the license mechanism or generate unauthorized license keys or files.
+
+Disclaimer
+
+THIS SOFTWARE PRODUCT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT WILL COLASOFT. BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING INCIDENTAL OR CONSEQUENTIAL DAMAGES, ARISING OUT OF THE USE OF THIS SOFTWARE PRODUCT, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. YOU ACKNOWLEDGE THAT YOU HAVE READ THIS LICENSE, UNDERSTAND IT, AND AGREE TO BE BOUND BY ITS TERMS.
+
+Governing Law
+
+This License shall be controlled by the laws of the United States of America.
+
+Other Restrictions
+
+COLASOFT, in its sole and absolute discretion, may have included a portion of the source code or online documentation of the SOFTWARE PRODUCT. Except for any such portions, you shall not REVERSE ENGINEER, DECOMPILE, DISASSEMBLE, OR OTHERWISE REDUCE ANY PORTION OF THE SOFTWARE PRODUCT TO ANY HUMAN PERCEIVABLE FORM, except to the extent this restriction is prohibited by applicable law.

@@ -1,0 +1,28 @@
+Clickjacking tool from Context Information Security is a Proof of 
+Concept tool for demonstrating the implications of Clickjacking.
+
+Copyright (C) 2010 Paul Stone - Context IS
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+LIMITATION OF LIABILITY. IN NO EVENT SHALL CONTEXT OR ITS SUPPLIERS BE LIABLE TO 
+YOU FOR ANY CONSEQUENTIAL, SPECIAL, INCIDENTAL, OR INDIRECT DAMAGES OF ANY KIND
+ARISING OUT OF THE DELIVERY, PERFORMANCE, USE OR MISUSE OF THE SOFTWARE, EVEN
+IF CONTEXT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN ANY EVENT,
+CONTEXT'S LIABILITY FOR ANY CLAIM, WHETHER IN CONTRACT, TORT, OR ANY OTHER
+THEORY OF LIABILITY WILL NOT EXCEED THE GREATER OF GBP 1.00. In addition this Software
+must be thoroughly tested by the user with non-critical data before relying on it, and the user should be
+fully conversant with the program or Software and the result of using it. In particular a BACKUP of all
+critical, important or in any way valuable data should be made BEFORE and retained separately AFTER
+using any program or Software which may in any way interfere with, damage, delete or in any other way
+change or modify the data. The user must assume the entire risk of using the program or Software.

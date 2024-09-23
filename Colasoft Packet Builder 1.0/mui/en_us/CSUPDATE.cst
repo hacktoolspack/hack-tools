@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StringTable name="CSUPDATE" language="en_us" version="600">
+	<String id="IDS_UPDATE_STATUS_CONN_INIT">Please wait while checking for updates...</String>
+	<String id="IDS_UPDATE_STATUS_CONN_FAILED">Connection to server has failed.</String>
+	<String id="IDS_UPDATE_STATUS_GET_DATA">Retrieving product information from server......</String>
+	<String id="IDS_UPDATE_STATUS_DONE">Product information retrieved successfully.</String>
+	<String id="IDS_UPDATE_STATUS_GET_DATA_ERR">When retrieving product information from server an error %d_ERROR% occurs.</String>
+	<String id="IDS_UPDATE_STATUS_CANCEL">Cancel retrieving product information......</String>
+	<String id="IDS_UPDATE_STATUS_EXCEPTION">Connecting to server causes an error %d_ERROR%.</String>
+	<String id="IDS_UPDATE_STATUS_UNKNOWN">Unknown</String>
+	<String id="IDS_UPDATE_STATUS_NETWORK_FAILED">Connection to server has failed%s_ERRORMSG%.</String>
+	<String id="IDS_DO_NOT_NEED_UPDATE">You are currently running the latest version of %s_PRODUCT_NAME%.</String>
+	<String id="IDS_UPDATE_STATUS_INFO_DONE">Retrieving product information......%s_ERROR%.</String>
+	<String id="IDS_UPDATE_STATUS_GET_INFO_FAILED">Failed to get product information, error %s_ERRORMSG%.</String>
+	<String id="IDS_UPDATE_REMINDER">Update Reminder</String>
+	<String id="IDS_CHECK_LATEST_VERSION">Check for Latest Version</String>
+	<String id="IDS_TITLE">A new version of %s_PRODUCT_NAME% is available.</String>
+	<String id="IDS_VERSION_LABEL">Version:</String>
+	<String id="IDS_DATE_LABEL">Release Date:</String>
+	<String id="IDS_GRP_TITLE">Release Information</String>
+	<String id="IDS_RADIO_ACTION_TYPE">Download the new version via website.</String>
+	<String id="IDS_RADIO_ACTION_TYPE2">I am not interested, remind me when the next version is available.</String>
+	<String id="IDS_RADIO_ACTION_TYPE3">Never remind me again.</String>
+	<String id="IDS_CHECK_NEW_VER_AGAIN">Check for new version again when %s_PRODUCT_NAME% starts the next time.</String>
+	<String id="IDS_OK">OK</String>
+	<String id="IDS_CANCEL">Cancel</String>
+</StringTable>

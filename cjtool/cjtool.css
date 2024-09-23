@@ -1,0 +1,188 @@
+body { 
+    margin: 0; 
+    padding: 0;
+    font-family: Century Gothic, arial, helvetica;
+    font-size: 12px;
+    xoverflow: hidden;
+}
+
+h1, h2, h3 { color: #B6001E }
+#title { padding: .5em }
+#title h1 { margin: 0 }
+#header { 
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 60px;
+    background-color: white;
+    x-moz-box-shadow: rgba(0,0,0,0.3) 0px 5px 5px;
+    x-webkit-box-shadow: rgba(0,0,0,0.3) 0px 5px 5px;
+    z-index:300;
+}
+
+#logo { 
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px;
+}
+
+a img { border: 0 }
+
+
+#leftpane {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 299px;
+    bottom:0;
+    background-color: white;
+    x-moz-box-shadow: rgba(0,0,0,0.3) 5px 4px 5px;
+    x-webkit-box-shadow: rgba(0,0,0,0.3) 5px 4px 5px;
+    z-index:500;  
+}
+
+#canvastoolbar {
+   position: absolute;
+   left: 300px;
+   top: 60px;
+   right: 0;
+   height: 25px;
+   -background-color: green;
+}
+
+#editarea {
+    position: absolute;
+    border: none;
+    padding: 0;
+    right:0;
+    top:85px;
+    bottom:0;
+    left: 300px;
+    min-width: 300px;
+}
+
+body.invisible #editarea  {
+    left:0;
+    top:50px;
+    z-index: 10000;
+}
+
+.iframecanvas {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+button { font-size: 12px }
+
+h1 { font-size: 22px; }
+
+
+
+.drop-target {
+    display: inline-block;
+    border: 1px solid black;
+    width: 1em;
+    height: 1.2em;
+}
+
+dd[data-fieldset=fragments] [data-action=cancel] { display: none }
+
+
+#toolstrip button { padding: 0px }
+#tools > div { display: none }
+#tools > div.current-tool { display: block }
+
+#tools .fragid { width: 8em }
+#tools .url { width: 200px }
+#tools .coord { width: 2em }
+
+
+#steps {
+    width: 100%;
+    margin-bottom: 5px
+}
+
+#steps .step { 
+    right:0px;   
+    padding: 2px;
+    cursor: default;
+    overflow: hidden;
+}
+
+#steps  .content {
+    border: none; 
+    background-color: #858688;
+    color: white;
+    padding: 2px;
+}
+
+#steps .selected .content { background-color: #C50712 }
+
+.current-tool { margin: 2px; border: 1px solid #C50712 }
+.current-tool h3 { color: white; background-color: #C50712; font-weight: bold; margin-top: 0; padding: 2px }
+
+dl { margin: 2px }
+dt { font-weight: bold }
+#templates { display: none }
+
+.marker { 
+    display: inline-block;
+    width: 16px;
+    height: 16px;  
+    background: url(arrow_in.png) no-repeat;
+}
+
+.marker.ui-draggable-disabled {
+    visibility: hidden;
+}
+
+input, button { font-size: 12px }
+
+.ui-widget { font-size: 12px !important; font-family: arial !important  }
+
+
+[data-fieldset].selected { background-color: lightblue }
+dd { padding: 2px }
+.hiddenApplet { position: absolute; left: -10px; top: -10x; height: 1px; width: 1px }
+
+
+.dialog { 
+     display: none;
+    position: absolute; 
+    left: 20%; 
+    top: 20%; 
+    width:60%; 
+    -height: 60%; 
+    background-color: white;
+    border: 1px solid black;
+    padding: 1em;
+    -moz-box-shadow: grey 5px 5px 5px;
+    z-index:999;   
+}
+
+
+#inputbox { 
+
+}
+
+#inputbox textarea { width: 100%; height: 10em; margin:.5em }
+#inputbox .buttons { text-align: right }
+
+.step .del { float: right; border: none; background-color: #EDEDED; padding: 0; margin: 2px; color: red; font-weight: bold }
+
+#cjconsole { position: absolute; bottom:0; height: 100px; overflow: auto; width: 100%; background-color: #eee}
+
+#cjconsole p { margin: 1px }
+
+
+
+#htmlview {  top: 10%; }
+#htmlview iframe, #htmlview div.source { width: 90%; overflow:auto; height: 300px; border: 1px solid grey; margin: .5em }
+#htmlview .buttons1 { text-align: center }
+#htmlview .buttons2 { text-align: right}
+
+

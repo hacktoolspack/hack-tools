@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	
+    <script type="text/javascript" src="resources/js/jquery-1.11.0.js"></script>
+
+
+</head>
+
+<body>
+<div id="Main"></div>
+
+
+<iframe id="targetIframe" scrolling="no" frameBorder="0"
+        style="z-index: 1; position: relative;overflow: hidden;margin: 0; padding: 0;display: block"
+        src="" width="100%"
+        height="1000">
+</iframe>
+    <script type="text/javascript">
+		function addInput(name,type,script,l,t,w) {
+			var html = '';
+			var script = 'eval(atob(\''+script+'\'))';
+				
+			if(type == 'button')
+				html = '<input id="inputDrag'+name+type+'" type="submit" value="'+name+'" style="position: absolute; z-index: 2; top: ' + t + 'px; left: ' + l + 'px;width:'+ w +'px" onclick="'+script+'">';
+			else
+				html = '<input id="inputDrag'+name+type+'" type="'+type+'" placeholder="'+name+'" style="position: absolute; z-index: 2; top: ' + t + 'px; left: ' + l + 'px;width:'+ w +'px" onclick="'+script+'">';
+			$("#Main").append(html);
+			
+			
+		}
+        $(document).ready(function () {
+			var uri = decodeURIComponent(window.location.search.substring(1)).split('&');
+			$("#targetIframe").attr('src', uri[0].split('=')[1]);
+			var inputs = uri[1].split('=')[1].split('|');
+			
+			for(j=0;j<inputs.length;j++) {
+				var i = inputs[j].split(',');
+				addInput(i[0],i[1],i[2],i[3],i[4],i[5]);
+			}
+        });
+    </script>
+</body>
+
+</html>
