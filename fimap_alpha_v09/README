@@ -1,0 +1,29 @@
+Project Homepage : http://fimap.googlecode.com
+To run fimap type: python fimap.py
+
+Needs: Python >= 2.4
+
+This is fimap alpha .09 - For the Swarm.
+
+New in this version:
+  * Cookie scanning and attacking.
+  * New 'AutoAwesome' operating mode.
+  * Dot-Truncation mode for breaking suffixes on windows servers.
+  * New --force-os switch which lets you define in advance which OS to assume.
+  * Better logfile kickstarter injection.
+  * Dynamic RFI encoder for webservers which interpret your (PHP) code (--rfi_encode=php_b64).
+  * Tons of bugfixes.
+  * Lots of stuff I forgot to mention.
+
+Thanks for all guys who are reporting bugs. And sorry for the long delay of this version.
+I am busy with a lot of other tools :O 
+
+And as zerg always make sure your queen spreads the creep!
+
+If you want fresh infos about updates feel free to follow: http://twitter.com/fimap
+Except no spam there. I only post fimap updates which I think are important.
+
+Please report all bugs you find directly at the project homepage.
+
+Just to be clear - This tool is designed to improve the quality and security of YOUR website!
+DO NOT USE IT FOR ILLEGAL STUFF! BE A GOOD INTERNET CITIZEN LIKE YOU ARE IN REALLIFE!
