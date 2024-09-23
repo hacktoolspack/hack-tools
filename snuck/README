@@ -1,0 +1,27 @@
+===========================================
+snuck - automatic XSS filter bypass
+===========================================
+
+  http://code.google.com/p/snuck/
+
+  * Written and maintained by:
+
+      Mauro Gentile <gentile.mauro.mg@gmail.com>
+     
+  * Copyright 2012 Mauro Gentile, rights reserved.
+
+  * Released under terms and conditions of the Apache License, version 2.0.
+
+--------------------
+1. What is snuck?
+--------------------
+
+snuck is an automatic tool whose goal is to significantly test a given XSS filter by specializing the injections on the basis of the reflection context. This approach adopts Selenium to drive a web browser in reproducing both the attacker's behavior and the victim's. 
+
+--------------------
+2. Tutorial
+--------------------
+
+A detailed tutorial about snuck is available at http://code.google.com/p/snuck/wiki/Tutorial.
+
+

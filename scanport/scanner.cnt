@@ -1,0 +1,27 @@
+; This contents file was created with HelpScribble 5.0.1
+; Registered to: Robin M Keir
+
+:BASE SCANNER.hlp
+:TITLE SuperScan
+1 Introduction
+2 SuperScan=Scribble10
+2 Requirements=Scribble30
+2 Release History=Scribble20
+2 Quick Start=Scribble40
+1 Program Sections
+2 Hostname lookup section=Scribble80
+2 IP section=Scribble90
+2 Use IPs from text file=Scribble100
+2 Timeouts section=Scribble100
+2 Speed section=Scribble170
+2 Scan type section=Scribble120
+2 Scan section=Scribble130
+2 Results list section=Scribble140
+2 Configuration section=Scribble150
+1 Visual Tour
+2 Main Window=Scribble180
+2 Port List window=Scribble190
+2 Extract From Text File window=Scribble200
+2 Interfaces window=Scribble210
+1 Feedback
+2 Comments/suggestions/bugs=Scribble160

