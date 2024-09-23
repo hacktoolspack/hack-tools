@@ -3,7 +3,7 @@
 ARCANUS is a customized payload generator/handler for penetration testing only.(Use at your own risk !).
 
 # Warning
-This is the final release of ARCANUS, i will not continue developping this project i just keep it here for archival purposes.
+This is the final release of ARCANUS, i will not continue developping this project, but i also have a project called HERCULES(https://github.com/EgeBalci/HERCULES), it is more advanced payload generator, check it out ;D
 
 
 For Assistance : arcanusframework@gmail.com
