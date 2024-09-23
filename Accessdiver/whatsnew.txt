@@ -1,0 +1,944 @@
+----------------------------------------------------------
+
+PLEASE SUPPORT THE AUTHOR'S WORK BY making a donation.
+
+For more information on how to donate, you can visit:
+
+http://www.accessdiver.com/cashdonation.htm
+
+YOU CAN ALSO SUPPORT HIM by installing the bundled version of this software.
+It contains the WHENU companion which adds 3 small usefull softwares to your
+desktop. A timesync system, a weather report, and a searchbar.
+
+Thanks in advance
+
+Jean - the author
+
+-----------------------------------------------------------
+
+Version of Accessdiver appeared in this order:
+Note that v4.100 is not v4.1, nor v4.120 isn't v4.12.
+first release was v4.0. Then there was v4.1, ...,v4.9,4.97, v4.100,..., v4.171.
+
+
+-----------------------------------------------------------
+
+What's new in v4.171    June-19th-2005
+====================
+
+- Fixed an init bug in the HTML/FORM BOT engine, which wasn't initialized as intended. That's why it never
+  started as intended in early version 4.170!
+
+- HTTP Debugger: Possibility to store HTML results into a files. When clicking the [Result] button a popup
+  menu will appear showing you all options available.
+
+- The FORM BOT bug was fixed in June 1st 2005. I have made 2 other fixup in mid-february, but I forgot which
+  they were since I didn't write them down onto my to-do list. Sorry for no precision on this... People who
+  reported those bugs surely will know. :-)
+
+
+-----------------------------------------------------------
+
+What's new in v4.170    December-27h-2004
+====================
+
+As you have surely seen, all releases, after 4.130, tended to freeze more or less. Most freezing version
+was final 4.160. I took time to make sure the new release 4.170 will be up and running has it is intended
+to be, before announcing a new release. That took more than one month betatesting with willing guys. Thanks
+to them :) We've been able to eradicate most bad stuffs, and now AD is even scanning faster than before.
+Here is the list of new things in 4.170 :
+
+1) Fixed a bug which could enter an endless loop when facing #0 replies. Mostly due to IDLE proxies.
+
+2) Added a detection of disfunctionnal proxies (=IDLE proxies) in proxy analyzer
+
+3) Ability to remove IDLE proxies from the analyzer list automatically
+
+4) In progression, you can see amount of usable proxies (from the green stats area)
+
+5) Fixed the FAKE Proxy false error introduced since 4.160.
+
+6) Bug in proxy analyzer fixed when making selected proxies the default MYList. Not all proxies were added.
+
+7) Fixed a bug with Cookies collecting in BOT kernel. Could lead to an AccessViolation.
+
+8) Added PAUSE handling while working on HTML scanning.
+
+9) Ability now to run more than one session of AccessDiver for doing your tests. That was impossible if 2
+   tests were run at the same time (only possible in v4.130 and lower). Warning: The http error LOG system
+   (2xx_log.ini ,etc..) won't be accessible if not run from the first AccessDiver instance!
+
+10) Proxy Hunter methodology reviewed from scratch. That should eradicate all or at least most bugs related
+    to that feature. The system will now run faster and will detect more proxies. :-))
+
+11) BOT retries were damn slow since 4.160, since everything was retried 3 times. So 4 attempts could occur
+    for each user:pass tried.
+
+12) Ability to set the amount of BOT retries. (Default=2 attempts). You can set it from the settings\access
+    TAB. Reduce it to 1 time, for faster scans, if you wish. But this will make analysis less accurate (enough
+    good anyway). :-)
+
+13) Bug fixed within HTML/FORM scanner when relaunching a timed-out BOT.
+
+14) History/Serverfailure Found: "Delete selection" popup menu wasn't operationnal. Just fixed!
+
+
+   
+-----------------------------------------------------------
+
+What's new in v4.160	November-9th-2004   ( LOT OF BUGS FIXED BUT UNSTABLE RELEASE :-(( )
+====================
+
+1) Fixed Beep bug when working with clipboard. That option was always re-enabled when relaunching AD.
+
+2) A bug fix in FORM detection, when collection new cookies. Cookie Path data always inserted. :-(
+
+3) Crashing Bug fixed when not using any proxy: occured during scans for basic-authentication and FORM/HTML
+
+4) Forgot to remove some debug data in last 4 releases about FORM scanning (Oops). "c:\....\cache\FORMTEMP.TXT"
+   That could slow down or crash the test when using too many bots...
+
+5) When a Redirection was found, and option was set to be redir=weak login, the redirs tab (in progression)
+   wasn't updated.
+
+6) Bug when recalling a snapshot, some settings weren't correctly updated and some weren't saved in snapshot!!!
+
+7) Ability to tell if redirection must be followed. (default=enabled). Disable this feature if you only know
+   what you are doing. Since the software will only tell it got a redirection, but won't give the real url it
+   goes to. That can be bad mostly with FORM scanning...
+
+8) Clicking the Servers reply count zone in progression tab will open its replies log directory. Works only
+   when the scan is over.
+
+9) Ability to specify your real IP in the proxy analyzer. Mostly for people under gateways,routers.
+
+10) Bad Bug found in the HTML FORM scanner when dealing with redirections. Bad url was handled.
+
+11) Found another bad bug with FORM scanner. In some cases (many times) the startup of FORM could enter a loophole
+    which would kill AD...
+
+12) V4.140 to 4.152 didn't catch the real redirection correctly due to Redirection following always set to OFF. Now
+    by default redirection are always followed.
+
+13) Bugs fixed in timeout handling of the FORM scanner.
+
+14) In standard scanner (popup security) timeouts handling showed invalid timeout messages in some cases. bug fixed
+
+15) Added an option in proxies MYLIST, to let you tell if proxy skipping should occur when a bot timed out. In earlier
+    versions, proxies were always skipped on timeouts (in POPUP scanning mode). That could lead to killing proxy too
+    fast... That option fixes and enhances the process of proxy management.
+
+16) Bug fixed in History when copying FORM hits into clipboard. Extras data weren't stored.
+
+17) Fixed a visual bug when reloading a wordlist from a snapshot. Last used combos parts were still visible.
+
+18) Special case handling on #10061 return codes, that means proxy can be saturated of requests. So we don't need to
+    skip it systematically. This update will make your proxies lifetime much longer... :-))
+
+19) Added in progression, a new log file. It will contain all combos involved within a Fake test. This way you'll be
+    able to relaunch those logins by saving them to a new combo file.
+
+20) Added a new stats panel at bottom-right of the progression panel. It merges all information already shown by AD, but
+    to one area. You'll have also stats to know how many combos were lost, and proxy traffic issues stat...
+
+21) Proxy Analyzer: #10061/#10060 are retried once before saying the proxy is unusable... That gives more chance to have
+    extra valid proxies...
+
+22) To make better catch of weak login, bots are now retried once more in case of proxy/timeout troubles. this will
+    slower the scan a bit but for more safety. :)
+
+23) Same update as (22) done within the proxy analyzer
+
+24) Same update as (22) done in SOCKS analyzer
+
+25) Bug in proxy analyzer. When a bot was retried, it always sent an HEAD command. So if using GET, that could false your
+    results.
+
+26) Bug fix when testing a redirection URL through the proxy analyzer/special tab
+
+27) Fixed a bug within the "FORM ACTION=" parser. Sometimes the url was detected has from the root instead from a local url.
+
+28) For those who are bored clicking too much to detect FORM PostData, simply press Ctrl+H to start the test from anywhere.
+
+29) Now clicking on the name of a wordlist in "dictionary/currently used" will open this file into a text editor. That's
+    cool when you want to add/delete new entry in your list.
+
+30) Right-clicking the link told in (29) will reload the wordlist.
+
+31) Proxy analyzer updated to detect FAKE proxies. Works only when special mode "Password-protected URL" is disabled.
+
+32) New button in HTTP debugger. It's a button to collect cookies used by a site (from IE cookies cache). Cookies will only be
+    collected if you have already visited the site from Internet Explorer!!!
+
+33) HTTP debugger can now be set with white background. Simply double-click the window to apply color changes. 
+
+34) I preffer to rewrite FORM/HTML Bot kernel from scratch since it was hard to fix things up. You'll get more stabilities now.
+
+35) In redirection modes, added "Assume redirections are failures" that's good to make difference from a FAKE and a FAILURE.
+
+36) "Stop on Fakes" handling didn't work correctly on FORM scanning... Fixed!!!
+
+37) Fixed a bug in the URL parser when path is void...
+
+38) Added FAKE Proxy deletion in proxyanalyzer context-menu and in remover button.
+
+39) Cookie handling/catching enhanced in basic-authentication and FORM bots...
+
+40) Fixed the [+] button in URL history which was disabled in most cases. So it wasn't possible to add new urls manualy until now.
+
+41) Another button was disabled: the removal button in proxy analyzer. it was anoying to reenable it. just fixed.
+
+42) Option removed from the progression tab. the one called "[x]Don't hide this section after a test completion". The progression
+    tab will now always be visible after any test...
+
+43) Fixed a recall snapshot bug when the reloaded wordlist doesn't exist. That bug made loading of future combos impossible.
+
+44) Fixed a bug within the Autopilot "Skip job on error" module. It mostly always stop a job when not required. uhh
+
+45) In Basic-authentication scanning, reply #0 are now considered as bad replies, instead of being retried again when detected.
+    this allows faster scanning. Same for socket errors (Error above #10000).
+
+46) Old bug fixed in Settings\Search\WhatToDoWithFoundLogin\AddInFile . Nothing was saved in fact.
+
+47) Added in taskbar information of currently run task. Example of info shown:  100% 0/0 /0 /0. Percentage indicates were in the
+    scanning the software is. 2nd value counts the amount of weak logins found. 3rd value counts the amount of fake detected.
+    4th value counts the amount of usable proxies left. last value counts the number of bots retried since the beginning... This
+    system help you to see where AD task by a blink of an eye... :)
+
+
+
+-----------------------------------------------------------
+
+What's new in v4.152	September-06th-2004
+====================
+
+1) Bug fixed with the "[x] Set Cookie" parameter in Setting/HTML settings. That cookie and the collected ones
+   were never sent back during the test... This seems to occur since v4.110 at least... That fixup will make
+   the software handles "cookie-sensitive" servers better...
+
+2) Visual fixup in Snapshot list, for a better view of everything.
+
+3) Proxy leecher: added a test to avoid testing invalid urls. Can cause crashes sometimes.
+
+4) Same for the Word Leecher.
+
+
+ 4.151 has been available for a day : Sep-04. But I didn't announce it to all users, for 2 reasons.
+
+    1) The points (1) and (2) in v4.152 release were only made. I wanted to finish point (3)/(4)
+       to really announce something. And there it is.
+
+    2) After the echoes I've had from some of you, I wanted to provide 3 different versions of
+       Accessdiver. Here they are:
+
+    v1) A zipped version is available, just to download the real update, and nothing more.
+
+    v2) A full installer WITHOUT any bundles (third-party applications), to people who just
+        want to install AccessDiver for the first time, without additional contents.
+
+    v3) A version with bundled applications (by WhenU) for people who don't mind adding additional
+        softwares, and at the same time, helps the author of AccessDiver.
+
+  So you have the choice now to download really what you want... :-)
+
+
+
+-----------------------------------------------------------
+
+What's new in v4.150	August-13th-2004
+====================
+
+1)  HTTP engine updated (new parsing method + little fixups). Some BOT results were false in v4.141. :-(
+    These changes makes things working smoothly now...
+
+2)  Fixed bug when exiting the application. It could showed "Cannot locate the application...".
+
+3)  Added a system which will log every attempt made by AccessDiver http bots. The proxy and user:pass will
+    be saved to file. 11 files will be generated, each for the replycode category. 2XX.log/403.log/etc...All
+    datas will be stored in the "c:\programfiles\AccessDiver\Cache\CodeLog" directory of the software. Click
+    on the Progression \ [Menu] button to open this directory. This allows you to see in details, attempts
+    sorted by replies (all combos returned 2xx codes, all combos detected during fakes, 403 ones, etc...)
+    This will assist you to track weak logins better. Note: Disabled during auto-pilot!!!
+
+4)  New!!! A registry patching will take effect on the first run of AccessDiver. This correction reenables
+    Internet Explorer so that it will allow openning of urls like http://user:pass@site.com... :-) This
+    patch is not dangerous to your computer, it's just a flag that tells IE to allow those kind of urls
+    once again. :-) It's better quitting all IE instances before running v4.150. Thanks to Dan "Ivac"...
+
+5)  Alert "can't reset list" when installing AD for the first time won't be shown again...
+
+6)  Added in AccessDiver's installer package, 3 freeware tools made by WhenU. It has a Weathercast report
+    for you own local area. It includes an atomic clock synchronizer, and finally a web search bar...
+    Please suppot the author of AccessDiver by installing this WhenU toolkit. It's completly free for you.
+    Thank you!!!!!
+
+7)  Ability to store leeched proxies directly into a file instead of adding them in memory. See in the
+    \Options tab of the ProxyLeecher to enable it. It allows you to add proxies to an existing file or
+    into a new file... Note: This function doesn't remove duplicated proxies. It doesn't collect datas
+    in Accessdiver neither. Leeches from clipboard are not store to file but always in memory...
+
+8)  Ability to store leeched combos into a file. Same feature as the new proxy leecher ability...
+    note: I'll possibly add in a future version, this system for the leeched urls...
+
+9)  ProxyLeecher now auto-unticks invalid urls, so they won't be used anymore... Same for ComboLeecher!
+
+10) HTTP Debugger: Now shows the HTTP header to be sent. Helps for better debugging...
+
+11) HTTP Debugger: Bug when entering a path in the Header section, instead of a full URL. leads nowhere!!!
+
+12) HTTP Debugger: Bug when adding your own Headers. Some of those header were changed to default
+    debugger values.
+
+13) HTTP Debugger: Some requests weren't sent sometimes, but cached ones were used instead. That
+    could false the results. Now it's really okay :-)))
+
+14) HTTP Debugger: Visual fixup on Headers information. Text was always shown twice.
+
+15) In Word Leecher, added HTTP referer info, since some leech site need that info.
+
+16) Added HTTP referer info for ProxyLeecher too.
+
+17) Fixup done when a bot is forced to skip to next proxy during a fake detection. Methodoly enhanced too!
+
+18) Some fixups in fake detection steps. This leads to a better and faster fake detection. :-)
+
+
+
+-----------------------------------------------------------
+
+What's new in v4.141	August-05th-2004
+====================
+
+1) Bug fixed when adding a ProxyJudge url in the PJ list. Index-out-of-bound[0] occured just
+   after using it...
+
+2) Bug in some cases with the proxyGateway detector. It could falsely say that a proxy gateways
+   to itself... Those ones will be tagged as "OK - it seems to work", now...
+
+3) Socket kernel updated...
+
+   Note: Some of you reported problem with Accessdiver and other similar softwares
+         (Sentry,AATools...). This release doesn't fix that trouble, since it's not
+         AD related...Symptoms are that site name can be pinged and resolved, but no packet
+         can be sent to connect to the site of your choices...
+         Try WinsockXPFix to correct that annoying trouble. You can find a copy from my site or
+         on the internet:   http://www.accessdiver.com/download/winsockxpfix.zip
+
+
+-----------------------------------------------------------
+
+What's new in v4.140	July-05th-2004
+====================
+
+1) Fixed a bug within debugger when using your own HTTP header set
+
+2) Updated the HTTP kernel (minor update for faster parsing)
+
+3) Enhanced the FORM detection again for more cases.
+
+4) Fixed a bad bug within the History Refresher. Some results were said down incorrectly.
+   uhhh!!!!!
+
+5) Added a feature to let you choose your own navigator when opening an url. This skips
+   false results when using patched InternetExplorer 6.0x version. You're welcome to use
+   another navigator, than IE, when checking passwords with AccessDiver... This feature
+   is available in the "Settings\Extras" tab.
+
+6) Interfacing system with GeoWhere is now set to disabled by default (User suggestion).
+   Since that feature erases clipboard content for each weak login found... You must disable
+   this feature by your own, if it's not the first time you've install AccessDiver.  Go to
+   History/WeakLogins/GeowhereTransfer/StoreResults and untick all options there...
+
+7) Bug fixed in HTTP kernel which could lead to false '301 moved' replies.
+
+
+
+-----------------------------------------------------------
+
+What's new in v4.130 Autumn 2003 Edition
+==================== Sunday November-30th-2003
+
+1) Proxy Analyzer: Possibility to do proxy test with a URL referrer
+
+2) Proxy Analyzer: You can now do proxy testing via GET method
+
+3) Proxy Analyzer: Dangerous proxy removal now on .MIL and .GOV proxies
+
+4) FORM Security engine: Ability to set your own specific cookies
+
+5) Bug fixed for URL validation on scripted urls. Extra char "/" added wrongly sometimes
+
+6) Redirection manager enhanced Now you can set 3 cases of subdirectory detection
+    at the same time.  Takes actions based on keywords to detect in subdirs.
+
+7.a) New fake engine added : "Keyword hit" fake detection. That engine is different to the one used
+    in AccessDiver. Keyword test will be done on data received for every 200-OK reply. You can also
+    do keyword testing whatever errorcode was received.
+
+7.b) "Keyword failure" fake detection also incorporated...
+
+8) HTTP debugger : now shows header info on top of the body data (yellow txt). It's more accurate
+    to read, mostly for cookies tracking or redirections reading...
+
+9) AD now can catch non-standard HTTP redirections and replies. That will make easier to detect
+   bizarre server replies...
+
+10) Bug fixed with Skip proxy on FORM keyword detection. it was always enabled during test :-(.
+
+11) bug fixed in FORM system when detecting keywords. There was zero boundaries test done...
+
+12) I did other small fixes, but I haven't write them in my to-do list... So no description available
+    for them...
+
+13) FORM Manual detection of datas enhanced and bugs fixed within it...
+
+14) Ability to choose which FORM to use if there are more than one FORM section in a web page.
+
+15) Auto-detection of POST data in settings now allows you to choose which form to detect, when dealing
+     with multiple forms...
+
+16) To help you in POST data detection for HTML testing, if a cookie is detected, the software will warn you
+      to use it...Since it can be necessary to set a cookie to go further...
+
+17) Possibility to retry a login from the progression tab immediatly in the HTTP debugger. This can be a good
+      way to track extra page you missed. Mostly for the new FAKE detector (based on keywords).
+
+18) Bug fixed within bots. Some test were done with an empty "Accept-Language" HTTP command. Some server can be
+    sensible to that...
+
+
+
+
+    NOTE: a) Not included in this version, due to a lack of time : Ability to skip proxies on Timeout
+             (mostly usefull for FORM). Soon
+
+          b) This release 4.130 comes bundled with a freeware to detect spywares; it is called SPYBAN
+             This software will be launched automatically once you'll quit Accessdiver for the first time.
+             Then it won't be called again. An icon will be placed on your desktop thenafter to reuse it. :)
+	         Thanks for giving it a try!!!
+
+	      c) A lite version 4.130 now exists. It uses very less resources, but consider it as a beta release
+	         since not all test were done on it. But it should work okay I think... Go to the main page of
+	         AccessDiver to get your copy of it. No proxy/socks analyzing/ no leeching / no extratools. Simply
+	         security testing is available  :)
+
+          d) I won't be joinable during this coming weeks since I'm taking a long computer break. I'll be back
+             in 2004 with fresh air in mind :-)
+
+          e) Special greetings to Peterccc2000 and Larenzo for their betatesting assistance in 4.130 release...
+
+          f) Thank you for using AccessDiver!!!
+
+
+
+
+-----------------------------------------------------------
+
+What's new in v4.120 Summer 2003 Edition
+==================== Monday August-11th-2003
+
+1) Better 2XX handling. Mostly for 202 cases
+
+2) ExtrasTools\File splitter: ZERO byte file bug when using "Make chunks" option
+
+3) Fakes and redirections are now separated in the progression tab. So added a new sub-tab for fakes
+
+4) Proxy black list bug fixed: Adding proxies from clipboard
+
+5) Proxy black list bug fixed: Adding proxies from a file
+
+6) Exploiter: Show the exact amount of possible failures as a stat
+
+7) Exploiter: Now you can load and add exploits like : ":port/dir"
+
+8) Exploiter: added a new case: "404 are hits"
+
+9) Exploiter couldn't handle correctly urls with a port other than 80 (fixed)
+
+10) Snapshot loading/saving bug fixed: missing some exploiting options to reactivate
+
+11) ExtrasTools\File splitter: Bug when dealing with long file names (incorrect returns in lines)
+
+12) Fakes and redirs are now put on top of lists from the progression tab...
+
+13) Added new clearing options in the \progression\MENU button.
+
+14) Debugger: Fixed a problem in the manual HEADER inputs section.
+
+15) Debugger: Added a test to avoid endless loops on some certain redirs
+
+16) Bug fixed when lines were too long in header list
+
+17) Visual bug: In "List of used urls"Clipboard button was invisible
+
+18) ExtrasTools\FileSplitter: File merger was buggy
+
+19) Added a data block extractor system in ExtrasTools\Filesplitter section... uhhh, I don't remember
+    if it has already been introduced in v4.113...
+
+20) Visual bug when dealing with the small 2 buttons at right of the web server area (search/navigate
+    buttons). On https urls, these button were off when relaunching AD.. Note anyway that AD doesn't do https
+
+21) Fixed a bug in FORM scanning which could lead to incorrect hits when dealing with dead proxies.
+
+22) HTTPDebugger: When opening a url in navigator, possibility to specify your cookies before 
+    navigating (right-click)
+
+23) Fixed bug with the [Search the web] feature.
+
+24) Fake detector enhanced with a more realistic method...
+
+25) More accurate Timeout system. Logical bug fixed at low-level socket... So less false timeouts...
+
+26) Better multiple-FORM detection in HTTPdebugger. (not 100% finished)
+
+27) Added a [Refresh] button in Wordlist manager for those who change their wordlist content oftenly.
+
+28) For better JOB handling, "Unamed Wordlist" are automatically renamed to the filename of the combo...
+
+29) Serious bug with HTML pattern detection due to bug when storing to disc. Fixed
+
+30) The button [View] in Progression (for FORM scanning) now opens one menu for multiple pages. 
+    Less resources used :)
+
+31) Double-clicking the progression/Bots list opens a user:pass in your navigator. (Handy but doesn't 
+    handle FORMs yet)
+
+32) Proxy skipping now doesn't affect a bot when it is in FAKE detection mode. It could happen a bot 
+    drops FAKE detection due to proxy skipping...
+
+33) Proxy information added in HTTP debugger view...And incorrect IP info fixed...
+
+34) ReplyCode=#0 treated specially in FORM and Basic authentication scanning... This should produce
+    more accurate results...
+
+35) Added a warning message when you want to do proxy analyzing for FORM/200 detection... Describing
+    fake proxies trouble...
+
+36) Exporting Weak history to Big text format (Shift+F4) didn't save expired ones . Fixed
+
+37) Fixed the msg alert "Can't reset AccessDiver's Exploits list" when starting the software...
+
+
+
+What's new in v4.113 (3906)  Monday March-17-2003
+============================
+
+- Oops, the exploiter system didn't work except in URL mode only. Just fixed.
+
+
+
+What's new in v4.112+ (3903)  Monday March-17-2003
+============================
+
+- Fixed bad slowdowns problem when removing items in lists. Problem was introduced
+  with v4.100 and its XP fixup of the 100%CPU usage.
+
+- Fixed a bug when AD was finishing a security test. It didn't save weak logins 
+  to history correcly. Some found logins weren't stored.
+  
+- Added a new mode in the exploiter. You have ROOT/LOCAL, and now URL. That means
+  your exploit can be a site directly, instead of a relative path. It won't do the
+  exploiting based on the url of AD, but based on that URL. That can be usefull
+  sometimes.
+  
+- In weak History, when previewing (eye button) an HTML site, it didn't take in
+  account the params to enter the address.
+
+- For better HTML form tests, when you manually detect Post Data, the orgin URL
+  is automatically used as the refferer URL. It's put in \Settings\Misc\ tab.
+  
+- Bug fixed when you planned to autosend weaklogins to GeoWhere.
+
+
+
+
+What's new in v4.111 (3859)  Sunday March-07-2003
+==========================
+
+- new feature in FORM (HTML) bot engine: ability to avoid using keywords to
+  find weak logins. It can now rely on finding redirection only. So it's 
+  a bit simpler to handle FORMs.
+
+- HTTP Debugger: * Added a new option to avoid HTML data  to appear (yellow text)
+                 * Fixed the annoying design bug that make editors upside down.
+                 
+- ExtrasTools\File splitter/merger improved. File saving should be at lease 4x faster.
+
+- FORM bot engine: fixed a bug with buffer limit and size improved. Warning:
+  memory usage for the HTML form tester has been increased. from 1.4MB to 12MB.
+  
+- Bug fixed with the FORM bot engine. Empty content replies could block AD.
+
+- Those options weren't saved in proxy analyzer: "slower analysis"," export IP".
+
+
+
+What's new in v4.110+ (3833)  Sunday March-02-2003
+==========================
+
+- Annoying bug introduced in v4.110 fixed. Found weak logins weren't stored in
+  history except if "stored original urls" option was ON.
+
+
+
+What's new in v4.110 (3832)  Saturday March-01-2003
+==========================
+
+- 100% CPU usage fixup. Should be more stable on WinXP
+
+- Advertising Banner bar removed from AccessDiver. You won't be annoyed by
+  it anymore.         Any money donation is welcome - Thank you.
+  
+- Added a feature in the exploiter : "5XX are hits".
+
+- In ExtraTools/FileSplitter, added a new tool to extract only a part of 
+  a file.  I made this for myself in fact but not directly for AD, but to
+  extract any area of a divX partially downloaded.
+  
+- Bug fixed in History/failureFound : * delete selection was unusable / 
+				      * Added a confirmation alert on deletion 	
+
+- Bug fixed in Word generator. <RW> on "hello" did "helloolleh" instead of "olleh" 
+
+- You can now change proxy options on the fly. No need to restart a test.
+
+- Fixed a memory leak when starting the word generator process, and fixed a buggy
+  handling in the macros.
+
+- Added a feature in HTTP debugger, to send clicked selection in clipboard when
+  releasing the mouse clik. As what mirC does.  :)
+  
+- WeakHistory/Export as TXT/special => crashed. Just fixed
+
+- WeakHistory/Export as Web page => Can't create file. Just fixed
+
+- idem: HTML template extension problem fixed.
+
+- Forget some minor fixed done. oops
+
+
+
+What's new in v4.103 (3782)  Friday December-17-2002
+==========================
+
+- Bad bug in v4.102. Due to a File saving problem, you could loose your whole 
+  parameters and lists, when quitting the software. 
+
+I suggest you to avoid using v4.102. Update to v4.103 or go back to v4.101. v4.103
+fixes that bug. :-)
+
+
+
+What's new in v4.102 (3782)  Friday December-13-2002
+==========================
+
+- Google searching was buggy. No results were found anymore. Just fixed.
+
+
+
+What's new in v4.101 (3778)  Friday December-13-2002
+==========================
+
+- HTML pattern previewer enhanced. It won't open all pages anymore (resource eating) but
+  will open a page will all patterns (as links). :)
+
+- Fixed a delay problem in the temporization code. Not big thingy, but its now more stable.
+
+- Fixed a resource leak in Banners due to an uncleared buffer. It should use less resources.
+
+- Added a button to add the selected redirections into your history from the Progression\Redirs.
+  Caution: clicking a line there doesn't launch the url anymore. You'll need to doublclick.
+
+
+
+What's new in v4.100 (3747)  Wednesday December-04-2002
+==========================
+
+- Fixed the annoying bug when the \Progression\Redirs list was filled with +100 entries. You would get an
+  "Index out of bound (-1)" error. This is not a bug from my programming, but due to a library I coding used.
+
+- Fixed the bug that made the "FBI & USArmy proxy" remover unusable since v4.96.
+
+- Added a SEARCH feature in AccessDiver. It collects results from Google and on my sponsor. Please support
+  my work by using this feature. Thank you.
+
+- Added a feature for personnal web site owners. If you want extras traffic to your site, there's now a way
+  to place your 468x60 GIF banner in AccessDiver. Go to http://www.accessdiver.com/bannerinad.htm for
+  more details.
+
+
+
+What's new in v4.97 (3679) Saturday November-23-2002
+==========================
+
+- Added an feature to add found weak logins into you history when the task isn't finished.
+  That has been added in the [Menu] button from the progression tab.
+
+- In the wordlist section, the option "kill words under X letters" was bugy. it killed also entries equals 
+  to X letters.
+
+- Added a feature to do history refreshing by using the proxy linked to the url. To enable the option
+  go and see in \Settings\Misc. That option isn't automatically saved when quitting due to security reason.
+
+- Added a feature to let you set the Windows Priority of AccessDiver, so you can make it a bit less freezing.
+  Option available in Options\Misc.
+
+
+
+What's new in v4.96 (3643) Monday November-11-2002
+==========================
+
+- Fixed a bug that was here since very old version v2.xx of AccessDiver. It was the one which say
+  "Value must be between 0 to 4294000000". This is due to the use of iterative search mode and 
+ when wordlists were above 65535 lines.
+
+- Added a macro in Settings \subdir detection. Add <HOMEPAGE> to detect if an attempt leads
+  directly to the homepage of the server tried.
+
+- Fixed a bug that could occur rarely but badly. Sometimes AD freezed when testing your proxies.
+  This is due to dysfunctionnal proxies (ProxyBombs) that make AccessDiver entering an endless 
+  loop. "ProxyBombs" can be not a good term to name those proxies, but they act like bombs on AD.
+
+- "ProxyBombs" detection added in the Standard security tester to avoid a freeze when starting.
+
+- "Proxybombs" detection added in the HTTP Debugger.
+
+- Bug fixed on redirection URL shown in HTTP debugger. if redirection occurs more than once the main
+  URL was always told to be the last origin of the redirection.
+
+- Dangerous proxy detection: A special proxy range wasn't tested, just added now.
+
+- Dangerous proxy detection: It wasn't launched if you did a proxy dup removal before.
+
+
+
+What's new in v4.95 (3618)  Wed October-30-2002
+==========================
+
+- Bug fixed with the proxy anonymity  analyzer. Symptow was that gateways weren't
+  shown. In fact they were shown but too fast for the eyes to catch. then replaced
+  by "OK it seems to work" replies. (Visual bug)
+
+- Added an option in \progression\redirs tab, to choose what to import into history.
+  Choose to import the original URL, or the redirected urls. 
+
+- Added a new tab in the settings section to allow more visibility. The Misc tab was
+  too saturated.
+
+- I've updated the default PJ list (5 entries removed)
+
+- Added an option to shutdown your computer after a test completion or full job list 
+  completion. Be aware that stopping manually a test when that option is on, would
+  stop your machine also. Use it at your own risks.
+
+- As you have seen, I'm introducing a new tool with Accessdiver : GhostSurf. That's not 
+  my piece of code, but it can be a good companion to AccessDiver: protects your 
+  privacy, remove popup ads, remove spywares etc... don't hesitate to give it a try :-)
+
+
+
+
+What's new in v4.94+ (3565)  Fri September-27-2002
+==========================
+
+- Fixed an anoying option handling within the PJ script tester.
+  Msg "Can't start anonymity checking. No workin PJ!" msg was
+  thrown innacurately.
+  I recommend you to tick the popup option called :
+  
+  "Verify ProxyJudge scripts before running an anonimity test (recommended)"
+
+  It's in the Proxy Analyzer\ProxyJudges section. Right-click the list to set it.
+
+
+
+
+What's new in v4.94 (3561)  Tue September-24-2002
+==========================
+
+- Oops, the Anonymity tester didn't work anymore within v4.93 due to the PJ area. I changed
+  nothing in that area, but a uggly c++ code optimization made havoc there. Now it works
+  don't ask me why  ?!!?   :)
+
+- A User suggested to stop the anoying alerts on clipboard operations. Now you have the choice
+  to keep them or not. Go in \Settings\Misc\Auto-Clipboard.
+
+- Bug when opening a login or a url into your navigator. It was opened unfocused. Sorry, it was 
+  due to the new bannerware system.
+
+- I've removed by mistake the option to choose to check PJ scripts before an anonimity. It's just
+  back whe it should be: Right-click in the PJ list to see it. :)
+
+- An anoying bug fixed. When a proxy was said "PJ uncheckable", and when changing the PJ script 
+  to try, [Accuracy] column wasn't update and would put you in a uncertain case. Good or not 
+  Good proxy. IT's ok now, in that case the [Accuracy] value = "OK - it seems to work"
+
+- Fixed a bug (not 100% sure): the delay info of PJ scripts sometimes could be changed with an "OK"
+
+- Added a much needed stuff: a STOP button in the PJ script tester. See at bottom when starting!!!
+
+
+
+
+ 
+What's new in v4.93 (3537)  Sun September-22-2002
+==========================
+ 
+- Fake detector was a bit slowly in its step 3/3. Now it runs faster!
+
+- ProxyJudge list updated. Based on the 09-14-02 post of lorissa@deny 
+  (less 2 dead ones).
+
+- Added a delay information in the proxyjudge list to see how fast a script can be.
+
+- Added sort functions : 'by speed' & 'by name' to sort your proxyjudge list
+
+- Fixed a bug when quitting AD. The state (OK/BAD) of PJs weren't saved correctly.
+
+- Added an option to choose to test PJs with or without the current proxy in AD. in
+  v4.92 and below, AD always tried a verified a PJ by using a proxy. So if the proxy
+  was dead, you could get get false results.
+
+- By default PJ scanning doesn't use any proxy except if asked to. right-click the
+  PJ list to set that.
+
+- Bug fixed when PJ script detection was done. Some scripts could be missed. it Works 
+  good now. No more PJ script skipped. :)
+
+- Bannerware system updated. Thank you for visiting my sponsors when you have time. :)
+
+
+
+
+
+What's new in v4.92 (3490)  Wed August-7-2002
+==========================
+ 
+- Now AccessDiver handles international character sets (russian, chinese,...) so that you 
+  will not have text cutoffs when using the software. See in \settings\Audio&language area. 
+
+- A bad bug could occur when storing proxy info in history comment area. That could kill 
+  your history content when dealing on particular IPs (=unreadable lines). That's a rare 
+  case but I recommand you to update if you don't want to loose content. :)  
+
+- "What to do with found logins" option in \settings\search didn't save the wordlist just
+  after the end of the scan. You would have to do it by yourself to keep the logins. Now 
+  you don't need to , it's saved automatically. 
+
+- When adding all redirections from \progression\menu, it should store the real URL instead 
+  of the redirected url. 
+
+- Added a notification option in the exploiter. The exploiter won't start if it finds content 
+  in exploit history for the current URL. suggested @deny. 
+
+- Added an option in HTTP debugger to get the cookie stored for a particular URL. 
+
+
+
+
+
+What's new in v4.91 (3472)   Sat. July-20-2002
+==========================
+
+- Serious bug fixed in fake detector. A logical test was wrong.
+
+- Deeper fake detection (3steps engine)
+
+- The popup menu in proxyanalyzer "add selection..." was disabled
+
+- HTTP debugger handles now the "file://" protocol for previewing
+
+- Bug fixed when importing a combo with white spaces. "the good:days" was 
+  handled as user="the" pass="good:days"
+
+- Adding from proxy analyzer to proxy list was done up side down. Fixed!!! (lightson)
+
+- In Exploiter the option "403 are hits" wasn't used, but "Redirs are hits" was used instead.
+
+- Added a PAUSE function in the progression tab. (user suggestion)
+
+- When AD finds weak logins, in some cases the 2XX stat wasn't updated. fixed!
+
+
+
+
+
+What's new in v4.90 (3450)   Tue. Jun-25-2002
+==========================
+
+- Bot kernel updated, should fix some described fake problems.
+
+- Function "Detect a subdir in redirection=weak login" wasn't handled in FORM scanner. Just fixed!
+
+- Exploiter section as 2 new options: "Redirs are hits" and "403 are hits". That can be good in 
+  some cases. (MeBigGuy) These 2 options can be saved in your snapshots.
+
+- Bug when importing a text file exploit list. It was havoc there. just fixed.
+
+- full urls with emails could make problems when opening them in your navigator. Now AccessDiver 
+  replaces '@' by %40. that allow access with full urls.
+
+- Visual changes in Icons (Save and Load icons)  (lightson)
+
+- Bug when installing AD on a new machine. Fixed the msg saying "can't init registry".
+
+- Detecting POST data in \settings\htmlsettings now can let you set a referer value. (user suggestion).
+
+
+  
+
+
+What's new in v4.90 (3428)   Sun. Jun-02-2002
+==========================
+
+- Build 3423 was running with 70Bots max, oops. just fixed
+
+- Added a feature in proxy analyzer to remove FBI & US army open proxies. In case you don't want 
+  to stick with them.
+
+- Added a final fixup in the build 3423 for the anonymity correction (Tiscali like ISP)
+
+
+
+What's new in v4.90 (3423)   Thu. May-31-2002
+==========================
+
+- Bad potential freezing bug found and fixed within the [Standard] scanner. That fix Should also 
+  increase the speed per hour a bit and reduce the timeouts a bit also. So more tests at once:-)  
+
+- Bad bug when testing anonymity of proxies. Some ISP can return false results. Fixed!!!
+
+- Added a more robust fake handler. A bit slower but goes deeper in the test. :)
+
+- Fake redirection detector enhanced. You can tell from all the redirs receive which one is real 
+  or not. Tha can be handy in some cases.
+
+- Added a function to use the selected proxy as your default InternetExplorer proxy (thanks to Madmax)
+
+- Fixed a bug when importing exploits from a text file. It was impossible to load them in.
+
+- Fixed a bad bug when removing dups from the jobs section
+
+- Progression\Redirs functions are now available in the menu button of the progression section
+
+- the whole DomainName seeker has been remove from Accessdiver.
+
+- Now when new exploits are found a proxy info is added with them in the exploit history
+
+- When adding proxies from proxyanalyzer to your list, they are now saved on top.
+
+- Added a new way to store your weak logins. Send them into GeoWhere for a more accurate use :)
+  Weak logins found can immediatly be sent in GeoWhere. GeoWhere 2.0 has a better login tester
+  than the one in Accessdiver. And works at light speed. GeoWhere is almost ready for mid-june.
+
+- I did other fixes but I don't remember since I lost the update txt I did for them. :-(
+
+----------------------------------------------------------------------------------------------------------------------
+
+AccessDiver: The powerfull web security analyzer : http://www.accessdiver.com
+
+GeoWhere: The Easy Search assistant : http://www.geowhere.net
+
+contact me at: feedback@geowhere.net
+
