@@ -1,0 +1,2 @@
+cd /usr/share/conscan
+exec python2 conscan.py "$@"

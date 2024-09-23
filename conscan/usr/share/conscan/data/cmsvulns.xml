@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<data>
+	<concrete version="5.7.2.1">
+		<vulnerability>
+			<title>Concrete5 CMS Reflected Cross-Site Scripting Vulnerabilities</title>
+			<references>
+				<url>http://morxploit.com/morxploits/morxconxss.txt</url>
+			</references>
+		</vulnerability>
+	</concrete>
+
+	<concrete version="5.7.0.4">
+		<vulnerability>
+			<title>Stored XSS in concrete5 5.7.0.4</title>
+			<references>
+				<url>https://hackerone.com/reports/30019</url>
+			</references>
+		</vulnerability>
+	</concrete>
+
+	<concrete version="5.6.2.1">
+		<vulnerability>
+			<title>Multiple XSS</title>
+			<references>
+				<url>http://osandamalith.wordpress.com/2014/07/18/concrete-5-6-2-1-multiple-xss/</url>
+			</references>
+		</vulnerability>
+
+	</concrete>
+
+	<concrete version="5.6.1.2">
+		<vulnerability>
+			<title>Multiple CSRF and Stored XSS</title>
+			<references>
+				<url>http://www.exploit-db.com/exploits/26077/</url>
+			</references>
+		</vulnerability>
+	</concrete>
+
+	<concrete version="5.5.2.1">
+		<vulnerability>
+			<title>Session hijacking</title>
+			<references>
+				<url>http://www.concrete5.org/developers/bugs/5-5-2-1/session-hijacking-vulnerability/</url>
+			</references>
+        	</vulnerability>
+        	<vulnerability>
+            		<title>Cross-Site Scripting</title>
+            		<references>
+                		<url>http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-5181</url>
+            		</references>
+        	</vulnerability>
+	</concrete>
+	
+	<concrete version="5.5.1">
+        	<vulnerability>
+            		<title>concrete5 Multiple Security Vulnerabilities</title>
+            		<references>
+                		<url>http://www.emagined.com/securityfocus-advisory/55415/concrete5-multiple-security-vulnerabilities</url>
+            		</references>
+        	</vulnerability>
+    	</concrete>
+
+	<concrete version="5.4.2.1">
+		<vulnerability>
+			<title>SQL Injection and XSS vulnerabilities</title>
+			<references>
+				<url>http://www.exploit-db.com/exploits/17925/</url>
+			</references>
+	        </vulnerability>
+	</concrete>
+
+	<concrete version="5.4.1.1">
+		<vulnerability>
+			<title>Full Path Disclosure vulnerability</title>
+			<references>
+				<url>http://www.cvedetails.com/cve/CVE-2011-3721/</url>
+			</references>
+		</vulnerability>
+		<vulnerability>
+			<title>Remote File Inclusion vulnerability</title>
+			<references>
+				<url>http://www.securityfocus.com/bid/45669/exploit</url>
+			</references>
+	        </vulnerability>
+    </concrete>
+</data>
