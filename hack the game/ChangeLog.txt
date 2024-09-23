@@ -1,0 +1,108 @@
+   -- Hack The Game --
+      by E. Wenners
+
+      www.chaozz.nl
+
+(c) 2005 The Netherlands
+
+
+----------
+Change Log
+----------
+
+
+Legend
+------
+* = improved
+- = removed
++ = added
+! = notes
+
+
+Version 1.15
+------------
+* fixed hangup bug in non-english version
+
+
+Version 1.14
+------------
+* fixed runtime error
+
+
+Version 1.13
+------------
+* fixed the logfile bug (reported on a german forum)
+* changed the game font to Tamoha and Courier
+* improved overall file reading function (comma issue)
++ multiple language support
++ game settings screen
+* uploading hiscore is fixed!!!
+
+
+Version 1.12 rev1
+-----------------
++ can upload your highscore to www.hackthegame.com (fixed in rev1)
+* behaviour of the CD command. cd\ cd \ and cd.. work too now
+* trace bug (wasn't reset when busted or failed mission)
+
+
+Version 1.11
+------------
+* Runtime error 13 fixed
+
+
+Version 1.1
+-----------
+* Load bug fixed (thanks to Real_Shit)
+
+
+Version 1.0
+-----------
+! First released version
++ LOAD and SAVE function
+* Overall file checking
+
+
+Beta 0.6
+--------
+! Radical game design change (you need to earn tools, local file system, etc)
+* Loginscreen bug (stayed visible after login)
+
+
+Beta 0.5
+--------
+* Backtrace time is now longer, so missions are less hard to complete at first
+* a Focus bug removed
+* Help bug fixed
+
+Beta 0.4
+--------
+* Bug fix: commandline disconnect now check if your online
+* Bug fix: when you got busted, it remembers how many times you got busted
+* Bug fix: now if you finish a mission, but get backtraced just before you 
+  disconnect, the mission is still completed
+* Bug fix: some mission bugs
++ Customized cursor
++ (*)nix like prompt
+
+
+Beta 0.3
+--------
+- IRC button
++ Info button
+* Mission file now support multiple files for stealing and detroying
++ More missions
++ Mission file encrypted (somewhat)
+
+
+Beta 0.2
+--------
+! first non-public tested beta (thanks to Rampage and Pro2Call)
+! first version with all functionality
+* score bug
+* various bugs
+
+
+Beta 0.1
+--------
+! first "working" verion. never released

@@ -1,0 +1,15 @@
+                               -= Known bugs =-
+                     ...I'm too busy to fix them too soon
+
+
+  1. Auth Server/IndentDaemon
+     If you select disable and restart without restarting HU,
+     it crashes.
+
+  2. Words Wizard
+     lot's a stuff works like shit there...:)
+
+
+Please report bugs to:
+
+        billg@microsoft.com

@@ -1,0 +1,111 @@
+
+
+              hu console extensions 1.0 Jan 1,1997
+
+
+DISCLAIMER:
+**********
+
+We, ATAPi & DirectX, take no responsibility for anything You *might*
+experience by using these tools, be it legal problems, thrashed harddisks or
+anything else. You use these tools at Your own risk!
+
+INTRODUCTION:
+************
+ i had written these tools just to show that *IT IS* possible to
+write a faster password cracker than Jackal's. another little problem with
+cJack is that you cannot run it in the background with win16/32/nt (maybe
+it run on os/2 by i dont install that shit only to play with cJack).
+the console tools are harder to use for morons but i like them mainly
+for the piping.
+
+EXPECTED PERFORMANCE:
+*********************
+
+      console hu/ide hu
+_____________________________________________________________
+      number of accounts            1         ~550     ~3800
+iNtel P5-100 no secondary cache:  215000      367000   680000
+iNtel P5-100 256k p/burst cache:  245000      380000   710000
+AMD-K5-100MHz 256k p/burst cache: 436000      670000   xxxx/not yet tested
+
+      cJack
+_____________________________________________________________
+      number of accounts            1         ~550     ~3800
+iNtel P5-100 no secondary cache:   98000      135000   xxxxxx/not yet tested
+iNtel P5-100 256k p/burst cache:  141000      272000   xxxxxx/not yet tested
+
+the programs have approx the same performance on 486s but who cares about
+a 486
+so watch out:to drag the best performance out this tool use iPentium or
+AMD-K5
+
+
+And now the fuckin' tools:
+
+hsort:
+******
+like dos sort/jsort/etc reads from stdin sorts lines/writes to/stdout
+also legal hsort <infile> <outfile> : if no <outfile> outfile=stdout
+it doesn't have 640/64k limit
+the temp files are stored in the dir shown by env TEMP so watch out
+for enough disk space
+
+xtr:
+****
+something like xtract
+xtr -d -s file . . .
+-d allow digits
+-s allow any ASCII > ' ' and < '\x80'
+wildcards supported
+
+hpp:
+****
+this is a tool that i hated to write but anyway i released it:
+hpp -opts <file>
+reads lines from file, process them conforming to *opts* and spit'em to
+stdout
+
+*opts*
+-rev      :revert words
+-ref      :reflect words
+-cut:x    :cut words to a size of x chars
+-min:x    :discard words shorter than x chars
+-max:x    :discard words longer than x chars
+-s:string :append each char in string to words
+-p:string :prefix words with each char in string
+-d        :double the words
+-inse:x:c :insert char c in position x (0 means before the word)
+-upcl     :uppers last char of word
+-lowe     :turns all output to lower
+-upper    :turns all output to upper
+-ct:xxxx  :case tool:for any x after ct: the letter in the same pos
+           as the 'x' is uppered is x==u,lowered if x==l or unchanged
+           if (x!='u' && x!='l')
+-g:x      :gecos ripper:x=rip level:max level is 8:the bigger the level
+           more combinations from the gecos words
+
+
+this may look pretty limited but if you don't like it you may use TPU
+that is more compatible with hardware and os-es than jpp (and also
+more powerful)
+
+huc:
+***
+huc -opts <passwd> [<wordlist>]
+ *opts*
+-s        :single mode
+-uxx      :attack only users with uid xx
+-p        :show cracked accounts
+-r[file]  :restore cracking [from file]
+-aName    :attack only accounts where !strcmp(login,'name')
+<passwd>    password file
+<wordlist>  word file (stdin if not given)
+
+how to obtain:
+**************
+the oficial distribution site of these progs is eastern DiGiTAL BBS
++40-(0)56-221442  (leave message to sysop)
+please report bugs/sugestions to directx3@geocities.com
+
+
