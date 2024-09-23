@@ -1,0 +1,41 @@
+.menu {
+	position: absolute;
+	left: 55px;
+	top: 130px;
+	border-width: 4px;
+	background-color: #247D29;
+	width: 130px;
+	border: 3px solid #0C5726;
+	padding: 5px;
+	font-size: medium;
+	color: #EEEEEE
+}
+A.menulink:Link {
+	text-decoration:none;
+	color:#EEEEEE
+}
+A.menulink:visited {
+	text-decoration:none;
+	color:#EEEEEE
+}
+A.menulink:active {
+	text-decoration:none;
+	color:#FFFFFF
+}
+A.menulink:hover {
+	text-decoration:none;
+	color:#0C5726
+}
+.logo
+{
+	position: absolute;
+	left: 240px;
+	top: 30px
+}
+.maintable
+{
+	position: absolute;
+	left: 240px;
+	top: 130px;
+	border: 3px solid #0C5726;
+}

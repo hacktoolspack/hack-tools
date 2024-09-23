@@ -1,0 +1,56 @@
+        .,::      .: .,,.                 ...    :::::::..    .,-:::::;  
+  ,;;,  `;;;,  .,;;,;;'`';,  ,;;,      .;;;;;;;. ;;;;``;;;; ,;;-'````'   
+,['  [n   '[[,,[[' [[, _,[[,['  [n    ,[[     \[[,[[[,/[[[' [[[   [[[[[[[|
+$$    $$   Y$$$P    Y$$P"$$$$    $$   $$$,     $$$$$$$$$c   "$$c.    "$$ 
+Y8,  ,8" oP"``"Yo,  ,,_,d8"Y8,  ,8"   "888,_ _,88P888b "88bo,`Y8bo,,,o88o
+ "YmmP,m"       "Mm, "MP"   "YmmP  (O)  "YMMMMMP" MMMM   "W/   `'YMUP"YMM
+
+=========================================================================
+-------------------------------------------------------------------------
+
+ 		     Absinthe - Automated Blind SQL Injection
+	
+ 		     	  by nummish <nummish AT 0x90.org>
+
+-------------------------------------------------------------------------
+=========================================================================
+
+Absinthe 1.3 (Absinthe behind closed doors...)
+
+Absinthe was designed to automate the process of exploiting blind SQL 
+injection holes on Microsoft SQL Server. It currently supports SQL 
+Server, Oracle and Postgres. It will not find the holes for you, it will 
+simply reduce the time for a meaningful penetration. 
+
+If you have any questions or comments on the tool, please do not hesitate
+to visit http://www.0x90.org/releases/absinthe or email us at: 
+absinthe@0x90.org
+
+An HTML user guide is available at:
+http://www.0x90.org/releases/absinthe/docs
+
+This release of Absinthe was originally made for Blackhat Asia 2005.
+It includes Basic, Digest and NTLM authentication.
+
+I've included a compiled version for straight install which includes my
+custom wx.NET DLLs required for Absinthe. 
+
+To install these, just run install.sh
+
+If you'd rather recompile it yourself, you'll need to follow these steps:
+
+	o  Download the source for wxWidgets and wx.NET from http://wxwidgets.org
+	   and http://wxnet.sf.net 
+	o  Apply the patch to Object.cs available in the tarball or
+	   from http://www.0x90.org/~nummish/wx/Object.cs.patch
+	o  Build wx.NET as per the instructions on their website
+	o  Modify the Makefile in ./wx to point to your installation of wx.NET.dll
+	o  run the Makefile in the root directory. 
+ 
+From this point, you can just run the install script as normal. 
+
+Hopefully you find this useful.
+- nummish
+
+Thanks, props & big-ups to the following for their help & feedback:
+Xeron, txs, loofus, FtR, beewound, h@nji, dext3r, wxs, Freshman

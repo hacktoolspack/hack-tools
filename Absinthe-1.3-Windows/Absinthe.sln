@@ -1,0 +1,57 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Absinthe-core", "core\Absinthe-core.csproj", "{567FF880-492C-4D17-9A1C-70EE11649FE6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Absinthe-plugin-MSSQL", "plugins\Absinthe-plugin-MSSQL.csproj", "{2FCFD6F5-1908-4ACB-B4CA-A2B6D86D4FAA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{567FF880-492C-4D17-9A1C-70EE11649FE6} = {567FF880-492C-4D17-9A1C-70EE11649FE6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Absinthe-plugin-ORASQL", "plugins\Absinthe-plugin-ORASQL.csproj", "{71D6C407-FFC3-4DE8-83B9-5417F7C6DC51}"
+	ProjectSection(ProjectDependencies) = postProject
+		{567FF880-492C-4D17-9A1C-70EE11649FE6} = {567FF880-492C-4D17-9A1C-70EE11649FE6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Absinthe-plugin-PGSQL", "plugins\Absinthe-plugin-PGSQL.csproj", "{A4F09042-2175-473A-AEB4-BB7EDD3299B3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{567FF880-492C-4D17-9A1C-70EE11649FE6} = {567FF880-492C-4D17-9A1C-70EE11649FE6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Absinthe", "wx\Absinthe.csproj", "{795561CB-2403-498A-B546-5E03D15FDF92}"
+	ProjectSection(ProjectDependencies) = postProject
+		{567FF880-492C-4D17-9A1C-70EE11649FE6} = {567FF880-492C-4D17-9A1C-70EE11649FE6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{567FF880-492C-4D17-9A1C-70EE11649FE6}.Debug.ActiveCfg = Debug|.NET
+		{567FF880-492C-4D17-9A1C-70EE11649FE6}.Debug.Build.0 = Debug|.NET
+		{567FF880-492C-4D17-9A1C-70EE11649FE6}.Release.ActiveCfg = Release|.NET
+		{567FF880-492C-4D17-9A1C-70EE11649FE6}.Release.Build.0 = Release|.NET
+		{2FCFD6F5-1908-4ACB-B4CA-A2B6D86D4FAA}.Debug.ActiveCfg = Debug|.NET
+		{2FCFD6F5-1908-4ACB-B4CA-A2B6D86D4FAA}.Debug.Build.0 = Debug|.NET
+		{2FCFD6F5-1908-4ACB-B4CA-A2B6D86D4FAA}.Release.ActiveCfg = Release|.NET
+		{2FCFD6F5-1908-4ACB-B4CA-A2B6D86D4FAA}.Release.Build.0 = Release|.NET
+		{71D6C407-FFC3-4DE8-83B9-5417F7C6DC51}.Debug.ActiveCfg = Debug|.NET
+		{71D6C407-FFC3-4DE8-83B9-5417F7C6DC51}.Debug.Build.0 = Debug|.NET
+		{71D6C407-FFC3-4DE8-83B9-5417F7C6DC51}.Release.ActiveCfg = Release|.NET
+		{71D6C407-FFC3-4DE8-83B9-5417F7C6DC51}.Release.Build.0 = Release|.NET
+		{A4F09042-2175-473A-AEB4-BB7EDD3299B3}.Debug.ActiveCfg = Debug|.NET
+		{A4F09042-2175-473A-AEB4-BB7EDD3299B3}.Debug.Build.0 = Debug|.NET
+		{A4F09042-2175-473A-AEB4-BB7EDD3299B3}.Release.ActiveCfg = Release|.NET
+		{A4F09042-2175-473A-AEB4-BB7EDD3299B3}.Release.Build.0 = Release|.NET
+		{795561CB-2403-498A-B546-5E03D15FDF92}.Debug.ActiveCfg = Debug|.NET
+		{795561CB-2403-498A-B546-5E03D15FDF92}.Debug.Build.0 = Debug|.NET
+		{795561CB-2403-498A-B546-5E03D15FDF92}.Release.ActiveCfg = Release|.NET
+		{795561CB-2403-498A-B546-5E03D15FDF92}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
