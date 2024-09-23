@@ -1,0 +1,284 @@
+Informations de dernière minute sur RemoteExec
+
+
+1- Quoi de neuf dans RemoteExec 5.03
+2- Quoi de neuf dans RemoteExec 5.02
+3- Quoi de neuf dans RemoteExec 5.01
+4- Quoi de neuf dans RemoteExec 5 version finale
+5- Quoi de neuf dans RemoteExec 5 beta 2
+6- Quoi de neuf dans RemoteExec 5 beta
+7- Quoi de neuf dans RemoteExec 4.05
+8- Quoi de neuf dans RemoteExec 4.04
+9- Quoi de neuf dans RemoteExec 4.03
+10- Quoi de neuf dans RemoteExec 4.02
+11- Quoi de neuf dans RemoteExec 4.01
+12- Quoi de neuf dans RemoteExec 4.0 version finale
+13- Quoi de neuf dans RemoteExec 4.0 beta 2
+14- Quoi de neuf dans RemoteExec 4.0 beta
+15- Quoi de neuf dans RemoteExec 3.08
+16- Quoi de neuf dans RemoteExec 3.07
+17- Quoi de neuf dans RemoteExec 3.06
+18- Quoi de neuf dans RemoteExec 3.05
+19- Quoi de neuf dans RemoteExec 3.04
+20- Quoi de neuf dans RemoteExec 3.03
+21- Quoi de neuf dans RemoteExec 3.02
+22- Quoi de neuf dans RemoteExec 3.01
+23- Quoi de neuf dans RemoteExec 3.0 version finale
+24- What's new in RemoteExec 3.0 beta 4
+25- Corrections in RemoteExec 3.0 beta 3
+26- What's new in RemoteExec 3.0 beta 2
+27- What's new in RemoteExec 3.0 beta
+
+
+1- Quoi de neuf dans RemoteExec 5.03 (Septembre 2012)
+-----------------------------------------------------------------
+- Correction : Lorsque le répertoire temporaire sur les machines cibles était défini (avec la variable d'environnement %TEMP%) dans une autre partition que C:\, RemoteExec copiait les fichiers exécutables dans le mauvais répertoire générant une erreur 0x3.
+- Correction : Lorsque le répertoire destination d'une opération de fichier se trouvait sur une partition différente de c:\, RemoteExec utilisait un chemin UNC incorrect pour transférer/supprimer le fichier/répertoire.
+- Correction : Lors d'une tentative de chargement d'une liste de machines depuis un fichier en cours d'utilisation dans un autre processus, RemoteExec crashait.
+- Correction : Si l'AD contenait une OU avec un nom distingué de plus de 512 charactères RemoteExec crashait lors du démarrage.
+- Correction : RemoteExec crashait au démarrage sous Windows 8
+
+2- Quoi de neuf dans RemoteExec 5.02 (Novembre 2011)
+----------------------------------------------------
+- Correction : Lorsqu'une clé de licence invalide était saisie un mauvais message était affiché.
+- Correction : Si des guillemets (") étaient insérés dans le message de popup ou de redémarrage le message était tronqué.
+- Correction : Lors de l'installation de package msi les arguments n'étaient pas pris en compte
+- Correction : L'execution à distance d'un batch avec des parenthèses dans le nom échouait car le chemin du batch n'était pas mis entre guillemets par RemoteExec.
+- Ajout : Support du déploiement du framework .net 4 avec l'action "Installation de mise a jour"
+- Correction : Pour l'action Installation de mise a jour, si uniquement si nécessaire était sélectionné, tout filtre additionnel configuré à la main était ignoré.
+- Ajout : Possibilité d'utiliser l'authentification SMTP et le cryptage SSL pour l'envoit des rapports par E-mail.
+- Correction : Si les arguments contenaient la séquence \" (anti-slash suivit d'un guillemet) l'exécution pouvait échouer.
+
+3- Quoi de neuf dans RemoteExec 5.01 (Février 2011)
+---------------------------------------------------
+- Correction : RemoteExec crashait sur les machines Windows 2000
+- Correction : L'import de fichiers action (*.rea) d'anciennes versions de RemoteExec crashait
+- Correction : Si le même ordinateur était rajouté plusieurs fois d'une façon différente dans la liste des ordinateurs cibles une exception pouvait se produire.
+- Correction : "Sauvegarder dans mes ..." n'enregistrait pas une version à jour de la configuration dans les favoris.
+- Correction : Lorsqu'une tâche planifiée était renommé le chemin vers le fichier XML de configuration n'était pas modifié avec pour conséquence quel le Job à distance n'était plus exécuté aux heures planifiées.
+- Correction : Lorsqu'une tâche planifiée était renommé successivement deux fois une exception était générée.
+- Correction : Des exécutions distantes simultanées sur une même machine pouvait échouer.
+- Correction : Problème de base de données en cas d’exécutions distantes simultanées.
+- Correction : Une action multiple démarrant par un réveil générait des exceptions de base de données
+- Correction : Un chemin d'exécutable UNC de plus de 128 caractères faisait crasher RemoteExec
+- Correction : Le filtre de langue ne fonctionnait pas
+- Correction : La configuration d'une action multiple sauvegardée dans un dossier favori ou dans une tâche planifiée ne gardait pas les modifications dans certains cas.
+- Correction : Une action popup ne pouvait pas être enregistrée dans "Mes Actions à Distance"
+
+4- Quoi de neuf dans RemoteExec 5 version finale (Décembre 2010)
+----------------------------------------------------------------
+- Correction : Les adresses MAC scannées avec l'action système "Rapatrie les infos de réveil" s'affichaient dans la liste des adresses ajoutées manuellement au lieu de la liste des adresses MAC ajouté automatiquement.
+- Correction : Lorsque le menu contextuel était invoqué sur un nœud de l'arborescence de configuration qui n'avait pas le focus, l'action était appliquée sur le mauvais nœud générant des exceptions.
+- Ajout : Mode d'échec rapide en mode action multiples. Si une action échoue ou renvoi un code de retour, plus aucune action n'est traitée.
+- Correction : Lorsque "Utiliser dans un nouveau Job a distance" était invoqué pour une liste d'ordinateurs cibles favorite et qu'un nouveau Job à distance était sélectionné, la liste des machines cibles n'était pas mis à jour.
+- Correction : Lorsque l'emplacement des favoris était modifié RemoteExec sauvegardait les Job à distance, les actions à distance et les listes de machines cibles toujours dans l'emplacement par défaut.
+- Correction : Si des fichiers non XML se trouvaient dans les dossiers des favoris une exception était générée. Désormais les fichiers non XML sont juste ignorés.
+- Correction : Le mot de passe du compte exécutant RemoteExec n'était pas sauvegardé/chargé pour le contexte d'exécution "Administratif avancé" même si "Enregistrer le mot de passe" était sélectionné.
+
+5- Quoi de neuf dans RemoteExec 5 beta 2 (Novembre 2010)
+--------------------------------------------------------
+- Ajout : Le mode ligne de commande a été réintroduit. La commande RemoteExec est désormais un programme console permettant de suivre l'exécution plus facilement.
+- Ajout : Le mode ligne de commande permet de définir complètement une exécution de fichier à distance, une action système (Arrêt, redémarrage, fermeture de session, verrouillage de session, réveil) et un popup sans utiliser une action à distance sauvegardée.
+- Amélioration : Le chemin du répertoire de RemoteExec a été rajouté dans les chemins de recherche permettant d'invoquer la commande RemoteExec de n'importe quel endroit sans devoir spécifier le chemin complet.
+- Amélioration : Les informations de réveil (adresse MAC, sous réseau) sont automatiquement scannées pour toutes les machines ou une exécution à distance a lieu.
+- Ajout : Possibilité de changer l'emplacement des favoris (ex: pour les partager sur un serveur).
+- Ajout : Possibilité d'ajouter une liste de machine cible directement depuis "Mes machines cibles".
+- Correction : L'identificateur de Job n'était pas sauvegardé lors de la planification d'un job à partir des résultats d'une exécution.
+- Mise à jour : De l'aide en anglais et d'un nouveau guide de démarrage rapide en anglais et en français
+- Ajout : Possibilité d'importer les fichiers actions de RemoteExec 4.
+- Ajout : Possibilité d'enregistrer des actions à distance dans le système de fichiers.
+- Ajout : L'operation "Rapatrie les infos de réveil" dans l'action système pour récupérer les adresses MAC et les sous réseaux des ordinateurs cible
+
+6- Quoi de neuf dans RemoteExec 5 beta (Novembre 2010)
+------------------------------------------------------
+- Ajout : Nouvelle interface à onglets. Les nouvelles exécutions à distance sont lancées dans un nouvel onglet.
+- Ajout : Insertion des événements dans une base de données afin de conserver un historique exhaustif des exécutions
+- Ajout : Possibilité de sauvegarder les configurations d’actions à distance dans un répertoire de favoris afin de les réutiliser rapidement sur des systèmes cibles différents
+- Ajout : Possibilité de sauvegarder les configurations de « jobs » à distance afin de les ré-exécuter facilement (un job = une action à distance + la liste des systèmes cibles)
+- Ajout : Possibilité de relancer un “job” à distance seulement sur les systèmes indisponibles lors des précédentes tentatives d’exécution
+- Ajout : Possibilité de sauvegarder des listes prédéfinies de systèmes cibles afin de les réutiliser rapidement avec des actions distantes nouvelles ou sauvegardées
+- Ajout : Possibilité d’afficher un graphique montrant la proportion de succès et d’échecs d’une exécution à distance
+- Ajout : Possibilité d’afficher un rapport détaillant le statut d’une exécution à distance sur tous les systèmes cibles d’un « job » 
+- Ajout : Possibilité de planification d’un “job” pour en automatiser l’exécution 
+- Ajout : Possibilité de rappeler facilement les actions et “jobs” récents. 
+- Amélioration : Le nouveau moteur d’exécution de RemoteExec n’utilise plus RPC et DCOM. Seuls ICMP (ping) et le partage de fichiers et imprimantes Micrsoft (SMB TCP 445) sont requis.
+- Ajout : Toutes les communications sont cryptées à l’exception des transferts de fichiers, l’accès à distance aux bases de registre et redirection de console en entrée et sortie.
+
+7- Quoi de neuf dans RemoteExec 4.05 (Mars 2010)
+------------------------------------------------
+- Correction : Un faille de sécurité lors du chargement d'un fichier de liste de machines .rec avec des lignes de plus de 1000 caractères
+- Ajout : Possibilité d'utiliser le contexte Système lors de l'installation des packages .msi (Les ordinateurs du domaine doivent avoir un accès en lecture au partage où se trouve le package .msi).
+- Ajout : Possibilité de déployer facilement des patchs Windows Installer (fichiers .msp) avec le mode Auto de l'action Exécution de fichier.
+- Ajout : Possibilité de spécifier le répertoire de travail dans les arguments des exécutables à lancer à distance avec la variable suivante : %CurrentDirectory%
+- Ajout : Le déploiement d'Internet Explorer 8 avec l'action prédéfinie Installation de mise à jour.
+- Fixed: Avec le context d'exécution Interactif l'exécutable ne pouvait pas être démarré lorsqu'il était copié dans une répertoire temporaire en raison de droits insufisants. (Démarrage impossible: 0x00000005 Accès refusé).
+
+8- Quoi de neuf dans RemoteExec 4.04 (Décembre 2008)
+----------------------------------------------------
+- Ajout : Les mises à jour Windows Vista/2008 (.msu) sont maintenant gérées automatiquement par l'action Installation de mise à jour de RemoteExec
+- Ajout : Les Frameworks .Net 3 et 3.5 sont maintenant gérées automatiquement par l'action Installation de mise à jour de RemoteExec (avec le package complet).
+- Correction : Avec Windows Vista la boîte de dialogue de notification de redémarrage n'était pas affichée au dessus des autres fenêtres.
+- Amélioration : La console n'est plus affichée en mode ligne de commande (sans interface) à moins de spécifier l'argument /PROGRESSWINDOW.
+- Correction : En mode ligne de commande si uniquement une machine distante était spécifiée, le code de retoru de RemoteExec n'était pas toujours le code de retour du processus distant.
+
+9- Quoi de neuf dans RemoteExec 4.03 (Février 2008)
+-----------------------------------------------------
+- Correction : Les fichiers .reg avec un espace dans le nom n'étaient pas enregistrés
+- Correction : Support du contrôle d'accès des utilisateurs de Windows Vista
+- Amélioration : L'utilisation des comptes de dépersonnalisation lorsque le compte exécutant n'a pas les droits d'administration sur les machines distantes
+- Correction : Des problèmes avec les filtres lors de la planification des exécutions distantes
+- Amélioration : Le service d'accès à distance au registre des machines cibles est automatiquement démarré si nécessaire
+- Correction : Une séquence d'actions incluant un redémarrage échouait après le redémarrage avec des machines distantes Windows 2000
+- Correction : Les mises à jour Internet Explorer 7 n'étaient pas correctement détectées.
+
+10- Quoi de neuf dans RemoteExec 4.02 (Septembre 2006)
+-----------------------------------------------------
+- Correction : Les fichiers .reg n'étaient pas enregistrés dans tous les cas
+- Correction : RemoteExec ne fonctionnais pas avec des machines 64 bits distantes dans certains cas
+- Correction : Les nouveaux correctifs MDAC/MSXML n'étaient pas correctement détectés
+- Ajout : Possibilité de déployer facilement Internet Explorer 7 avec l'action prédéfinie "Installation de mise à jour"
+- Correction : Des problèmes avec Windows Vista
+- Correction : Il n'était pas possible de bouger la fenêtre de notification d'arrêt de machine ou de fermeture de session
+
+11- Quoi de neuf dans RemoteExec 4.01 (Avril 2006)
+-------------------------------------------------
+- Correction : Bug dans le filtre lors de la planification de l'exécution distante
+- Correction : Les descriptions des erreurs n'étaient pas enregistrées dans les journaux lors des exécutions planifiées
+- Correction : Le wake-on-lan ne respectait pas à 100% le standard. Certaines machines ne se réveillaient pas.
+- Correction : Dans certain cas le menu contextuel était très lent à s'afficher
+- Correction : Certain "handles" n'était pas immédiatement libérés sur les exécutables déployés empêchant leur suppression tant que RemoteExec n'était pas fermé.
+- Amélioration : Le splash screen et la bannière ne sont plus affiché sur les écrans avec seulement 256 couleurs.
+
+12- Quoi de neuf dans RemoteExec 4.0 version finale (Février 2006)
+-----------------------------------------------------------------
+- Correction : Un problème lorsqu'un utilisateur tue les processus distants en mode action multiples
+- Correction : Lors de l'annulation d'une action système, la procédure d'attente n'était pas arrêtée
+- Correction : La liste déroulante permettant d'attendre la fin de l'exécution d'une action système n'était pas dans le bon ordre
+- Correction : L'exécution immédiate d'une fermeture de session sur des machines Windows NT4/2000 provoquait leur arrêt.
+
+13- Quoi de neuf dans RemoteExec 4.0 beta 2 (Janvier 2006)
+--------------------------------------------------------
+- Mise à jour : Le fichier d'aide a été mise à jour
+- Amélioration : Mode ligne de commande. Trois nouveaux arguments /EXE /ARGS /FOLDER permettant de changer dynamiquement l'exécutable dans un script. Cf. le fichier d'aide.
+- Correction : Un bug lors du chargement du fichier action depuis le répertoire courant en mode ligne de commande.
+- Mise à jour : Le nouveau système de licence est prêt. Si vous êtes déjà client vous pouvez demander votre nouvelle clé d'activation RemoteExec 4 (support@remoteexec.com) si votre maintenance vous y donne droit.
+
+14- Quoi de neuf dans RemoteExec 4.0 beta (Décembre 2005)
+---------------------------------------------------
+- Amélioration : RemoteExec peut configurer automatiquement les arguments de l'installation silencieuse pour un plus grand nombre de mises à jour Microsoft
+- Ajout : Le mini scanner peut filtrer sur l'architecture processeur des ordinateurs (x86, x64, ia64) ainsi que la langue.
+- Ajout : Possibilité de mettre les machines hors tension
+- Ajout : Possibilité de réveiller les machines avec la technologie Wake-On-Lan. RemoteExec peut scanner les adresses MAC et les sous-réseaux automatiquement.
+- Amélioration : La notification des arrêts, redémarrage et fermeture de session. L'utilisateur peut cacher la notification et l'exécution peut se faire immédiatement sur les stations de travail sans utilisateur connecté.
+- Ajout : Possibilité d'exécuter plusieurs actions en une seule passe grâce au mode "Action multiples".
+- Ajout : Possibilité d'ajouter beaucoup de fichiers en une seule fois avec le mode "Action multiples"
+- Amélioration : Détection du code de retour des processus distants
+- Amélioration : Dans l'action "Installation de msi" RemoteExec peut détecter si le package a déjà été installé sur les machines cibles.
+- Ajout : Comptes de dépersonnalisation pour s'authentifier sur les machines distantes avec des comptes différents.
+- Ajout : Possibilité d'afficher le contenu des journaux dans une fenêtre de résultat
+- Ajout : Possibilité de redémarrer ou planifier une nouvelle exécution depuis la fenêtre de résultat.
+- Ajout : Nouvelle action prédéfinie "Opération de fichiers" qui permet de déployer ou supprimer des fichiers et des répertoires.
+- Ajout : Nouvelle action prédéfinie "Maintenance des comptes qui permet de changer le mot de passe de l'administrateur local de toutes les machines de votre réseau.
+- Ajout : Nouveau contexte d'exécution : Système, le processus distant est démarré avec le compte localsystem de la machine distante.
+- Ajout : Nouveau contexte d'exécution : Système interactif, identique au précédant mais le processus peut accéder en plus au bureau de l'utilisateur lui donnant temporairement les droits d'administration sur sa machine pour par exemple compléter l'assistant d'installation d'un logiciel quand aucun mode silencieux n'est disponible.
+
+15- Quoi de neuf dans RemoteExec 3.08 (Janvier 2005)
+---------------------------------------------------
+- Correction : RemoteExec ne pouvait pas déployer le correctif KB885836 (MS04-041). L'installation bloquait lors du démarrage du processus.
+
+16- Quoi de neuf dans RemoteExec 3.07 (Août 2004)
+------------------------------------------------
+- Ajout : un document expliquant comment configurer le pare-feu Windows XP SP2 pour autoriser les exécutions distantes avec RemoteExec
+- Ajout : Support de la nouvelle façon de nommer des correctifs cumulatifs pour Internet Explorer (IE6.0sp1-KB867801-x86-FRA.exe)
+- Ajout : Support de la nouvelle façon de nommer les services pack Windows XP (WindowsXP-KB835935-SP2-ENU.exe)
+- Ajout : Possibilité de rechercher les ordinateurs dans le Catalogue Global de l'Active Directory
+
+17- Quoi de neuf dans RemoteExec 3.06 (Avril 2004)
+-------------------------------------------------
+- Ajout : Possibilité de planifier une tâche répétitive qui ne s'exécutera qu'une seule fois sur chaque machine (s'exécute uniquement sur les machines indisponible lors des précédentes exécutions). Pour cela il faut utiliser le l'onglet RemoteExec de la tâche planifiée et cochez "N'exécuter la tâche qu'une seule fois sur chaque machine" (C'est le cas par défaut).
+- Correction : Lors de l'annulation d'une exécution tous les noms de machine sont enregistrés dans les journaux.
+- Ajout : Possibilité d'utiliser des arguments additionnels pour les installations de fichiers msi. Cf. la documentation de msiexec pour plus d'information.
+- Ajout : 2 nouveaux opérateurs de filtrage sur le contenu de la valeur du registre personnalisable "Contient" and "Ne contient pas"
+- Amélioration : Les hotfixes Internet Explorer sont correctement détectés
+- Amélioration : Nouvelle routine de ping. Dans certains cas RemoteExec n'était pas en mesure de pinguer les machines distantes.
+
+18- Quoi de neuf dans RemoteExec 3.05 (September 2003)
+-----------------------------------------------------
+- Support des nouvelles règles Microsoft pour les noms des correctifs (Ex: WindowsXP-KB823980-x86-FRA.exe)
+
+19- Quoi de neuf dans RemoteExec 3.04
+------------------------------------
+- Correction: RemoteExec crashait sous Windows 2003 lors de la recherche du répertoire de travail.
+- Amélioration: Du browser d'ordinateurs
+
+20- Quoi de neuf dans RemoteExec 3.03
+------------------------------------
+- Possibilité de mettre à jour une installation d'un msi après avoir patché l'image administrative.
+- Support de Windows 2003 dans le filtre
+- Correction: Bug lors de la sauvegarde d'une action avec le filtre. Le filtre n'était pas suvegardé correctement.
+- Correction: Bug dans l'affichage de la liste des machines cibles. L'affichage n'était pas mis à jour dans certain cas.
+
+21- Quoi de neuf dans RemoteExec 3.02
+------------------------------------
+- Ajout: Le service pack 1 pour Windows XP peut désormais être déployé avec RemoteExec mais il faut utiliser la version SP1a disponible à l'URL suivante :
+http://www.microsoft.com/downloads/details.aspx?FamilyID=83e4e879-fa3a-48bf-ade5-023443e29d78&DisplayLang=en
+Rappel: La première version du SP1 ne peut pas être déployée avec RemoteExec car dans certains cas l'installation bloque ce qui peut provoquer la corruption de la machine distante après un redémarrage (écran bleu).
+- Correction : Le bug du browser d'ordinateurs mentionné dans la version 3.01 n'était pas réellement corrigé. C'est maintenant le cas.
+- Correction : Autre bug dans le browser d'ordinateurs. Dans certains cas les machines étaient listées sous le mauvais domaine.
+- Correction : Bug en mode console. Symptôme: Echec de l'exécution 0006 le handle est invalide.
+- Ajout: RemoteExec ping chaque computer avant de lancer l'exécution pour éviter de long délais avec les machines indisponibles.
+Si nécessaire cette fonctionnalité peut-être désactivé avec la valeur du registre suivante:
+HKEY_LOCAL_MACHINE\SOFTWARE\ISDecisions\RemoteExec\NoPing = 1 (DWORD)
+- Amélioration: Lors de la planification d'une exécution, si le mot de passe de l'utilisateur a déjà été rentré RemoteExec configure automatiquement le compte d'exécution de la tâche.
+- Amélioration: Après la configuration d'une exécution planifiée RemoteExec demande (et sauvegarde) si nécessaire (execution en mode administratif avancé) le mot de passe du compte d'exécution de la tâche. Cela évite que l'exécution bloque car RemoteExec demande le pot de passe.
+
+22- Quoi de neuf dans RemoteExec 3.01
+------------------------------------
+- Le browser d'ordinateurs n'affichait pas les machines du domaine local dans certains cas.
+- RemoteExec se bloquait lors d'un premier lancement avec un nouveau compte par le biais du planificateur de tâche (en conséquence de l'agrément à la licence). 
+
+23- Quoi de neuf dans RemoteExec 3.0 version finale (15 Novembre 2002)
+---------------------------------------------
+- Nouvelles règles du mode auto : les fichiers .txt, .avi, .doc, .htm, .html sont affichés sur les machines distantes avec le mode interactif et sans attendre la fin de l'exécution.
+Les scripts .js et .vbs sont exécutés avec cscript pour permettre une exécution silencieuse ainsi que la redirection de laconsole en local pour pouvoir suivre l'exécution.
+- Traduction du logiciel en français.
+
+
+24- What's new in RemoteExec 3.0 beta 4 (October 24 2002)
+--------------------------------------
+- Added: An interface to easily schedule RemoteExec tasks (Context menu > View > Scheduler). Not yet documented in the help file.
+- Fixed: In previous versions actions that ran correctly with the interface don't automatically ran in command line mode.
+- Ability to deploy msi package on Windows NT 4 computers. Not yet updated in the help file.
+- Added: In "full administrative" mode the profile of the user (HKEY_CURRENT_USER) is now loaded before starting the execution to improve the execution success for some programs.
+- No fixed expiration date: This release expire 15 days after the installation like in the final release.
+
+
+25- What's new in RemoteExec 3.0 beta 3	(October 3 2002)
+---------------------------------------
+- Bug fix: There was a problem when executing a process on remote Windows NT 4 computers in interactive mode. Several symptoms: 100% used CPU time, error message box such as "Failed to load user32.dll..." or an access violation.
+- Drive to share resolution added in the hotfix installation (See beta 2).
+
+26- What's new in RemoteExec 3.0	beta 2	(September 24 2002)
+--------------------------------------
+- Resolve automatically the share path for locally mapped shares. Example: if e: is the a networkshare e: will be automatically replace by the share path \\serverName\Share.
+- With the Apply filter feature the unavailable computers are now removed from the list.
+- WARNING! FIRST TEST for installing the Windows XP service pack 1. The installation don't work because the installation stuck during the installation of the MS virtual machine for Java. More information ASAP.
+
+27- What's new in RemoteExec 3.0	beta	(September 03 2002)
+------------------------------------
+- Three new specialized actions:
+Service Pack deployment:
+	- Parse the file name in order to retrieve (if posssible) the SP number and the OS version.
+	- Install only on concerned computers
+Hotfix & Updates deployment
+	- Find automatically in most cases (for microsoft updates) the arguments in order to run the installation silently
+	- Install the hotfixes only if needed
+	- Parse the file name in order to retrieve (if possible)  the SP number, the OS version and the hotfix name.
+Windows Installer package deployment
+	- Ability to install/uninstall/repair all Windows Installer packaged applications.
+	- Ability to use transform files
+	- Ability to generate log files
+- New execution mode in addition of the already existing interactive and administrative(non interactive) modes: The "full administrative" mode allows to run the process on the remote computer without downgraded rigths. So the remote process can acces to the network shares.
+- Ability to retrieve locally the command line console for command line tools and scripts (like a telnet).
+- A mini scanner in order execute the action only on selected computers according the OS version, the OS level (workstation/server), the service pack number, the Internet Explorer version, and a value in the registry
+- Ability to reboot only computers that need a reboot

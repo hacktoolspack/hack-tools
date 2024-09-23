@@ -1,0 +1,9 @@
+# Coded by Douglas 
+# (c) WeakNetLabs.com
+#
+1. pass this php code a filename using your browser, like so:
+
+	http://url.com/vuln_code.php?filename="../../../../../../../etc/passwd"
+
+2. You can use my HelLFiRE code to find the "depth" of the vulnerability 
+(how many "../" it takes to get tto the center of a tootsie server.)

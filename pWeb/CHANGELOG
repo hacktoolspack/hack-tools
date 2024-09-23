@@ -1,0 +1,93 @@
+# VERSION 1.0 (18 Applications)
+# coded by Douglas weaknetlabs@gmail.com
+
+# 06.01.12
+Changed Suite name to pWeb Suite
+Created Google Code Page and now all changes will be documented there.
+
+# 03.10.12
+filephish is now fileScope and does a recursive search,
+code is smaller and more efficient and now takesfile types
+argument.
+
+# 03.09.12
+Added smsi (SimplyMySQLi) MySQL injection tool.
+Added branding to strEncode and usage
+Added more funcationality to strEncode:
+	URL String Decode;
+	ASCII String encode; (for magic quotes: backslashes(PHP))
+
+# 02.01.2012
+Created the XSS StringEnc.pl appication for encoding actual programming code to be used 
+in cross site scripting (XSS) attacks. Could be used for RFi also.
+
+# 10.01.2011
+During the creation of the video demo for the suite, i noticeed some things
+wrong and fixed them. md5cracker is gone (useless tool)
+and a few other tweaks on files.
+
+# 09.24.2011
+Modified RePsychoLoop to take "HEX" as an argument.
+
+# 09.23.2011
+Remodeled RePsychoLoop using hashes for double the speed (check "time") against hashes
+	and arrays (ordered lists) in Perl. This version creates a double hash and 
+	appends it based on the user inpuut for "depth"
+
+# 09.17.2011
+Added "RePsychoLoop" which is a word / character concatenator. works with word lists
+	to defeat the "use 4 random words" article on xkcd. Also works as a "Cruch" (c)
+	clone.
+
+# 09.14.2011
+Added Havijmd5BF application to test md5's found via SQLi using online resources.
+	logs to "logs/Havijmd5BF/" directory. Somply pass it a "Havij Report" HTML file
+	as an argument.
+
+Powered up HelLFiRE and made it smarter! :D calling the new version LogInject0r
+	Both are different, if you can't find / write to the log files then use 
+	the brute forcer - HelLFiRE! LogInject0r actually spoofs a USER AGENT and
+	injects code into the HTTP log file. Then, it calls the log file and finds
+	files in /etc/ Next, it actually goes through each file and saves it to the
+	attackers system. :) Automagic.
+
+# 09.13.11
+remodeled pBincracker to log all successful cracks in ../logs/pBin/<pasteBin ID>
+	made pBincracker smarter by not attempting hashes more than once.
+
+# 09.12.11
+added dirBF a directory brute force application for non-indexable sites
+	which uses a simple wordlist.
+added "recon" directory. now all scan logs will be located in
+	"scans" in the pCrack Suite's root directory.
+added HOST UP detection to dirBF
+added HOST UP detection to HelLFiRE
+cleaned up root directory and made more directories
+updated README for "webapps"
+dirBF became filephish and can phish for *any* files not just
+	directories.
+filephish now shows (possible) lfi/rfi/sqli vulnerable files found
+
+# 09.10.11 (PM)
+added 404/50X error handling for HelLFiRE
+added better logging which creates a <DOMAIN>/scan_log.txt file to HelLFiRE
+organized better output and added timestamps for HTTP requests to HelLFiRE
+added USER AGENT support for those pesky sites that check for it
+	in our curl requests for HelLFiRE.
+
+# 09.10.11 (AM)
+completed HelLFiRE
+added a pastebin cracker for RAW MD5 hashes 
+	posted from pastebinleaks on Twitter,
+	or CrackMeIfYouCan
+Added some love and got severly drunk as hell. so much
+
+# 08.31.11
+Added LFi Scanner - well started it anyways.
+
+# 08.05.11
+Added second resource for ./online-resources/md5online
+Added help and error checking to ./md5cracker
+Added yet another resource to ./online-resources/md5online
+Added Google as resource for ./online-resources/md5online
+Got drunk.

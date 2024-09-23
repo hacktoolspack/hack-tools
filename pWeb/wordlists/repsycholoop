@@ -1,0 +1,192 @@
+#!/usr/bin/perl -w
+# repsycholoop version 2.
+#
+use Digest::MD5 md5_hex;
+use Term::ANSIColor;
+# Stack em up!
+@colors = ('red', 'green', 'yellow');
+if(!$ARGV[0]){ # display my pretty:
+	copyright();
+}else{ # what to do with arguments passed:
+	for($i=0;$i<=$#ARGV;$i++){
+		if($ARGV[$i] eq '-d'){
+			$depth = $ARGV[$i+1];
+		}elsif($ARGV[$i] eq '-m'){
+			$myMD5 = $ARGV[$i+1];
+		}elsif($ARGV[$i] eq '-c'){
+			if($ARGV[$i+1] =~ m/\.\./){
+				$ARGV[$i+1] =~ s/\.\.//g;
+				@chars_split =split(//, $ARGV[$i+1]);
+				if(int($#chars_split+1) % 2 != 0){
+					print "You gave me a messed up range of characters!\n";
+					copyright();
+				}else{
+					for($i=0;$i<=$#chars_split;$i++){
+						push(@chars, $chars_split[$i]..$chars_split[$i+1]);
+						$i++;
+					}
+				}
+			}elsif($ARGV[$i+1] eq 'allHEX'){
+				@chars = ("a".."f", "A".."F", "0".."9");
+			}elsif($ARGV[$i+1] eq 'hex'){
+				@chars = ("a".."f","0".."9");
+			}elsif($ARGV[$i+1] eq 'HEX'){
+				@chars = ("A".."F","0".."9");
+			}elsif($ARGV[$i+1] eq 'alpha'){
+				@chars = ("a".."z");
+			}elsif($ARGV[$i+1] eq 'num'){
+				@chars = ("0".."9");
+			}elsif($ARGV[$i+1] eq 'ALPHA'){
+				@chars = ("A".."Z");
+			}elsif($ARGV[$i+1] eq 'nonalpha'){
+				@chars = ('~','`','!','@','#','$','%','^','&','*','(',')','-','_','+','=',
+					'[',']','{','}','\\','|',';',':','"',"'",'<','>',',','.','/','?');
+			}else{
+				@chars = split(//, $ARGV[$i+1]);
+			}
+		}elsif($ARGV[$i] eq '-w'){
+			@chars = `cat $ARGV[$i+1]`;
+			foreach(@chars) { chomp $_; }
+		}
+	}
+}
+if(!@chars) {
+	@chars = ("a".."z","A".."Z","0".."9");
+}
+# stackem up!
+my %hash = (); # keys(%hash) == length.
+my %hash2 = ();
+my %hash3 = ();
+my $n = 0; # token for hash creation.
+my $k = 0; # token for hash2 creation.
+foreach $p (@chars) { # create hash here.
+	$hash{$n} = $p; # 0 => 'a',... 25 =>'z';
+	$n++; # token
+}
+
+for($i=0;$i<keys(%hash);$i++){
+	# $hash{$i} = a;
+	for($j=0;$j<keys(%hash);$j++){
+		# create %hash2 of all "2" combinations:
+		$hash2{$k} = $hash{$i} . $hash{$j};
+		$k++;
+	}
+}
+if($depth<5){ 
+	for($i=0;$i<keys(%hash2);$i++){
+		if($depth == 2) { # just print, we did 2:
+			print $hash2{$i} . "\n";
+		}
+		if($depth == 3) { # print each reg hash with out new custom:
+			for($j=0;$j<keys(%hash);$j++){
+				print $hash2{$i} . $hash{$j} . "\n";
+			}
+		}
+		if($depth == 4) { # print our custom hash x2:
+			for($j=0;$j<keys(%hash2);$j++){
+				print $hash2{$i} . $hash2{$j} . "\n";
+			}
+		}
+		if($depth == 5) {
+		}
+	}
+}else{
+	my $o = 0;
+	for($i=0;$i<keys(%hash2);$i++){
+		for($j=0;$j<keys(%hash2);$j++){ # new hash = all combs of 4 length!
+			$hash3{$o} = $hash2{$i} . $hash2{$j};
+			$o++;
+		}
+	}
+	# start appending:
+	if($depth == 5){
+		for($i=0;$i<keys(%hash3);$i++){
+			for($j=0;$j<keys(%hash);$j++){
+				print $hash3{$i} . $hash{$j} . "\n";
+			}
+		}
+	}elsif($depth == 6) { 
+		# now for six!
+		for($i=0;$i<keys(%hash3);$i++){ # 
+			for($j=0;$j<keys(%hash2);$j++){
+				print $hash3{$i} . $hash2{$j} . "\n";
+			}
+		}
+	}elsif($depth == 7){
+		$e = 0;
+		# we need to create a 3 length hash first:
+		for($i=0;$i<keys(%hash2);$i++){ # 4X hash
+			for($j=0;$j<keys(%hash);$j++){ # X hash
+				$hash4{$e} = $hash2{$i} . $hash{$j};
+				$e++;
+			}
+		}
+		# now we can do 4X + 3X to get seven!
+		for($i=0;$i<keys(%hash3);$i++){ # 4X hash
+			for($j=0;$j<keys(%hash4);$j++){ # 3X hash
+				print $hash3{$i} . $hash4{$j} . "\n";
+			}
+		}
+	}elsif($depth == 8 || $depth == 9){
+		if($depth == 8) { 
+			for($i=0;$i<keys(%hash3);$i++){
+				for($j=0;$j<keys(%hash3);$j++){
+					# print $hash3{$i} . $hash3{$j} . "\n";
+					print $hash3{$i} . $hash3{$j} . "\n";
+				}
+			}
+		}else{
+			for($i=0;$i<keys(%hash3);$i++){
+				for($j=0;$j<keys(%hash3);$j++){
+					for($k=0;$k<keys(%hash);$k++){
+						print $hash3{$i} . $hash3{$j} . $hash{$k} . "\n";
+					}
+				}
+			}		
+		}
+	}else{ 
+		print "That amount has not yet been implemented by the author.\n";
+		exit();
+	}	
+}
+
+# Here just for testing:
+sub encrypt {
+	if(md5_hex($_[0]) =~ m/$myMD5/) {
+		print $_[0] . " is the password for the MD5 hash: " . $myMD5 . "\n";
+		exit();
+	}
+}
+sub copyright {
+	print "\n";
+        my @name = split(//, "RePsychoLoop");
+        foreach $l (@name) {
+                my $rand = rand($#colors + 1);
+                print color "bold $colors[$rand]";
+                print color "blue";
+                print $l;
+        }
+        print color 'reset';
+	print " - (c) WeakNetLabs.com\n";
+	print "\nUsage: ./respsycholoop\n\n\t\-c <chars>\tList them as abcdefgh, or a..zA..Z0..9\n\t-w <wordlist>\tFor word concatenation\n\t-d <depth>\tInteger value for how deep to go.\n\n";
+	print "Examples for characters:\n\n\t-c a..zA..Z0..9 <-- is \"a,b,c,...,z\" && \"A,B,C,...,Z\" && \"0,1,2,...,9\"
+                (which does not need to start at \"a\", or \"A\", or \"0\")
+        -c allHEX <-- is \"A,B,C,...,F,\" && \"a,b,c,...,f\" && \"0,1,2,...,9\"
+                (ALL hexadecimal characters)
+        -c hex <-- is \"a,b,c,...,f\" && \"0,1,2,...,9\"
+                (lower case hex (works with WEP))
+        -c HEX <-- is \"A,B,C,...,F\" && \"0,1,2,...9\"
+                (Uppercase hexadecimal)
+        -c alpha <-- is \"a,b,c,...,z\"
+                (lowercase alpha)
+        -c ALPHA <-- is \"A,B,C,...,Z\"
+                (uppercase alpha)
+        -c num <-- is \"0,1,2,...,9\"
+                (numbers)
+        -c nonalpha <-- is all non alpha numeric
+                (e.g. '~','`','!','\@','\$','#','%',...,'?'
+                This can be \"ranged\" too as in the first
+                exmple above, if you know the proper range.)\n\n";
+	
+	exit();
+}

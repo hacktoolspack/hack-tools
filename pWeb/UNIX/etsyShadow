@@ -1,0 +1,222 @@
+#!/usr/bin/perl
+# Coded by Douglas for UNIX Passwd Cracking
+# pCrack Suite - WeakNetlabs@Gmail.com
+# Usage: ./etsyShadow --help
+#
+# Depends on:
+use Crypt::PasswdMD5;
+use Term::ANSIColor;
+# Fill the stack:
+my %HashHashin = ();
+# Help?
+if ($ARGV[0] eq '' || $ARGV[0] =~ m/-(-)?h(elp)?/) {
+	print "Usage: ./etsyShadow -s <salt> -l <hash line> -w <word list>\n";
+	print "Interactive shell: ./etsyShadow -i\n";
+	exit();
+}
+# Argumentative Parsing:
+for ($i=0;$i<=$#ARGV;$i++) {
+	if ($ARGV[$i] =~ m/-(-)?(interactive)?/) { interactive(); }
+	if ($ARGV[$i] =~ m/-(-)?s(alt)?/) { $salt = $ARGV[$i + 1]; }
+	if ($ARGV[$i] =~ m/-(-)?l(ine)?/) { $hash = $ARGV[$i + 1]; }
+	if ($ARGV[$i] =~ m/-(-)?w(ordlist)?/) { $words = $ARGV[$i + 1]; }
+	if ($ARGV[$i] =~ m/-(-)?a(utomatic)?/) { $fullhash = $ARGV[$i + 1]; }
+}
+# The interactive shell:
+sub interactive {
+	print color 'bold yellow';
+	print "etsyShadow";
+	print color 'bold red';
+	print "> ";
+	print color 'reset';
+	int_input();
+}
+sub int_input {
+	$cmd = <STDIN>;
+	chomp $cmd;
+	if ($cmd eq '') { interactive(); }
+	if ($cmd eq 'exit' || $cmd eq 'quit') {
+		exit();
+	}elsif ($cmd =~ m/w [A-Za-z0-9._-]/i) {
+		$cmd =~ s/^w //i;
+		$words = $cmd;
+		slurpee($cmd);
+	}elsif ($cmd =~ m/^status/i) {
+		status();
+	}elsif ($cmd =~ m/s(alt)? /i) {
+		chomp $cmd;
+		$cmd =~ s/s(alt)? //i;
+		$salt = $cmd;
+		print "Salt ";
+                print color 'bold green';
+                print $cmd;
+                print color 'reset';
+                print " successfully loaded\n";
+
+		interactive();
+	}elsif ($cmd =~ m/h(ash)? /) {
+		$cmd =~ s/h(ash)? //;
+		$hash = $cmd;
+		print "Hash ";
+		print color 'bold green';
+		print $cmd;
+		print color 'reset';
+		print " successfully loaded\n";
+		interactive();
+	}elsif ($cmd =~ m/^crack/i) {
+		crack();	
+	}elsif ($cmd =~ m/^a(utomatic)? /) {
+		$fullhash = $cmd;
+		$fullhash =~ s/^a(utomatic)? //;
+		automatic($fullhash);
+	}elsif ($cmd =~ m/^getsys/i) {
+		system "cat /etc/shadow";
+		interactive();
+	}elsif ($cmd =~ m/^clear/i) {
+		system "clear";
+		interactive();
+	}
+
+	# Not yet implemented:
+	else { print "$cmd: not yet implemented.\n"; interactive(); }
+}
+sub slurpee { # DRINK IT DOWWWNNNN MMmmMmmMMmM SLURPEEEEEEEZ!
+	@words = `cat $_[0]`;
+	open (WRDS, $_[0]) || die();
+	$n = 0;
+	if (!$salt) { 
+		print "Please load a salt\n";
+		interactive();
+	}
+	if (@words) {
+		print "This will take some time... \n";
+		foreach (@words) { 
+			$n++;
+			if ($n % 1000 == 0) { 
+				print "Calculated: " . $n . " lines\n";
+			}
+			if ($n == 10000) { 
+				interactive();
+			}
+			chomp $_;
+			if ($_ ne '') {
+				$crypted = unix_md5_crypt($_, $salt);
+				@splt2 = split(/\$/, $crypted);
+				$crypted = $splt2[3];
+				$HashHashin{$crypted} = $_;
+			}
+		}
+	}else{ 
+		print "No wordlist loaded, type \"status\" to see\n";
+		interactive();
+	}
+	if ($#words > 0) {
+		print "Wordlist: ";
+                print color 'bold green';
+                print $words;
+                print color 'reset';
+                print " with ";
+                print color 'bold green';
+                print $#words;
+                print color 'reset';
+                print " lines loaded\n";
+	}else{ 
+		print "No words were loaded, something is wrong with your file.\n";
+	}
+	interactive();
+}
+sub saltee {
+	if ($salt) {
+        	print "Salt loaded: ";
+                print color 'bold green';
+                print $salt. "\n";
+                print color 'reset';
+	}else{
+		print color 'bold red';
+		print "No";
+		print color 'reset';
+		print " salt loaded.\n";
+	}
+}
+sub hashee {
+        if ($hash) {
+                print "Hash loaded: ";
+                print color 'bold green';
+                print $hash. "\n";
+                print color 'reset';
+        }else{
+                print color 'bold red';
+                print "No";
+                print color 'reset';
+                print " hash loaded.\n";
+        }	
+}
+sub crack {
+	if (!$salt) {
+		print "Please provide a ";
+		print color 'bold red';
+		print "salt ";
+		print color 'reset';
+		print "before execution\n";
+		interactive();
+	}elsif (!@words) {
+                print "Please provide a ";
+                print color 'bold red';
+                print "wordlist ";
+                print color 'reset';
+                print "before execution\n";
+                interactive();
+	}elsif (!$hash) {
+                print "Please provide a ";
+                print color 'bold red';
+                print "hash ";
+                print color 'reset';
+                print "before execution\n";
+                interactive();
+	}
+	# foreach hash while loop search for matching hash.	
+	if ($HashHashin{$hash}) { 
+		print color 'bold white';
+		print "Password for this hash is: ";
+		print color 'bold yellow';
+		print $HashHashin{$hash} . "\n";
+		print color 'reset';
+	}
+	interactive();
+}
+sub automatic {
+	print "Hash: " . $_[0] . "\n";
+	# FORMAT: victim:$1$KigMedaO$ZyTP8mYGd6ejSM2GgL2Sn0:15189:0:99999:7:::
+	@splt0 = split(':', $_[0]);
+	$victim = $splt0[0];
+	print "Victim: " . $splt0[0] . "\n";
+	@splt1 = split(/\$/, $splt0[1]);
+	$hash = $splt1[3];
+	$salt = $splt1[2];
+	status();	 
+}
+sub status {
+                if (@words) {
+                        print "Wordlist: ";
+                        print color 'bold green';
+                        print $words;
+                        print color 'reset';
+                        print " with ";
+                        print color 'bold green';
+                        print $#words;
+                        print color 'reset';
+                        print " lines loaded\n";
+                        saltee();
+                        hashee();
+                        interactive();
+                }else{
+                        print color 'bold red';
+                        print "No";
+                        print color 'reset';
+                        print " list loaded.\n";
+                        saltee();
+                        hashee();
+                        interactive();
+                }
+}
+

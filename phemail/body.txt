@@ -1,0 +1,7 @@
+<html>
+<head></head>
+<body>
+This is a <a href="{0}">phishing email</a> :)</br>
+Please click <a href="{0}">here</a>
+</body>
+<html>

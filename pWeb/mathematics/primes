@@ -1,0 +1,26 @@
+#!/usr/bin/perl -w
+# Written by Douglas WeakNetLabs@Gmail.com
+# ./primes <#>
+if (!$ARGV[0] || $ARGV[0] =~ m/(-)?-h(elp)?/) {
+	print "Usage: ./primes <#>\n";
+	exit();
+}
+$n = 2;
+chomp $ARGV[0];
+while ($n <= $ARGV[0]) { 
+	push (@numb3rs, $n);
+	chk($n);
+	$n++;
+}
+sub chk {
+	$false = 0; 
+	foreach (@numb3rs) {
+		if ($_[0] % $_ == 0 && $_ != $_[0]) {
+			$false = 1;
+			last;
+		}
+	}
+	if ($false == 0) {
+		print $_[0] . "\n";
+	}
+}	

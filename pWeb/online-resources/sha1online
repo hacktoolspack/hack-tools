@@ -1,0 +1,58 @@
+#!/usr/bin/perl -w
+## Coded by Douglas WeakNetLabs@Gmail.com
+## For use with www.md5-lookup.com
+## Don't abuse these websites! Please!!
+##
+## Need CURL, GREP AND SED
+$hash = 0;
+use Term::ANSIColor;
+if ($ARGV[0] eq '') { print STDERR "Usage: ./sha1online <word>\n"; exit(); }
+if ($ARGV[0] =~ m/[A-Fa-f0-9\/_.-]{32}/) {
+	print color 'bold red';
+	print "[ ";
+	print color 'bold yellow';
+	print "? ";
+	print color 'bold red';
+	print "] ";
+	print color 'reset';
+	print "Performing reverse hash lookup \n";
+	$hash = 1;
+}
+$regexp0 = '<\(\/\)\?td>';
+$regexp1 = '\s';
+if ($hash == 0) {
+	$md5 = `curl http://www.sha1-lookup.com/index.php?q=$ARGV[0] 2>/dev/null | grep -m 1 -i -E '[0-9a-f]{32}' | sed -e 's/$regexp0//g' -e 's/$regexp1//g'`;
+	chomp($md5);
+}else{ 
+	@md5 = `curl http://www.sha1-lookup.com/index.php?q=$ARGV[0] 2>/dev/null`;
+	for($h=0;$h<=$#md5;$h++) {
+		if ($md5[$h] =~ m/[A-Fa-f0-9]{32}/) {
+			$md5 = $md5[$h - 1];
+			$md5 =~ s/<td width="[0-9]+">//g;
+			$md5 =~ s/<\/td>//g;
+			$md5 =~ s/\s//g;
+		}
+	}
+}
+if ($md5) { # Nice and easy now, let's land properly on the runway. 
+	print color 'bold red';
+	print "[ "; 
+	print color 'bold yellow'; 
+	print "! "; 
+	print color 'bold red';
+	print "] "; 
+	print color 'reset';
+	if ($hash == 0) { 
+		print "SHA1 Hash for ";
+	}else {
+		print "Passwd for Hash: ";
+	}
+	print color 'bold blue'; 
+	print $ARGV[0];
+	print color 'reset';
+	print" is ";
+	print color 'bold blue';
+	print $md5 . "\n"; 
+	print color 'reset';
+} else { print "[ + ] Password not found, sorry.\n"; } # is this appppropiate? I am soo drud ,d drinju drunk.
+exit();

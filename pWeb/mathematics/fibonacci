@@ -1,0 +1,9 @@
+#!/usr/bin/perl -w
+my $x = 0; # Fibonacci & Perl
+my $y = 1; # Douglas Berdeaux
+while ($y < $ARGV[0]) {
+        print "$x\n";
+        $x += $y;
+        print "$y\n";
+        $y += $x;
+} # WeakNetLabs@Gmail.com

@@ -1,0 +1,157 @@
+#!/usr/bin/notepad.exe --lol
+
+                         |          |
+                         |\         |\
+                         ||\        ||\
+                         |||\       |||\
+                         ||||\      ||||\       |,
+                         |||||\     |||||\      |\
+                         ||||||\    ||||||\     ||\
+             ____        |||||||\   |||||||\    |||\
+            '--O_]       |-------`  |-------`   ||||\
+      '-----...'- '----. |\         |           |----`
+             \=========--'-,________|___________|\_
+              \===========--|_|_|_|_|_|_|_|=======/
+             . \===========------------===="WNL"=/
+           '  .~~'~,.=======-----------------===/
+    ~~~~~~~~~~  ~ ~~ ~`~~~~~~~~~~~~~~~~~~~~~~~~'~~~~~~~~~~~
+Thank you for sailing WeakNet Laboratories...
+
+pCrack _________                       __    
+______ \_   ___ \____________    ____ |  | __
+\____ \/    \  \/\_  __ \__  \ _/ ___\|  |/ /
+|  |_> >     \____|  | \// __ \\  \___|    < 
+|   __/ \______  /|__|  (____  /\___  >__|_ \
+|__|           \/            \/     \/     \/
+                                     Suite.
+
+2011 WeakNet Labs, Lunatic Security
+WeakNetLabs.com, LunaticSecurity.org
+
+Written by Douglas - WeakNetLabs@Gmail.com
+
+Web Application, Password and Server Cracking Suite
+written entirely in Perl.
+
+#########################
+# Dependencies include: #
+#########################
+
+# PERL
+perl
+Digest::MD5
+Term::ANSIColor 
+Crypt::PasswdMD5 # Debian 6: apt-get install libcrypt-passwdmd5-perl
+
+# UNIX
+Awk, Sed, Grep (POSIX)
+
+#########################
+# NOTES:                #
+#########################
+
+All LOGs are in the root directory of pCrack Suite.
+	Please check frequently for updates using the updater
+	tool located in the root.
+
+#########################
+# Online Resources      #
+#########################
+
+Uses <enc type>-lookup.com/
+Uses normal HTTP request.
+
+Usage: ./md5online <word>
+Will return the MD5 Hash for <word>
+
+#########################
+# MATHEMATICS           #
+#########################
+
+Usage: ./primes <#>
+Will generate prime numbers up to the number specified.
+
+Usage: ./fibonacci <#>
+Will generate the fibonacci sequence yp to the number specified.
+
+#########################
+# MD5Cracker            #
+#########################
+
+Usage: ./md5cracker -f <hash file> -w <wordlist>
+Files must be one hash per line
+one word per line.
+
+#########################
+# etsyShadow            #
+#########################
+
+Interactive shell or not. Shell is sexier.
+./etsyShadow -i 
+./etsyShadow 
+
+#########################
+# HelLFiRE              #
+#########################
+
+LFi file guesser (NOT VULNERABILITY FINDER)
+	some files will be labeled as "potential lfi/rfi/sqli"
+	Use with dictionary file words.txt in the "wordlists/"
+	directory.
+
+./HelLFiRE -u <URL> -s <SECONDS (integer)> -a <USER AGENT>
+
+#########################
+# pBinCracker           #
+#########################
+
+works with pastebin and paste2, should work with any layout website
+	that has md5s. Logs all output to the logs directory under
+	"pBin/"
+
+./pBinCracker <URL TO PASTEBIN WHICH CONTAINS MD5's>
+
+#########################
+# filephish             #
+#########################
+
+file guesser for non-indexable websites.
+./filephish -d <URL> -a <USER AGENT> -w wordlist -s <seconds (integer)>
+
+#########################
+# Havijmd5BF            #
+#########################
+
+md5 online resource tool for cracking md5's found in SQLi - Havij Report HTML files.
+./Havijmd5BF <filename>
+
+#########################
+# RePsychoLoop          #
+#########################
+Defeat passwords base don this article: http://xkcd.com/936/
+	concatenates words and characters through every possible
+	combination.
+
+./respycholoop -c <abcd-0123456789> -d <depth (integer)> -w <wordlist>
+
+You can also specify character ranges like so:
+	
+	-c a..zA..Z0..9 <-- is "a,b,c,...,z" && "A,B,C,...,Z" && "0,1,2,...,9"
+		(which does not need to start at "a", or "A", or "0")
+	-c allHEX <-- is "A,B,C,...,F," && "a,b,c,...,f" && "0,1,2,...,9"
+		(ALL hexadecimal characters)
+	-c hex <-- is "a,b,c,...,f" && "0,1,2,...,9"
+		(lower case hex (works with WEP))
+	-c HEX <-- is "A,B,C,...,F" && "0,1,2,...9"
+		(Uppercase hexadecimal)
+	-c alpha <-- is "a,b,c,...,z"
+		(lowercase alpha)
+	-c ALPHA <-- is "A,B,C,...,Z"
+		(uppercase alpha)
+	-c num <-- is "0,1,2,...,9"
+		(numbers)
+	-c nonalpha <-- is all non alpha numeric
+		(e.g. '~','`','!','@','$','#','%',...,'?'
+		This can be "ranged" too as in the first
+		exmple above, if you know the proper range.)
+	

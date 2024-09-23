@@ -1,0 +1,18 @@
+<body background="bg.jpg" tracingsrc="bg.jpg" tracingopacity="100">
+<A><font color="#99FFFF"><i>%-decoding& encoding</i></font></A> <BR>
+<BR>
+<INPUT TYPE=BUTTON VALUE="Clear" ONCLICK="Text_TEXTAREA.value='';Encoded_TEXTAREA.value='';">		<BR>
+<A><B><I><font color="#00FFFF">Input</font></I></B></A> <font color="#00FFFF"><BR>
+<A>Html Code</a></font><A><BR>
+<TEXTAREA ID=Text_TEXTAREA STYLE="width:300;height:300" WRAP=OFF>">?!:.,etc :-)</TEXTAREA><BR>
+<INPUT TYPE=BUTTON VALUE="%-encode" ONCLICK="Encoded_TEXTAREA.value=escape(Text_TEXTAREA.value);alert('Mission Completed.');">		
+<INPUT TYPE=BUTTON VALUE="%-decode" ONCLICK="Text_TEXTAREA.value=unescape(Encoded_TEXTAREA.value);alert('Mission Completed.');">
+<BR>
+<INPUT ID=Encoded_TEXTAREA TYPE=TEXT STYLE="width:300">
+
+
+<SCRIPT>
+//FOR MOZILLA&NETSCAPE
+window.Encoded_TEXTAREA =window.document.getElementById("Encoded_TEXTAREA");
+window.Text_TEXTAREA=window.document.getElementById("Text_TEXTAREA");
+</SCRIPT></a>

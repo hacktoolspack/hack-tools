@@ -1,0 +1,14 @@
+wsn
+weaknet
+docx
+backup
+WEBCFIDE
+backedup
+wep
+www
+www-data
+data
+docu
+license
+wordpress
+wp-admin

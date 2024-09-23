@@ -1,0 +1,17 @@
+
+<body background="bg.jpg" tracingsrc="bg.jpg" tracingopacity="100">
+<A><font color="#99FFFF"><i>Html --> JavaScript</i></font></A> <BR>
+<BR>
+<INPUT TYPE=BUTTON VALUE="Clear" ONCLICK="Htm_TEXTAREA.value='';Jsp_TEXTAREA.value='';">		<BR>
+<A><B><I><font color="#00FFFF">Input</font></I></B></A> <font color="#00FFFF"><BR>
+<A>Html Code</a></font><A><BR>
+<TEXTAREA ID=Htm_TEXTAREA STYLE="width:300;height:300" WRAP=OFF><b>hell</b>o!!!</TEXTAREA><BR>
+<INPUT TYPE=BUTTON VALUE="Generated Desired JavaScript" ONCLICK="Jsp_TEXTAREA.value=top.frames[0].HtmToJsp(Htm_TEXTAREA.value);alert('Mission Completed.');">		<BR>
+<INPUT ID=Jsp_TEXTAREA TYPE=TEXT STYLE="width:300">
+
+
+<SCRIPT>
+//FOR MOZILLA&NETSCAPE
+window.Htm_TEXTAREA =window.document.getElementById("Htm_TEXTAREA");
+window.Jsp_TEXTAREA=window.document.getElementById("Jsp_TEXTAREA");
+</SCRIPT></a>

@@ -1,0 +1,185 @@
+#!/usr/bin/perl -w
+#
+# fileScope 
+# File Brute Force Recon tool
+use Term::ANSIColor; # color display
+use LWP::UserAgent; # for HTTP requests
+my $url = ""; # the url argument
+my $ze = " -!-> ";# Display
+my $zi = " ---> ";# Display
+my $zf = " -X-> ";# Display
+my $file = ""; # current file name
+my $cft = ""; # current file type (for recursion):
+my @dirs; # for recursion
+my $types; # file types: html,pdf,tar,tar.gz,ini,txt
+my $recur = 0; # recursion turned on?
+my @ft; # file types provided split into array
+my $cdir = ""; # current directory for logging
+getArgs(); # this gets the url and wordlist:
+name(); # repreezant
+print $zi . "Testing URL: " . $url . "\n";
+if($slpy){ print $zi . "Sleep interval: " . $slpy . "\n"; }
+my @words = `cat $words`;
+if($types){
+	@ft = split(/,/,$types);
+	foreach(@ft){
+		if($_ !~ m/[A-Z0-9]/i){ next; }
+		if($_ eq 'dir'){
+			getFiles($_);
+		}else{
+			getFiles("." . $_);
+		}
+	}
+}else{
+	getFiles();# This gets the files
+}
+if($dirs[0] && $recur == 1){
+	print $zi . "Recursion enabled\n";
+	my $ourl = $url; #make a copy of the original
+	foreach(@dirs){
+		if($_ !~ m/[A-Z0-9]/i){ next; }
+		$cdir = $_;
+		print $zi . "Searching directory " . $_ . "\n";
+		$url = $ourl; # reset the original
+		$url .= $cdir; # add the directory name and /
+		if($types){ # did they specify the file types?
+			foreach(@ft){
+				if($_ !~ m/[0-9A-Z]/i){ next; }
+				getFiles("." . $_);				
+			}	
+		}else{ # They did not specify the file type
+			getFiles();
+		}
+	}
+}
+print "\n";
+# EOF
+
+# Start sub routines:
+sub getFiles{ # Create the Urls:
+	if($_[0]){ # They specified file types comma sep
+		print $zi . "Testing for ";
+		if($_[0] eq '.dir'){
+			clrT("directory");
+		}else{
+			clrT($_[0],"white");
+		}
+		print " files\n";
+		wordloop($_[0]);
+	}else{ # Generic scan:
+		print $zi . "Performing generic scan\n";
+		print $zi . "Testing directories\n";
+		wordloop("dir"); # get them!
+		print $zi . "Testing tarballs\n";
+		wordloop(".tar"); # get them!
+		print $zi . "Testing gzipped tarballs\n";
+		wordloop(".tar.gz"); # get them!
+	}
+}	
+
+sub sleepy{
+	sleep $_[0];
+}
+
+sub wordloop{
+	my $c = 0;
+	$cft = $_[0];
+	foreach(@words){
+		if($_ !~ m/[0-9A-Z]/i){ next; }
+		chomp $_;
+		if($_[0] eq 'dir'){
+			if($_[0] !~ m/\/$/){
+				$file = $_ . "/";
+			}else{
+				# nothing
+			}
+		}else{
+			$file = $_ . $_[0];
+		}
+		$c++;
+		if($c%100==0){
+			print $zi . $c . " File names tested.\n";
+		}
+		$urlf = $url;
+		$urlf .= $file;
+		req($urlf);
+	}
+}
+
+sub req{
+	if($slpy){
+		sleepy($slpy);
+	}else{
+		my $ua = LWP::UserAgent->new; 
+		$ua->agent("Mozilla/5.0 (Windows; U; Windows NT 6.1;"
+		." en-US; rv:1.9.2.18) Gecko/20110614 Firefox/3.6.18");
+		my $req = HTTP::Request->new(GET => $_[0]);	
+		my $res = $ua->request($req);
+		if($res->is_success){
+			if($cft eq 'dir'){
+				push(@dirs,$file); # save for recursion
+				print $ze . "Directory found: ";
+			}else{
+				print $ze . "File found: ";
+			}
+			clrT($file);
+			print "\n";
+		}else{
+		}
+	}
+}
+
+sub getArgs{
+	for($i=0;$i<=$#ARGV;$i++){
+		if($ARGV[$i] eq '-u'){
+			$url = $ARGV[$i+1];
+		}elsif($ARGV[$i] eq '-f'){
+			$words = $ARGV[$i+1];
+		}elsif($ARGV[$i] eq '-t'){
+			$types = $ARGV[$i+1];
+		}elsif($ARGV[$i] eq '-s'){
+			$slpy = $ARGV[$i+1];
+		}elsif($ARGV[$i] eq '-r'){
+			$recur = 1;
+		}
+	}
+	if(!$url || $url eq ''){
+		name("No URL specified!");
+	}elsif(!$words){
+		name("You forgot to specify a wordlist!");
+	}elsif($slpy && $slpy !~ /^[0-9]+$/){
+		name("The sleep time must be an integer!");
+	}
+}
+
+sub name{
+	@date = localtime;
+	print color 'bold green';
+	print "\n  fileScope";
+	print color 'reset';
+	print " - " . (int($date[5])+1900) . " WeakNet Labs\n\n";
+	if($_[0]){
+		clrT(" Error: ");
+		print $_[0] . "\n\n";
+		print "  Usage: ./fileScope <Args>\n";
+		print "  Arguments:\n\t-f <wordlist>\n";
+		print "\t-u <URL>\n";
+		print "\t-s <seconds to sleep between requests>\n";
+		print "\t-t <file types, comma separated: js,tar,txt>\n";
+		print "\t-r (make search recursive)\n\n";
+		exit;
+	}
+}
+sub clrT{
+	if($_[1]){
+		print color "bold " . $_[1];
+	}else{
+		print color 'bold red';
+	}
+	if($cdir eq ""){
+		print $_[0];
+	}else{
+		print $cdir . $_[0];
+	}
+	print color 'reset';
+}

