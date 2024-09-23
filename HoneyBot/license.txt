@@ -1,0 +1,21 @@
+HoneyBOT License Agreement
+==========================
+
+By installing this software you are agreeing to be bound by the terms and conditions of this agreement. If you do not agree to the terms of this agreement then you may not use this software.
+
+Permission is granted for any individual or organization to use this software on no more than one computer at any time.
+
+You may not reverse engineer, decompile, or disassemble the software or create derivative works from the software or its documentation.
+
+You may not copy or distribute any part of this software except for backup or archival purposes.
+
+Atomic Software Solutions may terminate this agreement if you fail to comply with its terms and conditions. In the event of termination you must immediately destroy all copies of the software.
+
+This software is provided "as-is" without any express or implied warranty of any kind. In no event shall the author be held liable for any damages arising from the use of this software. Your use of this software is completely at your own risk.
+
+Atomic Software Solutions reserves all rights not expressly granted.
+
+Copyright (C) All of the documentation and software included in this package is copyrighted by Atomic Software Solutions. All rights reserved.
+
+http://www.atomicsoftwaresolutions.com/
+
