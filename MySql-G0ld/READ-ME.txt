@@ -1,0 +1,14 @@
+MySQL-G0ld 
+
+This program issues brute force attacks against a MySQL Server, supply a CRLF wordlist.
+MySQL daemon should not have Remote MySQL enabled nor be exposed to the public internet.
+Think LAN, Privilege escalation, shared hosting attacks etc.
+
+Attack modes: Password spray / Basic
+
+File Hash: d3e11a2d0234cab7c9244c26d61004cc
+Language: C
+Credits: John Page aka hyp3rlinx
+apparitionsec@gmail.com
+hyp3rlinx.altervista.org
+
