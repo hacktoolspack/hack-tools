@@ -1,0 +1,34 @@
+****************************************************************************
+*                           W32.Blaster.Worm                               *
+*                              by :                                        *
+****************************************************************************
+
+                              +------+
+                              | INFO |
+                              +------+
+
+
+W32.Blaster.Worm is a worm that exploits the DCOM RPC vulnerability (described in Microsoft Security Bulletin MS03-026) using TCP port 135.
+The worm targets only Windows 2000 and Windows XP machines. 
+While Windows NT and Windows 2003 Server machines are vulnerable to the aforementioned exploit (if not properly patched),
+the worm is not coded to replicate to those systems.
+This worm attempts to download the msblast.exe file to the %WinDir%\system32 directory and then execute it.
+W32.Blaster.Worm does not have a mass-mailing functionality.
+The worm also attempts to perform a Denial of Service (DoS) on the Microsoft Windows Update Web server (windowsupdate.com).
+This is an attempt to prevent you from applying a patch on your computer against the DCOM RPC vulnerability.
+
+  +---------------------------------+
+  |      Characteristics            |
+  +---------------------------------+
+  | Memory Resident : No            |
+  |                                 |
+  | Triggered Event : No            |
+  |                                 |
+  | Size Stealth : No               |
+  |                                 |
+  | Full Stealth : No               |
+  |                                 |
+  | Polymorphic : No                |
+  |                                 |
+  | Encrypting : No                 |
+  +---------------------------------+

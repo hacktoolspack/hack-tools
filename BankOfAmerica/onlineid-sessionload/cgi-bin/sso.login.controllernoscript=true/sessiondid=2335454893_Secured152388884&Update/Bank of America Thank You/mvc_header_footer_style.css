@@ -1,0 +1,99 @@
+.body-top-align {
+	MARGIN-TOP: 0em; MARGIN-BOTTOM: -0.5em; MARGIN-LEFT: 0em; BACKGROUND-COLOR: #ffffff
+}
+.td-global-link {
+	PADDING-RIGHT: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 0.6em; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 0px; COLOR: #003366; PADDING-TOP: 0px; FONT-FAMILY: arial, helvetica, sans-serif; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+.td-global-link A {
+	COLOR: #003366; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+.td-global-link A:hover {
+	COLOR: #0000ff; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.global-link {
+	COLOR: #003366; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.global-link-over {
+	COLOR: #0000ff; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+.hdr-bgcolor {
+	BACKGROUND-COLOR: #325688
+}
+.title-bar-bkgd {
+	BACKGROUND-IMAGE: url(/global/mvc_objects/images/bluebar.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #ffffff
+}
+.hdr-bgcolor-blue {
+	BACKGROUND-COLOR: #325688
+}
+.hdr-bgcolor-red {
+	BACKGROUND-COLOR: #f71408
+}
+.title-bar-bkgd-blue {
+	BACKGROUND-IMAGE: url(/global/mvc_objects/images/bluebar.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #325688
+}
+.title-bar-bkgd-red {
+	BACKGROUND-IMAGE: url(/global/mvc_objects/images/redbar.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #f71408
+}
+.hdr-textbox {
+	FONT-SIZE: 0.65em; VERTICAL-ALIGN: middle; WIDTH: 120px; BORDER-TOP-STYLE: inset; BORDER-BOTTOM: medium none; FONT-FAMILY: arial,helvetica,sans-serif; BORDER-RIGHT-STYLE: inset; BORDER-LEFT-STYLE: inset; HEIGHT: 16px
+}
+.bttnblue-bkgd-top {
+	BACKGROUND-IMAGE: url(/global/mvc_objects/images/bttnblue_bgtop.gif); BACKGROUND-COLOR: #92adc7
+}
+.bttnblue-bkgd-left {
+	BACKGROUND-IMAGE: url(/global/mvc_objects/images/bttnblue_bgleft.gif); BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #7c9cbd
+}
+.bttnblue-bkgd {
+	BACKGROUND-IMAGE: url(/global/mvc_objects/images/bttnblue_bgmiddle.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #7598b9
+}
+.bttnblue-bkgd-right {
+	BACKGROUND-IMAGE: url(/global/mvc_objects/images/bttnblue_bgright.gif); BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #7c9cbd
+}
+.bttnblue-bkgd-bottom {
+	BACKGROUND-IMAGE: url(/global/mvc_objects/images/bttnblue_bgbottom.gif); BACKGROUND-COLOR: #92adc7
+}
+.bttnblue-text {
+	PADDING-RIGHT: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 0.7em; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 0px; COLOR: #002143; LINE-HEIGHT: 0.7em; PADDING-TOP: 0px; FONT-FAMILY: arial, helvetica, sans-serif; TEXT-DECORATION: none
+}
+.bttnblue-text A {
+	COLOR: #003366; TEXT-DECORATION: none
+}
+A.bttnblue-text:hover {
+	COLOR: #9c1009; TEXT-DECORATION: none
+}
+.grey-dot {
+	COLOR: #cccccc
+}
+.langgrey-text {
+	PADDING-RIGHT: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 0.7em; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 0px; COLOR: #e8e7e7; LINE-HEIGHT: 0.7em; PADDING-TOP: 0px; FONT-FAMILY: arial, helvetica, sans-serif; TEXT-DECORATION: none
+}
+.langgrey-text A {
+	COLOR: #e8e7e7; TEXT-DECORATION: none
+}
+.ftr-text {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.6em; FONT-FAMILY: arial, helvetica, sans-serif
+}
+.ftr-text2 {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.8em; FONT-FAMILY: arial, helvetica, sans-serif
+}
+.ftr-text A {
+	COLOR: #405ebe; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: underline
+}
+.ftr-text A:hover {
+	COLOR: #0000ff; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: underline
+}
+.bk-to-toplink {
+	FONT-SIZE: 0.82em; COLOR: #405ebe; FONT-FAMILY: Arial, helvetica, Sans-serif
+}
+.bk-to-toplink A {
+	COLOR: #405ebe; TEXT-DECORATION: underline
+}
+ftr-text-blue A {
+	COLOR: #405ebe; TEXT-DECORATION: underline
+}
+.footnoteList {
+	LIST-STYLE-POSITION: outside; FONT-SIZE: 0.9em; LIST-STYLE-IMAGE: url(/global/mvc_objects/images/list_greybullet.gif); COLOR: #666666; FONT-FAMILY: arial, helvetica, sans-serif
+}
+.nav-bgcolor {
+	BACKGROUND-COLOR: #6581a8
+}
