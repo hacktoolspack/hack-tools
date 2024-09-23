@@ -1,0 +1,170 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Scanarator</title>
+</head>
+
+<body bgcolor="#C0C0C0">
+
+<table border="0" width="80%">
+  <tr>
+    <td width="100%" valign="middle" align="center">
+      <h1>Scanarator</h1>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle" align="center">Version 2.1a by <a href="mailto:jmeyer@austin.rr.com">Jeff
+      Meyer</a></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle" align="center"><a href="http://home.austin.rr.com/jammer">Home
+      Page</a></td>
+  </tr>
+  <tr>
+    <td width="100%" height="25"></td>
+  </tr>
+  <tr>
+    <td width="100%" height="25">
+      <table>
+        <tr>
+          <td width="100%">
+            <h3>Legal Stuff:</h3>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">I do NOT accept any responsibility for the use or
+            misuse of Scanarator. Scanarator was written to help Network Admins/Engineers
+            audit the networks they administer and was NOT written for hacking
+            purposes. Scanarator was not intended to be used for malicious
+            reasons. Please do not use Scanarator to attack the helpless people
+            on the internet who simply do not know how to protect themselves.<br>
+            <br>
+            <b><u>CREDITS</u></b>:<br>
+            Some of the code of the computer scan portion of Scanarator was
+            derived from nbtscan written by <a href="mailto:alla@sovlink.ru">alla@sovlink.ru</a>.<br>
+            Some of the code of the NT password grind of Scanarator was derived
+            from Renaud Deraison <a href="mailto:deraison@cvs.nessus.org"><DERAISON@CVS.NESSUS.ORG< 
+body>
+            deraison@cvs.nessus.org</a>&nbsp; smb login.</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="25"></td>
+  </tr>
+  <tr>
+    <td width="100%"><b><font color="#800080" size="4">Scanarator only runs on NT/2000 it
+      will NOT run on Win9x or ME.</font></b>
+      <p>Most of Scanarator's functionality is straight forward but here are a
+      few things that may need some explanation.</td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle">
+      <table border="1" width="100%">
+        <tr>
+          <td width="50%" valign="top" align="left"><img border="0" src="scanar2.gif" width="29" height="26">
+            This is a browse button for a number of different files, like
+            computer scan file, output file and port list file. You select and
+            existing file or type in a new name.</td>
+          <td width="50%" valign="top" align="left"><img border="0" src="scanar9.gif" width="33" height="30">
+            This is for editing a file. It launches the file into notepad so you
+            can view/edit the file.</td>
+        </tr>
+        <tr>
+          <td width="50%" valign="top" align="left"><img border="0" src="scanar3.gif" width="177" height="24">
+            Check this to open the text output file with notepad when the scan
+            is complete, to view the results of the scan.</td>
+          <td width="50%" valign="top" align="left"><img border="0" src="scanar4.gif" width="108" height="29">
+            Check this if you want to create a tab delimited file of the scan
+            results. This is for importing into Excel etc.... (see the append to
+            output file)</td>
+        </tr>
+        <tr>
+          <td width="50%" valign="top" align="left"><img border="0" src="scanar5.gif" width="141" height="25">
+            Check this if you want to append to an existing output file. It also
+            appends to the tab file. If you choose not to append to file you
+            will be prompted to overwrite the output file but the tab file will
+            be overwritten without prompting.</td>
+          <td width="50%" valign="top" align="left"><img border="0" src="scanar6.gif" width="92" height="28">
+            Check this to add a 1/1000 of a second delay between launching
+            threads. This doesn't seem like much but it can help out on slow
+            connections. Future releases may have a variable time delay.</td>
+        </tr>
+        <tr>
+          <td width="50%" valign="top" align="left"><img border="0" src="scanar7.gif" width="158" height="30">
+            Check this to save some of the settings when you close the dialog
+            box. It does not save all settings but many of&nbsp; them are saved.</td>
+          <td width="50%" valign="top" align="left"><img border="0" src="scanar8.gif" width="317" height="33">
+            Check IP Range to define a range of IP addresses to scan. Only class
+            B or smaller is accepted. Check Computer Scan File to select the
+            results file from the computer scan portion of Scanarator. This will
+            save a ton of time on the shares, windoz and users scans. Check
+            Single IP to give and IP address or computer name to scan. Examples:
+            computername, www.whatever.com, 1.1.1.1 and so on.</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle" height="25"></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle"><b>Other Info:<br>
+      </b>Scanarator allows you to set the thread count fairly high but this is
+      not always the desired thing to do. Play with the thread count, timeout
+      and retires to get the correct settings for your current connection. On a
+      LAN it is usually ok to just let it fly but not always. I have completely
+      saturated my VPN/Firewall/NAT connection to a remote network because of
+      too many threads.
+      <p>The share grind is for Win9x only, NOT NT, and works on the shares that
+      have password level security.</p>
+      <p>In the Message Send portion of Scanarator you can use the /USERS to
+      send a message to all users attached to your computer or you can use the
+      /DOMAIN to send to the domain you are logged into, BUT you have to use the
+      command line button in order for this to work.</td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle" height="25"></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle">Questions or comments <a href="mailto:jmeyer@austin.rr.com">email
+      me.</a></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle"></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle"></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle"></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle"></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle"></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle"></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle"></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle"></td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle"></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+</body>
+
+</html>
