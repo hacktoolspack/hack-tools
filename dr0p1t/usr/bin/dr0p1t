@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /usr/share/dr0p1t-framework
+exec python2 Dr0p1t.py "${@}"

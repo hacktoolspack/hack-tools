@@ -1,0 +1,41 @@
+***  Installation Started 09/02/2017 16:36  ***
+Title: DoSHTTP 2.5 Installation
+Source: C:\Users\liloo\Desktop\DoSHTTP\doshttp_setup.exe
+Made Dir: C:\Users\liloo\Desktop\DoS-HTTP
+File Copy: C:\Users\liloo\Desktop\DoS-HTTP\UNWISE.EXE
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\DoSHTTP 2.5.1
+RegDB Val: DoSHTTP 2.5.1
+RegDB Name: DisplayName
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\DoSHTTP 2.5.1
+RegDB Val: C:\Users\liloo\Desktop\DoS-HTTP\UNWISE.EXE C:\Users\liloo\Desktop\DoS-HTTP\INSTALL.LOG
+RegDB Name: UninstallString
+RegDB Root: 2
+File Copy: C:\Users\liloo\Desktop\DoS-HTTP\DoSHTTP.exe
+File Copy: C:\Users\liloo\Desktop\DoS-HTTP\CONFIG.dat
+File Copy: C:\Users\liloo\Desktop\DoS-HTTP\UA.cfg
+File Copy: C:\Users\liloo\Desktop\DoS-HTTP\LicenseAgreement.txt
+File Copy: C:\Users\liloo\Desktop\DoS-HTTP\LicenseAgreement.rtf
+File Copy: C:\Users\liloo\Desktop\DoS-HTTP\UserGuide.txt
+File Copy: C:\Users\liloo\Desktop\DoS-HTTP\UserGuide.rtf
+Shell Link: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Socketsoft\DoSHTTP 2.5.lnk
+Shell Link: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Socketsoft\User Guide.lnk
+Shell Link: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Socketsoft\License Agreement.lnk
+Self-Register: C:\Program Files (x86)\Common Files\SocketSecure\SocketLicense1.dll
+Self-Register: C:\Windows\System32\MSWINSCK.OCX
+Self-Register: C:\Windows\System32\MSCOMCTL.OCX
+Self-Register: C:\Windows\System32\RICHTX32.OCX
+Self-Register: C:\Windows\System32\riched20.dll
+RegDB Key: SOFTWARE\Socketsoft\DoS-HTTP
+RegDB Val: 2.5.0
+RegDB Name: Version
+RegDB Root: 2
+RegDB Key: SOFTWARE\Socketsoft\DoS-HTTP
+RegDB Val: splash.bmp
+RegDB Name: SplashBitMap
+RegDB Root: 2
+RegDB Key: SOFTWARE\Socketsoft\DoS-HTTP
+RegDB Val: 1
+RegDB Name: Update
+RegDB Root: 2
+User Rights: Admin

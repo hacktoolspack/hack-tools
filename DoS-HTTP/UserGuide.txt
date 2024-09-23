@@ -1,0 +1,152 @@
+DoSHTTP 2.5 User Guide
+
+http://www.socketsoft.net/
+support@socketsoft.net
+
+DoSHTTP is an easy to use and powerful HTTP Flood Denial of Service (DoS) Testing Tool for Windows. DoSHTTP includes URL Verification, HTTP Redirection and performance monitoring.
+
+DoSHTTP uses multiple asynchronous sockets to perform an effective HTTP Flood. DoSHTTP can be used simultaneously on multiple clients to emulate a Distributed Denial of Service (DDoS) attack.
+
+DoSHTTP can help IT Professionals test web server performance and evaluate protection software. DoSHTTP was developed by certified IT Security and Software Development professionals.
+
+Features
+Easy to use and powerful HTTP Flood Denial of Service (DoS) Testing Tool for Windows
+Uses multiple asynchronous sockets to perform an effective HTTP Flood
+Allows multiple clients to emulate a Distributed Denial of Service (DDoS) Attack
+Allows target port designation within the URL  [http://host:port/]
+Supports HTTP Redirection for automatic page redirection (optional)
+Includes URL Verification that displays the response header and document
+Includes performance monitoring to and results reporting
+Allows customized User Agent header fields
+Allows user defined Socket and Request settings
+Supports numeric addressing for Target URLs
+Clear Target URLs and Reset All options
+
+System Requirements
+DoSHTTP requires Windows 2000, XP, 2003 Server or Vista.
+DoSHTTP must be used with an administrative account.
+
+Instructions
+To start an HTTP Flood (DoS):
+Enter a Target URL and click the Start Flood button.
+
+To stop an HTTP Flood (DoS):
+Click on the Stop Flood button.
+
+To verify a Target URL:
+Enter a Target URL and click on the Verify URL button.
+
+To enter a new Target URL:
+Click in to the Target URL box and begin typing.
+
+To select a Target URL from the Target URL list:
+Click on the Target URL drop-down list and click on a list entry.
+
+To enter a new User Agent:
+Click in to the User Agent box and begin typing.
+
+To select a User Agent from the Users Agent list:
+Click on the User Agent drop-down list and click on a list entry.
+
+To enter a new Sockets setting:
+Click in to the Sockets box and begin typing.
+
+To select a Sockets setting from the Sockets list:
+Click on the Sockets drop-down list and click on a list entry.
+
+To enter a new Requests setting:
+Click in to the Requests box and begin typing.
+
+To select a Requests setting from the Requests list:
+Click on the Requests drop-down list and click on a list entry.
+
+To view the last Testing Report:
+Click on the Options menu and click on View Testing Report.
+
+To enable/disable the Allow HTTP Redirection option:
+Click on the Options menu and click Allow HTTP Redirection to enable/disable this option.
+
+To enable/disable the Automatic Display Report option:
+Click on the Options menu and click Automatic Display Report to enable/disable this option.
+
+To clear the Target URL drop-down list:
+Click on the Options menu and click on Clear Target URLs.
+
+To reset all settings to their default values:
+Click on the Options menu and click on Reset All.
+
+To check for product updates:
+Click on the Help menu and click on Check for Updates.
+
+To view the License Agreement:
+Click on the Help menu and click on License Agreement.
+
+To view the Legal Disclaimer:
+Click on the Help menu and click on Legal Disclaimer.
+
+To specify a target port in the URL:
+Enter the URL as follows: http://host:port/ (IE: http://www.yourcompanywebserver.com:443/)
+
+Frequently Asked Questions
+What operating systems are supported by DoSHTTP? 
+DoSHTTP supports Windows 2000, XP, 2003 Server and Vista. DoSHTTP can be used to target any web server operating systems.
+
+Are there legitimate uses for DoSHTTP? 
+DoSHTTP can help IT Professionals test web server performance and evaluate web server protection software.
+
+Can DoSHTTP be used simultaneously on multiple clients? 
+With appropriate licensing, DoSHTTP can be used simultaneously on multiple clients to emulate a Distributed Denial of Service (DDoS) attack.
+
+How do I start performing an HTTP Flood using DoSHTTP? 
+Enter a Target URL and click on the Start Flood button.  
+
+How do I stop performing an HTTP Flood using DoSHTTP? 
+Click on the Stop Flood button.  
+
+Can DoSHTTP be used with any type of internet connection? 
+DoSHTTP can be used as long as there is an unblocked internet connection. However, greater performance can be achieved with higher bandwidth connections.  
+
+How does DoSHTTP support HTTP Redirection? 
+When a status code of 300, 301, 302, 303 or 307 is returned, DoSHTTP will redirect the attack to the new URL. This functionality can be disabled.
+
+How many sockets does DoSHTTP 2.5 support? 
+Although DoSHTTP supports up to 15,000 sockets at one time, we have found that a setting of 1,000 sockets or less is often sufficient.
+
+Why do I seem to lose internet connectivity when using DoSHTTP? 
+You are using too many sockets for your bandwidth?
+
+What is the maximum number of requests DoSHTTP 2.5 will issue? 
+DoSHTTP will not allow more than 999,999,999,999 requests to be issued. Continuous mode is unfortunately not truly continuous and will also stop at the maximum.
+
+What are the restrictions in the current DoSHTTP evaluation? 
+A maximum of 10,000 requests can be issued per session with a maximum of 4 uses during the 14 day evaluation period.
+
+What is a User Agent? 
+A User Agent is a string identifying a browser or agent accessing a web page. DoSHTTP allows you to spoof any User Agent.
+
+What are the acceptable values for the Target URL setting? 
+The User Agent setting accepts any text value.
+
+What are the acceptable values for the User Agent setting? 
+The Target URL setting accepts any valid HTTP URL.
+
+What are the acceptable values for the Sockets setting in DoSHTTP 2.5? 
+The Sockets setting accepts any integer value from 1 to 15000.
+
+What are the acceptable values for the Requests setting in DoSHTTP 2.5? 
+The Requests setting accepts "Continuous" or any integer value from 1 to 999999999999.
+
+How do I designate a target port within the URL:
+Enter the URL as follows: http://host:port/ (IE: http://www.yourcompanywebserver.com:443/)
+
+Legal Disclaimer
+Terms and Conditions
+You may not use this product for any illegal or unethical purpose; including activities which would give rise to criminal or civil liability. 
+
+Exclusion of Warranties
+This product is being made available to users AS-IS without any representations or warranties of any kind, express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose or non-infringement of the rights third parties.
+
+Limitation of Liability
+Socketsoft LLC (Socketsoft) will not be liable for any damages, including direct, incidental, special or consequential damages that arise out of the use of, or inability to use the product, including, without limitation, any lost profits, business interruption or loss of data, even if Socketsoft has been advised of the possibility of such damages.
+
+Revision 1.0.7
