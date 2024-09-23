@@ -1,0 +1,63 @@
+<h1>Bruter :: SMB</h1>
+<hr/>
+
+<p>The SMB module tests accounts against SMB service.</p>
+
+<p>The result from this module may contain a "note". The below is a complete description of the "note"</p>
+<ul>
+<li>Not granted - The user has not been granted the requested logon type at this computer.</li>
+<li>PWD change - The user's password must be changed before logging on the first time.</li>
+<li>Disabled - The account is currently disabled.</li>
+<li>Logon wksta - The account is not authorized to log on into a target.</li>
+<li>Logon hour - Attempting to log in during an unauthorized time of day for this account.</li>
+<li>PWD expired - The specified account password has expired.</li>
+<li>ACC expired - The specified account has expired.</li>
+</ul>
+
+<p><i>Remark:</i> Make sure the target does not enable account lock out policy. Otherwise, you might cause a
+Denial-of-Service (DoS) attack on the target system by freezing all the testing accounts.</p>
+<p><i>Remark:</i> Do not set "Connections" value too high. It can cause CPU usage on the target to be 100%.</p>
+<p>Note: "Max Attempt/Connection" can be set to 0.</p>
+<p>Note: When ace1 tested againsts Windows 7 with "Connections" value 15, the pwd/sec is more than 10000. 
+Do not expect you will get the same speed as him. The speed is depended on many factors (network latency, 
+target OS, target hardware, target configuration, ...)</p>
+
+<h2>Option(s)</h2>
+<ul>
+<li><b>Authen Type:</b> The SMB authentication type.
+	<ul>
+	<li><b>LM:</b> In this type, passwords are case insensitive. "PasSWorD", "password" and "PASSWORD" (and ...) are same passwords.</li>
+	<i>Remark:</i> The error codes (from a server) of this authentication type are not same as other authentications types.
+		<ul>
+		<li>"Not granted" will be wrong password</li>
+		<li>"ACC expired" will be "Disabled"</li>
+		<li>"PWD change" will be "PWD expired"</li>
+		<li>Locked out will be wrong password</li>
+		</ul>
+	<i>Remark:</i> If LM hash is not stored or LM authentication is refused by policy, the result will be same as 
+	wrong password.<br/></li>
+	<li><b>NTLM:</b> Use NTLM response for authentication.</li>
+	<i>Remark:</i> If NTLM authentication is refused by policy, the result will be same as wrong password.
+	<li><b>LMv2:</b> Use LMv2 response for authentication. This type can be used when the server accepts only NTLMv2 response.</li>
+	<li><b>NTLMv2:</b> Use NTLMv2 response for authentication.</li>
+	<i>Remark:</i> Windows Vista/2008/7 returns INVALID_PARAMETER error code.
+	</ul>
+</li><br/>
+
+<li><b>Try Domain:</b> This option is useful when a target is "Domain member". The Workgroup/Domain value in
+packet depends on this option.
+	<ul>
+	<li><b>Local First:</b> This makes the Workgroup/Domain value to be blank. The target checks the credentials 
+	locally. If the username does not exist, then the target checks credentials on its domain controller.</li>
+	<li><b>Domain First:</b> This makes the Workgroup/Domain value to be a target doamin name. The target checks 
+	the credentials on its domain controller. If the username does not exist, then the target checks credentials locally.</li>
+	<li><b>Local Only:</b> This makes the Workgroup/Domain value to be a target computer name. The target only checks 
+	the credentials locally.</li>
+	</ul>
+	Note: LM authentication does not have Workgroup/Domain field. If you select it, the testing will be same as "Local First".
+</li><br/>
+
+<li><b>Over NetBIOS:</b> If this option is checked, SMB data will be sent over "NetBIOS over TCP" (NetBT).</li>
+</ul>
+
+<a href="index.html#PROTOCOL_DETAIL">Back</a>

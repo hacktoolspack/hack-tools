@@ -1,0 +1,30 @@
+<h1>Bruter :: IMAP</h1>
+<hr/>
+
+<p>The IMAP module tests accounts against IMAP service.</p>
+
+<h2>Option(s)</h2>
+<p>Generally, you can use "Auto Detect" button to detect all options.
+Before using "Auto Detect" button, the target field (in main dialog) must be validated.</p>
+
+<ul>
+<li><b>Authentication Method:</b> Method for authentication on IMAP service. 
+Usually, you can use "Auto Detect" button to select available method.</li>
+
+<li><b>Use STARTTLS:</b> This option determines whether STARTTLS command will be used or not. 
+If you do not know about this command, we recommend you to use "Auto Detect" button.<br/>
+<i>Remark:</i> This option can be used only if useSSL (in the main dialog) is not checked.</li>
+
+<li><b>Use Domain:</b> If this option is checked, the program will use domain along with username. 
+If the "Authentication Method" is not NTLM, the domain will be appended to username (username@domain).<br/>
+<i>Remark:</i> "Auto Detect" cannot detect this option).</li>
+
+<li><b>Domain:</b> This field is used only when "Use Domain" is checked.</li>
+
+<li><b>Auto Detect:</b> This button is used for auto-detect options in this dialog except 
+"Use Domain". Before using this button, you need to input target information in the 
+main dialog.<br/>
+<i>Remark:</i> You should double-check domain name after using "Auto Detect" button because it might be wrong.</li>
+</ul>
+
+<a href="index.html#PROTOCOL_DETAIL">Back</a>

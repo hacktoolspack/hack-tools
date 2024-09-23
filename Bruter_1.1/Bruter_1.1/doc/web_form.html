@@ -1,0 +1,73 @@
+<h1>Bruter :: Web Form</h1>
+<hr/>
+
+<p>The Web Form module tests accounts against Web Form authentication. The 
+application uses HTTP keep alive method. The application knows when connections have 
+to be disconnected.</p>
+
+<p>Note: "Max Attempt/Connection" can be set to 0.</p>
+<p>Note: This module cannot test against complicated web form authentication such as using 
+javascript to do hashing before sending a password.</p>
+
+<h2>Option(s)</h2>
+<p>This authentication is different from the other protocols. In order to use this option, 
+you need to know at least an URL that contains authentication form and what is the differrence 
+between login success and failure. You can automate filling Request options by put the URL and 
+click "Load Form" button (if you do not understand, just try to play with it).<br/>
+<i>Remark:</i> If "Load Form" button does not work correctly, you need to fill in all required 
+information by yourself.
+</p>
+
+<ul>
+<li><b>Form URL:</b> The URL that contains login form. If you do not want to use "Load Form" button, you can
+ignore this field. But you must fill in other input fields manually.</li>
+<li><b>Method:</b> A HTTP method. This program supports only 2 methods, GET and POST. You can get 
+this value manually from "method" attribute in HTML "form" tag. This input field usually is detected by 
+"Load Form" button.</li>
+<li><b>Target Page:</b> A target URL that recieves and checks username/password. You can get this value manually from 
+"action" attribute in HTML "form" tag. This input field usually is detected by "Load Form" button.</li>
+<li><b>Cookie:</b> Some targets need to set cookie before authentication process. You can set this value manually 
+from "Set-Cookie:" line in HTTP response header. This input field is usually detected by "Load Form" button.</li>
+<li><b>Cookie URL:</b> If this value is not blank,
+	<ul>
+	<li>Each thread will request to this URL to get cookie before testing. So each thread will have different cookie.</li>
+	<li>Each thread will update cookie while testing if response header has "Set-Cookie:".</li>
+	</ul>
+This value is usually the same as a "Form Page" value.</li>
+<li><b>Referer:</b> A "Referer" in HTTP request. This value is usually the same as a "Form Page" value.</li>
+<li><b>User Agent:</b> A "User Agent" in HTTP request. Currently, this program support only 4 types and you cannot 
+customize this value.</li>
+<li><b>Query String:</b> A name/value in the form. This field value can be edited/inserted/deleted by using 
+below listview. There are special two values. Those are "%username%" and "%password%". "%username%" and 
+"%password%" will be replaced with username and password, respectively, while testing against the target. 
+You can get all name value from "name" attribute of input tag. All name fields usually are detected by 
+"Load Form" button, but those values might be wrong. You need to double-check them again.</li>
+
+<li><b>Follow redirection:</b> This checkbox determines whether the application will request the redirected page
+or not. The application will follow the redirection when got 301 or 302 and ONLY once.<br/>
+<i>Remark:</i> In many cases, you do not need it because
+<ul>
+	<li>Normally the string that can be used to indicate login result is in HTTP redirection response.</li>
+	<li>Sometimes the redirection is used for pass username and password to another page. You can manually input
+	the options to login directly to redirected page</li>
+</ul>
+</li>
+<li><b>Use Negative Result:</b> This checkbox determines whether below string is in login failure response 
+or login success response. This program searches the provided string in response text and decides what an outcome 
+will be based on conditions in the following table:
+<table border="1" align="center">
+<tr><th>search found?</th><th>box is checked?</th><th>result</th></tr>
+<tr><td>yes</td><td>yes</td><td>failure</td></tr>
+<tr><td>yes</td><td>no</td><td>success</td></tr>
+<tr><td>no</td><td>yes</td><td>success</td></tr>
+<tr><td>no</td><td>no</td><td>failure</td></tr>
+</table>
+</li>
+<li><b>String:</b> A string used to search in HTTP response.<br/>
+<i>Remark:</i> Searching is case sensitive.<br/>
+<i>Remark:</i> Searching also searches in HTTP response header.<br/>
+<i>Remark:</i> Searching in body always fails if there is NULL in the body (normally because of UTF-16 and UTF-32 encoding).<br/>
+</li>
+</ul>
+
+<a href="index.html#PROTOCOL_DETAIL">Back</a>

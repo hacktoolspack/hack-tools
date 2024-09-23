@@ -1,0 +1,247 @@
+<h1>Bruter</h1>
+<hr/>
+
+<h2>INTRODUCTION</h2>
+<p>Bruter is a parallel login brute-forcer. This tool is intended to demonstrate
+the importance of choosing strong passwords. The goal of Bruter is to support a variety of services 
+that allow remote authentication.<br/><br/>
+
+PLEASE NOTE THAT THIS TOOL IS INTENDED FOR LEGAL PURPOSES ONLY!</p>
+
+<h2>SUPPORTED PLATFORMS</h2>
+<ul>
+<li>Windows 2000/XP/Vista/7 (Required Microsoft VC++ 2008 SP1 Runtime)</li>
+<li>WINE (Required vcrun2008 from winetricks; Not fully test)</li>
+</ul>
+
+<h2>HOW TO USE</h2>
+<h3>Connection Options Group</h3>
+<p>All input fields in this group are used for identifying targets and protocols.</p>
+
+<ul>
+<li><b>Target:</b>
+A target can be an IP address (only IPv4) or a hostname. The application can
+perform a test on only one target at a time. Therefore, this field must contain only one
+IP address or hostname.</li>
+
+<li><b>Protocol:</b>
+Each protocol has a different login method. You need to select a service
+that a target server uses. Some protocols have their own options. For more
+information about protocol options, see <a href="#PROTOCOL_DETAIL">PROTOCOL OPTION 
+DETAIL</a> section.</li>
+
+<li><b>Port:</b>
+If a target service is not on default port, you can define it here.
+Default port numbers are used according to IANA.</li>
+
+<li><b>SSL:</b>
+Check this option if a target service uses SSL for connection. When you
+check or uncheck this box, "Port" field will be changed to default port number automatically.</li>
+</ul>
+
+<h3>Proxy Options</h3>
+<ul>
+<li><b>Use Proxy:</b>
+Check this to enable proxy feature. When proxy is enabled, ALL connection from 
+the application will pass throught proxy.</li>
+
+<li><b>Type:</b>
+A proxy type to be used. Now, Bruter supports HTTP (CONNECT only), SOCKS4, and SOCKS5.</li>
+
+<li><b>Let proxy resolves target:</b>
+This option determines where a target hostname will be resolved (from your computer or proxy server). 
+Check this if you want the application passes a target hostname to proxy. DNS resolution will be 
+occured from proxy server.</li>
+
+<li><b>Address:</b>
+A proxy IP address (only IPv4) or hostname.</li>
+
+<li><b>Port:</b>
+A proxy port.</li>
+
+<li><b>Requires Authentication:</b>
+Check this if proxy requires authentication.<br/>
+<i>Note:</i> HTTP CONNECT type supports only Basic authentication method<br/>
+<i>Note:</i> SOCKS5 type supports only Username/Password authentication method</li>
+
+<li><b>Username:</b>
+A username for proxy authentication.</li>
+
+<li><b>Password:</b>
+A password for proxy authentication.</li>
+</ul>
+
+<h3>User Option Group</h3>
+<ul>
+<li><b>User:</b>
+A username or a filename that contains usernames (one username per line). 
+If an input text is not a filename, it will be used as a username (Single User mode).</li>
+</ul>
+
+<h3>Password Modes Group</h3>
+<p>This group is used for selecting a testing mode. To enable each mode, the checkbox 
+must be checked. You must select at least one of the checkbox.</p>
+<ul>
+<li><b>Combo:</b>
+This mode will use "username:password" pairs from a file. The provided file must 
+contain one pair per line.<br/>
+<i>Remark:</i> This mode ignores the User option<br/>
+<i>Remark:</i> Username cannot contain colon delimitor character (depends on what you choose)</li>
+<li><b>Dictionary:</b>
+This mode will use wordlist from a file (also known as dictionary attack).
+The provided file must contain one word per line. Each word can have the extra string (%username%).
+It will be replaced with testing username. If an input text in this field is not 
+a filename, it will be used as a word (see "example_dict.txt").<br/>
+<i>Remark:</i> For testing a blank password, use an empty string (no space).<br/>
+<i>Remark:</i> You cannot testing the "%username%" string as password.<br/>
+<i>Remark:</i> The application loads all wordlist into memory before testing. 
+So the application will be crashed if the wordlist file is too big.</li>
+<li><b>Brute force:</b>
+This mode will try every possible password. You can select a charset for brute forcing
+from Option. Also you can defined the minimum and maximum password length for brute
+forcing.<br/>
+<i>Remerk:</i> Usually, this mode does not suit for network login.</li>
+</ul>
+<p>The application tests against the target using Combo, Dictionary, and Brute force respectively.</p>
+
+<h3>Dictionary Options</h3>
+<p>These options are used for mutating passwords. If the mutated password is same as the original password, 
+the application will not send this password to test against a target again. To enable each option, 
+the checkbox must be checked.</p>
+<ul>
+<li><b>Lowercase:</b>
+This option will change all characters to lowercase.</li>
+<li><b>Uppercase:</b>
+This option will change all characters to uppercase.</li>
+<li><b>Uppercase first character:</b>
+This option will change only first character to uppercase.</li>
+<li><b>Reverse:</b>
+This option will reverse a password string.</li>
+<li><b>Double Word:</b>
+This option will double a password string. For example, "admin" will be "adminadmin".</li>
+</ul>
+
+<h3>Misc Options Group</h3>
+<ul>
+<li><b>Connections:</b>
+The number of logins to be tested concurrently. Normally, the program runs faster if the connection 
+value is higher. But if you set it too high, speed might be dropped.<br/>
+<i>Note:</i> The maximum connection is 64 because of the limitation of Windows API (WaitForMultipleObjects()).
+</li>
+<li><b>Max Retry:</b>
+The number of attempts per account when unexpected results happen.</li>
+<li><b>Time out:</b>
+The maximum wait time in seconds for server response.</li>
+<li><b>Wait for retry:</b>
+The wait time in milliseconds for retrying the same username/password again after an error
+occured.</li>
+<li><b>Wait for each try:</b>
+The wait time in milliseconds for trying the next username/password. This option is used for 
+making brute forcing slower.</li>
+<li><b>Max Attempt/Connection</b>
+The number of attempts in the same connection. There are 2 special values
+	<ul>
+	<li>"-1" means this value will be auto-detected while testing. The program detects this value 
+	from the number of attempt before network problem occurs or getting an unexpected error.</li>
+	<li>"0" means login using the same connection until a server disconnects.</li>
+	</ul>
+<i>Note:</i> Do not expect the program always be able to auto-detecting the value.
+</li>
+<li><b>Stop when found one</b>
+If this checkbox is checked, the testing will be stopped immediately when the application 
+found one valid account.</li>
+<li><b>Password First</b>
+If it is checked, the testing will iterate usernames for each password. This option should not 
+be used in some protocols such as <a href="ssh.html">SSH2</a>.</li>
+</ul>
+
+<h3>Display Tab</h3>
+<ul>
+<li><b>Result:</b>
+Display found valid target/username/password tuples.</li>
+<li><b>Testing:</b>
+Display the testing username and password. Currently, this field is updated every
+1 seconds.</li>
+<li><b>Message:</b>
+Display a notify or error messages. All unsuccessful logins are not displayed.</li>
+</ul>
+
+<h3>Status Bar</h3>
+<ul>
+<li><b>First column:</b>
+Display the status of latest task.</li>
+<li><b>Second column (Pwd/Sec):</b>
+Display the speed of brute forcing as the number of password per second. It is a number of tested passwords 
+in a last second.</li>
+<li><b>Third column:</b>
+A total number of tested credentials (username:password).</li>
+<li><b>Fourth column:</b>
+The total time in seconds since testing started.</li>
+</ul>
+
+<h3>Menu</h3>
+<ul>
+<li><b>File</b>
+	<ul>
+	<li><b>Save Result:</b> Save the found result in text file (tab delimited).</li>
+	<li><b>Exit:</b> Exit the program. The program will ask for saving the state if you try to exit when it is running. 
+	You can load the last save state from "Load Setting" with name "_last_state".</li>
+	</ul>
+</li>
+<li><b>Setting</b>
+	<ul>
+	<li><b>Load Default:</b> Load the default setting.</li>
+	<li><b>Set as Default:</b> Set the current setting (shown in the dialog) as default.</li>
+	<li><b>Load Setting:</b> Load a saved setting.</li>
+	<li><b>Save Setting:</b> Save the current setting (shown in the dialog). If program is running against a target, 
+	the state also is saved.</li>
+	<i>Note:</i> All settings are saved in "cfg" directory.<br/>
+	<i>Note:</i> Load/Save settings includes the module options.<br/>
+	</ul>
+</li>
+<li><b>Log</b>
+	<ul>
+	<li><b>Setting:</b> Set what information to be written to log file. The feature is supposed to use for debuggin only. 
+	Cannot be used with multiple application instances.</li>
+	</ul>
+</li>
+<li><b>Help</b>
+	<ul>
+	<li><b>About:</b> About dialog.</li>
+	</ul>
+</li>
+</ul>
+
+<a name="PROTOCOL_DETAIL"></a>
+<h2>PROTOCOL OPTION DETAIL</h2>
+<ul>
+<li><a href="ftp.html">FTP</a></li>
+<li><a href="http.html">HTTP</a></li>
+<li><a href="imap.html">IMAP</a></li>
+<li><a href="mssql.html">MSSQL</a></li>
+<li><a href="mysql.html">MySQL</a></li>
+<li><a href="pgsql.html">PgSQL</a></li>
+<li><a href="pop3.html">POP3</a></li>
+<li><a href="sip.html">SIP</a></li>
+<li><a href="smb.html">SMB</a></li>
+<li><a href="smtp.html">SMTP</a></li>
+<li><a href="snmp.html">SNMP</a></li>
+<li><a href="ssh.html">SSH2</a></li>
+<li><a href="telnet.html">Telnet</a></li>
+<li><a href="vnc.html">VNC</a></li>
+<li><a href="web_form.html">Web Form</a></li>
+</ul>
+
+<h2>DEPENDENCIES</h2>
+<ul>
+<li><a href="http://www.microsoft.com/downloads/details.aspx?familyid=A5C84275-3B97-4AB7-A40D-3802B2AF5FC2&displaylang=en">Microsoft Visual C++ 2008 SP1 Redistributable Package</a></li>
+<li><a href="http://www.openssl.org/">OpenSSL</a> (included in binary package) - I used Win32 OpenSSL package. 
+<a href="http://www.slproweb.com/products/Win32OpenSSL.html">http://www.slproweb.com/products/Win32OpenSSL.html</a></li>
+<li><a href="http://www.libssh2.org/">Libssh2</a> (included in binary package)</li>
+</ul>
+
+<h2>BUGS & FEATURES</h2>
+<p>If you find bugs or have any questions, please email to me (in English or Thai only).</p>
+
+<p>Copyright (C) 2010 Worawit Wangwarunyoo<br/>
+worawita [a t] gmail dot com</p>

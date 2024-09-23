@@ -1,0 +1,32 @@
+<h1>Bruter :: SNMP</h1>
+<hr/>
+
+<p>The SNMP module tests accounts against SNMP service. This module supports 
+only SNMP version 2c. This version uses only community string as a password. 
+So you should clear "User" input field and set "Dictionary" input field to a 
+filename that contains SNMP community strings.</p>
+
+<p>There are READ-ONLY, READ-WRITE and WRITE-ONLY access level. This program 
+tests READ capability first. If the program found a community string that can 
+read a value, then it tests WRITE capability. While testing WRITE capability, 
+the program will write the same value that it got from testing READ capability. 
+This program will not test WRITE-ONLY access level, because I cannot find a way to test 
+WRITE-ONLY without changing the value on a server.</p>
+
+<p>The result from this module has a "note". The below is a complete description of the "note"</p>
+<ul>
+<li>ro - read only permission</li>
+<li>rw - read write permission</li>
+</ul>
+
+<p>"Time out" is an important value for this protocol because a login result is 
+determined whether server responds or not</p>
+
+<p>Note: This program tests READ and WRITE capability with sysContact MIB.</p>
+<p>Note: Since SNMP is a UDP-based protocol, a server will send a response 
+only if we send a correct community string.</p>
+
+<h2>Option(s)</h2>
+<p>Not available</p>
+
+<a href="index.html#PROTOCOL_DETAIL">Back</a>

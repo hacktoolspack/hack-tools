@@ -1,0 +1,140 @@
+=======================
+Version 1.1
+=======================
+- Added protocols: PgSQL, SIP
+- Auto detect "Max Attempt/Connection" when set it to -1
+- Add "Password First" option (see documentation for more detail)
+- Load/Save Setting also load/save service options
+- Load/Save Setting also load/save state if program is testing (Save state)
+- Added "wait for each try" option (to be able to slow down brute forcing)
+- Display "found valid credential" message in message tab
+- Fixed application sometimes crashs when using "Stop"
+- Fixed maximum text length of message tab to unlimited
+- Fixed HTTP library does not handle response code 100 correctly
+- Fixed miscellaneous bugs
+- Updated libssh2 binary to 1.2.6
+- Updated openssl library to 1.0.0c
+- Documentaion updates
+
+FTP:
+- Able to detect multi-line greeting message sent in separate packets (faster)
+
+SIP: (new)
+- Support digest authentication with REGISTER method with expire=0 (unregister)
+- Support TCP/TLS with SIP-TCP
+
+SMB:
+- Allow multiple connections
+
+SSH2:
+- Modified the libssh2 to use less secure key exchange algorithm (a little faster)
+- Able to determine the connection state from libssh2 error (more reliable)
+- Able to stop testing immediately
+
+MSSQL:
+- Re-implemented for better understanding fields in login packet
+
+PgSQL: (new)
+- Support password, md5 authentication
+
+Email (SMTP, POP3, IMAP):
+- Support NTLM authentication
+- POP3: Support PLAIN, LOGIN authentication
+
+HTTP: (changed name from HTTP (Basic))
+- Support NTLM authentication
+- Supoort Digest authentication
+
+Web Form: (changed name from HTTP (Form))
+- Able to follow the 301,302 redirection (1 time) then checking the result
+- Fixed old cookies are not cleared when using "Load Form" in option dialog
+- Fixed POST method sending extra "\r\n\r\n" at the end (Thanks to faicker)
+
+=======================
+Version 1.0
+=======================
+- Re-licensed to new-BSD license
+- Added proxy support (CONNECT, SOCKS4, SOCKS5)
+- Allowed more delimiter in combo file
+- Added password length filtered in combo and dictionary mode
+- Fixed miscellaneous bugs
+- Updated openssl library to 0.9.8n
+
+SMB:
+- Implemented authentication instead of using Windows API (faster and more options)
+- Support LM, NTLM, LMv2, NTLMv2 authentication
+
+HTTP (Basic):
+- Used http keep-alive
+- Accepted URL in option dialog
+
+HTTP (Form):
+- Used http keep-alive
+- Fixed cookie detection in option dialog
+- Used different cookie for each thread (also automatically update cookie while testing)
+
+=======================
+Version 1.0 beta2
+=======================
+- Added protocols: VNC (only VNC authentication)
+- Added status bar
+- Added message and packet logging
+- Added combo mode (see documentation for more detail)
+- Moved password options to be dictionary options (also add more options)
+- Changed error message (more meaningful)
+- Detect %username% variable in dictionary and replace it with testing username
+- "Stop" will disconnect from target immediately (except SSH and SMB)
+- Reordered tab sequences in main dialog
+- Fixed miscellaneous bugs
+- Changed the default time out to 3 seconds
+- Updated libssh2 binary to 1.2.4 (fixed some SSH problems)
+- Updated openssl library to 0.9.8l
+
+HTTP (Basic)
+- Detected 403 response as positive result with note "Error: 403"
+- Detected 404 response as positive result with note "Error: 404"
+
+HTTP (Form)
+- Changed the maximum URL string lenght from 260 to 1024
+- Fixed editing HTTP field
+
+SSH
+- Auto-detect server disconnection from too many failed login (see documentation for more detail)
+
+Telnet
+- Displayed blank username if the service does not require username
+
+=======================
+Version 1.0 beta1
+=======================
+- Added protocols: SSH2, MSSQL, MySQL, SNMP
+- Added "Service" and "Note" columns in "Result" display tab
+- Added more error messages
+- Reworked CModule class structure
+- Improved login response in SMB-NT module
+- "Load Form" in HTTP-Form option now also send "User-Agent" in HTTP request
+- Fixed many bugs related HTTP-Form option dialog
+- Fixed miscellaneous bugs
+- Updated openssl binary from 0.9.8e to 0.9.8g
+- Documentaion updates
+
+=======================
+Version 1.0 alpha2
+=======================
+- Redesigned user interface (more friendly UI, I thought )
+- Added "HTTP (Basic)" option dialog
+- Removed "Single user" and "Single password" checkbox. Program will auto-detect this option.
+- Added "Append user" and "Brute force" password mode (see documentation for more detail)
+- Added "Lowercase" and "Uppercase first character" password option (see documentation for more detail)
+- Added "Set default"/"Load"/"Save" settings in menu bar
+- Added "Save result" in menu bar
+- Added "About" dialog
+- Changed documentation to HTML format
+- Documentaion updates
+
+=======================
+Version 1.0 alpha1
+=======================
+- Initial alpha release
+- Support protocols: FTP, HTTP (Basic), HTTP (Form), IMAP, POP3, SMB, SMTP, Telnet
+- Support SSL

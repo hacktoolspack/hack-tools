@@ -1,0 +1,15 @@
+
+%username%
+password
+%username%1
+qwerty
+123456
+1234567
+12345678
+%username%12
+%username%123
+%username%1234
+a
+aa
+aaa
+admin
