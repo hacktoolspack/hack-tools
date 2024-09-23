@@ -1,0 +1,22 @@
+"""
+ This is a real black hat tool must be combined to devilzc0de.py in order to work
+ This was written for educational purpose only. Use it at your own risk.
+ Author will be not responsible for any damage!
+ Using this at your own risk
+ Developed by		 : mywisdom & gunslinger_
+ Email          	 : <mywisdom@jasakom.org>, <yudha.gunslinger@gmail.com> (tired spammed...lol)
+ Tool Name      	 : darkjumper.py	
+ Changelog:
+ 	on v5.8 : counter on enumerator fixed
+	on v5.7 : rce scanner added, code more clean (yeah i'm always take a look with a c0de)
+	on v5.6 : error info predicted, devilzc0de.py has been upgraded, darkcgi.py added, injector.py has been upgraded, variable has been separated for more faster
+ 	on v5.5 : daemonize info, adminpath scanner, httpheader info, simple encoder, ip checker, code more ++ clean, rfi checker update, 
+ 	on v5.4 : Autoinjector fixed, code more clean, blind sql fixed
+ 	on v5.3 : Added myip & geo checking, deprecated warning on sets mode filterred 
+ 	on v5.2 : Parsing -p error patched
+ 	on v5.1 : Devilzc0de.py bug patched
+ 	on v5.0 : Code reorganized, added port scanner, verbose mode, upgrade speed scanning, autobruteforcing, autoinjector [mysql]
+ 	on v4.0 : User enumerator added
+ 	on v3.0 : Active link scanner redefine, CGI scanner
+"""
+
