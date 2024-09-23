@@ -1,0 +1,12 @@
+[FROM v1.0 to v2.0]
+
+- Better design
+- Now you can use a natif profil called "All profiles" to scan in all available profiles.
+- The gui isn't blinking during the scan, now the app is fully MultiThreaded.
+- Now you can stop the scanning process
+- Contextual menu added in result list (open url, copy url/title, import/export data, clean)
+- Export / Import system finally added
+- Support RockMelt Browser
+- Support COMODO Dragon Browser
+- Statistics at the end of the scan
+- Ability to remove doublons
