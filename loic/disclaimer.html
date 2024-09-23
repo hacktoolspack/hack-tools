@@ -1,0 +1,86 @@
+<html>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"/>
+ <script type="text/javascript" src="loicloading.js"></script>
+ <script language=javascript>
+ </script>
+ <script type="text/javascript" src="jquery.js"></script>
+ <script type="text/javascript">
+$(document).ready(function() {
+   $(".showcode").click (function() {
+      $(this).next().toggle(300);
+   return false;
+   });
+});
+
+</script>
+<script language="javascript">
+function rerouteloic() {
+if ((navigator.userAgent.match(/iPhone/i))) {
+   location.replace("LOIC4iOS/iPhone/index.html");
+}
+if ((navigator.userAgent.match(/iPod Touch/i))) {
+   location.replace("LOIC4iOS/iPhone/index.html");
+}
+else {
+   location.replace("LOIC/index.html");
+}
+}
+</script>
+
+
+<link href="styledis.css" media="all" rel="stylesheet" type="text/css" />
+
+
+<!-- Mirrored from joshua159258.drivehq.com/disclaimer.html by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 18 Jun 2012 17:33:31 GMT -->
+<head>
+<title>Disclaimer</title>
+<center>	
+<br />	
+
+<img id="staft" height="86px" width="82px" src="stop.png"/>
+<img id="staft" height="144" width="144px"  src="nsa.png">
+<img id="staft" height="86px" width="82px" src="stop.png"/>
+	</div>
+	
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1252">
+</head>
+<body>
+<p><br /></p>
+
+
+<table >
+<tr>
+
+<td width="320px" height="auto" background="LOIC/img/lowc.png">
+
+<font>
+<center>
+<h1>LOIC</h1>
+<h2>(Low Orbit Ion Cannon)</h2>
+</center>
+</font></td>
+
+</tr>
+</table>
+<p><br />
+</p>
+<form name="form">
+<button type="button" id="start" name="butt"  onclick="rerouteloic()">Continue</button>
+</form>
+</tr></table>
+</p>
+
+<p><br />
+<br />
+</p>
+<button type="button" id="start1" onclick="enable()"  class="showcode">Disclaimer</button>
+<p style="display:none;"><br /><table id="stuff" width="318" bgcolor="black" align="center" border="5"><tr>
+<td><strong>LOIC is only intended for server load testing (your OWN server). Do not use it for large distributed denial of service attacks. DDoS attacks may severely harm a business by causing a site to slow down or go down completely. Causing harm can lead into lawsuits on behalf of the victim. Discretion is advised.</center><br /></strong></td>
+</tr></table>
+</p>
+
+</body>
+<footer><br /><br /><br />Run through a<br /> Proxy or Tor (Recommended)</footer>
+
+<!-- Mirrored from joshua159258.drivehq.com/disclaimer.html by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 18 Jun 2012 17:33:40 GMT -->
+</html>

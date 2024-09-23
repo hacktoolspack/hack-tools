@@ -1,0 +1,31 @@
+kotomb:addons koto$ grep -r --include="manifest.json" 'manifest_version.*2' . | wc -l
+      26
+      
+      
+kotomb:addons koto$ grep -r --include="manifest.json" '"app"' . -H | wc -l
+     660
+kotomb:addons koto$ grep -r --include="manifest.json" '"background' . -H | wc -l
+     367
+
+kotomb:addons koto$ grep -r --include="manifest.json" 'web_access' .
+./AdBlock-gighmmpiobklfepjocnamgkkbiglidom/manifest.json:  "web_accessible_resources": [
+./Clock-mjocghlclkpgheifflemilcnblodjohg/manifest.json:	"web_accessible_resources": [
+./imgur-ehoopddfhgaehhmphfcooacjdpmbjlao/manifest.json:	"web_accessible_resources": [
+./IPAddress-gjndloejlcbpkholmagjbddfkjmmploh/manifest.json:	"web_accessible_resources": [
+./NotesBoard-goficmpcgcnombioohjcgdhbaloknabb/manifest.json:  "web_accessible_resources": [
+./RSSSubscriptionExtensionbyGoogle-nlbjncdgjeocebhnmkbbbdekmmmcbfjd/manifest.json:  "web_accessible_resources": [
+./SearchO-eekjldapjblgadclklmgolijbagmdnfk/manifest.json:"web_accessible_resources": [
+./SecureShell-pnhechapfaindjhompbnflcldabbghjo/manifest.json:  "web_accessible_resources": [
+./Streak-pnnfemgpilpdaojpnkjdgfgbnnjojfik/manifest.json:  "web_accessible_resources": [
+./UEFAEURO2012TMbyCarlsberg-jlpjblbfabaebkkhjebmjagoadlficpm/manifest.json:  "web_accessible_resources": [
+./WOT-bhmmomiinigofkjcapegjjndpbikblnp/manifest.json:	"web_accessible_resources" : [
+./Zoom-lajondecmobodlejlcjllhojikagldgd/manifest.json:  "web_accessible_resources": [
+
+
+kotomb:addons koto$ grep -r --include="manifest.json" 'proxy' .
+./iMacrosforChrome-cplklnmnlbnpmjogncfgfijoopmnlemp/manifest.json:                   "proxy",
+./ProxMate-hgjpnmnpjmabddgmjdiaggacbololbjm/manifest.json:    "proxy",
+./ProxySwitchySharp-dpplabbmogkhghncfbfdeeokoefdjegm/manifest.json:   "permissions": [ "proxy", "tabs", "<all_urls>" ],
+./UnblockYouku-pdnfnkhpgegpcingjbfihlkjeighnddk/manifest.json:    "proxy",
+./UnblockYouku-pdnfnkhpgegpcingjbfihlkjeighnddk/manifest.json:      "proxy.js",
+./WebDeveloper-bfbameneiokkgbdmiekhjnmfkcnldhhm/manifest.json:  "permissions":     ["clipboardWrite", "contentSettings", "cookies", "history", "proxy", "tabs", "<all_urls>"],

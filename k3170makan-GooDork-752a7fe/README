@@ -1,0 +1,54 @@
+                                                                 
+     _/_/_/                   _/_/_/                     _/      
+  _/         _/_/     _/_/   _/    _/   _/_/   _/  _/_/ _/  _/   
+ _/  _/_/ _/    _/ _/    _/ _/    _/ _/    _/ _/_/     _/_/      
+_/    _/ _/    _/ _/    _/ _/    _/ _/    _/ _/       _/  _/     
+ _/_/_/   _/_/     _/_/   _/_/_/     _/_/   _/       _/    _/    
+                                                                 
+by k3170makan
+                                         
+GooDork : Command line google dorking tool
+------------------------------------------
+GooDork is a simple python script designed to allow you to leverage the
+power of google dorking straight from the comfort of your command line.
+
+GooDork offers powerfull use of googles search directives, by analyzing results
+from searches using regular expressions that you supply.
+
+So basically the purpose of GooDork is to combined Dorking with Regular expressions
+
+GooDork allows you to apply regular expressions to any and all of the follow attributes of web applications
+	*URL
+	*displayable Text
+	*anchors
+Many more options will shortly be made available
+
+Another thing I must say is that I'm using python regexes, so please read up on that, though
+staight forward text matching works just fine ;)
+
+Dependecies:
+
+GooDork uses the following python packages to get pumping and jumping
+please make sure all of them are available
+
+python beautifulsoup4            
+python-httplib                 - comprehensive HTTP client library written 
+python-urllib
+python-urlparse
+	*Many of these are aleady available with python Python 2.6.* except beautifulsoup! 
+
+See here to find out how to install BeautifulSoup4: http://www.crummy.com/software/BeautifulSoup/
+You may need to install pip (pip - install Python packages) for *nix users this makes installing BeautifulSoup4 
+alot easier
+
+Installing:
+
+The only installation you need do is to download the entire script
+package, and make sure the dependencies -- listed above -- are installed
+on your machine
+
+
+Contact:
+
+Twitter http://twitter.com/k3170makan
+Web http://k3170makan.blogspot.com

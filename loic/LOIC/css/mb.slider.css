@@ -1,0 +1,130 @@
+/*
+ * jquery.mb.components
+ * Copyright (c) 2001-2010. Matteo Bicocchi (Pupunzi); Open lab srl, Firenze - Italy
+ * email: mbicocchi@open-lab.com
+ * site: http://pupunzi.com
+ *
+ * Licences: MIT, GPL
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ */
+
+.mb_slider{
+  position:relative;
+  padding:5px;
+  z-index:0;
+}
+
+.mb_sliderBar{
+  padding:9px;
+  background-color:#183040;
+/*IE HACK*/
+  border:1px solid #ddd\9;
+  width:580px;
+  -moz-box-shadow:#ccc 0px 0px 5px;
+  -webkit-box-shadow:#ccc 0px 0px 3px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  cursor:default;
+
+  zoom: 1;
+  filter:
+    progid:DXImageTransform.Microsoft.DropShadow(color=#EFEFEF, offx=1, offy=1)
+    progid:DXImageTransform.Microsoft.DropShadow(color=#eeeeee, offx=1, offy=1);
+  /*
+      progid:DXImageTransform.Microsoft.DropShadow(color=#EFEFEF, offx=1, offy=1);
+  */
+}
+
+.mb_sliderHandler{
+  padding:9px;
+  background-color:#fff;
+/*IE HACK*/
+  border:1px solid #ddd\9;
+  position:absolute;
+  top:0;
+  top:-1px\9;
+  left:0;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-box-shadow:#bbb 1px 1px 2px;
+  -webkit-box-shadow:#bbb 1px 1px 2px;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  cursor:default;
+}
+
+.mb_sliderEnd, .mb_sliderStart, .mb_sliderValue{
+  padding:5px;
+  position:relative;
+  text-align:right;
+  top:-5px;
+  margin:3px;
+  width:25px;
+  color:#AAA;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  cursor:default;
+}
+
+.mb_sliderRange{
+  position:absolute;
+  height:18px;
+  margin:0;
+  
+  top:0;
+  background: #ffcc00;
+  -moz-border-radius: 4px 0 0 4px ;
+  -webkit-border-top-left-radius:4px;
+  -webkit-border-bottom-left-radius:4px;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  cursor:default;
+}
+
+.mb_sliderZero{
+  background-color: #f3f3f3;
+  position:absolute;
+  height:16px;
+  margin:1px;
+  top:0;
+  -moz-border-radius:4px 0 0 4px  ;
+  -webkit-border-top-left-radius:4px;
+  -webkit-border-bottom-left-radius:4px;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  cursor:default;
+}
+
+.mb_sliderZeroLabel{
+  font:12px/12px Arial, sans-serif;
+  color:#AAA;
+  padding:5px;
+  padding-bottom:2px;
+  background-color:#fff;
+  margin-left:-4px;
+  z-index:-2;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.mb_sliderValueLabel{
+  font:12px/12px Arial, sans-serif;
+  color:#aaa;
+  padding:5px;
+  padding-bottom:2px;
+  background-color:#fff;
+  margin-left:0px;
+  z-index:-1;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-box-shadow:#bbb 1px 1px 2px;
+  -webkit-box-shadow:#bbb 1px 1px 2px;
+}

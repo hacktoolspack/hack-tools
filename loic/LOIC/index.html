@@ -1,0 +1,106 @@
+<?xml version="1.1" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sp">
+
+<!-- Mirrored from joshua159258.drivehq.com/LOIC/ by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 18 Jun 2012 17:33:49 GMT -->
+<head>
+	<title>LOIC (Low Orbit Ion Cannon)</title>
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+	<link href="img/favicon.ico" media="all" rel="icon" type="image/x-icon" />
+	<link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="css/mb.slider.css" media="all" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.mb.slider.js"></script>
+	<script type="text/javascript" src="js/jquery.metadata.js"></script>
+	<script type="text/javascript" src="js/engine.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#ex0 .mb_slider").mbSlider({
+				onSlide:function(o){$("#"+o.id+"_val").find(".val").val($(o).mbgetVal());move_slide();},
+			});
+		});
+	</script>
+	 <script language=javascript>
+if ((navigator.userAgent.match(/iPhone/i))) {
+   location.replace("../LOIC4iOS/iPhone/index.html");
+}
+if ((navigator.userAgent.match(/iPad/i))) {
+   location.replace("../LOIC4iOS/iPad/index.html");
+}
+if ((navigator.userAgent.match(/iPod Touch/i))) {
+   location.replace("../LOIC4iOS/iPhone/index.html");
+}
+</script>
+<script language="javascript">
+function reroutedesk() {
+   location.replace("../disclaimer.html");
+}
+</script>
+</head>
+<body>
+	<div id="hiveContainer" class="hidde"></div>
+	<div id="frameContainer" class="hidde"></div>
+	<div id="imgContainer" class="hidde"></div>
+	<div id="typeStyle" class="hidde"></div>
+	<div id="header">
+		<h1>LOIC</h1>
+		<h2>(Low Orbit Ion Cannon)</h2>
+	</div>
+	<div id="layer1">
+		<table id="table1">
+			<tr>
+				<td>
+					<fieldset class="layer2">
+						<legend>1. Select your target</legend>
+						<input type="text" id="target" value="http://" onfocus="erase('#target');" onblur="reload('#target');httpValue();"/>
+					</fieldset>
+				</td>
+				<td>
+					<fieldset class="layer2">
+						<legend>HiveMind (optional)</legend>
+						<input type="button" id="hivebutton" value="Connect" onclick="hive();"/>
+						<input type="text" id="hiveURL"  value="http://" onfocus="erase('#hiveURL');" onblur="reload('#hiveURL');httpValue();"/>
+					</fieldset>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<fieldset class="layer2">
+						<legend>2. Attack options (caution!)</legend>
+						<div class="title">Type:</div>
+						<div>
+							<input type="button" id="radio1" value="IMG" onclick="shootType('img');" />
+							<input type="button" id="radio2" value="IFrame" onclick="shootType('iframe');" />
+						</div>
+						<div class="title">Interval (ms):</div>
+						<div id="interval1">
+							<div id="ex0">
+								<div id="sl0" class="mb_slider {maxVal:'5000', rangeColor:'#5696C0',negativeColor:'#183040', startAt:200, grid:10}" style="display:inline-block;*display:inherit;"></div>
+							</div>
+						</div>
+						<div class="title">Append Message:</div>
+						<input type="text" id="msg" value="#AntiSec" />
+					</fieldset>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1">
+					<fieldset class="layer2">
+						<legend>3. Ready?</legend>
+						<input type="button" id="start" onclick="start_stop();" value="Charging Laser..." />
+						<span id="sl0_val" class="setVal"><input type="hidden" id="interval_slide" class="val" value="200" /></span>
+					</fieldset>
+				</td>
+				<td>
+					<fieldset class="layer2">
+						<legend>Attack status</legend>
+						<div id="number"><p id="counter_requested">0</p><span id="of">of </span><span id="counter_tail">0</span></div>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+<!-- Mirrored from joshua159258.drivehq.com/LOIC/ by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 18 Jun 2012 17:33:54 GMT -->
+</html>

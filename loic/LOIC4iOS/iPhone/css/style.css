@@ -1,0 +1,372 @@
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6{
+
+	margin:0;
+
+	padding:0;
+
+}
+
+
+
+body{
+
+	background:#0C1820;
+
+	background-image:url(../img/lowc.png);
+
+	background-repeat:no-repeat;
+
+	background-attachment:scroll;
+
+	background-position:top center;
+
+	color:#ADD8E6;
+
+	font-family:Helvetica;
+
+	font-size:16px;
+
+}
+
+
+
+input{
+
+	width:250px;
+
+	height:30px;
+
+	font-size:20px;
+
+	font-weight:bold;
+
+}
+
+
+
+h1{
+
+	font-size:45px; 
+
+}
+
+
+
+h2{
+
+	font-size:20px;
+
+	color:#BBBBBB;
+
+}
+
+
+
+legend{
+
+	text-align:left;
+
+	color:#ADD8E6;
+
+	font-size:16px;
+
+}
+
+
+
+#header{
+
+	text-align:center;
+
+	background:transparent;
+
+	color:#2A7A95;
+
+	font-weight:bold;
+
+	margin:10px;
+
+	padding:10px;
+
+}
+
+
+
+#table1{
+
+	width:100%;
+
+}
+
+
+
+#layer1{
+
+	background:#0C1820;
+
+	padding-top:20px;
+
+	overflow:auto;
+
+	text-align:center;
+
+}
+
+
+
+#target, #hiveURL, #interval_text, #msg{
+
+	color:#ffffff;
+
+	background:#183040;
+
+	border-style:solid;
+
+	border-width:1px;
+
+	border-color:#646464;
+
+	width:75%;
+
+	margin-bottom:7px;
+}
+
+
+
+#start{
+
+	color:#ffffff;
+
+	background:#204060;
+
+	width:250px;
+
+	height:70px;
+
+	border-style:solid;
+
+	border-width:2px;
+
+	border-top-color:#5696C0;
+
+	border-left-color:#5696C0;
+
+	border-bottom-color:#5696C0;
+
+	border-right-color:#5696C0;
+
+}
+
+
+
+#start:active{
+
+	border-top-color:#5696C0;
+
+	border-left-color:#5696C0;
+
+	border-bottom-color:#5696C0;
+
+	border-right-color:#5696C0;
+
+}
+
+
+
+#hivebutton{
+
+	color:#ffffff;
+
+	background:#204060;
+
+	font-size:13px;
+
+	width:100px;
+
+	height:30px;
+
+	border-style:solid;
+
+	border-width:2px;
+
+	border-top-color:#5696C0;
+
+	border-left-color:#5696C0;
+
+	border-bottom-color:#5696C0;
+
+	border-right-color:#5696C0;
+
+}
+
+
+
+#hivebutton:active{
+
+	border-top-color:#5696C0;
+
+	border-left-color:#5696C0;
+
+	border-bottom-color:#5696C0;
+
+	border-right-color:#5696C0;
+
+}
+
+
+
+#footer{
+
+	text-align:center;
+
+	color:#CCCCCC;
+
+	font-size:10px;
+
+	font-style:italic;
+
+	margin-top:0px;
+
+	padding-top:0px;
+
+}
+
+
+
+#counter_tail{
+
+	color:#08738B;
+
+}
+
+
+
+#counter_requested{
+
+	color:#39BD15;
+
+	font-family:Helvetica;
+
+	font-size:47px;
+
+	font-weight:bold;
+
+	padding-bottom:0px;
+
+	margin-bottom:0px;
+
+}
+
+
+
+#radio4{
+
+	color:#ffffff;
+
+	background:#204060;
+
+	width:200px;
+
+	height:50px;
+
+	border-style:solid;
+
+	border-width:2px;
+
+	border-color:#5696C0;
+
+}
+
+
+
+#radio2{
+
+	color:#ffffff;
+
+	background:#204060;
+
+	width:250px;
+
+	height:30px;
+
+	border-style:solid;
+
+	border-width:2px;
+
+	border-color:#5696C0;
+
+}
+
+#radio3{
+
+	color:#ffffff;
+
+	background:#204060;
+
+	width:200px;
+
+	height:50px;
+
+	border-style:solid;
+
+	border-width:2px;
+
+	border-color:#5696C0;
+
+}
+
+
+#number{
+
+	color:#363635;
+
+	font-family:Helvetica;
+
+	font-size:10px;
+
+	font-weight:bold;
+
+}
+
+
+
+.layer2{
+
+	background:#0C1820;
+
+	margin:10px;
+
+	padding:10px;
+
+	border-style:solid;
+
+	border-width:1px;
+
+	border-color:#5696C0;
+
+	text-align:center;
+
+}
+
+
+
+.title{
+
+	color:#ADD8E6;
+
+	font-size:16px;
+
+	font-weight:bold;
+
+	padding:10px;
+
+}
+
+
+
+.hidde{
+
+	display:none;
+
+}
+

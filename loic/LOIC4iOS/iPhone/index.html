@@ -1,0 +1,175 @@
+<?xml version="1.1" encoding="iso-8859-1" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html manifest="cache.manifest">
+
+<!-- Mirrored from joshua159258.drivehq.com/LOIC4iOS/iPhone/ by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 18 Jun 2012 17:33:40 GMT -->
+<head>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable = no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no"/>
+
+<link rel="apple-touch-startup-image" href="img/startup.png"/>
+
+<link rel="apple-touch-icon-precomposed" href="img/icon.png"/> 
+
+
+    <title>LOIC</title>
+
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+    <link href="http://www.drivehq.com/help/hosting/FileNotFound.aspx?errCode=3&amp;filePath=\\joshua159258\wwwhome\loic4ios\iphone\img\favicon.ico" media="all" rel="icon" type="image/x-icon" />
+
+    <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
+
+    <link href="css/mb.slider.css" media="all" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <script type="text/javascript" src="js/jquery.mb.slider.js"></script>
+
+    <script type="text/javascript" src="js/jquery.metadata.js"></script>
+
+    <script type="text/javascript" src="js/engine.js"></script>
+
+    <script type="text/javascript">
+
+        $(function(){
+
+            $("#ex0 .mb_slider").mbSlider({
+
+                onSlide:function(o){$("#"+o.id+"_val").find(".val").val($(o).mbgetVal());move_slide();},
+
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <div id="hiveContainer" class="hidde"></div>
+
+    <div id="frameContainer" class="hidde"></div>
+
+    <div id="imgContainer" class="hidde"></div>
+
+    <div id="typeStyle" class="hidde"></div>
+
+    <div id="header">
+
+        <h1>LOIC</h1>
+
+        <h2>(Low Orbit Ion Cannon)</h2>
+
+    </div>
+
+    <div id="layer1">
+
+        <table id="table1">
+
+            <tr>
+
+                <td>
+            </tr>
+
+            <tr>
+
+                    <fieldset class="layer2">
+
+                        <legend>1. Select your target</legend>
+
+                        <input type="url" id="target" value="http://" onfocus="erase('#target');" onblur="reload('#target');httpValue();"/>
+
+                       
+
+                
+
+              
+                    
+
+ <div class="title">HiveMind (optional)</div>         
+
+                        <input type="url" id="hiveURL"  value="http://" onfocus="erase('#hiveURL');" onblur="reload('#hiveURL');httpValue();"/>
+
+<input type="button" id="hivebutton" value="Connect" onclick="hive();"/>
+                    </fieldset>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td colspan="2">
+
+                    <fieldset class="layer2">
+          
+                        <legend>2. Attack options</legend>
+
+                        <div class="title">Choose Your Firepower</div>
+
+                        <div>
+
+<input type="button" id="radio4" value="Ion Flood" onclick="shootType('img');" />
+                          <div class="title"> </div>
+                               <input type="button" id="radio3" value="Ion Blasters" onclick="shootType('iframe');" />
+                         <div class="title"> </div>
+                 
+
+                        </div>
+
+                        <div class="title">Rate</div>
+
+                        <div id="interval1">
+
+                            <div id="ex0">
+
+                                <div id="sl0" class="mb_slider {maxVal:'100', rangeColor:'#5696C0',negativeColor:'#183040', startAt:0, grid:1}" style="display:inline-block;*display:inherit;"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="title">Scratch a Message on you Bullets:</div>
+
+                        <input type="text" id="msg" value="#AntiSec" />
+
+                    </fieldset>
+
+                           
+
+                  
+
+                    <fieldset class="layer2">
+
+                        <legend>3. Ready?</legend>
+
+                        <input type="button" id="start" onclick="start_stop();" value="Charging Laser..." />
+
+                        <span id="sl0_val" class="setVal"><input type="hidden" id="interval_slide" class="val" value="200" /></span>
+
+                    </fieldset>
+
+                    <fieldset class="layer2">
+               
+                        <legend>Attack status</legend>
+
+                        <div id="number"><p id="counter_requested">0</p><span id="of">of </span><span id="counter_tail">0</span></div>
+
+                    </fieldset>
+
+                   
+            
+
+        </table>
+
+    </div>
+</body>
+
+
+<!-- Mirrored from joshua159258.drivehq.com/LOIC4iOS/iPhone/ by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 18 Jun 2012 17:33:49 GMT -->
+</html>
+
