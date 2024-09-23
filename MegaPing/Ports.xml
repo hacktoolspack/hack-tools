@@ -1,0 +1,4663 @@
+<?xml version="1.0"?>
+<PortDatastore DataVersion="1.0.0.000" SchemaVersion="1.0.0.1">
+	<!--Copyright Magneto Software. All rights reserved.-->
+	<Prts>
+	<Prt Id="TCP">
+		<Pts>
+		<Pt Id="1"	Us="0" Kw="tcpmux"	Ds="TCP Port Service Multiplexer"/>
+		<Pt Id="2"	Us="1" Kw="compressnet"	Ds="Management Utility">
+			<Tns>
+				<Tn Id="030400"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3"	Us="0" Kw="compressnet"	Ds="Compression Process"/>
+		<Pt Id="5"	Us="0" Kw="rje"	Ds="Remote Job Entry"/>
+		<Pt Id="7"	Us="0" Kw="echo"	Ds="Echo"/>
+		<Pt Id="8"	Us="2">
+			<Tns>
+				<Tn Id="0f0801"/>
+			</Tns>
+		</Pt>
+		<Pt Id="9"	Us="1" Kw="discard"	Ds="Discard">
+			<Tns>
+				<Tn Id="020700"/>
+			</Tns>
+		</Pt>
+		<Pt Id="11"	Us="0" Kw="systat"	Ds="Active Users "/>
+		<Pt Id="13"	Us="0" Kw="daytime"	Ds="Daytime"/>
+		<Pt Id="15"	Us="0" Kw="netstat"	Ds="netstat"/>
+		<Pt Id="17"	Us="0" Kw="qotd"	Ds="Quote of the Day"/>
+		<Pt Id="19"	Us="1" Kw="chargen"	Ds="Character Generator">
+			<Tns>
+				<Tn Id="020700"/>
+			</Tns>
+		</Pt>
+		<Pt Id="20"	Us="1" Kw="ftp-data"	Ds="File Transfer [Default Data]">
+			<Tns>
+				<Tn Id="120412"/>
+			</Tns>
+		</Pt>
+		<Pt Id="21"	Us="1" 	Kw="ftp"	Ds="File Transfer [Control]">
+			<Tns>
+				<Tn Id="010009"/>
+				<Tn Id="010b01"/>
+				<Tn Id="020002"/>
+				<Tn Id="020200"/>
+				<Tn Id="030000"/>
+				<Tn Id="030e00"/>
+				<Tn Id="050e00"/>
+				<Tn Id="080d08"/>
+				<Tn Id="091400"/>
+				<Tn Id="0b0001"/>
+				<Tn Id="0c0e04"/>
+				<Tn Id="0d0402"/>
+				<Tn Id="110001"/>
+				<Tn Id="120412"/>
+				<Tn Id="130701"/>
+				<Tn Id="131100"/>
+				<Tn Id="160400"/>
+				<Tn Id="160800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="22"	Us="1" Kw="ssh"	Ds="Remote Login Protocol">
+			<Tns>
+				<Tn Id="120701"/>
+			</Tns>
+		</Pt>
+		<Pt Id="23"	Us="1" Kw="telnet"	Ds="Telnet">
+			<Tns>
+				<Tn Id="050803"/>
+				<Tn Id="130802"/>
+				<Tn Id="131112"/>
+			</Tns>
+		</Pt>
+		<Pt Id="24"	Us="0" Kw="apms"	Ds="any private mail system"/>
+		<Pt Id="25"	Us="1" Kw="smtp"	Ds="Simple Mail Transfer">
+			<Tns>
+				<Tn Id="000900"/>
+				<Tn Id="000d00"/>
+				<Tn Id="010031"/>
+				<Tn Id="040c00"/>
+				<Tn Id="060801"/>
+				<Tn Id="061100"/>
+				<Tn Id="070011"/>
+				<Tn Id="070f00"/>
+				<Tn Id="071800"/>
+				<Tn Id="080b00"/>
+				<Tn Id="0a1400"/>
+				<Tn Id="0c0000"/>
+				<Tn Id="0c0100"/>
+				<Tn Id="0c0e02"/>
+				<Tn Id="0d0000"/>
+				<Tn Id="0d0460"/>
+				<Tn Id="0f1103"/>
+				<Tn Id="120705"/>
+				<Tn Id="121320"/>
+				<Tn Id="130000"/>
+				<Tn Id="130402"/>
+			</Tns>
+		</Pt>
+		<Pt Id="27"	Us="0" Kw="nsw-fe"	Ds="NSW User System FE"/>
+		<Pt Id="29"	Us="0" Kw="msg-icp"	Ds="MSG ICP"/>
+		<Pt Id="30"	Us="2">
+			<Tns>
+				<Tn Id="000601"/>
+			</Tns>
+		</Pt>
+		<Pt Id="31"	Us="1" Kw="msg-auth"	Ds="MSG Authentication">
+			<Tns>
+				<Tn Id="000600"/>
+				<Tn Id="070006"/>
+				<Tn Id="0c0010"/>
+			</Tns>
+		</Pt>
+		<Pt Id="33"	Us="0" Kw="dsp"	Ds="Display Support Protocol"/>
+		<Pt Id="35"	Us="0" Kw="apps"	Ds="Any Private Printer Server"/>
+		<Pt Id="37"	Us="0" Kw="time"	Ds="Time"/>
+		<Pt Id="38"	Us="0" Kw="rap"	Ds="Route Access Protocol"/>
+		<Pt Id="39"	Us="0" Kw="rlp"	Ds="Resource Location Protocol"/>
+		<Pt Id="41"	Us="1" Kw="graphics"	Ds="Graphics">
+			<Tns>
+				<Tn Id="030402"/>
+				<Tn Id="050e01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="42"	Us="0" Kw="nameserver"	Ds="Host Name Server"/>
+		<Pt Id="43"	Us="0" Kw="whois"	Ds="Who Is"/>
+		<Pt Id="44"	Us="0" Kw="mpm-flags"	Ds="MPM FLAGS Protocol"/>
+		<Pt Id="45"	Us="0" Kw="mpm"	Ds="Message Processing Module [recv]"/>
+		<Pt Id="46"	Us="0" Kw="mpm-snd"	Ds="Message Processing Module [send]"/>
+		<Pt Id="47"	Us="0" Kw="ni-ftp"	Ds="NI FTP"/>
+		<Pt Id="48"	Us="1" Kw="auditd"	Ds="Digital Audit Daemon">
+			<Tns>
+				<Tn Id="031100"/>
+			</Tns>
+		</Pt>
+		<Pt Id="49"	Us="0" Kw="login"	Ds="Login Host Protocol"/>
+		<Pt Id="50"	Us="1" Kw="re-mail-ck"	Ds="Remote Mail Checking Protocol">
+			<Tns>
+				<Tn Id="031100"/>
+			</Tns>
+		</Pt>
+		<Pt Id="51"	Us="0" Kw="la-maint"	Ds="IMP Logical Address Maintenance"/>
+		<Pt Id="52"	Us="0" Kw="xns-time"	Ds="XNS Time Protocol"/>
+		<Pt Id="53"	Us="0" Kw="domain"	Ds="Domain Name Server"/>
+		<Pt Id="54"	Us="0" Kw="xns-ch"	Ds="XNS Clearinghouse"/>
+		<Pt Id="55"	Us="0" Kw="isi-gl"	Ds="ISI Graphics Language"/>
+		<Pt Id="56"	Us="0" Kw="xns-auth"	Ds="XNS Authentication"/>
+		<Pt Id="57"	Us="0" Kw="apts"	Ds="Any Private Terminal Service"/>
+		<Pt Id="58"	Us="1" Kw="xns-mail"	Ds="XNS Mail">
+			<Tns>
+				<Tn Id="030c00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="59"	Us="1" Kw="apfs"	Ds="Any Private File Service">
+			<Tns>
+				<Tn Id="030c00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="61"	Us="0" Kw="ni-mail"	Ds="NI MAIL"/>
+		<Pt Id="62"	Us="0" Kw="acas"	Ds="ACA Services"/>
+		<Pt Id="64"	Us="0" Kw="covia"	Ds="Communications Integrator"/>
+		<Pt Id="65"	Us="0" Kw="tacacs-ds"	Ds="TACACS-Database Service"/>
+		<Pt Id="66"	Us="0" Kw="sql-net"	Ds="ORACL SQL*NET"/>
+		<Pt Id="70"	Us="0" Kw="gopher"	Ds="Gopher"/>
+		<Pt Id="71"	Us="0" Kw="netrjs-1"	Ds="Remote Job Service"/>
+		<Pt Id="72"	Us="0" Kw="netrjs-2"	Ds="Remote Job Service"/>
+		<Pt Id="73"	Us="0" Kw="netrjs-3"	Ds="Remote Job Service"/>
+		<Pt Id="74"	Us="0" Kw="netrjs-4"	Ds="Remote Job Service"/>
+		<Pt Id="75"	Us="0" Kw="apdos"	Ds="Any Private Dial Out Service"/>
+		<Pt Id="76"	Us="0" Kw="deos"	Ds="Distributed External Object Store"/>
+		<Pt Id="77"	Us="0" Kw="rje"	Ds="Any Private RJE Service"/>
+		<Pt Id="78"	Us="0" Kw="vettcp"	Ds="vettcp"/>
+		<Pt Id="79"	Us="1" Kw="finger"	Ds="Finger">
+			<Tns>
+				<Tn Id="020301"/>
+				<Tn Id="050804"/>
+			</Tns>
+		</Pt>
+		<Pt Id="80"	Us="1" Kw="www-http"	Ds="World Wide Web HTTP">
+			<Tns>
+				<Tn Id="000002"/>
+				<Tn Id="000220"/>
+				<Tn Id="010024"/>
+				<Tn Id="010009"/>
+				<Tn Id="020001"/>
+				<Tn Id="020600"/>
+				<Tn Id="041700"/>
+				<Tn Id="060e00"/>
+				<Tn Id="060e01"/>
+				<Tn Id="070e01"/>
+				<Tn Id="080800"/>
+				<Tn Id="0c1300"/>
+				<Tn Id="0d0200"/>
+				<Tn Id="110420"/>
+				<Tn Id="110800"/>
+				<Tn Id="120405"/>
+				<Tn Id="160001"/>
+				<Tn Id="160401"/>
+				<Tn Id="160402"/>
+			</Tns>
+		</Pt>
+		<Pt Id="81"	Us="1" Kw="hosts2-ns"	Ds="HOSTS2 Name Server">
+			<Tns>
+				<Tn Id="110402"/>
+			</Tns>
+		</Pt>
+		<Pt Id="82"	Us="0" Kw="xver"	Ds="XFER Utility"/>
+		<Pt Id="83"	Us="0" Kw="mit_nl_dev"	Ds="MIT ML Device"/>
+		<Pt Id="84"	Us="0" Kw="ctf"	Ds="Common Trace Facility"/>
+		<Pt Id="85"	Us="0" Kw="mit_nl_dev"	Ds="MIT ML Device"/>
+		<Pt Id="86"	Us="0" Kw="mfcobol"	Ds="Micro Focus Cobol"/>
+		<Pt Id="87"	Us="0" Kw="link"	Ds="Any Private Terminal Link"/>
+		<Pt Id="88"	Us="0" Kw="kerberos"	Ds="Kerberos"/>
+		<Pt Id="89"	Us="0" Kw="su-mit-tg"	Ds="SU/MIT Telnet Gateway"/>
+		<Pt Id="90"	Us="1" Kw="dnsix"	Ds="DNSIX Securit Attribute Token Map">
+			<Tns>
+				<Tn Id="070801"/>
+			</Tns>
+		</Pt>
+		<Pt Id="91"	Us="0" Kw="mit-dov"	Ds="MIT Dover Spooler"/>
+		<Pt Id="92"	Us="0" Kw="npp"	Ds="Network Printing Protocol"/>
+		<Pt Id="93"	Us="0" Kw="dcp"	Ds="Device Control Protocol"/>
+		<Pt Id="94"	Us="0" Kw="objcall"	Ds="Tivoli Object Dispatcher"/>
+		<Pt Id="95"	Us="0" Kw="supdup"	Ds="SUPDUP"/>
+		<Pt Id="96"	Us="0" Kw="dixie"	Ds="DIXIE Protocol Specification"/>
+		<Pt Id="97"	Us="0" Kw="swift-rvf"	Ds="Swift Remote Vitural File Protocol"/>
+		<Pt Id="98"	Us="0" Kw="tacnews"	Ds="TAC News"/>
+		<Pt Id="99"	Us="1" Kw="metagram"	Ds="Metagram Relay">
+			<Tns>
+				<Tn Id="070800"/>
+				<Tn Id="0d0200"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="100"	Us="0" Kw="newacct"	Ds="[Unauthorized Use]"/>
+		<Pt Id="101"	Us="0" Kw="hostnames"	Ds="NIC Host Name Server"/>
+		<Pt Id="102"	Us="0" Kw="iso-tsap"	Ds="ISO-TSAP"/>
+		<Pt Id="103"	Us="0" Kw="x400"	Ds="X400"/>
+		<Pt Id="104"	Us="0" Kw="x400-snd"	Ds="X400-SND"/>
+		<Pt Id="105"	Us="0" Kw="csnet-ns"	Ds="Mailbox Name Nameserver"/>
+		<Pt Id="106"	Us="0" Kw="3com-tsmux"	Ds="3COM-TSMUX"/>
+		<Pt Id="107"	Us="0" Kw="rtelnet"	Ds="Remote Telnet Service"/>
+		<Pt Id="108"	Us="0" Kw="snagas"	Ds="SNA Gateway Access Server"/>
+		<Pt Id="109"	Us="0" Kw="pop-2"	Ds="Post Office Protocol - Version 2"/>
+		<Pt Id="110"	Us="1" Kw="pop-3"	Ds="Post Office Protocol - Version 3">
+			<Tns>
+				<Tn Id="0f1103"/>
+			</Tns>
+		</Pt>
+		<Pt Id="111"	Us="0" Kw="sunrpc"	Ds="SUN Remote Procedure Call"/>
+		<Pt Id="112"	Us="0" Kw="mcidas"	Ds="McIDAS Data Transmission Protocol"/>
+		<Pt Id="113"	Us="1" Kw="auth"	Ds="Authentication Service">
+			<Tns>
+				<Tn Id="080d09"/>
+				<Tn Id="0a0001"/>
+			</Tns>
+		</Pt>
+		<Pt Id="114"	Us="0" Kw="audionews"	Ds="Audio News Multicast"/>
+		<Pt Id="115"	Us="0" Kw="sftp"	Ds="Simple File Transfer Protocol"/>
+		<Pt Id="116"	Us="0" Kw="ansanotify"	Ds="ANSA REX Notify"/>
+		<Pt Id="117"	Us="0" Kw="uucp-path"	Ds="UUCP Path Service"/>
+		<Pt Id="118"	Us="0" Kw="sqlserv"	Ds="SQL Services"/>
+		<Pt Id="119"	Us="1" Kw="nntp"	Ds="Network News Transfer Protocol">
+			<Tns>
+				<Tn Id="070011"/>
+			</Tns>
+		</Pt>
+		<Pt Id="120"	Us="0" Kw="cfdptkt"	Ds="CFDPTKT"/>
+		<Pt Id="121"	Us="1" Kw="erpc"	Ds="Encore Expedited Remote Proc. Call">
+			<Tns>
+				<Tn Id="001301"/>
+				<Tn Id="060e00"/>
+				<Tn Id="090001"/>
+			</Tns>
+		</Pt>
+		<Pt Id="122"	Us="0" Kw="smakynet"	Ds="SMAKYNET"/>
+		<Pt Id="123"	Us="1" Kw="ntp"	Ds="Network Time Protocol">
+			<Tns>
+				<Tn Id="0d0414"/>
+			</Tns>
+		</Pt>
+		<Pt Id="124"	Us="0" Kw="ansatrader"	Ds="ANSA REX Trader"/>
+		<Pt Id="125"	Us="0" Kw="locus-map"	Ds="Locus PC-Interface Net Map Server"/>
+		<Pt Id="126"	Us="0" Kw="unitary"	Ds="Unisys Unitary Login"/>
+		<Pt Id="127"	Us="0" Kw="locus-con"	Ds="Locus PC-Interface Conn Server"/>
+		<Pt Id="128"	Us="0" Kw="gss-xlicen"	Ds="GSS X License Verification"/>
+		<Pt Id="129"	Us="1" Kw="pwdgen"	Ds="Password Generator Protocol">
+			<Tns>
+				<Tn Id="0f0000"/>
+			</Tns>
+		</Pt>
+		<Pt Id="130"	Us="0" Kw="cisco-fna"	Ds="CISCO FNATIVE"/>
+		<Pt Id="131"	Us="0" Kw="cisco-tna"	Ds="CISCO TNATIVE"/>
+		<Pt Id="132"	Us="0" Kw="cisco-sys"	Ds="CISCO SYSMAINT"/>
+		<Pt Id="133"	Us="1" Kw="statsrv"	Ds="Statistics Service">
+			<Tns>
+				<Tn Id="050001"/>
+			</Tns>
+		</Pt>
+		<Pt Id="134"	Us="0" Kw="ingres-net"	Ds="INGRES-NET Service"/>
+		<Pt Id="135"	Us="0" Kw="loc-srv"	Ds="Location Service"/>
+		<Pt Id="136"	Us="0" Kw="profile"	Ds="PROFILE Naming System"/>
+		<Pt Id="137"	Us="1" Kw="netbios-ns"	Ds="NETBIOS Name Service">
+			<Tns>
+				<Tn Id="0d0403"/>
+				<Tn Id="020701"/>
+			</Tns>
+		</Pt>
+		<Pt Id="138"	Us="1" Kw="netbios-dgm"	Ds="NETBIOS Datagram Service">
+			<Tns>
+				<Tn Id="020701"/>
+			</Tns>
+		</Pt>
+		<Pt Id="139"	Us="1" Kw="netbios-ssn"	Ds="NETBIOS Session Service">
+			<Tns>
+				<Tn Id="020701"/>
+				<Tn Id="060e02"/>
+				<Tn Id="0d0404"/>
+				<Tn Id="0d0420"/>
+				<Tn Id="0d0450"/>
+				<Tn Id="0c1200"/>
+			</Tns>
+		</Pt>
+		<Pt Id="140"	Us="0" Kw="emfis-data"	Ds="EMFIS-DATA EMFIS Data Service"/>
+		<Pt Id="141"	Us="0" Kw="emfis-cntl"	Ds="EMFIS Control Service"/>
+		<Pt Id="142"	Us="1" Kw="bl-idm"	Ds="NETBIOS Session Service">
+			<Tns>
+				<Tn Id="0d0440"/>
+			</Tns>
+		</Pt>
+		<Pt Id="143"	Us="0" Kw="imap2"	Ds="NETBIOS Session Service"/>
+		<Pt Id="144"	Us="0" Kw="news"	Ds="NewS"/>
+		<Pt Id="145"	Us="0" Kw="uaac"	Ds="UAAC Protocol"/>
+		<Pt Id="146"	Us="1" Kw="iso-tp0"	Ds="iso-tp0">
+			<Tns>
+				<Tn Id="080d02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="147"	Us="0" Kw="iso-ip"	Ds="iso-tp0"/>
+		<Pt Id="148"	Us="0" Kw="cronus"	Ds="CRONUS-SUPPORT"/>
+		<Pt Id="149"	Us="0" Kw="aed-512"	Ds="AED 512 Emulation Service"/>
+		<Pt Id="150"	Us="0" Kw="sql-net"	Ds="SQL-NET"/>
+		<Pt Id="151"	Us="0" Kw="hems"	Ds="HEMS"/>
+		<Pt Id="152"	Us="0" Kw="bftp"	Ds="Background File Transfer Program"/>
+		<Pt Id="153"	Us="0" Kw="sgmp"	Ds="SGMP"/>
+		<Pt Id="154"	Us="0" Kw="netsc-prod"	Ds="NETSC"/>
+		<Pt Id="155"	Us="0" Kw="netsc-dev"	Ds="NETSC"/>
+		<Pt Id="156"	Us="0" Kw="sqlsrv"	Ds="SQL Service"/>
+		<Pt Id="157"	Us="0" Kw="knet-cmp"	Ds="KNET/VM Command/Message Protocol"/>
+		<Pt Id="158"	Us="0" Kw="pcmail-srv"	Ds="PCMail Server"/>
+		<Pt Id="159"	Us="0" Kw="nss-routing"	Ds="NSS-Routing"/>
+		<Pt Id="160"	Us="0" Kw="sgmp-traps"	Ds="SGMP-TRAPS"/>
+		<Pt Id="161"	Us="0" Kw="snmp"	Ds="SNMP"/>
+		<Pt Id="162"	Us="0" Kw="snmptrap"	Ds="SNMPTRAP"/>
+		<Pt Id="163"	Us="0" Kw="cmip-man"	Ds="CMIP Manager"/>
+		<Pt Id="164"	Us="0" Kw="cmip-agent"	Ds="CMIP Agent"/>
+		<Pt Id="165"	Us="0" Kw="xns-courier"	Ds="Xerox"/>
+		<Pt Id="166"	Us="0" Kw="s-net"	Ds="Sirius Systems"/>
+		<Pt Id="167"	Us="0" Kw="namp"	Ds="NAMP"/>
+		<Pt Id="168"	Us="0" Kw="rsvd"	Ds="RSVD"/>
+		<Pt Id="169"	Us="0" Kw="send"	Ds="SEND"/>
+		<Pt Id="170"	Us="1" Kw="print-srv"	Ds="Network PostScript">
+			<Tns>
+				<Tn Id="001300"/>
+			</Tns>
+		</Pt>
+		<Pt Id="171"	Us="0" Kw="multiplex"	Ds="Network Innovations Multiplex"/>
+		<Pt Id="172"	Us="0" Kw="cl/1"	Ds="Network Innovations CL/1"/>
+		<Pt Id="173"	Us="0" Kw="xyplex-mux"	Ds="Xyplex"/>
+		<Pt Id="174"	Us="0" Kw="mailq"	Ds="MAILQ"/>
+		<Pt Id="175"	Us="0" Kw="vmnet"	Ds="VMNET"/>
+		<Pt Id="176"	Us="0" Kw="genrad-mux"	Ds="GENRAD-MUX"/>
+		<Pt Id="177"	Us="0" Kw="xdmcp"	Ds="X Display Manager Control Protocol"/>
+		<Pt Id="178"	Us="0" Kw="nextstep"	Ds="NextStep Window Server"/>
+		<Pt Id="179"	Us="0" Kw="bgp"	Ds="Border Gateway Protocol"/>
+		<Pt Id="180"	Us="0" Kw="ris"	Ds="Intergraph"/>
+		<Pt Id="181"	Us="0" Kw="unify"	Ds="Unify"/>
+		<Pt Id="182"	Us="0" Kw="audit"	Ds="Unisys Audit SITP"/>
+		<Pt Id="183"	Us="0" Kw="ocbinder"	Ds="OCBinder"/>
+		<Pt Id="184"	Us="0" Kw="ocserver"	Ds="OCServer"/>					   
+		<Pt Id="185"	Us="0" Kw="remote-kis"	Ds="Remote-KIS"/>
+		<Pt Id="186"	Us="0" Kw="kis"	Ds="KIS Protocol"/>
+		<Pt Id="187"	Us="0" Kw="aci"	Ds="Application Communication Interface"/>
+		<Pt Id="188"	Us="0" Kw="mumps"	Ds="Plus Five's MUMPS"/>
+		<Pt Id="189"	Us="0" Kw="qft"	Ds="Queued File Transport"/>
+		<Pt Id="190"	Us="0" Kw="gacp"	Ds="Gateway Access Control Protocol"/>
+		<Pt Id="191"	Us="0" Kw="prospero"	Ds="Prospero Directory Service"/>
+		<Pt Id="192"	Us="0" Kw="osu-nms"	Ds="OSU Network Monitoring System"/>
+		<Pt Id="193"	Us="0" Kw="srmp"	Ds="Spider Remote Monitoring Protocol"/>
+		<Pt Id="194"	Us="0" Kw="irc"	Ds="Internet Relay Chat Protocol"/>
+		<Pt Id="195"	Us="0" Kw="dn6-nlm-aud"	Ds="DNSIX Network Level Module Audit"/>
+		<Pt Id="196"	Us="0" Kw="dn6-smm-red"	Ds="DNSIX Session Mgt Module Audit Redir"/>
+		<Pt Id="197"	Us="0" Kw="dls"	Ds="Directory Location Service"/>
+		<Pt Id="198"	Us="0" Kw="dls-mon"	Ds="Directory Location Service Monitor"/>
+		<Pt Id="199"	Us="0" Kw="smux"	Ds="SMUX"/>
+
+		<Pt Id="200"	Us="0" Kw="src"	Ds="IBM System Resource Controller"/>
+		<Pt Id="201"	Us="0" Kw="at-rtmp"	Ds="AppleTalk Routing Maintenance"/>
+		<Pt Id="202"	Us="0" Kw="at-nbp"	Ds="AppleTalk Name Binding"/>
+		<Pt Id="203"	Us="0" Kw="at-3"	Ds="AppleTalk Unused"/>
+		<Pt Id="204"	Us="0" Kw="at-echo"	Ds="AppleTalk Echo"/>
+		<Pt Id="205"	Us="0" Kw="at-5"	Ds="AppleTalk Unused"/>
+		<Pt Id="206"	Us="0" Kw="at-zis"	Ds="AppleTalk Zone Information"/>
+		<Pt Id="207"	Us="0" Kw="at-7"	Ds="AppleTalk Unused"/>
+		<Pt Id="208"	Us="0" Kw="at-8"	Ds="AppleTalk Unused"/>
+		<Pt Id="209"	Us="0" Kw="tam"	Ds="Trivial Authenticated Mail Protocol"/>
+		<Pt Id="210"	Us="0" Kw="z39.50"	Ds="ANSI Z39.50"/>
+		<Pt Id="211"	Us="0" Kw="914c/g"	Ds="Texas Instruments 914C/G Terminal"/>
+		<Pt Id="212"	Us="0" Kw="anet"	Ds="ATEXSSTR"/>
+		<Pt Id="213"	Us="0" Kw="ipx"	Ds="IPX"/>
+		<Pt Id="214"	Us="0" Kw="vmpwscs"	Ds="VM PWSCS"/>
+		<Pt Id="215"	Us="0" Kw="softpc"	Ds="Insignia Solutions"/>
+		<Pt Id="216"	Us="0" Kw="atls"	Ds="Access Technology License Server"/>
+		<Pt Id="217"	Us="0" Kw="dbase"	Ds="dBASE Unix"/>
+		<Pt Id="218"	Us="0" Kw="mpp"	Ds="Netix Message Posting Protocol"/>
+		<Pt Id="219"	Us="0" Kw="uarps"	Ds="Unisys ARPs"/>
+		<Pt Id="220"	Us="0" Kw="imap3"	Ds="Interactive Mail Access Protocol v3"/>
+		<Pt Id="221"	Us="0" Kw="fln-spx"	Ds="Berkeley rlogind with SPX auth"/>
+		<Pt Id="222"	Us="0" Kw="rsh-spx"	Ds="Berkeley rshd with SPX auth"/>
+		<Pt Id="223"	Us="0" Kw="cdc"	Ds="Certificate Distribution Center"/>
+		<Pt Id="242"	Us="0" Kw="direct"	Ds="direct"/>
+		<Pt Id="243"	Us="0" Kw="sur-meas"	Ds="Survey Measurement"/>
+		<Pt Id="245"	Us="0" Kw="link"	Ds="LINK"/>
+		<Pt Id="246"	Us="0" Kw="dsp3270"	Ds="Display Systems Protocol"/>
+		<Pt Id="247"	Us="0" Kw="subntbcst-tftp"	Ds="a replacement for subntbcst_tftp"/>
+		<Pt Id="334"	Us="2">
+			<Tns>
+				<Tn Id="010005"/>
+			</Tns>
+		</Pt>
+		<Pt Id="344"	Us="0" Kw="pdap"	Ds="Prospero Data Access Protocol"/>
+		<Pt Id="345"	Us="0" Kw="pawserv"	Ds="Perf Analysis Workbench"/>
+		<Pt Id="346"	Us="0" Kw="zserv"	Ds="Zebra server"/>
+		<Pt Id="347"	Us="0" Kw="fatserv"	Ds="Fatmen Server"/>
+		<Pt Id="348"	Us="0" Kw="csi-sgwp"	Ds="Cabletron Management Protocol"/>
+		<Pt Id="371"	Us="0" Kw="clearcase"	Ds="Clearcase"/>
+		<Pt Id="372"	Us="0" Kw="ulistserv"	Ds="Unix Listserv"/>
+		<Pt Id="373"	Us="0" Kw="legent-1"	Ds="Legent Corporation"/>
+		<Pt Id="374"	Us="0" Kw="legent-2"	Ds="Legent Corporation"/>
+		<Pt Id="375"	Us="0" Kw="hassle"	Ds="Hassle"/>
+		<Pt Id="376"	Us="0" Kw="nip"	Ds="Amiga Envoy Network Inquiry Proto"/>
+		<Pt Id="377"	Us="0" Kw="tnETOS"	Ds="NEC Corporation"/>
+		<Pt Id="378"	Us="0" Kw="dsETOS"	Ds="NEC Corporation"/>
+		<Pt Id="379"	Us="0" Kw="is99c"	Ds="TIA/EIA/IS-99 modem client"/>
+		<Pt Id="380"	Us="0" Kw="is99s"	Ds="TIA/EIA/IS-99 modem server"/>
+		<Pt Id="381"	Us="0" Kw="hp-collector"	Ds="hp performance data collector"/>
+		<Pt Id="382"	Us="0" Kw="hp-managed-node"	Ds="hp performance data managed node"/>
+		<Pt Id="383"	Us="0" Kw="hp-alarm-mgr"	Ds="hp performance data alarm manager"/>
+		<Pt Id="384"	Us="0" Kw="arns"	Ds="A Remote Network Server System"/>
+		<Pt Id="385"	Us="0" Kw="ibm-app"	Ds="IBM Application"/>
+		<Pt Id="386"	Us="0" Kw="asa"	Ds="ASA Message Router Object Def."/>
+		<Pt Id="387"	Us="0" Kw="aurp"	Ds="Appletalk Update-Based Routing Pro."/>
+		<Pt Id="388"	Us="0" Kw="unidata-ldm"	Ds="Unidata LDM Version 4"/>
+		<Pt Id="389"	Us="0" Kw="ldap"	Ds="Lightweight Directory Access Protocol"/>
+		<Pt Id="390"	Us="0" Kw="uis"	Ds="UIS"/>
+		<Pt Id="391"	Us="0" Kw="synotics-relay"	Ds="SynOptics SNMP Relay Port"/>
+		<Pt Id="392"	Us="0" Kw="synotics-broker"	Ds="SynOptics Port Broker Port"/>
+		<Pt Id="393"	Us="0" Kw="dis"	Ds="Data Interpretation System"/>
+		<Pt Id="394"	Us="0" Kw="embl-ndt"	Ds="EMBL Nucleic Data Transfer"/>
+		<Pt Id="395"	Us="0" Kw="netcp"	Ds="NETscout Control Protocol"/>
+		<Pt Id="396"	Us="0" Kw="netware-ip"	Ds="Novell Netware over IP"/>
+		<Pt Id="397"	Us="0" Kw="mptn"	Ds="Multi Protocol Trans. Net."/>
+		<Pt Id="398"	Us="0" Kw="kryptolan"	Ds="Kryptolan"/>
+		<Pt Id="399"	Us="0" Kw="iso-tsap-c2"	Ds="ISO Transport Class 2 Non-Control over TCP"/>
+
+		<Pt Id="400"	Us="0" Kw="work-sol"	Ds="Workstation Solutions"/>
+		<Pt Id="401"	Us="0" Kw="ups"	Ds="Uninterruptible Power Supply"/>
+		<Pt Id="402"	Us="0" Kw="genie"	Ds="Genie Protocol"/>
+		<Pt Id="403"	Us="0" Kw="decap"	Ds="decap"/>
+		<Pt Id="404"	Us="0" Kw="nced"	Ds="nced"/>
+		<Pt Id="405"	Us="0" Kw="ncld"	Ds="ncld"/>
+		<Pt Id="406"	Us="0" Kw="imsp"	Ds="Interactive Mail Support Protocol"/>
+		<Pt Id="407"	Us="0" Kw="timbuktu"	Ds="Timbuktu"/>
+		<Pt Id="408"	Us="0" Kw="prm-sm"	Ds="Prospero Resource Manager Sys. Man."/>
+		<Pt Id="409"	Us="0" Kw="prm-nm"	Ds="Prospero Resource Manager Node Man."/>
+		<Pt Id="410"	Us="0" Kw="decladebug"	Ds="DECLadebug Remote Debug Protocol"/>
+		<Pt Id="411"	Us="1" Kw="rmt"	Ds="Remote MT Protocol">
+			<Tns>
+				<Tn Id="010005"/>
+			</Tns>
+		</Pt>
+		<Pt Id="412"	Us="0" Kw="synoptics-trap"	Ds="Trap Convention Port"/>
+		<Pt Id="413"	Us="0" Kw="smsp"	Ds="SMSP"/>
+		<Pt Id="414"	Us="0" Kw="infoseek"	Ds="InfoSeek"/>
+		<Pt Id="415"	Us="0" Kw="bnet"	Ds="BNet"/>
+		<Pt Id="416"	Us="0" Kw="silverplatter"	Ds="Silverplatter"/>
+		<Pt Id="417"	Us="0" Kw="onmux"	Ds="Onmux"/>
+		<Pt Id="418"	Us="0" Kw="hyper-g"	Ds="Hyper-G"/>
+		<Pt Id="419"	Us="0" Kw="ariel1"	Ds="Ariel"/>
+		<Pt Id="420"	Us="1" Kw="smpte"	Ds="SMPTE">
+			<Tns>
+				<Tn Id="011101"/>
+				<Tn Id="080d00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="421"	Us="1" Kw="ariel2"	Ds="Ariel">
+			<Tns>
+				<Tn Id="130200"/>
+			</Tns>
+		</Pt>
+		<Pt Id="422"	Us="0" Kw="ariel3"	Ds="Ariel"/>
+		<Pt Id="423"	Us="0" Kw="opc-job-start"	Ds="IBM Operations Planning and Control Start"/>
+		<Pt Id="424"	Us="0" Kw="opc-job-track"	Ds="IBM Operations Planning and Control Track"/>
+		<Pt Id="425"	Us="0" Kw="icad-el"	Ds="ICAD"/>
+		<Pt Id="426"	Us="0" Kw="smartsdp"	Ds="smartsdp"/>
+		<Pt Id="427"	Us="0" Kw="svrloc"	Ds="Server Location"/>
+		<Pt Id="428"	Us="0" Kw="ocs_cmu"	Ds="OCS_CMU"/>
+		<Pt Id="429"	Us="0" Kw="ocs_amu"	Ds="OCS_AMU"/>
+		<Pt Id="430"	Us="0" Kw="utmpsd"	Ds="UTMPSD"/>
+		<Pt Id="431"	Us="0" Kw="utmpcd"	Ds="UTMPCD"/>
+		<Pt Id="432"	Us="0" Kw="iasd"	Ds="IASD"/>
+		<Pt Id="433"	Us="0" Kw="nnsp"	Ds="NNSP"/>
+		<Pt Id="434"	Us="0" Kw="mobileip-agent"	Ds="MobileIP-Agent"/>
+		<Pt Id="435"	Us="0" Kw="mobilip-mn"	Ds="MobilIP-MN"/>
+		<Pt Id="436"	Us="0" Kw="dna-cml"	Ds="DNA-CML"/>
+		<Pt Id="437"	Us="0" Kw="comscm"	Ds="comscm"/>
+		<Pt Id="438"	Us="0" Kw="dsfgw"	Ds="dsfgw"/>
+		<Pt Id="439"	Us="0" Kw="dasp"	Ds="dasp"/>
+		<Pt Id="440"	Us="0" Kw="sgcp"	Ds="sgcp"/>
+		<Pt Id="441"	Us="0" Kw="decvms-sysmgt"	Ds="decvms-sysmgt"/>
+		<Pt Id="442"	Us="0" Kw="cvc_hostd"	Ds="cvc_hostd"/>
+		<Pt Id="443"	Us="0" Kw="https"	Ds="https  MCom"/>
+		<Pt Id="444"	Us="0" Kw="snpp"	Ds="Simple Network Paging Protocol"/>
+		<Pt Id="445"	Us="0" Kw="microsoft-ds"	Ds="Microsoft-DS"/>
+		<Pt Id="446"	Us="0" Kw="ddm-rdb"	Ds="DDM-RDB"/>
+		<Pt Id="447"	Us="0" Kw="ddm-dfm"	Ds="DDM-RFM"/>
+		<Pt Id="448"	Us="0" Kw="ddm-byte"	Ds="DDM-BYTE"/>
+		<Pt Id="449"	Us="0" Kw="as-servermap"	Ds="AS Server Mapper"/>
+		<Pt Id="450"	Us="0" Kw="tserver"	Ds="TServer"/>
+		<Pt Id="451"	Us="0" Kw="sfs-smp-net"	Ds="Cray Network Semaphore server"/>
+		<Pt Id="452"	Us="0" Kw="sfs-config"	Ds="Cray SFS config server"/>
+		<Pt Id="453"	Us="0" Kw="creativeserver"	Ds="CreativeServer"/>
+		<Pt Id="454"	Us="0" Kw="contentserver"	Ds="ContentServer"/>
+		<Pt Id="455"	Us="1" Kw="creativepartnr"	Ds="CreativePartnr">
+			<Tns>
+				<Tn Id="050002"/>
+			</Tns>
+		</Pt>
+		<Pt Id="456"	Us="2">
+			<Tns>
+				<Tn Id="070006"/>
+			</Tns>
+		</Pt>
+		<Pt Id="458"	Us="0" Kw="appleqtc"	Ds="apple quick time"/>
+		<Pt Id="464"	Us="0" Kw="kpasswd"	Ds="Kerberos &quot;passwd&quot;"/>
+		<Pt Id="468"	Us="0" Kw="photuris"	Ds="photuris"/>
+		<Pt Id="487"	Us="0" Kw="saft"	Ds="Simple Asynchronous File Transfer"/>
+		<Pt Id="488"	Us="0" Kw="gss-http"	Ds="gss-http"/>
+		<Pt Id="496"	Us="0" Kw="pim-rp-disc"	Ds="pim-rp-disc"/>
+
+		<Pt Id="500"	Us="0" Kw="isakmp"	Ds="isakmp"/>
+		<Pt Id="512"	Us="0" Kw="exec"	Ds="remote process execution; authentication performed using passwords and UNIX loppgin names"/>
+		<Pt Id="513"	Us="1" Kw="login"	Ds="remote login a la telnet;automatic authentication performed based on priviledged port numbers and distributed data bases which identify 'authentication domains'">
+			<Tns>
+				<Tn Id="061101"/>
+			</Tns>
+		</Pt>
+		<Pt Id="514"	Us="1" Kw="cmd"	Ds="like exec, but automatic authentication is performed as for login server">
+			<Tns>
+				<Tn Id="110f00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="515"	Us="0" Kw="printer"	Ds="tcp spooler"/>
+		<Pt Id="517"	Us="0" Kw="talk"	Ds="like tenex link, but across machine - unfortunately, doesn't use link protocol (this is actually just a rendezvous port from which a tcp connection is established"/>
+		<Pt Id="518"	Us="0" Kw="ntalk"	Ds="tcp"/>
+		<Pt Id="519"	Us="0" Kw="utime"	Ds="unixtime"/>
+		<Pt Id="520"	Us="0" Kw="efs"	Ds="extended file name server"/>
+		<Pt Id="525"	Us="0" Kw="timed"	Ds="timeserver"/>
+		<Pt Id="526"	Us="0" Kw="tempo"	Ds="newdate"/>
+		<Pt Id="530"	Us="0" Kw="courier"	Ds="rpc"/>
+		<Pt Id="531"	Us="1" Kw="conference"	Ds="chat">
+			<Tns>
+				<Tn Id="0d0401"/>
+				<Tn Id="110002"/>
+			</Tns>
+		</Pt>
+		<Pt Id="532"	Us="0" Kw="netnews"	Ds="readnews"/>
+		<Pt Id="533"	Us="0" Kw="netwall"	Ds="for emergency broadcasts"/>
+		<Pt Id="535"	Us="0" Kw="iiop"	Ds="iiop"/>
+		<Pt Id="538"	Us="0" Kw="gdomap"	Ds="GNUstep distributed objects"/>
+		<Pt Id="539"	Us="0" Kw="apertus-ldp"	Ds="Apertus Technologies Load Determination"/>
+		<Pt Id="540"	Us="0" Kw="uucp"	Ds="uucpd"/>
+		<Pt Id="541"	Us="0" Kw="uucp-rlogin"	Ds="uucp-rlogin  Stuart Lynne"/>
+		<Pt Id="543"	Us="0" Kw="klogin"	Ds="klogin"/>
+		<Pt Id="544"	Us="0" Kw="kshell"	Ds="krcmd"/>
+		<Pt Id="545"	Us="0" Kw="appleqtcsrvr"	Ds="appleqtcsrvr"/>
+		<Pt Id="546"	Us="0" Kw="dhcpv6-client"	Ds="dhcpv6-client"/>
+		<Pt Id="547"	Us="0" Kw="dhcpv6-server"	Ds="dhcpv6-server"/>
+		<Pt Id="550"	Us="0" Kw="new-rwho"	Ds="new-who"/>
+		<Pt Id="551"	Us="0" Kw="cybercash"	Ds="cybercash"/>
+		<Pt Id="554"	Us="0" Kw="rtsp"	Ds="Real Time Stream Control Protocol"/>
+		<Pt Id="555"	Us="1" Kw="dsf"	Ds="dsf">
+			<Tns>
+				<Tn Id="000002"/>
+				<Tn Id="080d05"/>
+				<Tn Id="0d0402"/>
+				<Tn Id="0f0700"/>
+				<Tn Id="121325"/>
+			</Tns>
+		</Pt>
+		<Pt Id="556"	Us="0" Kw="remotefs"	Ds="rfs server"/>
+		<Pt Id="560"	Us="0" Kw="rmonitor"	Ds="rmonitord"/>
+		<Pt Id="561"	Us="0" Kw="monitor"	Ds="monitor"/>
+		<Pt Id="562"	Us="0" Kw="chshell"	Ds="chcmd"/>
+		<Pt Id="563"	Us="0" Kw="nntps"	Ds="NNTP over SSL"/>
+		<Pt Id="564"	Us="0" Kw="9pfs"	Ds="plan 9 file service"/>
+		<Pt Id="565"	Us="0" Kw="whoami"	Ds="whoami"/>
+		<Pt Id="569"	Us="0" Kw="whoami"	Ds="MSN"/>
+		<Pt Id="570"	Us="0" Kw="meter"	Ds="demon"/>
+		<Pt Id="571"	Us="0" Kw="meter"	Ds="udemon"/>
+		<Pt Id="587"	Us="0" Kw="submission"	Ds="mail message submission"/>	
+
+		<Pt Id="600"	Us="0" Kw="ipcserver"	Ds="Sun IPC server"/>
+		<Pt Id="601"	Us="0" Kw="maitrd"	Ds="maitrd"/>
+		<Pt Id="602"	Us="0" Kw="busboy"	Ds="busboy"/>
+		<Pt Id="605"	Us="2">
+			<Tns>
+				<Tn Id="120401"/>
+			</Tns>
+		</Pt>
+		<Pt Id="606"	Us="0" Kw="urm"	Ds="Cray Unified Resource Manager"/>
+		<Pt Id="607"	Us="0" Kw="nqs"	Ds="nqs"/>
+		<Pt Id="608"	Us="0" Kw="sift-uft"	Ds="Sender-Initiated/Unsolicited File Transfer"/>
+		<Pt Id="609"	Us="0" Kw="npmp-trap"	Ds="npmp-trap"/>
+		<Pt Id="610"	Us="0" Kw="npmp-local"	Ds="npmp-local / DQS"/>
+		<Pt Id="611"	Us="0" Kw="npmp-gui"	Ds="npmp-gui / DQS"/>
+		<Pt Id="612"	Us="0" Kw="hmmp-ind"	Ds="HMMP Indication / DQS"/>	
+		<Pt Id="634"	Us="0" Kw="ginad"	Ds="ginad"/>
+		<Pt Id="636"	Us="0" Kw="ldaps"	Ds="LDAP over SSL"/>
+		<Pt Id="666"	Us="1" Kw="doom"	Ds="doom Id Software">
+			<Tns>
+				<Tn Id="001302"/>
+				<Tn Id="010009"/>
+				<Tn Id="010b0a"/>
+				<Tn Id="020000"/>
+				<Tn Id="0d0e01"/>
+				<Tn Id="120001"/>
+				<Tn Id="120421"/>
+				<Tn Id="120700"/>
+				<Tn Id="130700"/>
+			</Tns>
+		</Pt>
+		<Pt Id="667"	Us="2">
+			<Tns>
+				<Tn Id="120d00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="669"	Us="2">
+			<Tns>
+				<Tn Id="030f00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="674"	Us="0" Kw="acap"	Ds="acap"/>
+		<Pt Id="692"	Us="2">
+			<Tns>
+				<Tn Id="060002"/>
+			</Tns>
+		</Pt>
+		<Pt Id="694"	Us="0" Kw="ha-cluster"	Ds="Heartbeat HA-cluster"/>
+
+		<Pt Id="704"	Us="0" Kw="elcsd"	Ds="errlog copy/server daemon"/>
+		<Pt Id="709"	Us="0" Kw="entrustmanager"	Ds="EntrustManager"/>
+		<Pt Id="729"	Us="0" Kw="netviewdm1"	Ds="IBM NetView DM/6000 Server/Client"/>
+		<Pt Id="730"	Us="0" Kw="netviewdm2"	Ds="IBM NetView DM/6000 send"/>
+		<Pt Id="731"	Us="0" Kw="netviewdm3"	Ds="IBM NetView DM/6000 receive"/>
+		<Pt Id="741"	Us="0" Kw="netgw"	Ds="netGW"/>
+		<Pt Id="742"	Us="0" Kw="netrcs"	Ds="Network based Rev. Cont. Sys."/>
+		<Pt Id="744"	Us="0" Kw="flexlm"	Ds="Flexible License Manager"/>
+		<Pt Id="747"	Us="0" Kw="fujitsu-dev"	Ds="Fujitsu Device Control"/>
+		<Pt Id="748"	Us="0" Kw="ris-cm"	Ds="Russell Info Sci Calendar Manager"/>
+		<Pt Id="749"	Us="0" Kw="kerberos-adm"	Ds="kerberos administration"/>
+		<Pt Id="750"	Us="0" Kw="kerberos"	Ds="Kerberos authentication--tcp"/>
+		<Pt Id="751"	Us="0" Kw="kerberos_master"	Ds="Kerberos authentication"/>
+		<Pt Id="752"	Us="0" Kw="qrh"	Ds="qrh"/>
+		<Pt Id="753"	Us="0" Kw="rrh"	Ds="rrh"/>
+		<Pt Id="754"	Us="0" Kw="krb_prop"	Ds="Kerberos slave propagation"/>
+		<Pt Id="758"	Us="0" Kw="nlogin"	Ds="nlogin"/>
+		<Pt Id="759"	Us="0" Kw="con"	Ds="con"/>
+		<Pt Id="760"	Us="0" Kw="ns"	Ds="ns"/>
+		<Pt Id="761"	Us="0" Kw="rxe"	Ds="rxe"/>
+		<Pt Id="762"	Us="0" Kw="quotad"	Ds="quotad"/>
+		<Pt Id="763"	Us="0" Kw="cycleserv"	Ds="cycleserv"/>
+		<Pt Id="764"	Us="0" Kw="omserv"	Ds="omserv"/>
+		<Pt Id="765"	Us="0" Kw="webster"	Ds="webster"/>
+		<Pt Id="767"	Us="0" Kw="phonebook"	Ds="Network phonebook"/>
+		<Pt Id="769"	Us="0" Kw="vid"	Ds="vid"/>
+		<Pt Id="770"	Us="0" Kw="cadlock"	Ds="cadlock"/>
+		<Pt Id="771"	Us="0" Kw="rtip"	Ds="rtip"/>
+		<Pt Id="772"	Us="0" Kw="cycleserv2"	Ds="cycleserv2"/>
+		<Pt Id="773"	Us="0" Kw="submit"	Ds="submit"/>
+		<Pt Id="774"	Us="0" Kw="rpasswd"	Ds="rpasswd"/>
+		<Pt Id="775"	Us="0" Kw="entomb"	Ds="entomb"/>
+		<Pt Id="776"	Us="0" Kw="wpages"	Ds="wpages"/>
+		<Pt Id="777"	Us="2">
+			<Tns>
+				<Tn Id="000800"/>
+				<Tn Id="140d00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="780"	Us="0" Kw="wpgs"	Ds="wpgs"/>
+		<Pt Id="781"	Us="0" Kw="hp-collector"	Ds="hp performance data collector"/>
+		<Pt Id="782"	Us="0" Kw="hp-managed-node"	Ds="hp performance data managed node"/>
+		<Pt Id="783"	Us="0" Kw="hp-alarm-mgr"	Ds="hp performance data alarm manager"/>
+		<Pt Id="786"	Us="0" Kw="concert"	Ds="Concert"/> 
+		<Pt Id="799"	Us="0" Kw="controlit"	Ds="controlit"/>
+
+		<Pt Id="800"	Us="0" Kw="mdbs_daemon"	Ds="mdbs_daemon"/>
+		<Pt Id="801"	Us="0" Kw="device"	Ds="device"/>
+		<Pt Id="808"	Us="2">
+			<Tns>
+				<Tn Id="160807"/>
+			</Tns>
+		</Pt>
+		<Pt Id="871"	Us="0" Kw="supfilesrv"	Ds="SUP server"/>
+		<Pt Id="873"	Us="0" Kw="rsync"	Ds="Rsync server ( http://rsync.samba.org )"/>
+		<Pt Id="888"	Us="0" Kw="erlogin"	Ds="Login and environment passing"/>
+
+		<Pt Id="901"	Us="0" Kw="samba-swat"	Ds="Samba SWAT tool.Also used by ISS RealSecure."/>
+		<Pt Id="911"	Us="2">
+			<Tns>
+				<Tn Id="030001"/>
+			</Tns>
+		</Pt>
+		<Pt Id="950"	Us="0" Kw="oftep-rpc"	Ds="Often RPC.statd (on Redhat Linux)"/>
+		<Pt Id="953"	Us="0" Kw="rndc"	Ds="RNDC is used by BIND 9 (and probably other NS)"/>
+		<Pt Id="989"	Us="0" Kw="ftps-data"	Ds="FTP protocol (data) over TLS/SSL"/>
+		<Pt Id="990"	Us="0" Kw="ftps"	Ds="FTP protocol (control) over TLS/SSL"/>
+		<Pt Id="992"	Us="0" Kw="telnets"	Ds="Telnet protocol over TLS/SSL"/>
+		<Pt Id="993"	Us="0" Kw="imaps"	Ds="IMAP4 protocol over TLS/SSL"/>
+		<Pt Id="994"	Us="0" Kw="ircs"	Ds="IRC protocol over TLS/SSL"/>
+		<Pt Id="995"	Us="0" Kw="pop3s"	Ds="POP3 protocol over TLS/SSL"/>
+		<Pt Id="996"	Us="0" Kw="xtreelic"	Ds="Central Point Software"/>
+		<Pt Id="997"	Us="0" Kw="maitrd"	Ds="maitrd"/>
+		<Pt Id="998"	Us="0" Kw="busboy"	Ds="busboy"/>
+		<Pt Id="999"	Us="1" Kw="garcon"	Ds="garcon">
+			<Tns>
+				<Tn Id="030402"/>
+				<Tn Id="050e01"/>
+				<Tn Id="160810"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="1000"	Us="1" Kw="cadlock"	Ds="cadlock">
+			<Tns>
+				<Tn Id="030405"/>
+				<Tn Id="030810"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1001"	Us="2">
+			<Tns>
+				<Tn Id="030405"/>
+				<Tn Id="0b0400"/>
+				<Tn Id="120800"/>
+				<Tn Id="160400"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1008"	Us="0" Kw="ufsd"	Ds="UFS-aware server"/>
+		<Pt Id="1010"	Us="2">
+			<Tns>
+				<Tn Id="030e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1011"	Us="2">
+			<Tns>
+				<Tn Id="030e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1012"	Us="1" Kw="sometimes-rpc1"	Ds="rstatd (OpenBSD)">
+			<Tns>
+				<Tn Id="030e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1015"	Us="2">
+			<Tns>
+				<Tn Id="030e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1016"	Us="2">
+			<Tns>
+				<Tn Id="030e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1020"	Us="2">
+			<Tns>
+				<Tn Id="150000"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1024"	Us="1" Kw="kdm"	Ds="K Display Manager (KDE version of xdm)">
+			<Tns>
+				<Tn Id="090000"/>
+				<Tn Id="0b0003"/>
+				<Tn Id="0d0431"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1025"	Us="1" Kw="blackjack"	Ds="network blackjack">
+			<Tns>
+				<Tn Id="0c0030"/>
+				<Tn Id="110412"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1026"	Us="0" Kw="nterm"	Ds="remote_login network_terminal"/>
+		<Pt Id="1027"	Us="0" Kw="icq"	Ds="ICQ"/>
+		<Pt Id="1029"	Us="0" Kw="icq"	Ds="ICQ"/>
+		<Pt Id="1030"	Us="0" Kw="iad1"	Ds="BBN IAD"/>
+		<Pt Id="1031"	Us="0" Kw="iad2"	Ds="BBN IAD"/>
+		<Pt Id="1032"	Us="0" Kw="iad3"	Ds="BBN IAD; ICQ"/>
+		<Pt Id="1033"	Us="2">
+			<Tns>
+				<Tn Id="0d0431"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1035"	Us="2">
+			<Tns>
+				<Tn Id="0c1400"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1042"	Us="2">
+			<Tns>
+				<Tn Id="010b0a"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1045"	Us="1" Kw="fpitp"	Ds="Fingerprint Image Transfer Protocol">
+			<Tns>
+				<Tn Id="110002"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1049"	Us="1" Kw="td-postman"	Ds="Tobit David Postman VPMN">
+			<Tns>
+				<Tn Id="120100"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1050"	Us="1" Kw="cma"	Ds="CORBA Management Agent">
+			<Tns>
+				<Tn Id="0c0804"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1053"	Us="1" Kw="remote-as"	Ds="Remote Assistant (RA)">
+			<Tns>
+				<Tn Id="130750"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1054"	Us="2">
+			<Tns>
+				<Tn Id="000220"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1058"	Us="0" Kw="nim"	Ds="nim"/>
+		<Pt Id="1059"	Us="0" Kw="nimreg"	Ds="nimreg"/>
+		<Pt Id="1067"	Us="0" Kw="instl_boots"	Ds="Installation Bootstrap Protocol Server"/>
+		<Pt Id="1068"	Us="0" Kw="instl_bootc"	Ds="Installation Bootstrap Protocol Client"/>
+		<Pt Id="1080"	Us="1" Kw="socks"	Ds="Socks">
+			<Tns>
+				<Tn Id="160807"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1081"	Us="2">
+			<Tns>
+				<Tn Id="160807"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1083"	Us="1" Kw="ansoft-lm-1"	Ds="Anasoft License Manager">
+			<Tns>
+				<Tn Id="160807"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1084"	Us="0" Kw="ansoft-lm-2"	Ds="Anasoft License Manager"/>
+		<Pt Id="1090"	Us="2">
+			<Tns>
+				<Tn Id="171301"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1095"	Us="2">
+			<Tns>
+				<Tn Id="110403"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1097"	Us="1" Kw="rmiactivation"	Ds="RMI Activation">
+			<Tns>
+				<Tn Id="110403"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1098"	Us="1" Kw="rmiactivation"	Ds="RMI Activation">
+			<Tns>
+				<Tn Id="110403"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1099"	Us="1" Kw="rmiactivation"	Ds="RMI Registry ">
+			<Tns>
+				<Tn Id="010b20"/>
+				<Tn Id="110403"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="1102"	Us="0" Kw="adobeserver-1"	Ds="ADOBE SERVER 1 "/>
+		<Pt Id="1103"	Us="0" Kw="xaudio"	Ds="Xaserver # X Audio Server"/>
+		<Pt Id="1109"	Us="0" Kw="kpop"	Ds="Pop with Kerberos"/>
+		<Pt Id="1110"	Us="0" Kw="nfsd-status"	Ds="NFS Cluster status/Keep-Alive info"/>
+		<Pt Id="1112"	Us="0" Kw="msql"	Ds="mini-sql server"/>
+		<Pt Id="1127"	Us="0" Kw="supfiledbg"	Ds="SUP debugging"/>
+		<Pt Id="1150"	Us="2">
+			<Tns>
+				<Tn Id="0e1100"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1151"	Us="2">
+			<Tns>
+				<Tn Id="0e1100"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1155"	Us="0" Kw="nfa"	Ds="Network File Access"/>
+		<Pt Id="1167"	Us="0" Kw="phone"	Ds="conference calling"/>
+		<Pt Id="1170"	Us="2">
+			<Tns>
+				<Tn Id="0f1200"/>
+				<Tn Id="121372"/>				
+				<Tn Id="150e00"/>				
+			</Tns>
+		</Pt>
+		<Pt Id="1178"	Us="0" Kw="skkserv"	Ds="SKK (kanji input)"/>
+
+		<Pt Id="1200"	Us="2">
+			<Tns>
+				<Tn Id="0d0e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1201"	Us="2">
+			<Tns>
+				<Tn Id="0d0e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1207"	Us="2">
+			<Tns>
+				<Tn Id="120e10"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1208"	Us="2">
+			<Tns>
+				<Tn Id="080d02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1212"	Us="1" Kw="lupa"	Ds="lupa">
+			<Tns>
+				<Tn Id="0a0000"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1222"	Us="0" Kw="nerv"	Ds="SNI R&amp;D network"/>
+		<Pt Id="1234"	Us="2">
+			<Tns>
+				<Tn Id="121404"/>
+				<Tn Id="140b00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1243"	Us="2">
+			<Tns>
+				<Tn Id="010014"/>
+				<Tn Id="121403"/>
+				<Tn Id="130800"/>
+				<Tn Id="121400"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1245"	Us="2">
+			<Tns>
+				<Tn Id="150e02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1248"	Us="0" Kw="hermes"	Ds="hermes"/>
+		<Pt Id="1255"	Us="2">
+			<Tns>
+				<Tn Id="120200"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1256"	Us="2">
+			<Tns>
+				<Tn Id="0f1102"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1269"	Us="2">
+			<Tns>
+				<Tn Id="0c0030"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1272"	Us="2">
+			<Tns>
+				<Tn Id="130703"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="1313"	Us="2">
+			<Tns>
+				<Tn Id="0d0426"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1338"	Us="2">
+			<Tns>
+				<Tn Id="0c0802"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1346"	Us="0" Kw="alta-ana-lm"	Ds="Alta Analytics License Manager"/>
+		<Pt Id="1347"	Us="0" Kw="bbn-mmc"	Ds="multi media conferencing"/>
+		<Pt Id="1348"	Us="0" Kw="bbn-mmx"	Ds="multi media conferencing"/>
+		<Pt Id="1349"	Us="1" Kw="sbook"	Ds="Registration Network Protocol">
+			<Tns>
+				<Tn Id="010e20"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1350"	Us="0" Kw="editbench"	Ds="Registration Network Protocol"/>
+		<Pt Id="1351"	Us="0" Kw="equationbuilder"	Ds="Digital Tool Works (MIT)"/>
+		<Pt Id="1352"	Us="0" Kw="lotusnote"	Ds="Lotus Note"/>
+		<Pt Id="1353"	Us="0" Kw="relief"	Ds="Relief Consulting"/>
+		<Pt Id="1354"	Us="0" Kw="rightbrain"	Ds="RightBrain Software"/>
+		<Pt Id="1355"	Us="0" Kw="intuitive edge"	Ds="Intuitive Edge"/>
+		<Pt Id="1356"	Us="0" Kw="cuillamartin"	Ds="CuillaMartin Company"/>
+		<Pt Id="1357"	Us="0" Kw="pegboard"	Ds="Electronic PegBoard"/>	
+		<Pt Id="1358"	Us="0" Kw="connlcli"	Ds="CONNLCLI"/>
+		<Pt Id="1359"	Us="0" Kw="ftsrv"	Ds="FTSRV"/>
+		<Pt Id="1360"	Us="0" Kw="mimer"	Ds="MIMER"/>
+		<Pt Id="1361"	Us="0" Kw="linx"	Ds="LinX"/>
+		<Pt Id="1362"	Us="0" Kw="timeflies"	Ds="TimeFlies"/>
+		<Pt Id="1363"	Us="0" Kw="ndm-requester"	Ds="Network DataMover Requester"/>
+		<Pt Id="1364"	Us="0" Kw="ndm-server"	Ds="Network DataMover Server"/>
+		<Pt Id="1365"	Us="0" Kw="adapt-sna"	Ds="Network Software Associates"/>
+		<Pt Id="1366"	Us="0" Kw="netware-csp"	Ds="Novell NetWare Comm Service Platform"/>
+		<Pt Id="1367"	Us="0" Kw="dcs"	Ds="DCS"/>
+		<Pt Id="1368"	Us="0" Kw="screencast"	Ds="ScreenCast"/>
+		<Pt Id="1369"	Us="0" Kw="gv-us"	Ds="GlobalView to Unix Shell"/>
+		<Pt Id="1370"	Us="0" Kw="us-gv"	Ds="Unix Shell to GlobalView"/>
+		<Pt Id="1371"	Us="0" Kw="fc-cli"	Ds="Fujitsu Config Protocol"/>
+		<Pt Id="1372"	Us="0" Kw="fc-ser"	Ds="Fujitsu Config Protocol"/>
+		<Pt Id="1373"	Us="0" Kw="chromagrafx"	Ds="Chromagrafx"/>
+		<Pt Id="1374"	Us="0" Kw="molly"	Ds="EPI Software Systems"/>
+		<Pt Id="1375"	Us="0" Kw="bytex"	Ds="Bytex"/>
+		<Pt Id="1376"	Us="0" Kw="ibm-pps"	Ds="IBM Person to Person Software"/>
+		<Pt Id="1377"	Us="0" Kw="cichlid"	Ds="Cichlid License Manager"/>
+		<Pt Id="1378"	Us="0" Kw="elan"	Ds="Elan License Manager"/>
+		<Pt Id="1379"	Us="0" Kw="dbreporter"	Ds="Integrity Solutions"/>
+		<Pt Id="1380"	Us="0" Kw="telesis-licman"	Ds="Telesis Network License Manager"/>
+		<Pt Id="1381"	Us="0" Kw="apple-licman"	Ds="Apple Network License Manager"/>
+		<Pt Id="1382"	Us="0" Kw="udt_os"	Ds="udt_os"/>
+		<Pt Id="1383"	Us="0" Kw="gwha"	Ds="GW Hannaway Network License Manager"/>
+		<Pt Id="1384"	Us="0" Kw="os-licman"	Ds="Objective Solutions License Manager"/>
+		<Pt Id="1385"	Us="0" Kw="atex_elmd"	Ds="Atex Publishing License Manager"/>
+		<Pt Id="1386"	Us="0" Kw="checksum"	Ds="CheckSum License Manager"/>
+		<Pt Id="1387"	Us="0" Kw="cadsi-lm"	Ds="Computer Aided Design Software Inc LM"/>
+		<Pt Id="1388"	Us="0" Kw="objective-dbc"	Ds="Objective Solutions DataBase Cache"/>
+		<Pt Id="1389"	Us="0" Kw="iclpv-dm"	Ds="Document Manager"/>
+		<Pt Id="1390"	Us="0" Kw="iclpv-sc"	Ds="Storage Controller"/>
+		<Pt Id="1391"	Us="0" Kw="iclpv-sas"	Ds="Storage Access Server"/>
+		<Pt Id="1392"	Us="0" Kw="iclpv-pm"	Ds="Print Manager"/>
+		<Pt Id="1393"	Us="0" Kw="iclpv-nls"	Ds="Network Log Server"/>
+		<Pt Id="1394"	Us="1" Kw="iclpv-nlc"	Ds="Network Log Client">
+			<Tns>
+				<Tn Id="060e03"/>
+				<Tn Id="010014"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1395"	Us="0" Kw="iclpv-wsm"	Ds="PC Workstation Manager software"/>
+		<Pt Id="1396"	Us="0" Kw="dvl-activemail"	Ds="DVL Active Mail"/>
+		<Pt Id="1397"	Us="0" Kw="audio-activmail"	Ds="Audio Active Mail"/>
+		<Pt Id="1398"	Us="0" Kw="video-activmail"	Ds="Video Active Mail"/>
+		<Pt Id="1399"	Us="0" Kw="cadkey-licman"	Ds="Cadkey License Manager"/>
+
+		<Pt Id="1400"	Us="0" Kw="cadkey-tablet"	Ds="Cadkey Tablet Daemon"/>
+		<Pt Id="1401"	Us="0" Kw="goldleaf-licman"	Ds="Goldleaf License Manager"/>
+		<Pt Id="1402"	Us="0" Kw="prm-sm-np"	Ds="Prospero Resource Manager"/>
+		<Pt Id="1403"	Us="0" Kw="prm-nm-np"	Ds="Prospero Resource Manager"/>
+		<Pt Id="1404"	Us="0" Kw="igi-lm"	Ds="Infinite Graphics License Manager"/>
+		<Pt Id="1405"	Us="0" Kw="ibm-res"	Ds="IBM Remote Execution Starter"/>
+		<Pt Id="1406"	Us="0" Kw="netlabs-lm"	Ds="NetLabs License Manager"/>
+		<Pt Id="1407"	Us="0" Kw="dbsa-lm"	Ds="DBSA License Manager"/>
+		<Pt Id="1408"	Us="0" Kw="sophia-lm"	Ds="Sophia License Manager"/>
+		<Pt Id="1409"	Us="0" Kw="here-lm"	Ds="Here License Manager"/>
+		<Pt Id="1410"	Us="0" Kw="hiq"	Ds="HiQ License Manager"/>
+		<Pt Id="1411"	Us="0" Kw="af"	Ds="AudioFile"/>
+		<Pt Id="1412"	Us="0" Kw="innosys"	Ds="InnoSys"/>
+		<Pt Id="1413"	Us="0" Kw="innosys-acl"	Ds="Innosys-ACL"/>
+		<Pt Id="1414"	Us="0" Kw="ibm-mqseries"	Ds="IBM MQSeries"/>
+		<Pt Id="1415"	Us="0" Kw="dbstar"	Ds="DBStar"/>
+		<Pt Id="1416"	Us="0" Kw="novell-lu6.2"	Ds="Novell LU6.2"/>
+		<Pt Id="1417"	Us="0" Kw="timbuktu-srv1"	Ds="Timbuktu Service 1 Port"/>
+		<Pt Id="1418"	Us="0" Kw="timbuktu-srv2"	Ds="Timbuktu Service 2 Port"/>
+		<Pt Id="1419"	Us="0" Kw="timbuktu-srv3"	Ds="Timbuktu Service 3 Port"/>
+		<Pt Id="1420"	Us="0" Kw="timbuktu-srv4"	Ds="Timbuktu Service 4 Port"/>
+		<Pt Id="1421"	Us="0" Kw="gandalf-lm"	Ds="Gandalf License Manager"/>
+		<Pt Id="1422"	Us="0" Kw="autodesk-lm"	Ds="Autodesk License Manager"/>
+		<Pt Id="1423"	Us="0" Kw="essbase"	Ds="Essbase Arbor Software"/>
+		<Pt Id="1424"	Us="0" Kw="hybrid"	Ds="Hybrid Encryption Protocol"/>
+		<Pt Id="1425"	Us="0" Kw="zion-lm"	Ds="Zion Software License Manager"/>
+		<Pt Id="1426"	Us="0" Kw="sas-1"	Ds="Satellite-data Acquisition System 1"/>
+		<Pt Id="1427"	Us="0" Kw="mloadd"	Ds="mloadd monitoring tool"/>
+		<Pt Id="1428"	Us="0" Kw="informatik-lm"	Ds="Informatik License Manager"/>
+		<Pt Id="1429"	Us="0" Kw="nms"	Ds="Hypercom NMS"/>
+		<Pt Id="1430"	Us="0" Kw="tpdu"	Ds="Hypercom TPDU"/>
+		<Pt Id="1431"	Us="0" Kw="rgtp"	Ds="Reverse Gosip Transport"/>
+		<Pt Id="1432"	Us="0" Kw="blueberry-lm"	Ds="Blueberry Software License Manager"/>
+		<Pt Id="1433"	Us="0" Kw="ms-sql-s"	Ds="Microsoft-SQL-Server"/>
+		<Pt Id="1435"	Us="0" Kw="ibm-cics"	Ds="IBM CISC"/>
+		<Pt Id="1436"	Us="0" Kw="sas-2"	Ds="Satellite-data Acquisition System 2"/>
+		<Pt Id="1437"	Us="0" Kw="tabula"	Ds="Tabula"/>
+		<Pt Id="1438"	Us="0" Kw="eicon-server"	Ds="Eicon Security Agent/Server"/>
+		<Pt Id="1439"	Us="0" Kw="eicon-x25"	Ds="Eicon X25/SNA Gateway"/>
+		<Pt Id="1440"	Us="0" Kw="eicon-slp"	Ds="Eicon Service Location Protocol"/>
+		<Pt Id="1441"	Us="1" Kw="cadis-1"	Ds="Cadis License Management">
+			<Tns>
+				<Tn Id="110412"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1442"	Us="0" Kw="cadis-2"	Ds="Cadis License Management"/>
+		<Pt Id="1443"	Us="0" Kw="ies-lm"	Ds="Integrated Engineering Software"/>
+		<Pt Id="1444"	Us="0" Kw="marcam-lm"	Ds="Marcam  License Management"/>
+		<Pt Id="1445"	Us="0" Kw="proxima-lm"	Ds="Proxima License Manager"/>
+		<Pt Id="1446"	Us="0" Kw="ora-lm"	Ds="Optical Research Associates License Manager"/>
+		<Pt Id="1447"	Us="0" Kw="apri-lm"	Ds="Applied Parallel Research LM"/>
+		<Pt Id="1448"	Us="0" Kw="oc-lm"	Ds="OpenConnect License Manager"/>
+		<Pt Id="1449"	Us="0" Kw="peport"	Ds="PEport"/>
+		<Pt Id="1450"	Us="0" Kw="dwf"	Ds="Tandem Distributed Workbench Facility"/>
+		<Pt Id="1451"	Us="0" Kw="infoman"	Ds="IBM Information Management"/>
+		<Pt Id="1452"	Us="0" Kw="gtegsc-lm"	Ds="GTE Government Systems License Man"/>
+		<Pt Id="1453"	Us="0" Kw="genie-lm"	Ds="Genie License Manager"/>
+		<Pt Id="1454"	Us="0" Kw="interhdl_elmd"	Ds="interHDL License Manager"/>
+		<Pt Id="1455"	Us="0" Kw="esl-lm"	Ds="ESL License Manager"/>
+		<Pt Id="1456"	Us="0" Kw="dca"	Ds="DCA"/>
+		<Pt Id="1457"	Us="0" Kw="valisys-lm"	Ds="Valisys License Manager"/>
+		<Pt Id="1458"	Us="0" Kw="nrcabq-lm"	Ds="Nichols Research Corp."/>
+		<Pt Id="1459"	Us="0" Kw="proshare1"	Ds="Proshare Notebook Application"/>
+		<Pt Id="1460"	Us="0" Kw="proshare2"	Ds="Proshare Notebook Application"/>
+		<Pt Id="1461"	Us="0" Kw="ibm_wrless_lan"	Ds="IBM Wireless LAN"/>
+		<Pt Id="1462"	Us="0" Kw="world-lm"	Ds="World License Manager"/>
+		<Pt Id="1463"	Us="0" Kw="nucleus"	Ds="Nucleus"/>
+		<Pt Id="1464"	Us="0" Kw="msl_lmd"	Ds="MSL License Manager"/>
+		<Pt Id="1465"	Us="0" Kw="pipes"	Ds="Pipes Platform"/>
+		<Pt Id="1466"	Us="0" Kw="oceansoft-lm"	Ds="Ocean Software License Manager"/>
+		<Pt Id="1467"	Us="0" Kw="csdmbase"	Ds="CSDMBASE"/>
+		<Pt Id="1468"	Us="0" Kw="csdm"	Ds="CSDM"/>
+		<Pt Id="1469"	Us="0" Kw="aal-lm"	Ds="Active Analysis Limited License Manager"/>
+		<Pt Id="1470"	Us="0" Kw="uaiact"	Ds="Universal Analytics"/>
+		<Pt Id="1471"	Us="0" Kw="csdmbase"	Ds="csdmbase"/>
+		<Pt Id="1472"	Us="0" Kw="csdm"	Ds="csdm"/>
+		<Pt Id="1473"	Us="0" Kw="openmath"	Ds="OpenMath"/>
+		<Pt Id="1474"	Us="0" Kw="telefinder"	Ds="Telefinder"/>
+		<Pt Id="1475"	Us="0" Kw="taligent-lm"	Ds="Taligent License Manager"/>
+		<Pt Id="1476"	Us="0" Kw="clvm-cfg"	Ds="clvm-cfg"/>
+		<Pt Id="1477"	Us="0" Kw="ms-sna-server"	Ds="ms-sna-server"/>
+		<Pt Id="1478"	Us="0" Kw="ms-sna-base"	Ds="ms-sna-base"/>
+		<Pt Id="1479"	Us="0" Kw="dberegister"	Ds="dberegister"/>
+		<Pt Id="1480"	Us="0" Kw="pacerforum"	Ds="PacerForum"/>
+		<Pt Id="1481"	Us="0" Kw="airs"	Ds="AIRS"/>
+		<Pt Id="1482"	Us="0" Kw="miteksys-lm"	Ds="Miteksys License Manager"/>
+		<Pt Id="1483"	Us="0" Kw="afs"	Ds="AFS License Manager"/>
+		<Pt Id="1484"	Us="0" Kw="confluent"	Ds="Confluent License Manager"/>
+		<Pt Id="1485"	Us="0" Kw="lansource"	Ds="LANSource"/>
+		<Pt Id="1486"	Us="0" Kw="nms_topo_serv"	Ds="nms_topo_serv"/>
+		<Pt Id="1487"	Us="0" Kw="localinfosrvr"	Ds="LocalInfoSrvr"/>
+		<Pt Id="1488"	Us="0" Kw="docstor"	Ds="DocStor"/>
+		<Pt Id="1489"	Us="0" Kw="dmdocbroker"	Ds="dmdocbroker"/>
+		<Pt Id="1490"	Us="0" Kw="insitu-conf"	Ds="insitu-conf"/>
+		<Pt Id="1491"	Us="0" Kw="anynetgateway"	Ds="anynetgateway"/>
+		<Pt Id="1492"	Us="1" Kw="stone-design-1"	Ds="stone-design-1">
+			<Tns>
+				<Tn Id="051300"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1493"	Us="0" Kw="netmap_lm"	Ds="netmap_lm"/>
+		<Pt Id="1494"	Us="0" Kw="ica"	Ds="Citrix ICA Client"/>
+		<Pt Id="1488"	Us="0" Kw="cvc"	Ds="cvc"/>
+		<Pt Id="1496"	Us="0" Kw="liberty-lm"	Ds="liberty-lm"/>
+		<Pt Id="1497"	Us="0" Kw="rfx-lm"	Ds="rfx-lm"/>
+		<Pt Id="1498"	Us="0" Kw="watcom-sql"	Ds="Watcom-SQL"/>
+		<Pt Id="1499"	Us="0" Kw="fhc"	Ds="Federico Heinz Consultora"/>
+
+		<Pt Id="1500"	Us="0" Kw="vlsi-lm"	Ds="VLSI License Manager"/>
+		<Pt Id="1501"	Us="0" Kw="sas-3"	Ds="Satellite-data Acquisition System 3"/>
+		<Pt Id="1502"	Us="0" Kw="shivadiscovery"	Ds="Shiva"/>
+		<Pt Id="1503"	Us="0" Kw="imtc-mcs"	Ds="Databeam"/>
+		<Pt Id="1504"	Us="0" Kw="evb-elm"	Ds="EVB Software Engineering License Manager"/>
+		<Pt Id="1505"	Us="0" Kw="funkproxy"	Ds="Funk Software, Inc."/>
+		<Pt Id="1506"	Us="0" Kw="utcd"	Ds="Universal Time daemon (utcd)"/>
+		<Pt Id="1507"	Us="0" Kw="symplex"	Ds="symplex"/>
+		<Pt Id="1508"	Us="0" Kw="diagmond"	Ds="diagmond"/>
+		<Pt Id="1509"	Us="0" Kw="robcad-lm"	Ds="Robcad, Ltd. License Manager"/>
+		<Pt Id="1510"	Us="0" Kw="mvx-lm"	Ds="Midland Valley Exploration Ltd. License Mgr"/>
+		<Pt Id="1511"	Us="0" Kw="3l-l1"	Ds="3l-l1"/>
+		<Pt Id="1512"	Us="0" Kw="wins"	Ds="Microsoft Windows Internet Name Service"/>
+		<Pt Id="1513"	Us="0" Kw="fujitsu-dtc"	Ds="Fujitsu Systems Business of America, Inc"/>
+		<Pt Id="1514"	Us="0" Kw="fujitsu-dtcns"	Ds="Fujitsu Systems Business of America, Inc"/>
+		<Pt Id="1515"	Us="0" Kw="ifor-protocol"	Ds="ifor-protocol"/>
+		<Pt Id="1516"	Us="0" Kw="vpad"	Ds="Virtual Places Audio data"/>
+		<Pt Id="1517"	Us="0" Kw="vpac"	Ds="Virtual Places Audio control"/>
+		<Pt Id="1518"	Us="0" Kw="vpvd"	Ds="Virtual Places Video data"/>
+		<Pt Id="1519"	Us="0" Kw="vpvc"	Ds="Virtual Places Video control"/>
+		<Pt Id="1520"	Us="0" Kw="atm-zip-office"	Ds="atm zip office"/>
+		<Pt Id="1521"	Us="0" Kw="oracle-sql"	Ds="Oracle SQLNet; nCube License Manager"/>
+		<Pt Id="1522"	Us="0" Kw="rna-lm"	Ds="Ricardo North America License Manager"/>
+		<Pt Id="1523"	Us="0" Kw="cichild-lm"	Ds="cichild-lm"/>
+		<Pt Id="1524"	Us="1" Kw="ingreslock"	Ds="ingres">
+			<Tns>
+				<Tn Id="131110"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1525"	Us="0" Kw="prospero-np"	Ds="Prospero Directory Service non-priv; oracle"/>
+		<Pt Id="1526"	Us="0" Kw="pdap-np"	Ds="Prospero Data Access Prot non-priv"/>
+		<Pt Id="1527"	Us="0" Kw="tlisrv"	Ds="oracle"/>
+		<Pt Id="1528"	Us="0" Kw="mciautoreg"	Ds="mciautoreg"/>
+		<Pt Id="1529"	Us="0" Kw="coauthor"	Ds="oracle"/>
+		<Pt Id="1530"	Us="0" Kw="rap-service"	Ds="coauthor"/>
+		<Pt Id="1531"	Us="0" Kw="rap-listen"	Ds="rap-listen"/>
+		<Pt Id="1532"	Us="0" Kw="miroconnect"	Ds="miroconnect"/>
+		<Pt Id="1533"	Us="2">
+			<Tns>
+				<Tn Id="010017"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1534"	Us="0" Kw="virtual-places"	Ds="Virtual Places Software"/>
+		<Pt Id="1534"	Us="0" Kw="micromuse-lm"	Ds="micromuse-lm"/>
+		<Pt Id="1535"	Us="0" Kw="ampr-info"	Ds="ampr-info"/>
+		<Pt Id="1536"	Us="0" Kw="ampr-inter"	Ds="ampr-inter"/>
+		<Pt Id="1537"	Us="0" Kw="sdsc-lm"	Ds="sdsc-lm"/>
+		<Pt Id="1538"	Us="0" Kw="3ds-lm"	Ds="3ds-lm"/>
+		<Pt Id="1539"	Us="0" Kw="intellistor-lm"	Ds="Intellistor License Manager"/>
+		<Pt Id="1540"	Us="0" Kw="rds"	Ds="rds"/>
+		<Pt Id="1541"	Us="0" Kw="rds2"	Ds="rds2"/>
+		<Pt Id="1542"	Us="0" Kw="gridgen-elmd"	Ds="gridgen-elmd"/>
+		<Pt Id="1543"	Us="0" Kw="simba-cs"	Ds="simba-cs"/>
+		<Pt Id="1544"	Us="0" Kw="aspeclmd"	Ds="aspeclmd"/>
+		<Pt Id="1545"	Us="0" Kw="vistium-share"	Ds="vistium-share"/>
+		<Pt Id="1546"	Us="0" Kw="abbaccuray"	Ds="abbaccuray"/>
+		<Pt Id="1547"	Us="0" Kw="laplink"	Ds="laplink"/>
+		<Pt Id="1548"	Us="0" Kw="axon-lm"	Ds="Axon License Manager"/>
+		<Pt Id="1549"	Us="0" Kw="shivasound"	Ds="Shiva Sound"/>
+		<Pt Id="1500"	Us="0" Kw="3m-image-lm"	Ds="Image Storage license manager 3M Company"/>
+		<Pt Id="1551"	Us="0" Kw="hecmtl-db"	Ds="hecmtl-db"/>
+		<Pt Id="1552"	Us="0" Kw="pciarray"	Ds="pciarray"/>
+		<Pt Id="1568"	Us="2">
+			<Tns>
+				<Tn Id="110411"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1584"	Us="0" Kw="dialpad"	Ds="Dialpad"/>
+		<Pt Id="1585"	Us="0" Kw="dialpad"	Ds="Dialpad"/>
+
+		<Pt Id="1600"	Us="1" Kw="issd"	Ds="issd">
+			<Tns>
+				<Tn Id="030810"/>
+				<Tn Id="120704"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1604"	Us="0" Kw="citrix-ica"	Ds="Citrix ICA, MS Terminal Server"/>
+		<Pt Id="1645"	Us="0" Kw="radius"	Ds="radius authentication"/>
+		<Pt Id="1646"	Us="0" Kw="radacct"	Ds="radius accounting"/>
+		<Pt Id="1650"	Us="0" Kw="nkd"	Ds="nkd"/>
+		<Pt Id="1651"	Us="0" Kw="proshareaudio"	Ds="proshare conf audio; shiva_confsrvr"/>
+		<Pt Id="1652"	Us="0" Kw="prosharevideo"	Ds="proshare conf video; xnmp"/>
+		<Pt Id="1653"	Us="0" Kw="prosharedata"	Ds="proshare conf data"/>
+		<Pt Id="1654"	Us="0" Kw="prosharerequest"	Ds="proshare conf request"/>
+		<Pt Id="1655"	Us="0" Kw="prosharenotify"	Ds="proshare conf notify"/>
+		<Pt Id="1661"	Us="0" Kw="netview-aix-1"	Ds="netview-aix-1"/>
+		<Pt Id="1662"	Us="0" Kw="netview-aix-2"	Ds="netview-aix-2"/>
+		<Pt Id="1663"	Us="0" Kw="netview-aix-3"	Ds="netview-aix-3"/>
+		<Pt Id="1664"	Us="0" Kw="netview-aix-4"	Ds="netview-aix-4"/>
+		<Pt Id="1665"	Us="0" Kw="netview-aix-5"	Ds="netview-aix-5"/>
+		<Pt Id="1666"	Us="0" Kw="netview-aix-6"	Ds="netview-aix-6"/>
+		<Pt Id="1667"	Us="0" Kw="netview-aix-7"	Ds="netview-aix-7"/>
+		<Pt Id="1668"	Us="0" Kw="netview-aix-8"	Ds="netview-aix-8"/>
+		<Pt Id="1669"	Us="0" Kw="netview-aix-9"	Ds="netview-aix-9"/>
+		<Pt Id="1670"	Us="0" Kw="netview-aix-10"	Ds="netview-aix-10"/>
+		<Pt Id="1671"	Us="0" Kw="netview-aix-11"	Ds="netview-aix-11"/>
+		<Pt Id="1672"	Us="0" Kw="netview-aix-12"	Ds="netview-aix-12"/>
+		<Pt Id="1680"	Us="0" Kw="carboncopy"	Ds="CarbonCopy Server"/>
+
+		<Pt Id="1701"	Us="0" Kw="l2tp"	Ds="l2tp"/>
+		<Pt Id="1703"	Us="2">
+			<Tns>
+				<Tn Id="041701"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1718"	Us="0" Kw="h323gatedisc"	Ds="h323gatedisc"/>
+		<Pt Id="1719"	Us="0" Kw="h323gatestat"	Ds="h323gatestat"/>
+		<Pt Id="1720"	Us="0" Kw="h323hostcall"	Ds="h323hostcall"/>
+		<Pt Id="1723"	Us="0" Kw="pptp"	Ds="Point-to-Point Tunnelling Protocol"/>
+		<Pt Id="1755"	Us="0" Kw="wm-asf"	Ds="Windows Media (.asf)"/>
+		<Pt Id="1758"	Us="0" Kw="tftp-multi"	Ds="TFTP Multicast"/>
+		<Pt Id="1777"	Us="2">
+			<Tns>
+				<Tn Id="120200"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1788"	Us="0" Kw="hello"	Ds="hello"/>
+
+		<Pt Id="1807"	Us="2">
+			<Tns>
+				<Tn Id="120f02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1812"	Us="0" Kw="radius"	Ds="RADIUS authentication protocol (RFC 2138)"/>
+		<Pt Id="1813"	Us="0" Kw="radacct"	Ds="RADIUS accounting protocol (RFC 2139)"/>
+		<Pt Id="1827"	Us="0" Kw="pcm"	Ds="PCM Agent (AutoSecure Policy Compliance Mgr)"/>
+
+		<Pt Id="1905"	Us="0" Kw="sugp"	Ds="Secure UP.Link Gateway Protocol	"/>
+		<Pt Id="1911"	Us="0" Kw="mtp"	Ds="mtp"/>
+		<Pt Id="1966"	Us="2">
+			<Tns>
+				<Tn Id="050000"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1967"	Us="2">
+			<Tns>
+				<Tn Id="160c00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1969"	Us="2">
+			<Tns>
+				<Tn Id="0e0f00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1981"	Us="2">
+			<Tns>
+				<Tn Id="010e35"/>
+				<Tn Id="120706"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1985"	Us="0" Kw="hsrp"	Ds="Cisco Hot Standby Router Protocol"/>
+		<Pt Id="1986"	Us="0" Kw="licensedaemon"	Ds="cisco license management"/>
+		<Pt Id="1987"	Us="0" Kw="tr-rsrb-p1"	Ds="cisco RSRB Priority 1 port"/>
+		<Pt Id="1988"	Us="0" Kw="tr-rsrb-p2"	Ds="cisco RSRB Priority 2 port"/>
+		<Pt Id="1989"	Us="0" Kw="tr-rsrb-p3"	Ds="cisco RSRB Priority 3 port"/>
+		<Pt Id="1990"	Us="0" Kw="stun-p1"	Ds="cisco STUN Priority 1 port"/>
+		<Pt Id="1991"	Us="0" Kw="stun-p2"	Ds="cisco STUN Priority 2 port"/>
+		<Pt Id="1992"	Us="0" Kw="stun-p3"	Ds="cisco STUN Priority 3 port"/>
+		<Pt Id="1993"	Us="0" Kw="snmp-tcp-port"	Ds="cisco SNMP TCP port"/>
+		<Pt Id="1994"	Us="0" Kw="stun-port"	Ds="cisco serial tunnel port"/>
+		<Pt Id="1995"	Us="0" Kw="perf-port"	Ds="cisco perf port"/>
+		<Pt Id="1996"	Us="0" Kw="tr-rsrb-port"	Ds="cisco Remote SRB port"/>
+		<Pt Id="1997"	Us="0" Kw="gdp-port"	Ds="cisco Gateway Discovery Protocol"/>
+		<Pt Id="1998"	Us="0" Kw="x25-svc-port"	Ds="cisco X.25 service (XOT)"/>
+		<Pt Id="1999"	Us="1" Kw="tcp-id-port"	Ds="cisco identification port">
+			<Tns>
+				<Tn Id="010010"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="2000"	Us="1" Kw="callbook"	Ds="callbook">
+			<Tns>
+				<Tn Id="030405"/>
+				<Tn Id="080d06"/>
+				<Tn Id="0b0002"/>
+				<Tn Id="110401"/>
+				<Tn Id="120413"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2001"	Us="1" Kw="dc"	Ds="dc">
+			<Tns>
+				<Tn Id="030405"/>
+				<Tn Id="131111"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2002"	Us="1" Kw="globe"	Ds="globe">
+			<Tns>
+				<Tn Id="131101"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2003"	Us="2">
+			<Tns>
+				<Tn Id="131101"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2004"	Us="1" Kw="mailbox"	Ds="mailbox">
+			<Tns>
+				<Tn Id="131101"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2005"	Us="2">
+			<Tns>
+				<Tn Id="131101"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2006"	Us="0" Kw="invokator"	Ds="invokator"/>
+		<Pt Id="2007"	Us="0" Kw="dectalk"	Ds="dectalk"/>
+		<Pt Id="2008"	Us="0" Kw="conf"	Ds="conf"/>
+		<Pt Id="2009"	Us="0" Kw="news"	Ds="news"/>
+		<Pt Id="2010"	Us="0" Kw="search"	Ds="search"/>
+		<Pt Id="2011"	Us="0" Kw="raid-cc"	Ds="raid"/>
+		<Pt Id="2012"	Us="0" Kw="ttyinfo"	Ds="ttyinfo"/>
+		<Pt Id="2013"	Us="0" Kw="raid-am"	Ds="raid-am"/>
+		<Pt Id="2014"	Us="0" Kw="troff"	Ds="troff"/>
+		<Pt Id="2015"	Us="0" Kw="cypress"	Ds="cypress"/>
+		<Pt Id="2016"	Us="0" Kw="bootserver"	Ds="bootserver"/>
+		<Pt Id="2017"	Us="0" Kw="cypress-stat"	Ds="cypress-stat"/>
+		<Pt Id="2018"	Us="0" Kw="terminaldb"	Ds="terminaldb"/>
+		<Pt Id="2019"	Us="0" Kw="whosockami"	Ds="whosockami"/>
+		<Pt Id="2020"	Us="0" Kw="xinupageserver"	Ds="xinupageserver"/>
+		<Pt Id="2021"	Us="0" Kw="servexec"	Ds="servexec"/>
+		<Pt Id="2022"	Us="0" Kw="down"	Ds="down"/>
+		<Pt Id="2023"	Us="1" Kw="xinuexpansion3"	Ds="xinuexpansion3">
+			<Tns>
+				<Tn Id="110801"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2024"	Us="0" Kw="xinuexpansion4"	Ds="xinuexpansion4"/>
+		<Pt Id="2025"	Us="0" Kw="ellpack"	Ds="ellpack"/>
+		<Pt Id="2026"	Us="0" Kw="scrabble"	Ds="scrabble"/>
+		<Pt Id="2027"	Us="0" Kw="shadowserver"	Ds="shadowserver"/>
+		<Pt Id="2028"	Us="0" Kw="submitserver"	Ds="submitserver"/>
+		<Pt Id="2030"	Us="0" Kw="device2"	Ds="device2"/>
+		<Pt Id="2032"	Us="0" Kw="blackboard"	Ds="blackboard"/>
+		<Pt Id="2033"	Us="0" Kw="glogger"	Ds="glogger"/>
+		<Pt Id="2034"	Us="0" Kw="scoremgr"	Ds="scoremgr"/>
+		<Pt Id="2035"	Us="0" Kw="imsldoc"	Ds="imsldoc"/>
+		<Pt Id="2038"	Us="0" Kw="objectmanager"	Ds="objectmanager"/>
+		<Pt Id="2040"	Us="0" Kw="lam"	Ds="lam"/>
+		<Pt Id="2041"	Us="0" Kw="interbase"	Ds="interbase"/>
+		<Pt Id="2042"	Us="0" Kw="isis"	Ds="isis"/>
+		<Pt Id="2043"	Us="0" Kw="isis-bcast"	Ds="isis-bcast"/>
+		<Pt Id="2044"	Us="0" Kw="rimsl"	Ds="rimsl"/>
+		<Pt Id="2045"	Us="0" Kw="cdfunc"	Ds="cdfunc"/>
+		<Pt Id="2046"	Us="0" Kw="sdfunc"	Ds="sdfunc"/>
+		<Pt Id="2047"	Us="0" Kw="dls"	Ds="dls"/>
+		<Pt Id="2048"	Us="0" Kw="dls-monitor"	Ds="dls-monitor"/>
+		<Pt Id="2049"	Us="0" Kw="nfs"	Ds="nfsd"/>
+		<Pt Id="2053"	Us="0" Kw="knetd"	Ds="Kerberos de-multiplexor"/>
+		<Pt Id="2064"	Us="0" Kw="distrib-net-rsa"	Ds="distributed.net RSA crypto decipher tool"/>
+		<Pt Id="2065"	Us="0" Kw="dlsrpn"	Ds="Data Link Switch Read Port Number"/>
+		<Pt Id="2067"	Us="0" Kw="dlswpn"	Ds="Data Link Switch Write Port Number"/>
+		<Pt Id="2080"	Us="2">
+			<Tns>
+				<Tn Id="160807"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2090"	Us="1" Kw="go2call"	Ds="Go2Call">
+			<Tns>
+				<Tn Id="010013"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2091"	Us="0" Kw="go2call"	Ds="Go2Call"/>
+
+		<Pt Id="2102"	Us="0" Kw="zephyr-srv"	Ds="Zephyr server"/>
+		<Pt Id="2103"	Us="0" Kw="zephyr-clt"	Ds="Zephyr serv-hm connection"/>
+		<Pt Id="2104"	Us="0" Kw="zephyr-hm"	Ds="Zephyr hostmanager"/>
+		<Pt Id="2105"	Us="0" Kw="eklogin"	Ds="Kerberos encrypted rlogin"/>
+		<Pt Id="2106"	Us="0" Kw="ekshell"	Ds="Kerberos (v4) encrypted rshell"/>
+		<Pt Id="2108"	Us="0" Kw="rkinit"	Ds="Kerberos (v4) remote initialization"/>
+		<Pt Id="2111"	Us="0" Kw="kx"	Ds="X over kerberos"/>
+		<Pt Id="2112"	Us="0" Kw="kip"	Ds="IP over kerberos"/>
+		<Pt Id="2115"	Us="2">
+			<Tns>
+				<Tn Id="011401"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2130"	Us="2">
+			<Tns>
+				<Tn Id="0c0803"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2140"	Us="2">
+			<Tns>
+				<Tn Id="130702"/>
+				<Tn Id="030402"/>
+				<Tn Id="050e01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2155"	Us="2">
+			<Tns>
+				<Tn Id="080b01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="2201"	Us="0" Kw="ats"	Ds="Advanced Training System Program"/>
+		<Pt Id="2232"	Us="0" Kw="ivs-video"	Ds="IVS Video default"/>
+		<Pt Id="2233"	Us="0" Kw="shiva-vpn"	Ds="shiva-vpn"/>
+		<Pt Id="2241"	Us="0" Kw="ivsd"	Ds="IVS Daemon"/>
+		<Pt Id="2255"	Us="2">
+			<Tns>
+				<Tn Id="0d0800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2283"	Us="2">
+			<Tns>
+				<Tn Id="071500"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="2300"	Us="2">
+			<Tns>
+				<Tn Id="170f00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2301"	Us="0" Kw="compaqdiag"	Ds="Compaq Insight Management Web Agents"/>
+		<Pt Id="2307"	Us="0" Kw="pehelp"	Ds="pehelp"/>
+		<Pt Id="2311"	Us="2">
+			<Tns>
+				<Tn Id="121390"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2327"	Us="0" Kw="netscape-conf"	Ds="Netscape Conference"/>
+		<Pt Id="2330"	Us="2">
+			<Tns>
+				<Tn Id="020e02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2331"	Us="2">
+			<Tns>
+				<Tn Id="020e02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2332"	Us="2">
+			<Tns>
+				<Tn Id="020e02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2333"	Us="2">
+			<Tns>
+				<Tn Id="020e02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2333"	Us="2">
+			<Tns>
+				<Tn Id="020e02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2335"	Us="2">
+			<Tns>
+				<Tn Id="020e02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2336"	Us="1" Kw="apple-ug"	Ds="Apple UG Control">
+			<Tns>
+				<Tn Id="020e02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2337"	Us="2">
+			<Tns>
+				<Tn Id="020e02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2338"	Us="2">
+			<Tns>
+				<Tn Id="020e02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2339"	Us="2">
+			<Tns>
+				<Tn Id="020e02"/>
+				<Tn Id="150e01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2345"	Us="2">
+			<Tns>
+				<Tn Id="030e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="2401"	Us="0" Kw="cvspserver"	Ds="CVS network server"/>
+		<Pt Id="2430"	Us="0" Kw="venus"	Ds="venus"/>
+		<Pt Id="2431"	Us="0" Kw="venus-se"	Ds="venus-se"/>
+		<Pt Id="2432"	Us="0" Kw="codasrv"	Ds="codasrv"/>
+		<Pt Id="2433"	Us="0" Kw="codasrv-se"	Ds="codasrv-se"/>
+
+		<Pt Id="2500"	Us="0" Kw="rtsserv"	Ds="Resource Tracking system server"/>
+		<Pt Id="2501"	Us="0" Kw="rtsclient"	Ds="Resource Tracking system client"/>
+		<Pt Id="2504"	Us="0" Kw="wlbs"	Ds="wlbs"/>
+		<Pt Id="2564"	Us="0" Kw="hp-3000-telnet"	Ds="HP 3000 NS/VT block mode telnet"/>
+		<Pt Id="2565"	Us="2">
+			<Tns>
+				<Tn Id="121375"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2583"	Us="2">
+			<Tns>
+				<Tn Id="160800"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="2600"	Us="1" Kw="zebrasrv"	Ds="zebra service">
+			<Tns>
+				<Tn Id="030800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2601"	Us="0" Kw="zebra"	Ds="zebra vty"/>
+		<Pt Id="2602"	Us="0" Kw="ripd"	Ds="RIPd vty"/>
+		<Pt Id="2603"	Us="0" Kw="ripngd"	Ds="RIPngd vty"/>
+		<Pt Id="2604"	Us="0" Kw="ospfd"	Ds="OSPFd vty"/>
+		<Pt Id="2605"	Us="0" Kw="bgpd"	Ds="BGPd vty"/>
+		<Pt Id="2627"	Us="0" Kw="webster"	Ds="Network dictionary"/>
+		<Pt Id="2638"	Us="0" Kw="sybase"	Ds="Sybase database"/>
+
+		<Pt Id="2716"	Us="2">
+			<Tns>
+				<Tn Id="130704"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2721"	Us="2">
+			<Tns>
+				<Tn Id="0f0700"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2746"	Us="0" Kw="cp-udp-encap"	Ds="Check Point UDP Encapsulation"/>
+		<Pt Id="2766"	Us="0" Kw="listen"	Ds="System V listener port"/>
+		<Pt Id="2773"	Us="2">
+			<Tns>
+				<Tn Id="121400"/>
+				<Tn Id="121401"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2774"	Us="2">
+			<Tns>
+				<Tn Id="121400"/>
+				<Tn Id="121401"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2784"	Us="0" Kw="www-dev"	Ds="world wide web - development"/>
+
+		<Pt Id="2801"	Us="2">
+			<Tns>
+				<Tn Id="0f0701"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="2989"	Us="2">
+			<Tns>
+				<Tn Id="110403"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2998"	Us="0" Kw="iss-realsec"	Ds="ISS RealSecure IDS Remote Console Admin port"/>
+
+		<Pt Id="3000"	Us="1" Kw="active-ppp"	Ds="User-level ppp daemon; Active Worlds Msging;Deerfield MDaemon Email Server;Calista IP Phone (Inbound)">
+			<Tns>
+				<Tn Id="110413"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3001"	Us="0" Kw="nessusd"	Ds="Nessus Security Scanner Daemon; Deerfield MDaemon Email Server"/>
+		<Pt Id="3005"	Us="0" Kw="deslogin"	Ds="Encrypted symmetric telnet/login"/>
+		<Pt Id="3006"	Us="0" Kw="deslogind"	Ds="deslogind"/>
+		<Pt Id="3024"	Us="2">
+			<Tns>
+				<Tn Id="160800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3028"	Us="2">
+			<Tns>
+				<Tn Id="110800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3031"	Us="1" Kw="Program Linking"	Ds="MacOS Apple Events / AgentVU">
+			<Tns>
+				<Tn Id="0c0800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3049"	Us="0" Kw="NSWS"	Ds="NSWS"/>
+		<Pt Id="3060"	Us="0" Kw="interserver"	Ds="InterBase InterServer"/>
+
+		<Pt Id="3064"	Us="0" Kw="distrib-net-proxy"	Ds="proxy port (distributed.net)"/>
+		<Pt Id="3086"	Us="0" Kw="sj3"	Ds="SJ3 (kanji input)"/>
+		<Pt Id="3128"	Us="1" Kw="squid-http"	Ds="squid-http">
+			<Tns>
+				<Tn Id="110420"/>
+				<Tn Id="110800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3129"	Us="2">
+			<Tns>
+				<Tn Id="0c0010"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3130"	Us="0" Kw="squid-ipc"	Ds="squid-ipc"/>
+		<Pt Id="3141"	Us="0" Kw="vmodem"	Ds="vmodem"/>
+		<Pt Id="3150"	Us="2">
+			<Tns>
+				<Tn Id="130702"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="3230"	IdTo="3235" Usg="0" Kw="viavideo"	Ds="Polycom ViaVideo (H.323)"/>
+		<Pt Id="3256"	Us="2">
+			<Tns>
+				<Tn Id="160702"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3264"	Us="0" Kw="ccmail"	Ds="cc:mail/lotus"/>
+		<Pt Id="3283"	Us="0" Kw="MacOS Net Assistant"	Ds="MacOS Net Assistant"/>
+
+		<Pt Id="3306"	Us="0" Kw="mysql"	Ds="mySQL"/>
+		<Pt Id="3332"	Us="2">
+			<Tns>
+				<Tn Id="100001"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3333"	Us="0" Kw="dec-notes"	Ds="DEC Notes"/>
+		<Pt Id="3389"	Us="0" Kw="msrdp"	Ds="Microsoft Remote Display (Terminal) Protocol"/>
+
+		<Pt Id="3410"	Us="2">
+			<Tns>
+				<Tn Id="0e0f01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3421"	Us="0" Kw="bmap"	Ds="Bull Apprise portmapper"/>
+		<Pt Id="3453"	Us="0" Kw="bungie-myth"	Ds="Bungie Myth and Myth II Server"/>
+		<Pt Id="3455"	Us="0" Kw="prsvp"	Ds="RSVP Port"/>
+		<Pt Id="3456"	Us="1" Kw="vat"	Ds="VAT default data">
+			<Tns>
+				<Tn Id="130403"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3457"	Us="0" Kw="vat-control"	Ds="VAT default control"/>
+		<Pt Id="3459"	Us="2">
+			<Tns>
+				<Tn Id="040201"/>
+				<Tn Id="120000"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3462"	Us="0" Kw="track"	Ds="software distribution"/>
+
+		<Pt Id="3700"	Us="2">
+			<Tns>
+				<Tn Id="0f0e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3777"	Us="2">
+			<Tns>
+				<Tn Id="0f1201"/>
+			</Tns>
+		</Pt>
+		<Pt Id="3791"	Us="2">
+			<Tns>
+				<Tn Id="130e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="3801"	Us="2">
+			<Tns>
+				<Tn Id="130e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="3984"	Us="0" Kw="mapper-nodemgr"	Ds="MAPPER network node manager"/>
+		<Pt Id="3985"	Us="0" Kw="mapper-mapethd"	Ds="MAPPER TCP/IP server"/>
+		<Pt Id="3986"	Us="0" Kw="mapper-ws_ethd"	Ds="MAPPER workstation server"/>
+		<Pt Id="3900"	Us="0" Kw="udt_os"	Ds="Unidata UDT OS"/>
+		<Pt Id="3984"	Us="0" Kw="mapper-nodemgr"	Ds="MAPPER network node manager"/>
+		<Pt Id="3985"	Us="0" Kw="mapper-mapethd"	Ds="MAPPER TCP/IP server"/>
+		<Pt Id="3986"	Us="0" Kw="mapper-ws_ethd"	Ds="MAPPER workstation server"/>
+
+		<Pt Id="4000"	Us="1" Kw="ICQ"	Ds="ICQ">
+			<Tns>
+				<Tn Id="120a00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="4001"	Us="0" Kw="ICQ"	Ds="ICQ"/>
+		<Pt Id="4008"	Us="0" Kw="netcheque"	Ds="NetCheque accounting"/>
+		<Pt Id="4035"	Us="0" Kw="wap-push-http"	Ds="WAP Push OTA-HTTP port"/>
+		<Pt Id="4036"	Us="0" Kw="wap-push-https"	Ds="WAP Push OTA-HTTP secure"/>
+		<Pt Id="4045"	Us="0" Kw="lockd"	Ds="NFS lock daemon/manager"/>
+		<Pt Id="4092"	Us="2">
+			<Tns>
+				<Tn Id="160800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="4099"	Us="0" Kw="aol-aim-2"	Ds="AOL Instant Messanger (Outbound)"/>
+
+		<Pt Id="4100"	Us="2">
+			<Tns>
+				<Tn Id="160002"/>
+			</Tns>
+		</Pt>
+		<Pt Id="4128"	Us="2">
+			<Tns>
+				<Tn Id="010018"/>
+			</Tns>
+		</Pt>
+		<Pt Id="4132"	Us="0" Kw="nuts_dem"	Ds="NUTS Daemon"/>
+		<Pt Id="4133"	Us="0" Kw="nuts_bootp"	Ds="NUTS Bootp Server"/>
+
+		<Pt Id="4242"	Us="2">
+			<Tns>
+				<Tn Id="150800"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="4321"	Us="1" Kw="rwhois"	Ds="Remote Who Is">
+			<Tns>
+				<Tn Id="010e03"/>
+			</Tns>
+		</Pt>
+		<Pt Id="4333"	Us="0" Kw="msql"	Ds="mini-sql server"/>
+		<Pt Id="4343"	Us="0" Kw="unicall"	Ds="UNICALL"/>
+
+		<Pt Id="4444"	Us="1" Kw="krb524"	Ds="KRB524">
+			<Tns>
+				<Tn Id="0f1104"/>
+				<Tn Id="121600"/>
+			</Tns>
+		</Pt>
+		<Pt Id="4567"	Us="2">
+			<Tns>
+				<Tn Id="050802"/>
+			</Tns>
+		</Pt>
+		<Pt Id="4672"	Us="0" Kw="rfa"	Ds="remote file access server"/>
+		<Pt Id="4590"	Us="2">
+			<Tns>
+				<Tn Id="080204"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="4950"	Us="2">
+			<Tns>
+				<Tn Id="080205"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="5000"	Us="1" Kw="commplex-main"	Ds="Yahoo Messenger Chat; Free Internet Chess Server">
+			<Tns>
+				<Tn Id="01001a"/>
+				<Tn Id="010b10"/>
+				<Tn Id="011400"/>
+				<Tn Id="080200"/>
+				<Tn Id="110000"/>
+				<Tn Id="120e05"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5001"	Us="1" Kw="commplex-link"	Ds="Yahoo Messenger Chat">
+			<Tns>
+				<Tn Id="01001a"/>
+				<Tn Id="120e05"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5002"	Us="1" Kw="rfe"	Ds="Radio Free Ethernet">
+			<Tns>
+				<Tn Id="020300"/>
+				<Tn Id="120701"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5003"	Us="0" Kw="FileMaker Pro"	Ds="FileMaker Pro over IP"/>
+		<Pt Id="5010"	Us="1" Kw="telelpathstart"	Ds="TelepathStart">
+			<Tns>
+				<Tn Id="120e20"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5011"	Us="1" Kw="telelpathattack"	Ds="TelepathAttack">
+			<Tns>
+				<Tn Id="0e0d00"/>
+				<Tn Id="0e0d01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5025"	Us="2">
+			<Tns>
+				<Tn Id="160c01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5031"	Us="2">
+			<Tns>
+				<Tn Id="0d0421"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5032"	Us="2">
+			<Tns>
+				<Tn Id="0d0421"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5050"	Us="0" Kw="mmcc"	Ds="multimedia conference control tool"/>
+
+		<Pt Id="5145"	Us="0" Kw="rmonitor_secure"	Ds="rmonitor_secure"/>
+		<Pt Id="5152"	Us="2">
+			<Tns>
+				<Tn Id="010016"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5190"	Us="0" Kw="aol"	Ds="America-Online"/>
+
+		<Pt Id="5236"	Us="0" Kw="padl2sim"	Ds="padl2sim"/>
+
+		<Pt Id="5300"	Us="0" Kw="hacl-hb"	Ds="# HA cluster heartbeat"/>
+		<Pt Id="5301"	Us="0" Kw="hacl-gs"	Ds="# HA cluster general services"/>
+		<Pt Id="5302"	Us="0" Kw="hacl-cfg"	Ds="# HA cluster configuration"/>
+		<Pt Id="5303"	Us="0" Kw="hacl-probe"	Ds="# HA cluster probing"/>
+		<Pt Id="5304"	Us="0" Kw="hacl-local"	Ds="hacl-local"/>
+		<Pt Id="5305"	Us="0" Kw="hacl-test"	Ds="hacl-test"/>
+		<Pt Id="5308"	Us="0" Kw="cfengine"	Ds="cfengine"/>
+		<Pt Id="5321"	Us="2">
+			<Tns>
+				<Tn Id="050804"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5333"	Us="2">
+			<Tns>
+				<Tn Id="010005"/>
+				<Tn Id="0d0415"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5343"	Us="2">
+			<Tns>
+				<Tn Id="160000"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="5400"	Us="1" Kw="pcduo-old"	Ds="RemCon PC-Duo - old port">
+			<Tns>
+				<Tn Id="010009"/>
+				<Tn Id="010b01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5401"	Us="2">
+			<Tns>
+				<Tn Id="010009"/>
+				<Tn Id="010b01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5402"	Us="2">
+			<Tns>
+				<Tn Id="010009"/>
+				<Tn Id="010b01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5405"	Us="0" Kw="pcduo"	Ds="RemCon PC-Duo - new port"/>
+		<Pt Id="5418"	Us="2">
+			<Tns>
+				<Tn Id="010011"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5419"	Us="2">
+			<Tns>
+				<Tn Id="010011"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5432"	Us="0" Kw="postgres"	Ds="postgres database server"/>
+		<Pt Id="5499"	Us="0" Kw="hotline"	Ds="Hotline Server"/>
+
+		<Pt Id="5500"	Us="0" Kw="securid"	Ds="SecurID; VNC Server; Hotline Server"/>
+		<Pt Id="5501"	Us="0" Kw="hotline"	Ds="Hotline Server"/>
+		<Pt Id="5502"	Us="0" Kw="hotline"	Ds="Hotline Server"/>
+		<Pt Id="5503"	Us="0" Kw="hotline"	Ds="Hotline Server"/>
+		<Pt Id="5510"	Us="0" Kw="secureidprop"	Ds="SecurID ACE/Server services"/>
+		<Pt Id="5512"	Us="2">
+			<Tns>
+				<Tn Id="080b01"/>
+				<Tn Id="171300"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5520"	Us="0" Kw="sdlog"	Ds="SecurID ACE/Server services"/>
+		<Pt Id="5521"	Us="2">
+			<Tns>
+				<Tn Id="080b01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5530"	Us="0" Kw="sdserv"	Ds="SecurID ACE/Server services"/>
+		<Pt Id="5534"	Us="2">
+			<Tns>
+				<Tn Id="130701"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5540"	Us="0" Kw="sdxauthd"	Ds="SecurID ACE/Server services"/>
+		<Pt Id="5550"	Us="2">
+			<Tns>
+				<Tn Id="171300"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5555"	Us="1" Kw="rmt"	Ds="rmtd">
+			<Tns>
+				<Tn Id="120420"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5556"	Us="1" Kw="mtb"	Ds="mtb backup">
+			<Tns>
+				<Tn Id="010e10"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5557"	Us="2">
+			<Tns>
+				<Tn Id="010e10"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5558"	Us="2">
+			<Tns>
+				<Tn Id="010012"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5569"	Us="2">
+			<Tns>
+				<Tn Id="110e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="5631"	Us="0" Kw="pcAnywhereData"	Ds="pcAnywhereData"/>
+		<Pt Id="5632"	Us="0" Kw="pcAnywhereStat"	Ds="pcAnywhereStat"/>
+		<Pt Id="5637"	Us="2">
+			<Tns>
+				<Tn Id="0f0200"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5638"	Us="2">
+			<Tns>
+				<Tn Id="0f0200"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5670"	Us="0" Kw="active-worlds"	Ds="Active Worlds Messaging &amp; Conferencing"/>
+		<Pt Id="5680"	Us="0" Kw="canna"	Ds="Canna (Japanese Input)"/>
+
+		<Pt Id="5713"	Us="0" Kw="proshareaudio"	Ds="proshare conf audio"/>
+		<Pt Id="5714"	Us="0" Kw="prosharevideo"	Ds="proshare conf video"/>
+		<Pt Id="5715"	Us="0" Kw="prosharedata"	Ds="proshare conf data"/>
+		<Pt Id="5716"	Us="0" Kw="prosharerequest"	Ds="proshare conf request"/>
+		<Pt Id="5717"	Us="0" Kw="prosharenotify"	sc="proshare conf notify"/>
+		<Pt Id="5742"	Us="2">
+			<Tns>
+				<Tn Id="160800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5760"	Us="2">
+			<Tns>
+				<Tn Id="0f0e01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="5800"	Us="0" Kw="vnc"	Ds="Virtual Network Computer"/>
+		<Pt Id="5801"	Us="0" Kw="vnc"	Ds="Virtual Network Computer"/>
+		<Pt Id="5880"	Us="2">
+			<Tns>
+				<Tn Id="180a10"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5882"	Us="2">
+			<Tns>
+				<Tn Id="180a10"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5888"	Us="2">
+			<Tns>
+				<Tn Id="180a10"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5889"	Us="2">
+			<Tns>
+				<Tn Id="180a10"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="5900"	Us="0" Kw="vnc"	Ds="Virtual Network Computer"/>
+		<Pt Id="5901"	Us="0" Kw="vnc-1"	Ds="Virtual Network Computer Display :1"/>
+		<Pt Id="5902"	Us="0" Kw="vnc-2"	Ds="Virtual Network Computer Display :2"/>
+		<Pt Id="5977"	Us="0" Kw="ncd-pref-tcp"	Ds="NCD preferences tcp port"/>
+		<Pt Id="5978"	Us="0" Kw="ncd-diag-tcp"	Ds="NCD diagnostic tcp port"/>
+		<Pt Id="5979"	Us="0" Kw="ncd-conf-tcp"	Ds="NCD configuration tcp port"/>
+		<Pt Id="5997"	Us="0" Kw="ncd-pref"	Ds="NCD preferences telnet port"/>
+		<Pt Id="5998"	Us="0" Kw="ncd-diag"	Ds="NCD diagnostic telnet port"/>
+		<Pt Id="5999"	Us="0" Kw="ncd-conf"	Ds="NCD configuration telnet port"/>
+
+		<Pt Id="6000"	Us="1" Kw="x11"	Ds="X Window System">
+			<Tns>
+				<Tn Id="130752"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6001"	IdTo="6005" Usg="0" Kw="x11"	Ds="X Window System"/>
+		<Pt Id="6006"	Us="1" Kw="x11"	Ds="X Window System">
+			<Tns>
+				<Tn Id="010030"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6007"	IdTo="6063" Usg="0" Kw="x11"	Ds="X Window System"/>
+
+		<Pt Id="6105"	Us="0" Kw="isdninfo"	Ds="isdninfo"/>
+		<Pt Id="6106"	Us="0" Kw="isdninfo"	Ds="i4lmond"/>
+		<Pt Id="6111"	Us="0" Kw="sub-process"	Ds="HP SoftBench Sub-Process Control"/>
+		<Pt Id="6112"	Us="0" Kw="dtspc"	Ds="CDE subprocess control"/>
+		<Pt Id="6141"	Us="0" Kw="meta-corp"	Ds="Meta Corporation License Manager"/>
+
+		<Pt Id="6142"	Us="0" Kw="aspentec-lm"	Ds="Aspen Technology License Manager"/>
+		<Pt Id="6143"	Us="0" Kw="watershed-lm"	Ds="Watershed License Manager"/>
+		<Pt Id="6144"	Us="0" Kw="statsci1-lm"	Ds="StatSci License Manager - 1"/>
+		<Pt Id="6145"	Us="0" Kw="statsci2-lm"	Ds="StatSci License Manager - 2"/>
+		<Pt Id="6146"	Us="0" Kw="lonewolf-lm"	Ds="Lone Wolf Systems License Manager"/>
+		<Pt Id="6147"	Us="0" Kw="montage-lm"	Ds="Montage License Manager"/>
+		<Pt Id="6148"	Us="0" Kw="ricardo-lm"	Ds="Ricardo North America License Manager"/>
+
+		<Pt Id="6272"	Us="2">
+			<Tns>
+				<Tn Id="120401"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="6346"	Us="0" Kw="gnutella"	Ds="GNUtella Peer-to-Peer File Sharing System"/>
+
+		<Pt Id="6400"	Us="2">
+			<Tns>
+				<Tn Id="130752"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="6502"	Us="0" Kw="netop-rc"	Ds="NetOp Remote Control (by Danware Data A/S)"/>
+		<Pt Id="6558"	Us="0" Kw="xdsxdm"	Ds="xdsxdm"/>
+
+		<Pt Id="6661"	Us="2">
+			<Tns>
+				<Tn Id="130401"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6666"	Us="0" Kw="irc-serv"	Ds="internet relay chat server"/>
+		<Pt Id="6667"	Us="1" Kw="irc"	Ds="Internet Relay Chat">
+			<Tns>
+				<Tn Id="030000"/>
+				<Tn Id="120201"/>
+				<Tn Id="121400"/>
+				<Tn Id="121402"/>
+				<Tn Id="131104"/>
+				<Tn Id="160810"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6668"	Us="0" Kw="irc"	Ds="Internet Relay Chat"/>
+		<Pt Id="6669"	Us="2">
+			<Tns>
+				<Tn Id="070e00"/>
+				<Tn Id="150000"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6670"	Us="2">
+			<Tns>
+				<Tn Id="01002f"/>
+				<Tn Id="030402"/>
+				<Tn Id="050e01"/>
+				<Tn Id="160804"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6671"	Us="2">
+			<Tns>
+				<Tn Id="030402"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6699"	Us="0" Kw="napster"	Ds="Napster Music Sharing System"/>
+		<Pt Id="6969"	Us="1" Kw="acmsoda"	Ds="acmsoda">
+			<Tns>
+				<Tn Id="01001b"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6700"	Us="0" Kw="dwyco-video"	Ds="Dwyco Video Conferencing"/>
+		<Pt Id="6701"	Us="0" Kw="dwyco-video"	Ds="Dwyco Video Conferencing"/>
+		<Pt Id="6702"	Us="0" Kw="dwyco-video"	Ds="Dwyco Video Conferencing"/>
+		<Pt Id="6711"	Us="2">
+			<Tns>
+				<Tn Id="010014"/>
+				<Tn Id="121400"/>
+				<Tn Id="150f00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6712"	Us="2">
+			<Tns>
+				<Tn Id="051400"/>
+				<Tn Id="121400"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6713"	Us="2">
+			<Tns>
+				<Tn Id="121400"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6723"	Us="2">
+			<Tns>
+				<Tn Id="0c1201"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6771"	Us="2">
+			<Tns>
+				<Tn Id="030402"/>
+				<Tn Id="050e01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6776"	Us="2">
+			<Tns>
+				<Tn Id="000001"/>
+				<Tn Id="010014"/>
+				<Tn Id="121400"/>
+				<Tn Id="150f00"/>				
+			</Tns>
+		</Pt>
+
+		<Pt Id="6801"	Us="0" Kw="net2phone"	Ds="Net2Phone"/>
+		<Pt Id="6802"	Us="0" Kw="net2phone"	Ds="Net2Phone"/>
+		<Pt Id="6803"	Us="0" Kw="net2phone"	Ds="Net2Phone"/>
+		<Pt Id="6838"	Us="2">
+			<Tns>
+				<Tn Id="0c1201"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6880"	Us="0" Kw="dwyco-video"	Ds="Dwyco Video Conferencing"/>
+		<Pt Id="6883"	Us="2">
+			<Tns>
+				<Tn Id="030404"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="6912"	Us="2">
+			<Tns>
+				<Tn Id="120703"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6939"	Us="2">
+			<Tns>
+				<Tn Id="080d03"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6969"	Us="2">
+			<Tns>
+				<Tn Id="060001"/>
+				<Tn Id="080d10"/>
+				<Tn Id="0d0414"/>
+				<Tn Id="0f1100"/>
+			</Tns>
+		</Pt>
+		<Pt Id="6970"	Us="1" Kw="quicktime"	Ds="QuickTime Server">
+			<Tns>
+				<Tn Id="060001"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="7000"	Us="1" Kw="afs3-fileserver"	Ds="file server itself; Internet Relay Chat; ActiveWorlds">
+			<Tns>
+				<Tn Id="041702"/>
+				<Tn Id="0a0001"/>
+				<Tn Id="110410"/>
+				<Tn Id="121400"/>
+				<Tn Id="121401"/>
+			</Tns>
+		</Pt>
+		<Pt Id="7001"	Us="0" Kw="afs3-callback"	Ds="callbacks to cache managers; ActiveWorlds"/>
+		<Pt Id="7002"	Us="0" Kw="afs3-prserver"	Ds="users &amp; groups database; ActiveWorlds"/>
+		<Pt Id="7003"	Us="0" Kw="afs3-vlserver"	Ds="volume location database; ActiveWorlds"/>
+		<Pt Id="7004"	Us="0" Kw="afs3-kaserver"	Ds="AFS/Kerberos authentication service; ActiveWorlds"/>
+		<Pt Id="7005"	Us="0" Kw="afs3-volser"	Ds="volume managment server; ActiveWorlds"/>
+		<Pt Id="7006"	Us="0" Kw="afs3-errors"	Ds="error interpretation service; ActiveWorlds"/>
+		<Pt Id="7007"	Us="0" Kw="afs3-bos"	Ds="basic overseer process; ActiveWorlds"/>
+		<Pt Id="7008"	Us="0" Kw="afs3-update"	Ds="server-to-server updater; ActiveWorlds"/>
+		<Pt Id="7009"	Us="0" Kw="afs3-rmtsys"	Ds="remote cache manager service; ActiveWorlds"/>
+		<Pt Id="7010"	Us="0" Kw="ups-onlinet"	Ds="onlinet uninterruptable power supplies; ActiveWorlds"/>
+		<Pt Id="7011"	IdTo="7027" Usg="0" Kw="activeworlds"	Ds="ActiveWorlds"/>
+		<Pt Id="7028"	Us="1" Kw="activeworlds"	Ds="ActiveWorlds">
+			<Tns>
+				<Tn Id="140d01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="7029"	IdTo="7069" Usg="0" Kw="activeworlds"	Ds="ActiveWorlds"/>
+		<Pt Id="7070"	Us="0" Kw="realmedia"	Ds="RealMedia (Audio/Video); ActiveWorlds"/>
+		<Pt Id="7071"	IdTo="7079" Usg="0" Kw="activeworlds"	Ds="ActiveWorlds"/>
+
+		<Pt Id="7100"	Us="0" Kw="font-service"	Ds="X Font Service; ActiveWorlds"/>
+		<Pt Id="7175"	Us="0" Kw="dialpad"	Ds="Dialpad"/>
+
+		<Pt Id="7200"	Us="0" Kw="fodms"				Ds="FODMS FLIP"/>
+		<Pt Id="7201"	Us="0" Kw="dlip"				Ds="dlip"/>
+		<Pt Id="7215"	Us="2">
+			<Tns>
+				<Tn Id="121400"/>
+				<Tn Id="121401"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="7300"	Us="2">
+			<Tns>
+				<Tn Id="0d0423"/>
+			</Tns>
+		</Pt>
+		<Pt Id="7301"	Us="2">
+			<Tns>
+				<Tn Id="0d0423"/>
+			</Tns>
+		</Pt>
+		<Pt Id="7306"	Us="2">
+			<Tns>
+				<Tn Id="0d0423"/>
+			</Tns>
+		</Pt>
+		<Pt Id="7307"	Us="2">
+			<Tns>
+				<Tn Id="0d0423"/>
+			</Tns>
+		</Pt>
+		<Pt Id="7308"	Us="2">
+			<Tns>
+				<Tn Id="0d0423"/>
+			</Tns>
+		</Pt>
+		<Pt Id="7326"	Us="0" Kw="icb"				Ds="Internet Citizens Band"/>
+
+		<Pt Id="7424"	Us="2">
+			<Tns>
+				<Tn Id="070e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="7597"	Us="2">
+			<Tns>
+				<Tn Id="100000"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="7626"	Us="2">
+			<Tns>
+				<Tn Id="060b00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="7640"	Us="0" Kw="CUSeeMe"	Ds="CUSeeMe Video/Audio Server"/>
+		<Pt Id="7642"	Us="0" Kw="CUSeeMe"	Ds="CUSeeMe Video/Audio Server"/>
+		<Pt Id="7648"	Us="0" Kw="CUSeeMe-1"	Ds="CUSeeMe Video/Audio Server"/>
+		<Pt Id="7649"	Us="0" Kw="CUSeeMe-2"	Ds="CUSeeMe Video/Audio Server"/>
+		<Pt Id="7650"	Us="0" Kw="CUSeeMe-3"	Ds="CUSeeMe Video/Audio Server"/>
+		<Pt Id="7651"	Us="0" Kw="CUSeeMe-4"	Ds="CUSeeMe Video/Audio Server"/>
+		<Pt Id="7777"	Us="1" Kw="active-worlds-2"	Ds="Active Worlds Messaging &amp; Conferencing">
+			<Tns>
+				<Tn Id="060e00"/>
+				<Tn Id="130801"/>
+			</Tns>
+		</Pt>
+		<Pt Id="7789"	Us="2">
+			<Tns>
+				<Tn Id="01001a"/>
+				<Tn Id="080200"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="8000"	IdTo="8005" Usg="0" Kw="shoutcast"	Ds="Shoucast Streaming MP3 Server"/>
+		<Pt Id="8007"	Us="0" Kw="jserv"				Ds="Apache JServ module"/>
+		<Pt Id="8009"	Us="0" Kw="ajp13"				Ds="ajp13"/>
+		<Pt Id="8080"	Us="1" Kw="tproxy"	Ds="HTTP Proxy">
+			<Tns>
+				<Tn Id="011102"/>
+				<Tn Id="110402"/>
+				<Tn Id="110420"/>
+				<Tn Id="110800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="8081"	Us="0" Kw="blackice-icecap"	Ds="ICECap user console"/>
+		<Pt Id="8082"	Us="0" Kw="blackice-alerts"	Ds="BlackIce Alerts sent to this port"/>
+
+		<Pt Id="8680"	IdTo="8686" Usg="0" Kw="dialpad"	Ds="Dialpad"/>
+
+		<Pt Id="8787"	Us="2">
+			<Tns>
+				<Tn Id="010024"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="8879"	Us="2">
+			<Tns>
+				<Tn Id="010024"/>
+			</Tns>
+		</Pt>
+		<Pt Id="8888"	Us="0" Kw="sun-answerbook"	Ds="Sun Answerbook HTTP server"/>
+		<Pt Id="8892"	Us="0" Kw="seosload"	Ds="Computer Associates eTrust ACX"/>
+
+		<Pt Id="8988"	Us="2">
+			<Tns>
+				<Tn Id="010000"/>
+			</Tns>
+		</Pt>
+		<Pt Id="8989"	Us="2">
+			<Tns>
+				<Tn Id="110201"/>
+				<Tn Id="110400"/>
+				<Tn Id="170200"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="9000"	Us="2">
+			<Tns>
+				<Tn Id="0d0422"/>
+			</Tns>
+		</Pt>
+		<Pt Id="9090"	Us="0" Kw="zeus-admin"	Ds="Zeus Admin Server"/>
+		<Pt Id="9100"	Us="0" Kw="jetdirect"	Ds="HP JetDirect"/>
+
+		<Pt Id="9325"	Us="2">
+			<Tns>
+				<Tn Id="0c1201"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="9400"	Us="2">
+			<Tns>
+				<Tn Id="080d01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="9535"	Us="0" Kw="man"	Ds="man"/>
+		<Pt Id="9536"	Us="0" Kw="w"				Ds="w"/>
+		<Pt Id="9537"	Us="0" Kw="mantst"	Ds="remote man server, testing"/>
+
+		<Pt Id="9872"	Us="2">
+			<Tns>
+				<Tn Id="0f0e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="9873"	Us="2">
+			<Tns>
+				<Tn Id="0f0e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="9874"	Us="2">
+			<Tns>
+				<Tn Id="0f0e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="9875"	Us="2">
+			<Tns>
+				<Tn Id="0f0e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="9876"	Us="1" Kw="sd"	Ds="Session Director">
+			<Tns>
+				<Tn Id="021800"/>
+				<Tn Id="111401"/>
+			</Tns>
+		</Pt>
+		<Pt Id="9878"	Us="2">
+			<Tns>
+				<Tn Id="131101"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="9943"	Us="0" Kw="ivisit"	Ds="Ivisit"/>
+		<Pt Id="9989"	Us="2">
+			<Tns>
+				<Tn Id="080d05"/>
+			</Tns>
+		</Pt>
+		<Pt Id="9991"	Us="0" Kw="issa"	Ds="ISS System Scanner Agent"/>
+		<Pt Id="9992"	Us="0" Kw="issc"	Ds="ISS System Scanner Console"/>
+		<Pt Id="9999"	Us="2">
+			<Tns>
+				<Tn Id="130704"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="10000"	Us="1" Kw="bnews"	Ds="bnews">
+			<Tns>
+				<Tn Id="0e0f02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="10001"	Us="0" Kw="queue"	Ds="queue"/>
+		<Pt Id="10002"	Us="0" Kw="poker"	Ds="poker"/>
+		<Pt Id="10003"	Us="0" Kw="gateway"	Ds="gateway"/>
+		<Pt Id="10004"	Us="0" Kw="remp"	Ds="remp"/>
+		<Pt Id="10005"	Us="2">
+			<Tns>
+				<Tn Id="0e0f02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="10006"	Us="0" Kw="stel"	Ds="Secure Telnet"/>
+		<Pt Id="10007"	Us="0" Kw="rscs7"	Ds="rscs7"/>
+		<Pt Id="10008"	Us="0" Kw="rscs8"	Ds="rscs8"/>
+		<Pt Id="10009"	Us="0" Kw="rscs9"	Ds="rscs9"/>
+		<Pt Id="10010"	Us="0" Kw="rscsa"	Ds="rscsa"/>
+		<Pt Id="10011"	Us="0" Kw="rscsb"	Ds="rscsb"/>
+		<Pt Id="10012"	Us="0" Kw="qmaster"	Ds="qmaster"/>
+		<Pt Id="10067"	Us="2">
+			<Tns>
+				<Tn Id="0f0e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="10080"	Us="0" Kw="amanda"	Ds="Amanda Backup Util"/>
+		<Pt Id="10082"	Us="0" Kw="amandaidx"	Ds="Amanda indexing"/>
+		<Pt Id="10083"	Us="0" Kw="amidxtape"	Ds="Amanda tape indexing"/>
+		<Pt Id="10085"	Us="2">
+			<Tns>
+				<Tn Id="121800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="10086"	Us="2">
+			<Tns>
+				<Tn Id="121800"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="10100"	Us="2">
+			<Tns>
+				<Tn Id="020e03"/>
+				<Tn Id="060800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="10101"	Us="2">
+			<Tns>
+				<Tn Id="011100"/>
+				<Tn Id="120800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="10167"	Us="2">
+			<Tns>
+				<Tn Id="0f0e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="10498"	Us="2">
+			<Tns>
+				<Tn Id="0c1201"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="10520"	Us="2">
+			<Tns>
+				<Tn Id="000205"/>
+			</Tns>
+		</Pt>
+		<Pt Id="10528"	Us="2">
+			<Tns>
+				<Tn Id="070e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="10607"	Us="2">
+			<Tns>
+				<Tn Id="020e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="10666"	Us="2">
+			<Tns>
+				<Tn Id="000c01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="11000"	Us="2">
+			<Tns>
+				<Tn Id="120413"/>
+			</Tns>
+		</Pt>
+		<Pt Id="11050"	Us="2">
+			<Tns>
+				<Tn Id="070e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="11051"	Us="2">
+			<Tns>
+				<Tn Id="070e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="11223"	Us="2">
+			<Tns>
+				<Tn Id="0f1101"/>
+				<Tn Id="120400"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="11371"	Us="0" Kw="pksd"	Ds="PGP Public Key Server"/>
+
+		<Pt Id="12000"	IdTo="12010"	Us="0" Kw="dwyco-video"	Ds="Dwyco Video Conference"/>
+
+		<Pt Id="12053"	Us="0" Kw="delta3pc2phone"	Ds="Delta Three PC to Phone"/>
+		<Pt Id="12076"	Us="2">
+			<Tns>
+				<Tn Id="060900"/>
+			</Tns>
+		</Pt>
+		<Pt Id="12080"	Us="0" Kw="delta3pc2phone"	Ds="Delta Three PC to Phone"/>
+		<Pt Id="12083"	Us="0" Kw="delta3pc2phone"	Ds="Delta Three PC to Phone"/>
+
+		<Pt Id="12120"	Us="0" Kw="delta3pc2phone"	Ds="Delta Three PC to Phone"/>
+		<Pt Id="12122"	Us="0" Kw="delta3pc2phone"	Ds="Delta Three PC to Phone"/>
+
+		<Pt Id="12223"	Us="2">
+			<Tns>
+				<Tn Id="070000"/>
+			</Tns>
+		</Pt>
+		<Pt Id="12345"	Us="2">
+			<Tns>
+				<Tn Id="001200"/>
+				<Tn Id="021101"/>
+				<Tn Id="050003"/>
+				<Tn Id="060000"/>
+				<Tn Id="080201"/>
+				<Tn Id="080202"/>
+				<Tn Id="0c1800"/>
+				<Tn Id="0d0405"/>
+				<Tn Id="0d0412"/>
+				<Tn Id="0d0413"/>
+				<Tn Id="140b00"/>
+				<Tn Id="160701"/>
+			</Tns>
+		</Pt>
+		<Pt Id="12346"	Us="2">
+			<Tns>
+				<Tn Id="050003"/>
+				<Tn Id="060000"/>
+				<Tn Id="0d0405"/>
+				<Tn Id="170100"/>
+			</Tns>
+		</Pt>
+		<Pt Id="12349"	Us="2">
+			<Tns>
+				<Tn Id="010801"/>
+			</Tns>
+		</Pt>
+		<Pt Id="12361"	Us="2">
+			<Tns>
+				<Tn Id="160700"/>
+			</Tns>
+		</Pt>
+		<Pt Id="12362"	Us="2">
+			<Tns>
+				<Tn Id="160700"/>
+			</Tns>
+		</Pt>
+		<Pt Id="12362"	Us="2">
+			<Tns>
+				<Tn Id="160700"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="12456"	Us="2">
+			<Tns>
+				<Tn Id="0d0405"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="12623"	Us="2">
+			<Tns>
+				<Tn Id="031400"/>
+			</Tns>
+		</Pt>
+		<Pt Id="12624"	Us="2">
+			<Tns>
+				<Tn Id="011404"/>
+			</Tns>
+		</Pt>
+		<Pt Id="12631"	Us="2">
+			<Tns>
+				<Tn Id="160701"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="12701"	Us="2">
+			<Tns>
+				<Tn Id="040201"/>
+			</Tns>
+		</Pt>
+		<Pt Id="12754"	Us="2">
+			<Tns>
+				<Tn Id="0c1201"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="13000"	Us="2">
+			<Tns>
+				<Tn Id="120413"/>
+			</Tns>
+		</Pt>
+		<Pt Id="13010"	Us="2">
+			<Tns>
+				<Tn Id="070005"/>
+			</Tns>
+		</Pt>
+		<Pt Id="13013"	Us="2">
+			<Tns>
+				<Tn Id="0f1201"/>
+			</Tns>
+		</Pt>
+		<Pt Id="13014"	Us="2">
+			<Tns>
+				<Tn Id="0f1201"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="13223"	Us="2">
+			<Tns>
+				<Tn Id="070000"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="13473"	Us="2">
+			<Tns>
+				<Tn Id="020702"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="13700"	Us="2">
+			<Tns>
+				<Tn Id="0a1401"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="14500"	Us="2">
+			<Tns>
+				<Tn Id="0f0201"/>
+			</Tns>
+		</Pt>
+		<Pt Id="14501"	Us="2">
+			<Tns>
+				<Tn Id="0f0201"/>
+			</Tns>
+		</Pt>
+		<Pt Id="14502"	Us="2">
+			<Tns>
+				<Tn Id="0f0201"/>
+			</Tns>
+		</Pt>
+		<Pt Id="14503"	Us="2">
+			<Tns>
+				<Tn Id="0f0201"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="15000"	Us="2">
+			<Tns>
+				<Tn Id="0d0415"/>
+			</Tns>
+		</Pt>
+		<Pt Id="15092"	Us="2">
+			<Tns>
+				<Tn Id="070e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="15104"	Us="2">
+			<Tns>
+				<Tn Id="0c1201"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="15382"	Us="2">
+			<Tns>
+				<Tn Id="121410"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="15858"	Us="2">
+			<Tns>
+				<Tn Id="020301"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="16484"	Us="2">
+			<Tns>
+				<Tn Id="0c0e03"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="16660"	Us="2">
+			<Tns>
+				<Tn Id="121300"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="16772"	Us="2">
+			<Tns>
+				<Tn Id="080203"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="16959"	Us="2">
+			<Tns>
+				<Tn Id="121400"/>
+				<Tn Id="121402"/>
+			</Tns>
+		</Pt>
+		<Pt Id="16969"	Us="2">
+			<Tns>
+				<Tn Id="0f1100"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="17007"	Us="0" Kw="isode-dua"	Ds="isode-dua"/>
+
+		<Pt Id="17166"	Us="2">
+			<Tns>
+				<Tn Id="0c0e01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="17300"	Us="2">
+			<Tns>
+				<Tn Id="0a1401"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="17449"	Us="2">
+			<Tns>
+				<Tn Id="0a0800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="17499"	Us="2">
+			<Tns>
+				<Tn Id="021100"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="17500"	Us="2">
+			<Tns>
+				<Tn Id="021100"/>
+			</Tns>
+		</Pt>
+		<Pt Id="17569"	Us="2">
+			<Tns>
+				<Tn Id="080d02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="17593"	Us="2">
+			<Tns>
+				<Tn Id="001400"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="17777"	Us="2">
+			<Tns>
+				<Tn Id="0d0400"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="18000"	Us="0" Kw="biimenu"	Ds="Beckman Instruments, Inc."/>
+
+		<Pt Id="18888"	Us="0" Kw="liquid-au"	Ds="LiquidAudio"/>
+
+		<Pt Id="19864"	Us="2">
+			<Tns>
+				<Tn Id="080203"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="20000"	Us="2">
+			<Tns>
+				<Tn Id="0c0801"/>
+			</Tns>
+		</Pt>
+		<Pt Id="20001"	Us="2">
+			<Tns>
+				<Tn Id="0c0801"/>
+			</Tns>
+		</Pt>
+		<Pt Id="20002"	Us="2">
+			<Tns>
+				<Tn Id="000210"/>
+			</Tns>
+		</Pt>
+		<Pt Id="20005"	Us="1" Kw="btx"	Ds="xcept4 (German Telekoms CEPT videotext service)">
+			<Tns>
+				<Tn Id="0c0e03"/>
+			</Tns>
+		</Pt>
+		<Pt Id="20023"	Us="2">
+			<Tns>
+				<Tn Id="150f00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="20034"	Us="2">
+			<Tns>
+				<Tn Id="0d0410"/>
+				<Tn Id="0d0411"/>
+				<Tn Id="0d0425"/>
+				<Tn Id="160701"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="20203"	Us="2">
+			<Tns>
+				<Tn Id="020702"/>
+				<Tn Id="0b0e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="20331"	Us="2">
+			<Tns>
+				<Tn Id="010b0a"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="20432"	Us="2">
+			<Tns>
+				<Tn Id="120701"/>
+			</Tns>
+		</Pt>
+		<Pt Id="20433"	Us="2">
+			<Tns>
+				<Tn Id="120701"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="21544"	Us="2">
+			<Tns>
+				<Tn Id="060802"/>
+				<Tn Id="0a0800"/>
+			</Tns>
+		</Pt>
+		<Pt Id="21554"	Us="2">
+			<Tns>
+				<Tn Id="041701"/>
+				<Tn Id="0a0800"/>
+				<Tn Id="120203"/>
+				<Tn Id="160811"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="22222"	Us="2">
+			<Tns>
+				<Tn Id="030e01"/>
+				<Tn Id="0f1104"/>
+				<Tn Id="111400"/>
+				<Tn Id="111402"/>
+			</Tns>
+		</Pt>
+		<Pt Id="22273"	Us="0" Kw="wnn6"	Ds="Wnn6 (Japanese input)"/>
+		<Pt Id="22289"	Us="0" Kw="wnn6_Cn"	Ds="Wnn6 (Chinese input)"/>
+		<Pt Id="22305"	Us="0" Kw="wnn6_Kr"	Ds="Wnn6 (Korean input)"/>
+		<Pt Id="22321"	Us="0" Kw="wnn6_Tw"	Ds="Wnn6 (Taiwanse input)"/>
+		<Pt Id="22370"	Us="0" Kw="hpnpd"	Ds="Hewlett-Packard Network Printer daemon"/>
+		<Pt Id="22370"	Us="0" Kw="hpnpd"	Ds="Hewlett-Packard Network Printer daemon"/>
+		<Pt Id="22555"	Us="0" Kw="internetphone"	Ds="Internet Phone"/>
+
+		<Pt Id="23005"	Us="2">
+			<Tns>
+				<Tn Id="0d0441"/>
+			</Tns>
+		</Pt>
+		<Pt Id="23006"	Us="2">
+			<Tns>
+				<Tn Id="0d0441"/>
+			</Tns>
+		</Pt>
+		<Pt Id="23023"	Us="2">
+			<Tns>
+				<Tn Id="0b0e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="23032"	Us="2">
+			<Tns>
+				<Tn Id="000c00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="23432"	Us="2">
+			<Tns>
+				<Tn Id="001201"/>
+			</Tns>
+		</Pt>
+		<Pt Id="23456"	Us="2">
+			<Tns>
+				<Tn Id="041500"/>
+				<Tn Id="140600"/>
+				<Tn Id="160701"/>
+			</Tns>
+		</Pt>
+		<Pt Id="23476"	Us="2">
+			<Tns>
+				<Tn Id="030e01"/>
+			</Tns>
+		</Pt>
+		<Pt Id="23477"	Us="2">
+			<Tns>
+				<Tn Id="030e01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="23777"	Us="2">
+			<Tns>
+				<Tn Id="080d04"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="24000"	Us="2">
+			<Tns>
+				<Tn Id="080d02"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="24150"	IdTo="24179"	Us="0" Kw="delta3pc2phone"	Ds="Delta Three PC to Phone"/>
+
+		<Pt Id="25685"	Us="2">
+			<Tns>
+				<Tn Id="0c0e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="25686"	Us="2">
+			<Tns>
+				<Tn Id="0c0e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="25982"	Us="2">
+			<Tns>
+				<Tn Id="0c0e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="26208"	Us="0" Kw="wnn6_DS"	Ds="Wnn6 (Dserver)"/>
+		<Pt Id="26274"	Us="2">
+			<Tns>
+				<Tn Id="030404"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="26681"	Us="2">
+			<Tns>
+				<Tn Id="150e01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="27015"	Us="0" Kw="halflife"	Ds="Half Life Game Server"/>
+
+		<Pt Id="27374"	Us="2">
+			<Tns>
+				<Tn Id="010030"/>
+				<Tn Id="110001"/>
+				<Tn Id="120405"/>
+				<Tn Id="121400"/>
+				<Tn Id="121401"/>
+				<Tn Id="121402"/>
+				<Tn Id="121405"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="27573"	Us="2">
+			<Tns>
+				<Tn Id="121400"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="27660"	Us="0" Kw="Quake3Server"	Ds="Quake 3 Arena Server (for first player)"/>
+		<Pt Id="27665"	Us="2">
+			<Tns>
+				<Tn Id="131102"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="27910"	Us="0" Kw="Quake2Server"	Ds="Quake 2 Server"/>
+		<Pt Id="27960"	Us="0" Kw="Quake3Server"	Ds="Quake 3 Arena Server"/>
+
+		<Pt Id="28678"	Us="2">
+			<Tns>
+				<Tn Id="041701"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="28910"	Us="0" Kw="heretic2"	Ds="Heretic II Game Server"/>
+
+		<Pt Id="29104"	Us="2">
+			<Tns>
+				<Tn Id="0d0426"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="29369"	Us="2">
+			<Tns>
+				<Tn Id="0e1500"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="29891"	Us="2">
+			<Tns>
+				<Tn Id="130760"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="30000"	Us="2">
+			<Tns>
+				<Tn Id="080d02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="30001"	Us="2">
+			<Tns>
+				<Tn Id="041100"/>
+			</Tns>
+		</Pt>
+		<Pt Id="30003"	Us="2">
+			<Tns>
+				<Tn Id="0b0000"/>
+			</Tns>
+		</Pt>
+		<Pt Id="30029"	Us="2">
+			<Tns>
+				<Tn Id="000e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="30100"	Us="2">
+			<Tns>
+				<Tn Id="0d0430"/>
+			</Tns>
+		</Pt>
+		<Pt Id="30101"	Us="2">
+			<Tns>
+				<Tn Id="0d0430"/>
+			</Tns>
+		</Pt>
+		<Pt Id="30102"	Us="2">
+			<Tns>
+				<Tn Id="0d0430"/>
+			</Tns>
+		</Pt>
+		<Pt Id="30103"	Us="2">
+			<Tns>
+				<Tn Id="0d0430"/>
+			</Tns>
+		</Pt>
+		<Pt Id="30133"	Us="2">
+			<Tns>
+				<Tn Id="0d0430"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="30303"	Us="2">
+			<Tns>
+				<Tn Id="120e05"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="30947"	Us="2">
+			<Tns>
+				<Tn Id="080d07"/>
+			</Tns>
+		</Pt>
+		<Pt Id="30999"	Us="2">
+			<Tns>
+				<Tn Id="0a1400"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="31335"	Us="2">
+			<Tns>
+				<Tn Id="131110"/>
+			</Tns>
+		</Pt>
+		<Pt Id="31336"	Us="2">
+			<Tns>
+				<Tn Id="010e10"/>
+				<Tn Id="010e30"/>
+			</Tns>
+		</Pt>
+		<Pt Id="31337"	Us="2">
+			<Tns>
+				<Tn Id="01001e"/>
+				<Tn Id="010022"/>
+				<Tn Id="010025"/>
+				<Tn Id="010026"/>
+				<Tn Id="010032"/>
+				<Tn Id="010400"/>
+				<Tn Id="010e05"/>
+				<Tn Id="010e25"/>
+				<Tn Id="010e01"/>
+				<Tn Id="021101"/>
+				<Tn Id="051100"/>
+				<Tn Id="051101"/>
+				<Tn Id="080202"/>
+				<Tn Id="120e03"/>
+			</Tns>
+		</Pt>
+		<Pt Id="31338"	Us="2">
+			<Tns>
+				<Tn Id="010021"/>
+				<Tn Id="011403"/>
+				<Tn Id="0d0432"/>
+			</Tns>
+		</Pt>
+		<Pt Id="31339"	Us="2">
+			<Tns>
+				<Tn Id="0d0432"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="31666"	Us="2">
+			<Tns>
+				<Tn Id="010e31"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="31785"	Us="2">
+			<Tns>
+				<Tn Id="070001"/>
+			</Tns>
+		</Pt>
+		<Pt Id="31787"	Us="2">
+			<Tns>
+				<Tn Id="070001"/>
+			</Tns>
+		</Pt>
+		<Pt Id="31788"	Us="2">
+			<Tns>
+				<Tn Id="070001"/>
+			</Tns>
+		</Pt>
+		<Pt Id="31790"	Us="2">
+			<Tns>
+				<Tn Id="070001"/>
+			</Tns>
+		</Pt>
+		<Pt Id="31792"	Us="2">
+			<Tns>
+				<Tn Id="070001"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="32001"	Us="2">
+			<Tns>
+				<Tn Id="030e01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="32100"	Us="2">
+			<Tns>
+				<Tn Id="0f0401"/>
+				<Tn Id="0f1102"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="32418"	Us="2">
+			<Tns>
+				<Tn Id="000202"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="32770"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port"/>
+		<Pt Id="32771"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port (rusersd)"/>
+		<Pt Id="32772"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port (status)"/>
+		<Pt Id="32773"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port (rquotad)"/>
+		<Pt Id="32774"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port (rusersd)"/>
+		<Pt Id="32775"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port (status)"/>
+		<Pt Id="32776"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port (sprayd)"/>
+		<Pt Id="32777"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port (walld)"/>
+		<Pt Id="32778"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port (rstatd)"/>
+		<Pt Id="32779"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port"/>
+		<Pt Id="32780"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port"/>
+		<Pt Id="32786"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port (mountd)"/>
+		<Pt Id="32787"	Us="0" Kw="Solaris RPC port"	Ds="Solaris RPC port dmispd (DMI Service Provider)"/>
+
+		<Pt Id="33270"	Us="2">
+			<Tns>
+				<Tn Id="131104"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="33333"	Us="2">
+			<Tns>
+				<Tn Id="010b05"/>
+				<Tn Id="0f1104"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="33577"	Us="2">
+			<Tns>
+				<Tn Id="120e0a"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="33777"	Us="2">
+			<Tns>
+				<Tn Id="120e0a"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="33911"	Us="2">
+			<Tns>
+				<Tn Id="120f00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="34324"	Us="2">
+			<Tns>
+				<Tn Id="010800"/>
+				<Tn Id="130d00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="34444"	Us="2">
+			<Tns>
+				<Tn Id="030e01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="37237"	Us="2">
+			<Tns>
+				<Tn Id="0c0005"/>
+			</Tns>
+		</Pt>
+ 
+ 		<Pt Id="37651"	Us="2">
+			<Tns>
+				<Tn Id="180a00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="38036"	Us="0" Kw="timestep"	Ds="timestep"/>
+		<Pt Id="39213"	Us="0" Kw="sygatefw"	Ds="SyGate Firewall Mgmt port v3.0 build 521 and &lt;"/>
+
+		<Pt Id="40193"	Us="0" Kw="novell"	Ds="novell"/>
+
+ 		<Pt Id="40412"	Us="2">
+			<Tns>
+				<Tn Id="130740"/>
+			</Tns>
+		</Pt>
+ 		<Pt Id="40421"	Us="2">
+			<Tns>
+				<Tn Id="000601"/>
+				<Tn Id="0c0010"/>
+			</Tns>
+		</Pt>
+ 		<Pt Id="40422"	Us="2">
+			<Tns>
+				<Tn Id="0c0010"/>
+			</Tns>
+		</Pt>
+ 		<Pt Id="40423"	Us="2">
+			<Tns>
+				<Tn Id="0c0010"/>
+			</Tns>
+		</Pt>
+ 		<Pt Id="40425"	Us="2">
+			<Tns>
+				<Tn Id="0c0010"/>
+			</Tns>
+		</Pt>
+ 		<Pt Id="40426"	Us="2">
+			<Tns>
+				<Tn Id="0c0010"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="41337"	Us="2">
+			<Tns>
+				<Tn Id="121360"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="41666"	Us="2">
+			<Tns>
+				<Tn Id="110404"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="43188"	Us="0" Kw="reachout"	Ds="reachout"/>
+		<Pt Id="44442"	Us="0" Kw="coldfusion-auth"	Ds="ColdFusion Advanced Security/Siteminder Auth"/>
+		<Pt Id="44443"	Us="0" Kw="coldfusion-auth"	Ds="ColdFusion Advanced Security/Siteminder Auth"/>
+ 		<Pt Id="44444"	Us="2">
+			<Tns>
+				<Tn Id="0f1104"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="44575"	Us="2">
+			<Tns>
+				<Tn Id="041701"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="45000"	Us="0" Kw="ciscopop"	Ds="Cisco PostOffice Protocol for NetRanger (IDS)"/>
+		<Pt Id="47557"	Us="0" Kw="dbbrowse"	Ds="Databeam Corporation"/>
+
+ 		<Pt Id="49301"	Us="2">
+			<Tns>
+				<Tn Id="0e0d02"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="50130"	Us="2">
+			<Tns>
+				<Tn Id="040d00"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="50505"	Us="2">
+			<Tns>
+				<Tn Id="120e05"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="50766"	Us="2">
+			<Tns>
+				<Tn Id="050e00"/>
+				<Tn Id="120203"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="51200"	Us="0" Kw="dialpad"	Ds="Dialpad"/>
+		<Pt Id="51201"	Us="0" Kw="dialpad"	Ds="Dialpad"/>
+		<Pt Id="51210"	Us="0" Kw="dialpad"	Ds="Dialpad"/>
+ 		<Pt Id="51966"	Us="2">
+			<Tns>
+				<Tn Id="020001"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="52317"	Us="2">
+			<Tns>
+				<Tn Id="000203"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="53001"	Us="2">
+			<Tns>
+				<Tn Id="110414"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="54283"	Us="2">
+			<Tns>
+				<Tn Id="121400"/>
+				<Tn Id="121401"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="54320"	Us="2">
+			<Tns>
+				<Tn Id="120202"/>
+			</Tns>
+		</Pt>
+ 		<Pt Id="54321"	Us="2">
+			<Tns>
+				<Tn Id="010023"/>
+				<Tn Id="120202"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="55165"	Us="2">
+			<Tns>
+				<Tn Id="050801"/>
+				<Tn Id="160c02"/>
+			</Tns>
+		</Pt>
+ 		<Pt Id="55165"	Us="2">
+			<Tns>
+				<Tn Id="160c02"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="56768"	Us="0" Kw="ivisit"	Ds="Ivisit"/>
+		<Pt Id="56800"	Us="0" Kw="cuseeme"	Ds="CUSeeMe"/>
+
+ 		<Pt Id="57341"	Us="2">
+			<Tns>
+				<Tn Id="0d0424"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="58339"	Us="2">
+			<Tns>
+				<Tn Id="011403"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="60000"	Us="2">
+			<Tns>
+				<Tn Id="030402"/>
+				<Tn Id="050e01"/>
+				<Tn Id="120e05"/>
+			</Tns>
+		</Pt>
+ 		<Pt Id="60001"	Us="2">
+			<Tns>
+				<Tn Id="131104"/>
+			</Tns>
+		</Pt>
+ 		<Pt Id="60068"	Us="2">
+			<Tns>
+				<Tn Id="171900"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="60411"	Us="2">
+			<Tns>
+				<Tn Id="020e01"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="61348"	Us="2">
+			<Tns>
+				<Tn Id="011402"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="61466"	Us="2">
+			<Tns>
+				<Tn Id="130400"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="61603"	Us="2">
+			<Tns>
+				<Tn Id="011402"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="63485"	Us="2">
+			<Tns>
+				<Tn Id="011402"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="64101"	Us="2">
+			<Tns>
+				<Tn Id="130010"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="65000"	Us="2">
+			<Tns>
+				<Tn Id="030406"/>
+				<Tn Id="120e05"/>
+				<Tn Id="121300"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="65301"	Us="0" Kw="pcAnywhere"	Ds="pcAnywhere"/>
+ 		<Pt Id="65390"	Us="2">
+			<Tns>
+				<Tn Id="040200"/>
+			</Tns>
+		</Pt>
+
+ 		<Pt Id="65421"	Us="2">
+			<Tns>
+				<Tn Id="090000"/>
+			</Tns>
+		</Pt>
+ 		<Pt Id="65432"	Us="2">
+			<Tns>
+				<Tn Id="130755"/>
+			</Tns>
+		</Pt>
+ 		<Pt Id="65434"	Us="2">
+			<Tns>
+				<Tn Id="120100"/>
+			</Tns>
+		</Pt>
+ 		<Pt Id="65435"	Us="2">
+			<Tns>
+				<Tn Id="110200"/>
+			</Tns>
+		</Pt>
+
+		</Pts>
+	</Prt>
+	<Prt Id="UDP">
+		<Pts>
+		<Pt Id="1"	Us="1" Kw="tcpmux"	Ds="TCP Port Service Multiplexer">
+			<Tns>
+				<Tn Id="120e05"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2"	Us="0" Kw="compressnet"	Ds="Management Utility"/>
+		<Pt Id="3"	Us="0" Kw="compressnet"	Ds="Compression Process"/>
+		<Pt Id="5"	Us="0" Kw="rje"		Ds="Remote Job Entry"/>
+		<Pt Id="7"	Us="0" Kw="echo"	Ds="Echo"/>
+		<Pt Id="9"	Us="0" Kw="discard"	Ds="Discard"/>
+		<Pt Id="11"	Us="0" Kw="systat"	Ds="Active Users "/>
+		<Pt Id="13"	Us="0" Kw="daytime"	Ds="Daytime"/>
+		<Pt Id="15"	Us="0" Kw="netstat"	Ds=""/>
+		<Pt Id="17"	Us="0" Kw="qotd"	Ds="Quote of the Day"/>
+		<Pt Id="19"	Us="0" Kw="chargen"	Ds="Character Generator"/>
+		<Pt Id="20"	Us="0" Kw="ftp-data"	Ds="File Transfer [Default Data]"/>
+		<Pt Id="21"	Us="0" Kw="ftp"		Ds="File Transfer [Control]"/>
+		<Pt Id="23"	Us="0" Kw="telnet"	Ds="Telnet"/>
+		<Pt Id="24"	Us="0" Kw="apms"	Ds="any private mail system"/>
+		<Pt Id="25"	Us="0" Kw="smtp"	Ds="Simple Mail Transfer"/>
+		<Pt Id="27"	Us="0" Kw="nsw-fe"	Ds="NSW User System FE"/>
+		<Pt Id="29"	Us="0" Kw="msg-icp"	Ds="MSG ICP"/>
+		<Pt Id="31"	Us="0" Kw="msg-auth"	Ds="MSG Authentication"/>
+		<Pt Id="31"	Us="0" Kw="dsp"		Ds="Display Support Protocol"/>
+		<Pt Id="35"	Us="0" Kw="apps"	Ds="Any Private Printer Server"/>
+		<Pt Id="37"	Us="0" Kw="time"	Ds="Time"/>
+		<Pt Id="38"	Us="0" Kw="rap"		Ds="Route Access Protocol"/>
+		<Pt Id="39"	Us="0" Kw="rlp"		Ds="Resource Location Protocol"/>
+		<Pt Id="41"	Us="0" Kw="graphics"	Ds="Graphics"/>
+		<Pt Id="42"	Us="0" Kw="nameserver"	Ds="Host Name Server"/>
+		<Pt Id="43"	Us="0" Kw="whois"	Ds="Who Is"/>
+		<Pt Id="44"	Us="0" Kw="mpm-flags"	Ds="MPM FLAGS Protocol"/>
+		<Pt Id="45"	Us="0" Kw="mpm"		Ds="Message Processing Module [recv]"/>
+		<Pt Id="46"	Us="0" Kw="mpm-snd"	Ds="Message Processing Module [send]"/>
+		<Pt Id="47"	Us="0" Kw="ni-ftp"	Ds="NI FTP"/>
+		<Pt Id="48"	Us="0" Kw="auditd"	Ds="Digital Audit Daemon"/>
+		<Pt Id="49"	Us="0" Kw="login"	Ds="Login Host Protocol"/>
+		<Pt Id="50"	Us="0" Kw="re-mail-ck"	Ds="Remote Mail Checking Protocol"/>
+		<Pt Id="51"	Us="0" Kw="la-maint"	Ds="IMP Logical Address Maintenance"/>
+		<Pt Id="52"	Us="0" Kw="xns-time"	Ds="XNS Time Protocol"/>
+		<Pt Id="53"	Us="0" Kw="domain"	Ds="Domain Name Server"/>
+		<Pt Id="54"	Us="0" Kw="xns-ch"	Ds="XNS Clearinghouse"/>
+		<Pt Id="55"	Us="0" Kw="isi-gl"	Ds="ISI Graphics Language"/>
+		<Pt Id="56"	Us="0" Kw="xns-auth"	Ds="XNS Authentication"/>
+		<Pt Id="58"	Us="0" Kw="xns-mail"	Ds="XNS Mail"/>
+		<Pt Id="59"	Us="0" Kw="apfs"	Ds="Any Private File Service"/>
+		<Pt Id="61"	Us="0" Kw="ni-mail"	Ds="NI MAIL"/>
+		<Pt Id="62"	Us="0" Kw="acas"	Ds="ACA Services"/>
+		<Pt Id="64"	Us="0" Kw="covia"	Ds="Communications Integrator"/>
+		<Pt Id="65"	Us="0" Kw="tacacs-ds"	Ds="TACACS-Database Service"/>
+		<Pt Id="66"	Us="0" Kw="sql-net"	Ds="ORACL SQL*NET"/>
+		<Pt Id="67"	Us="0" Kw="bootps"	Ds="Bootstrap Protocol Server"/>
+		<Pt Id="68"	Us="0" Kw="bootpc"	Ds="Bootstrap Protocol Client"/>
+		<Pt Id="69"	Us="0" Kw="tftp"				Ds="Trivial File Transfer"/>
+		<Pt Id="70"	Us="0" Kw="gopher"	Ds="Gopher"/>
+		<Pt Id="71"	Us="0" Kw="netrjs-1"	Ds="Remote Job Service"/>
+		<Pt Id="72"	Us="0" Kw="netrjs-2"	Ds="Remote Job Service"/>
+		<Pt Id="73"	Us="0" Kw="netrjs-3"	Ds="Remote Job Service"/>
+		<Pt Id="74"	Us="0" Kw="netrjs-4"	Ds="Remote Job Service"/>
+		<Pt Id="75"	Us="0" Kw="apdos"				Ds="Any Private Dial Out Service"/>
+		<Pt Id="76"	Us="0" Kw="deos"				Ds="Distributed External Object Store"/>
+		<Pt Id="77"	Us="0" Kw="rje"				Ds="Any Private RJE Service"/>
+		<Pt Id="78"	Us="0" Kw="vettcp"	Ds="vettcp"/>
+		<Pt Id="79"	Us="1" Kw="finger"	Ds="Finger"/>
+		<Pt Id="80"	Us="1" Kw="www-http"	Ds="World Wide Web HTTP"/>
+		<Pt Id="81"	Us="0" Kw="hosts2-ns"	Ds="HOSTS2 Name Server"/>
+		<Pt Id="82"	Us="0" Kw="xver"				Ds="XFER Utility"/>
+		<Pt Id="83"	Us="0" Kw="mit_nl_dev"	Ds="MIT ML Device"/>
+		<Pt Id="84"	Us="0" Kw="ctf"				Ds="Common Trace Facility"/>
+		<Pt Id="85"	Us="0" Kw="mit_nl_dev"	Ds="MIT ML Device"/>
+		<Pt Id="86"	Us="0" Kw="mfcobol"	Ds="Micro Focus Cobol"/>
+		<Pt Id="87"	Us="0" Kw="link"	Ds="Any Private Terminal Link"/>
+		<Pt Id="88"	Us="0" Kw="kerberos"	Ds="Kerberos"/>
+		<Pt Id="89"	Us="0" Kw="su-mit-tg"	Ds="SU/MIT Telnet Gateway"/>
+		<Pt Id="90"	Us="0" Kw="dnsix"				Ds="DNSIX Securit Attribute Token Map"/>
+		<Pt Id="91"	Us="0" Kw="mit-dov"	Ds="MIT Dover Spooler"/>
+		<Pt Id="92"	Us="0" Kw="npp"	Ds="Network Printing Protocol"/>
+		<Pt Id="93"	Us="0" Kw="dcp"	Ds="Device Control Protocol"/>
+		<Pt Id="94"	Us="0" Kw="objcall"	Ds="Tivoli Object Dispatcher"/>
+		<Pt Id="95"	Us="0" Kw="supdup"	Ds="SUPDUP"/>
+		<Pt Id="96"	Us="0" Kw="dixie"				Ds="DIXIE Protocol Specification"/>
+		<Pt Id="97"	Us="0" Kw="swift-rvf"	Ds="Swift Remote Vitural File Protocol"/>
+		<Pt Id="98"	Us="0" Kw="tacnews"	Ds="TAC News"/>
+		<Pt Id="99"	Us="0" Kw="metagram"	Ds="Metagram Relay"/>
+
+		<Pt Id="100"	Us="0" Kw="newacct"	Ds="[Unauthorized Use]"/>
+		<Pt Id="101"	Us="0" Kw="hostnames"	Ds="NIC Host Name Server"/>
+		<Pt Id="102"	Us="0" Kw="iso-tsap"	Ds="ISO-TSAP"/>
+		<Pt Id="103"	Us="0" Kw="x400"	Ds="X400"/>
+		<Pt Id="104"	Us="0" Kw="x400-snd"	Ds="X400-SND"/>
+		<Pt Id="105"	Us="0" Kw="csnet-ns"	Ds="Mailbox Name Nameserver"/>
+		<Pt Id="106"	Us="0" Kw="3com-tsmux"	Ds="3COM-TSMUX"/>
+		<Pt Id="107"	Us="0" Kw="rtelnet"	Ds="Remote Telnet Service"/>
+		<Pt Id="108"	Us="0" Kw="snagas"	Ds="SNA Gateway Access Server"/>
+		<Pt Id="109"	Us="0" Kw="pop-2"	Ds="Post Office Protocol - Version 2"/>
+		<Pt Id="110"	Us="0" Kw="pop-3"	Ds="Post Office Protocol - Version 3"/>
+		<Pt Id="111"	Us="0" Kw="sunrpc"	Ds="SUN Remote Procedure Call"/>
+		<Pt Id="112"	Us="0" Kw="mcidas"	Ds="McIDAS Data Transmission Protocol"/>
+		<Pt Id="113"	Us="0" Kw="auth"				Ds="Authentication Service"/>
+		<Pt Id="114"	Us="0" Kw="audionews"	Ds="Audio News Multicast"/>
+		<Pt Id="115"	Us="0" Kw="sftp"	Ds="Simple File Transfer Protocol"/>
+		<Pt Id="116"	Us="0" Kw="ansanotify"	Ds="ANSA REX Notify"/>
+		<Pt Id="117"	Us="0" Kw="uucp-path"	Ds="UUCP Path Service"/>
+		<Pt Id="118"	Us="0" Kw="sqlserv"	Ds="SQL Services"/>
+		<Pt Id="119"	Us="0" Kw="nntp"	Ds="Network News Transfer Protocol"/>
+		<Pt Id="120"	Us="0" Kw="cfdptkt"	Ds="CFDPTKT"/>
+		<Pt Id="121"	Us="1" Kw="erpc"	Ds="Encore Expedited Remote Proc. Call"/>
+		<Pt Id="122"	Us="0" Kw="smakynet"	Ds="SMAKYNET"/>
+		<Pt Id="123"	Us="0" Kw="ntp"				Ds="Network Time Protocol"/>
+		<Pt Id="124"	Us="0" Kw="ansatrader"	Ds="ANSA REX Trader"/>
+		<Pt Id="125"	Us="0" Kw="locus-map"	Ds="Locus PC-Interface Net Map Server"/>
+		<Pt Id="126"	Us="0" Kw="unitary"	Ds="Unisys Unitary Login"/>
+		<Pt Id="127"	Us="0" Kw="locus-con"	Ds="Locus PC-Interface Conn Server"/>
+		<Pt Id="128"	Us="0" Kw="gss-xlicen"	Ds="GSS X License Verification"/>
+		<Pt Id="129"	Us="0" Kw="pwdgen"	Ds="Password Generator Protocol"/>
+		<Pt Id="130"	Us="0" Kw="cisco-fna"	Ds="CISCO FNATIVE"/>
+		<Pt Id="131"	Us="0" Kw="cisco-tna"	Ds="CISCO TNATIVE"/>
+		<Pt Id="132"	Us="0" Kw="cisco-sys"	Ds="CISCO SYSMAINT"/>
+		<Pt Id="133"	Us="0" Kw="statsrv"	Ds="Statistics Service"/>
+		<Pt Id="134"	Us="0" Kw="ingres-net"	Ds="INGRES-NET Service"/>
+		<Pt Id="135"	Us="0" Kw="loc-srv"	Ds="Location Service"/>
+		<Pt Id="136"	Us="0" Kw="profile"	Ds="PROFILE Naming System"/>
+		<Pt Id="137"	Us="1" Kw="netbios-ns"	Ds="NETBIOS Name Service">
+			<Tns>
+				<Tn Id="0c1200"/>
+			</Tns>
+		</Pt>
+		<Pt Id="138"	Us="0" Kw="netbios-dgm"	Ds="NETBIOS Datagram Service"/>
+		<Pt Id="139"	Us="0" Kw="netbios-ssn"	Ds="NETBIOS Session Service"/>
+		<Pt Id="140"	Us="0" Kw="emfis-data"	Ds="EMFIS-DATA EMFIS Data Service"/>
+		<Pt Id="141"	Us="0" Kw="emfis-cntl"	Ds="EMFIS Control Service"/>
+		<Pt Id="142"	Us="0" Kw="bl-idm"	Ds="NETBIOS Session Service"/>
+		<Pt Id="143"	Us="0" Kw="imap2"	Ds="NETBIOS Session Service"/>
+		<Pt Id="144"	Us="0" Kw="news"	Ds="NewS"/>
+		<Pt Id="145"	Us="0" Kw="uaac"	Ds="UAAC Protocol"/>
+		<Pt Id="146"	Us="1" Kw="iso-tp0"	Ds="iso-tp0">
+			<Tns>
+				<Tn Id="080d02"/>
+			</Tns>
+		</Pt>
+		<Pt Id="147"	Us="0" Kw="iso-ip"	Ds="iso-tp0"/>
+		<Pt Id="148"	Us="0" Kw="cronus"	Ds="CRONUS-SUPPORT"/>
+		<Pt Id="149"	Us="0" Kw="aed-512"	Ds="AED 512 Emulation Service"/>
+		<Pt Id="150"	Us="0" Kw="sql-net"	Ds="SQL-NET"/>
+		<Pt Id="151"	Us="0" Kw="hems"	Ds="HEMS"/>
+		<Pt Id="152"	Us="0" Kw="bftp"	Ds="Background File Transfer Program"/>
+		<Pt Id="153"	Us="0" Kw="sgmp"	Ds="SGMP"/>
+		<Pt Id="154"	Us="0" Kw="netsc-prod"	Ds="NETSC"/>
+		<Pt Id="155"	Us="0" Kw="netsc-dev"	Ds="NETSC"/>
+		<Pt Id="156"	Us="0" Kw="sqlsrv"	Ds="SQL Service"/>
+		<Pt Id="157"	Us="0" Kw="knet-cmp"	Ds="KNET/VM Command/Message Protocol"/>
+		<Pt Id="158"	Us="0" Kw="pcmail-srv"	Ds="PCMail Server"/>
+		<Pt Id="159"	Us="0" Kw="nss-routing"	Ds="NSS-Routing"/>
+		<Pt Id="160"	Us="0" Kw="sgmp-traps"	Ds="SGMP-TRAPS"/>
+		<Pt Id="161"	Us="0" Kw="snmp"				Ds="SNMP"/>
+		<Pt Id="162"	Us="0" Kw="snmptrap"	Ds="SNMPTRAP"/>
+		<Pt Id="163"	Us="0" Kw="cmip-man"	Ds="CMIP Manager"/>
+		<Pt Id="164"	Us="0" Kw="cmip-agent"	Ds="CMIP Agent"/>
+		<Pt Id="165"	Us="0" Kw="xns-courier"	Ds="Xerox"/>
+		<Pt Id="166"	Us="0" Kw="s-net"	Ds="Sirius Systems"/>
+		<Pt Id="167"	Us="0" Kw="namp"	Ds="NAMP"/>
+		<Pt Id="168"	Us="0" Kw="rsvd"	Ds="RSVD"/>
+		<Pt Id="169"	Us="0" Kw="send"	Ds="SEND"/>
+		<Pt Id="170"	Us="0" Kw="print-srv"	Ds="Network PostScript"/>
+		<Pt Id="171"	Us="0" Kw="multiplex"	Ds="Network Innovations Multiplex"/>
+		<Pt Id="172"	Us="0" Kw="cl/1"	Ds="Network Innovations CL/1"/>
+		<Pt Id="173"	Us="0" Kw="xyplex-mux"	Ds="Xyplex"/>
+		<Pt Id="174"	Us="0" Kw="mailq"	Ds="MAILQ"/>
+		<Pt Id="175"	Us="0" Kw="vmnet"	Ds="VMNET"/>
+		<Pt Id="176"	Us="0" Kw="genrad-mux"	Ds="GENRAD-MUX"/>
+		<Pt Id="177"	Us="0" Kw="xdmcp"	Ds="X Display Manager Control Protocol"/>
+		<Pt Id="178"	Us="0" Kw="nextstep"	Ds="NextStep Window Server"/>
+		<Pt Id="179"	Us="0" Kw="bgp"	Ds="Border Gateway Protocol"/>
+		<Pt Id="180"	Us="0" Kw="ris"	Ds="Intergraph"/>
+		<Pt Id="181"	Us="0" Kw="unify"	Ds="Unify"/>
+		<Pt Id="182"	Us="0" Kw="audit"	Ds="Unisys Audit SITP"/>
+		<Pt Id="183"	Us="0" Kw="ocbinder"	Ds="OCBinder"/>
+		<Pt Id="184"	Us="0" Kw="ocserver"	Ds="OCServer"/>					   
+		<Pt Id="185"	Us="0" Kw="remote-kis"	Ds="Remote-KIS"/>
+		<Pt Id="186"	Us="0" Kw="kis"	Ds="KIS Protocol"/>
+		<Pt Id="187"	Us="0" Kw="aci"	Ds="Application Communication Interface"/>
+		<Pt Id="188"	Us="0" Kw="mumps"	Ds="Plus Five's MUMPS"/>
+		<Pt Id="189"	Us="0" Kw="qft"	Ds="Queued File Transport"/>
+		<Pt Id="190"	Us="0" Kw="gacp"	Ds="Gateway Access Control Protocol"/>
+		<Pt Id="191"	Us="0" Kw="prospero"	Ds="Prospero Directory Service"/>
+		<Pt Id="192"	Us="0" Kw="osu-nms"	Ds="OSU Network Monitoring System"/>
+		<Pt Id="193"	Us="0" Kw="srmp"	Ds="Spider Remote Monitoring Protocol"/>
+		<Pt Id="194"	Us="0" Kw="irc"	Ds="Internet Relay Chat Protocol"/>
+		<Pt Id="195"	Us="0" Kw="dn6-nlm-aud"	Ds="DNSIX Network Level Module Audit"/>
+		<Pt Id="196"	Us="0" Kw="dn6-smm-red"	Ds="DNSIX Session Mgt Module Audit Redir"/>
+		<Pt Id="197"	Us="0" Kw="dls"	Ds="Directory Location Service"/>
+		<Pt Id="198"	Us="0" Kw="dls-mon"	Ds="Directory Location Service Monitor"/>
+		<Pt Id="199"	Us="0" Kw="smux"	Ds="SMUX"/>
+
+		<Pt Id="200"	Us="0" Kw="src"	Ds="IBM System Resource Controller"/>
+		<Pt Id="201"	Us="0" Kw="at-rtmp"	Ds="AppleTalk Routing Maintenance"/>
+		<Pt Id="202"	Us="0" Kw="at-nbp"	Ds="AppleTalk Name Binding"/>
+		<Pt Id="203"	Us="0" Kw="at-3"	Ds="AppleTalk Unused"/>
+		<Pt Id="204"	Us="0" Kw="at-echo"	Ds="AppleTalk Echo"/>
+		<Pt Id="205"	Us="0" Kw="at-5"	Ds="AppleTalk Unused"/>
+		<Pt Id="206"	Us="0" Kw="at-zis"	Ds="AppleTalk Zone Information"/>
+		<Pt Id="207"	Us="0" Kw="at-7"	Ds="AppleTalk Unused"/>
+		<Pt Id="208"	Us="0" Kw="at-8"	Ds="AppleTalk Unused"/>
+		<Pt Id="209"	Us="0" Kw="tam"	Ds="Trivial Authenticated Mail Protocol"/>
+		<Pt Id="210"	Us="0" Kw="z39.50"	Ds="ANSI Z39.50"/>
+		<Pt Id="211"	Us="0" Kw="914c/g"	Ds="Texas Instruments 914C/G Terminal"/>
+		<Pt Id="212"	Us="0" Kw="anet"	Ds="ATEXSSTR"/>
+		<Pt Id="213"	Us="0" Kw="ipx"	Ds="IPX"/>
+		<Pt Id="214"	Us="0" Kw="vmpwscs"	Ds="VM PWSCS"/>
+		<Pt Id="215"	Us="0" Kw="softpc"	Ds="Insignia Solutions"/>
+		<Pt Id="216"	Us="0" Kw="atls"	Ds="Access Technology License Server"/>
+		<Pt Id="217"	Us="0" Kw="dbase"	Ds="dBASE Unix"/>
+		<Pt Id="218"	Us="0" Kw="mpp"	Ds="Netix Message Posting Protocol"/>
+		<Pt Id="219"	Us="0" Kw="uarps"	Ds="Unisys ARPs"/>
+		<Pt Id="220"	Us="0" Kw="imap3"	Ds="Interactive Mail Access Protocol v3"/>
+		<Pt Id="221"	Us="0" Kw="fln-spx"	Ds="Berkeley rlogind with SPX auth"/>
+		<Pt Id="222"	Us="0" Kw="rsh-spx"	Ds="Berkeley rshd with SPX auth"/>
+		<Pt Id="223"	Us="0" Kw="cdc"	Ds="Certificate Distribution Center"/>
+		<Pt Id="242"	Us="0" Kw="direct"	Ds="direct"/>
+		<Pt Id="243"	Us="0" Kw="sur-meas"	Ds="Survey Measurement"/>
+		<Pt Id="245"	Us="0" Kw="link"	Ds="LINK"/>
+		<Pt Id="246"	Us="0" Kw="dsp3270"	Ds="Display Systems Protocol"/>
+
+		<Pt Id="344"	Us="0" Kw="pdap"	Ds="Prospero Data Access Protocol"/>
+		<Pt Id="345"	Us="0" Kw="pawserv"	Ds="Perf Analysis Workbench"/>
+		<Pt Id="346"	Us="0" Kw="zserv"	Ds="Zebra server"/>
+		<Pt Id="347"	Us="0" Kw="fatserv"	Ds="Fatmen Server"/>
+		<Pt Id="348"	Us="0" Kw="csi-sgwp"	Ds="Cabletron Management Protocol"/>
+		<Pt Id="371"	Us="0" Kw="clearcase"	Ds="Clearcase"/>
+		<Pt Id="372"	Us="0" Kw="ulistserv"	Ds="Unix Listserv"/>
+		<Pt Id="373"	Us="0" Kw="legent-1"	Ds="Legent Corporation"/>
+		<Pt Id="374"	Us="0" Kw="legent-2"	Ds="Legent Corporation"/>
+		<Pt Id="375"	Us="0" Kw="hassle"	Ds="Hassle"/>
+		<Pt Id="376"	Us="0" Kw="nip"	Ds="Amiga Envoy Network Inquiry Proto"/>
+		<Pt Id="377"	Us="0" Kw="tnETOS"	Ds="NEC Corporation"/>
+		<Pt Id="378"	Us="0" Kw="dsETOS"	Ds="NEC Corporation"/>
+		<Pt Id="379"	Us="0" Kw="is99c"	Ds="TIA/EIA/IS-99 modem client"/>
+		<Pt Id="380"	Us="0" Kw="is99s"	Ds="TIA/EIA/IS-99 modem server"/>
+		<Pt Id="381"	Us="0" Kw="hp-collector"	Ds="hp performance data collector"/>
+		<Pt Id="382"	Us="0" Kw="hp-managed-node"	Ds="hp performance data managed node"/>
+		<Pt Id="383"	Us="0" Kw="hp-alarm-mgr"	Ds="hp performance data alarm manager"/>
+		<Pt Id="384"	Us="0" Kw="arns"	Ds="A Remote Network Server System"/>
+		<Pt Id="385"	Us="0" Kw="ibm-app"	Ds="IBM Application"/>
+		<Pt Id="386"	Us="0" Kw="asa"	Ds="ASA Message Router Object Def."/>
+		<Pt Id="387"	Us="0" Kw="aurp"	Ds="Appletalk Update-Based Routing Pro."/>
+		<Pt Id="388"	Us="0" Kw="unidata-ldm"	Ds="Unidata LDM Version 4"/>
+		<Pt Id="389"	Us="0" Kw="ldap"	Ds="Lightweight Directory Access Protocol"/>
+		<Pt Id="390"	Us="0" Kw="uis"	Ds="UIS"/>
+		<Pt Id="391"	Us="0" Kw="synotics-relay"	Ds="SynOptics SNMP Relay Port"/>
+		<Pt Id="392"	Us="0" Kw="synotics-broker"	Ds="SynOptics Port Broker Port"/>
+		<Pt Id="393"	Us="0" Kw="dis"	Ds="Data Interpretation System"/>
+		<Pt Id="394"	Us="0" Kw="embl-ndt"	Ds="EMBL Nucleic Data Transfer"/>
+		<Pt Id="395"	Us="0" Kw="netcp"	Ds="NETscout Control Protocol"/>
+		<Pt Id="396"	Us="0" Kw="netware-ip"	Ds="Novell Netware over IP"/>
+		<Pt Id="397"	Us="0" Kw="mptn"	Ds="Multi Protocol Trans. Net."/>
+		<Pt Id="398"	Us="0" Kw="kryptolan"	Ds="Kryptolan"/>
+		<Pt Id="399"	Us="0" Kw="iso-tsap-c2"	Ds="ISO Transport Class 2 Non-Control over TCP"/>
+
+		<Pt Id="400"	Us="0" Kw="work-sol"	Ds="Workstation Solutions"/>
+		<Pt Id="401"	Us="0" Kw="ups"	Ds="Uninterruptible Power Supply"/>
+		<Pt Id="402"	Us="0" Kw="genie"	Ds="Genie Protocol"/>
+		<Pt Id="403"	Us="0" Kw="decap"	Ds="decap"/>
+		<Pt Id="404"	Us="0" Kw="nced"	Ds="nced"/>
+		<Pt Id="405"	Us="0" Kw="ncld"	Ds="ncld"/>
+		<Pt Id="406"	Us="0" Kw="imsp"	Ds="Interactive Mail Support Protocol"/>
+		<Pt Id="407"	Us="0" Kw="timbuktu"	Ds="Timbuktu"/>
+		<Pt Id="408"	Us="0" Kw="prm-sm"	Ds="Prospero Resource Manager Sys. Man."/>
+		<Pt Id="409"	Us="0" Kw="prm-nm"	Ds="Prospero Resource Manager Node Man."/>
+		<Pt Id="410"	Us="0" Kw="decladebug"	Ds="DECLadebug Remote Debug Protocol"/>
+		<Pt Id="411"	Us="0" Kw="rmt"	Ds="Remote MT Protocol"/>
+		<Pt Id="412"	Us="0" Kw="synoptics-trap"	Ds="Trap Convention Port"/>
+		<Pt Id="413"	Us="0" Kw="smsp"	Ds="SMSP"/>
+		<Pt Id="414"	Us="0" Kw="infoseek"	Ds="InfoSeek"/>
+		<Pt Id="415"	Us="0" Kw="bnet"	Ds="BNet"/>
+		<Pt Id="416"	Us="0" Kw="silverplatter"	Ds="Silverplatter"/>
+		<Pt Id="417"	Us="0" Kw="onmux"	Ds="Onmux"/>
+		<Pt Id="418"	Us="0" Kw="hyper-g"	Ds="Hyper-G"/>
+		<Pt Id="419"	Us="0" Kw="ariel1"	Ds="Ariel"/>
+		<Pt Id="420"	Us="0" Kw="smpte"	Ds="SMPTE"/>
+		<Pt Id="421"	Us="0" Kw="ariel2"	Ds="Ariel"/>
+		<Pt Id="422"	Us="0" Kw="ariel3"	Ds="Ariel"/>
+		<Pt Id="423"	Us="0" Kw="opc-job-start"	Ds="IBM Operations Planning and Control Start"/>
+		<Pt Id="424"	Us="0" Kw="opc-job-track"	Ds="IBM Operations Planning and Control Track"/>
+		<Pt Id="425"	Us="0" Kw="icad-el"	Ds="ICAD"/>
+		<Pt Id="426"	Us="0" Kw="smartsdp"	Ds="smartsdp"/>
+		<Pt Id="427"	Us="0" Kw="svrloc"	Ds="Server Location"/>
+		<Pt Id="428"	Us="0" Kw="ocs_cmu"	Ds="OCS_CMU"/>
+		<Pt Id="429"	Us="0" Kw="ocs_amu"	Ds="OCS_AMU"/>
+		<Pt Id="430"	Us="0" Kw="utmpsd"	Ds="UTMPSD"/>
+		<Pt Id="431"	Us="0" Kw="utmpcd"	Ds="UTMPCD"/>
+		<Pt Id="432"	Us="0" Kw="iasd"	Ds="IASD"/>
+		<Pt Id="433"	Us="0" Kw="nnsp"	Ds="NNSP"/>
+		<Pt Id="434"	Us="0" Kw="mobileip-agent"	Ds="MobileIP-Agent"/>
+		<Pt Id="435"	Us="0" Kw="mobilip-mn"	Ds="mobilip-mn"/>
+		<Pt Id="443"	Us="0" Kw="https"				Ds="https  MCom"/>
+		<Pt Id="444"	Us="0" Kw="snpp"				Ds="Simple Network Paging Protocol"/>
+		<Pt Id="445"	Us="0" Kw="microsoft-ds"	Ds="Microsoft-DS"/>
+		<Pt Id="446"	Us="0" Kw="ddm-rdb"	Ds="DDM-RDB"/>
+		<Pt Id="447"	Us="0" Kw="ddm-dfm"	Ds="DDM-RFM"/>
+		<Pt Id="448"	Us="0" Kw="ddm-byte"	Ds="DDM-BYTE"/>
+		<Pt Id="449"	Us="0" Kw="as-servermap"	Ds="AS Server Mapper"/>
+		<Pt Id="450"	Us="0" Kw="tserver"	Ds="TServer"/>
+		<Pt Id="451"	Us="0" Kw="sfs-smp-net"	Ds="Cray Network Semaphore server"/>
+		<Pt Id="452"	Us="0" Kw="sfs-config"	Ds="Cray SFS config server"/>
+		<Pt Id="453"	Us="0" Kw="creativeserver"	Ds="CreativeServer"/>
+		<Pt Id="454"	Us="0" Kw="contentserver"	Ds="ContentServer"/>
+		<Pt Id="455"	Us="0" Kw="creativepartnr"	Ds="CreativePartnr"/>
+		<Pt Id="458"	Us="0" Kw="appleqtc"	Ds="apple quick time"/>
+		<Pt Id="464"	Us="0" Kw="kpasswd"	Ds="Kerberos &quot;passwd&quot;"/>
+		<Pt Id="468"	Us="0" Kw="photuris"	Ds="photuris"/>
+		<Pt Id="487"	Us="0" Kw="saft"				Ds="saft"/>
+		<Pt Id="488"	Us="0" Kw="gss-http"	Ds="gss-http"/>
+		<Pt Id="496"	Us="0" Kw="pim-rp-disc"	Ds="pim-rp-disc"/>
+
+		<Pt Id="500"	Us="0" Kw="isakmp"	Ds="isakmp"/>
+		<Pt Id="512"	Us="0" Kw="biff"				Ds="comsat"/>
+		<Pt Id="513"	Us="0" Kw="who"				Ds="whod"/>
+		<Pt Id="514"	Us="0" Kw="syslog"				Ds="syslog"/>
+		<Pt Id="515"	Us="0" Kw="printer"	Ds="line printer spooler"/>
+		<Pt Id="517"	Us="0" Kw="talk"	Ds="like tenex link, but across machine - unfortunately, doesn't use link protocol (this is actually just a rendezvous port from which a tcp connection is established"/>
+		<Pt Id="518"	Us="0" Kw="ntalk"	Ds="tcp"/>
+		<Pt Id="519"	Us="0" Kw="utime"				Ds="unixtime"/>
+		<Pt Id="520"	Us="0" Kw="route routed"	Ds="RIP"/>
+		<Pt Id="525"	Us="0" Kw="timed"				Ds="timeserver"/>
+		<Pt Id="535"	Us="0" Kw="iiop"				Ds="iiop"/>
+		<Pt Id="538"	Us="0" Kw="gdomap"	Ds="GNUstep distributed objects"/>
+		<Pt Id="539"	Us="0" Kw="apertus-ldp"	Ds="Apertus Technologies Load Determination"/>
+		<Pt Id="540"	Us="0" Kw="uucp"	Ds="uucpd"/>
+		<Pt Id="541"	Us="0" Kw="uucp-rlogin"	Ds="uucp-rlogin  Stuart Lynne"/>
+		<Pt Id="543"	Us="0" Kw="klogin"	Ds="klogin"/>
+		<Pt Id="544"	Us="0" Kw="kshell"	Ds="krcmd"/>
+		<Pt Id="545"	Us="0" Kw="appleqtcsrvr"	Ds="appleqtcsrvr"/>
+		<Pt Id="546"	Us="0" Kw="dhcpv6-client"	Ds="dhcpv6-client"/>
+		<Pt Id="547"	Us="0" Kw="dhcpv6-server"	Ds="dhcpv6-server"/>
+		<Pt Id="548"	Us="0" Kw="afpovertcp"	Ds="AFP over TCP"/>
+		<Pt Id="550"	Us="0" Kw="new-rwho"	Ds="new-who"/>
+		<Pt Id="551"	Us="0" Kw="cybercash"	Ds="cybercash"/>
+		<Pt Id="554"	Us="0" Kw="rtsp"				Ds="Real Time Stream Control Protocol"/>
+		<Pt Id="555"	Us="1" Kw="dsf"	Ds="dsf"/>
+		<Pt Id="556"	Us="0" Kw="remotefs"	Ds="rfs server"/>
+		<Pt Id="560"	Us="0" Kw="rmonitor"	Ds="rmonitord"/>
+		<Pt Id="561"	Us="0" Kw="monitor"	Ds="monitor"/>
+		<Pt Id="562"	Us="0" Kw="chshell"	Ds="chcmd"/>
+		<Pt Id="563"	Us="0" Kw="nntps"				Ds="NNTP over SSL"/>
+		<Pt Id="565"	Us="0" Kw="whoami"	Ds="whoami"/>
+		<Pt Id="587"	Us="0" Kw="submission"	Ds="mail message submission"/>
+		<Pt Id="610"	Us="0" Kw="npmp-local"	Ds="npmp-local / DQS"/>
+		<Pt Id="611"	Us="0" Kw="npmp-gui"	Ds="npmp-gui / DQS"/>
+		<Pt Id="612"	Us="0" Kw="hmmp-ind"	Ds="HMMP Indication / DQS"/>
+		<Pt Id="636"	Us="0" Kw="ldaps"				Ds="LDAP over SSL"/>
+		<Pt Id="674"	Us="0" Kw="acap"				Ds="acap"/>
+		<Pt Id="694"	Us="0" Kw="ha-cluster"	Ds="Heartbeat HA-cluster"/>
+
+		<Pt Id="700"	Us="0" Kw="buddyphone"	Ds="BuddyPhone Communication (No FTP)"/>
+		<Pt Id="701"	Us="0" Kw="buddyphone"	Ds="BuddyPhone Communication (No FTP)"/>
+		<Pt Id="750"	Us="0" Kw="kerberos-iv"	Ds="kerberos4 kerberos-sec kdc"/>
+		<Pt Id="767"	Us="0" Kw="phonebook"	Ds="Network phonebook"/>
+
+		<Pt Id="873"	Us="0" Kw="rsync"				Ds="rsync"/>
+
+		<Pt Id="993"	Us="0" Kw="imaps"				Ds="IMAP over SSL"/>
+		<Pt Id="994"	Us="0" Kw="ircs"				Ds="ircs"/>
+		<Pt Id="995"	Us="0" Kw="pop3s"				Ds="POP-3 over SSL"/>
+
+		<Pt Id="1025"	Us="2">
+			<Tns>
+				<Tn Id="110412"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1045"	Us="0" Kw="fpitp"				Ds="Fingerprint Image Transfer Protocol"/>
+		<Pt Id="1049"	Us="0" Kw="td-postman"	Ds="Tobit David Postman VPMN"/>
+		<Pt Id="1050"	Us="0" Kw="cma"				Ds="CORBA Management Agent"/>
+		<Pt Id="1053"	Us="0" Kw="remote-as"	Ds="Remote Assistant (RA)"/>
+		<Pt Id="1080"	Us="0" Kw="socks"				Ds="socks proxy server"/>
+		<Pt Id="1097"	Us="0" Kw="rmiactivation"	Ds="RMI Activation"/>
+		<Pt Id="1098"	Us="0" Kw="rmiactivation"	Ds="RMI Activation"/>
+		<Pt Id="1099"	Us="0" Kw="rmiactivation"	Ds="RMI Registry "/>
+
+		<Pt Id="1102"	Us="0" Kw="adobeserver-1"	Ds="ADOBE SERVER 1 "/>
+
+		<Pt Id="1200"	Us="2">
+			<Tns>
+				<Tn Id="0d0e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="1201"	Us="2">
+			<Tns>
+				<Tn Id="0d0e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="1300"	Us="0" Kw="h323hostcallsc"	Ds="H323 Host Call Secure"/>
+
+		<Pt Id="1414"	Us="0" Kw="cuseeme"	Ds="CUSeeMe Vdeo/Audio Server"/>
+		<Pt Id="1433"	Us="0" Kw="ms-sql-s"	Ds="Microsoft-SQL-Server"/>
+		<Pt Id="1434"	Us="0" Kw="ms-sql-m"	Ds="Microsoft-SQL-Monitor"/>
+		<Pt Id="1494"	Us="0" Kw="ica"				Ds="Citrix ICA Client"/>
+
+		<Pt Id="1512"	Us="0" Kw="wins"				Ds="Microsoft's Windows Internet Name Service"/>
+		<Pt Id="1525"	Us="0" Kw="prospero-np"	Ds="Prospero Directory Service non-priv; oracle"/>
+
+		<Pt Id="1645"	Us="0" Kw="datametrics"	Ds="datametrics / old radius entry"/>
+		<Pt Id="1646"	Us="0" Kw="sa-msg-port"	Ds="sa-msg-port / old radacct entry"/>
+		<Pt Id="1649"	Us="0" Kw="kermit"	Ds="kermit"/>
+
+		<Pt Id="1701"	Us="0" Kw="l2tp"				Ds="l2tp"/>
+		<Pt Id="1718"	Us="0" Kw="h323gatedisc"	Ds="h323gatedisc"/>
+		<Pt Id="1719"	Us="0" Kw="h323gatestat"	Ds="h323gatestat"/>
+		<Pt Id="1720"	Us="0" Kw="h323hostcall"	Ds="h323hostcall"/>
+		<Pt Id="1758"	Us="0" Kw="tftp-mcast"	Ds="tftp-mcast"/>
+		<Pt Id="1788"	Us="0" Kw="hello"				Ds="hello"/>
+
+		<Pt Id="1812"	Us="0" Kw="cuseeme"	Ds="CUSeeMe Vdeo/Audio Server"/>
+		<Pt Id="1813"	Us="0" Kw="cuseeme"	Ds="CUSeeMe Vdeo/Audio Server"/>
+		<Pt Id="1905"	Us="0" Kw="sugp"				Ds="Secure UP.Link Gateway Protocol"/>
+		<Pt Id="1911"	Us="0" Kw="mtp"				Ds="mtp"/>
+		<Pt Id="1985"	Us="0" Kw="hsrp"				Ds="Cisco Hot Standby Router Protocol"/>
+
+		<Pt Id="2000"	Us="0" Kw="callbook"	Ds="callbook"/>
+		<Pt Id="2049"	Us="0" Kw="nfs"				Ds="nfsd"/>
+		<Pt Id="2090"	Us="0" Kw="go2call"	Ds="Go2Call"/>
+		<Pt Id="2091"	Us="0" Kw="go2call"	Ds="Go2Call"/>
+
+		<Pt Id="2102"	Us="0" Kw="zephyr-srv"	Ds="Zephyr server"/>
+		<Pt Id="2103"	Us="0" Kw="zephyr-clt"	Ds="Zephyr serv-hm connection"/>
+		<Pt Id="2104"	Us="0" Kw="zephyr-hm"	Ds="Zephyr hostmanager"/>
+		<Pt Id="2130"	Us="2">
+			<Tns>
+				<Tn Id="0c0803"/>
+			</Tns>
+		</Pt>
+		<Pt Id="2140"	Us="2">
+			<Tns>
+				<Tn Id="130702"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="2233"	Us="0" Kw="shiva-vpn"	Ds="Shiva VPN"/>
+
+		<Pt Id="2339"	Us="2">
+			<Tns>
+				<Tn Id="150e01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="2401"	Us="0" Kw="cvspserver"	Ds="CVS client/server operations"/>
+		<Pt Id="2430"	Us="0" Kw="venus"				Ds="Venus callback/wbc interface"/>
+		<Pt Id="2431"	Us="0" Kw="venus-se"	Ds="udp sftp side effect"/>
+		<Pt Id="2432"	Us="0" Kw="codasrv"	Ds="server port"/>
+		<Pt Id="2433"	Us="0" Kw="codasrv-se"	Ds="udp sftp side effectQ"/>
+
+		<Pt Id="2746"	Us="0" Kw="cp-udp-encap"	Ds="Check Point UDP Encapsulation"/>
+
+		<Pt Id="2989"	Us="2">
+			<Tns>
+				<Tn Id="110403"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="3000"	Us="0" Kw="active-ppp"	Ds="Calista IP Phone (Inbound)"/>
+
+		<Pt Id="3130"	Us="0" Kw="icpv2"				Ds="Internet Cache Protocol V2 (Squid)"/>
+		<Pt Id="3150"	Us="2">
+			<Tns>
+				<Tn Id="030402"/>
+				<Tn Id="050e01"/>
+				<Tn Id="0c0803"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="3231"	Us="0" Kw="viavideo"	Ds="3230 Polycom ViaVideo (H.323)"/>
+		<Pt Id="3232"	Us="0" Kw="viavideo"	Ds="3230 Polycom ViaVideo (H.323)"/>
+		<Pt Id="3233"	Us="0" Kw="viavideo"	Ds="3230 Polycom ViaVideo (H.323)"/>
+		<Pt Id="3234"	Us="0" Kw="viavideo"	Ds="3230 Polycom ViaVideo (H.323)"/>
+		<Pt Id="3235"	Us="0" Kw="viavideo"	Ds="3230 Polycom ViaVideo (H.323)"/>
+
+		<Pt Id="3306"	Us="0" Kw="mysql"				Ds="MySQL"/>
+		<Pt Id="3346"	Us="0" Kw="trnsprntproxy"	Ds="Trnsprnt Proxy"/>
+
+		<Pt Id="3455"	Us="0" Kw="prsvp"				Ds="RSVP Port"/>
+
+		<Pt Id="4035"	Us="0" Kw="wap-push-http"	Ds="WAP Push OTA-HTTP port"/>
+		<Pt Id="4036"	Us="0" Kw="wap-push-https"	Ds="WAP Push OTA-HTTP secure"/>
+
+		<Pt Id="4321"	Us="0" Kw="rwhois"	Ds="Remote Who Is"/>
+
+		<Pt Id="4444"	Us="0" Kw="krb524"	Ds="Kerberos 5 to 4 ticket xlator"/>
+
+		<Pt Id="5002"	Us="0" Kw="rfe"				Ds="Radio Free Ethernet"/>
+		<Pt Id="5003"	Us="0" Kw="Filemaker Pro"	Ds="FileMaker Pro over IP"/>
+
+		<Pt Id="5308"	Us="0" Kw="cfengine"	Ds="CFengine"/>
+
+		<Pt Id="5499"	Us="0" Kw="hotline"	Ds="Hotline Server"/>
+
+		<Pt Id="5882"	Us="2">
+			<Tns>
+				<Tn Id="030402"/>
+				<Tn Id="180a10"/>
+			</Tns>
+		</Pt>
+		<Pt Id="5883"	Us="2">
+			<Tns>
+				<Tn Id="030402"/>
+				<Tn Id="180a10"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="5999"	Us="0" Kw="cvsup"				Ds="CVSup file transfer/John Polstra/FreeBSD"/>
+
+		<Pt Id="5632"	Us="0" Kw="pcAnywhereStat"	Ds="PC Anywhere"/>
+
+		<Pt Id="6346"	Us="0" Kw="gnutella"	Ds="GNUtella Peer-to-Peer File Sharing System"/>
+
+		<Pt Id="6801"	Us="0" Kw="net2phone"	Ds="Net2Phone"/>
+		<Pt Id="6838"	Us="2">
+			<Tns>
+				<Tn Id="0c1201"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="6970"	IdTo="6999"	Us="0" Kw="quicktime"	Ds="QuickTime Server"/>
+
+		<Pt Id="7000"	Us="0" Kw="afs3-fileserver"	Ds="file server itself"/>
+		<Pt Id="7001"	Us="0" Kw="afs3-callback"	Ds="callbacks to cache managers"/>
+		<Pt Id="7002"	Us="0" Kw="afs3-prserver"	Ds="users &amp; groups database"/>
+		<Pt Id="7003"	Us="0" Kw="afs3-vlserver"	Ds="volume location database"/>
+		<Pt Id="7004"	Us="0" Kw="afs3-kaserver"	Ds="AFS/Kerberos authentication service"/>
+		<Pt Id="7005"	Us="0" Kw="afs3-volser"	Ds="volume managment server"/>
+		<Pt Id="7006"	Us="0" Kw="afs3-errors"	Ds="error interpretation service"/>
+		<Pt Id="7007"	Us="0" Kw="afs3-bos"	Ds="basic overseer process"/>
+		<Pt Id="7008"	Us="0" Kw="afs3-update"	Ds="server-to-server updater"/>
+		<Pt Id="7009"	Us="0" Kw="afs3-rmtsys"	Ds="remote cache manager service"/>
+		<Pt Id="7028"	Us="2">
+			<Tns>
+				<Tn Id="140d01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="7424"	Us="2">
+			<Tns>
+				<Tn Id="070e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="7648"	Us="0" Kw="CUSeeMe"	Ds="CUSeeMe Video/Audio Server"/>
+
+		<Pt Id="8879"	Us="2">
+			<Tns>
+				<Tn Id="010023"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="9325"	Us="2">
+			<Tns>
+				<Tn Id="0c1201"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="9876"	Us="0" Kw="sd"				Ds="Session Director"/>
+
+		<Pt Id="9943"	Us="0" Kw="ivisit"	Ds="Ivisit"/>
+
+		<Pt Id="10067"	Us="2">
+			<Tns>
+				<Tn Id="0f0e00"/>
+			</Tns>
+		</Pt>
+		<Pt Id="10080"	Us="0" Kw="amanda"	Ds="amanda backup services"/>
+
+		<Pt Id="10167"	Us="2">
+			<Tns>
+				<Tn Id="0f0e00"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="10498"	Us="2">
+			<Tns>
+				<Tn Id="0c1201"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="10666"	Us="2">
+			<Tns>
+				<Tn Id="000c01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="11720"	Us="0" Kw="h323callsigalt"	Ds="H323 Call Signal Alternate"/>
+
+		<Pt Id="12000"	IdTo="12010"	Us="0" Kw="dwyco-video"	Ds="Dwyco Video Conference"/>
+		<Pt Id="12080"	Us="0" Kw="delta3pc2phone"	Ds="Delta Three PC to Phone"/>
+		<Pt Id="12081"	IdTo="12119"	Us="0" Kw="dwyco-video"	Ds="Dwyco Video Conference"/>
+
+		<Pt Id="12120"	Us="0" Kw="delta3pc2phone"	Ds="Delta Three PC to Phone"/>
+		<Pt Id="12121"	Us="0" Kw="dwyco-video"	Ds="Dwyco Video Conference"/>
+		<Pt Id="12122"	Us="0" Kw="delta3pc2phone"	Ds="Delta Three PC to Phone"/>
+		<Pt Id="12123"	IdTo="12200"	Us="0" Kw="dwyco-video"	Ds="Dwyco Video Conference"/>
+
+		<Pt Id="12623"	Us="2">
+			<Tns>
+				<Tn Id="031400"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="18753"	Us="2">
+			<Tns>
+				<Tn Id="120701"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="22555"	Us="0" Kw="internetphone"	Ds="Internet Phone"/>
+
+		<Pt Id="23476"	Us="2">
+			<Tns>
+				<Tn Id="030e01"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="24150"	Us="0" Kw="delta3pc2phone"	Ds="Delta Three PC to Phone"/>
+
+		<Pt Id="26000"	Us="0" Kw="quake"				Ds="quake"/>
+
+		<Pt Id="26208"	Us="0" Kw="wnn6-ds"	Ds="wnn6-ds"/>
+		<Pt Id="26274"	Us="2">
+			<Tns>
+				<Tn Id="030403"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="27015"	Us="0" Kw="halflife"	Ds="Half Life Game Server"/>
+
+		<Pt Id="27444"	Us="2">
+			<Tns>
+				<Tn Id="131110"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="27660"	Us="0" Kw="Quake3Server"	Ds="Quake 3 Arena Server (for first player)"/>
+
+		<Pt Id="27910"	Us="0" Kw="Quake2Server"	Ds="Quake 2 Arena Server"/>
+
+		<Pt Id="30103"	Us="2">
+			<Tns>
+				<Tn Id="0d0430"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="31337"	Us="2">
+			<Tns>
+				<Tn Id="010021"/>
+				<Tn Id="030401"/>
+			</Tns>
+		</Pt>
+		<Pt Id="31338"	Us="2">
+			<Tns>
+				<Tn Id="030401"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="31789"	Us="2">
+			<Tns>
+				<Tn Id="070001"/>
+			</Tns>
+		</Pt>
+		<Pt Id="31791"	Us="2">
+			<Tns>
+				<Tn Id="070001"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="33434"	Us="0" Kw="traceroute"	Ds="traceroute"/>
+
+		<Pt Id="34555"	Us="2">
+			<Tns>
+				<Tn Id="131110"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="47262"	Us="2">
+			<Tns>
+				<Tn Id="030403"/>
+			</Tns>
+		</Pt>
+
+		<Pt Id="51200"	Us="0" Kw="dialpad"	Ds="Dialpad"/>
+		<Pt Id="51201"	Us="0" Kw="dialpad"	Ds="Dialpad"/>
+
+		<Pt Id="56768"	Us="0" Kw="ivisit"	Ds="Ivisit"/>
+		<Pt Id="56800"	Us="0" Kw="cuseeme"	Ds="CUSeeMe"/>
+
+		<Pt Id="65432"	Us="2">
+			<Tns>
+				<Tn Id="130755"/>
+			</Tns>
+		</Pt>
+		</Pts>
+	</Prt>
+	</Prts>
+	<Tns>
+	<Tn Id="000001"	Nm="2000 Cracks"/>
+	<Tn Id="000002"	Nm="711 trojan (Seven Eleven)"/>
+
+	<Tn Id="000202"	Nm="Acid Battery"/>
+	<Tn Id="000203"	Nm="Acid Battery 2000"/>
+	<Tn Id="000205"	Nm="Acid Shivers"/>
+	<Tn Id="000210"	Nm="AcidkoR"/>
+	<Tn Id="000220"	Nm="AckCmd"/>
+	<Tn Id="000600"	Nm="Agent 31"/>
+	<Tn Id="000601"	Nm="Agent 40421"/>
+	<Tn Id="000800"	Nm="AimSpy"/>
+	<Tn Id="000900"	Nm="Ajan"/>
+	<Tn Id="000c00"	Nm="Amanda"/>
+	<Tn Id="000c01"	Nm="Ambush"/>
+	<Tn Id="000d00"	Nm="Antigen"/>
+	<Tn Id="000e00"	Nm="AOL Trojan"/>
+	<Tn Id="001200"	Nm="Ashley"/>
+	<Tn Id="001201"	Nm="Asylum"/>
+	<Tn Id="001300"	Nm="A-trojan"/>
+	<Tn Id="001301"	Nm="Attack Bot"/>
+	<Tn Id="001302"	Nm="Attack FTP"/>
+	<Tn Id="001400"	Nm="Audiodoor"/>
+
+	<Tn Id="010000"	Nm="BacHack"/>
+	<Tn Id="010005"	Nm="Backage"/>
+	<Tn Id="010009"	Nm="Back Construction"/>
+	<Tn Id="010010"	Nm="Back Door"/>
+	<Tn Id="010011"	Nm="Backdoor.DarkSky.B"/>
+	<Tn Id="010012"	Nm="Backdoor.Easyserv"/>
+	<Tn Id="010013"	Nm="Backdoor.Expjan"/>
+	<Tn Id="010014"	Nm="Backdoor-G"/>
+	<Tn Id="010016"	Nm="Backdoor.laphex.client"/>
+	<Tn Id="010017"	Nm="Backdoor.Miffice"/>
+	<Tn Id="010018"	Nm="Backdoor.rcserv"/>
+	<Tn Id="01001a"	Nm="Back Door Setup"/>
+	<Tn Id="01001b"	Nm="Backdoor.Sparta.B"/>
+	<Tn Id="01001e"	Nm="Back Fire"/>
+	<Tn Id="01001f"	Nm="Back End"/>
+	<Tn Id="010021"	Nm="Back Orifice"/>
+	<Tn Id="010022"	Nm="Back Orifice 1.20"/>
+	<Tn Id="010023"	Nm="Back Orifice 2000"/>
+	<Tn Id="010024"	Nm="Back Orifice 2000 Plug-Ins"/>
+	<Tn Id="010025"	Nm="Back Orifice (Lm)"/>
+	<Tn Id="010026"	Nm="Back Orifice russian"/>
+	<Tn Id="01002f"	Nm="BackWeb Server"/>
+	<Tn Id="010030"	Nm="Bad Blood"/>
+	<Tn Id="010031"	Nm="Barok"/>
+	<Tn Id="010032"	Nm="Baron Night"/>
+	<Tn Id="010300"	Nm="Bd dll"/>
+	<Tn Id="010400"	Nm="BeeOne"/>
+	<Tn Id="010800"	Nm="Big Gluck"/>
+	<Tn Id="010801"	Nm="BioNet"/>
+	<Tn Id="010b01"	Nm="Blade Runner"/>
+	<Tn Id="010b05"	Nm="Blakharaz"/>
+	<Tn Id="010b0a"	Nm="BLA Trojan"/>
+	<Tn Id="010b10"	Nm="Blazer5"/>
+	<Tn Id="010b20"	Nm="Blood Fest Evolution"/>
+	<Tn Id="010e01"	Nm="BO2"/>
+	<Tn Id="010e03"	Nm="Bobo"/>
+	<Tn Id="010e05"	Nm="BO client"/>
+	<Tn Id="010e10"	Nm="BO Facil"/>
+	<Tn Id="010e20"	Nm="BO DLL"/>
+	<Tn Id="010e25"	Nm="BO spy"/>
+	<Tn Id="010e30"	Nm="Bo Whack"/>
+	<Tn Id="010e31"	Nm="BOWhack"/>
+	<Tn Id="010e35"	Nm="Bowl"/>
+	<Tn Id="011100"	Nm="BrainSpy"/>
+	<Tn Id="011101"	Nm="Breach"/>
+	<Tn Id="011102"	Nm="Brown Orifice"/>
+	<Tn Id="011400"	Nm="Bubbel"/>
+	<Tn Id="011401"	Nm="Bugs"/>
+	<Tn Id="011402"	Nm="Bunker-Hill"/>
+	<Tn Id="011403"	Nm="Butt Funnel"/>
+	<Tn Id="011404"	Nm="ButtMan"/>
+
+	<Tn Id="020000"	Nm="Cain &amp; Abel"/>
+	<Tn Id="020001"	Nm="Cafeini"/>
+	<Tn Id="020002"	Nm="Cattivik FTP Server"/>
+	<Tn Id="020200"	Nm="CC Invader"/>
+	<Tn Id="020300"	Nm="cd00r"/>
+	<Tn Id="020301"	Nm="CDK"/>
+	<Tn Id="020600"	Nm="CGI Backdoor"/>
+	<Tn Id="020700"	Nm="Chargen"/>
+	<Tn Id="020701"	Nm="Chode"/>
+	<Tn Id="020702"	Nm="Chupacabra"/>
+	<Tn Id="020e00"	Nm="Coma"/>
+	<Tn Id="020e01"	Nm="Connection"/>
+	<Tn Id="020e02"	Nm="Contact"/>
+	<Tn Id="020e03"	Nm="Control Total"/>
+	<Tn Id="021100"	Nm="CrazzyNet "/>
+	<Tn Id="021101"	Nm="cron / crontab"/>
+	<Tn Id="021800"	Nm="Cyber Attacker"/>
+
+	<Tn Id="030000"	Nm="Dark FTP"/>
+	<Tn Id="030001"	Nm="Dark Shadow"/>
+	<Tn Id="030400"	Nm="Death"/>
+	<Tn Id="030401"	Nm="Deep BO"/>
+	<Tn Id="030402"	Nm="Deep Throat"/>
+	<Tn Id="030403"	Nm="Delta Source"/>
+	<Tn Id="030404"	Nm="Delta Source Dark Star"/>
+	<Tn Id="030405"	Nm="Der Spaher / Der Spaeher"/>
+	<Tn Id="030406"	Nm="Devil"/>
+	<Tn Id="030800"	Nm="Digital RootBeer"/>
+	<Tn Id="030810"	Nm="Direct Connection"/>
+	<Tn Id="030c00"	Nm="DMSetup"/>
+	<Tn Id="030e00"	Nm="Doly Trojan"/>
+	<Tn Id="030e01"	Nm="Donald Dick"/>
+	<Tn Id="030f00"	Nm="DP Trojan"/>
+	<Tn Id="031100"	Nm="DRAT"/>
+	<Tn Id="031400"	Nm="DUN Control"/>
+
+	<Tn Id="040200"	Nm="Eclypse"/>
+	<Tn Id="040201"	Nm="Eclipse 2000"/>
+	<Tn Id="040c00"	Nm="Email Password Sender (EPS) &amp; EPS II"/>
+	<Tn Id="040d00"	Nm="Enterprise"/>
+	<Tn Id="041100"	Nm="ErrOr32"/>
+	<Tn Id="041500"	Nm="Evil FTP"/>
+	<Tn Id="041700"	Nm="Executor"/>
+	<Tn Id="041701"	Nm="Exploiter"/>
+	<Tn Id="041702"	Nm="Exploit Translation Server"/>
+
+	<Tn Id="050000"	Nm="Fake FTP"/>
+	<Tn Id="050001"	Nm="Farnaz"/>
+	<Tn Id="050002"	Nm="Fatal Connections"/>
+	<Tn Id="050003"	Nm="Fat Bitch trojan"/>
+	<Tn Id="050801"	Nm="File Manager trojan"/>
+	<Tn Id="050802"	Nm="File Nail"/>
+	<Tn Id="050803"	Nm="Fire HacKer"/>
+	<Tn Id="050804"	Nm="Firehotcker"/>
+	<Tn Id="050e00"	Nm="Fore"/>
+	<Tn Id="050e01"	Nm="Foreplay"/>
+	<Tn Id="051100"	Nm="Freak88"/>
+	<Tn Id="051101"	Nm="Freak2k"/>
+	<Tn Id="051300"	Nm="FTP99CMP"/>
+	<Tn Id="051400"	Nm="Funny Trojan"/>
+
+	<Tn Id="060000"	Nm="GabanBus"/>
+	<Tn Id="060001"	Nm="GateCrasher"/>
+	<Tn Id="060002"	Nm="GayOL"/>
+	<Tn Id="060800"	Nm="Gift trojan"/>
+	<Tn Id="060801"	Nm="Gip"/>
+	<Tn Id="060802"	Nm="GirlFriend"/>
+	<Tn Id="060900"	Nm="Gjamer"/>
+	<Tn Id="060b00"	Nm="Glacier"/>
+	<Tn Id="060e00"	Nm="God Message"/>
+	<Tn Id="060e01"	Nm="God Message creator"/>
+	<Tn Id="060e02"	Nm="God Message worm"/>
+	<Tn Id="060e03"	Nm="GoFriller"/>
+	<Tn Id="061100"	Nm="Gris"/>
+	<Tn Id="061101"	Nm="Grlogin"/>
+
+	<Tn Id="070000"	Nm="Hack&apos;99 KeyLogger"/>
+	<Tn Id="070001"	Nm="Hack&apos;a&apos;Tack"/>
+	<Tn Id="070002"	Nm="HackaTack"/>
+	<Tn Id="070005"	Nm="Hacker Brasil - HBR"/>
+	<Tn Id="070006"	Nm="Hackers Paradise"/>
+	<Tn Id="070011"	Nm="Happy99"/>
+	<Tn Id="070800"	Nm="Hidden Port"/>
+	<Tn Id="070801"	Nm="Hidden Port 2.0"/>
+	<Tn Id="070e00"	Nm="Host Control"/>
+	<Tn Id="070e01"	Nm="Hooker"/>
+	<Tn Id="070f00"	Nm="Hpteam mail"/>
+	<Tn Id="071500"	Nm="Hvl RAT"/>
+	<Tn Id="071800"	Nm="Hybris"/>
+
+	<Tn Id="080200"	Nm="ICKiller"/>
+	<Tn Id="080201"	Nm="icmp_client.c"/>
+	<Tn Id="080202"	Nm="icmp_pipe.c"/>
+	<Tn Id="080203"	Nm="ICQ Revenge"/>
+	<Tn Id="080204"	Nm="ICQ Trojan"/>
+	<Tn Id="080205"	Nm="ICQ Trogen (LM)"/>
+	<Tn Id="080800"	Nm="IISworm"/>
+	<Tn Id="080b00"	Nm="I love you"/>
+	<Tn Id="080b01"	Nm="Illusion Mailer"/>
+	<Tn Id="080d00"	Nm="Incognito"/>
+	<Tn Id="080d01"	Nm="InCommand"/>
+	<Tn Id="080d02"	Nm="Infector"/>
+	<Tn Id="080d03"	Nm="Indoctrination"/>
+	<Tn Id="080d04"	Nm="InetSpy"/>
+	<Tn Id="080d05"	Nm="Ini-Killer"/>
+	<Tn Id="080d06"	Nm="Insane Network"/>
+	<Tn Id="080d07"	Nm="Intruse"/>
+	<Tn Id="080d08"	Nm="Invisible FTP"/>
+	<Tn Id="080d09"	Nm="Invisible Identd Deamon"/>
+	<Tn Id="080d10"	Nm="IRC 3"/>
+
+	<Tn Id="090000"	Nm="Jade"/>
+	<Tn Id="090001"	Nm="JammerKillah"/>
+	<Tn Id="091400"	Nm="Juggernaut 42"/>
+
+	<Tn Id="0a0000"	Nm="Kaos"/>
+	<Tn Id="0a0001"	Nm="Kazimas"/>
+	<Tn Id="0a0800"	Nm="Kid Terror"/>
+	<Tn Id="0a1400"	Nm="Kuang2"/>
+	<Tn Id="0a1401"	Nm="Kuang2 the virus"/>
+
+	<Tn Id="0b0000"	Nm="Lamers Death"/>
+	<Tn Id="0b0001"	Nm="Larva"/>
+	<Tn Id="0b0002"	Nm="Last 2000"/>
+	<Tn Id="0b0003"	Nm="Latinus"/>
+	<Tn Id="0b0400"	Nm="Le Guardien"/>
+	<Tn Id="0b0e00"	Nm="Logged"/>
+
+	<Tn Id="0c0000"	Nm="Magic Horse"/>
+	<Tn Id="0c0005"	Nm="Mantis"/>
+	<Tn Id="0c0010"	Nm="Masters Paradise"/>
+	<Tn Id="0c0020"	Nm="Matrix"/>
+	<Tn Id="0c0030"	Nm="Mavericks Matrix"/>
+	<Tn Id="0c0100"	Nm="MBT (Mail Bombing Trojan)"/>
+	<Tn Id="0c0800"	Nm="Microspy"/>
+	<Tn Id="0c0801"	Nm="Millenium"/>
+	<Tn Id="0c0802"	Nm="Millenium Worm"/>
+	<Tn Id="0c0803"	Nm="Mini Backlash"/>
+	<Tn Id="0c0804"	Nm="MiniCommand"/>
+	<Tn Id="0c0e00"	Nm="Moonpie"/>
+	<Tn Id="0c0e01"	Nm="Mosaic"/>
+	<Tn Id="0c0e02"	Nm="Moscow Email trojan"/>
+	<Tn Id="0c0e03"	Nm="Mosucker"/>
+	<Tn Id="0c0e04"	Nm="MotIv FTP"/>
+	<Tn Id="0c1200"	Nm="Msinit"/>
+	<Tn Id="0c1201"	Nm="Mstream"/>
+	<Tn Id="0c1300"	Nm="MTX"/>
+	<Tn Id="0c1400"	Nm="Multidropper"/>
+	<Tn Id="0c1800"	Nm="Mypic"/>
+
+	<Tn Id="0d0000"	Nm="Naebi"/>
+	<Tn Id="0d0200"	Nm="NCX"/>
+	<Tn Id="0d0400"	Nm="Nephron"/>
+	<Tn Id="0d0401"	Nm="Net666"/>
+	<Tn Id="0d0402"	Nm="Net Administrator"/>
+	<Tn Id="0d0403"	Nm="Netbios name (DoS attacks)"/>
+	<Tn Id="0d0404"	Nm="Netbios session (DoS attacks)"/>
+	<Tn Id="0d0405"	Nm="NetBus"/>
+	<Tn Id="0d0410"	Nm="NetBus 2.0 Pro"/>
+	<Tn Id="0d0411"	Nm="NetBus 2.0 Pro Hidden"/>
+	<Tn Id="0d0412"	Nm="NetBus Toy"/>
+	<Tn Id="0d0413"	Nm="NetBus Worm"/>
+	<Tn Id="0d0414"	Nm="Net Controller"/>
+	<Tn Id="0d0415"	Nm="NetDemon"/>
+	<Tn Id="0d0420"	Nm="Netlog"/>
+	<Tn Id="0d0421"	Nm="Net Metropolitan"/>
+	<Tn Id="0d0422"	Nm="Netministrator"/>
+	<Tn Id="0d0423"	Nm="NetMonitor"/>
+	<Tn Id="0d0424"	Nm="NetRaider"/>
+	<Tn Id="0d0425"	Nm="NetRex"/>
+	<Tn Id="0d0426"	Nm="NETrojan"/>
+	<Tn Id="0d0430"	Nm="NetSphere"/>
+	<Tn Id="0d0431"	Nm="NetSpy"/>
+	<Tn Id="0d0432"	Nm="NetSpy (DK)"/>
+	<Tn Id="0d0440"	Nm="NetTaxi"/>
+	<Tn Id="0d0441"	Nm="NetTrash"/>
+	<Tn Id="0d0450"	Nm="Network"/>
+	<Tn Id="0d0460"	Nm="NewApt worm"/>
+	<Tn Id="0d0800"	Nm="Nirvana"/>
+	<Tn Id="0d0e00"	Nm="NoBackO"/>
+	<Tn Id="0d0e01"	Nm="NokNok"/>
+
+	<Tn Id="0e0d00"	Nm="One of the Last Trojans - OOTLT"/>
+	<Tn Id="0e0d01"	Nm="One of the Last Trojans - OOTLT, modified"/>
+	<Tn Id="0e0d02"	Nm="OnLine KeyLogger"/>
+	<Tn Id="0e0f00"	Nm="OpC BO"/>
+	<Tn Id="0e0f01"	Nm="OptixPro.12"/>
+	<Tn Id="0e0f02"	Nm="OpwinTRojan"/>
+	<Tn Id="0e1100"	Nm="Orion"/>
+	<Tn Id="0e1500"	Nm="ovasOn"/>
+
+	<Tn Id="0f0000"	Nm="Password Generator Protocol"/>
+	<Tn Id="0f0200"	Nm="PC Crasher"/>
+	<Tn Id="0f0201"	Nm="PC Invader"/>
+	<Tn Id="0f0401"	Nm="Peanut Brittle"/>
+	<Tn Id="0f0700"	Nm="Phase Zero, Phase-0"/>
+	<Tn Id="0f0701"	Nm="Phineas Phucker"/>
+	<Tn Id="0f0800"	Nm="Pie Bill Gates"/>
+	<Tn Id="0f0801"	Nm="Ping Attack (ICMP)"/>
+	<Tn Id="0f0e00"	Nm="Portal of Doom"/>
+	<Tn Id="0f0e01"	Nm="Portmap Remote Root Linux Exploit"/>	
+	<Tn Id="0f1100"	Nm="Priority"/>
+	<Tn Id="0f1101"	Nm="Progenic trojan"/>
+	<Tn Id="0f1102"	Nm="Project nEXT"/>
+	<Tn Id="0f1103"	Nm="ProMail trojan"/>
+	<Tn Id="0f1104"	Nm="Prosiak"/>
+	<Tn Id="0f1200"	Nm="Psyber Stream Server - PSS"/>
+	<Tn Id="0f1201"	Nm="PsychWard"/>
+
+	<Tn Id="100000"	Nm="Qaz"/>
+	<Tn Id="100001"	Nm="Q0 BackDoor"/>
+
+	<Tn Id="110000"	Nm="Ra1d"/>
+	<Tn Id="110001"	Nm="Ramen"/>
+	<Tn Id="110002"	Nm="Rasmin"/>
+	<Tn Id="110200"	Nm="RC1 trojan"/>
+	<Tn Id="110201"	Nm="Rcon"/>
+	<Tn Id="110400"	Nm="Recon"/>
+	<Tn Id="110401"	Nm="Remote Explorer 2000"/>
+	<Tn Id="110402"	Nm="RemoConChubo"/>
+	<Tn Id="110403"	Nm="Remote Administration Tool - RAT"/>
+	<Tn Id="110404"	Nm="Remote Boot Tool - RBT"/>
+	<Tn Id="110410"	Nm="Remote Grab"/>
+	<Tn Id="110411"	Nm="Remote Hack"/>
+	<Tn Id="110412"	Nm="Remote Storm"/>
+	<Tn Id="110413"	Nm="Remote Shut"/>
+	<Tn Id="110414"	Nm="Remote Windows Shutdown - RWS"/>
+	
+	<Tn Id="110420"	Nm="Reverse WWW Tunnel Backdoor"/>
+	<Tn Id="110800"	Nm="RingZero"/>
+	<Tn Id="110801"	Nm="Ripper Pro"/>	
+	<Tn Id="110e00"	Nm="Robo-Hack"/>
+	<Tn Id="110f00"	Nm="RPC Backdoor"/>
+	<Tn Id="111400"	Nm="Ruler"/>
+	<Tn Id="111401"	Nm="Rux"/>
+	<Tn Id="111402"	Nm="RUX The TIc.K"/>
+
+	<Tn Id="120000"	Nm="Sanctuary"/>
+	<Tn Id="120001"	Nm="Satans Back Door - SBD"/>
+	<Tn Id="120100"	Nm="/sbin/initd"/>
+	<Tn Id="120200"	Nm="Scarab"/>
+	<Tn Id="120201"	Nm="ScheduleAgent"/>
+	<Tn Id="120202"	Nm="School Bus"/>
+	<Tn Id="120203"	Nm="Schwindler"/>
+	<Tn Id="120400"	Nm="Secret Agent"/>
+	<Tn Id="120401"	Nm="Secret Service"/>
+	<Tn Id="120405"	Nm="Seeker"/>
+	<Tn Id="120412"	Nm="Senna Spy FTP server"/>
+	<Tn Id="120413"	Nm="Senna Spy Trojan Generator"/>
+	<Tn Id="120420"	Nm="ServeMe"/>
+	<Tn Id="120421"	Nm="ServeU"/>
+	<Tn Id="120700"	Nm="Shadow Phyre"/>
+	<Tn Id="120701"	Nm="Shaft"/>
+	<Tn Id="120702"	Nm="Shafthandler to Agent"/>
+	<Tn Id="120703"	Nm="Shit Heep"/>
+	<Tn Id="120704"	Nm="Shivka-Burka"/>
+	<Tn Id="120705"	Nm="Shtirlitz"/>
+	<Tn Id="120706"	Nm="Shockrave"/>
+	<Tn Id="120800"	Nm="Silencer"/>
+	<Tn Id="120a00"	Nm="SkyDance"/>
+	<Tn Id="120d00"	Nm="SniperNet"/>
+	<Tn Id="120e03"	Nm="Sockdmini"/>
+	<Tn Id="120e05"	Nm="Sockets des Troie"/>
+	<Tn Id="120e0a"	Nm="Son of PsychWard"/>
+	<Tn Id="120e10"	Nm="SoftWAR"/>
+	<Tn Id="120e20"	Nm="Solo"/>
+	<Tn Id="120f00"	Nm="Spirit 2000, Spirit 2001"/>
+	<Tn Id="120f02"	Nm="SpySender"/>
+	<Tn Id="121300"	Nm="Stacheldraht"/>
+	<Tn Id="121320"	Nm="Stealth"/>
+	<Tn Id="121325"	Nm="Stealth Spy"/>
+	<Tn Id="121360"	Nm="Storm"/>
+	<Tn Id="121372"	Nm="Streaming Audio Server"/>
+	<Tn Id="121375"	Nm="Striker Trojan"/>
+	<Tn Id="121390"	Nm="Studio 54"/>
+	<Tn Id="121400"	Nm="SubSeven"/>
+	<Tn Id="121401"	Nm="SubSeven 2.1 Gold"/>
+	<Tn Id="121402"	Nm="Subseven 2.1.4 DefCon 8"/>
+	<Tn Id="121403"	Nm="SubSeven Apocalypse"/>
+	<Tn Id="121404"	Nm="SubSeven Java client"/>
+	<Tn Id="121405"	Nm="SubSeven Muie"/>
+	<Tn Id="121410"	Nm="SubZero"/>
+	<Tn Id="121600"	Nm="Swift Remote"/>
+	<Tn Id="121800"	Nm="Syphillis"/>
+
+	<Tn Id="130000"	Nm="Tapiras"/>
+	<Tn Id="130010"	Nm="Taskman"/>
+	<Tn Id="130200"	Nm="TCP Wrappers trojan"/>
+	<Tn Id="130400"	Nm="TeleCommando"/>
+	<Tn Id="130401"	Nm="TEMan"/>
+	<Tn Id="130402"	Nm="Terminator"/>
+	<Tn Id="130403"	Nm="Terror Trojan"/>
+	<Tn Id="130700"	Nm="th3r1pp3rz (= Therippers)"/>
+	<Tn Id="130701"	Nm="The Flu"/>
+	<Tn Id="130702"	Nm="The Invasor"/>
+	<Tn Id="130703"	Nm="The Matrix"/>
+	<Tn Id="130704"	Nm="The Prayer"/>
+	<Tn Id="130710"	Nm="The ReVeNgEr"/>
+	<Tn Id="130740"	Nm="The Spy"/>
+	<Tn Id="130750"	Nm="The Thief"/>
+	<Tn Id="130752"	Nm="The Thing"/>
+	<Tn Id="130755"	Nm="The Traitor (= th3tr41t0r)"/>
+	<Tn Id="130760"	Nm="The Unexplained"/>
+	<Tn Id="130800"	Nm="Tiles"/>
+	<Tn Id="130801"	Nm="Tini"/>
+	<Tn Id="130802"	Nm="Tiny Telnet Server - TTS"/>
+	<Tn Id="130d00"	Nm="TN"/>
+	<Tn Id="130e00"	Nm="Total Solar Eclypse"/>
+	<Tn Id="131100"	Nm="Traitor 21"/>
+	<Tn Id="131101"	Nm="TransScout"/>
+	<Tn Id="131102"	Nm="Trin00 DoS Attack"/>
+	<Tn Id="131103"	Nm="Trin00/TFN2K"/>
+	<Tn Id="131104"	Nm="Trinity"/>
+	<Tn Id="131110"	Nm="Trinoo"/>
+	<Tn Id="131111"	Nm="Trojan Cow"/>
+	<Tn Id="131112"	Nm="Truva Atl"/>
+	<Tn Id="131113"	Nm="Ttfloader"/>
+
+	<Tn Id="140600"	Nm="Ugly FTP"/>
+	<Tn Id="140b00"	Nm="Ultors Trojan"/>
+	<Tn Id="140d00"	Nm="Undetected"/>
+	<Tn Id="140d01"	Nm="Unknown Trojan"/>
+
+	<Tn Id="150000"	Nm="Vampire"/>
+	<Tn Id="150800"	Nm="Virtual Hacking Machine - VHM"/>
+	<Tn Id="150e00"	Nm="Voice"/>
+	<Tn Id="150e01"	Nm="Voice Spy"/>
+	<Tn Id="150e02"	Nm="VooDoo Doll"/>
+	<Tn Id="150f00"	Nm="VP Killer"/>
+
+	<Tn Id="160000"	Nm="wCrat - WC Remote Administration Tool"/>
+	<Tn Id="160001"	Nm="WAN Remote"/>
+	<Tn Id="160002"	Nm="Watchguard Firebox Admin DoS"/>	
+	<Tn Id="160400"	Nm="WebEx"/>
+	<Tn Id="160401"	Nm="Web Server CT"/>
+	<Tn Id="160402"	Nm="WebDownloader"/>
+	<Tn Id="160700"	Nm="Whack-a-mole"/>
+	<Tn Id="160701"	Nm="Whack Job"/>
+	<Tn Id="160702"	Nm="W32.HLLW.Dax"/>
+	<Tn Id="160800"	Nm="WinCrash"/>
+	<Tn Id="160804"	Nm="WinNuke eXtreame"/>
+	<Tn Id="160807"	Nm="WinHole"/>
+	<Tn Id="16080a"	Nm="WinPC"/>
+	<Tn Id="160810"	Nm="WinSatan"/>
+	<Tn Id="160811"	Nm="Winsp00fer"/>
+	<Tn Id="160c00"	Nm="WM FTP Server"/>
+	<Tn Id="160c01"	Nm="WM Remote KeyLogger"/>
+	<Tn Id="160c02"	Nm="WM Trojan Generator"/>
+
+	<Tn Id="170100"	Nm="X-bill"/>
+	<Tn Id="170200"	Nm="Xcon"/>
+	<Tn Id="170f00"	Nm="Xplorer"/>
+	<Tn Id="171300"	Nm="Xtcp"/>
+	<Tn Id="171301"	Nm="Xtreme"/>
+	<Tn Id="171900"	Nm="Xzip 6000068"/>
+
+	<Tn Id="180a00"	Nm="Yet Another Trojan - YAT"/>
+	<Tn Id="180a10"	Nm="Y3K RAT"/>
+	
+	</Tns>
+	
+</PortDatastore>
+
+
+

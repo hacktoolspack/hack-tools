@@ -1,0 +1,79 @@
+//               JPS (Virus Maker 3.0)          //
+//         Coded By Arash Veyskarami (JeyJey)   //
+//               www.jeyjey.blogfa.com          //
+//               Arashjeyjey@Yahoo.com          //
+//                Compiled In Delphi            //
+//                 27 February 2007             //
+//                   Iran_Lorestan              //
+//////////////////////////////////////////////////
+
+-------------------------------------
+Fetures:
+
+Disable Registry Editor
+Disable Ms Config
+Disable Task Manager
+Disable Yahoo! Messenger
+Disable Media Player
+Disable Internet Explorer
+Disable Time
+Disable Group Policy
+Disable Windows Explorer
+Disable Norton Antivirus
+Disable McAfee Antivirus
+Disable Note Pad
+Disable Word Pad
+Disable Winows
+Disable DHCP Client Service
+Disable Taskbar
+Disable Start Button
+Disable MSN Messenger
+Disable Command Prompt
+Disable Security Center
+Disable MSN Messenger
+Disable System Restore
+Disable Control Panel
+Disable Desktop Icons
+Disable Screen Saver
+Hide Service Manager
+Hide Outlook Express
+Hide Windows Clock
+Hide Desktop Icons
+Hide All Process in Task Manager
+Hide All Tasks in Task Manager
+Hide Run in Start Menu
+Change Explorer Caption
+Clear Windows XP Password
+Swap Mouse Buttons
+Remove Folder Options
+Lock Mouse & Keyboards
+Mute Sound
+Crazy Mouse
+Allways CD-ROM Open
+Turn Off Monitor (30 sec's)
+Destroy Taskbar
+Destroy Offlines (Y!Messenger)
+Destroy Protected Strorage
+Destroy Audio Service
+Destroy Clipboard
+Terminate Windows
+Hide Cursor
+Auto Startup
+Restart-Logoff-Turnoff-Hibrinate Automatic After 30 minutes
+Change Server Name After Install in Process
+Change Server Name
+-------------------------------------
+New Fetures in Version 3.0:
+
+Change XP Password
+Change Computer Name
+Change IE Home Page
+Close Custom Windows
+Disable Custom Service
+Disable Process
+Open Custom Website
+Run Custom Command
+Enable Convert To Worm - Auto Copy Server To Active Path With Custom Name & Time
+Change Custom Icon For Server (15 Icons)
+-------------------------------------
+Server Size 24.9K

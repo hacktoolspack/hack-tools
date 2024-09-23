@@ -1,0 +1,71 @@
+:Base MegaPing.HLP
+:Title MegaPing
+1 MegaPing Overview
+1 MegaPing Overview=MegaPing_Overview>main
+1 DNS Lookup Name
+1 DNS Lookup Name=DNS_Lookup_Name
+1 DNS Settings=DNS_Settings
+1 DNS Query Classes=DNS_Query_Classes
+1 DNS Query Types and Resource Records Types=DNS_Query_Types_and_Resource_Records_Types
+1 DNS List Hosts
+1 DNS List Hosts=DNS_List_Hosts
+1 DNS Settings=DNS_Settings
+1 DNS Query Classes=DNS_Query_Classes
+1 DNS Query Types and Resource Records Types=DNS_Query_Types_and_Resource_Records_Types
+1 Zone=Zone
+1 Finger
+1 Finger=Finger
+1 Host Monitor
+1 Host Monitor=Host_Monitor
+1 Host Monitor Settings=Host_Monitor_Settings
+1 Host Monitor Log=Host_Monitor_Log
+1 Host Monitor Alerts=Host_Monitor_Alerts
+1 IP Scanner
+1 IP Scanner=IP_Scanner
+1 IP Scanner Settings=IP_Scanner_Settings
+1 NetBIOS Scanner
+1 NetBIOS Scanner=NetBIOS_Suffixes
+1 NetBIOS Scanner Settings=NetBIOS_Scanner_Settings
+1 NetBIOS Suffixes=NetBIOS_Suffixes
+1 Network Resources
+1 Shares=Shares
+1 Sessions=Sessions
+1 Files=Files
+1 Remote Resources=Remote_Resources
+1 Network Time
+1 Network Time=Network_Time
+1 Ping
+1 Ping=Ping
+1 Ping Settings=Ping_Settings
+1 Host Name=Host_Name
+1 IP Address=IP_Address
+1 Type of Service=Type_of_Service
+1 Port Scanner
+1 Port Scanner=Port_Scanner
+1 Port Scanner Settings=Port_Scanner_Settings
+1 Process Info
+1 Applications=Applications
+1 Modules=Modules
+1 Processes=Processes
+1 Services=Services
+1 Share Scanner
+1 Share Scanner=Share_Scanner
+1 Share Scanner Settings=Share_Scanner_Settings
+1 System Info
+1 Connections=Connections
+1 ICMP Statistics=ICMP_Statistics
+1 IP Statistics=IP_Scanner
+1 TCP Statistics=TCP_Statistics
+1 UDP Statistics=UDP_Statistics
+1 Interfaces=Interfaces
+1 IP Routing=IP_Routing
+1 ARP=ARP
+1 Statistics=Statistics
+1 Traceroute
+1 Traceroute=Traceroute
+1 Traceroute Settings=Traceroute_Settings
+1 Host Name=Host_Name
+1 IP Address=IP_Address
+1 WhoIs
+1 WhoIs=WhoIs
+1 WhoIs Settings=WhoIs_Settings
