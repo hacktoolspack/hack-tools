@@ -1,0 +1,20 @@
+People have emailed me about DoS not loading for them
+with a "Permissions denied" error. The reason DoS is
+giving you this error, is becuase DoS has an Internet
+cache cleaning engine built into it. While DoS was trying
+to clean your cache files, there was a file in your cache
+that refuses to be deleted, and thus forcing DoS to crash.
+
+You need to update your anti virus software and scan
+your system with your anti virus, and also an upto date
+adware/spyware removal tool.
+
+
+This is also the reason DoS may take time to load...
+If you want DoS to load faster, open task manager.
+Locate DoS in the priority tab and right click on DoS
+select Priority, and select "Highest" then once DoS loads
+reset it back to Normal.
+
+xyr0x
+

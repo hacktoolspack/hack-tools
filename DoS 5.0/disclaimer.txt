@@ -1,0 +1,7 @@
+DoS 4.7 is made for educational purposes only.
+DoS 4.7 is provided as is, without any express
+or implied warrenty. In no event with the author
+be held liable or responsible for any illegal
+action[s] or damage[s] arising from the use of it.
+Use DoS 4.7 at your own risk. If you do anything illegal
+with this program, you are the only one responsable for it.

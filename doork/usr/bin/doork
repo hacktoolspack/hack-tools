@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /usr/share/doork
+exec python2 doork.py "$@"
