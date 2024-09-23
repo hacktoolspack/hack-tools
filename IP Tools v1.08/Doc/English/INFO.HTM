@@ -1,0 +1,402 @@
+<html>
+
+<head>
+<meta content="text/html; charset=windows-1251" url="default.htm">
+<meta name="GENERATOR" content="KS Alex">
+<!-- bgsound src="..\terminat.mid" loop="-1" -->
+<title>IP-Tools</title>
+<STYLE TYPE="text/css"> <!-- a:hover { color: "#00FFFF"; } --> </STYLE>
+</head>
+
+<body bgcolor="#000000" background="../images/ksbg2.jpg" bgproperties="fixed" 
+text="#FFFFFF" link="#00FF90" vlink="#00FF90" alink="#FF0000">
+
+<p align="justify"><a name="HowUse"><strong>
+IP-Tools include 15 tools for work with TCP/IP networks :</strong></a></p>
+<div align="justify"><justify>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid; border-top: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page1"><font color=#00E0FF>Local Info</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align=justify>
+    examine the local host and show information about local computer : processor, memory, Winsock data, etc<br>
+    &nbsp; </td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page2"><font color=#00E0FF>Connections</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align=justify>
+    info about network interfaces, current TCP/IP network connections, etc<br>
+    Every time if You select this page program refresh this information,
+    also you may select item "Refresh" from local popup menu 
+    (that appears when you press right mouse button) or enable option "AutoRefresh"
+    on page "<a href="ipt_opt.htm#Advanced">Advanced</a>" in "<a href="ipt_opt.htm">Options</a>" dialog.<br>
+    Useful for search trojans programs.<br>
+    &nbsp; </td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page3"><font color=#00E0FF>NetBIOS</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align=justify>
+    get NetBIOS information about network interfaces<br><br>
+
+    You may choose computer address (like "123.23.21.12" or "www.uc.ru" or for
+    computer  in  LAN  "vova_computer" or '*' for local computer) and range of
+    network  interfaces (like "0-2"). If remote/local computer support NetBIOS
+    then program show some information about network interfaces : MAC address,
+    table of names, max sessions used, max. session packet size, etc<br>
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page15"><font color=#00E0FF>NB Scanner</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align=justify>
+     Shared resources Scanner (support diapason of addresses and 
+     <a href="ipt_opt.htm#ScanList">ScanList</a>).<br>
+     You may save results to file in text format and in HTML format 
+     (item "Save as HTML.." in local popup menu). <a href="nbscan.htm">Example</a>.<br>
+     Options for this scanner locate in <a href="ipt_opt.htm">Options</a> dialog
+     window on page "<a href="ipt_opt.htm#Advanced">Advanced</a>".<br>
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page4"><font color=#00E0FF>Scanner</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align=justify>
+    scan all hostnames under diapason of addresses (use GetHostByName -
+    search hostnames in DNS). Support diapason of addresses (like 193.15.1.1 - 193.16.3.255)
+    and ScanList (if option "From list" is enabled).<br>
+    ScanList define in <a href="ipt_opt.htm">Options</a> dialog window on page
+    "<a href="ipt_opt.htm#ScanList">ScanList</a>".<br>
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page5"><font color=#00E0FF>Scan Ports</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align=justify>
+     powerful host services scanner :<br>
+     - support diapason of addresses<br>
+     - support scan list<br>
+     - can search host name in DNS before scan<br>
+     - can ping before scan<br>
+     - can show remote host messages after connect<br>
+     - can send string to remote host after connect<br><br>
+
+     List of ports define in <a href="ipt_opt.htm">Options</a> dialog window
+     on page "<a href="ipt_opt.htm#Ports">Ports</a>",
+     options for scanner define on page "<a href="ipt_opt.htm#Advanced">Advanced</a>",
+     scan list define on page "<a href="ipt_opt.htm#ScanList">ScanList</a>".<br>
+     &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page6"><font color=#00E0FF>Ping</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align=justify>
+    the ping command verifies connections to remote computer or computers, by
+    sending ICMP (Internet Control Message Protocol) echo packets to the 
+    computer and listening for echo reply packets.
+    You may ping single computer, ping computers from diapason of IP addresses
+    or ping computers from list.
+    Also you may choose Packet Size, Timeout, Packets to send, TTL.<br>
+    Options define in <a href="ipt_opt.htm">Options</a> dialog window on page
+    "<a href="ipt_opt.htm#PingTrace">Ping/Trace</a>"<br>
+    &nbsp;</td>
+<!--What is a packet?<br>
+    The unit of data sent across a packet switching network.<br>
+    <br>
+    What is a RTT?<br>
+    (Round Trip Time) A measure of delay between two hosts. The round trip time consists of
+    the total time taken for a single packet or datagram to leave one machine, reach the
+    other, and return.<br>
+    <br>
+    What is a TTL?<br>
+    (Time To Live) A technique used in best-effort delivery systems to avoid endlessly looping
+    packets. For example, each IP datagram is assigned an integer time to live when it is
+    created. IP gateways decrement the time to live field when they process a datagram and
+    discard the datagram if the time to live counter reaches zero.<br>
+    &nbsp;</td>-->
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page7"><font color=#00E0FF>Trace</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align="justify">
+    trace the route to a remote host over the network<br>
+    Options define in <a href="ipt_opt.htm">Options</a> dialog window on page
+    "<a href="ipt_opt.htm#PingTrace">Ping/Trace</a>"<br><br>
+
+    How Trace work ?<br>
+    Program determines the route taken to a destination by sending 
+    Internet Control Message Protocol (ICMP) echo packets with varying
+    TTL (Time-To-Live) values to the destination. Each router along the path is
+    required to decrement the TTL on a packet by at least 1 before forwarding
+    it, so the TTL is effectively a hop count. When the TTL on a packet reaches
+    0, the router is supposed to send back an ICMP Time Exceeded message to the
+    source system. Trace determines the route by sending the first echo
+    packet with a TTL of 1 and incrementing the TTL by 1 on each subsequent
+    transmission until the target responds or the maximum TTL is reached. The
+    route is determined by examining the ICMP Time Exceeded messages sent back
+    by intermediate routers. Notice that some routers silently drop packets
+    with expired time-to-live (TTL) and will be invisible to trace.<br>
+    &nbsp; </td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page8"><font color=#00E0FF>WhoIs</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align=justify>
+    obtain information about Internet host or domain from the NIC
+    (Network Information Center)<br>
+    &nbsp; </td>
+<!--<br>
+    What is a Whois?<br>
+    The name of a network information tool that provides information about who owns an
+    Internet host or domain and who you can contact regarding that host or domain. A Whois
+    request displays a contact name, mailing address, telephone number, and network mailbox
+    for all users and organizations who are registered with one of the official Whois servers,
+    such as the Network Information Center (NIC) database.<br>-->
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page9"><font color=#00E0FF>Finger</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align=justify>
+    displays information about a user (users) on a specified system running the
+    Finger service.<br>
+    <br>
+<!--What is a Finger?<br>
+    The name of a network information tool that lets you identify and display information
+    about all users on a network host. This information includes a display of current users on
+    the host (their userids and usernames). Also displayed for each user are the home
+    directory, login time, idle times, office location, last time they received mail, and last
+    time they read mail. A Finger request will also display any information contained in the
+    .plan or the .project file in the user's home directory.<br>
+    <br> -->
+    Query syntax :<br>
+    <b>user@host.domain</b> for receiving information about a single user
+    or <b>host.domain</b> for receiving information about an entire host.<br>
+    &nbsp; </td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page10"><font color=#00E0FF>LookUp</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align=justify>
+    look up a domain names according to its IP address or an IP address from
+    its domain name. Show host name, IP address, alias (if it exist).
+    Support <a href="ipt_opt.htm#ScanList">scan list</a>.<br>
+    &nbsp; </td>
+<!--<br>
+    What is a Lookup?<br>
+    The name of a network information tool that returns the official host name, IP address and
+    alias (if it exist) from the DNS. DNS is the on-line distributed database system used to
+    map human-readable machine names into IP addresses.<br>
+    <br>
+    What is an alias?<br>
+    An alternate name of the host.<br>-->
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page11"><font color=#00E0FF>Get Time</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align=justify>
+    Get Time from Time Servers (and synchronize with local clock)<br><br>
+  
+    program can synchronize time with time servers in auto mode
+    if You run program with parameters :<br>
+    <b> &gt ip_tools.exe  /SetTime  TryCount  Host1  [Host2  [Host3  [...]]</b><br>
+    where :<br>
+    &nbsp;&nbsp;  TryCount - count of connect tries with time servers (0..255)<br>
+    &nbsp;&nbsp;  Host1 .. HostN - addresses of time servers<br>
+
+    program  try  connect  with Host1, if connect successful program get time
+    from  server,  set  this  time  (+GMT)  on local machine end terminate. If
+    program cannot connect with Host1 then program try connect to Host2, ...
+    After  unsuccessful  connect  with  last  server (HostN) program again try
+    connect with Host1. program repeat this TryCount times.<br>
+    <b>Example :&gt ip_tools.exe  /SetTime  2  xa.xa.net  192.43.244.18</b><br>
+    &nbsp; </td>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page12"><font color=#00E0FF>Telnet</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid">Telnet client<br>
+    <br>
+    This page have two window.  Lower window doesn't translate ESC sequences but
+    store all received data.  Upper window - virtual terminal  which translates
+    ESC sequences.<br>
+    &nbsp; </td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page13"><font color=#00E0FF>IP Monitor</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align=justify>
+     IP-Monitor show in real time graphics for count In,Out,Error packets for TCP,UDP,ICMP protocols<br>
+    <br>
+  <img src="../images/ip_mon.gif" border="0" align="right">
+  <dl>
+  <dt><b>TCP In</b>
+    <dd>
+     The total number of segments received, including those received in error.
+     This count includes segments received on currently established connections.<br>
+  <dt><b>TCP Out</b>  
+    <dd> The total number of segments sent, including those on current connections
+         but excluding those containing only retransmitted octets.<br><br>
+
+  <dt><b>UDP In</b>   <dd> The total number of UDP datagrams delivered to UDP users.<br>
+  <dt><b>UDP Out</b>  <dd> The total number of UDP datagrams sent from this entity.<br>
+  <dt><b>UDP Error</b><dd> The total number of received UDP datagrams for which there was no
+    application at the destination port. &nbsp;&nbsp; <b> + </b> &nbsp;&nbsp;
+    The number of received UDP datagrams that could not be delivered for
+    reasons other than the lack of an application at the destination port.<br><br>
+
+  <dt><b>ICMP In</b>  <dd> The total number of ICMP messages which the entity received
+    (this counter includes all those counted by icmpInErrors).<br>
+  <dt><b>ICMP Out</b> <dd> The total number of ICMP messages which this entity attempted to send
+    (this counter includes all those counted by icmpOutErrors).<br>
+  <dt><b>ICMP Error</b>
+    <dd>
+      The number of ICMP messages which the entity received but determined as
+      having errors (bad ICMP checksums, bad length, etc.).
+      &nbsp;&nbsp; <b> + </b> &nbsp;&nbsp;
+      The  number  of  ICMP  messages  which  this entity did not send due to
+      problems  discovered  within ICMP such as a lack of buffers. This value
+      should not include errors discovered outside the ICMP layer such as the
+      inability   of   IP   to   route   the   resultant  datagram.  In  some
+      implementations there may be no types of error which contribute to this
+      counter's value.<br>
+    &nbsp; </td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="page14"><font color=#00E0FF>Hosts Monitor</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%"><p align=justify>
+     this page monitoring the up/down status of selected hosts.<br>
+     <br>
+     Program send ping packets for every computers from the list (you may define
+     for every computer next parameters : timeout, count of retries,
+     interval, comment). If host change his status then program can play sound 
+     (see page "Sound" in Options dialog) and also can write information about
+     host status to log file.<br>
+    &nbsp;</td>
+  </tr>
+</table>
+</justify></div>
+<hr>
+
+<p><u><b><font color=#00E0FF>Program's menu</font></b></u><br><br>
+<table border="0" width="100%">
+  <tr>
+    <td><strong>File</strong></td>
+    <td><strong>Save to File</strong></td>
+    <td>save information from windows to files</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td>
+    <td><strong>Exit</strong></td>
+    <td>exit from program</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td> <td><strong></strong></td> <td></td>
+  </tr>
+  <tr>
+    <td><strong>View</strong></td>
+    <td><strong>[many items]</strong></td>
+    <td>select program's pages</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td> <td><strong></strong></td> <td></td>
+  </tr>
+  <tr>
+    <td><strong><a href="ipt_opt.htm">Options</a></strong></td>
+    <td><strong>Scan List </strong></td>
+    <td>define scan list for scanners</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td>
+    <td><strong>Ports</strong></td>
+    <td>options for services scanner (ports list, etc)</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td>
+    <td><strong>Ping/Trace</strong></td>
+    <td>options for ping/trace (Timeout, TTL, etc)</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td>
+    <td><strong>Advanced</strong></td>
+    <td>options for Ports Scanner and for NB Scanner</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td>
+    <td><strong>IP Monitor</strong></td>
+    <td>options for IP-Monitor (refresh time, colors, etc)</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td>
+    <td><strong>Interface</strong></td>
+    <td>interface options (colors, fonts, language, etc)</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td>
+    <td><strong>Sound</strong></td>
+    <td>sound options</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td> <td><strong></strong></td> <td></td>
+  </tr>
+  <tr>
+    <td><strong>Help</strong></td>
+    <td><strong>Help</strong></td>
+    <td>help</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td>
+    <td><strong>Home Page</strong></td>
+    <td>go to the home page on WWW</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td>
+    <td><strong>About</strong></td>
+    <td>information about program, author</td>
+  </tr>
+  <tr>
+    <td><strong></strong></td>
+    <td><strong>License</strong></td>
+    <td>Info about Registration</td>
+  </tr>
+</table>
+<br>
+  Also all output windows have own popup menu, that appears when you press 
+  right mouse button on a control.<br><br>
+<hr>
+
+</body>
+</html>

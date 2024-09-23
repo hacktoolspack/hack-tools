@@ -1,0 +1,6 @@
+[DEFAULT]
+BASEURL=http://www.abyssmedia.com/order.shtml
+[InternetShortcut]
+URL=http://www.abyssmedia.com/order.shtml
+IconFile=http://www.abyssmedia.com/favicon.ico
+IconIndex=1

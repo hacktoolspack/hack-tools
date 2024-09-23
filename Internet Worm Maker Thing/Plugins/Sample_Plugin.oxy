@@ -1,0 +1,9 @@
+Sample Plugin File
+' This plugin is an example. Use it to guide you when making your own plugins
+
+msgtitle = "Alert" ' Set The Message Box Title
+msgtext = "hi there" 'Set The Message Box Text
+
+Call MsgBox(msgtext,65,msgtitle)
+
+' :-------:

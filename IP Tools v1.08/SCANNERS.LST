@@ -1,0 +1,23 @@
+; List for scan if CheckBox "From list" is checked
+; text after character ';' - comment
+
+; example
+
+195.168.13.5 - 195.168.13.10
+193.124.200.1 - 193.124.200.254
+193.232.65.1   - 193.232.65.254
+194.126.95.1 - 194.126.95.254
+194.85.173.1 - 194.85.173.254
+194.93.177.1 - 194.93.177.254
+193.78.170.1 - 193.78.170.254
+194.133.122.1 - 194.133.122.254
+
+;133.65.12.250 -  133.65.13.17   ; You may use diapason of addresses,
+;200.32.12.88  -  200.32.12.95   ; but in this case You cannot select hostname,
+;200.32.12.22  -  200.32.12.25   ; only IP address
+;ww.garris.com -  www.yahoo.com  ; - wrong string !
+
+;www.chat.ru    ; for single host You may select hostname
+;200.12.76.15    
+;199.66.10.12
+;199.66.10.15

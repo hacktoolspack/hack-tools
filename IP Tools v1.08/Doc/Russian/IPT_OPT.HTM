@@ -1,0 +1,238 @@
+<html>
+
+<head>
+<meta content="text/html; charset=windows-1251" url="default.htm">
+<meta name="GENERATOR" content="KS Alex">
+<!-- bgsound src="..\terminat.mid" loop="-1" -->
+<title>IP-Tools Options</title>
+
+<STYLE TYPE="text/css"> <!-- a:hover { color: "#00FFFF"; } --> </STYLE>
+
+</head>
+
+<body bgcolor="#000000" background="../images/ksbg2.jpg" bgproperties="fixed" 
+text="#FFFFFF" link="#00FF90" vlink="#00FF90" alink="#FF0000">
+
+<p ALIGN="CENTER">
+<b>Options Dialog</b>
+
+<hr>
+Все настройки программы находятся в диалоге Options.<br><br>
+
+<img src="../images/ipt_opt.gif" width="520" height="310" align="center"
+ alt="ipt_opt.gif (10176 bytes)" USEMAP="#iptools" BORDER=0></p>
+<MAP NAME="iptools">
+<AREA SHAPE="rect" COORDS="  8,27, 59,45", HREF="#ScanList"   ALT="">
+<AREA SHAPE="rect" COORDS=" 61,27,100,45", HREF="#Ports"      ALT="">
+<AREA SHAPE="rect" COORDS="102,27,166,45", HREF="#PingTrace"  ALT="">
+<AREA SHAPE="rect" COORDS="169,27,228,45", HREF="#Advanced"   ALT="">
+<AREA SHAPE="rect" COORDS="231,27,286,45", HREF="#IPMonitor"  ALT="">
+<AREA SHAPE="rect" COORDS="289,27,340,45", HREF="#Interface"  ALT="">
+<AREA SHAPE="rect" COORDS="343,27,385,45", HREF="#Sound"      ALT="">
+</MAP>
+
+<p align="justify">
+<div align="justify"><justify>
+<br>
+<table border="0" width="100%">
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid; border-top: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="ScanList"><font color=#00E0FF>Scan List</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align="justify">
+     Здесь вы можете задать список адресов которые будут использовать сканеры
+     (HostName Scanner, Ports Scanner, NB Scanner, Ping Scanner, LookUp) при
+     включенной опции "From List". Кроме IP адресов вы можете задать диапазон 
+     адресов (через символ '-') а также имена хостов.<br>
+     <br>
+     Пример :<br>
+     <font face="Courier New" size="2" color=#FFFFDD>
+     ;-----------------------------------------------------------------<br>
+     199.66.10.12                 <br>
+     133.65.12.250 - 133.65.13.17 <br>
+     200.32.12.188 - 200.32.12.95 &nbsp;&nbsp; ; текст после ';' игнорируется<br>
+     200.32.12.122 - 200.32.12.25 <br>
+     199.66.10.12<br>
+     <br>
+     www.chat.ru &nbsp;&nbsp;&nbsp;  ; для отдельного компьютера Вы можете указать его имя<br>
+     www.garris.com -  www.yahoo.com ; - ошибочная строка !<br>
+     199.66.10.15<br>
+     ;-----------------------------------------------------------------</font><br>
+    &nbsp; </td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="Ports"><font color=#00E0FF>Ports</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align="justify">
+     На этой странице Вы можете задать список портов для сканирования Ports Scanner'ом.<br>
+     <br>
+     What is a Port ?<br>
+     The TCP port number identifies a process or application inside the computer.<br>
+     &nbsp; Any application or process that uses TCP for its transport is assigned a
+     unique identification number called a TCP port. These ports are numbered 
+     beginning with zero. Port numbers for client applications are dynamically
+     assigned by the operating system when there is a request for service. Port
+     numbers for server applications are preassigned by the IANA 
+     (Internet Assigned Numbers Authority) and do not change.<br>    
+     &nbsp; A server application or process that uses TCP as a transport has at least
+     one preassigned port number. For example, the preassigned port numbers for
+     FTP server services are 20 (data) and 21 (control).<br>
+    &nbsp; </td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="PingTrace"><font color=#00E0FF>Ping/Trace</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid">
+     Тут задаются параметры для утилиты Trace и для всех утилит которые 
+     используют ping (кроме Hosts Monitor'a, так как в мониторе указиваются
+     параметры отдельно для каждого контролируемого хоста).<br><br>
+
+     Option "<b>Packets to send</b>"<br>
+     определяет количество посылаемых ECHO пакетов<br><br>
+
+     Option "<b>Packet Size</b>"<br>
+     задает размер ECHO пакета<br><br>
+
+     Option "<b>TimeOut</b>"<br>
+     определяет timeout интервал в милисекундах<br><br>
+
+     Option "<b>Time to Live</b>"<br>
+     значение TTL для посылаемых пакетов<br><br>
+<!-- (Time To Live) A technique used in best-effort delivery systems to avoid endlessly looping
+     packets. For example, each IP datagram is assigned an integer time to live when it is
+     created. IP gateways decrement the time to live field when they process a datagram and
+     discard the datagram if the time to live counter reaches zero.<br><br> -->
+
+     Option "<b>Number of Hops</b>"<br>
+     specifies maximum number of hops to search for target<br><br>
+<!-- A measure of distance between two points in an internet. A hop count of n
+     means that n gateways separate the source and destination.<br><br> -->
+
+     Option : "<b>Show Hosts Description</b>"<br>
+     Начиная с 0.09 версии программа может выдавать информацию о доменах, хостах, etc.
+     (страницы LookUp, Scanner, ScanPorts, Trace с включенной опцией Use DNS).
+     Если эта опция включена то рядом с каждым именем хоста будет информация типа :<br>
+     <font face="Courier New" size="2" color=#FFFFDD>
+     ... www.chat.ru &nbsp; &nbsp; &nbsp;&nbsp;  (Russia)<br>
+     ... www.gazprom.ru    &nbsp; &nbsp;         (Join-stock company GAZPROM, town Moscow, Russia)<br>
+     ... mainboss.xaxa.BD  &nbsp;                (Bangladesh)<br></font>
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="Advanced"><font color=#00E0FF>Advanced</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid">
+    На этой странице размещены настройки сканера портов и Shared resources Scanner<br><br>
+
+    Options for ports Scanner :
+    <ul>
+    <li><p align="justify"> <b>GetHostName before scan ports</b><br>
+         если включить эту опцию то прежде чем сканировать порты программа попытается
+         узнать имя машины по IP адресу, и если это не удастся то порты сканироватся не будут,
+         программа перейдет к следующему адресу из списка<br>
+    <li><p align="justify"> <b>Ping before scan ports</b><br>
+         а если включить эту опцию то перед сканированием портов программа пропингует
+         машину по IP адресу и если не дождется ответа то перейдет к следующему адресу<br>
+         Параметры пингования см. на странице Ping/Trace<br>
+    <li><p align="justify"> <b>Show remote service messages</b><br>
+         если поставить здесь галочку то программу не будет сразу после соединения
+         рвать connect, а подождет что скажет host. Ждать будет указанное в 
+         следующем поле время.<br>
+    <li><p align="justify"> <b>Time for wait message</b><br>
+         Вот тут и указывается сколько времени после коннекта ждать сообщения от сервера.<br>
+    <li><p align="justify"> <b>Send string to remote host</b><br>
+         Кроме того программа может после соединения послать серверу заданную строку. 
+         Здесь она и задается.<br><br>
+    </ul>
+
+    Options for NB Scanner :
+    <ul>
+    <li><p align="justify"> <b>Ping before scan resources</b><br>
+         если включить эту опцию то перед сканированием выделенных ресурсов программа пропингует
+         машину по IP адресу и если не дождется ответа то перейдет к следующему адресу.<br>
+         Параметры пингования см. на странице Ping/Trace<br>
+    <li><p align="justify"> <b>GetHostName before scan</b><br>
+         а если включить эту опцию то прежде чем сканировать ресурсы программа попытается
+         узнать имя машины по IP адресу. Если это не удастся и опция пингования 
+         отключена то ресурсы сканироватся не будут, программа перейдет к 
+         следующему адресу из списка. А если определить имя машины не удалось,
+         но пингование было включено и было успешным то программа все равно будет
+         искать ресурсы.<br>
+    </ul>
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="IPMonitor"><font color=#00E0FF>IP-Monitor</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid">
+     Настройки IP-Monitor'а : интервал обновления информации, цвета фона и графиков,
+     количество линий в масштабных сетках.<br>
+     &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="Interface"><font color=#00E0FF>Interface</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid">
+     Здесь Вы можете изменить параметры интерфейса программы :<br><br>
+
+     - палитра цветов (стандартная windows'ская, зеленое на черном, желтое на синем, голубое на синем)<br>
+     - шрифт текста в окнах с информацией<br>
+     - help language (Russian or English)<br><br>
+
+     - option : "Auto save options of main window pages"<br>
+       If this options enabled  and  you press [Start] button  then  program save
+       parameters of current page.
+       IP-Monitor save size of monitors too<br><br>
+
+     - option : "Auto save current page"<br>
+       Если включить эту опцию  то программа будет запоминать активную страницу,
+       и кроме того если включена опция "Auto save options of main window pages"
+       и  при выходе из программы  был запущен "Hosts Monitor"  то при повторном
+       запуске программы монитор сразу станет активным.<br><br>
+
+     - option : "Allow page multiline"<br>
+       Если включить эту опцию то закладки страниц программы при  необходимости
+       будут  размещатся  в  несколько  строчек.  А  если не включить то 
+       закладки будут в одну строчку но с кнопочками для скролинга.<br><br>
+
+     - option : "Clear old info"<br>
+       если включить эту опцию то при нажатии на кнопку Start старое содержимое 
+       окна будет удалятся<br><br>
+
+     - option : "Minimize to tray"<br>
+     - option : "Always top"<br><br>
+
+     - option : "Kept in lists recent addresses"<br>
+       если включить эту опцию то программа будет запоминать введенные вами адреса в списках.<br>
+
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="Sound"><font color=#00E0FF>Sound</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%">
+    А на этой странице задаются звуковые эффекты для разных событий 
+    (завершение работы утилитами, изменение статуса контролируемого хоста, ...)<br>
+    &nbsp;</td>
+  </tr>
+</table>
+</justify></div>
+
+<hr>
+<p ALIGN="CENTER"><small>Copyright (c) 1998,99 Alexander Kozlov. All Rights Reserved</small></p>
+
+</body>
+</html>

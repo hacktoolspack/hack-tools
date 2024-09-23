@@ -1,0 +1,166 @@
+A History Of The Internet Worm Maker Thing
+
+
+Internet Worm Maker Thing Version 1.1 Beta :-
+
+* Custom Worm Name
+* Custom Worm Author
+* Custom Worm Version
+* Optional [C] Notice
+* Outlook Email Spreading
+* Kazza Spreading
+* mIRC Spreading
+* pIRCh Spreading
+* ViRC Spreading
+* BearShare Spreading
+* Morpheus Spreading
+* ICQ Spreading
+* Grockster Spreading
+* Global Registry Startup
+* Local Registry Startup
+* Winlogon Shell Hook
+* English Startup Folder
+* German Startup Folder
+* Spanish Folder
+* French Startup Folder
+* Italian Startup Folder
+* Date Activation
+* Random Activation
+* Hide All Drives
+* Disable Task Manager
+* Disable Keybord
+* Disable Mouse
+* Custom Message Box
+* Disable Regedit
+* Disable Windows Explorer
+* Change Registered Owner
+* Change Homepage
+* Disable Windows Security
+* Disable Norton Security
+* Uninstall Norton Script Blocking
+* Disable Macro Security
+* DIsable Run Command
+* Disable Shutdown
+* Disable Logoff
+* Disable Windows Update
+* Disable Search Command
+* Swap Mouse Buttons
+* Open Webpage
+* Change IE Title Bar Text
+* Change Win Media PLayer Title Text
+* Open CD Drives
+* Lock Workstation
+* Download File And Execute
+* Print Message
+* Disable System Restore
+* Change NOD32 Text
+* Infect .BAT Files
+* Infect .VBS Files
+* Infect .VBE Files
+* CPU Monster Beta
+* CheatCode System
+
+Internet Worm Maker Thing 2.1 Beta :-
+
+* ADDED: Custom Message
+* REMOVED: CPU Monster Beta
+* INCLUDED: vbstoexe Tool 
+
+Internet Worm Maker Thing 3 :-
+
+* ADDED: Spread Through Drives (NEVER WORKED!) 
+* ADDED: Outlook Fun 1
+* ADDED: Mute Speakers
+* ADDED: Delete File
+* ADDED: Delete Folder
+* ADDED: Change Wallpaper
+* ADDED: CPU Monster
+* ADDED: Change Time
+* ADDED: Change Date
+* ADDED: Play Sound And Loop
+* ADDED: ^After All Payloads Run Option
+* ADDED: Display Message Box^
+* ADDED: Shutdown^
+* ADDED: Lock Workstation^
+* ADDED: Custom Output Path
+* INCLUDED: Feature Guide
+* Worm Generator Was Detected By Some Antivirus (InternetWorm.A InternetWorm.B InternetWorm.C)
+
+Internet Worm Maker 4.0 :- Public Edition :-
+* UPGRADED: Email Spreading
+* ADDED: Emule Spreading
+* ADDED: Skype Spreading
+* ADDED: MSN Spreading
+* ADDED: Spread To Other Drives
+* ADDED: LimeWire Spreading
+* ADDED: Start As Service
+* UPGRADED: Download File And Execute
+* ADDED: Multiple Download Support
+* UPGRADED: CPU Monster (Error Bomber)
+* UPGRADED: Play Sound And Loop
+* ADDED: Hide Desktop
+* ADDED: Disable Windows Malware Removal Tool (MRemove)
+* ADDED: Disable Windows File Protection
+* ADDED: Corrupt Antivirus (Pointless But It Works)
+* ADDED: Change Computer Name
+* ADDED: Change C:\ Drive Icon
+* ADDED: Add To Context Menu
+* ADDED: Change Clock Text
+* ADDED: Hack Bill Gates (Preview)
+* ADDED: Keybord Disco
+* ADDED: Add To Favorites
+* UPGRADED: Infect .BAT Files
+* UPGRADED: Infect .VBS Files
+* UPGRADED: Infect .VBE Files
+* REMOVED: After All Payloads Run Option And Related Options
+* ADDED: Random Filenames
+* ADDED: Compile To EXE Support
+* ADDED: Edonkey Spreading
+* ADDED: KMD Spreading 
+* ADDED: AppleJuice Spreading
+* ADDED: Gnucleus Spreading
+* ADDED: Overnet Spreading
+* ADDED: Sareaza Spreading
+* ADDED: Swaptor Spreading
+* ADDED: WinMX Spreading
+* ADDED: Tesla Spreading
+* ADDED: Xolox Spreading
+* ADDED: Rapigator Spreading
+* ADDED: Blubster Spreading
+* ADDED: IMesh Spreading
+* UPGRADED: Main Program Code 
+* UPGRADED: Kazza Spreading
+* UPGRADED: Morpheus Spreading
+* ADDED: Plugin System
+* ADDED: Windows Admin Lockout Bug
+* ADDED: Trigger Blue Screen Of Death (EXPERIMENTAL!)
+* ADDED: Virus Files Hidden
+* UPGRADED: Error Messages And Menus
+* REMOVED: Cheatcode System
+* FIXED: Bug in mIRC spreading
+* FIXED: Bug in execute file after download
+* FIXED: Path Variable bug
+* FIXED: Copy File Bug
+* FIXED: Multiple Bugs in Kazza spreading
+* FIXED: Incorrect Path To English Startup Folder
+* FIXED: Bug in Copy To International Startup Folders
+* FIXED: Bug in activate on date function
+* FIXED: Name Redefined errors
+* FIXED: Bug in Change Registered Owner and organisation
+* FIXED: Bug in change homepage
+* FIXED: Bug in open cd drives
+* FIXED: Bug in delete folder function
+* FIXED: Bug in change date
+* FIXED: Bug in change time
+* FIXED: Multiple Bugs in CPU Monster
+* FIXED: Bug in loop sound
+* KILLED: Some AV Detections for email spreading
+* KILLED: internetworm.* detections
+* FIXED: Bug in Generate Button
+* FIXED: Bug in Print Message Function
+* FIXED: Bug in Outlook Fun
+* FIXED: Multiple Bugs in driver spreading (Re-coded the whole thing!)
+* FIXED: Bug in Pirch Spreading
+* INCLUDED: ScriptCryptor Cleaned And Cracked Edition  
+* UPGRADED: GUI
+* ADDED: Custom Code Option

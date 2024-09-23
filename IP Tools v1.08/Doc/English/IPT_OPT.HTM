@@ -1,0 +1,238 @@
+<html>
+
+<head>
+<meta content="text/html; charset=windows-1251" url="default.htm">
+<meta name="GENERATOR" content="KS Alex">
+<!-- bgsound src="..\terminat.mid" loop="-1" -->
+<title>IP-Tools Options</title>
+
+<STYLE TYPE="text/css"> <!-- a:hover { color: "#00FFFF"; } --> </STYLE>
+
+</head>
+
+<body bgcolor="#000000" background="../images/ksbg2.jpg" bgproperties="fixed" 
+text="#FFFFFF" link="#00FF90" vlink="#00FF90" alink="#FF0000">
+
+<p ALIGN="CENTER">
+<b>Options Dialog</b>
+
+<hr>
+All program's settings you may define in Options dialog window.
+See items in Options menu.<br><br>
+
+<img src="../images/ipt_opt.gif" width="520" height="310" align="center"
+ alt="ipt_opt.gif (10176 bytes)" USEMAP="#iptools" BORDER=0></p>
+<MAP NAME="iptools">
+<AREA SHAPE="rect" COORDS="  8,27, 59,45", HREF="#ScanList"   ALT="">
+<AREA SHAPE="rect" COORDS=" 61,27,100,45", HREF="#Ports"      ALT="">
+<AREA SHAPE="rect" COORDS="102,27,166,45", HREF="#PingTrace"  ALT="">
+<AREA SHAPE="rect" COORDS="169,27,228,45", HREF="#Advanced"   ALT="">
+<AREA SHAPE="rect" COORDS="231,27,286,45", HREF="#IPMonitor"  ALT="">
+<AREA SHAPE="rect" COORDS="289,27,340,45", HREF="#Interface"  ALT="">
+<AREA SHAPE="rect" COORDS="343,27,385,45", HREF="#Sound"      ALT="">
+</MAP>
+
+<p align="justify">
+<div align="justify"><justify>
+<br>
+<table border="0" width="100%">
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid; border-top: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg">
+     <strong><font color=#00E0FF><a name="ScanList">Scan List</a></font></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid">
+     On this page you may define list of addresses which may use Scanner, Ports Scanner, Ping Scanner, LookUp.<br>
+     In this list you may use diapason of addresses, but in this case You cannot 
+     select hostname, only IP address<br>
+     <br>
+     Example :<br>
+     <font face="Courier New" size="2" color=#FFFFDD>
+     ;-----------------------------------------------------------------<br>
+     199.66.10.12                 <br>
+     133.65.12.250 - 133.65.13.17 <br>
+     200.32.12.188 - 200.32.12.95 &nbsp;&nbsp; ; text after ';' ignore<br>
+     200.32.12.122 - 200.32.12.25 <br>
+     199.66.10.12<br>
+     <br>
+     www.chat.ru &nbsp;&nbsp;&nbsp;  ; for single host You may select hostname<br>
+     www.garris.com -  www.yahoo.com ; - wrong string !<br>
+     199.66.10.15<br>
+     ;-----------------------------------------------------------------</font><br>
+    &nbsp; </td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="Ports"><font color=#00E0FF>Ports</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align="justify">
+     On this page You can select TCP ports which will checked by PortsScanner.<br>
+     <br>
+     What is a Port ?<br>
+     The TCP port number identifies a process or application inside the computer.<br>
+     &nbsp; Any application or process that uses TCP for its transport is assigned a
+     unique identification number called a TCP port. These ports are numbered 
+     beginning with zero. Port numbers for client applications are dynamically
+     assigned by the operating system when there is a request for service. Port
+     numbers for server applications are preassigned by the IANA 
+     (Internet Assigned Numbers Authority) and do not change.<br>    
+     &nbsp; A server application or process that uses TCP as a transport has at least
+     one preassigned port number. For example, the preassigned port numbers for
+     FTP server services are 20 (data) and 21 (control).<br>
+    &nbsp; </td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="PingTrace"><font color=#00E0FF>Ping/Trace</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align="justify">
+     On this page You may choose Packet Size, Timeout, Packets to send, TTL,
+     number of hops.<br><br>
+
+     Option "<b>Packets to send</b>"<br>
+     specified the number of ECHO packets<br><br>
+
+     Option "<b>Packet Size</b>"<br>
+     specified size of ECHO packets<br><br>
+
+     Option "<b>TimeOut</b>"<br>
+     specifies a timeout interval in milliseconds<br><br>
+
+     Option "<b>Time to Live</b>"<br>
+     specifies a TTL value<br><br>
+<!-- (Time To Live) A technique used in best-effort delivery systems to avoid endlessly looping
+     packets. For example, each IP datagram is assigned an integer time to live when it is
+     created. IP gateways decrement the time to live field when they process a datagram and
+     discard the datagram if the time to live counter reaches zero.<br><br> -->
+
+     Option "<b>Number of Hops</b>"<br>
+     specifies maximum number of hops to search for target<br><br>
+<!-- A measure of distance between two points in an internet. A hop count of n
+     means that n gateways separate the source and destination.<br><br> -->
+
+     Option "<b>Show Host's Description</b>"<br>
+     Program may show host's description (on pages : LookUp, Scanner, ScanPorts,
+     Trace with enabled options "Use DNS").
+     If Options "Show Host's Descriptions" enabled then program show host's 
+     description near host's name. Like this :<br>
+     <font face="Courier New" size="2" color=#FFFFDD>
+     ... www.chat.ru &nbsp; &nbsp; &nbsp;&nbsp;  (Russia)<br>
+     ... www.gazprom.ru    &nbsp; &nbsp;         (Join-stock company GAZPROM, town Moscow, Russia)<br>
+     ... mainboss.xaxa.BD  &nbsp;                (Bangladesh)<br></font>
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="Advanced"><font color=#00E0FF>Advanced</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"><p align="justify">
+    On this page locate options for Ports Scanner, for Shared resources Scanner
+    and for Connections list<br><br>
+
+    Options for ports Scanner :
+    <ul>
+    <li><p align="justify"> <b>GetHostName before scan ports</b><br>
+         if this option enable then before scan ports program try resolve host 
+         name via host's IP address.
+         If this action fail then program go to next host from the list.<br>
+    <li><p align="justify"> <b>Ping before scan ports</b><br>
+         if this option enable then before scan ports program try ping host.
+         If host no reply then program go to next host from the list.
+         Options for ping see on page Ping/Trace in Options dialog.<br>
+    <li><p align="justify"> <b>Show remote service messages</b><br>
+         if this option is disable then program after connect with host immediate
+         disconnect. Otherwise program waits message from host (and write this
+         message to log window).<br>
+    <li><p align="justify"> <b>Time for wait message</b><br>
+         in this field You can define time for wait message from hosts.<br>
+    <li><p align="justify"> <b>Send string to remote host</b><br>
+         Program can send string to host after connect. In this field You can 
+         define this string.<br><br>
+    </ul>
+
+    Options for NB Scanner :
+    <ul>
+    <li><p align="justify"> <b>Ping before scan resources</b><br>
+         if this option enable then before scan resources program try ping host.
+         If host no reply then program go to next host from the list.
+         Options for ping see on page Ping/Trace in Options dialog.<br>
+    <li><p align="justify"> <b>GetHostName before scan</b><br>
+         if this option enable then before scan resources program try resolve
+         host name via host's IP address.
+         If this action fail and previous option is disable then program go to
+         next host from the list.
+         If this action fail but previous option is enable and ping succeed then
+         program however will scan host's resources.<br><br>
+    </ul>
+
+    Option for Connections list : <b>Auto refresh every ... msec</b><br>
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="IPMonitor"><font color=#00E0FF>IP-Monitor</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid">
+     Options for IP-Monitor : refresh time, colors, count of grids.<br>
+     &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="Interface"><font color=#00E0FF>Interface</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid"> <p align=justify>
+     On this page you may define next parameters :<br><br>
+
+     - colors palette for output windows (standard, green on black, yellow on blue or light blue on blue)<br>
+     - font for output windows<br>
+     - help language (Russian or English)<br><br>
+
+     - option : "Auto save options of main window pages"<br>
+       If this options enabled  and  you press [Start] button  then  program save
+       parameters of current page.
+       IP-Monitor save size of monitors too<br><br>
+
+     - option : "Auto save current page"<br>
+       If  this  option  enabled  then  program will remember  current page  and 
+       activate this page after load, otherwise program always start with active
+       page "Local Info".  Besides  if  this option enabled  and  enabled option
+       "Auto save options of main window pages"  then program remember status of
+       Hosts Monitor, and after load may start Hosts Monitor.<br><br>
+
+     - option : "Allow page multiline"<br>
+       If this option enabled  then tabs are displayed on more than one row when
+       all tabs doesn't fits across the top of the tab control.  If this  option
+       is False, the tabs are displayed on one row only, and you must scroll the
+       displayed scroll arrows to view all the tabs.<br><br>
+
+     - option : "Clear old info"<br>
+       if this option is enabled and you press [Start] button in any IP-Tools 
+       utility then output window will clear<br><br>
+
+     - option : "Minimize to tray"<br>
+     - option : "Always top"<br>
+     - option : "Kept in lists recent addresses"<br>
+    &nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" style="border-bottom: 1px solid" bgcolor="#000000" background="../images/ksbg3.jpg"><strong>
+     <a name="Sound"><font color=#00E0FF>Sound</font></a></strong></td>
+  </tr>
+  <tr>
+    <td width="100%">
+    On this page you may define sounds for different events....<br>
+    &nbsp;</td>
+  </tr>
+</table>
+</justify></div>
+
+<hr>
+<p ALIGN="CENTER"><small>Copyright (c) 1998,99 Alexander Kozlov. All Rights Reserved</small></p>
+
+</body>
+</html>
