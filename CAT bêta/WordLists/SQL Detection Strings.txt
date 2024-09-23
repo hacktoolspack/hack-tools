@@ -1,0 +1,5 @@
+ORA-
+You have an error in your SQL syntax
+ODBC SQL Server Driver
+SqlException
+Microsoft OLE DB Provider

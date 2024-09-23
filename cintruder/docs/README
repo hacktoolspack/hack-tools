@@ -1,0 +1,97 @@
+================================================================
+Introduction:
+==============================
+
+Captcha Intruder is an automatic pentesting tool to bypass captchas.
+
+================================================================
+Options and features:
+==============================
+ 
+cintruder [OPTIONS]
+
+Options:
+  --version            show program's version number and exit
+  -h, --help           show this help message and exit
+  -v, --verbose        active verbose mode output results
+  --proxy=PROXY        use proxy server (tor: http://localhost:8118)
+  --gui                run GUI (CIntruder Web Interface)
+  --update             check for latest stable version
+
+  ->Tracking:
+    --track=TRACK      download captchas from url (to: 'inputs/')
+    --track-num=S_NUM  set number of captchas to download (default: 5)
+
+  ->Training:
+    --train=TRAIN      train using common OCR techniques
+    --set-id=SETIDS    set colour's ID manually (use -v for details)
+
+  ->Cracking:
+    --crack=CRACK      brute force using local dictionary
+
+  ->Modules (training/cracking):
+    --list             list available modules (from: 'mods/')
+    --mod=NAME         set a specific OCR exploiting module
+
+  ->Post-Exploitation (cracking):
+    --xml=XML          export result to xml format
+    --tool=COMMAND     replace suggested word on commands of another tool. use
+                       'CINT' marker like flag (ex: 'txtCaptcha=CINT')
+
+================================================================
+Examples of usage:
+==============================
+
+-------------------
+* View help:
+
+$ ./cintruder --help
+-------------------
+* Update to latest version:
+
+$ ./cintruder --update
+-------------------
+* Launch web interface (GUI):
+
+$ ./cintruder --gui
+-------------------
+* Simple crack from file:
+
+$ ./cintruder --crack "inputs/captcha.gif"
+-------------------
+* Simple crack from URL:
+
+$ ./cintruder --crack "http://host.com/path/captcha_url"
+-------------------
+* Simple crack from local, exporting results to a xml file:
+
+$ ./cintruder --crack "inputs/captcha.gif" --xml "test.xml"
+-------------------
+* Simple crack from url, with proxy TOR and verbose output:
+
+$ ./cintruder --crack "http://host.com/path/captcha_url" --proxy="http://127.0.0.1:8118" -v
+-------------------
+* Train captcha(s) from url, with proxy TOR and verbose output:
+
+$ ./cintruder --train "http://host.com/path/captcha_url" --proxy "http://127.0.0.1:8118" -v
+-------------------
+* Track 50 captcha(s) from url, with proxy TOR:
+
+$ ./cintruder --track "http://host.com/path/captcha.gif" --track-num "50" --proxy "http://127.0.0.1:8118"
+-------------------
+* List available modules (from "mods/"):
+
+$ ./cintruder --list
+-------------------
+* Launch an OCR module to train a specific local captcha:
+
+$ ./cintruder --train "inputs/easycaptcha.gif" --mod "module_invocation_name"
+-------------------
+* Launch an OCR module to crack a specific online captcha, with verbose output:
+
+$ ./cintruder --crack "http://host.com/path/captcha_url" --mod "module_invocation_name" -v
+-------------------
+* Replace suggested word by CIntruder after cracking a remote url on commands of another tool (ex: "XSSer"):
+
+$ ./cintruder --crack "http://host.com/path/captcha_url" --tool "xsser -u http://host.com/path/param1=foo&param2=bar&txtCaptcha=CINT"
+-------------------

@@ -1,0 +1,47 @@
+================================================================
+Changelog: CIntruder v0.3 (cintruder.03c8.net)
+==============================
+
+===================
+December 23, 2016:
+===================
+
+- Code cleaning
+- Removed deprecated features
+- Added a Web User Interface (GUI)
+- Added --update option
+- Updated docs
+
+=================
+April 27, 2012:
+=================
+
+- Code cleaning
+- Rebuiled input parameter options
+- Created OCR modularity (core/mods)
+- Added --list modules option
+- Added --mod selector option
+- Builded module example (easy captcha)
+- Added handlering with other tools
+- Added connectivity with Ostatus
+- Created distributed online dictionary
+- Added launcher to view CIntruderNet
+- Updated docs
+
+=================
+April 1, 2012:
+=================
+
+- Created OCR techniques
+- Created Brute forcing techniques
+- Builded main core 
+- Builded options parser
+- Created Curl handlers
+- Created 'track' option
+- Created 'train' option
+- Created 'crack' option
+- Added proxy option
+- Added XML exporting option
+- Added verbose outputs results
+- Added colour's id calibration
+- Added noise advanced option

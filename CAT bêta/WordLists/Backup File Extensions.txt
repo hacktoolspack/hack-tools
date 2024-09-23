@@ -1,0 +1,13 @@
+bak
+old
+zip
+tar
+gz
+tgz
+rar
+java
+txt
+rtf
+doc
+1
+2
