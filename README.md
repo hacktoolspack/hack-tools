@@ -9,30 +9,54 @@
 <p align="center">
 ########################################################################
 <p align="center">
-DESCRIPTION
-<p align="center">
-Welcome to the "hack-tools" repository !
-<p align="center">
-- This repository contains software like DOS tool, information gathering, malwares creator, virus creator, ransomware, remote administration tool, ... for "script kiddies", professionnals, compagny, ... all softwares is free and the author is not responsible for any damage caused by this softwares.
+## Hack-Tools Repository Documentation
 
-<p align="center">
-########################################################################
-<p align="center">
-REQUIREMENTS
+### Overview
 
-- Operating system : Windows, Linux
-- Programming languages : python2, python3, ruby, java ...
+Welcome to the "hack-tools" repository! This collection contains a diverse array of software tools designed for various cybersecurity purposes, including:
 
-<p align="center">
-########################################################################
+- DOS (Denial of Service) tools
+- Information gathering utilities
+- Malware creation tools
+- Virus generators
+- Ransomware development kits
+- Remote Administration Tools (RATs)
 
-<p align="center">
-NOTES
+These tools are intended for use by a wide range of individuals, from script kiddies to cybersecurity professionals and companies. All software in this repository is provided free of charge.
 
-- In this repository many softwares has in alpha, beta phase and not all softwares are tested. 
-- The repository contains some projects of others developers and some of this "projects" are not up to date.
-- This repository "hack-tools" are updated rarely and in a random way. 
-- Please if you have an issue, try to make him insteresting like this "Hello, can you remove my email that I found in the project named "name of project/s", Thanks." Is a example, others issues like improvements, ... are accepted as long as they are interesting.
-- Password for files (.exe .7z .zip) : a
-- For more compatibility on Windows with the "hacking tool" softwares,  please install Pentestbox : 
-https://sourceforge.net/projects/pentestbox/files/PentestBox-v2.2.exe/download
+### Disclaimer
+
+**Important**: The author of this repository is not responsible for any damage caused by the use or misuse of these tools. Users are solely responsible for their actions and must comply with all applicable laws and regulations.
+
+### System Requirements
+
+- **Operating Systems**: 
+  - Windows
+  - Linux
+- **Programming Languages**:
+  - Python 2
+  - Python 3
+  - Ruby
+  - Java
+  - Various others
+
+### Important Notes
+
+1. **Development Status**: Many of the tools in this repository are in alpha or beta phases. Not all software has been thoroughly tested.
+
+2. **Third-Party Projects**: This repository includes projects from other developers. Some of these may not be up to date.
+
+3. **Updates**: The "hack-tools" repository is updated infrequently and irregularly.
+
+4. **Issue Reporting**: When reporting issues, please be specific and provide useful information. For example:
+   "Hello, can you remove my email that I found in the project named [project name]? Thanks."
+   Constructive issues related to improvements are welcome, as long as they are relevant and interesting.
+
+5. **File Passwords**: For executable files (.exe), archives (.7z, .zip), use the password: `a`
+
+6. **Windows Compatibility**: For enhanced compatibility with hacking tools on Windows, it is recommended to install PentestBox. You can download it from:
+   [PentestBox v2.2 Download](https://sourceforge.net/projects/pentestbox/files/PentestBox-v2.2.exe/download)
+
+### Conclusion
+
+This repository serves as a comprehensive collection of cybersecurity tools for various purposes. Users are encouraged to use these tools responsibly and ethically, always adhering to legal and professional standards in the field of information security.
