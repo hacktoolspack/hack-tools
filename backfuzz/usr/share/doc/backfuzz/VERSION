@@ -1,0 +1,46 @@
+v0.3.2:
+=======
+
+	Fixed the spelling of "length" in --help (thanks terriko)
+	Fixed sendCredential() call in HTTP plugin (thanks hatRiot)
+	Added the option to enable showing pattern or not (thanks hatRiot)
+
+v0.3.1:
+=======
+
+	Added some documentation to the "functions.py" file
+
+v0.3:
+=====
+
+	Added the ability to use different type of patterns while fuzzing (Cyclic | CyclicExtended | Single | Format-String).
+	Removed a lot of un-useful parameters and use global variables instead.
+	Minor Help Screen improvements.
+
+v0.2.1:
+=======
+
+	Minor SMTP plugin fixes.
+
+v0.2:
+=====
+
+	TFTP plugin added.
+
+
+v0.1.2:
+=======
+
+	Improved FTP plugin due massive broken pipe messages. Also added LOGIN feature in the SMTP Fuzzer plugin.
+
+
+v0.1.1:
+=======
+
+	Fixed fuzzCommands() issue with smtp plugin (thanks John)
+
+
+v0.1:
+=====
+
+	First public version.

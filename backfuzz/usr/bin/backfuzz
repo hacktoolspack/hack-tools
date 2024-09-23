@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /usr/share/backfuzz
+python2 backfuzz.py "$@"
